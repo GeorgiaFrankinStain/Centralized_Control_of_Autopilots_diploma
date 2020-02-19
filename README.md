@@ -1,2 +1,2 @@
-# Centralized_Control_of_Autopilots_diploma
+# Centralized Control of Autopilots (diploma)
 This is my thesis.
