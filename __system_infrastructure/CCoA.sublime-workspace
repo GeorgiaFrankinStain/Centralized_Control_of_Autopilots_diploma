@@ -1,0 +1,544 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tex",
+				"text2"
+			],
+			[
+				"direc",
+				"director_name"
+			],
+			[
+				"director",
+				"directorDir"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/CCoA_task.todo",
+			"settings":
+			{
+				"buffer_size": 1719,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/log_of_development.txt",
+			"settings":
+			{
+				"buffer_size": 120,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"task new",
+				"Tasks: New document"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 183.0,
+		"history":
+		[
+			"clean",
+			"df",
+			"gag",
+			"gas",
+			"gd",
+			"df",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/PlainTasks/messages/Tutorial.todo",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/bufer.markdown",
+		"/D/AF/2019 - 06 - 20 - Fractal_of_War/FoW_reserve.todo",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/D/AF/2019 - 03 - 11 - короткометражка - Мать законность, проблема законности, соблюдать законы плохо, невозможность быть правильным/сюжет законности.txt",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/User/zamena_undeline.py",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/User/replacing_letters_on_latin.py",
+		"/C/Users/FS/Desktop/2018.txt",
+		"/D/DataGoogleDrive/квартиранты/1) Мишустины/автоплатеж.txt",
+		"/D/DataGoogleDrive/квартиранты/1) Мишустины/2020 - 01 - 20 - №1 платеж/подсчет.txt",
+		"/D/SibGUTY_git/4k1s/Information_secutity/lab_all_IJ_IDEA/tests_files/lab_6_rgz/ruc_color.dot",
+		"/D/AF/2019 - 06 - 20 - Fractal_of_War/Fractal-of-War-concept/FW_концепция.txt",
+		"/D/SibGUTY_git/4k1s/Information_secutity/lab_all_IJ_IDEA/tests_files/lab_2/ElGamal_decrypt_CryptoAbonentTest.txt",
+		"/D/__system_games/Portal Stories Mel/3DMGAME/3DMGAME/stats/stats.ini",
+		"/D/__system_games/Portal Stories Mel/Start Game.bat",
+		"/C/Users/FS/Desktop/bufef/DiffieHellmanTest.java",
+		"/C/Users/FS/Desktop/bufef/DiffieHellman.java",
+		"/D/DataGoogleDrive/tooling.txt",
+		"/D/DataGoogleDrive/structures/мнемотехника.txt",
+		"/D/DataGoogleDrive/курсы самообразования.txt",
+		"/D/DataGoogleDrive/что-то интересное потом посмотреть.txt",
+		"/D/DataGoogleDrive/координатор.txt",
+		"/C/Users/FS/Desktop/atasks.cs",
+		"/C/Users/FS/Desktop/рассписание.jpg",
+		"/C/Users/FS/Desktop/AQtM_DMWELw.jpg",
+		"/D/DataGoogleDrive/bufer.txt",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Default (Windows).sublime-keymap",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/MultiMarkdown.sublime-settings",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Bold and Italic Markers.tmPreferences",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown (Standard).sublime-settings",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown.sublime-settings",
+		"/D/tooling/sublime_text_3/Incrementor-master/README.markdown",
+		"/D/DataGoogleDrive/приемы боевого самбо.txt",
+		"/C/Users/FS/Desktop/bufer.txt",
+		"/D/DataGoogleDrive/материал для структур.txt",
+		"/D/DataGoogleDrive/красивые символы.txt",
+		"/D/DataGoogleDrive/посмотреть.txt",
+		"/D/DataGoogleDrive/структуры.txt",
+		"/D/DataGoogleDrive/сценарии.txt",
+		"/D/DataGoogleDrive/ARCHIVE.txt",
+		"/D/DataGoogleDrive/coordinator.todo",
+		"/D/DataGoogleDrive/idea.txt",
+		"/D/DataGoogleDrive/log.txt",
+		"/D/DataGoogleDrive/log_error_programming__c.txt",
+		"/D/DataGoogleDrive/position.txt",
+		"/D/DataGoogleDrive/tasks.todo",
+		"/D/DataGoogleDrive/дневник снов 2019.txt",
+		"/D/DataGoogleDrive/долги.todo",
+		"/D/DataGoogleDrive/красивые названия.txt",
+		"/D/learning/!JAVA/Myrusakov_practika/shared_IntelliJ_IDEA/shared_IntelliJ_IDEA.iml",
+		"/D/AMVAPRaD/2019 - 06 - 20 - Fractal_of_War/FW_task.todo",
+		"/C/Users/FS/Desktop/bookmarks_23.09.2019.html",
+		"/C/Users/FS/AppData/Local/Google/Chrome/User Data/Default/Bookmarks.bak",
+		"/C/Users/FS/AppData/Local/Google/Chrome/User Data/Default/Bookmarks",
+		"/D/AMVPPMH/2019 - 01 - 04 - Alamutra/2019 - 05 - 07 - короткометражка - Ореол власти/сюжет ореол власти.txt",
+		"/D/AMVPPMH/2019 - 01 - 04 - Alamutra/2019 - 03 - 11 - короткометражка - Мать законность, проблема законности, соблюдать законы плохо, невозможность быть правильным/сюжет законности.txt",
+		"/D/DataGoogleDrive/activities_report.txt",
+		"/D/AMVPPMH/2019 - 01 - 04 - Alamutra/2019 - 03 - 07 - короткометражка - мать лицемерие, prototype I - лицемерное добро, индуктивное зло/сюжет лицемерия.txt",
+		"/C/Users/FS/Downloads/yota/run.bat",
+		"/C/Users/FS/Downloads/yota/hosts",
+		"/D/DataGoogleDrive/ARCHIVE/2019 - 06 - 17 - coordinator.todo",
+		"/D/DataGoogleDrive/13 СБОР ДЕНЕГ.txt",
+		"/D/SibGUTY_code/3k2s/TLP/coursework_TLP/compiler2/task.todo",
+		"/D/SibGUTY_code/3k2s/TLP/coursework_TLP/tasks.todo",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/User/PlainTasks.sublime-settings",
+		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/PlainTasks/messages/install.txt",
+		"/D/bufer/timing-kpd.txt",
+		"/D/SibGUTY_code/3k2s/network/lab1/Лаб работа №2/расчет сети от варианта.txt",
+		"/D/bufer/kpd.txt",
+		"/D/AMVPPMH/2019 - 01 - 04 - Alamutra/2019 - 03 - 07 - короткометражка - мать лицемерие, prototype I - лицемерное добро, индуктивное зло/сюжет.txt",
+		"/C/Users/FS/Desktop/коттедж.txt",
+		"/D/AMVPPMH/2019 - 01 - 04 - Alamutra/2019 - 03 - 11 - короткометражка - Мать законность, проблема законности/сюжет.txt",
+		"/D/TOOLING/sublime_text_3/zamena_undeline.py",
+		"/D/DataGoogleDrive/.gitignore",
+		"/D/SibGUTY/3k1s/FLP/in.txt",
+		"/D/SibGUTY/3k1s/FLP/out.txt",
+		"/D/GoogleDrive/координатор.txt",
+		"/D/GoogleDrive/log.txt",
+		"/D/GoogleDrive/книги на скачивание.txt",
+		"/D/GoogleDrive/сценарии.txt",
+		"/D/GoogleDrive/материал для структур.txt",
+		"/D/GoogleDrive/структуры.txt",
+		"/D/SibGUTY/2k2s/PVT/PCT/lab2/dgemv.c",
+		"/D/DATA/bltb.txt"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 115.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/CCoA_task.todo",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1719,
+								1719
+							]
+						],
+						"settings":
+						{
+							"plain_tasks_remain_time_phantoms":
+							[
+							],
+							"syntax": "Packages/PlainTasks/PlainTasks.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/log_of_development.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 120,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										120,
+										120
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 41.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "CCoA.sublime-project",
+	"replace":
+	{
+		"height": 78.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pos",
+				"D:\\DataGoogleDrive\\position.txt"
+			],
+			[
+				"допол",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"пос",
+				"D:\\DataGoogleDrive\\посмотреть.txt"
+			],
+			[
+				"дневни",
+				"D:\\DataGoogleDrive\\log, дневник снов.txt"
+			],
+			[
+				"снов",
+				"D:\\DataGoogleDrive\\дневник снов.txt"
+			],
+			[
+				"",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"допо",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"красивы",
+				"D:\\DataGoogleDrive\\красивые названия.txt"
+			],
+			[
+				"log",
+				"D:\\DataGoogleDrive\\log.txt"
+			],
+			[
+				"краси",
+				"D:\\DataGoogleDrive\\красивые названия.txt"
+			],
+			[
+				"доп",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"прог",
+				"D:\\DataGoogleDrive\\structures\\программирование.txt"
+			],
+			[
+				"по",
+				"D:\\DataGoogleDrive\\посмотреть.txt"
+			],
+			[
+				"матер",
+				"D:\\DataGoogleDrive\\материал для структур.txt"
+			],
+			[
+				"дол",
+				"D:\\DataGoogleDrive\\долги.todo"
+			],
+			[
+				"посмо",
+				"D:\\DataGoogleDrive\\посмотреть.txt"
+			],
+			[
+				"tuto",
+				"C:\\Users\\FS\\AppData\\Roaming\\Sublime Text 3\\Packages\\PlainTasks\\messages\\Tutorial.todo"
+			],
+			[
+				"пом",
+				"D:\\DataGoogleDrive\\посмотреть.txt"
+			],
+			[
+				"дополн",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"fr",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"frac",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"ма",
+				"D:\\DataGoogleDrive\\материал для структур.txt"
+			],
+			[
+				"матери",
+				"D:\\DataGoogleDrive\\материал для структур.txt"
+			],
+			[
+				"fra",
+				"D:\\AF\\2019 - 06 - 20 - Fractal_of_War\\дополненнения к концепции Fractal of War.txt"
+			],
+			[
+				"мате",
+				"D:\\DataGoogleDrive\\материал для структур.txt"
+			],
+			[
+				"lo",
+				"D:\\DataGoogleDrive\\log.txt"
+			],
+			[
+				"посм",
+				"D:\\DataGoogleDrive\\посмотреть.txt"
+			],
+			[
+				"м",
+				"D:\\DataGoogleDrive\\материал для структур.txt"
+			],
+			[
+				"мат",
+				"D:\\DataGoogleDrive\\материал для структур.txt"
+			],
+			[
+				"пот",
+				"D:\\DataGoogleDrive\\посмотреть.txt"
+			],
+			[
+				"table",
+				"D:\\DataGoogleDrive\\tablets.txt"
+			],
+			[
+				"tab",
+				"D:\\DataGoogleDrive\\tablets.txt"
+			],
+			[
+				"tabl",
+				"D:\\DataGoogleDrive\\tablets.txt"
+			],
+			[
+				"кра",
+				"D:\\DataGoogleDrive\\красивые названия.txt"
+			],
+			[
+				"taba",
+				"D:\\DataGoogleDrive\\tablets.txt"
+			],
+			[
+				"ta",
+				"D:\\DataGoogleDrive\\tablets.txt"
+			],
+			[
+				"назва",
+				"D:\\DataGoogleDrive\\красивые названия.txt"
+			],
+			[
+				"акка",
+				"C:\\Users\\FS\\Google Диск\\DATA\\Пароли\\список аккаунтов.txt"
+			],
+			[
+				"спис",
+				"C:\\Users\\FS\\Google Диск\\DATA\\Пароли\\список аккаунтов.txt"
+			],
+			[
+				"акк",
+				"C:\\Users\\FS\\Google Диск\\DATA\\Пароли\\список аккаунтов.txt"
+			],
+			[
+				"наз",
+				"D:\\DataGoogleDrive\\красивые названия.txt"
+			],
+			[
+				"ide",
+				"D:\\DataGoogleDrive\\idea.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
