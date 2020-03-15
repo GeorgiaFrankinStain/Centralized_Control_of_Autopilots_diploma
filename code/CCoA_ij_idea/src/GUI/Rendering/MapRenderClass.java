@@ -11,4 +11,9 @@ public class MapRenderClass implements MapRender, SubWindow {
         public void renderContent() {
 
         }
+
+        @Override
+        public void renderingZone() {
+
+        }
 }

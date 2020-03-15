@@ -8,12 +8,12 @@ public class PolygonClass implements Polygon {
 
 
     @Override
-    public int getSize() {
+    public int getCountPoints() {
         return points.size();
     }
 
     @Override
     public Point getPoint(int index) {
-        return points.get(index);
+        return this.points.get(index);
     }
 }
