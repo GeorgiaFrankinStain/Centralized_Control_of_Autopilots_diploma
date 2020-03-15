@@ -1,5 +1,5 @@
 package Logic.Landscape;
 
 
-public class Landscape{
+public interface Landscape{
 }

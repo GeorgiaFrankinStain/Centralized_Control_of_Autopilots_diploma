@@ -1,4 +1,4 @@
 package Logic;
 
-public class Log {
+public interface Log { //Singlet
 }

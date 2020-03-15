@@ -2,18 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/Landscape/Landscape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rendering/HistChanges.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rendering/Rendering.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rendering/TableObjectRendering.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintSpaceTime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PhisicalBody.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PhisicalBodyClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Polygon.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/META-INF/CCoA_ij_idea.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Rendering/HistChangesFromWhen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Rendering/MapRender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Rendering/TableObjectRenderingClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Rendering/TypePhisicalBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/Window/SubWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PhisicalBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PhisicalBodyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../CCoA_task.todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../__bufer_pdf_for_sending/Тимофеев диплом - Техническое задание.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_статьи_по_теме/МУЛЬТИАГЕНТНОЕ ПЛАНИРОВАНИЕ ПРОЕЗДА ПЕРЕКРЕСТКА ДОРОГ.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../architecture/general.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../../architecture/general.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../architecture/situations/виды трасс.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../architecture/situations/виды трасс.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bufer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../bufer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCoA_ij_idea.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CCoA_ij_idea.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Landscape/Landscape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Landscape/Landscape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Log.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Rendering/HistChanges.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Rendering/Rendering.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Rendering/TableObjectRendering.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/Landscape/Landscape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Landscape/Landscape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rendering/HistChanges.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rendering/Rendering.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rendering/TableObjectRendering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Rendering/TableObjectRendering.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,71 +53,88 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CCoA_ij_idea" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-              <folding>
-                <element signature="e#64#65#0" expanded="true" />
-                <element signature="e#114#115#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="15" column="139" selection-start-line="15" selection-start-column="139" selection-end-line="15" selection-end-column="139" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Rendering/TableObjectRendering.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/TableObjectRendering.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Window/SubWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Window/AppearanceSettings.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/Log.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/GlobalAppearanceSettings.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="16" />
+              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Rendering/HistChanges.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Window/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="51">
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/Landscape/Landscape.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/UserCommandInterface/UserCommandInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Rendering/Rendering.java">
+        <entry file="file://$PROJECT_DIR$/src/ConsoleManegement/ConsoleManagement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+            <state relative-caret-position="51">
+              <caret line="3" column="79" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -100,10 +144,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
         <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get</find>
+      <find>int</find>
+      <find>public</find>
+      <find>setting</find>
+      <find>@Override</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>set</replace>
+      <replace>set\</replace>
+      <replace>void</replace>
+      <replace>default public</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -113,18 +174,39 @@
       <list>
         <option value="$PROJECT_DIR$/src/Starter.java" />
         <option value="$PROJECT_DIR$/src/Landscape/Landscape.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Logic/TableObjectRendering.java" />
         <option value="$PROJECT_DIR$/src/Rendering/TableObjectRendering.java" />
         <option value="$PROJECT_DIR$/src/Logic/Landscape/Landscape.java" />
+        <option value="$PROJECT_DIR$/src/Rendering/RenderingCl.java" />
+        <option value="$PROJECT_DIR$/src/Rendering/MapRender.java" />
+        <option value="$PROJECT_DIR$/src/Rendering/SubWindow.java" />
+        <option value="$PROJECT_DIR$/src/Rendering/MapRenderClass.java" />
+        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintSpaceTimeTest.groovy" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LevelClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Level.java" />
+        <option value="$PROJECT_DIR$/src/Rendering/TypePhisicalBody.java" />
+        <option value="$PROJECT_DIR$/src/Logic/Log.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+        <option value="$PROJECT_DIR$/src/Rendering/HistChangesFromWhen.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.java" />
+        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/ImitationFootprintSpaceTimeTest.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PhisicalBody.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java" />
+        <option value="$PROJECT_DIR$/test/Rendering/MapRenderClassTest.groovy" />
+        <option value="$PROJECT_DIR$/src/Rendering/Rendering.java" />
+        <option value="$PROJECT_DIR$/src/Rendering/RenderingClass.java" />
+        <option value="$PROJECT_DIR$/test/Rendering/RenderingTest.groovy" />
+        <option value="$PROJECT_DIR$/test/Rendering/RenderingTest.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Window/AppearanceSettings.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Rendering/RenderingClass.java" />
+        <option value="$PROJECT_DIR$/src/ConsoleManegement/ConsoleManagement.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Rendering/Rendering.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Window/Window.java" />
+        <option value="$PROJECT_DIR$/src/GUI/UserCommandInterface/UserCommandInterface.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -134,7 +216,9 @@
     <option name="width" value="1028" />
     <option name="height" value="734" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -158,7 +242,47 @@
               <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
               <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ConsoleManegement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Rendering" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="UserCommandInterface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Window" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
@@ -166,12 +290,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
               <item name="Landscape" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Rendering" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
@@ -183,9 +301,28 @@
       </pane>
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Rendering" />
+      <recent name="Logic.FootprintSpaceTime" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Logic" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="groovy.util.GroovyTestCase" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -230,6 +367,15 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2208" height="1187" extended-state="6" />
     <editor active="true" />
@@ -239,20 +385,20 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24976744" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.4957627" visible="true" weight="0.24976744" />
+      <window_info id="Structure" order="6" sideWeight="0.5042373" side_tool="true" weight="0.24976744" />
+      <window_info id="Favorites" order="7" sideWeight="0.5042373" side_tool="true" weight="0.24976744" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="2" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32954547" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32954547" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32954547" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39962122" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32954547" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -271,56 +417,277 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LevelClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#64#65#0" expanded="true" />
-            <element signature="e#114#115#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/Landscape/Landscape.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/TableObjectRenderingClass.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/TypePhisicalBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rendering/HistChanges.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/HistChangesFromWhen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PhisicalBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PhisicalBodyClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rendering/TableObjectRendering.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rendering/Rendering.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#180#187#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintSpaceTimeTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Rendering/MapRenderClassTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/ImitationFootprintSpaceTimeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Rendering/RenderingTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#19#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/df.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Window/SubWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Window/AppearanceSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GlobalAppearanceSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/RenderingClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/GUI/Rendering/RenderingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConsoleManegement/ConsoleManagement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="79" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/Rendering.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/TableObjectRendering.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Window/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/UserCommandInterface/UserCommandInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="139" selection-start-line="15" selection-start-column="139" selection-end-line="15" selection-end-column="139" />
         </state>
       </provider>
     </entry>

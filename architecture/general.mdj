@@ -4315,7 +4315,7 @@
 											"top": 431,
 											"width": 206,
 											"height": 13,
-											"text": "__ButtonsEmulation__"
+											"text": "__ButtonsSimulation__"
 										},
 										{
 											"_type": "LabelView",
@@ -6386,17 +6386,18 @@
 									"model": {
 										"$ref": "AAAAAAFwuK62JWAhQSY="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1020,
+									"left": 993,
 									"top": 340,
+									"width": 54.55810546875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
 									"hostEdge": {
 										"$ref": "AAAAAAFwuK62JWAkGF0="
 									},
-									"edgePosition": 2
+									"edgePosition": 2,
+									"text": "+wrapper"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -7428,6 +7429,7 @@
 								"_parent": {
 									"$ref": "AAAAAAFwuK62JWAg4mU="
 								},
+								"name": "wrapper",
 								"reference": {
 									"$ref": "AAAAAAFwglwvGyjQWa4="
 								},
@@ -9856,7 +9858,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "__ButtonsEmulation__",
+					"name": "__ButtonsSimulation__",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
