@@ -11,7 +11,7 @@ public class ImitationFootprintSpaceTime implements FootprintSpaceTime {
     public List<Polygon> getAreaFromWhen(Polygon areaFind, long when) { //используется рендерингом, тут бы желательно оберзать большие зоны;
 
 
-        //венуть список всех полигонов из смежных областей
+        //венуть список всех полигонов из смежных областей (итератор)
         //  определение областей, зацепленных полигоном
         //  вернуть все полигоны из зацепленных областей
         //пересечение полигонов
@@ -22,7 +22,6 @@ public class ImitationFootprintSpaceTime implements FootprintSpaceTime {
     }
 
 
-// тут была функция проверки  вхождения точки в полигон, перехала в полигон
 
 
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)//TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть

@@ -8,10 +8,10 @@ import java.awt.*;
 import java.util.Map;
 
 public class MapRenderClass extends JPanel implements MapRender, SubWindow {
-    private int xSubWindow;
-    private int ySubWindow;
-    private int widthSubWindow;
-    private int heightSubWindow;
+    private int xSubWindow = 50;
+    private int ySubWindow = 50;
+    private int widthSubWindow = 900;
+    private int heightSubWindow = 900;
     private String titleSubWindow = "";
 
 
@@ -19,40 +19,24 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private long yOriginRendering;
     private long widthRendring;
     private long heightRendring;
-    private float widthMapScaleRendering;
+    private float widthMapScaleRendering; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
     private float heightMapScaleRendering;
 
 
-    public MapRenderClass(FootprintSpaceTime map__FootprintSpaceTime) {
+    private FootprintSpaceTime mapFootprintSpaceTime;
+
+    public MapRenderClass(FootprintSpaceTime mapFootprintSpaceTime) {
+        this.mapFootprintSpaceTime = mapFootprintSpaceTime;
     }
 
 
     public void paint(Graphics g) {
 
 
-        //получаем полигоны от FootprintSpaceTime из заданной нам зоны за последнее некоторое время (колебание таймера)
-        //
+        //FIXME получаем полигоны от FootprintSpaceTime из заданной нам зоны за последнее некоторое время (колебание таймера)
 
 
 
-
-
-        /*super.paintComponent(g);
-        int[] fillPolygon = new int[4];
-        fillPolygon[0] = 14;
-        fillPolygon[1] = 44;
-        fillPolygon[2] = 34;
-        fillPolygon[3] = 24;
-        int[] ints = new int[4];
-        ints[0] = 120;
-        ints[1] = 72;
-        ints[2] = 42;
-        ints[3] = 52;
-        g.drawPolygon(ints, fillPolygon, ints.length); // последний параметр неверно был задан*/
-
-
-/*        int [] x = {5,  100, 100, 40};
-        int [] y = {50, 50,  100, 110};*/
         int [] x = {50,50,90,90,150,90,90};
         int [] y = {55,85,85,110,70,30,55};
         g.setColor(Color.RED);

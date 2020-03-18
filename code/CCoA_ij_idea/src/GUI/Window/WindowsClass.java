@@ -1,32 +1,28 @@
 package GUI.Window;
 
-import GUI.Rendering.MapRenderClass;
-import GUI.Rendering.imitation.ImitationMapRender;
-import Logic.FootprintSpaceTime.FootprintSpaceTime;
-import Logic.FootprintSpaceTime.imitation.ImitationFootprintSpaceTime;
+import GUI.Rendering.MapRender;
 
 import javax.swing.*;
 
 public class WindowsClass implements Windows {
 
-    int heightWindowDefault = 768;
-    int widthWindowDefault = 1024;
-    String titleGeneralWindowDefault = "Centralized Control of Autopilots";
+    private int heightGeneralWindowDefault = 1000;
+    private int widthGeneralWindowDefault = 1000;
+    private String titleGeneralWindowDefault = "Centralized Control of Autopilots";
 
     JFrame generalWindow;
 
     @Override
-    public void createGeneralWindow() {
+    public void createGeneralWindow(MapRender mapRender) {
         this.generalWindow = new JFrame(titleGeneralWindowDefault); //TODO: add title of room
         this.generalWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        FootprintSpaceTime onlyFootprintSpaceTime = new ImitationFootprintSpaceTime();
-        JPanel subwindowRendering = new MapRenderClass(onlyFootprintSpaceTime);
-//        subwindowRendering.
+
+        JPanel subwindowRendering = (JPanel) mapRender;
         this.generalWindow.add(subwindowRendering);
         this.generalWindow.pack();
 
-        this.generalWindow.setSize(widthWindowDefault, heightWindowDefault);
+        this.generalWindow.setSize(widthGeneralWindowDefault, heightGeneralWindowDefault);
         generalWindow.setVisible(true);
     }
 }

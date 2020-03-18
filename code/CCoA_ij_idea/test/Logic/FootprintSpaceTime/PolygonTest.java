@@ -4,6 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+
+
+//FIXME сделать тут класс рядом, который будет отрисовывать полигоны и проверяемую точку (чтобы было понятней, что не работает
+
+
 public class PolygonTest {
 
     @Test

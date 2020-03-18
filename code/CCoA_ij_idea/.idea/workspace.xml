@@ -2,45 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../__system_infrastructure/code_CCoA.sublime-project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../__system_infrastructure/code_CCoA.sublime-workspace" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CodeStyle.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_manual_infrastructure/bufer.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../bufer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../__system_infrastructure/markdown.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRenderClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRenderClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/imitation/ImitationMapRender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/imitation/ImitationMapRender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Window/SubWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Window/SubWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Window/Windows.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Window/Windows.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Window/WindowsClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Window/WindowsClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintSpaceTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Polygon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Rendering/MapRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Rendering/MapRender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Rendering/imitation/ImitationMapRender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Rendering/imitation/ImitationMapRender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Window/SubWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Window/SubWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Window/Windows.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Window/Windows.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Window/WindowsClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Window/WindowsClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/Screenshot_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/Screenshot_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/buttons/въезд.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/buttons/въезд.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/buttons/выезд.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/buttons/выезд.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/buttons/добавить машину.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/buttons/добавить машину.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/buttons/изменить ландшафт.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/buttons/изменить ландшафт.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/buttons/разрушить.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/buttons/разрушить.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../image_for_desing/buttons/удалить.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../files_manual/image_for_desing/buttons/удалить.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../log_of_development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/log_of_development.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,10 +31,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Window/WindowsClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
+            <state relative-caret-position="153">
+              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,94 +55,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2363">
-              <caret line="180" selection-start-line="180" selection-end-line="180" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/imitation/ImitationMapRender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="51" column="123" selection-start-line="51" selection-start-column="123" selection-end-line="51" selection-end-column="123" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Window/Windows.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="165" column="55" selection-start-line="165" selection-start-column="55" selection-end-line="165" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
-              <folding>
-                <element signature="e#243#244#0" expanded="true" />
-                <element signature="e#267#268#0" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
-                <element signature="e#339#340#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#403#404#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1656#1657#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="476">
+              <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -173,6 +83,20 @@
                 <element signature="e#303#304#0" expanded="true" />
                 <element signature="e#401#402#0" expanded="true" />
                 <element signature="e#428#429#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1656#1657#0" expanded="true" />
+                <element signature="e#1684#1685#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,7 +125,6 @@
       <find>public</find>
       <find>widthSubWindow</find>
       <find>width</find>
-      <find>heightSubWindow</find>
       <find>vertices</find>
       <find>position</find>
       <find>areaPolygon</find>
@@ -213,6 +136,8 @@
       <find>======================================</find>
       <find>===========================================</find>
       <find>squareAroundOrigin</find>
+      <find>Rendering</find>
+      <find>heightSubWindow</find>
     </findStrings>
     <replaceStrings>
       <replace>set</replace>
@@ -229,6 +154,7 @@
       <replace>square</replace>
       <replace>triangle</replace>
       <replace>glassesPolygon</replace>
+      <replace>MapRender</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -266,8 +192,6 @@
         <option value="$PROJECT_DIR$/src/GUI/Rendering/Rendering.java" />
         <option value="$PROJECT_DIR$/src/GUI/UserCommandInterface/UserCommandInterface.java" />
         <option value="$PROJECT_DIR$/src/GUI/Window/Window.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Window/Windows.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/ImitationPolygon.java" />
         <option value="$PROJECT_DIR$/test/GUI/Window/WindowsClassTest.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/ImitationPolygon.java" />
@@ -277,14 +201,16 @@
         <option value="$PROJECT_DIR$/src/GUI/Window/SubWindow.java" />
         <option value="$PROJECT_DIR$/src/GUI/Rendering/imitation/ImitationMapRender.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Window/WindowsClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTimeClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Polygon.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java" />
-        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Window/Windows.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java" />
+        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Window/WindowsClass.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java" />
       </list>
     </option>
   </component>
@@ -359,6 +285,25 @@
               <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
+              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
+              <item name="imitation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -477,9 +422,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PolygonTest_enteringPoint - 2020.03.17 at 18h 42m 07s.xml">
-      <configuration name="PolygonTest.enteringPoint" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PolygonTest_enteringPoint - 2020.03.17 at 18h 42m 38s.xml">
       <configuration name="PolygonTest.enteringPoint" configurationId="JUnit" />
     </history-entry>
@@ -507,6 +449,9 @@
     <history-entry file="PolygonTest_enteringPoint - 2020.03.17 at 19h 16m 23s.xml">
       <configuration name="PolygonTest.enteringPoint" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PolygonTest_enteringPoint - 2020.03.18 at 20h 45m 44s.xml">
+      <configuration name="PolygonTest.enteringPoint" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -526,7 +471,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49526814" visible="true" weight="0.25209302" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49526814" visible="true" weight="0.25209302" />
       <window_info id="Structure" order="6" sideWeight="0.5042373" side_tool="true" weight="0.24976744" />
       <window_info id="Favorites" order="7" sideWeight="0.50473183" side_tool="true" weight="0.24976744" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32954547" />
@@ -535,7 +480,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32954547" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39962122" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -657,16 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Window/SubWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -681,44 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Window/Windows.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Window/WindowsClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2363">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/imitation/ImitationMapRender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -729,10 +630,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="51" column="123" selection-start-line="51" selection-start-column="123" selection-end-line="51" selection-end-column="123" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="459">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#243#244#0" expanded="true" />
             <element signature="e#267#268#0" expanded="true" />
@@ -746,31 +657,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/imitation/ImitationMapRender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
+    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state relative-caret-position="289">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="51" column="123" selection-start-line="51" selection-start-column="123" selection-end-line="51" selection-end-column="123" />
+        <state relative-caret-position="170">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/imitation/ImitationFootprintSpaceTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -789,10 +717,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonTest.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/Window/WindowsClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="165" column="55" selection-start-line="165" selection-start-column="55" selection-end-line="165" selection-end-column="55" />
+        <state relative-caret-position="153">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Window/Windows.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Rendering/MapRenderClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
         </state>
       </provider>
     </entry>
