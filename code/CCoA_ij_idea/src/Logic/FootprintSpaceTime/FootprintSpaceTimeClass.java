@@ -6,6 +6,16 @@ import java.util.List;
 
 public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
     @Override
+    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when) {
+        return null;
+    }
+
+    @Override
+    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when, int level) {
+        return null;
+    }
+
+    @Override
     public void addPointRadius(int ID, Polygon Place, long time) {
 
     }

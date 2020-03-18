@@ -1,11 +1,21 @@
 package GUI.Window;
 
 public interface SubWindow {
-        public int x = 0;
-        public int y = 0;
-        public int width = 0;
-        public int height = 0;
-        public String title = "";
+
+
+        public int getxSubWindow();
+        public void setxSubWindow(int xSubWindow);
+        public int getySubWindow();
+        public void setySubWindow(int ySubWindow);
+        public int getWidthSubWindow();
+        public void setWidthSubWindow(int widthSubWindow);
+        public int getHeightSubWindow();
+        public void setHeightSubWindow(int heightSubWindow);
+        public String getTitleSubWindow();
+        public void setTitleSubWindow(String titleSubWindow);
+
+
+
 
         public void renderContent ();
 }

@@ -10,6 +10,15 @@ public class ImitationMapRender extends JPanel implements MapRender {
 
 
     public void paint(Graphics g) {
+
+
+        //получаем полигоны от FootprintSpaceTime из заданной нам зоны за последнее некоторое время (колебание таймера)
+        //
+
+
+
+
+
         /*super.paintComponent(g);
         int[] fillPolygon = new int[4];
         fillPolygon[0] = 14;
@@ -35,7 +44,7 @@ public class ImitationMapRender extends JPanel implements MapRender {
 
 
     @Override
-    public void renderingZone() {
+    public void renderingZone(long xOriginRendering, long yOriginRendering) {
 
     }
 }
