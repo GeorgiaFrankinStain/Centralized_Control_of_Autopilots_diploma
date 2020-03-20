@@ -3,7 +3,10 @@ import GUI.Rendering.MapRenderClass;
 import GUI.Window.Windows;
 import GUI.Window.WindowsClass;
 import Logic.FootprintSpaceTime.FootprintSpaceTime;
+import Logic.FootprintSpaceTime.FootprintSpaceTimeClass;
 import Logic.FootprintSpaceTime.imitation.ImitationFootprintSpaceTime;
+import Logic.Landscape.Landscape;
+import Logic.Landscape.LandscapeClass;
 
 import javax.swing.*;
 
@@ -12,13 +15,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-        FootprintSpaceTime onlyFootprintSpaceTime = new ImitationFootprintSpaceTime(); //create FootprintSpaceTime () //PUNKT_1
+        //create Landscape ()
+        Landscape onlyLandscape = new LandscapeClass();
+        FootprintSpaceTime onlyFootprintSpaceTime = new FootprintSpaceTimeClass(onlyLandscape); //create FootprintSpaceTime (Landscape) //PUNKT_1
 
 
 
 
         //PUNKT_2
-        //create Landscape (FootprintSpaceTime)
         //create MovingObjects (FootprintSpaceTime)
 
         //create AreasBenchmarkPathsDijkstra (FootprintSpaceTime, Landscape)

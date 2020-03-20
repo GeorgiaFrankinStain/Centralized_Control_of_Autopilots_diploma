@@ -1,5 +1,15 @@
 package Logic.Landscape;
 
 
-public interface Landscape{
+import Logic.FootprintSpaceTime.Point;
+import Logic.FootprintSpaceTime.Polygon;
+import Logic.MovingObjects.Path;
+
+import java.util.List;
+
+public interface Landscape {
+    public void fillArea();
+    public long speedInfluenceEnvironmentOnProperties(long speed);
+    public List<Point> getPointsDirectAccess(Polygon area);
+    public Path getDijkstraPath(Point from, Point to); //TODO: толстая машина не может проезать через узкое ущелье
 }

@@ -1,17 +1,44 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.Rendering.HistChangesFromWhen;
+import GUI.Rendering.RendeingPolygonsFromWhen;
+import Logic.Landscape.Landscape;
+import Logic.TypesInLevel;
 
 import java.util.List;
 
-public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
-    @Override
-    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when) {
-        return null;
+public class FootprintSpaceTimeClass implements FootprintSpaceTime, RendeingPolygonsFromWhen, HistChangesFromWhen {
+
+    List<Polygon> xranilishe; //STACK_NOW
+    Landscape onlyLandscape;
+
+
+    public FootprintSpaceTimeClass(Landscape onlyLandscape) {
+        this.onlyLandscape = onlyLandscape;
     }
 
     @Override
-    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when, int level) {
+    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when) { //используется рендерингом, тут бы желательно оберзать большие зоны; рендеринг сам обрежет большие зоны
+
+
+        //венуть список всех полигонов из смежных областей (итератор)
+        //  определение областей, зацепленных полигоном
+        //  вернуть все полигоны из зацепленных областей
+        //пересечение полигонов
+        //возвращаем список всех пересекающихся полигонов
+
+
+        return null;
+    }
+
+
+
+
+    //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
+    //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
+
+    @Override
+    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when,  TypesInLevel type) {
         return null;
     }
 
@@ -31,17 +58,27 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     }
 
     @Override
-    public boolean getAccessPlace(Polygon place, long time, int level) {
+    public boolean getAccessPlace(Polygon place, long time,  TypesInLevel type) {
         return false;
     }
 
     @Override
-    public List<PhisicalBody> getPhysicalBodysFromWhen(Polygon areaFind, long when) {
+    public List<RenderingPolygon> getRenderingPolygonsFromWhen(Polygon areaFind, long when) {
         return null;
     }
 
     @Override
-    public List<PhisicalBody> getPhysicalBodysFromWhen(Polygon areaFind, long when, int level) {
+    public List<RenderingPolygon> getRenderingPolygonsFromWhen(Polygon areaFind, long when, TypesInLevel type) {
         return null;
+    }
+
+    @Override
+    public Polygon getAreaChangesAfterBefore(long afterTime, long berforeTime) {
+        return null;
+    }
+
+    @Override
+    public long getTimeLastUpdate() {
+        return 0;
     }
 }

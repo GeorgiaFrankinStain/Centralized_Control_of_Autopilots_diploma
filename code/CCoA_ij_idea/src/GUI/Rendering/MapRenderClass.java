@@ -24,6 +24,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
 
     private FootprintSpaceTime mapFootprintSpaceTime;
+    private long timeLastRendering;
 
     public MapRenderClass(FootprintSpaceTime mapFootprintSpaceTime) {
         this.mapFootprintSpaceTime = mapFootprintSpaceTime;
@@ -35,6 +36,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
         //FIXME получаем полигоны от FootprintSpaceTime из заданной нам зоны за последнее некоторое время (колебание таймера)
 
+        //
 
 
         int [] x = {50,50,90,90,150,90,90};

@@ -2,7 +2,7 @@ package Logic.FootprintSpaceTime;
 
 import GUI.Rendering.TypePhisicalBody;
 
-public interface PhisicalBody {
+public interface RenderingPolygon {
     Polygon getArea();
     TypePhisicalBody getTypePhisicalBody();
     int getID();

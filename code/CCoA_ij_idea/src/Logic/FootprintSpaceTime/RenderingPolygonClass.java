@@ -1,4 +1,4 @@
 package Logic.FootprintSpaceTime;
 
-public class PhisicalBodyClass {
+public class RenderingPolygonClass {
 }
