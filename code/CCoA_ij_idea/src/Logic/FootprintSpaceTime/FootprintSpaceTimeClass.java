@@ -1,15 +1,15 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.Rendering.HistChangesFromWhen;
-import GUI.Rendering.RendeingPolygonsFromWhen;
+import GUI.Rendering.RenderingPolygonsFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.TypesInLevel;
 
 import java.util.List;
 
-public class FootprintSpaceTimeClass implements FootprintSpaceTime, RendeingPolygonsFromWhen, HistChangesFromWhen {
+public class FootprintSpaceTimeClass implements FootprintSpaceTime, RenderingPolygonsFromWhen, HistChangesFromWhen {
 
-    List<Polygon> xranilishe; //STACK_NOW
+    List<PolygonExtended> xranilishe; //STACK_NOW
     Landscape onlyLandscape;
 
 
@@ -18,7 +18,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, RendeingPoly
     }
 
     @Override
-    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when) { //используется рендерингом, тут бы желательно оберзать большие зоны; рендеринг сам обрежет большие зоны
+    public List<PolygonExtended> getAreaFromWhen(PolygonExtended areaFind, long when) { //используется рендерингом, тут бы желательно оберзать большие зоны; рендеринг сам обрежет большие зоны
 
 
         //венуть список всех полигонов из смежных областей (итератор)
@@ -38,17 +38,17 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, RendeingPoly
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
 
     @Override
-    public List<Polygon> getAreaFromWhen(Polygon areaFind, long when,  TypesInLevel type) {
+    public List<PolygonExtended> getAreaFromWhen(PolygonExtended areaFind, long when, TypesInLevel type) {
         return null;
     }
 
     @Override
-    public void addPointRadius(int ID, Polygon Place, long time) {
+    public void addPointRadius(int ID, PolygonExtended Place, long time) {
 
     }
 
     @Override
-    public void addPointRadius(int ID, Polygon Place) {
+    public void addPointRadius(int ID, PolygonExtended Place) {
 
     }
 
@@ -58,22 +58,22 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, RendeingPoly
     }
 
     @Override
-    public boolean getAccessPlace(Polygon place, long time,  TypesInLevel type) {
+    public boolean getAccessPlace(PolygonExtended place, long time, TypesInLevel type) {
         return false;
     }
 
     @Override
-    public List<RenderingPolygon> getRenderingPolygonsFromWhen(Polygon areaFind, long when) {
+    public List<RenderingPolygon> getRenderingPolygonsFromWhen(PolygonExtended areaFind, long when) {
         return null;
     }
 
     @Override
-    public List<RenderingPolygon> getRenderingPolygonsFromWhen(Polygon areaFind, long when, TypesInLevel type) {
+    public List<RenderingPolygon> getRenderingPolygonsFromWhen(PolygonExtended areaFind, long when, TypesInLevel type) {
         return null;
     }
 
     @Override
-    public Polygon getAreaChangesAfterBefore(long afterTime, long berforeTime) {
+    public PolygonExtended getAreaChangesAfterBefore(long afterTime, long berforeTime) {
         return null;
     }
 

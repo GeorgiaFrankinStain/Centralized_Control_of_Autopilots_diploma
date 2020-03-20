@@ -1,6 +1,6 @@
 package Logic.FootprintSpaceTime;
 
-public interface Polygon {
+public interface PolygonExtended {
     public int countPoints();
 
     public Point getPoint(int index);

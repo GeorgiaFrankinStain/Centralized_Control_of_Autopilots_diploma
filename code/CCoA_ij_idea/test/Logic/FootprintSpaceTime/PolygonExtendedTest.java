@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 //FIXME сделать тут класс рядом, который будет отрисовывать полигоны и проверяемую точку (чтобы было понятней, что не работает
 
 
-public class PolygonTest {
+public class PolygonExtendedTest {
 
     @Test
     public void countPoints() {
@@ -29,7 +29,7 @@ public class PolygonTest {
     @Test
     public void enteringPoint() {
         {
-            Polygon square = new PolygonClass();
+            PolygonExtended square = new PolygonExtendedClass();
             square.setPoint(new PointClass(10, 10));
             square.setPoint(new PointClass(10, 20));
             square.setPoint(new PointClass(20, 20));
@@ -91,7 +91,7 @@ public class PolygonTest {
 
 
         {
-            Polygon triangle = new PolygonClass();
+            PolygonExtended triangle = new PolygonExtendedClass();
             triangle.setPoint(new PointClass(10, 10));
             triangle.setPoint(new PointClass(20, 10));
             triangle.setPoint(new PointClass(15, 20));
@@ -131,7 +131,7 @@ public class PolygonTest {
             }
         }
         {
-            Polygon squareAroundOrigin = new PolygonClass();
+            PolygonExtended squareAroundOrigin = new PolygonExtendedClass();
             squareAroundOrigin.setPoint(new PointClass(-10, -10));
             squareAroundOrigin.setPoint(new PointClass(10, -10));
             squareAroundOrigin.setPoint(new PointClass(10, 10));
@@ -146,7 +146,7 @@ public class PolygonTest {
         /*
 
         {
-            Polygon glassesPolygon = new PolygonClass();
+            PolygonExtended glassesPolygon = new PolygonExtendedClass();
             glassesPolygon.setPoint(new PointClass(0, 15));
             glassesPolygon.setPoint(new PointClass(15, 15));
             glassesPolygon.setPoint(new PointClass(55, 56));

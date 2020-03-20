@@ -1,11 +1,14 @@
 package GUI.Rendering;
 
 import GUI.Window.SubWindow;
-import Logic.FootprintSpaceTime.FootprintSpaceTime;
+import Logic.FootprintSpaceTime.PointClass;
+import Logic.FootprintSpaceTime.PolygonExtended;
+import Logic.FootprintSpaceTime.PolygonExtendedClass;
+import Logic.FootprintSpaceTime.RenderingPolygon;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Map;
+import java.util.List;
 
 public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private int xSubWindow = 50;
@@ -15,19 +18,19 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private String titleSubWindow = "";
 
 
-    private long xOriginRendering;
-    private long yOriginRendering;
-    private long widthRendring;
-    private long heightRendring;
-    private float widthMapScaleRendering; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
-    private float heightMapScaleRendering;
+    private long xOriginRendering = 0;
+    private long yOriginRendering = 0;
+    private long widthRendring = 900;
+    private long heightRendring = 900;
+    private float widthMapScaleRendering = 1; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
+    private float heightMapScaleRendering = 1; //FIXME CRITICAL
 
 
-    private FootprintSpaceTime mapFootprintSpaceTime;
-    private long timeLastRendering;
+    private RenderingPolygonsFromWhen mapRenderingPolygonsFromWhen;
+    private long timeLastRenderingLandscape;
 
-    public MapRenderClass(FootprintSpaceTime mapFootprintSpaceTime) {
-        this.mapFootprintSpaceTime = mapFootprintSpaceTime;
+    public MapRenderClass(RenderingPolygonsFromWhen mapFootprintSpaceTime) {
+        this.mapRenderingPolygonsFromWhen = mapFootprintSpaceTime;
     }
 
 
@@ -36,20 +39,53 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
         //FIXME получаем полигоны от FootprintSpaceTime из заданной нам зоны за последнее некоторое время (колебание таймера)
 
-        //
+        List<RenderingPolygon> objectsOfRendering =
+                this.mapRenderingPolygonsFromWhen.getRenderingPolygonsFromWhen(this.getAreaOfRendering(), 1); //FIXME CRITICAL add time variable
 
 
-        int [] x = {50,50,90,90,150,90,90};
-        int [] y = {55,85,85,110,70,30,55};
+        //сравниваем время последнего обновления ландшафта и время последнего рендеринга ландшафта //FIXME realised comments
+        //если устарело, то обновляем ландшафт (по началу будем все отрисовывать
+
+        //отрисовываем изменившиеся части (сначала будем отрисовывать все подряд, а потом то, у чего хешь свойств изменился
+
+
+        int[] x = {50, 50, 90, 90, 150, 90, 90};
+        int[] y = {55, 85, 85, 110, 70, 30, 55};
         g.setColor(Color.RED);
-//        g.drawPolygon(x, y, x.length);
+        g.fillPolygon(x, y, x.length);
         g.fillPolygon(x, y, x.length);
     }
 
+    private void fillPolygon(PolygonExtended objectOfRendering) {
+        int[] xArray = new int[objectOfRendering.countPoints()];
+        int[] yArray = new int[objectOfRendering.countPoints()];
 
+        for (int i = 0; i < objectOfRendering.countPoints(); i++) {
+//            xArray[i] = objectOfRendering.getPoint(i).getX()
+        }
+    }
 
+    private PolygonExtended getAreaOfRendering() {
+        PolygonExtended resPolygon = new PolygonExtendedClass();
+        resPolygon.setPoint(new PointClass(
+                this.xOriginRendering,
+                this.yOriginRendering
+        ));
+        resPolygon.setPoint(new PointClass(
+                this.xOriginRendering + this.widthRendring,
+                this.yOriginRendering)
+        );
+        resPolygon.setPoint(new PointClass(
+                this.xOriginRendering + this.widthRendring,
+                this.yOriginRendering + this.heightRendring
+        ));
+        resPolygon.setPoint(new PointClass(
+                this.xOriginRendering,
+                this.yOriginRendering + this.heightRendring
+        ));
 
-
+        return resPolygon;
+    }
 
 
     //==== <start> <Getter_and_Setter> ==================================================

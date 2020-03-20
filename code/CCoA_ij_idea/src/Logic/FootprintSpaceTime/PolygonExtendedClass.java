@@ -3,16 +3,16 @@ package Logic.FootprintSpaceTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PolygonClass implements Polygon {
+public class PolygonExtendedClass implements PolygonExtended {
     public List<Point> points = new ArrayList<Point>();;
 
     //FIXME rule of create polygon (lines don't intersect) (запретить узкие полигоны)
 
 
-    public PolygonClass() {
+    public PolygonExtendedClass() {
     }
 
-    public PolygonClass(List<Point> points) {
+    public PolygonExtendedClass(List<Point> points) {
         this.points = points;
     }
 

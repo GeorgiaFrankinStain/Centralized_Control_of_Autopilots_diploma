@@ -1,14 +1,12 @@
 import GUI.Rendering.MapRender;
 import GUI.Rendering.MapRenderClass;
+import GUI.Rendering.RenderingPolygonsFromWhen;
 import GUI.Window.Windows;
 import GUI.Window.WindowsClass;
 import Logic.FootprintSpaceTime.FootprintSpaceTime;
 import Logic.FootprintSpaceTime.FootprintSpaceTimeClass;
-import Logic.FootprintSpaceTime.imitation.ImitationFootprintSpaceTime;
 import Logic.Landscape.Landscape;
 import Logic.Landscape.LandscapeClass;
-
-import javax.swing.*;
 
 public class Main {
 
@@ -49,7 +47,7 @@ public class Main {
 
 
 
-        MapRender subwindowMapRendering = new MapRenderClass(onlyFootprintSpaceTime); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
+        MapRender subwindowMapRendering = new MapRenderClass((RenderingPolygonsFromWhen) onlyFootprintSpaceTime); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
