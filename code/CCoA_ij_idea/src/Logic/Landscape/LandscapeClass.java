@@ -1,23 +1,45 @@
 package Logic.Landscape;
 
 import GUI.Rendering.HistChangesFromWhen;
-import GUI.Rendering.RenderingPolygonsFromWhen;
-import Logic.FootprintSpaceTime.Point;
-import Logic.FootprintSpaceTime.PolygonExtended;
-import Logic.FootprintSpaceTime.RenderingPolygon;
+import GUI.Rendering.PhisicalBodysFromWhen;
+import GUI.Rendering.TypePhisicalBody;
+import Logic.FootprintSpaceTime.*;
 import Logic.MovingObjects.Path;
 import Logic.TypesInLevel;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class LandscapeClass implements Landscape, RenderingPolygonsFromWhen, HistChangesFromWhen {
+public class LandscapeClass implements Landscape, PhisicalBodysFromWhen, HistChangesFromWhen {
     @Override
-    public List<RenderingPolygon> getRenderingPolygonsFromWhen(PolygonExtended areaFind, long when) {
-        return null;
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int when) {
+        //FIXME CRITICAL IMITATION
+
+        PolygonExtended imitationPolygon = new PolygonExtendedClass();
+
+        imitationPolygon.setPoint(new PointClass(0, 0));
+        imitationPolygon.setPoint(new PointClass(900, 0));
+        imitationPolygon.setPoint(new PointClass(100, 400));
+        imitationPolygon.setPoint(new PointClass(0, 400));
+
+
+
+        PolygonExtended imitationPolygon2 = new PolygonExtendedClass();
+
+        imitationPolygon2.setPoint(new PointClass(0, 0));
+        imitationPolygon2.setPoint(new PointClass(900, 0));
+        imitationPolygon2.setPoint(new PointClass(900, 900));
+        imitationPolygon2.setPoint(new PointClass(0, 900));
+
+        List<PhisicalBody> resList = new ArrayList<PhisicalBody>();
+        resList.add(new PhisicalBodyClass(imitationPolygon2, TypePhisicalBody.GRASS, 234568));
+        resList.add(new PhisicalBodyClass(imitationPolygon, TypePhisicalBody.GRASS, 234567));
+
+        return resList;
     }
 
     @Override
-    public List<RenderingPolygon> getRenderingPolygonsFromWhen(PolygonExtended areaFind, long when, TypesInLevel type) {
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int when, TypesInLevel type) {
         return null;
     }
 
@@ -27,7 +49,7 @@ public class LandscapeClass implements Landscape, RenderingPolygonsFromWhen, His
     }
 
     @Override
-    public long speedInfluenceEnvironmentOnProperties(long speed) {
+    public int speedInfluenceEnvironmentOnProperties(int speed) {
         return 0;
     }
 
@@ -42,12 +64,12 @@ public class LandscapeClass implements Landscape, RenderingPolygonsFromWhen, His
     }
 
     @Override
-    public PolygonExtended getAreaChangesAfterBefore(long afterTime, long berforeTime) {
+    public PolygonExtended getAreaChangesAfterBefore(int afterTime, int berforeTime) {
         return null;
     }
 
     @Override
-    public long getTimeLastUpdate() {
+    public int getTimeLastUpdate() {
         return 0;
     }
 }

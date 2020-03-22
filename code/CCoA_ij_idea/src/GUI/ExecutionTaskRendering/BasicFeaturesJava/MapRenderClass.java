@@ -1,10 +1,7 @@
-package GUI.Rendering;
+package GUI.StatementTaskRendering;
 
-import GUI.Window.SubWindow;
-import Logic.FootprintSpaceTime.PointClass;
-import Logic.FootprintSpaceTime.PolygonExtended;
-import Logic.FootprintSpaceTime.PolygonExtendedClass;
-import Logic.FootprintSpaceTime.RenderingPolygon;
+import GUI.ExecutionTaskRendering.SubWindow;
+import Logic.FootprintSpaceTime.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,19 +15,19 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private String titleSubWindow = "";
 
 
-    private long xOriginRendering = 0;
-    private long yOriginRendering = 0;
-    private long widthRendring = 900;
-    private long heightRendring = 900;
+    private int xOriginRendering = 0;
+    private int yOriginRendering = 0;
+    private int widthRendring = 900;
+    private int heightRendring = 900;
     private float widthMapScaleRendering = 1; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
     private float heightMapScaleRendering = 1; //FIXME CRITICAL
 
 
-    private RenderingPolygonsFromWhen mapRenderingPolygonsFromWhen;
-    private long timeLastRenderingLandscape;
+    private FootprintSpaceTime mapFootprintSpaceTime;
+    private int timeLastRenderingLandscape;
 
-    public MapRenderClass(RenderingPolygonsFromWhen mapFootprintSpaceTime) {
-        this.mapRenderingPolygonsFromWhen = mapFootprintSpaceTime;
+    public MapRenderClass(FootprintSpaceTime mapFootprintSpaceTime) {
+        this.mapFootprintSpaceTime = mapFootprintSpaceTime;
     }
 
 
@@ -39,8 +36,9 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
         //FIXME получаем полигоны от FootprintSpaceTime из заданной нам зоны за последнее некоторое время (колебание таймера)
 
-        List<RenderingPolygon> objectsOfRendering =
-                this.mapRenderingPolygonsFromWhen.getRenderingPolygonsFromWhen(this.getAreaOfRendering(), 1); //FIXME CRITICAL add time variable
+        PhisicalBodysFromWhen mapPhisicalBodysFromWhen = (PhisicalBodysFromWhen) this.mapFootprintSpaceTime; //STACK 00000
+        List<PhisicalBody> objectsOfRendering =
+                mapPhisicalBodysFromWhen.getPhisicalBodysFromWhen(this.getAreaOfRendering(), 1); //FIXME CRITICAL add time variable
 
 
         //сравниваем время последнего обновления ландшафта и время последнего рендеринга ландшафта //FIXME realised comments
@@ -48,21 +46,33 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
         //отрисовываем изменившиеся части (сначала будем отрисовывать все подряд, а потом то, у чего хешь свойств изменился
 
+        for (PhisicalBody currentPolygon : objectsOfRendering) {
+            this.fillPolygon(currentPolygon.getPolygonExtended(), g);
 
-        int[] x = {50, 50, 90, 90, 150, 90, 90};
-        int[] y = {55, 85, 85, 110, 70, 30, 55};
-        g.setColor(Color.RED);
-        g.fillPolygon(x, y, x.length);
-        g.fillPolygon(x, y, x.length);
+        }
     }
 
-    private void fillPolygon(PolygonExtended objectOfRendering) {
-        int[] xArray = new int[objectOfRendering.countPoints()];
-        int[] yArray = new int[objectOfRendering.countPoints()];
+    private int est_temp_color = 0;
+    private void fillPolygon(PolygonExtended objectOfRendering, Graphics g) {
+        int[] xPoints = new int[objectOfRendering.countPoints()];
+        int[] yPoints = new int[objectOfRendering.countPoints()];
 
         for (int i = 0; i < objectOfRendering.countPoints(); i++) {
-//            xArray[i] = objectOfRendering.getPoint(i).getX()
+            xPoints[i] = objectOfRendering.getPoint(i).getX();
+            yPoints[i] = objectOfRendering.getPoint(i).getY();
         }
+
+
+        if (this.est_temp_color == 0) {
+
+            g.setColor(Color.RED);
+            this.est_temp_color++;
+        }
+        else
+            g.setColor(Color.BLACK);
+        g.fillPolygon(xPoints, yPoints, xPoints.length);
+
+
     }
 
     private PolygonExtended getAreaOfRendering() {
@@ -90,35 +100,35 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
     //==== <start> <Getter_and_Setter> ==================================================
 
-    public long getxOriginRendering() {
+    public int getxOriginRendering() {
         return xOriginRendering;
     }
 
-    public void setxOriginRendering(long xOriginRendering) {
+    public void setxOriginRendering(int xOriginRendering) {
         this.xOriginRendering = xOriginRendering;
     }
 
-    public long getyOriginRendering() {
+    public int getyOriginRendering() {
         return yOriginRendering;
     }
 
-    public void setyOriginRendering(long yOriginRendering) {
+    public void setyOriginRendering(int yOriginRendering) {
         this.yOriginRendering = yOriginRendering;
     }
 
-    public long getWidthRendring() {
+    public int getWidthRendring() {
         return widthRendring;
     }
 
-    public void setWidthRendring(long widthRendring) {
+    public void setWidthRendring(int widthRendring) {
         this.widthRendring = widthRendring;
     }
 
-    public long getHeightRendring() {
+    public int getHeightRendring() {
         return heightRendring;
     }
 
-    public void setHeightRendring(long heightRendring) {
+    public void setHeightRendring(int heightRendring) {
         this.heightRendring = heightRendring;
     }
 
@@ -197,7 +207,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     }
 
     @Override
-    public void renderingZone(long xOriginRendering, long yOriginRendering) {
+    public void renderingZone(int xOriginRendering, int yOriginRendering) {
 
     }
 

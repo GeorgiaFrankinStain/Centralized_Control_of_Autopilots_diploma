@@ -1,31 +1,31 @@
 package Logic.FootprintSpaceTime;
 
 public class PointClass implements Point {
-    private long x;
-    private long y;
+    private int x;
+    private int y;
 
-    public PointClass(long x, long y) {
+    public PointClass(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     @Override
-    public long getX() {
+    public int getX() {
         return x;
     }
 
     @Override
-    public void setX(long x) {
+    public void setX(int x) {
         this.x = x;
     }
 
     @Override
-    public long getY() {
+    public int getY() {
         return y;
     }
 
     @Override
-    public void setY(long y) {
+    public void setY(int y) {
         this.y = y;
     }
 
@@ -33,7 +33,7 @@ public class PointClass implements Point {
 
     @Override
     public int hashCode() {
-        long twoPow32 = 2147483647;
+        int twoPow32 = 2147483647;
         final int prime = 31;
         int result = 1;
         result = prime * result + (int) (this.getY() % twoPow32);

@@ -1,6 +1,6 @@
 package GUI.Window;
 
-import GUI.Rendering.MapRender;
+import GUI.StatementTaskRendering.MapRender;
 
 import javax.swing.*;
 
@@ -17,12 +17,18 @@ public class WindowsClass implements Windows {
         this.generalWindow = new JFrame(titleGeneralWindowDefault); //TODO: add title of room
         this.generalWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+//        this.generalWindow.setUndecorated(true);
+//        this.generalWindow.setExtendedState(JFrame.MAXIMIZED_BOTH); //сделать игру полноэкранной
 
         JPanel subwindowRendering = (JPanel) mapRender;
         this.generalWindow.add(subwindowRendering);
         this.generalWindow.pack();
 
         this.generalWindow.setSize(widthGeneralWindowDefault, heightGeneralWindowDefault);
+
+
+
+
         generalWindow.setVisible(true);
     }
 }

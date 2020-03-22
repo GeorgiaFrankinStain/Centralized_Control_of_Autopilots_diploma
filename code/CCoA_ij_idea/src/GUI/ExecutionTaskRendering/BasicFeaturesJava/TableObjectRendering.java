@@ -1,4 +1,4 @@
-package GUI.Rendering;
+package GUI.StatementTaskRendering;
 
 /**
  * Information of interpretation of the polygon for each type object.

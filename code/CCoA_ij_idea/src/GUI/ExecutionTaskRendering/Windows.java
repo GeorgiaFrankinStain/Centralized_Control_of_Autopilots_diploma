@@ -1,6 +1,6 @@
 package GUI.Window;
 
-import GUI.Rendering.MapRender;
+import GUI.StatementTaskRendering.MapRender;
 
 /**
  * Organization MapRender and UserCommandInterface ... in one window. Centeralized control.
