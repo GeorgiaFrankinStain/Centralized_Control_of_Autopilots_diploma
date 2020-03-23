@@ -1,6 +1,4 @@
-package GUI.Window;
-
-import GUI.StatementTaskRendering.MapRender;
+package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
 import javax.swing.*;
 

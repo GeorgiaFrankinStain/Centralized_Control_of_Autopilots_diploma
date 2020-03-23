@@ -1,4 +1,4 @@
-package GUI.Window;
+package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
 public interface SubWindow {
 

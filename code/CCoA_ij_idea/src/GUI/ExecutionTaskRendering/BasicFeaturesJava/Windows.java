@@ -1,6 +1,4 @@
-package GUI.Window;
-
-import GUI.StatementTaskRendering.MapRender;
+package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
 /**
  * Organization MapRender and UserCommandInterface ... in one window. Centeralized control.
