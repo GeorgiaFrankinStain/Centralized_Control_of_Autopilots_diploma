@@ -1,11 +1,10 @@
 package Logic.FootprintSpaceTime;
 
-import GUI.Rendering.TypePhisicalBody;
+import GUI.StatementTaskRendering.TypePhisicalBody;
 
 public interface PhisicalBody {
-    PolygonExtended getPolygonExtended();
+    PolygonExtended getArea();
     TypePhisicalBody getTypePhisicalBody();
     int getID();
     int getLevel();
-
 }

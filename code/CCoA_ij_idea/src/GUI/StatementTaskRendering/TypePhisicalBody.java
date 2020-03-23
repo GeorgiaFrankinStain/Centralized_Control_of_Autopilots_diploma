@@ -1,4 +1,4 @@
-package GUI.Rendering;
+package GUI.StatementTaskRendering;
 
 public enum TypePhisicalBody {
     MACHINE,

@@ -1,6 +1,6 @@
-import GUI.Rendering.MapRender;
-import GUI.Rendering.MapRenderClass;
-import GUI.Rendering.PhisicalBodysFromWhen;
+import GUI.StatementTaskRendering.MapRender;
+import GUI.StatementTaskRendering.MapRenderClass;
+import GUI.StatementTaskRendering.PhisicalBodysFromWhen;
 import GUI.Window.Windows;
 import GUI.Window.WindowsClass;
 import Logic.FootprintSpaceTime.FootprintSpaceTime;
@@ -47,7 +47,7 @@ public class Main {
 
 
 
-        MapRender subwindowMapRendering = new MapRenderClass(onlyFootprintSpaceTime); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
+        MapRender subwindowMapRendering = new MapRenderClass((PhisicalBodysFromWhen) onlyFootprintSpaceTime); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4

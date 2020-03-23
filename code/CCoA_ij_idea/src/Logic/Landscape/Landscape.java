@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface Landscape {
     public void fillArea();
-    public int speedInfluenceEnvironmentOnProperties(int speed);
+    public int  speedInfluenceEnvironmentOnProperties(int  speed);
     public List<Point> getPointsDirectAccess(PolygonExtended area);
     public Path getDijkstraPath(Point from, Point to); //TODO: толстая машина не может проезать через узкое ущелье
 }
