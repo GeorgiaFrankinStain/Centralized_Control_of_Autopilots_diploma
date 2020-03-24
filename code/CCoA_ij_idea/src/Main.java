@@ -1,8 +1,7 @@
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.MapRender;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.MapRenderClass;
-import GUI.ExecutionTaskRendering.PoolPhisicalBodys;
-import GUI.ExecutionTaskRendering.PoolPhisicalBodysClass;
-import GUI.StatementTaskRendering.PhisicalBodysFromWhen;
+import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
+import GUI.StatementTaskRendering.PoolPhisicalBodysForRenderingClass;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
 import Logic.FootprintSpaceTime.FootprintSpaceTime;
@@ -43,11 +42,11 @@ public class Main {
         //create DriverMachine (MovingObjects)
         //create ObserverUpdate(AreasBenchmarkPathsDijkstra, PathsMachines)
 
+
         //create ConsoleManagement (AutoDisainerMachines, DisainerLandscape, DriverMachine, ObserverUpdate) //создавать только после полноценного создания входящих на вход объектов
 
-
-        PoolPhisicalBodys poolPhisicalBodys = new PoolPhisicalBodysClass(onlyFootprintSpaceTime);
-        MapRender subwindowMapRendering = new MapRenderClass(poolPhisicalBodys); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
+        PoolPhisicalBodysForRendering poolPhisicalBodysForRendering = new PoolPhisicalBodysForRenderingClass(onlyFootprintSpaceTime);
+        MapRender subwindowMapRendering = new MapRenderClass(poolPhisicalBodysForRendering); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4

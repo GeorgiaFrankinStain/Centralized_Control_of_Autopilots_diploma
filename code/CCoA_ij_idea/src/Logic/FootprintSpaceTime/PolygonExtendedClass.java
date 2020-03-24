@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PolygonExtendedClass implements PolygonExtended {
-    public List<Point> points = new ArrayList<Point>();;
+    private List<Point> points = new ArrayList<Point>();;
 
-    //FIXME rule of create polygon (lines don't intersect) (запретить узкие полигоны)
+    //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons)
 
 
     public PolygonExtendedClass() {
@@ -81,5 +81,19 @@ public class PolygonExtendedClass implements PolygonExtended {
         }
 
         return isPointInPolygon;
+    }
+
+    @Override
+    public boolean intersectionPolygon(PolygonExtended secondPolygon) {
+        boolean isIntersection = false;
+
+        for (Point currentPoint : points) {
+            if (secondPolygon.enteringPoint(currentPoint)) {
+                isIntersection = true;
+                break;
+            }
+        }
+
+        return isIntersection;
     }
 }

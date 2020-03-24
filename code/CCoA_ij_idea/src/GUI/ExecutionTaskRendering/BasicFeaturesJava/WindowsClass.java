@@ -15,7 +15,7 @@ public class WindowsClass implements Windows {
         this.generalWindow = new JFrame(titleGeneralWindowDefault); //TODO: add title of room
         this.generalWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
+        //FIXME CRITICAL create panel buttons
         JPanel subwindowRendering = (JPanel) mapRender;
         this.generalWindow.add(subwindowRendering);
         this.generalWindow.pack();

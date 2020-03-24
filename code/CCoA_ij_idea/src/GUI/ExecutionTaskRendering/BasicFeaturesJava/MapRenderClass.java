@@ -1,17 +1,11 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
-import GUI.ExecutionTaskRendering.PoolPhisicalBodys;
-import GUI.ExecutionTaskRendering.PoolPhisicalBodysClass;
-import GUI.StatementTaskRendering.PhisicalBodysFromWhen;
-import Logic.FootprintSpaceTime.PointClass;
-import Logic.FootprintSpaceTime.PolygonExtended;
-import Logic.FootprintSpaceTime.PolygonExtendedClass;
-import Logic.FootprintSpaceTime.PhisicalBody;
+import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
+import Logic.FootprintSpaceTime.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Iterator;
-import java.util.List;
 
 public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private int xSubWindow = 50;
@@ -29,33 +23,34 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private float heightMapScaleRendering = 1; //FIXME CRITICAL
 
 
-    private PhisicalBodysFromWhen mapPhisicalBodysFromWhen;
 
-    PoolPhisicalBodys poolPhisicalBodys;
+    PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
 
-    public MapRenderClass(PoolPhisicalBodys poolPhisicalBodys) {
-        this.poolPhisicalBodys = poolPhisicalBodys;
+    public MapRenderClass(PoolPhisicalBodysForRendering poolPhisicalBodysForRendering) {
+        this.poolPhisicalBodysForRendering = poolPhisicalBodysForRendering;
     }
 
 
     public void paint(Graphics g) {
 
 
-        this.poolPhisicalBodys.fillYourself(this.getAreaOfRendering(), 1); //FIXME CRITICAL add time variable
+        this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), 1); //FIXME CRITICAL add time variable
 
 
         //TODO REALISED comments
-        //программа минимум:
-        //  отрисовываем все
-        //программа максимум:
-        //  отрисовываем только изменения (отслеживаение изменений ляжет на плечи PoolPhisicalBodys; там будет реализован итератор изменившихся объектов, а не всех)
+        //minimum program:
+        //    drawing everything
+        //maximum program:
+        //    drawing only changes (tracking changes will fall on the shoulders of PoolPhisicalBodysForRendering; it will implement an iterator of the changed objects, not all of them)
 
 
         g.setColor(Color.RED);
-        Iterator<PhisicalBody> it = this.poolPhisicalBodys.iterator();
-        while (it.hasNext()) {
+        Iterator<PhisicalBody> it = this.poolPhisicalBodysForRendering.iterator();
+        while (it.hasNext()) { //FIXME foreach of object rendering, not object pool
             this.printPolygonIn2array(it.next().getArea(), g);
         }
+
+        //TODO REALISED LINK_uVPgVFwt (1) create a iteration of changes, not rendering objects (2) create for delete deleting objects
     }
 
     private void printPolygonIn2array(PolygonExtended objectOfRendering, Graphics g) {

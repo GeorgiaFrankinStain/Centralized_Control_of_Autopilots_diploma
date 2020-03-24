@@ -1,7 +1,6 @@
 package Logic.Landscape;
 
 import GUI.StatementTaskRendering.HistChangesFromWhen;
-import GUI.StatementTaskRendering.PhisicalBodysFromWhen;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.FootprintSpaceTime.PhisicalBody;
@@ -10,16 +9,7 @@ import Logic.TypesInLevel;
 
 import java.util.List;
 
-public class LandscapeClass implements Landscape, PhisicalBodysFromWhen, HistChangesFromWhen {
-    @Override
-    public List<PhisicalBody> getRenderingPolygonsFromWhen(PolygonExtended areaFind, int  when) {
-        return null;
-    }
-
-    @Override
-    public List<PhisicalBody> getRenderingPolygonsFromWhen(PolygonExtended areaFind, int  when, TypesInLevel type) {
-        return null;
-    }
+public class LandscapeClass implements Landscape, HistChangesFromWhen {
 
     @Override
     public void fillArea() {

@@ -35,7 +35,7 @@ public class PolygonExtendedTest {
             square.setPoint(new PointClass(20, 20));
             square.setPoint(new PointClass(20, 10));
 
-            //==== assertTrue ====================
+            //==== <start> <assertTrue> ====================
             {
                 boolean actual = square.enteringPoint(new PointClass(15, 15));
                 assertTrue(actual);
@@ -65,8 +65,12 @@ public class PolygonExtendedTest {
 //                assertTrue(actual);
 //            }
 
+            //==== <end> <assertTrue> ====================
 
-            //==== assertFalse ====================
+
+
+
+            //==== <start> <assertFalse> ====================
             {
                 boolean actual = square.enteringPoint(new PointClass(15, 25));
                 assertFalse(actual);
@@ -87,6 +91,8 @@ public class PolygonExtendedTest {
                 boolean actual = square.enteringPoint(new PointClass(0, 0));
                 assertFalse(actual);
             }
+
+            //==== <end> <assertFalse> ====================
         }
 
 
@@ -130,6 +136,8 @@ public class PolygonExtendedTest {
                 assertFalse(actual);
             }
         }
+
+
         {
             PolygonExtended squareAroundOrigin = new PolygonExtendedClass();
             squareAroundOrigin.setPoint(new PointClass(-10, -10));
@@ -143,6 +151,48 @@ public class PolygonExtendedTest {
                 assertTrue(actual);
             }
         }
+
+
+        {
+            PolygonExtended narrowSquare = new PolygonExtendedClass();
+            narrowSquare.setPoint(new PointClass(14, 0));
+            narrowSquare.setPoint(new PointClass(16, 0));
+            narrowSquare.setPoint(new PointClass(16, 30));
+            narrowSquare.setPoint(new PointClass(14, 30));
+
+            //==== <start> <assertFalse> ====================
+
+            {
+                boolean actual = narrowSquare.enteringPoint(new PointClass(-10, -10));
+                assertFalse(actual);
+            }
+
+            {
+                Point point = new PointClass(20, 10);
+                boolean actual = narrowSquare.enteringPoint(point);
+
+
+                LocalToolRenderingPolygon localToolRenderingPolygon =
+                        new LocalToolRenderingPolygon(narrowSquare, point);
+                localToolRenderingPolygon.rendering();
+
+
+
+                assertFalse(actual);
+            }
+
+
+            {
+                boolean actual = narrowSquare.enteringPoint(new PointClass(10, 20));
+                assertFalse(actual);
+            }
+
+
+            //==== <end> <assertFalse> ====================
+        }
+
+
+
         /*
 
         {
@@ -193,5 +243,84 @@ public class PolygonExtendedTest {
 
 */
 
+    }
+
+    @Test
+    public void intersectionPolygon() {
+        {
+            PolygonExtended square = new PolygonExtendedClass();
+            square.setPoint(new PointClass(10, 10));
+            square.setPoint(new PointClass(10, 20));
+            square.setPoint(new PointClass(20, 20));
+            square.setPoint(new PointClass(20, 10));
+
+
+            //==== <start> <assertTrue> ====================
+            {
+                PolygonExtended squarePlus5 = new PolygonExtendedClass();
+                squarePlus5.setPoint(new PointClass(15, 15));
+                squarePlus5.setPoint(new PointClass(15, 25));
+                squarePlus5.setPoint(new PointClass(25, 25));
+                squarePlus5.setPoint(new PointClass(25, 15));
+
+
+                assertTrue(square.intersectionPolygon(squarePlus5));
+            }
+
+            {
+                PolygonExtended squarePlus10 = new PolygonExtendedClass();
+                squarePlus10.setPoint(new PointClass(20, 20));
+                squarePlus10.setPoint(new PointClass(20, 30));
+                squarePlus10.setPoint(new PointClass(30, 30));
+                squarePlus10.setPoint(new PointClass(30, 20));
+
+
+                assertTrue(square.intersectionPolygon(squarePlus10));
+            }
+
+
+
+
+
+            {//cut of line, cling to each other
+                PolygonExtended squareBig = new PolygonExtendedClass();
+                squareBig.setPoint(new PointClass(15, 0));
+                squareBig.setPoint(new PointClass(15, 30));
+                squareBig.setPoint(new PointClass(30, 30));
+                squareBig.setPoint(new PointClass(30, 0));
+
+
+                assertTrue(square.intersectionPolygon(squareBig));
+            }
+
+            {//cut of line, cling to each other
+                PolygonExtended squareSmall = new PolygonExtendedClass();
+                squareSmall.setPoint(new PointClass(14, 0));
+                squareSmall.setPoint(new PointClass(16, 0));
+                squareSmall.setPoint(new PointClass(16, 30));
+                squareSmall.setPoint(new PointClass(14, 30));
+
+
+                assertTrue(square.intersectionPolygon(squareSmall));
+            }
+
+            //==== <end> <assertTrue> ====================
+
+
+
+
+            //==== <start> <assertFalse> ====================
+            {
+                PolygonExtended squarePlus15 = new PolygonExtendedClass();
+                squarePlus15.setPoint(new PointClass(25, 25));
+                squarePlus15.setPoint(new PointClass(25, 35));
+                squarePlus15.setPoint(new PointClass(35, 35));
+                squarePlus15.setPoint(new PointClass(35, 25));
+
+
+                assertFalse(square.intersectionPolygon(squarePlus15));
+            }
+            //==== <end> <assertFalse> ====================
+        }
     }
 }

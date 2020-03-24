@@ -5,8 +5,10 @@ import Logic.TypesInLevel;
 import java.util.List;
 
 public interface FootprintSpaceTime {
-    public List<PolygonExtended> getAreaFromWhen(PolygonExtended areaFind, int  when);
-    public List<PolygonExtended> getAreaFromWhen(PolygonExtended areaFind, int  when, TypesInLevel type);
+
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int  when);
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int  when, TypesInLevel type);
+
 
     public void addPointRadius(int ID, PolygonExtended Place, int  time);
     public void addPointRadius(int ID, PolygonExtended Place);

@@ -1,13 +1,12 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.HistChangesFromWhen;
-import GUI.StatementTaskRendering.PhisicalBodysFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.TypesInLevel;
 
 import java.util.List;
 
-public class FootprintSpaceTimeClass implements FootprintSpaceTime, PhisicalBodysFromWhen, HistChangesFromWhen {
+public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
 
     List<PolygonExtended> xranilishe; //STACK_NOW
     Landscape onlyLandscape;
@@ -17,33 +16,9 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, PhisicalBody
         this.onlyLandscape = onlyLandscape;
     }
 
-    @Override
-    public List<PolygonExtended> getAreaFromWhen(PolygonExtended areaFind, int  when) { //используется рендерингом, тут бы желательно оберзать большие зоны; рендеринг сам обрежет большие зоны
-
-
-        //венуть список всех полигонов из смежных областей (итератор)
-        //  определение областей, зацепленных полигоном
-        //  вернуть все полигоны из зацепленных областей
-        //пересечение полигонов
-        //возвращаем список всех пересекающихся полигонов
-
-
-        return null;
-    }
-
-
-
-
-    //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
-    //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
 
     @Override
-    public List<PolygonExtended> getAreaFromWhen(PolygonExtended areaFind, int  when, TypesInLevel type) {
-        return null;
-    }
-
-    @Override
-    public void addPointRadius(int ID, PolygonExtended Place, int  time) {
+    public void addPointRadius(int ID, PolygonExtended Place, int time) {
 
     }
 
@@ -58,27 +33,49 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, PhisicalBody
     }
 
     @Override
-    public boolean getAccessPlace(PolygonExtended place, int  time, TypesInLevel type) {
+    public boolean getAccessPlace(PolygonExtended place, int time, TypesInLevel type) {
         return false;
     }
 
+
+    //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
+    //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<PhisicalBody> getRenderingPolygonsFromWhen(PolygonExtended areaFind, int  when) {
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int when) {
+
+        //FIXME take PhisicalBodys from the landscape
+
+
+        //iteration all polygons
+        //    add in resList, if intersection with areaVizibility
+
+/*      program min:
+            return a list of all intersection polygons (iterate throught all polygons)
+
+        program max:
+            return a list of all PhisicalBodys from adjacent areas
+                return all PhisicalBodys from determination square areas (hash tables), cling polygon
+            return a list of all intersection polygons*/
         return null;
     }
 
     @Override
-    public List<PhisicalBody> getRenderingPolygonsFromWhen(PolygonExtended areaFind, int  when, TypesInLevel type) {
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int when, TypesInLevel type) {
         return null;
     }
 
     @Override
-    public PolygonExtended getAreaChangesAfterBefore(int  afterTime, int  berforeTime) {
+    public PolygonExtended getAreaChangesAfterBefore(int afterTime, int berforeTime) {
         return null;
     }
 
     @Override
-    public int  getTimeLastUpdate() {
+    public int getTimeLastUpdate() {
         return 0;
     }
+
+
+    //==== <start> <Private_Methods> =======================================================================
+
+    //==== <end> <Private_Methods> =========================================================================
 }

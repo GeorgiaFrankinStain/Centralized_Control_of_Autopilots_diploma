@@ -12,4 +12,5 @@ public interface PolygonExtended {
     public boolean contains(Point desirededPoint);
 
     public boolean enteringPoint(Point position);
+    public boolean intersectionPolygon(PolygonExtended secondPolygon);
 }

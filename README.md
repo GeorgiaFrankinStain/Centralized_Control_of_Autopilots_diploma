@@ -1,2 +1,2 @@
 # Centralized Control of Autopilots (diploma)
-This is my thesis.
+This is my diploma.

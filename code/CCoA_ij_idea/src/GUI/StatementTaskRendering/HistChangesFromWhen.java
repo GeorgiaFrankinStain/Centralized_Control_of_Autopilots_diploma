@@ -8,4 +8,6 @@ import Logic.FootprintSpaceTime.PolygonExtended;
 public interface HistChangesFromWhen {
     public PolygonExtended getAreaChangesAfterBefore(int  afterTime, int  berforeTime); //for
     public int  getTimeLastUpdate(); //it is necessary for rendering, so that it can update the currently open map section if necessary (if it changed)
+
+    //TODO hash (LINK_GhyJnYIW)
 }

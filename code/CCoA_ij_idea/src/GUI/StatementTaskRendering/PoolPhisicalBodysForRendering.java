@@ -1,12 +1,12 @@
-package GUI.ExecutionTaskRendering;
+package GUI.StatementTaskRendering;
 
 import Logic.FootprintSpaceTime.PhisicalBody;
 import Logic.FootprintSpaceTime.PolygonExtended;
 
 import java.util.Iterator;
 
-public interface PoolPhisicalBodys {
-    public void fillYourself(PolygonExtended areaRendering, int time);
+public interface PoolPhisicalBodysForRendering {
+    public void fillYourself(PolygonExtended areaRendering, int gameTime);
     public PhisicalBody getPhisicalBody(int ID);
 
 
