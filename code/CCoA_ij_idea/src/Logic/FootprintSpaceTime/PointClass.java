@@ -58,4 +58,18 @@ public class PointClass implements Point {
         return (this.getX() == other.getX())
                        && (this.getY() == other.getY());
     }
+
+
+
+    /**
+     * (https://en.wikipedia.org/wiki/Cross_product)
+     * (https://stackoverflow.com/questions/1560492/how-to-tell-whether-a-point-is-to-the-right-or-left-side-of-a-line)
+     * Use the sign of the determinant of vectors (AB,AM), where M(X,Y) is the query point:
+     * position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
+     */
+    @Override
+    public boolean isLeftRelative(Point startLine, Point endLine){
+        return ((endLine.getX() - startLine.getX())*(this.getY() - startLine.getY()) -
+                        (endLine.getY() - startLine.getY())*(this.getX() - startLine.getX())) > 0;
+    }
 }

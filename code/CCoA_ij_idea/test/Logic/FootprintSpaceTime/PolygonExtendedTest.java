@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-
 //FIXME сделать тут класс рядом, который будет отрисовывать полигоны и проверяемую точку (чтобы было понятней, что не работает
 
 
@@ -66,8 +65,6 @@ public class PolygonExtendedTest {
 //            }
 
             //==== <end> <assertTrue> ====================
-
-
 
 
             //==== <start> <assertFalse> ====================
@@ -172,10 +169,9 @@ public class PolygonExtendedTest {
                 boolean actual = narrowSquare.enteringPoint(point);
 
 
-                LocalToolRenderingPolygon localToolRenderingPolygon =
-                        new LocalToolRenderingPolygon(narrowSquare, point);
-                localToolRenderingPolygon.rendering();
-
+//                LocalToolRenderingPolygon localToolRenderingPolygon =
+//                        new LocalToolRenderingPolygon(narrowSquare, point);
+//                localToolRenderingPolygon.rendering();
 
 
                 assertFalse(actual);
@@ -279,9 +275,6 @@ public class PolygonExtendedTest {
             }
 
 
-
-
-
             {//cut of line, cling to each other
                 PolygonExtended squareBig = new PolygonExtendedClass();
                 squareBig.setPoint(new PointClass(15, 0));
@@ -307,8 +300,6 @@ public class PolygonExtendedTest {
             //==== <end> <assertTrue> ====================
 
 
-
-
             //==== <start> <assertFalse> ====================
             {
                 PolygonExtended squarePlus15 = new PolygonExtendedClass();
@@ -322,5 +313,133 @@ public class PolygonExtendedTest {
             }
             //==== <end> <assertFalse> ====================
         }
+    }
+
+    /**
+     * Snatch from (https://martin-thoma.com/how-to-check-if-two-line-segments-intersect/) (marking "Testcase T...")
+     */
+    @Test
+    public void intersecionLine() {
+        PolygonExtended polygonExtended = new PolygonExtendedClass();
+        //==== <start> <assertTrue> ====================
+        {
+            Point startLine1 = new PointClass(0, -4);
+            Point endLine1 = new PointClass(0, 4);
+
+            {
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine1,
+                        endLine1
+                ));
+            }
+
+
+            {
+                Point startLine2 = new PointClass(-4, 0); //Stanch Testcase T1
+                Point endLine2 = new PointClass(4, 0);
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+            {
+                Point startLine2 = new PointClass(4, 0); //Stanch Testcase T1 inversion
+                Point endLine2 = new PointClass(-4, 0); //FIXME CODESTYLE
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+        }
+
+
+        {
+            Point startLine1 = new PointClass(0, 0);
+            Point endLine1 = new PointClass(10, 10);
+
+            {
+                Point startLine2 = new PointClass(2, 2); //Stanch Testcase T2
+                Point endLine2 = new PointClass(16, 4);
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+
+
+            {
+                Point startLine2 = new PointClass(2, 2); //Stanch Testcase T2
+                Point endLine2 = new PointClass(16, 4);
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+
+
+            {
+                Point endLine2 = new PointClass(2, 2); //Stanch Testcase T2 inversion
+                Point startLine2 = new PointClass(16, 4);
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+        }
+
+        {
+            Point startLine1 = new PointClass(0, 0);
+            Point endLine1 = new PointClass(4, 4);
+
+            {
+                Point startLine2 = new PointClass(0, 4);
+                Point endLine2 = new PointClass(4, 0);
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+        }
+
+
+        {
+            Point startLine1 = new PointClass(1, 1);
+            Point endLine1 = new PointClass(5, 5);
+
+            {
+                Point startLine2 = new PointClass(1, 5);
+                Point endLine2 = new PointClass(5, 1);
+
+                assertTrue(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+        }
+
+
+        //==== <end> <assertTrue> ====================
     }
 }

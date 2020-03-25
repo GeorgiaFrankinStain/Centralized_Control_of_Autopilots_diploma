@@ -1,12 +1,14 @@
 package Logic.FootprintSpaceTime;
 
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PolygonExtendedClass implements PolygonExtended {
-    private List<Point> points = new ArrayList<Point>();;
+    private List<Point> points = new ArrayList<Point>();
+    ;
 
-    //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons)
+    //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons and polygon without points)
 
 
     public PolygonExtendedClass() {
@@ -47,53 +49,170 @@ public class PolygonExtendedClass implements PolygonExtended {
         return this.points.contains(desirededPoint);
     }
 
-    public boolean enteringPoint(Point position) {
+
+    public boolean enteringPoint(Point testPoint) {
 
         //FIXME использовать алгоримт зональной декйкстры с алгоритмом создания точек прямого доступа около каждого вектора
 
-        boolean isPointInPolygon = false;
 
-        if (this.contains(position)) {
+        if (this.contains(testPoint)) {
             return true;
         }
 
-        int i = 0;
-        int j = this.countPoints() - 1;
-        for (; i < this.countPoints();) {
-            Point pi = this.getPoint(i);
-            Point pj = this.getPoint(j);
-            if (
-                    (
-                            (
-                                    (pi.getX() <= position.getY())
-                                            && (position.getY() < pj.getY())
-                            ) || (
-                                    (pj.getY() <= position.getY())
-                                            && (position.getY() < pi.getY())
-                            )
-                    ) && (pj.getY() - pi.getY() != 0 && position.getX() > (pj.getX() - pi.getX()) * (position.getY() - pi.getY()) / (pj.getY() - pi.getY()) + pi.getX())
-            ) {
-                isPointInPolygon = !isPointInPolygon;
+
+        int indexLastPoint = this.points.size() - 1;
+        Point startLine = this.points.get(indexLastPoint);
+        Point endLine = this.points.get(0);
+
+        boolean pointLeftLastLineBOOL = testPoint.isLeftRelative(startLine, endLine);
+
+        for (int i = 0; ; i++) {
+            int indexEndLine = i + 1;
+            startLine = this.points.get(i);
+            endLine = this.points.get(indexEndLine);
+
+            boolean pointLeftCurrentLineBOOL = testPoint.isLeftRelative(startLine, endLine);
+
+            boolean testPointOnDifferentSidesLines = pointLeftLastLineBOOL != pointLeftCurrentLineBOOL;
+            if (testPointOnDifferentSidesLines) {
+                return false;
             }
 
-            j = i;
-            i++;
-        }
 
-        return isPointInPolygon;
-    }
-
-    @Override
-    public boolean intersectionPolygon(PolygonExtended secondPolygon) {
-        boolean isIntersection = false;
-
-        for (Point currentPoint : points) {
-            if (secondPolygon.enteringPoint(currentPoint)) {
-                isIntersection = true;
+            boolean thisLastIteration = indexEndLine == indexLastPoint;
+            if (thisLastIteration) {
                 break;
             }
         }
 
-        return isIntersection;
+
+        return true;
     }
+
+    @Override
+    public boolean intersectionPolygon(PolygonExtended secondPolygon) {
+
+        boolean mutualEnterPointOfPolygonsBOOL =
+                enteringMinimumOnePointOfFirstPolygonInSecondPolygon(this, secondPolygon)
+                        || enteringMinimumOnePointOfFirstPolygonInSecondPolygon(secondPolygon, this)
+                        || intersectionMinumumTwoLineSegmentOfTwoPolygons(this, secondPolygon);
+
+        if (mutualEnterPointOfPolygonsBOOL) {
+            return true;
+        }
+
+
+        return false;
+    }
+
+
+    @Override
+    public boolean intersecionLine(Point startLine, Point endLine) {
+        int indexLastPoint = this.countPoints() - 1;
+        Point startLocalLine = this.getPoint(indexLastPoint);
+        Point endLocalLine = this.getPoint(0);
+
+
+        for (int i = 0; i < this.countPoints(); i++) {
+            boolean isIntersectionBOOL = this.intersectionLines(
+                    startLocalLine,
+                    endLocalLine,
+                    startLine,
+                    endLine);
+
+            if (isIntersectionBOOL) {
+                return true;
+            }
+
+
+            boolean lastLineIsMissingBOOL = i == indexLastPoint;
+            if (lastLineIsMissingBOOL) {
+                break;
+            }
+
+            startLocalLine = this.getPoint(i);
+            endLocalLine = this.getPoint(i + 1);
+        }
+
+        return false;
+    }
+
+
+    /**
+     * (https://martin-thoma.com/how-to-check-if-two-line-segments-intersect/)
+     * Check if bounding boxes do intersect. If one bounding box
+     * touches the other, they do intersect.
+     */
+    @Override
+    public boolean intersectionLines(
+            Point aStartLine,
+            Point aEndLine,
+            Point bStartLine,
+            Point bEndLine
+    ) {
+        return Line2D.linesIntersect(
+                aStartLine.getX(),
+                aStartLine.getY(),
+                aEndLine.getX(),
+                aEndLine.getY(),
+                bStartLine.getX(),
+                bStartLine.getY(),
+                bEndLine.getX(),
+                bEndLine.getY()
+
+        );
+    }
+
+
+    //==== <start> <Private_Methods> =======================================================================
+
+
+    private boolean enteringMinimumOnePointOfFirstPolygonInSecondPolygon(
+            PolygonExtended firstPolygon,
+            PolygonExtended secondPolygon
+    ) {
+        for (int i = 0; i < firstPolygon.countPoints(); i++) {
+            Point currentPoint = firstPolygon.getPoint(i);
+
+            if (secondPolygon.enteringPoint(currentPoint)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean intersectionMinumumTwoLineSegmentOfTwoPolygons(
+            PolygonExtended firstPolygon,
+            PolygonExtended secondPoylgon
+    ) {
+        int indexLastPoint = firstPolygon.countPoints() - 1;
+        Point startLine1 = firstPolygon.getPoint(indexLastPoint);
+        Point endLine1 = firstPolygon.getPoint(0);
+
+
+        for (int i = 0; i < firstPolygon.countPoints(); i++) {
+
+            boolean isIntersectionBOOL = secondPoylgon.intersecionLine(startLine1, endLine1);
+
+            if (isIntersectionBOOL) {
+                return true;
+            }
+
+
+            boolean lastLineIsMissingBOOL = i == indexLastPoint;
+            if (lastLineIsMissingBOOL) {
+                break;
+            }
+
+            startLine1 = firstPolygon.getPoint(i);
+            endLine1 = firstPolygon.getPoint(i + 1);
+        }
+
+
+        return false;
+    }
+
+    //==== <end> <Private_Methods> =========================================================================
+
 }
