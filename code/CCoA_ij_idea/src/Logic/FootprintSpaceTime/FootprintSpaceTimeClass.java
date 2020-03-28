@@ -1,5 +1,6 @@
 package Logic.FootprintSpaceTime;
 
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingBody;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.Position;
@@ -9,8 +10,7 @@ import java.util.*;
 
 public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
     private Map<Integer, List<Footprint>> storage = new TreeMap<Integer, List<Footprint>>();
-    List<PhisicalBody> imitationLadnscape = new ArrayList<PhisicalBody>(); //FIXME IMITATION Landscape
-    HashMap<Integer, PhisicalBody> phisicalBodys = new HashMap<Integer, PhisicalBody>();
+    List<RenderingBody> imitationLadnscape = new ArrayList<RenderingBody>(); //FIXME IMITATION Landscape
 /*
     program min:
         pollygons
@@ -27,8 +27,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     @Override
-    public void addFootprint(int idObject, int idTrack, PhisicalBody movingObject, Position position, int time) {
-        phisicalBodys.put(idTrack, movingObject);
+    public void addFootprint(int idTrack, RenderingBody movingObject, Position position, int time) {
 
 
         if (!storage.containsKey(time)) {
@@ -36,14 +35,14 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
         }
 
 
-        storage.get(time).add(new FootprintClass(idTrack, position));
+        storage.get(time).add(new FootprintClass(idTrack, position, movingObject));
     }
 
 
 
 
     @Override
-    public void addFootprint(int idObject, int idTrack, PhisicalBody movingObject, Position position) {
+    public void addFootprint(int idTrack, RenderingBody movingObject, Position position) {
 
     }
 
@@ -61,7 +60,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int time) {
+    public List<RenderingBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int time) {
 
         //FIXME take PhisicalBodys from the landscape
 
@@ -77,13 +76,18 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
         program max:
             return a list of changed polygons from a intersection table with areaVizibility*/
         ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
-        List cloneLandscape = (List) newArrayList.clone();
-        cloneLandscape.addAll(storage.get(time));
+
+        List<RenderingBody> cloneLandscape = (List<RenderingBody>) newArrayList.clone();
+        for (Footprint footprint : storage.get(time)) {
+            RenderingBody renderingBody = footprint.getRenderingBody(); //FIXME it would be desirable to clone
+            cloneLandscape.add(renderingBody);
+        }
+
         return cloneLandscape;
     }
 
     @Override
-    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
+    public List<RenderingBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
         return null;
     }
 

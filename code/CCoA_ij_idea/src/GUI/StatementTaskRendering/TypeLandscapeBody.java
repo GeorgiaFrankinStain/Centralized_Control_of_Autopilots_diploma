@@ -1,9 +1,9 @@
 package GUI.StatementTaskRendering;
 
-public enum TypePhisicalBody {
-    MACHINE,
+public enum TypeLandscapeBody {
     SWAMP,
     ASPHALT,
     WATER,
-    GRASS
+    GRASS,
+    BUILDING
 }

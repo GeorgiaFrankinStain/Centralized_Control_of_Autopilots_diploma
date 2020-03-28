@@ -106,13 +106,13 @@ The text before the separator "--" is used in the code.
 The text before the separator "--" is used in the code.
 
 ```
-/*
+# /*
     PROGRAM MIN:
 
     PROGRAM MAX:
 
     PROGRAM MAX (LEVEL 2):
-*/
+*/# 
 ```
 
 </ul></details>

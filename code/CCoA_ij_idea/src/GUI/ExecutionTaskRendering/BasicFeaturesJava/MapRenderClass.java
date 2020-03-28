@@ -5,9 +5,11 @@ import Logic.FootprintSpaceTime.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Iterator;
 
-public class MapRenderClass extends JPanel implements MapRender, SubWindow {
+public class MapRenderClass extends JPanel implements MapRender, SubWindow, ActionListener {
     private int xSubWindow = 50;
     private int ySubWindow = 50;
     private int widthSubWindow = 900;
@@ -21,20 +23,31 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private int heightRendring = 900;
     private float widthMapScaleRendering = 1; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
     private float heightMapScaleRendering = 1; //FIXME CRITICAL
+    private float gameTime = 0;
     private float speedRenderingGameSecondPerSecond = 1;
+
+    private Timer mapTimer = new Timer(20, (ActionListener) this);
+
+
 
 
     PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
 
     public MapRenderClass(PoolPhisicalBodysForRendering poolPhisicalBodysForRendering) {
         this.poolPhisicalBodysForRendering = poolPhisicalBodysForRendering;
+
+        this.mapTimer.start();
     }
 
+    public void actionPerformed(ActionEvent event) {
+        this.gameTime += this.speedRenderingGameSecondPerSecond;
+        repaint();
+    }
 
     public void paint(Graphics g) {
 
 
-        this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), 1); //FIXME CRITICAL add time variable
+        this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime); //FIXME CRITICAL add time variable
 
 
         //TODO REALISED comments
@@ -47,24 +60,16 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
 
 
         g.setColor(Color.RED);
-        Iterator<PhisicalBody> it = this.poolPhisicalBodysForRendering.iterator();
+        Iterator<RenderingBody> it = this.poolPhisicalBodysForRendering.iterator();
         while (it.hasNext()) { //(dubiously) foreach of object rendering, not object pool; the plug goes through the entire system, and you need to change it all at once. With a crutch and so will work.
-            this.printPolygonIn2array(it.next().getArea(), g);
+            it.next().renderingYourself(g);
         }
 
         //TODO REALISED LINK_uVPgVFwt (1) create a iteration of changes, not rendering objects (2) create for delete deleting objects
     }
 
     private void printPolygonIn2array(PolygonExtended objectOfRendering, Graphics g) {
-        int[] xPoints = new int[objectOfRendering.countPoints()];
-        int[] yPoints = new int[objectOfRendering.countPoints()];
 
-        for (int i = 0; i < objectOfRendering.countPoints(); i++) {
-            xPoints[i] = objectOfRendering.getPoint(i).getX();
-            yPoints[i] = objectOfRendering.getPoint(i).getY();
-        }
-
-        g.fillPolygon(xPoints, yPoints, xPoints.length);
     }
 
     private PolygonExtended getAreaOfRendering() {

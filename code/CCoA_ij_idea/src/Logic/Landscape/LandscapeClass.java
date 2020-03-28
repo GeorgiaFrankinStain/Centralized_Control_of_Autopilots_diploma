@@ -3,9 +3,7 @@ package Logic.Landscape;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
-import Logic.FootprintSpaceTime.PhisicalBody;
 import Logic.MovingObjects.Path;
-import Logic.TypesInLevel;
 
 import java.util.List;
 

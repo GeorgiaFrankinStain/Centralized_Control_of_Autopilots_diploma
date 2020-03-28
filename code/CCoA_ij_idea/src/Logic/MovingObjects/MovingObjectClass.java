@@ -1,5 +1,10 @@
 package Logic.MovingObjects;
 
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.FabricRederingBodys;
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.FabricRenderingBodysClass;
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingBodyClass;
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingBody;
+import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
 import Logic.PathsMachines.PositionClass;
 import Logic.Position;
@@ -16,19 +21,22 @@ public class MovingObjectClass implements MovingObject {
     public void mark(FootprintSpaceTime footprintSpaceTime) {
         //run addSled
 
-        PolygonExtended test = new PolygonExtendedClass(); //FIXME IMITATION
-        test.setPoint(new PointClass(50, 50));
-        test.setPoint(new PointClass(100, 50));
-        test.setPoint(new PointClass(100, 200));
-        test.setPoint(new PointClass(50, 100));
+        FabricRederingBodys fabricRederingBodys = new FabricRenderingBodysClass();
 
-        PhisicalBody testBody = new PhisicalBodyClass(test);
+
+        RenderingBody testBody = fabricRederingBodys.getMachineRenderingBody(TypeMachinesBody.PASSENGER_CAR);
 
 
         Position position1 = new PositionClass(new PointClass(100, 100), 0);
-        footprintSpaceTime.addFootprint(13, 1313, testBody, position1, 1);
-        footprintSpaceTime.addFootprint(13, 1313, testBody, position1, 2);
-        footprintSpaceTime.addFootprint(13, 1313, testBody, position1, 3);
-        footprintSpaceTime.addFootprint(13, 1313, testBody, position1, 4);
+        footprintSpaceTime.addFootprint(13, testBody, position1, 1); //FIXME positions add
+
+
+        Position position2 = new PositionClass(new PointClass(100, 150), 0);
+        footprintSpaceTime.addFootprint(13, testBody, position2, 2);
+
+
+        Position position3 = new PositionClass(new PointClass(100, 200), 0);
+        footprintSpaceTime.addFootprint(13, testBody, position1, 3);
+        footprintSpaceTime.addFootprint(13, testBody, position1, 4);
     }
 }
