@@ -1,17 +1,18 @@
 package Logic.FootprintSpaceTime;
 
+import Logic.Position;
 import Logic.TypesInLevel;
 
 import java.util.List;
 
 public interface FootprintSpaceTime {
 
-    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int  when);
-    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int  when, TypesInLevel type);
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int  time);
+    public List<PhisicalBody> getPhisicalBodysFromWhen(PolygonExtended areaFind, int  time, TypesInLevel type);
 
 
-    public void addPointRadius(int ID, PolygonExtended Place, int  time);
-    public void addPointRadius(int ID, PolygonExtended Place);
+    public void addFootprint(int idObject, int idTrack, PhisicalBody movingObject, Position position, int  time);
+    public void addFootprint(int idObject, int idTrack, PhisicalBody movingObject, Position position);
     public void deleteFootprints(int ID);
 
     public boolean getAccessPlace(PolygonExtended place, int  time, TypesInLevel type);

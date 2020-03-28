@@ -5,59 +5,19 @@ import java.util.List;
 
 public class SharedDevelop {
     public static void main(String args[]) {
-/*
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("JavaFx");
+        list.add("Java");
+        list.add("WebGL");
+        list.add("OpenCV");
+        System.out.println(list);
+        ArrayList<String> newList = new ArrayList<String>();
+        newList.add("HBase");
+        newList.add("Neo4j");
+        newList.add("MangoDB");
+        list.addAll(newList);
+        System.out.println(list);
 
-        // Создание пустого HashSet
-
-        HashSet<String> set = new HashSet<String>();
-
-        // Используем метод add () для добавления элементов в Set
-
-        set.add("Welcome");
-
-        set.add("To");
-
-        set.add("Geeks");
-
-        set.add("4");
-
-        set.add("Geeks");
-
-
-        // Отображение HashSet
-
-        System.out.println("HashSet: " + set);
-
-
-        // Создание итератора
-
-        Iterator value = set.iterator();
-
-
-        // Отображение значений после перебора набора
-
-        System.out.println("The iterator values are: ");
-
-        while (value.hasNext()) {
-
-            System.out.println(value.next());
-
-        }
-*/
-
-
-
-        List<String> list = new ArrayList<>();
-        list.add("Привет");
-        list.add("Обучающимся");
-        list.add("На");
-        list.add("JavaRush");
-
-
-        Iterator iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
 
     }
 }

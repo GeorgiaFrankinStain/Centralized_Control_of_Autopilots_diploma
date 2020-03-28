@@ -319,7 +319,7 @@ public class PolygonExtendedTest {
      * Snatch from (https://martin-thoma.com/how-to-check-if-two-line-segments-intersect/) (marking "Testcase T...")
      */
     @Test
-    public void intersecionLine() {
+    public void intersecionLines() {
         PolygonExtended polygonExtended = new PolygonExtendedClass();
         //==== <start> <assertTrue> ====================
         {
@@ -441,5 +441,56 @@ public class PolygonExtendedTest {
 
 
         //==== <end> <assertTrue> ====================
+        //==== <start> <assertFalse> ====================
+
+
+
+
+        {
+            Point startLine1 = new PointClass(1, 1);
+            Point endLine1 = new PointClass(5, 5);
+
+            {
+                Point startLine2 = new PointClass(100, 100);
+                Point endLine2 = new PointClass(200, 200);
+
+                assertFalse(polygonExtended.intersectionLines(
+                        startLine1,
+                        endLine1,
+                        startLine2,
+                        endLine2
+                ));
+            }
+        }
+        //==== <end> <assertFalse> ====================
+    }
+
+    @Test
+    public void intersecionLine() {
+        {
+            PolygonExtended square = new PolygonExtendedClass();
+            square.setPoint(new PointClass(10, 10));
+            square.setPoint(new PointClass(10, 20));
+            square.setPoint(new PointClass(20, 20));
+            square.setPoint(new PointClass(20, 10));
+
+            //==== <start> <assertTrue> ====================
+            {
+                Point startLine = new PointClass(0, 0);
+                Point endLine = new PointClass(40, 40);
+
+                assertTrue(square.intersecionLine(startLine, endLine));
+            }
+            //==== <end> <assertTrue> ====================
+
+            //==== <start> <assertFalse> ====================
+            {
+                Point startLine = new PointClass(0, -4);
+                Point endLine = new PointClass(0, 4);
+
+                assertFalse(square.intersecionLine(startLine, endLine));
+            }
+            //==== <end> <assertFalse> ====================
+        }
     }
 }

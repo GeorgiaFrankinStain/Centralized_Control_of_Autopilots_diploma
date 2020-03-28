@@ -21,7 +21,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
     private int heightRendring = 900;
     private float widthMapScaleRendering = 1; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
     private float heightMapScaleRendering = 1; //FIXME CRITICAL
-
+    private float speedRenderingGameSecondPerSecond = 1;
 
 
     PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
@@ -42,11 +42,13 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow {
         //    drawing everything
         //maximum program:
         //    drawing only changes (tracking changes will fall on the shoulders of PoolPhisicalBodysForRendering; it will implement an iterator of the changed objects, not all of them)
+        //2 maximum program:
+        //    first request changes in a second, and then graually change the properties of exiting objects
 
 
         g.setColor(Color.RED);
         Iterator<PhisicalBody> it = this.poolPhisicalBodysForRendering.iterator();
-        while (it.hasNext()) { //FIXME foreach of object rendering, not object pool
+        while (it.hasNext()) { //(dubiously) foreach of object rendering, not object pool; the plug goes through the entire system, and you need to change it all at once. With a crutch and so will work.
             this.printPolygonIn2array(it.next().getArea(), g);
         }
 

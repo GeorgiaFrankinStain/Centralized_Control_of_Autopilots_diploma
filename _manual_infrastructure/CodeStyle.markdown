@@ -66,8 +66,9 @@
 The text before the separator "--" is used in the code.
 
 ```
-//FIXME FORMALITY  -- (Optional, because it is too simple. Exclusively for beauty).
 //FIXME CRITICAL
+//FIXME FORMALITY  -- (Optional, because it is too simple. Exclusively for beauty).
+//FIXME IMITATION
 //FIXME REALISED
 //FIXME TEST FAILED
 
@@ -92,6 +93,26 @@ The text before the separator "--" is used in the code.
 
 //==== <start> <assertFalse> ====================
 //==== <end> <assertFalse> ====================
+```
+
+</ul></details>
+
+
+
+
+
+
+<details><summary>Comment for PROGRAM MAX/MIN.</summary><ul>
+The text before the separator "--" is used in the code.
+
+```
+/*
+    PROGRAM MIN:
+
+    PROGRAM MAX:
+
+    PROGRAM MAX (LEVEL 2):
+*/
 ```
 
 </ul></details>

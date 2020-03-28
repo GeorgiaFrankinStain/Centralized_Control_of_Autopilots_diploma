@@ -12,38 +12,14 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
 
     @Override
     public void fillYourself(PolygonExtended areaRendering, int gameTime) {
-
-        //отсееваем, не входящие в зону новой отрисовки
-
-
-        //отсееваем устаревшие объекты, которые в данный момент должны находиться на другом месте
-        //добавляем новые объекты
-
-
-
-        //TODO REALISED
-        //min
-        //    Complete removal. Create new list.
-        //max (LINK_GhyJnYIW)
-        //    Recursion ask for a hash, update only in case of changes.
-        //    Create list changed object.
-        //    Create list deleting object. LINK_uVPgVFwt
-
-
-
-
-
-
-
-//        int[] x = {50, 50, 90, 90, 150, 90, 90};
-//        int[] y = {55, 85, 85, 110, 70, 30, 55};
-        PolygonExtended test = new PolygonExtendedClass();
-        test.setPoint(new PointClass(50, 50));
-        test.setPoint(new PointClass(100, 50));
-        test.setPoint(new PointClass(100, 100));
-        test.setPoint(new PointClass(50, 100));
-
-//        PhisicalBody testBody = new PhisicalBodyClass(test);
+/*      //TODO REALISED
+        min
+            Complete removal. Create new list.
+        max (LINK_GhyJnYIW)
+            Recursion ask for a hash, update only in case of changes.
+            Create list changed object.
+            Create list deleting object. LINK_uVPgVFwt
+            */
 
 
         List<PhisicalBody> testBody = this.sourceFootprintSpaceTime.getPhisicalBodysFromWhen(areaRendering, gameTime);
@@ -65,7 +41,6 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
     public Iterator<PhisicalBody> iterator() {
         return new PoolPhisicalBodysIterator(this);
     }
-
 
 
     private class PoolPhisicalBodysIterator implements Iterator<PhisicalBody> {

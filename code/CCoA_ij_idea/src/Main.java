@@ -8,6 +8,8 @@ import Logic.FootprintSpaceTime.FootprintSpaceTime;
 import Logic.FootprintSpaceTime.FootprintSpaceTimeClass;
 import Logic.Landscape.Landscape;
 import Logic.Landscape.LandscapeClass;
+import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.MovingObjectClass;
 
 public class Main {
 
@@ -47,6 +49,10 @@ public class Main {
 
         PoolPhisicalBodysForRendering poolPhisicalBodysForRendering = new PoolPhisicalBodysForRenderingClass(onlyFootprintSpaceTime);
         MapRender subwindowMapRendering = new MapRenderClass(poolPhisicalBodysForRendering); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
+
+
+        MovingObject movingObject = new MovingObjectClass();
+        movingObject.mark(onlyFootprintSpaceTime);
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
