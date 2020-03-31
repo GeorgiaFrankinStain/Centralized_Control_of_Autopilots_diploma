@@ -26,7 +26,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow, Acti
     private float gameTime = 0;
     private float speedRenderingGameSecondPerSecond = 1;
 
-    private Timer mapTimer = new Timer(20, (ActionListener) this);
+    private Timer mapTimer = new Timer(1000, (ActionListener) this);
 
 
 
@@ -41,6 +41,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow, Acti
 
     public void actionPerformed(ActionEvent event) {
         this.gameTime += this.speedRenderingGameSecondPerSecond;
+        this.gameTime %= 7;
         repaint();
     }
 
@@ -60,7 +61,7 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow, Acti
 
 
         g.setColor(Color.RED);
-        Iterator<RenderingBody> it = this.poolPhisicalBodysForRendering.iterator();
+        Iterator<RenderingFootprint> it = this.poolPhisicalBodysForRendering.iterator();
         while (it.hasNext()) { //(dubiously) foreach of object rendering, not object pool; the plug goes through the entire system, and you need to change it all at once. With a crutch and so will work.
             it.next().renderingYourself(g);
         }

@@ -13,7 +13,7 @@ public class PositionClass implements Position {
     }
 
     @Override
-    public Point getPosition() {
+    public Point getCoordinats() {
         return this.point;
     }
 

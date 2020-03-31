@@ -1,6 +1,7 @@
 package Logic.FootprintSpaceTime;
 
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingBody;
+import Logic.PhisicalBody;
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.Position;
@@ -10,7 +11,7 @@ import java.util.*;
 
 public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
     private Map<Integer, List<Footprint>> storage = new TreeMap<Integer, List<Footprint>>();
-    List<RenderingBody> imitationLadnscape = new ArrayList<RenderingBody>(); //FIXME IMITATION Landscape
+    List<PhisicalBody> imitationLadnscape = new ArrayList<PhisicalBody>(); //FIXME IMITATION Landscape
 /*
     program min:
         pollygons
@@ -27,7 +28,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     @Override
-    public void addFootprint(int idTrack, RenderingBody movingObject, Position position, int time) {
+    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position, int time) {
 
 
         if (!storage.containsKey(time)) {
@@ -42,7 +43,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     @Override
-    public void addFootprint(int idTrack, RenderingBody movingObject, Position position) {
+    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position) {
 
     }
 
@@ -60,7 +61,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<RenderingBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int time) {
+    public List<RenderingFootprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time) {
 
         //FIXME take PhisicalBodys from the landscape
 
@@ -77,17 +78,17 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
             return a list of changed polygons from a intersection table with areaVizibility*/
         ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
 
-        List<RenderingBody> cloneLandscape = (List<RenderingBody>) newArrayList.clone();
-        for (Footprint footprint : storage.get(time)) {
-            RenderingBody renderingBody = footprint.getRenderingBody(); //FIXME it would be desirable to clone
-            cloneLandscape.add(renderingBody);
+//        List<RenderingFootprint> cloneLandscape = (List<RenderingFootprint>) newArrayList.clone();
+        List<RenderingFootprint> resRendringFootpring = new ArrayList<RenderingFootprint>();
+        for (Footprint current : storage.get(time)) {
+            resRendringFootpring.add((RenderingFootprint) current);
         }
 
-        return cloneLandscape;
+        return resRendringFootpring;
     }
 
     @Override
-    public List<RenderingBody> getPhisicalBodysFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
+    public List<RenderingFootprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
         return null;
     }
 

@@ -1,15 +1,15 @@
 package GUI.StatementTaskRendering;
 
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingBody;
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import Logic.FootprintSpaceTime.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForRendering, Iterable<RenderingBody> {
+public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForRendering, Iterable<RenderingFootprint> {
     private FootprintSpaceTime sourceFootprintSpaceTime;
-    private List<RenderingBody> forRenderingRenderingBody = new ArrayList<RenderingBody>();
+    private List<RenderingFootprint> forRenderingRenderingBody = new ArrayList<RenderingFootprint>();
 
     @Override
     public void fillYourself(PolygonExtended areaRendering, int gameTime) {
@@ -23,14 +23,9 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
             */
 
 
-        List<RenderingBody> testBody = this.sourceFootprintSpaceTime.getPhisicalBodysFromWhen(areaRendering, gameTime);
+        List<RenderingFootprint> testBody = this.sourceFootprintSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
 //        this.forRenderingRenderingBody.add(testBody);
         this.forRenderingRenderingBody = testBody;
-    }
-
-    @Override
-    public RenderingBody getPhisicalBody(int ID) {
-        return null;
     }
 
 
@@ -39,12 +34,12 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
     }
 
     @Override
-    public Iterator<RenderingBody> iterator() {
+    public Iterator<RenderingFootprint> iterator() {
         return new PoolPhisicalBodysIterator(this);
     }
 
 
-    private class PoolPhisicalBodysIterator implements Iterator<RenderingBody> {
+    private class PoolPhisicalBodysIterator implements Iterator<RenderingFootprint> {
         private PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
         private int nextIndexPhisicalBody = 0;
 
@@ -60,7 +55,7 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
         }
 
         @Override
-        public RenderingBody next() {
+        public RenderingFootprint next() {
             int currenIndex = this.nextIndexPhisicalBody++;
             return PoolPhisicalBodysForRenderingClass.this.forRenderingRenderingBody.get(currenIndex);
         }
