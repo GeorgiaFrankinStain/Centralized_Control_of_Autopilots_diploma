@@ -1,5 +1,6 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
+import GUI.StatementTaskRendering.DataFootprintForRendering;
 import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
 import Logic.FootprintSpaceTime.*;
 
@@ -61,9 +62,11 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow, Acti
 
 
         g.setColor(Color.RED);
-        Iterator<RenderingFootprint> it = this.poolPhisicalBodysForRendering.iterator();
+        Iterator<DataFootprintForRendering> it = this.poolPhisicalBodysForRendering.iterator();
         while (it.hasNext()) { //(dubiously) foreach of object rendering, not object pool; the plug goes through the entire system, and you need to change it all at once. With a crutch and so will work.
-            it.next().renderingYourself(g);
+            RenderingFootprint currentRender = (RenderingFootprint) it.next();
+            currentRender.renderingYourself(g);
+//
         }
 
         //TODO REALISED LINK_uVPgVFwt (1) create a iteration of changes, not rendering objects (2) create for delete deleting objects

@@ -1,11 +1,11 @@
-package GUI.ExecutionTaskRendering.BasicFeaturesJava;
+package Logic;
 
 import GUI.StatementTaskRendering.TypeLandscapeBody;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.PhisicalBody;
 
-public interface FabricRederingBodys {
+public interface FabricPhisicalBodys {
     PhisicalBody getMachineRenderingBody(TypeMachinesBody typeMachinesBody);
     PhisicalBody getZonaRenderingBody(TypeLandscapeBody typeLandscapeBody, PolygonExtended area);
     //TODO user machines (user behavior machines)

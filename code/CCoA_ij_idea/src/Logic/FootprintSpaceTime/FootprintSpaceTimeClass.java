@@ -1,5 +1,6 @@
 package Logic.FootprintSpaceTime;
 
+import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.PhisicalBody;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
@@ -61,7 +62,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<RenderingFootprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time) {
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time) {
 
         //FIXME take PhisicalBodys from the landscape
 
@@ -78,17 +79,16 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
             return a list of changed polygons from a intersection table with areaVizibility*/
         ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
 
-//        List<RenderingFootprint> cloneLandscape = (List<RenderingFootprint>) newArrayList.clone();
-        List<RenderingFootprint> resRendringFootpring = new ArrayList<RenderingFootprint>();
+        List<Footprint> resRendringFootpring = new ArrayList<Footprint>();
         for (Footprint current : storage.get(time)) {
-            resRendringFootpring.add((RenderingFootprint) current);
+            resRendringFootpring.add(current);
         }
 
         return resRendringFootpring;
     }
 
     @Override
-    public List<RenderingFootprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
         return null;
     }
 

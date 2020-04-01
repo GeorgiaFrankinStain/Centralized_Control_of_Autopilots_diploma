@@ -9,5 +9,5 @@ public interface PoolPhisicalBodysForRendering {
     public void fillYourself(PolygonExtended areaRendering, int gameTime);
 
 
-    Iterator<RenderingFootprint> iterator();
+    Iterator<DataFootprintForRendering> iterator();
 }

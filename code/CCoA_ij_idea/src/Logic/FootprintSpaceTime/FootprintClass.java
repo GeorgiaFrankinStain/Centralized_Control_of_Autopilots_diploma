@@ -1,5 +1,6 @@
 package Logic.FootprintSpaceTime;
 
+import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.PhisicalBody;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.TypeLandscapeBody;
@@ -7,7 +8,7 @@ import Logic.Position;
 
 import java.awt.*;
 
-public class FootprintClass implements Footprint, RenderingFootprint {
+public class FootprintClass implements Footprint, DataFootprintForRendering, RenderingFootprint {
     private int idTrack;
     private Position position;
     private PhisicalBody phisicalBody;

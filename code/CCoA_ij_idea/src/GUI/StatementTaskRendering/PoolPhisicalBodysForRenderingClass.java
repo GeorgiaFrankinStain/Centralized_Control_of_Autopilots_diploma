@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForRendering, Iterable<RenderingFootprint> {
+public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForRendering, Iterable<DataFootprintForRendering> {
     private FootprintSpaceTime sourceFootprintSpaceTime;
-    private List<RenderingFootprint> forRenderingRenderingBody = new ArrayList<RenderingFootprint>();
+    private List<DataFootprintForRendering> forRenderingRenderingBody = new ArrayList<DataFootprintForRendering>();
 
     @Override
     public void fillYourself(PolygonExtended areaRendering, int gameTime) {
@@ -22,10 +22,17 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
             Create list deleting object. LINK_uVPgVFwt
             */
 
+        List<Footprint> footprints =
+                this.sourceFootprintSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
 
-        List<RenderingFootprint> testBody = this.sourceFootprintSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
+        List<DataFootprintForRendering> dataFootprintForRenderings
+                = new ArrayList<DataFootprintForRendering>();
+        for (Footprint footprint : footprints) {
+            dataFootprintForRenderings.add((DataFootprintForRendering) footprint);
+        }
+
 //        this.forRenderingRenderingBody.add(testBody);
-        this.forRenderingRenderingBody = testBody;
+        this.forRenderingRenderingBody = dataFootprintForRenderings;
     }
 
 
@@ -34,12 +41,12 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
     }
 
     @Override
-    public Iterator<RenderingFootprint> iterator() {
+    public Iterator<DataFootprintForRendering> iterator() {
         return new PoolPhisicalBodysIterator(this);
     }
 
 
-    private class PoolPhisicalBodysIterator implements Iterator<RenderingFootprint> {
+    private class PoolPhisicalBodysIterator implements Iterator<DataFootprintForRendering> {
         private PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
         private int nextIndexPhisicalBody = 0;
 
@@ -55,7 +62,7 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
         }
 
         @Override
-        public RenderingFootprint next() {
+        public DataFootprintForRendering next() {
             int currenIndex = this.nextIndexPhisicalBody++;
             return PoolPhisicalBodysForRenderingClass.this.forRenderingRenderingBody.get(currenIndex);
         }

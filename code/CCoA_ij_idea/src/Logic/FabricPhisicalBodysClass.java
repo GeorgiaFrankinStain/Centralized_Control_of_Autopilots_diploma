@@ -1,14 +1,12 @@
-package GUI.ExecutionTaskRendering.BasicFeaturesJava;
+package Logic;
 
 import GUI.StatementTaskRendering.TypeLandscapeBody;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.PointClass;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.FootprintSpaceTime.PolygonExtendedClass;
-import Logic.PhisicalBody;
-import Logic.PhisicalBodyClass;
 
-public class FabricRenderingBodysClass implements FabricRederingBodys {
+public class FabricPhisicalBodysClass implements FabricPhisicalBodys {
     @Override
     public PhisicalBody getMachineRenderingBody(TypeMachinesBody typeMachinesBody) {
         PolygonExtended test = new PolygonExtendedClass(); //FIXME IMITATION

@@ -1,7 +1,7 @@
 package Logic.MovingObjects;
 
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.FabricRederingBodys;
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.FabricRenderingBodysClass;
+import Logic.FabricPhisicalBodys;
+import Logic.FabricPhisicalBodysClass;
 import Logic.PhisicalBody;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
@@ -20,10 +20,10 @@ public class MovingObjectClass implements MovingObject {
     public void mark(FootprintSpaceTime footprintSpaceTime) {
         //run addSled
 
-        FabricRederingBodys fabricRederingBodys = new FabricRenderingBodysClass();
+        FabricPhisicalBodys fabricPhisicalBodys = new FabricPhisicalBodysClass();
 
 
-        PhisicalBody testBody = fabricRederingBodys.getMachineRenderingBody(TypeMachinesBody.PASSENGER_CAR);
+        PhisicalBody testBody = fabricPhisicalBodys.getMachineRenderingBody(TypeMachinesBody.PASSENGER_CAR);
 
 
         Position position1 = new PositionClass(new PointClass(100, 100), 0);
