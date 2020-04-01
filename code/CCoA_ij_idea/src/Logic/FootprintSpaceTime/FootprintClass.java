@@ -8,7 +8,7 @@ import Logic.Position;
 
 import java.awt.*;
 
-public class FootprintClass implements Footprint, DataFootprintForRendering, RenderingFootprint {
+public class FootprintClass implements Footprint, DataFootprintForRendering{
     private int idTrack;
     private Position position;
     private PhisicalBody phisicalBody;
@@ -44,37 +44,10 @@ public class FootprintClass implements Footprint, DataFootprintForRendering, Ren
     }
 
     @Override
-    public int getID() {
+    public int getIdObject() {
         return this.phisicalBody.getID();
     }
 
-    @Override
-    public int getLevel() {
-        return this.phisicalBody.getLevel();
-    }
-
-    @Override
-    public void renderingYourself(Graphics g) {
-
-        int[] xPoints = new int[this.phisicalBody.getPolygonExtended().countPoints()];
-        int[] yPoints = new int[this.phisicalBody.getPolygonExtended().countPoints()];
-
-        for (int i = 0; i < this.phisicalBody.getPolygonExtended().countPoints(); i++) {
-
-
-            Point currentPoint = pointOfPolygonConsideringPosition(
-                    this.phisicalBody.getPolygonExtended().getPoint(i),
-                    this.phisicalBody.getPolygonExtended().getPoint(0),
-                    this.position
-            );
-
-            xPoints[i] = currentPoint.getX();
-            yPoints[i] = currentPoint.getY();
-        }
-
-        g.fillPolygon(xPoints, yPoints, xPoints.length);
-
-    }
     //    ==== <end> <Implements RenderingFootprint> ==================================================
 
     //==== <end> <Getter_and_Setter> ==================================================
@@ -95,5 +68,6 @@ public class FootprintClass implements Footprint, DataFootprintForRendering, Ren
                 point.getY() + theUseCoordinatesPolygon.getY()
         );
     }
+
     //==== <end> <Private_Methods> =========================================================================
 }

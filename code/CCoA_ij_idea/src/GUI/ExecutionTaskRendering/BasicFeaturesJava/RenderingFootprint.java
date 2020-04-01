@@ -1,12 +1,13 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
+import GUI.StatementTaskRendering.DataFootprintForRendering;
 import GUI.StatementTaskRendering.TypeLandscapeBody;
 
-import java.awt.*;
 
 public interface RenderingFootprint {
     TypeLandscapeBody getTypePhisicalBody();
     int getID();
     int getLevel();
-    void renderingYourself(Graphics g);
+    void renderingYourself();
+    void update(long now, DataFootprintForRendering newProperties);
 }

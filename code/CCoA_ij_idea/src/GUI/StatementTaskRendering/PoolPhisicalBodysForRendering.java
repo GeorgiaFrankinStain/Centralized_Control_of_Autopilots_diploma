@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 public interface PoolPhisicalBodysForRendering {
     public void fillYourself(PolygonExtended areaRendering, int gameTime);
+    public DataFootprintForRendering getDataFootprint(int IdObject);
 
 
     Iterator<DataFootprintForRendering> iterator();

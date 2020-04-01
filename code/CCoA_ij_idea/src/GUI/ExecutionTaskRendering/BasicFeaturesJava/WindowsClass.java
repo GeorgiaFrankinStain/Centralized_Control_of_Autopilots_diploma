@@ -1,26 +1,49 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
-import javax.swing.*;
+
+import GUI.StatementTaskRendering.Windows;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class WindowsClass implements Windows {
 
-    private int heightGeneralWindowDefault = 1000;
+    private int heightGeneralWindowDefault = 700;
     private int widthGeneralWindowDefault = 1000;
     private String titleGeneralWindowDefault = "Centralized Control of Autopilots";
 
-    JFrame generalWindow;
+    private Stage primaryStage;
+    private MapRender mapRender;
+    private Pane generalPane = new Pane();
+
+
+
+
+    public WindowsClass(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
 
     @Override
     public void createGeneralWindow(MapRender mapRender) {
-        this.generalWindow = new JFrame(titleGeneralWindowDefault); //TODO: add title of room
-        this.generalWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         //FIXME CRITICAL create panel buttons
-        JPanel subwindowRendering = (JPanel) mapRender;
-        this.generalWindow.add(subwindowRendering);
-        this.generalWindow.pack();
+        this.mapRender = mapRender;
 
-        this.generalWindow.setSize(widthGeneralWindowDefault, heightGeneralWindowDefault);
-        generalWindow.setVisible(true);
+
+        generalPane.setPrefSize(widthGeneralWindowDefault, heightGeneralWindowDefault);
+        generalPane.getChildren().addAll((Pane) this.mapRender);
+
+
+        primaryStage.setTitle(this.titleGeneralWindowDefault); //TODO: add title of room
+        primaryStage.setScene(new Scene(generalPane));
+        primaryStage.show();
     }
+
+    @Override
+    public void update(long now) {
+        this.mapRender.update(now);
+    }
+
+
+    //==== <start> <Private_Methods> =======================================================================
+    //==== <end> <Private_Methods> =========================================================================
 }

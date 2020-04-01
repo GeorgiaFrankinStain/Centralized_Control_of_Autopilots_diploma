@@ -1,15 +1,17 @@
 package GUI.StatementTaskRendering;
 
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import Logic.FootprintSpaceTime.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForRendering, Iterable<DataFootprintForRendering> {
     private FootprintSpaceTime sourceFootprintSpaceTime;
-    private List<DataFootprintForRendering> forRenderingRenderingBody = new ArrayList<DataFootprintForRendering>();
+    private Map<Integer, DataFootprintForRendering> poolDataFootprintForRendering;
+
+
+    public PoolPhisicalBodysForRenderingClass(FootprintSpaceTime footprintSpaceTime) {
+        this.sourceFootprintSpaceTime = footprintSpaceTime;
+    }
 
     @Override
     public void fillYourself(PolygonExtended areaRendering, int gameTime) {
@@ -25,20 +27,17 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
         List<Footprint> footprints =
                 this.sourceFootprintSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
 
-        List<DataFootprintForRendering> dataFootprintForRenderings
-                = new ArrayList<DataFootprintForRendering>();
+        this.poolDataFootprintForRendering = new TreeMap<Integer, DataFootprintForRendering>();
         for (Footprint footprint : footprints) {
-            dataFootprintForRenderings.add((DataFootprintForRendering) footprint);
+            poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);
         }
-
-//        this.forRenderingRenderingBody.add(testBody);
-        this.forRenderingRenderingBody = dataFootprintForRenderings;
     }
 
-
-    public PoolPhisicalBodysForRenderingClass(FootprintSpaceTime footprintSpaceTime) {
-        this.sourceFootprintSpaceTime = footprintSpaceTime;
+    @Override
+    public DataFootprintForRendering getDataFootprint(int IdObject) {
+        return this.poolDataFootprintForRendering.get(IdObject); //FIXME
     }
+
 
     @Override
     public Iterator<DataFootprintForRendering> iterator() {
@@ -56,7 +55,7 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
 
         @Override
         public boolean hasNext() {
-            int size = PoolPhisicalBodysForRenderingClass.this.forRenderingRenderingBody.size();
+            int size = PoolPhisicalBodysForRenderingClass.this.poolDataFootprintForRendering.size();
             int endIndex = size - 1;
             return this.nextIndexPhisicalBody <= endIndex;
         }
@@ -64,7 +63,7 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
         @Override
         public DataFootprintForRendering next() {
             int currenIndex = this.nextIndexPhisicalBody++;
-            return PoolPhisicalBodysForRenderingClass.this.forRenderingRenderingBody.get(currenIndex);
+            return PoolPhisicalBodysForRenderingClass.this.poolDataFootprintForRendering.get(currenIndex);
         }
     }
 }

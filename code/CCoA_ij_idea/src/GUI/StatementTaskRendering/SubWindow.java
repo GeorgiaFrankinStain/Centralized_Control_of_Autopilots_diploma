@@ -1,4 +1,4 @@
-package GUI.ExecutionTaskRendering.BasicFeaturesJava;
+package GUI.StatementTaskRendering;
 
 public interface SubWindow {
 

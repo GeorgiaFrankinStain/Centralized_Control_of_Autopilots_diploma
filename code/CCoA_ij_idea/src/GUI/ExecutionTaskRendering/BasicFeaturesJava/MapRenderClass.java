@@ -1,16 +1,17 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.ObjectsOfMapRender.Machine;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
+import GUI.StatementTaskRendering.SubWindow;
 import Logic.FootprintSpaceTime.*;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Iterator;
+import javafx.scene.layout.Pane;
 
-public class MapRenderClass extends JPanel implements MapRender, SubWindow, ActionListener {
+
+import java.util.*;
+
+public class MapRenderClass extends Pane implements MapRender, SubWindow {
     private int xSubWindow = 50;
     private int ySubWindow = 50;
     private int widthSubWindow = 900;
@@ -27,54 +28,64 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow, Acti
     private float gameTime = 0;
     private float speedRenderingGameSecondPerSecond = 1;
 
-    private Timer mapTimer = new Timer(1000, (ActionListener) this);
-
-
-
-
-    PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
+    private Map<Integer, RenderingFootprint> storageRenderingFootprints = new TreeMap<Integer, RenderingFootprint>();
+    private PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
 
     public MapRenderClass(PoolPhisicalBodysForRendering poolPhisicalBodysForRendering) {
         this.poolPhisicalBodysForRendering = poolPhisicalBodysForRendering;
 
-        this.mapTimer.start();
     }
 
-    public void actionPerformed(ActionEvent event) {
-        this.gameTime += this.speedRenderingGameSecondPerSecond;
+
+    @Override
+    public void update(long now) {
+        this.gameTime += this.speedRenderingGameSecondPerSecond; //FIXME add adapter now in gameTime
         this.gameTime %= 7;
-        repaint();
-    }
 
-    public void paint(Graphics g) {
+        this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime);
 
 
-        this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime); //FIXME CRITICAL add time variable
+/*
+        TODO PROGRAM
+        minimum program:
+            drawing everything
+        maximum program:
+            drawing only changes (tracking changes will fall on the shoulders of PoolPhisicalBodysForRendering; it will implement an iterator of the changed objects, not all of them)
+        2 maximum program:
+            first request changes in a second, and then graually change the properties of exiting objects
+*/
 
 
-        //TODO REALISED comments
-        //minimum program:
-        //    drawing everything
-        //maximum program:
-        //    drawing only changes (tracking changes will fall on the shoulders of PoolPhisicalBodysForRendering; it will implement an iterator of the changed objects, not all of them)
-        //2 maximum program:
-        //    first request changes in a second, and then graually change the properties of exiting objects
-
-
-        g.setColor(Color.RED);
         Iterator<DataFootprintForRendering> it = this.poolPhisicalBodysForRendering.iterator();
-        while (it.hasNext()) { //(dubiously) foreach of object rendering, not object pool; the plug goes through the entire system, and you need to change it all at once. With a crutch and so will work.
-            RenderingFootprint currentRender = (RenderingFootprint) it.next();
-            currentRender.renderingYourself(g);
-//
+        while (it.hasNext()) {
+            DataFootprintForRendering currentDataFootprintForRendering = it.next();
+
+            RenderingFootprint takenRender =
+                    this.storageRenderingFootprints.get(currentDataFootprintForRendering.getIdObject());
+
+            boolean isTaken = takenRender != null;
+            if (isTaken) {
+                takenRender.update(now, currentDataFootprintForRendering);
+            } else {
+                createRenderingFootrint(currentDataFootprintForRendering);
+            }
         }
 
+
+        //FIXME deleting rendering footprints (yourself find or get from iterator of pool
         //TODO REALISED LINK_uVPgVFwt (1) create a iteration of changes, not rendering objects (2) create for delete deleting objects
     }
 
-    private void printPolygonIn2array(PolygonExtended objectOfRendering, Graphics g) {
-
+    //==== <start> <Private_Methods> =======================================================================
+    private void createRenderingFootrint(DataFootprintForRendering dataFootprintForRendering) {
+        Pane tempMachine = new Machine(dataFootprintForRendering);
+        this.storageRenderingFootprints.put(
+                dataFootprintForRendering.getIdObject(),
+                (RenderingFootprint) tempMachine
+        );
+        getChildren().addAll(tempMachine);
     }
+
 
     private PolygonExtended getAreaOfRendering() {
         PolygonExtended resPolygon = new PolygonExtendedClass();
@@ -98,6 +109,8 @@ public class MapRenderClass extends JPanel implements MapRender, SubWindow, Acti
         return resPolygon;
     }
 
+
+    //==== <end> <Private_Methods> =========================================================================
 
     //==== <start> <Getter_and_Setter> ==================================================
 
