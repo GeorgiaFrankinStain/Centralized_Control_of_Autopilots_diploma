@@ -19,24 +19,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/CCoA_task.todo",
-			"settings":
-			{
-				"buffer_size": 1719,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/log_of_development.txt",
-			"settings":
-			{
-				"buffer_size": 120,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -93,6 +75,8 @@
 	},
 	"file_history":
 	[
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/CCoA_task.todo",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/log_of_development.txt",
 		"/C/Users/FS/AppData/Roaming/Sublime Text 3/Packages/PlainTasks/messages/Tutorial.todo",
 		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/bufer.markdown",
 		"/D/AF/2019 - 06 - 20 - Fractal_of_War/FoW_reserve.todo",
@@ -211,83 +195,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/CCoA_task.todo",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1719,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1719,
-								1719
-							]
-						],
-						"settings":
-						{
-							"plain_tasks_remain_time_phantoms":
-							[
-							],
-							"syntax": "Packages/PlainTasks/PlainTasks.sublime-syntax",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/log_of_development.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 120,
-						"regions":
-						{
-							"bookmarks":
-							{
-								"flags": 144,
-								"icon": "bookmark",
-								"regions":
-								[
-									[
-										120,
-										120
-									]
-								],
-								"scope": "bookmarks"
-							}
-						},
-						"selection":
-						[
-							[
-								120,
-								120
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

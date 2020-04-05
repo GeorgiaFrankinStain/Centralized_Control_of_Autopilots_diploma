@@ -19,6 +19,28 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "package GUI.Window;\n\npublic interface SubWindow {\n\n\n        public int getxSubWindow();\n        public void setxSubWindow(int xSubWindow);\n        public int getySubWindow();\n        public void setySubWindow(int ySubWindow);\n        public int getWidthSubWindow();\n        public void setWidthSubWindow(int widthSubWindow);\n        public int getHeightSubWindow();\n        public void setHeightSubWindow(int heightSubWindow);\n        public String getTitleSubWindow();\n        public void setTitleSubWindow(String titleSubWindow);\n\n\n\n\n        public void renderContent ();\n}\n",
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/src/GUI/Window/SubWindow.java",
+			"file_size": 597,
+			"file_write_time": 132288082235630901,
+			"settings":
+			{
+				"buffer_size": 576,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "package Logic.FootprintSpaceTime;\n\nimport org.junit.Test;\n\nimport static org.junit.Assert.*;\n\n\n\n//FIXME сделать тут класс рядом, который будет отрисовывать полигоны и проверяемую точку (чтобы было понятней, что не работает\n\n\npublic class PolygonTest {\n\n    @Test\n    public void countPoints() {\n        //FIXME FORMALITY\n    }\n\n    @Test\n    public void getPoint() {\n        //FIXME FORMALITY\n    }\n\n    @Test\n    public void contains() {\n        //FIXME FORMALITY\n    }\n\n    @Test\n    public void enteringPoint() {\n        {\n            Polygon square = new PolygonClass();\n            square.setPoint(new PointClass(10, 10));\n            square.setPoint(new PointClass(10, 20));\n            square.setPoint(new PointClass(20, 20));\n            square.setPoint(new PointClass(20, 10));\n\n            //==== assertTrue ====================\n            {\n                boolean actual = square.enteringPoint(new PointClass(15, 15));\n                assertTrue(actual);\n            }\n\n\n            {\n                boolean actual = square.enteringPoint(new PointClass(10, 20));\n                assertTrue(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(20, 10));\n                assertTrue(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(20, 20));\n                assertTrue(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(10, 10));\n                assertTrue(actual);\n            }\n\n\n//            { //points lying on the line included int the polygon? //FIXME FORMALITY\n//                boolean actual = square.enteringPoint(new PointClass(10, 11));\n//                assertTrue(actual);\n//            }\n\n\n            //==== assertFalse ====================\n            {\n                boolean actual = square.enteringPoint(new PointClass(15, 25));\n                assertFalse(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(-15, -15));\n                assertFalse(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(-15, 15));\n                assertFalse(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(15, -15));\n                assertFalse(actual);\n            }\n            {\n                boolean actual = square.enteringPoint(new PointClass(0, 0));\n                assertFalse(actual);\n            }\n        }\n\n\n        {\n            Polygon triangle = new PolygonClass();\n            triangle.setPoint(new PointClass(10, 10));\n            triangle.setPoint(new PointClass(20, 10));\n            triangle.setPoint(new PointClass(15, 20));\n\n            //==== assertTrue ====================\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(10, 10));\n                assertTrue(actual);\n            }\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(20, 10));\n                assertTrue(actual);\n            }\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(15, 20));\n                assertTrue(actual);\n            }\n\n\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(15, 13));\n                assertTrue(actual);\n            }\n\n            //==== assertFalse ====================\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(20, 16));\n                assertFalse(actual);\n            }\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(10, 16));\n                assertFalse(actual);\n            }\n            {\n                boolean actual = triangle.enteringPoint(new PointClass(15, 7));\n                assertFalse(actual);\n            }\n        }\n        {\n            Polygon squareAroundOrigin = new PolygonClass();\n            squareAroundOrigin.setPoint(new PointClass(-10, -10));\n            squareAroundOrigin.setPoint(new PointClass(10, -10));\n            squareAroundOrigin.setPoint(new PointClass(10, 10));\n            squareAroundOrigin.setPoint(new PointClass(-10, 10));\n\n            //==== assertTrue ====================\n            {\n                boolean actual = squareAroundOrigin.enteringPoint(new PointClass(0, 0));\n                assertTrue(actual);\n            }\n        }\n        /*\n\n        {\n            Polygon glassesPolygon = new PolygonClass();\n            glassesPolygon.setPoint(new PointClass(0, 15));\n            glassesPolygon.setPoint(new PointClass(15, 15));\n            glassesPolygon.setPoint(new PointClass(55, 56));\n            glassesPolygon.setPoint(new PointClass(52, 15));\n            glassesPolygon.setPoint(new PointClass(85, 15));\n            glassesPolygon.setPoint(new PointClass(96, 21));\n            glassesPolygon.setPoint(new PointClass(100, 85));\n            glassesPolygon.setPoint(new PointClass(85, 85));\n            glassesPolygon.setPoint(new PointClass(80, 73));\n            glassesPolygon.setPoint(new PointClass(71, 53));\n            glassesPolygon.setPoint(new PointClass(15, 85));\n            glassesPolygon.setPoint(new PointClass(0, 85));\n\n            //==== assertTrue ====================\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass(19, 46));\n                assertTrue(actual);\n            }\n\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass(79, 32));\n                assertTrue(actual); //FIXME TEST_FAILED\n            }\n\n            //FIXME добавить тестирование полигона \"полумесяц\" и лабиринт для алгоритма зональной декстры\n\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass(58, 22));\n                assertTrue(actual);\n            }\n\n\n            //==== assertFalse ====================\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass(22, 6));\n                assertFalse(actual);\n            }\n\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass(59, 82));\n                assertFalse(actual);\n            }\n        }\n\n*/\n\n    }\n}",
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/test/Logic/FootprintSpaceTime/PolygonTest.java",
+			"file_size": 6671,
+			"file_write_time": 132290074526458633,
+			"settings":
+			{
+				"buffer_size": 6302,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -75,7 +97,16 @@
 	},
 	"expanded_folders":
 	[
-		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma"
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/src",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/src/GUI",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/src/GUI/UserCommandInterface",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/src/GUI/Window",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/test",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/test/Logic",
+		"/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/test/Logic/FootprintSpaceTime"
 	],
 	"file_history":
 	[
@@ -166,7 +197,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -180,6 +211,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"([0-9]+) ([0-9]+)",
+			"([0-9]+)\\% ([0-9]+)\\%,",
+			"([0-9][0-9])\\% ([0-9][0-9])\\%,",
+			"([0-9][0-9])\\%,",
+			"[0-9][0-9]",
+			"triangle",
+			"{"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -187,6 +225,10 @@
 		"regex": true,
 		"replace_history":
 		[
+			"\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass($1, $2));\n                assertFalse(actual);\n            }",
+			"\n            {\n                boolean actual = glassesPolygon.enteringPoint(new PointClass($1, $2));\n                assertTrue(actual);\n            }",
+			"squareAroundOrigin.setPoint(new PointClass($1, $2));\\n",
+			"$1\\n"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -197,14 +239,75 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/src/GUI/Window/SubWindow.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/CCoA_ij_idea/test/Logic/FootprintSpaceTime/PolygonTest.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2451.2,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -241,7 +344,7 @@
 	"project": "code_CCoA.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 216.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -447,7 +550,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 442.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

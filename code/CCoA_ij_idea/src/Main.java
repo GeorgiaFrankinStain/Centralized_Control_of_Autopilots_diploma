@@ -59,12 +59,17 @@ public class Main extends Application {
         //create ConsoleManagement (AutoDisainerMachines, DisainerLandscape, DriverMachine, ObserverUpdate) //создавать только после полноценного создания входящих на вход объектов
 
         PoolPhisicalBodysForRendering poolPhisicalBodysForRendering = new PoolPhisicalBodysForRenderingClass(onlyFootprintSpaceTime);
-        MapRender subwindowMapRendering = new MapRenderClass(poolPhisicalBodysForRendering); //create MapRender (FootprintSpaceTime) //PUNKT_0 NOW
+        MapRender subwindowMapRendering = new MapRenderClass(poolPhisicalBodysForRendering); //create MapRender (FootprintSpaceTime)
+
+        { //FIXME MOVE imitation in
+//            onlyFootprintSpaceTime.addFootprint();
 
 
-        MovingObject movingObject = new MovingObjectClass();
-        movingObject.mark(onlyFootprintSpaceTime, createPath());
-//        movingObject.mark(onlyFootprintSpaceTime);
+            MovingObject movingObject = new MovingObjectClass();
+            movingObject.mark(onlyFootprintSpaceTime, createPath());
+
+
+        }
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4

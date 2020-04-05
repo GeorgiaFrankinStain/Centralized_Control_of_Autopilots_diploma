@@ -15,7 +15,7 @@ public class LandscapeClass implements Landscape, HistChangesFromWhen {
     }
 
     @Override
-    public int  speedInfluenceEnvironmentOnProperties(int  speed) {
+    public int speedInfluenceEnvironmentOnProperties(int speed) {
         return 0;
     }
 
@@ -30,12 +30,12 @@ public class LandscapeClass implements Landscape, HistChangesFromWhen {
     }
 
     @Override
-    public PolygonExtended getAreaChangesAfterBefore(int  afterTime, int  berforeTime) {
+    public PolygonExtended getAreaChangesAfterBefore(int afterTime, int berforeTime) {
         return null;
     }
 
     @Override
-    public int  getTimeLastUpdate() {
+    public int getTimeLastUpdate() {
         return 0;
     }
 }

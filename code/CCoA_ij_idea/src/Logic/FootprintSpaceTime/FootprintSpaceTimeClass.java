@@ -1,5 +1,6 @@
 package Logic.FootprintSpaceTime;
 
+import Logic.Landscape.ZonaLandscape;
 import Logic.MovingObjects.Path;
 import Logic.PathsMachines.PositionClass;
 import Logic.PhisicalBody;
@@ -42,7 +43,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     @Override
-    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position) {
+    public void addFootprint(int idTrack, ZonaLandscape zonaLandscape, Position position) {
 
     }
 
@@ -66,7 +67,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
         if (path.getSize() == 0) {
             assert (false);
         } else if (path.getSize() == 1) {
-            //FIXME
+            //FIXME add standing one the site of the machine
         } else {
             int endIndex = path.getSize() - 1;
             for (int i = 0; i < endIndex; i++) {
@@ -81,8 +82,6 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
                         currentMultiplicityStep,
                         timeAdding
                 );
-
-
             }
         }
     }
