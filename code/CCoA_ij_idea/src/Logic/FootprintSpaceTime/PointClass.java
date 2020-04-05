@@ -29,6 +29,10 @@ public class PointClass implements Point {
         this.y = y;
     }
 
+    @Override
+    public Point clone() {
+        return new PointClass(this.getX(), this.getY());
+    }
 
 
     @Override
@@ -71,5 +75,48 @@ public class PointClass implements Point {
     public boolean isLeftRelative(Point startLine, Point endLine){
         return ((endLine.getX() - startLine.getX())*(this.getY() - startLine.getY()) -
                         (endLine.getY() - startLine.getY())*(this.getX() - startLine.getX())) > 0;
+    }
+
+    @Override
+    public double getAngleRotareRelative(Point origin) {
+        Point vector = new PointClass(
+                this.getX() - origin.getX(),
+                this.getY() - origin.getY()
+        );
+        return Math.atan2(vector.getY(), vector.getX());
+    }
+
+    @Override
+    public Point getRotareRelative(Point origin, double angle) {
+        double rotatedX = Math.cos(angle) * (this.getX() - origin.getX()) - Math.sin(angle) * (this.getY()-origin.getY()) + origin.getX();
+        double rotatedY = Math.sin(angle) * (this.getX() - origin.getX()) + Math.cos(angle) * (this.getY() - origin.getY()) + origin.getY();
+
+        return new PointClass((int) rotatedX, (int) rotatedY);
+    }
+
+    @Override
+    public int getQuarter(Point origin) {
+        Point radiusVertor = new PointClass(
+                this.getX() - origin.getX(),
+                this.getY() - origin.getY()
+        );
+
+        boolean isRight = radiusVertor.getX() >= 0; //FIXME situation point on line
+        boolean isLeft = !isRight;
+        boolean isTop = radiusVertor.getY() >= 0;
+        boolean isBottom = !isTop;
+
+        if (isRight && isTop) {
+            return 0;
+        } else if (isLeft && isTop) {
+            return 1;
+        } else if (isLeft && isBottom) {
+            return  2;
+        } else if (isRight && isBottom) {
+            return 3;
+        }
+
+        assert (false);
+        return -1;
     }
 }

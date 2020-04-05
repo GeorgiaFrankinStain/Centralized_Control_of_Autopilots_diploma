@@ -1,8 +1,8 @@
 package Logic.FootprintSpaceTime;
 
-import GUI.StatementTaskRendering.DataFootprintForRendering;
+import Logic.MovingObjects.Path;
+import Logic.PathsMachines.PositionClass;
 import Logic.PhisicalBody;
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.Position;
@@ -41,11 +41,50 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     }
 
 
-
-
     @Override
     public void addFootprint(int idTrack, PhisicalBody movingObject, Position position) {
 
+    }
+
+    @Override
+    public void addFootprint(int idTrack, PhisicalBody movingObject, Path path, int startTime) {
+
+        Point vertorMarginRouteApplication = new PointClass(0, 0); //detection point route application at phisicalBody //FIXME find central point
+
+        int timeAdding = startTime;
+
+        /**
+         * Landscape have getResistancePowerLandscape(pressurePaskaleOfMachine)
+         * speed = MachinePower / ResistancePower
+         */
+        int speed = 10; //FIXME MAGIC NUMBER //FIXME IMITATION
+        int currentMultiplicityStep = 1;
+        double lengthStep = currentMultiplicityStep * speed;
+
+
+        //processing 1 point
+        if (path.getSize() == 0) {
+            assert (false);
+        } else if (path.getSize() == 1) {
+            //FIXME
+        } else {
+            int endIndex = path.getSize() - 1;
+            for (int i = 0; i < endIndex; i++) {
+                Point startLine = path.getPoint(i);
+                Point endLine = path.getPoint(i + 1);
+
+                timeAdding += printEveryStepOnLine(
+                        startLine,
+                        endLine,
+                        idTrack,
+                        movingObject,
+                        currentMultiplicityStep,
+                        timeAdding
+                );
+
+
+            }
+        }
     }
 
     @Override
@@ -78,11 +117,12 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
         program max:
             return a list of changed polygons from a intersection table with areaVizibility*/
         ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
-
+        //TODO add interpolation (LINK_RzRGrmTH)
         List<Footprint> resRendringFootpring = new ArrayList<Footprint>();
         for (Footprint current : storage.get(time)) {
             resRendringFootpring.add(current);
         }
+
 
         return resRendringFootpring;
     }
@@ -90,6 +130,11 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     @Override
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
         return null;
+    }
+
+    @Override
+    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position, int time, int multiplycitySecond) {
+        //TODO
     }
 
     @Override
@@ -104,9 +149,63 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     //==== <start> <Private_Methods> =======================================================================
+    private boolean stepUnderTest(Point startLine, Point endLine, Point stepUnderTest) {
+        int quarterStartLine = startLine.getQuarter(endLine);
+        int quarterstepUnderTest = stepUnderTest.getQuarter(endLine);
+
+        return quarterStartLine == quarterstepUnderTest;
+    }
+    private Point stepVector(Point endLine, Point startLine) {
+        Point origin = new PointClass(0, 0);
+        int timeStep = 1; //FIXME
+        double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
+        return new PointClass(10, 0).getRotareRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
+    }
+    private int printEveryStepOnLine(
+            Point startLine,
+            Point endLine,
+            int idTrack,
+            PhisicalBody movingObject,
+            int currentMultiplicityStep,
+            int timeAdding
+    ) {
+
+        double angle = endLine.getAngleRotareRelative(startLine);
+        double timeSum = 0;
+
+        //determination time and size of step //FIXME (until every second (LINK_RzRGrmTH), and on good need to would in half lenght)
+        //V = 10 px/sec //FIXME //    determination time insert (start + speed of passing throught the landscape)
+
+
+        Point currentCoordinat = startLine.clone();
+        Point stepVector = stepVector(endLine, startLine);
+
+        double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
+
+        do {
+            Position position = new PositionClass(currentCoordinat, angleStepVector);
+            //add Footpint
+            this.addFootprint(
+                    idTrack,
+                    movingObject,
+                    position,
+                    timeAdding
+            );
 
 
 
+            timeAdding += currentMultiplicityStep;
+            timeSum += currentMultiplicityStep;
 
+
+
+            currentCoordinat = new PointClass(
+                    currentCoordinat.getX() + stepVector.getX(),
+                    currentCoordinat.getY() + stepVector.getY()
+            );
+        } while (this.stepUnderTest(startLine, endLine, currentCoordinat));
+
+        return (int) timeSum;
+    }
     //==== <end> <Private_Methods> =========================================================================
 }

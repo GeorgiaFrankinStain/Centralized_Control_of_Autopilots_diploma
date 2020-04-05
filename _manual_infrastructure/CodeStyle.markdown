@@ -71,6 +71,7 @@ The text before the separator "--" is used in the code.
 //FIXME IMITATION
 //FIXME REALISED
 //FIXME TEST FAILED
+//FIXME MAGIC NUMBER
 
 
 //TODO REALISED

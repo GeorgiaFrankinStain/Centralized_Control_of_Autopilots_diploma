@@ -1,6 +1,7 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.DataFootprintForRendering;
+import Logic.MovingObjects.Path;
 import Logic.PhisicalBody;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import Logic.Position;
@@ -14,8 +15,18 @@ public interface FootprintSpaceTime {
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, int  time, TypesInLevel type);
 
 
+    public void addFootprint(
+            int idTrack,
+            PhisicalBody movingObject,
+            Position position,
+            int  time,
+            int multiplycitySecond
+    );
     public void addFootprint(int idTrack, PhisicalBody movingObject, Position position, int  time);
     public void addFootprint(int idTrack, PhisicalBody movingObject, Position position);
+
+    public void addFootprint(int idTrack, PhisicalBody movingObject, Path path, int startTime);
+
     public void deleteFootprints(int ID);
 
     public boolean getAccessPlace(PolygonExtended place, int  time, TypesInLevel type);

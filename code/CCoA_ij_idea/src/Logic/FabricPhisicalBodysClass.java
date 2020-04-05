@@ -16,7 +16,7 @@ public class FabricPhisicalBodysClass implements FabricPhisicalBodys {
         test.setPoint(new PointClass(50, 100));
 
 
-        PhisicalBody testBody = new PhisicalBodyClass(test);
+        PhisicalBody testBody = new PhisicalBodyClass(test, typeMachinesBody);
 
 
         return testBody;

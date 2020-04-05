@@ -2,13 +2,9 @@ package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.PhisicalBody;
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
-import GUI.StatementTaskRendering.TypeLandscapeBody;
 import Logic.Position;
 
-import java.awt.*;
-
-public class FootprintClass implements Footprint, DataFootprintForRendering{
+public class FootprintClass implements Footprint, DataFootprintForRendering {
     private int idTrack;
     private Position position;
     private PhisicalBody phisicalBody;
@@ -39,8 +35,8 @@ public class FootprintClass implements Footprint, DataFootprintForRendering{
     }
 
     @Override
-    public TypeLandscapeBody getTypePhisicalBody() {
-        return this.phisicalBody.getTypePhisicalBody();
+    public String getType() {
+        return this.phisicalBody.getType();
     }
 
     @Override

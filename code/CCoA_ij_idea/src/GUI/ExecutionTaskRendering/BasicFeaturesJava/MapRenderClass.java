@@ -1,6 +1,6 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.ObjectsOfMapRender.Machine;
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprints.Machine;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
 import GUI.StatementTaskRendering.SubWindow;
@@ -40,7 +40,7 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
     @Override
     public void update(long now) {
         this.gameTime += this.speedRenderingGameSecondPerSecond; //FIXME add adapter now in gameTime
-        this.gameTime %= 7;
+        this.gameTime %= 700;
 
         this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime);
 
@@ -78,12 +78,14 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
 
     //==== <start> <Private_Methods> =======================================================================
     private void createRenderingFootrint(DataFootprintForRendering dataFootprintForRendering) {
-        Pane tempMachine = new Machine(dataFootprintForRendering);
+
+        FabricRendringFootprint fabric = new FabricRenderingFootprintClass();
+        Pane currentPane = fabric.getRenderingFootprint(dataFootprintForRendering);
         this.storageRenderingFootprints.put(
                 dataFootprintForRendering.getIdObject(),
-                (RenderingFootprint) tempMachine
+                (RenderingFootprint) currentPane
         );
-        getChildren().addAll(tempMachine);
+        getChildren().addAll(currentPane);
     }
 
 

@@ -6,5 +6,5 @@ import Logic.Position;
 public interface DataFootprintForRendering {
     public int getIdObject();
     public Position getPosition();
-    TypeLandscapeBody getTypePhisicalBody();
+    public String getType();
 }

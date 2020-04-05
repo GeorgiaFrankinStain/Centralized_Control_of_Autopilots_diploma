@@ -6,11 +6,14 @@ import GUI.StatementTaskRendering.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
 import Logic.FootprintSpaceTime.FootprintSpaceTime;
 import Logic.FootprintSpaceTime.FootprintSpaceTimeClass;
+import Logic.FootprintSpaceTime.PointClass;
 import Logic.Landscape.Landscape;
 import Logic.Landscape.LandscapeClass;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.MovingObjectClass;
 
+import Logic.MovingObjects.Path;
+import Logic.MovingObjects.PathClass;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -60,7 +63,8 @@ public class Main extends Application {
 
 
         MovingObject movingObject = new MovingObjectClass();
-        movingObject.mark(onlyFootprintSpaceTime);
+        movingObject.mark(onlyFootprintSpaceTime, createPath());
+//        movingObject.mark(onlyFootprintSpaceTime);
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
@@ -93,6 +97,18 @@ public class Main extends Application {
     }
 
     //==== <start> <Private_Methods> =======================================================================
+    private Path createPath() { //FIXME IMITATION
+        Path resPath = new PathClass();
+        resPath.addPoint(new PointClass(10, 10));
+        resPath.addPoint(new PointClass(15, 15));
+        resPath.addPoint(new PointClass(200, 15));
+        resPath.addPoint(new PointClass(20, 250));
+        resPath.addPoint(new PointClass(30, 30));
+        resPath.addPoint(new PointClass(35, 35));
+        resPath.addPoint(new PointClass(40, 40));
+
+        return resPath;
+    }
     private void update(long now) {
         generalWindows.update(now);
     }
