@@ -52,16 +52,16 @@ public class LocalToolRenderingPolygon {
             int[] yPoints = new int[LocalToolRenderingPolygon.this.objectOfRendering.countPoints()];
 
             for (int i = 0; i < LocalToolRenderingPolygon.this.objectOfRendering.countPoints(); i++) {
-                xPoints[i] = LocalToolRenderingPolygon.this.objectOfRendering.getPoint(i).getX();
-                yPoints[i] = LocalToolRenderingPolygon.this.objectOfRendering.getPoint(i).getY();
+                xPoints[i] = (int) LocalToolRenderingPolygon.this.objectOfRendering.getPoint(i).getX();
+                yPoints[i] = (int) LocalToolRenderingPolygon.this.objectOfRendering.getPoint(i).getY();
             }
 
             g.fillPolygon(xPoints, yPoints, xPoints.length);
 
 
             g.fillOval(
-                    LocalToolRenderingPolygon.this.point.getX(),
-                    LocalToolRenderingPolygon.this.point.getY(),
+                    (int) LocalToolRenderingPolygon.this.point.getX(),
+                    (int) LocalToolRenderingPolygon.this.point.getY(),
                     3,
                     3);
         }
