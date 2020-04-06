@@ -1,16 +1,18 @@
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.MapRender;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.MapRenderClass;
-import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
-import GUI.StatementTaskRendering.PoolPhisicalBodysForRenderingClass;
+import GUI.StatementTaskRendering.PoolDataFootprintForRendering;
+import GUI.StatementTaskRendering.PoolDataFootprintForRenderingClass;
+import GUI.StatementTaskRendering.TypeMachinesBody;
 import GUI.StatementTaskRendering.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
+import Logic.FabricMovingObjects;
+import Logic.FabricMovingObjectsClass;
 import Logic.FootprintSpaceTime.FootprintSpaceTime;
 import Logic.FootprintSpaceTime.FootprintSpaceTimeClass;
 import Logic.FootprintSpaceTime.PointClass;
 import Logic.Landscape.Landscape;
 import Logic.Landscape.LandscapeClass;
 import Logic.MovingObjects.MovingObject;
-import Logic.MovingObjects.MovingObjectClass;
 
 import Logic.MovingObjects.Path;
 import Logic.MovingObjects.PathClass;
@@ -58,14 +60,14 @@ public class Main extends Application {
 
         //create ConsoleManagement (AutoDisainerMachines, DisainerLandscape, DriverMachine, ObserverUpdate) //создавать только после полноценного создания входящих на вход объектов
 
-        PoolPhisicalBodysForRendering poolPhisicalBodysForRendering = new PoolPhisicalBodysForRenderingClass(onlyFootprintSpaceTime);
-        MapRender subwindowMapRendering = new MapRenderClass(poolPhisicalBodysForRendering); //create MapRender (FootprintSpaceTime)
+        PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintSpaceTime);
+        MapRender subwindowMapRendering = new MapRenderClass(poolDataFootprintForRendering); //create MapRender (FootprintSpaceTime)
 
         { //FIXME MOVE imitation in
 //            onlyFootprintSpaceTime.addFootprint();
 
-
-            MovingObject movingObject = new MovingObjectClass();
+            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
             movingObject.mark(onlyFootprintSpaceTime, createPath());
 
 

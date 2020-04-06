@@ -1,7 +1,6 @@
 package Logic.Landscape;
 
 import Logic.FootprintSpaceTime.Footprint;
-import Logic.PhisicalBody;
 import Logic.Position;
 
 public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
@@ -15,10 +14,6 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
         return 0;
     }
 
-    @Override
-    public PhisicalBody getPhisicalBody() {
-        return null;
-    }
 
     @Override
     public Position getPosition() {

@@ -5,7 +5,7 @@ import Logic.FootprintSpaceTime.PolygonExtended;
 
 import java.util.Iterator;
 
-public interface PoolPhisicalBodysForRendering {
+public interface PoolDataFootprintForRendering {
     public void fillYourself(PolygonExtended areaRendering, int gameTime);
     public DataFootprintForRendering getDataFootprint(int IdObject);
 

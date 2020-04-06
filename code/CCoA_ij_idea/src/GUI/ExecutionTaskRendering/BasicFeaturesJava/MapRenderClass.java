@@ -1,8 +1,7 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava;
 
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprints.Machine;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
-import GUI.StatementTaskRendering.PoolPhisicalBodysForRendering;
+import GUI.StatementTaskRendering.PoolDataFootprintForRendering;
 import GUI.StatementTaskRendering.SubWindow;
 import Logic.FootprintSpaceTime.*;
 
@@ -29,10 +28,10 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
     private float speedRenderingGameSecondPerSecond = 1;
 
     private Map<Integer, RenderingFootprint> storageRenderingFootprints = new TreeMap<Integer, RenderingFootprint>();
-    private PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
+    private PoolDataFootprintForRendering poolDataFootprintForRendering;
 
-    public MapRenderClass(PoolPhisicalBodysForRendering poolPhisicalBodysForRendering) {
-        this.poolPhisicalBodysForRendering = poolPhisicalBodysForRendering;
+    public MapRenderClass(PoolDataFootprintForRendering poolDataFootprintForRendering) {
+        this.poolDataFootprintForRendering = poolDataFootprintForRendering;
 
     }
 
@@ -42,7 +41,7 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
         this.gameTime += this.speedRenderingGameSecondPerSecond; //FIXME add adapter now in gameTime
         this.gameTime %= 700;
 
-        this.poolPhisicalBodysForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime);
+        this.poolDataFootprintForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime);
 
 
 /*
@@ -50,13 +49,13 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
         minimum program:
             drawing everything
         maximum program:
-            drawing only changes (tracking changes will fall on the shoulders of PoolPhisicalBodysForRendering; it will implement an iterator of the changed objects, not all of them)
+            drawing only changes (tracking changes will fall on the shoulders of PoolDataFootprintForRendering; it will implement an iterator of the changed objects, not all of them)
         2 maximum program:
             first request changes in a second, and then graually change the properties of exiting objects
 */
 
 
-        Iterator<DataFootprintForRendering> it = this.poolPhisicalBodysForRendering.iterator();
+        Iterator<DataFootprintForRendering> it = this.poolDataFootprintForRendering.iterator();
         while (it.hasNext()) {
             DataFootprintForRendering currentDataFootprintForRendering = it.next();
 

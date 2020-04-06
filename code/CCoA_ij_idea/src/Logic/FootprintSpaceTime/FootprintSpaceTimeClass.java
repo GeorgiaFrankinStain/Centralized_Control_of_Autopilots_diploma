@@ -1,9 +1,9 @@
 package Logic.FootprintSpaceTime;
 
 import Logic.Landscape.ZonaLandscape;
+import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.PathsMachines.PositionClass;
-import Logic.PhisicalBody;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.Position;
@@ -13,7 +13,7 @@ import java.util.*;
 
 public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
     private Map<Integer, List<Footprint>> storage = new TreeMap<Integer, List<Footprint>>();
-    List<PhisicalBody> imitationLadnscape = new ArrayList<PhisicalBody>(); //FIXME IMITATION Landscape
+    List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
 /*
     program min:
         pollygons
@@ -30,7 +30,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     @Override
-    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position, int time) {
+    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time) {
 
 
         if (!storage.containsKey(time)) {
@@ -48,9 +48,9 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     }
 
     @Override
-    public void addFootprint(int idTrack, PhisicalBody movingObject, Path path, int startTime) {
+    public void addFootprint(int idTrack, MovingObject movingObject, Path path, int startTime) {
 
-        Point vertorMarginRouteApplication = new PointClass(0, 0); //detection point route application at phisicalBody //FIXME find central point
+        Point vertorMarginRouteApplication = new PointClass(0, 0); //detection point route application at polygonExtender //FIXME find central point
 
         int timeAdding = startTime;
 
@@ -102,7 +102,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     @Override
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time) {
 
-        //FIXME take PhisicalBodys from the landscape
+        //FIXME take DataFootprintForRendering from the landscape
 
 
         //iteration all polygons
@@ -132,7 +132,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     }
 
     @Override
-    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position, int time, int multiplycitySecond) {
+    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time, int multiplycitySecond) {
         //TODO
     }
 
@@ -164,7 +164,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
             Point startLine,
             Point endLine,
             int idTrack,
-            PhisicalBody movingObject,
+            MovingObject movingObject,
             int currentMultiplicityStep,
             int timeAdding
     ) {

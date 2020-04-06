@@ -1,10 +1,8 @@
 package Logic.FootprintSpaceTime;
 
-import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.Landscape.ZonaLandscape;
+import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
-import Logic.PhisicalBody;
-import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import Logic.Position;
 import Logic.TypesInLevel;
 
@@ -19,15 +17,15 @@ public interface FootprintSpaceTime {
 
     public void addFootprint(
             int idTrack,
-            PhisicalBody movingObject,
+            MovingObject movingObject,
             Position position,
             int time,
             int multiplycitySecond
     );
 
-    public void addFootprint(int idTrack, PhisicalBody movingObject, Path path, int startTime);
+    public void addFootprint(int idTrack, MovingObject movingObject, Path path, int startTime);
 
-    public void addFootprint(int idTrack, PhisicalBody movingObject, Position position, int time);
+    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time);
 
     public void addFootprint(int idTrack, ZonaLandscape zonaLandscape, Position position);
 

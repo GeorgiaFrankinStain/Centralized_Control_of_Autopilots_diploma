@@ -1,18 +1,18 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.DataFootprintForRendering;
-import Logic.PhisicalBody;
+import Logic.MovingObjects.MovingObject;
 import Logic.Position;
 
 public class FootprintClass implements Footprint, DataFootprintForRendering {
     private int idTrack;
     private Position position;
-    private PhisicalBody phisicalBody;
+    private MovingObject movingObject;
 
-    public FootprintClass(int idTrack, Position position, PhisicalBody phisicalBody) {
+    public FootprintClass(int idTrack, Position position, MovingObject movingObject) {
         this.idTrack = idTrack;
         this.position = position;
-        this.phisicalBody = phisicalBody;
+        this.movingObject = movingObject;
     }
 
 
@@ -23,10 +23,6 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         return idTrack;
     }
 
-    @Override
-    public PhisicalBody getPhisicalBody() {
-        return this.phisicalBody;
-    }
 
     //    ==== <start> <Implements RenderingFootprint> ==================================================
     @Override
@@ -36,12 +32,12 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public String getType() {
-        return this.phisicalBody.getType();
+        return this.movingObject.getType();
     }
 
     @Override
     public int getIdObject() {
-        return this.phisicalBody.getID();
+        return this.movingObject.getID();
     }
 
     //    ==== <end> <Implements RenderingFootprint> ==================================================
@@ -52,7 +48,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     //==== <start> <Private_Methods> =======================================================================
     private Point pointOfPolygonConsideringPosition(
             Point point,
-            Point generalPointPhisicalBody,
+            Point generalPointPolygonExtender,
             Position position
     ) { //FIXME add origin of window
 

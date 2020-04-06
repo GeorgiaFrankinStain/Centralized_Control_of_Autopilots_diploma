@@ -1,16 +1,19 @@
 package Logic.MovingObjects;
 
-import Logic.FabricPhisicalBodys;
-import Logic.FabricPhisicalBodysClass;
-import Logic.PhisicalBody;
+import Logic.*;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
-import Logic.PathsMachines.PositionClass;
-import Logic.Position;
+import Wrapper.RandowWrapperClass;
 
 public class MovingObjectClass implements MovingObject {
 
-    public MovingObjectClass() {
+    private PolygonExtended polygonExtended;
+    private TypeMachinesBody typeMachinesBody;
+    private int idObject = new RandowWrapperClass().nextInt();
+
+    public MovingObjectClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
+        this.polygonExtended = polygonExtended;
+        this.typeMachinesBody = typeMachinesBody;
     }
 
 
@@ -20,13 +23,9 @@ public class MovingObjectClass implements MovingObject {
 
         //run addSled
 
-        FabricPhisicalBodys fabricPhisicalBodys = new FabricPhisicalBodysClass();
-
-
-        PhisicalBody testBody = fabricPhisicalBodys.getMachineRenderingBody(TypeMachinesBody.PASSENGER_CAR);
         footprintSpaceTime.addFootprint(
                 path.getIdTrack(),
-                testBody,
+                this,
                 path,
                 0
         );
@@ -47,6 +46,26 @@ public class MovingObjectClass implements MovingObject {
         footprintSpaceTime.addFootprint(13, testBody, position4, 4);*/
 
 
+    }
+
+    @Override
+    public PolygonExtended getPolygonExtended() {
+        return this.polygonExtended;
+    }
+
+    @Override
+    public String getType() {
+        return this.typeMachinesBody.name();
+    }
+
+    @Override
+    public int getID() {
+        return this.idObject;
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
     }
     //==== <start> <Getter_and_Setter> ==================================================
 

@@ -1,15 +1,17 @@
 package GUI.StatementTaskRendering;
 
 import Logic.FootprintSpaceTime.*;
+import Wrapper.RandowWrapperClass;
 
 import java.util.*;
 
-public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForRendering, Iterable<DataFootprintForRendering> {
+public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForRendering, Iterable<DataFootprintForRendering> {
     private FootprintSpaceTime sourceFootprintSpaceTime;
-    private Map<Integer, DataFootprintForRendering> poolDataFootprintForRendering;
+    private Map<Integer, DataFootprintForRendering> poolDataFootprintForRendering =
+            new HashMap<Integer, DataFootprintForRendering>();
 
 
-    public PoolPhisicalBodysForRenderingClass(FootprintSpaceTime footprintSpaceTime) {
+    public PoolDataFootprintForRenderingClass(FootprintSpaceTime footprintSpaceTime) {
         this.sourceFootprintSpaceTime = footprintSpaceTime;
     }
 
@@ -27,7 +29,6 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
         List<Footprint> footprints =
                 this.sourceFootprintSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
 
-        this.poolDataFootprintForRendering = new TreeMap<Integer, DataFootprintForRendering>();
         for (Footprint footprint : footprints) {
             poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);
         }
@@ -41,29 +42,32 @@ public class PoolPhisicalBodysForRenderingClass implements PoolPhisicalBodysForR
 
     @Override
     public Iterator<DataFootprintForRendering> iterator() {
-        return new PoolPhisicalBodysIterator(this);
+        return new PoolDataFootprintForRenderingIterator(this);
     }
 
 
-    private class PoolPhisicalBodysIterator implements Iterator<DataFootprintForRendering> {
-        private PoolPhisicalBodysForRendering poolPhisicalBodysForRendering;
-        private int nextIndexPhisicalBody = 0;
+    private class PoolDataFootprintForRenderingIterator implements Iterator<DataFootprintForRendering> {
+        private PoolDataFootprintForRendering poolDataFootprintForRendering;
+        private Iterator iteratorMap;
 
-        public PoolPhisicalBodysIterator(PoolPhisicalBodysForRendering poolPhisicalBodysForRendering) {
-            this.poolPhisicalBodysForRendering = poolPhisicalBodysForRendering;
+        public PoolDataFootprintForRenderingIterator(PoolDataFootprintForRendering poolDataFootprintForRendering) {
+            this.poolDataFootprintForRendering = poolDataFootprintForRendering;
+
+            
+            Set entrySet = PoolDataFootprintForRenderingClass.this.poolDataFootprintForRendering.entrySet();
+            // Obtaining an iterator for the entry set
+            this.iteratorMap = entrySet.iterator();
         }
 
         @Override
         public boolean hasNext() {
-            int size = PoolPhisicalBodysForRenderingClass.this.poolDataFootprintForRendering.size();
-            int endIndex = size - 1;
-            return this.nextIndexPhisicalBody <= endIndex;
+            return this.iteratorMap.hasNext();
         }
 
         @Override
         public DataFootprintForRendering next() {
-            int currenIndex = this.nextIndexPhisicalBody++;
-            return PoolPhisicalBodysForRenderingClass.this.poolDataFootprintForRendering.get(currenIndex);
+                Map.Entry me = (Map.Entry) this.iteratorMap.next();
+                return (DataFootprintForRendering) me.getValue();
         }
     }
 }
