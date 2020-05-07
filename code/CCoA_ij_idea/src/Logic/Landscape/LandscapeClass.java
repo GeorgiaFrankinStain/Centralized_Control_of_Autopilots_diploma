@@ -5,13 +5,16 @@ import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.MovingObjects.Path;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LandscapeClass implements Landscape, HistChangesFromWhen {
+    private List<ZonaLandscape> allZonaLandscape = new ArrayList<ZonaLandscape>();
+
 
     @Override
-    public void fillArea() {
-
+    public void fillArea(ZonaLandscape zonaLandscape) {
+        allZonaLandscape.add(zonaLandscape);
     }
 
     @Override

@@ -13,7 +13,8 @@ import java.util.*;
 
 public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
     private Map<Integer, List<Footprint>> storage = new TreeMap<Integer, List<Footprint>>();
-    List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
+    private List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
+    private Landscape onlyLandscape;
 /*
     program min:
         pollygons
@@ -21,7 +22,6 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
         rounds
  */
 
-    Landscape onlyLandscape;
 
 
     public FootprintSpaceTimeClass(Landscape onlyLandscape) {
@@ -43,8 +43,8 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     @Override
-    public void addFootprint(int idTrack, ZonaLandscape zonaLandscape, Position position) {
-
+    public void addFootprint(int idTrack, ZonaLandscape zonaLandscape) {
+        this.onlyLandscape.fillArea(zonaLandscape);
     }
 
     @Override

@@ -19,6 +19,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/CCoA_task.todo",
+			"settings":
+			{
+				"buffer_size": 20884,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/CodeStyle.markdown",
+			"settings":
+			{
+				"buffer_size": 2440,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/bufer.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/log_of_development.txt",
+			"settings":
+			{
+				"buffer_size": 120,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -195,8 +230,143 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/CCoA_task.todo",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20884,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										16919,
+										16919
+									],
+									[
+										17866,
+										17866
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								17601,
+								17601
+							]
+						],
+						"settings":
+						{
+							"plain_tasks_remain_time_phantoms":
+							[
+							],
+							"syntax": "Packages/PlainTasks/PlainTasks.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4218.28571429,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/CodeStyle.markdown",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2440,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1683,
+								1683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1656.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/bufer.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/_manual_infrastructure/log_of_development.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],

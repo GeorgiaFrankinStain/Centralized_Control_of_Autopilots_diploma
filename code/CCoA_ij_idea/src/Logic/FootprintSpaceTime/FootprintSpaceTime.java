@@ -27,7 +27,7 @@ public interface FootprintSpaceTime {
 
     public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time);
 
-    public void addFootprint(int idTrack, ZonaLandscape zonaLandscape, Position position);
+    public void addFootprint(int idTrack, ZonaLandscape zonaLandscape);
 
     public void deleteFootprints(int ID);
 
