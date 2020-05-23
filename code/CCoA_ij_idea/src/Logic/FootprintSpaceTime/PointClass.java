@@ -35,6 +35,7 @@ public class PointClass implements Point {
     }
 
 
+
     @Override
     public int hashCode() {
         int  twoPow32 = 2147483647;
@@ -111,12 +112,23 @@ public class PointClass implements Point {
         } else if (isLeft && isTop) {
             return 1;
         } else if (isLeft && isBottom) {
-            return  2;
+            return 2;
         } else if (isRight && isBottom) {
             return 3;
         }
 
         assert (false);
         return -1;
+    }
+
+    @Override
+    public double getLengthVector() {
+        return Math.sqrt(this.getX() * this.getX() + this.getY() * this.getY());
+    }
+
+    @Override
+    public double distanceToPoint(Point point) {
+        Point vector = new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
+        return vector.getLengthVector();
     }
 }

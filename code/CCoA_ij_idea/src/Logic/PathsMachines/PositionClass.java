@@ -21,4 +21,21 @@ public class PositionClass implements Position {
     public double getRotation() {
         return this.rotation;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+
+
+
+        Position other = (Position) obj;
+        return (this.getCoordinats().equals(other.getCoordinats()))
+                       && (this.getRotation() - other.getRotation() < 0.01); //FIXME MAGIC_NUMBER
+    }
 }

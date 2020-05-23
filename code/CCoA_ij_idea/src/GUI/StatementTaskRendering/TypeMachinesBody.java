@@ -7,5 +7,6 @@ public enum TypeMachinesBody {
     RACING_CAR,
     NIER_AUTOMATA_2B,
     TURTLE,
-    STAR_DESTROYER
+    STAR_DESTROYER,
+    WALL_CAR
 }

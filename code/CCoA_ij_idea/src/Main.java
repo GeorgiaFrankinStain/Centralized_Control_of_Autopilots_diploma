@@ -67,8 +67,12 @@ public class Main extends Application {
 //            onlyFootprintSpaceTime.addFootprint();
 
             FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
             movingObject.mark(onlyFootprintSpaceTime, createPath());
+
+            MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
+            wall.mark(onlyFootprintSpaceTime, createPathWall());
 
 
         }
@@ -100,7 +104,6 @@ public class Main extends Application {
 
 
 
-        System.out.println("Hello World!");
     }
 
     //==== <start> <Private_Methods> =======================================================================
@@ -113,6 +116,19 @@ public class Main extends Application {
         resPath.addPoint(new PointClass(30, 30));
         resPath.addPoint(new PointClass(35, 35));
         resPath.addPoint(new PointClass(40, 40));
+        resPath.addPoint(new PointClass(400, 40));
+
+        return resPath;
+    }
+    private Path createPathWall() { //FIXME IMITATION
+        Path resPath = new PathClass();
+        resPath.addPoint(new PointClass(60, 60));
+        resPath.addPoint(new PointClass(60, 60));
+        resPath.addPoint(new PointClass(60, 60));
+        resPath.addPoint(new PointClass(60, 60));
+        resPath.addPoint(new PointClass(60, 60));
+        resPath.addPoint(new PointClass(60, 60));
+        resPath.addPoint(new PointClass(60, 60));
 
         return resPath;
     }

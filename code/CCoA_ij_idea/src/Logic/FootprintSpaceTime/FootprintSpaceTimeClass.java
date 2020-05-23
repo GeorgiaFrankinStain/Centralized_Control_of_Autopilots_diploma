@@ -42,10 +42,6 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     }
 
 
-    @Override
-    public void addFootprint(int idTrack, ZonaLandscape zonaLandscape) {
-        this.onlyLandscape.fillArea(zonaLandscape);
-    }
 
     @Override
     public void addFootprint(int idTrack, MovingObject movingObject, Path path, int startTime) {
@@ -82,6 +78,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
                         currentMultiplicityStep,
                         timeAdding
                 );
+                System.out.println("timeAdding: " + timeAdding);
             }
         }
     }
@@ -94,6 +91,24 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     @Override
     public boolean getAccessPlace(PolygonExtended place, int time, TypesInLevel type) {
         return false;
+    }
+
+    @Override
+    public Position getPosition(int ID, int time) {
+
+        for (Footprint currentFootprint : storage.get(time)) {
+            boolean isFindObject = currentFootprint.getIdObject() == ID;
+            if (isFindObject) {
+                return currentFootprint.getPosition();
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public Landscape getLandscape() {
+        return this.onlyLandscape;
     }
 
 
@@ -148,6 +163,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
     //==== <start> <Private_Methods> =======================================================================
+
     private boolean stepUnderTest(Point startLine, Point endLine, Point stepUnderTest) {
         int quarterStartLine = startLine.getQuarter(endLine);
         int quarterstepUnderTest = stepUnderTest.getQuarter(endLine);
@@ -181,6 +197,10 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
         double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
 
+        double lengthStep = stepVector.getLengthVector();
+        double lengthStraightPath = endLine.distanceToPoint(startLine);
+        int counterMaxSteps = (int) (lengthStraightPath / lengthStep);
+
         do {
             Position position = new PositionClass(currentCoordinat, angleStepVector);
             //add Footpint
@@ -202,9 +222,13 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
                     currentCoordinat.getX() + stepVector.getX(),
                     currentCoordinat.getY() + stepVector.getY()
             );
-        } while (this.stepUnderTest(startLine, endLine, currentCoordinat));
+
+//            System.out.println("----timeSum: " + timeSum);
+            counterMaxSteps--;
+        } while (this.stepUnderTest(startLine, endLine, currentCoordinat) && counterMaxSteps > 0);
 
         return (int) timeSum;
     }
+
     //==== <end> <Private_Methods> =========================================================================
 }
