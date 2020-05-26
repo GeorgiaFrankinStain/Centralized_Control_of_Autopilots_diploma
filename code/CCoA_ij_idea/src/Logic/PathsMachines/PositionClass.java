@@ -38,4 +38,9 @@ public class PositionClass implements Position {
         return (this.getCoordinats().equals(other.getCoordinats()))
                        && (this.getRotation() - other.getRotation() < 0.01); //FIXME MAGIC_NUMBER
     }
+
+    @Override
+    public String toString() {
+        return "rotation: " + rotation + " " + point.toString();
+    }
 }

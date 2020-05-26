@@ -1,6 +1,5 @@
 package Logic.FootprintSpaceTime;
 
-import Logic.Landscape.ZonaLandscape;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.PathsMachines.PositionClass;
@@ -11,9 +10,9 @@ import Logic.TypesInLevel;
 
 import java.util.*;
 
-public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesFromWhen {
-    private Map<Integer, List<Footprint>> storage = new TreeMap<Integer, List<Footprint>>();
-    private List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
+public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChangesFromWhen {
+    private Map<Integer, List<Footprint>> storageAllFootprints = new TreeMap<Integer, List<Footprint>>();
+//    private List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
     private Landscape onlyLandscape;
 /*
     program min:
@@ -24,21 +23,28 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
 
 
-    public FootprintSpaceTimeClass(Landscape onlyLandscape) {
+    public FootprintsSpaceTimeClass(Landscape onlyLandscape) {
         this.onlyLandscape = onlyLandscape;
     }
 
 
     @Override
-    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time) {
+    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time) { //FIXME ADD_TEST
 
 
-        if (!storage.containsKey(time)) {
-            storage.put(time, new ArrayList<Footprint>());
+        if (!storageAllFootprints.containsKey(time)) {
+            storageAllFootprints.put(time, new ArrayList<Footprint>());
         }
 
 
-        storage.get(time).add(new FootprintClass(idTrack, position, movingObject));
+
+        Footprint newFootprint = new FootprintClass(idTrack, position, movingObject);
+
+        boolean placeIsSeat = this.getIsSeatTaken(newFootprint.getLocation(), time, null);
+
+        if (!placeIsSeat) {
+            storageAllFootprints.get(time).add(newFootprint);
+        }
     }
 
 
@@ -54,8 +60,8 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
          * Landscape have getResistancePowerLandscape(pressurePaskaleOfMachine)
          * speed = MachinePower / ResistancePower
          */
-        int speed = 10; //FIXME MAGIC NUMBER //FIXME IMITATION
-        int currentMultiplicityStep = 1;
+        double speed = 10; //FIXME MAGIC NUMBER //FIXME IMITATION
+        double currentMultiplicityStep = 1;
         double lengthStep = currentMultiplicityStep * speed;
 
 
@@ -78,7 +84,6 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
                         currentMultiplicityStep,
                         timeAdding
                 );
-                System.out.println("timeAdding: " + timeAdding);
             }
         }
     }
@@ -89,14 +94,38 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
     }
 
     @Override
-    public boolean getAccessPlace(PolygonExtended place, int time, TypesInLevel type) {
+    public boolean getIsSeatTaken(PolygonExtended place, int time, TypesInLevel type) { //FIXME ADD_TEST
+
+        List<Footprint> storageOfTime = storageAllFootprints.get(time);
+
+        boolean allSeatsAreAvailableAtThisTime = storageOfTime == null;
+
+        if (allSeatsAreAvailableAtThisTime) {
+            return false;
+        }
+
+        for (Footprint footprint : storageOfTime) {
+            PolygonExtended locationMovingObject = footprint.getLocation();
+            boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
+            if (placeIsSeat){
+                return true;
+            }
+        }
+
         return false;
     }
 
     @Override
     public Position getPosition(int ID, int time) {
 
-        for (Footprint currentFootprint : storage.get(time)) {
+        List<Footprint> storageCurrentTime = storageAllFootprints.get(time);
+
+        boolean thereAreNoRecordsOfThisTime = storageCurrentTime == null;
+        if (thereAreNoRecordsOfThisTime) {
+            return null;
+        }
+
+        for (Footprint currentFootprint : storageAllFootprints.get(time)) {
             boolean isFindObject = currentFootprint.getIdObject() == ID;
             if (isFindObject) {
                 return currentFootprint.getPosition();
@@ -130,10 +159,10 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
         program max:
             return a list of changed polygons from a intersection table with areaVizibility*/
-        ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
+//        ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
         //TODO add interpolation (LINK_RzRGrmTH)
         List<Footprint> resRendringFootpring = new ArrayList<Footprint>();
-        for (Footprint current : storage.get(time)) {
+        for (Footprint current : storageAllFootprints.get(time)) {
             resRendringFootpring.add(current);
         }
 
@@ -164,6 +193,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
 
     //==== <start> <Private_Methods> =======================================================================
 
+
     private boolean stepUnderTest(Point startLine, Point endLine, Point stepUnderTest) {
         int quarterStartLine = startLine.getQuarter(endLine);
         int quarterstepUnderTest = stepUnderTest.getQuarter(endLine);
@@ -181,7 +211,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
             Point endLine,
             int idTrack,
             MovingObject movingObject,
-            int currentMultiplicityStep,
+            double currentMultiplicityStep,
             int timeAdding
     ) {
 
@@ -200,6 +230,7 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
         double lengthStep = stepVector.getLengthVector();
         double lengthStraightPath = endLine.distanceToPoint(startLine);
         int counterMaxSteps = (int) (lengthStraightPath / lengthStep);
+        counterMaxSteps++; //in 3 metr 4 points |-|-|-|
 
         do {
             Position position = new PositionClass(currentCoordinat, angleStepVector);
@@ -223,12 +254,12 @@ public class FootprintSpaceTimeClass implements FootprintSpaceTime, HistChangesF
                     currentCoordinat.getY() + stepVector.getY()
             );
 
-//            System.out.println("----timeSum: " + timeSum);
             counterMaxSteps--;
         } while (this.stepUnderTest(startLine, endLine, currentCoordinat) && counterMaxSteps > 0);
 
         return (int) timeSum;
     }
+
 
     //==== <end> <Private_Methods> =========================================================================
 }

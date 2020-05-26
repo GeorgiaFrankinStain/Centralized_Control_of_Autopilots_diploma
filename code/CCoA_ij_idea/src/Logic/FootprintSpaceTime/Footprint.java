@@ -6,5 +6,6 @@ public interface Footprint {
     public int getIdObject();
     public int getIdTrack();
     public Position getPosition();
+    public PolygonExtended getLocation();
 
 }

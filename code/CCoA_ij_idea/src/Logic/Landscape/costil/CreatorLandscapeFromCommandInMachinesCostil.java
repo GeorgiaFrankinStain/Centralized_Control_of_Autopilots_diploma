@@ -1,9 +1,9 @@
 package Logic.Landscape.costil;
 
-import Logic.FootprintSpaceTime.FootprintSpaceTime;
+import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 
 public class CreatorLandscapeFromCommandInMachinesCostil {
-    public void createMapWall(FootprintSpaceTime footprintSpaceTime) {
+    public void createMapWall(FootprintsSpaceTime footprintsSpaceTime) {
         //FIXME NOW
     }
 }

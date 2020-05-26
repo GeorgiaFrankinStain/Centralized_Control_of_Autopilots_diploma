@@ -10,13 +10,11 @@ public class SharedDevelop {
         list.add("Java");
         list.add("WebGL");
         list.add("OpenCV");
-        System.out.println(list);
         ArrayList<String> newList = new ArrayList<String>();
         newList.add("HBase");
         newList.add("Neo4j");
         newList.add("MangoDB");
         list.addAll(newList);
-        System.out.println(list);
 
 
     }

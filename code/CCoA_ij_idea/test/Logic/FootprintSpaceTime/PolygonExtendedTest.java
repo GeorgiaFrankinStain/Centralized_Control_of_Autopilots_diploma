@@ -29,10 +29,10 @@ public class PolygonExtendedTest {
     public void enteringPoint() {
         {
             PolygonExtended square = new PolygonExtendedClass();
-            square.setPoint(new PointClass(10, 10));
-            square.setPoint(new PointClass(10, 20));
-            square.setPoint(new PointClass(20, 20));
-            square.setPoint(new PointClass(20, 10));
+            square.addPoint(new PointClass(10, 10));
+            square.addPoint(new PointClass(10, 20));
+            square.addPoint(new PointClass(20, 20));
+            square.addPoint(new PointClass(20, 10));
 
             //==== <start> <assertTrue> ====================
             {
@@ -95,9 +95,9 @@ public class PolygonExtendedTest {
 
         {
             PolygonExtended triangle = new PolygonExtendedClass();
-            triangle.setPoint(new PointClass(10, 10));
-            triangle.setPoint(new PointClass(20, 10));
-            triangle.setPoint(new PointClass(15, 20));
+            triangle.addPoint(new PointClass(10, 10));
+            triangle.addPoint(new PointClass(20, 10));
+            triangle.addPoint(new PointClass(15, 20));
 
             //==== assertTrue ====================
             {
@@ -137,10 +137,10 @@ public class PolygonExtendedTest {
 
         {
             PolygonExtended squareAroundOrigin = new PolygonExtendedClass();
-            squareAroundOrigin.setPoint(new PointClass(-10, -10));
-            squareAroundOrigin.setPoint(new PointClass(10, -10));
-            squareAroundOrigin.setPoint(new PointClass(10, 10));
-            squareAroundOrigin.setPoint(new PointClass(-10, 10));
+            squareAroundOrigin.addPoint(new PointClass(-10, -10));
+            squareAroundOrigin.addPoint(new PointClass(10, -10));
+            squareAroundOrigin.addPoint(new PointClass(10, 10));
+            squareAroundOrigin.addPoint(new PointClass(-10, 10));
 
             //==== assertTrue ====================
             {
@@ -152,10 +152,10 @@ public class PolygonExtendedTest {
 
         {
             PolygonExtended narrowSquare = new PolygonExtendedClass();
-            narrowSquare.setPoint(new PointClass(14, 0));
-            narrowSquare.setPoint(new PointClass(16, 0));
-            narrowSquare.setPoint(new PointClass(16, 30));
-            narrowSquare.setPoint(new PointClass(14, 30));
+            narrowSquare.addPoint(new PointClass(14, 0));
+            narrowSquare.addPoint(new PointClass(16, 0));
+            narrowSquare.addPoint(new PointClass(16, 30));
+            narrowSquare.addPoint(new PointClass(14, 30));
 
             //==== <start> <assertFalse> ====================
 
@@ -193,18 +193,18 @@ public class PolygonExtendedTest {
 
         {
             PolygonExtended glassesPolygon = new PolygonExtendedClass();
-            glassesPolygon.setPoint(new PointClass(0, 15));
-            glassesPolygon.setPoint(new PointClass(15, 15));
-            glassesPolygon.setPoint(new PointClass(55, 56));
-            glassesPolygon.setPoint(new PointClass(52, 15));
-            glassesPolygon.setPoint(new PointClass(85, 15));
-            glassesPolygon.setPoint(new PointClass(96, 21));
-            glassesPolygon.setPoint(new PointClass(100, 85));
-            glassesPolygon.setPoint(new PointClass(85, 85));
-            glassesPolygon.setPoint(new PointClass(80, 73));
-            glassesPolygon.setPoint(new PointClass(71, 53));
-            glassesPolygon.setPoint(new PointClass(15, 85));
-            glassesPolygon.setPoint(new PointClass(0, 85));
+            glassesPolygon.addPoint(new PointClass(0, 15));
+            glassesPolygon.addPoint(new PointClass(15, 15));
+            glassesPolygon.addPoint(new PointClass(55, 56));
+            glassesPolygon.addPoint(new PointClass(52, 15));
+            glassesPolygon.addPoint(new PointClass(85, 15));
+            glassesPolygon.addPoint(new PointClass(96, 21));
+            glassesPolygon.addPoint(new PointClass(100, 85));
+            glassesPolygon.addPoint(new PointClass(85, 85));
+            glassesPolygon.addPoint(new PointClass(80, 73));
+            glassesPolygon.addPoint(new PointClass(71, 53));
+            glassesPolygon.addPoint(new PointClass(15, 85));
+            glassesPolygon.addPoint(new PointClass(0, 85));
 
             //==== assertTrue ====================
             {
@@ -245,19 +245,19 @@ public class PolygonExtendedTest {
     public void intersectionPolygon() {
         {
             PolygonExtended square = new PolygonExtendedClass();
-            square.setPoint(new PointClass(10, 10));
-            square.setPoint(new PointClass(10, 20));
-            square.setPoint(new PointClass(20, 20));
-            square.setPoint(new PointClass(20, 10));
+            square.addPoint(new PointClass(10, 10));
+            square.addPoint(new PointClass(10, 20));
+            square.addPoint(new PointClass(20, 20));
+            square.addPoint(new PointClass(20, 10));
 
 
             //==== <start> <assertTrue> ====================
             {
                 PolygonExtended squarePlus5 = new PolygonExtendedClass();
-                squarePlus5.setPoint(new PointClass(15, 15));
-                squarePlus5.setPoint(new PointClass(15, 25));
-                squarePlus5.setPoint(new PointClass(25, 25));
-                squarePlus5.setPoint(new PointClass(25, 15));
+                squarePlus5.addPoint(new PointClass(15, 15));
+                squarePlus5.addPoint(new PointClass(15, 25));
+                squarePlus5.addPoint(new PointClass(25, 25));
+                squarePlus5.addPoint(new PointClass(25, 15));
 
 
                 assertTrue(square.intersectionPolygon(squarePlus5));
@@ -265,10 +265,10 @@ public class PolygonExtendedTest {
 
             {
                 PolygonExtended squarePlus10 = new PolygonExtendedClass();
-                squarePlus10.setPoint(new PointClass(20, 20));
-                squarePlus10.setPoint(new PointClass(20, 30));
-                squarePlus10.setPoint(new PointClass(30, 30));
-                squarePlus10.setPoint(new PointClass(30, 20));
+                squarePlus10.addPoint(new PointClass(20, 20));
+                squarePlus10.addPoint(new PointClass(20, 30));
+                squarePlus10.addPoint(new PointClass(30, 30));
+                squarePlus10.addPoint(new PointClass(30, 20));
 
 
                 assertTrue(square.intersectionPolygon(squarePlus10));
@@ -277,10 +277,10 @@ public class PolygonExtendedTest {
 
             {//cut of line, cling to each other
                 PolygonExtended squareBig = new PolygonExtendedClass();
-                squareBig.setPoint(new PointClass(15, 0));
-                squareBig.setPoint(new PointClass(15, 30));
-                squareBig.setPoint(new PointClass(30, 30));
-                squareBig.setPoint(new PointClass(30, 0));
+                squareBig.addPoint(new PointClass(15, 0));
+                squareBig.addPoint(new PointClass(15, 30));
+                squareBig.addPoint(new PointClass(30, 30));
+                squareBig.addPoint(new PointClass(30, 0));
 
 
                 assertTrue(square.intersectionPolygon(squareBig));
@@ -288,10 +288,10 @@ public class PolygonExtendedTest {
 
             {//cut of line, cling to each other
                 PolygonExtended squareSmall = new PolygonExtendedClass();
-                squareSmall.setPoint(new PointClass(14, 0));
-                squareSmall.setPoint(new PointClass(16, 0));
-                squareSmall.setPoint(new PointClass(16, 30));
-                squareSmall.setPoint(new PointClass(14, 30));
+                squareSmall.addPoint(new PointClass(14, 0));
+                squareSmall.addPoint(new PointClass(16, 0));
+                squareSmall.addPoint(new PointClass(16, 30));
+                squareSmall.addPoint(new PointClass(14, 30));
 
 
                 assertTrue(square.intersectionPolygon(squareSmall));
@@ -303,10 +303,10 @@ public class PolygonExtendedTest {
             //==== <start> <assertFalse> ====================
             {
                 PolygonExtended squarePlus15 = new PolygonExtendedClass();
-                squarePlus15.setPoint(new PointClass(25, 25));
-                squarePlus15.setPoint(new PointClass(25, 35));
-                squarePlus15.setPoint(new PointClass(35, 35));
-                squarePlus15.setPoint(new PointClass(35, 25));
+                squarePlus15.addPoint(new PointClass(25, 25));
+                squarePlus15.addPoint(new PointClass(25, 35));
+                squarePlus15.addPoint(new PointClass(35, 35));
+                squarePlus15.addPoint(new PointClass(35, 25));
 
 
                 assertFalse(square.intersectionPolygon(squarePlus15));
@@ -469,10 +469,10 @@ public class PolygonExtendedTest {
     public void intersecionLine() {
         {
             PolygonExtended square = new PolygonExtendedClass();
-            square.setPoint(new PointClass(10, 10));
-            square.setPoint(new PointClass(10, 20));
-            square.setPoint(new PointClass(20, 20));
-            square.setPoint(new PointClass(20, 10));
+            square.addPoint(new PointClass(10, 10));
+            square.addPoint(new PointClass(10, 20));
+            square.addPoint(new PointClass(20, 20));
+            square.addPoint(new PointClass(20, 10));
 
             //==== <start> <assertTrue> ====================
             {
@@ -491,6 +491,46 @@ public class PolygonExtendedTest {
                 assertFalse(square.intersecionLine(startLine, endLine));
             }
             //==== <end> <assertFalse> ====================
+        }
+    }
+
+    @Test
+    public void getCenterAverage() {
+        {
+            PolygonExtended polygonExtended = new PolygonExtendedClass();
+            polygonExtended.addPoint(new PointClass(0, 0));
+            polygonExtended.addPoint(new PointClass(100, 0));
+            polygonExtended.addPoint(new PointClass(100, 100));
+            polygonExtended.addPoint(new PointClass(0, 100));
+
+            Point actualAverageCenter = polygonExtended.getCenterAverage();
+            Point expectedAverageCenter = new PointClass(50, 50);
+
+            assertEquals(actualAverageCenter, expectedAverageCenter);
+        }
+        {
+            PolygonExtended polygonExtended = new PolygonExtendedClass();
+            polygonExtended.addPoint(new PointClass(0, 0));
+            polygonExtended.addPoint(new PointClass(-100, 0));
+            polygonExtended.addPoint(new PointClass(-100, -100));
+            polygonExtended.addPoint(new PointClass(0, -100));
+
+            Point actualAverageCenter = polygonExtended.getCenterAverage();
+            Point expectedAverageCenter = new PointClass(-50, -50);
+
+            assertEquals(actualAverageCenter, expectedAverageCenter);
+        }
+        {
+            PolygonExtended polygonExtended = new PolygonExtendedClass();
+            polygonExtended.addPoint(new PointClass(0, 0));
+            polygonExtended.addPoint(new PointClass(0, 0));
+            polygonExtended.addPoint(new PointClass(0, 0));
+            polygonExtended.addPoint(new PointClass(0, 0));
+
+            Point actualAverageCenter = polygonExtended.getCenterAverage();
+            Point expectedAverageCenter = new PointClass(0, 0);
+
+            assertEquals(actualAverageCenter, expectedAverageCenter);
         }
     }
 }

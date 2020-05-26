@@ -5,11 +5,11 @@ public interface PolygonExtended {
 
     public Point getPoint(int index);
 
-    public void setPoint(Point newPoint);
+    public void addPoint(Point newPoint);
 
     public void setPoint(int index, Point newPoint);
 
-    public void setInsertBeforetPoint(int index, Point newPoint);
+    public void insertBeforetPoint(int index, Point newPoint);
 
     public boolean contains(Point desirededPoint);
 
@@ -25,4 +25,6 @@ public interface PolygonExtended {
             Point bStartLine,
             Point bEndLine
     );
+
+    public Point getCenterAverage();
 }

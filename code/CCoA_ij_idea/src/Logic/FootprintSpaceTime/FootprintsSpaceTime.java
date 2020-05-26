@@ -9,13 +9,11 @@ import Logic.TypesInLevel;
 
 import java.util.List;
 
-public interface FootprintSpaceTime {
+public interface FootprintsSpaceTime {
 
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, int time);
 
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, int time, TypesInLevel type);
-
-
 
 
     public void addFootprint(int idTrack, MovingObject movingObject, Path path, int startTime);
@@ -30,19 +28,13 @@ public interface FootprintSpaceTime {
             int multiplycitySecond
     );
 
-
-
-
     public void deleteFootprints(int ID);
 
 
-
-
-
-
-    public boolean getAccessPlace(PolygonExtended place, int time, TypesInLevel type);
+    public boolean getIsSeatTaken(PolygonExtended place, int time, TypesInLevel type);
 
     public Position getPosition(int ID, int time);
+
     public Landscape getLandscape();
 
 

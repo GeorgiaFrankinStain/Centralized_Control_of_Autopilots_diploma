@@ -29,7 +29,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public void setPoint(Point newPoint) {
+    public void addPoint(Point newPoint) {
         this.points.add(newPoint);
     }
 
@@ -39,7 +39,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public void setInsertBeforetPoint(int index, Point newPoint) {
+    public void insertBeforetPoint(int index, Point newPoint) {
         //FIXME
     }
 
@@ -161,6 +161,21 @@ public class PolygonExtendedClass implements PolygonExtended {
                 bEndLine.getY()
 
         );
+    }
+
+    @Override
+    public Point getCenterAverage() { //FIXME ADD_TEST
+        double xSum = 0;
+        double ySum = 0;
+        for (Point point : this.points) {
+            xSum += point.getX();
+            ySum += point.getY();
+        }
+
+        double xAverage = xSum / this.countPoints();
+        double yAverage = ySum / this.countPoints();
+
+        return new PointClass(xAverage, yAverage);
     }
 
 

@@ -8,6 +8,7 @@ public interface Point {
     public Point clone();
 
     public boolean equals(Object obj);
+    public String toString();
 
     public boolean isLeftRelative(Point startLine, Point endLine);
     public double getAngleRotareRelative(Point origin);

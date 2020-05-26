@@ -1,6 +1,5 @@
 package Logic.MovingObjects;
 
-import Logic.*;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
 import Wrapper.RandowWrapperClass;
@@ -9,6 +8,7 @@ public class MovingObjectClass implements MovingObject {
 
     private PolygonExtended polygonExtended;
     private TypeMachinesBody typeMachinesBody;
+    private double speed;
     private int idObject = new RandowWrapperClass().nextInt();
 
     public MovingObjectClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
@@ -19,11 +19,11 @@ public class MovingObjectClass implements MovingObject {
 
 
     @Override
-    public void mark(FootprintSpaceTime footprintSpaceTime, Path path) {
+    public void mark(FootprintsSpaceTime footprintsSpaceTime, Path path) {
 
         //run addSled
 
-        footprintSpaceTime.addFootprint(
+        footprintsSpaceTime.addFootprint(
                 path.getIdTrack(),
                 this,
                 path,
@@ -31,19 +31,19 @@ public class MovingObjectClass implements MovingObject {
         );
 
 /*        Position position1 = new PositionClass(new PointClass(100, 100), 0);
-        footprintSpaceTime.addFootprint(13, testBody, position1, 1); //FIXME positions add
+        footprintsSpaceTime.addFootprint(13, testBody, position1, 1); //FIXME positions add
 
 
         Position position2 = new PositionClass(new PointClass(100, 300), 0);
-        footprintSpaceTime.addFootprint(13, testBody, position2, 2);
+        footprintsSpaceTime.addFootprint(13, testBody, position2, 2);
 
 
         Position position3 = new PositionClass(new PointClass(100, 600), 0);
-        footprintSpaceTime.addFootprint(13, testBody, position3, 3);
+        footprintsSpaceTime.addFootprint(13, testBody, position3, 3);
 
 
         Position position4 = new PositionClass(new PointClass(100, 800), 0);
-        footprintSpaceTime.addFootprint(13, testBody, position4, 4);*/
+        footprintsSpaceTime.addFootprint(13, testBody, position4, 4);*/
 
 
     }
@@ -52,6 +52,17 @@ public class MovingObjectClass implements MovingObject {
     public PolygonExtended getPolygonExtended() {
         return this.polygonExtended;
     }
+
+    @Override
+    public double getSpeed() {
+        return this.speed;
+    }
+
+    @Override
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
 
     @Override
     public String getType() {

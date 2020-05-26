@@ -16,6 +16,28 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     }
 
 
+    @Override
+    public PolygonExtended getLocation() { //FIXME ADD_TEST
+        PolygonExtended rotarePolygon = new PolygonExtendedClass();
+        PolygonExtended formMovingObject = this.movingObject.getPolygonExtended();
+        Point averageCenterFormMovingObject = formMovingObject.getCenterAverage();
+
+        for (int i = 0; i < formMovingObject.countPoints(); i++) {
+            Point currentPoint = formMovingObject.getPoint(i);
+            Point rotarePoint =
+                    currentPoint.getRotareRelative(averageCenterFormMovingObject, this.position.getRotation());
+
+            Point coordinatMovingObject = this.position.getCoordinats();
+            rotarePoint.setX(rotarePoint.getX() + coordinatMovingObject.getX());
+            rotarePoint.setY(rotarePoint.getY() + coordinatMovingObject.getY());
+
+            rotarePolygon.addPoint(rotarePoint);
+        }
+
+        return rotarePolygon;
+    }
+
+
     //==== <start> <Getter_and_Setter> ==================================================
 
     @Override
@@ -30,9 +52,15 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         return position;
     }
 
+
     @Override
     public String getType() {
         return this.movingObject.getType();
+    }
+
+    @Override
+    public MovingObject getMovingObject() {
+        return this.movingObject;
     }
 
     @Override

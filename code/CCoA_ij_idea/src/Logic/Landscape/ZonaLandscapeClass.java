@@ -40,6 +40,11 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     }
 
     @Override
+    public PolygonExtended getLocation() {
+        return polygonExtended;
+    }
+
+    @Override
     public boolean getAccessPlace(PolygonExtended place, int time, TypesInLevel type) {
         return false;
     }

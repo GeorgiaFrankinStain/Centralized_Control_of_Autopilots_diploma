@@ -1,6 +1,5 @@
 package Logic;
 
-import GUI.StatementTaskRendering.TypeLandscapeBody;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.PointClass;
 import Logic.FootprintSpaceTime.PolygonExtended;
@@ -12,13 +11,27 @@ public class FabricMovingObjectsClass implements FabricMovingObjects {
     @Override
     public MovingObject getMachine(TypeMachinesBody typeMachinesBody) {
 
-        PolygonExtended test = new PolygonExtendedClass(); //FIXME IMITATION
-        test.setPoint(new PointClass(0, 0));
-        test.setPoint(new PointClass(50, 0));
-        test.setPoint(new PointClass(50, 50));
-        test.setPoint(new PointClass(0, 50));
+        if (typeMachinesBody == TypeMachinesBody.PASSENGER_CAR) {
+            PolygonExtended formMachine = new PolygonExtendedClass(); //FIXME IMITATION
+            formMachine.addPoint(new PointClass(0, 0));
+            formMachine.addPoint(new PointClass(50, 0));
+            formMachine.addPoint(new PointClass(50, 50));
+            formMachine.addPoint(new PointClass(0, 50));
+
+            MovingObject machine = new MovingObjectClass(formMachine, typeMachinesBody);
+
+            machine.setSpeed(11.11); //40 kilometr / hour
 
 
-        return new MovingObjectClass(test, typeMachinesBody);
+            return machine;
+        } else if (typeMachinesBody == TypeMachinesBody.WALL_CAR) {
+            
+        }
+
+
+        assert(false);
+        return null;
+
+
     }
 }

@@ -1,18 +1,17 @@
 package GUI.StatementTaskRendering;
 
 import Logic.FootprintSpaceTime.*;
-import Wrapper.RandowWrapperClass;
 
 import java.util.*;
 
 public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForRendering, Iterable<DataFootprintForRendering> {
-    private FootprintSpaceTime sourceFootprintSpaceTime;
+    private FootprintsSpaceTime sourceFootprintsSpaceTime;
     private Map<Integer, DataFootprintForRendering> poolDataFootprintForRendering =
             new HashMap<Integer, DataFootprintForRendering>();
 
 
-    public PoolDataFootprintForRenderingClass(FootprintSpaceTime footprintSpaceTime) {
-        this.sourceFootprintSpaceTime = footprintSpaceTime;
+    public PoolDataFootprintForRenderingClass(FootprintsSpaceTime footprintsSpaceTime) {
+        this.sourceFootprintsSpaceTime = footprintsSpaceTime;
     }
 
     @Override
@@ -27,7 +26,7 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
             */
 
         List<Footprint> footprints =
-                this.sourceFootprintSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
+                this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
 
         for (Footprint footprint : footprints) {
             poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);

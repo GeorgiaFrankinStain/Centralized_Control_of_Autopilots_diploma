@@ -7,8 +7,8 @@ import GUI.StatementTaskRendering.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
 import Logic.FabricMovingObjects;
 import Logic.FabricMovingObjectsClass;
-import Logic.FootprintSpaceTime.FootprintSpaceTime;
-import Logic.FootprintSpaceTime.FootprintSpaceTimeClass;
+import Logic.FootprintSpaceTime.FootprintsSpaceTime;
+import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.PointClass;
 import Logic.Landscape.Landscape;
 import Logic.Landscape.LandscapeClass;
@@ -40,14 +40,14 @@ public class Main extends Application {
 
         //create Landscape ()
         Landscape onlyLandscape = new LandscapeClass();
-        FootprintSpaceTime onlyFootprintSpaceTime = new FootprintSpaceTimeClass(onlyLandscape); //create FootprintSpaceTime (Landscape) //PUNKT_1
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
 
         //PUNKT_2
-        //create MovingObjects (FootprintSpaceTime)
+        //create MovingObjects (FootprintsSpaceTime)
 
-        //create AreasBenchmarkPathsDijkstra (FootprintSpaceTime, Landscape)
-        //create PathsMachines (FootprintSpaceTime, AreasBenchmarkPathsDijkstra) //class MovingObjects create new with (FootprintSpaceTime)
+        //create AreasBenchmarkPathsDijkstra (FootprintsSpaceTime, Landscape)
+        //create PathsMachines (FootprintsSpaceTime, AreasBenchmarkPathsDijkstra) //class MovingObjects create new with (FootprintsSpaceTime)
 
 
         //PUNKT_3
@@ -60,25 +60,27 @@ public class Main extends Application {
 
         //create ConsoleManagement (AutoDisainerMachines, DisainerLandscape, DriverMachine, ObserverUpdate) //создавать только после полноценного создания входящих на вход объектов
 
-        PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintSpaceTime);
-        MapRender subwindowMapRendering = new MapRenderClass(poolDataFootprintForRendering); //create MapRender (FootprintSpaceTime)
+        PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
+        MapRender subwindowMapRendering = new MapRenderClass(poolDataFootprintForRendering); //create MapRender (FootprintsSpaceTime)
 
         { //FIXME MOVE imitation in
-//            onlyFootprintSpaceTime.addFootprint();
+//            onlyFootprintsSpaceTime.addFootprint();
 
             FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
-            movingObject.mark(onlyFootprintSpaceTime, createPath());
-
             MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
-            wall.mark(onlyFootprintSpaceTime, createPathWall());
+            wall.mark(onlyFootprintsSpaceTime, createPathWall());
+
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            movingObject.mark(onlyFootprintsSpaceTime, createPath());
+
 
 
         }
 
 
-        //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
+        //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintsSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
 
 
 

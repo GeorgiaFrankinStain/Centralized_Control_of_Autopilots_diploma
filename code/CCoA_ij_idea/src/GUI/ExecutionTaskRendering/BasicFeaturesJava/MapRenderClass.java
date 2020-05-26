@@ -90,19 +90,19 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
 
     private PolygonExtended getAreaOfRendering() {
         PolygonExtended resPolygon = new PolygonExtendedClass();
-        resPolygon.setPoint(new PointClass(
+        resPolygon.addPoint(new PointClass(
                 this.xOriginRendering,
                 this.yOriginRendering
         ));
-        resPolygon.setPoint(new PointClass(
+        resPolygon.addPoint(new PointClass(
                 this.xOriginRendering + this.widthRendring,
                 this.yOriginRendering)
         );
-        resPolygon.setPoint(new PointClass(
+        resPolygon.addPoint(new PointClass(
                 this.xOriginRendering + this.widthRendring,
                 this.yOriginRendering + this.heightRendring
         ));
-        resPolygon.setPoint(new PointClass(
+        resPolygon.addPoint(new PointClass(
                 this.xOriginRendering,
                 this.yOriginRendering + this.heightRendring
         ));

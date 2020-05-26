@@ -59,7 +59,7 @@ public class PointTest {
             Point origin = new PointClass(0, 0);
 
             Point expected = new PointClass(10, 0);
-            Point actual = point.getRotareRelative(origin, -90);
+            Point actual = point.getRotareRelative(origin, -(PI / 2));
 
             assertEquals(expected, actual);
         }

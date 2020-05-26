@@ -3,6 +3,7 @@ package Logic.FootprintSpaceTime;
 public class PointClass implements Point {
     private double x;
     private double y;
+    private double accuracyMap = 0.00000001; //FIXME MAGIC_NUMBER
 
     public PointClass(double x, double y) {
         this.x = x;
@@ -60,8 +61,13 @@ public class PointClass implements Point {
 
 
         Point other = (Point) obj;
-        return (this.getX() == other.getX())
-                       && (this.getY() == other.getY());
+        boolean xEquals = Math.abs(this.getX() - other.getX()) < accuracyMap;
+        boolean yEquals = Math.abs(this.getY() - other.getY()) < accuracyMap;
+        return xEquals && yEquals;
+    }
+    @Override
+    public String toString() {
+        return "(x: " + this.getX() + "   y: " + this.getY() + ")";
     }
 
 

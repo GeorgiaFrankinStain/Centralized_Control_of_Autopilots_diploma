@@ -1,12 +1,15 @@
 package Logic.MovingObjects;
 
-import Logic.FootprintSpaceTime.FootprintSpaceTime;
+import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.PolygonExtended;
 
 public interface MovingObject {
-    public void mark(FootprintSpaceTime footprintSpaceTime, Path path);
+    public void mark(FootprintsSpaceTime footprintsSpaceTime, Path path);
 
     public PolygonExtended getPolygonExtended();
+
+    public double getSpeed();
+    public void setSpeed(double speed);
 
     public String getType();
 
