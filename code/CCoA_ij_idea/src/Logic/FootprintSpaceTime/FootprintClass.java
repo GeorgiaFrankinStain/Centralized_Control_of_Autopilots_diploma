@@ -7,14 +7,16 @@ import Logic.Position;
 public class FootprintClass implements Footprint, DataFootprintForRendering {
     private int idTrack;
     private Position position;
+    private double timeStanding;
     private MovingObject movingObject;
 
-    public FootprintClass(int idTrack, Position position, MovingObject movingObject) {
+
+    public FootprintClass(int idTrack, Position position, double timeStanding, MovingObject movingObject) {
         this.idTrack = idTrack;
         this.position = position;
+        this.timeStanding = timeStanding;
         this.movingObject = movingObject;
     }
-
 
     @Override
     public PolygonExtended getLocation() { //FIXME ADD_TEST
@@ -37,6 +39,12 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         return rotarePolygon;
     }
 
+    @Override
+    public String toString() {
+        return this.position.toString()
+                       + " MovObj" + this.movingObject.toString()
+                       + " timeStanding:" + this.getTimeStanding();
+    }
 
     //==== <start> <Getter_and_Setter> ==================================================
 
@@ -50,6 +58,11 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     @Override
     public Position getPosition() {
         return position;
+    }
+
+    @Override
+    public double getTimeStanding() {
+        return timeStanding;
     }
 
 

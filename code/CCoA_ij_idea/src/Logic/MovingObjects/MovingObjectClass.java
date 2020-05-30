@@ -49,6 +49,11 @@ public class MovingObjectClass implements MovingObject {
     }
 
     @Override
+    public String toString() {
+        return "type: " + this.getType() + " id: " + this.getID() + " speed: " + this.getSpeed();
+    }
+
+    @Override
     public PolygonExtended getPolygonExtended() {
         return this.polygonExtended;
     }
@@ -77,6 +82,21 @@ public class MovingObjectClass implements MovingObject {
     @Override
     public int getLevel() {
         return 0;
+    }
+
+    @Override
+    public double getStepSize() {
+        double maxCoordinatX = Double.MIN_VALUE;
+
+        for (int i = 0; i < this.polygonExtended.countPoints(); i++) {
+            Point currentPoint = this.polygonExtended.getPoint(i);
+
+            if (currentPoint.getX() > maxCoordinatX) {
+                maxCoordinatX = currentPoint.getX();
+            }
+        }
+
+        return maxCoordinatX;
     }
     //==== <start> <Getter_and_Setter> ==================================================
 

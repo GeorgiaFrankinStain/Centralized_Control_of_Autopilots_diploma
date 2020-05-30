@@ -11,29 +11,31 @@ import java.util.List;
 
 public interface FootprintsSpaceTime {
 
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, int time);
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time);
 
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, int time, TypesInLevel type);
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time, TypesInLevel type);
 
-
-    public void addFootprint(int idTrack, MovingObject movingObject, Path path, int startTime);
-
-    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time);
 
     public void addFootprint(
             int idTrack,
             MovingObject movingObject,
+            Path path,
+            int startTime
+    );
+    public void addFootprint(
+            int idTrack,
+            MovingObject movingObject,
             Position position,
-            int time,
-            int multiplycitySecond
+            double time,
+            double timeStanding
     );
 
     public void deleteFootprints(int ID);
 
 
-    public boolean getIsSeatTaken(PolygonExtended place, int time, TypesInLevel type);
+    public boolean getIsSeatTaken(PolygonExtended place, double time, TypesInLevel type);
 
-    public Position getPosition(int ID, int time);
+    public Position getPosition(int ID, double time);
 
     public Landscape getLandscape();
 

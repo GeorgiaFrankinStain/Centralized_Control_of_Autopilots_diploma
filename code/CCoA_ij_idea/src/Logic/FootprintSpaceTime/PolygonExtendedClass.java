@@ -178,6 +178,24 @@ public class PolygonExtendedClass implements PolygonExtended {
         return new PointClass(xAverage, yAverage);
     }
 
+    @Override
+    public Double[] getFormatDoubleArray() { //FIXME TEST_ADD
+        Double[] arrayDouble = new Double[this.countPoints() * 2];
+
+        int indexWriteInDoubleArray = 0;
+        for (int i = 0; i < this.countPoints(); i++) {
+            Point currentPoint = this.getPoint(i);
+
+
+            arrayDouble[indexWriteInDoubleArray] = currentPoint.getX();
+            indexWriteInDoubleArray++;
+            arrayDouble[indexWriteInDoubleArray] = currentPoint.getY();
+            indexWriteInDoubleArray++;
+        }
+
+        return arrayDouble;
+    }
+
 
     //==== <start> <Private_Methods> =======================================================================
 

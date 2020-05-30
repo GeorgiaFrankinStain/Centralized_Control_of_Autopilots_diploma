@@ -7,11 +7,21 @@ import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.Landscape.Landscape;
 import Logic.Position;
 import Logic.TypesInLevel;
+import Wrapper.EntryPair;
+import Wrapper.MyMultiMap;
+import Wrapper.MyMultiMapClass;
 
 import java.util.*;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChangesFromWhen {
-    private Map<Integer, List<Footprint>> storageAllFootprints = new TreeMap<Integer, List<Footprint>>();
+    private MyMultiMap<Double, Footprint> storageAllFootprints =
+            new MyMultiMapClass<Double, Footprint>();
+
+
+//    ListMultimap<Double, Footprint> storageAllFootprints = ArrayListMultimap.create();
+
+
+//    private Map<Double, List<Footprint>> storageAllFootprints = new TreeMap<Double, List<Footprint>>();
 //    private List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
     private Landscape onlyLandscape;
 /*
@@ -29,21 +39,21 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
 
     @Override
-    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time) { //FIXME ADD_TEST
+    public void addFootprint(
+            int idTrack,
+            MovingObject movingObject,
+            Position position,
+            double time,
+            double timeStanding
+    ) { //FIXME ADD_TEST
 
 
-        if (!storageAllFootprints.containsKey(time)) {
-            storageAllFootprints.put(time, new ArrayList<Footprint>());
-        }
-
-
-
-        Footprint newFootprint = new FootprintClass(idTrack, position, movingObject);
+        Footprint newFootprint = new FootprintClass(idTrack, position, timeStanding, movingObject);
 
         boolean placeIsSeat = this.getIsSeatTaken(newFootprint.getLocation(), time, null);
 
         if (!placeIsSeat) {
-            storageAllFootprints.get(time).add(newFootprint);
+            storageAllFootprints.put(time, newFootprint);
         }
     }
 
@@ -54,15 +64,20 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
         Point vertorMarginRouteApplication = new PointClass(0, 0); //detection point route application at polygonExtender //FIXME find central point
 
-        int timeAdding = startTime;
+        double timeAdding = startTime;
 
         /**
          * Landscape have getResistancePowerLandscape(pressurePaskaleOfMachine)
          * speed = MachinePower / ResistancePower
          */
-        double speed = 10; //FIXME MAGIC NUMBER //FIXME IMITATION
-        double currentMultiplicityStep = 1;
-        double lengthStep = currentMultiplicityStep * speed;
+        double speed = movingObject.getSpeed(); //FIXME MAGIC NUMBER //FIXME IMITATION
+        double lengthStep = movingObject.getStepSize();
+        double timeStanding;
+        if (Math.abs(speed) < 0.00000000001) { //FIXME MAGIC_NUMBER
+            timeStanding = Double.MAX_VALUE * 0.95; //FIXME MAGIC_NUMBER
+        } else {
+            timeStanding = lengthStep / speed;
+        }
 
 
         //processing 1 point
@@ -70,6 +85,14 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             assert (false);
         } else if (path.getSize() == 1) {
             //FIXME add standing one the site of the machine
+            Position position = new PositionClass(path.getPoint(0), 0.0);
+            this.addFootprint(
+                    idTrack,
+                    movingObject,
+                    position,
+                    timeAdding,
+                    timeStanding
+            );
         } else {
             int endIndex = path.getSize() - 1;
             for (int i = 0; i < endIndex; i++) {
@@ -81,7 +104,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
                         endLine,
                         idTrack,
                         movingObject,
-                        currentMultiplicityStep,
+                        timeStanding,
                         timeAdding
                 );
             }
@@ -94,38 +117,38 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     }
 
     @Override
-    public boolean getIsSeatTaken(PolygonExtended place, int time, TypesInLevel type) { //FIXME ADD_TEST
+    public boolean getIsSeatTaken(PolygonExtended place, double testedTime, TypesInLevel type) { //FIXME ADD_TEST
 
-        List<Footprint> storageOfTime = storageAllFootprints.get(time);
+//FIXME NOW
+        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        while (iteratorEntryPair.hasNext()) {
+            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            Footprint footprint = entry.getValue();
+            double timeStandingStart = entry.getKey();
+            double timeStandingEnd = timeStandingStart + footprint.getTimeStanding();
+            boolean timeStandingIncludeTestedTime = timeStandingStart < testedTime && testedTime < timeStandingEnd;
 
-        boolean allSeatsAreAvailableAtThisTime = storageOfTime == null;
-
-        if (allSeatsAreAvailableAtThisTime) {
-            return false;
-        }
-
-        for (Footprint footprint : storageOfTime) {
-            PolygonExtended locationMovingObject = footprint.getLocation();
-            boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
-            if (placeIsSeat){
-                return true;
+            if (timeStandingIncludeTestedTime) {
+                PolygonExtended locationMovingObject = footprint.getLocation();
+                boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
+                if (placeIsSeat){
+                    return true;
+                }
             }
+
         }
+
 
         return false;
     }
 
     @Override
-    public Position getPosition(int ID, int time) {
-
-        List<Footprint> storageCurrentTime = storageAllFootprints.get(time);
-
-        boolean thereAreNoRecordsOfThisTime = storageCurrentTime == null;
-        if (thereAreNoRecordsOfThisTime) {
-            return null;
-        }
-
-        for (Footprint currentFootprint : storageAllFootprints.get(time)) {
+    public Position getPosition(int ID, double time) {
+//FIXME NOW
+        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        while (iteratorEntryPair.hasNext()) {
+            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            Footprint currentFootprint = entry.getValue();
             boolean isFindObject = currentFootprint.getIdObject() == ID;
             if (isFindObject) {
                 return currentFootprint.getPosition();
@@ -144,7 +167,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time) {
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, double timeFind) { //FIXME ADD_TEST
 
         //FIXME take DataFootprintForRendering from the landscape
 
@@ -161,23 +184,31 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             return a list of changed polygons from a intersection table with areaVizibility*/
 //        ArrayList newArrayList = (ArrayList) this.imitationLadnscape;
         //TODO add interpolation (LINK_RzRGrmTH)
+
         List<Footprint> resRendringFootpring = new ArrayList<Footprint>();
-        for (Footprint current : storageAllFootprints.get(time)) {
-            resRendringFootpring.add(current);
+        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        while (iteratorEntryPair.hasNext()) {
+            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+
+            Footprint currentFootprint = entry.getValue(); //FIXME NOW add test timeFind diapason intersection
+            double timeStanding = currentFootprint.getTimeStanding();
+            double startStanding = entry.getKey();
+            double endStanding = startStanding + timeStanding;
+
+            boolean footprintIndcludeFindTimePoint = startStanding < timeFind && timeFind > endStanding;
+            if (footprintIndcludeFindTimePoint) {
+                resRendringFootpring.add(currentFootprint);
+            }
         }
 
 
-        return resRendringFootpring;
-    }
-
-    @Override
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, int time, TypesInLevel type) {
+//        return resRendringFootpring;
         return null;
     }
 
     @Override
-    public void addFootprint(int idTrack, MovingObject movingObject, Position position, int time, int multiplycitySecond) {
-        //TODO
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, double time, TypesInLevel type) {
+        return null;
     }
 
     @Override
@@ -202,7 +233,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     }
     private Point stepVector(Point endLine, Point startLine) {
         Point origin = new PointClass(0, 0);
-        int timeStep = 1; //FIXME
+        double timeStep = 1; //FIXME
         double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
         return new PointClass(10, 0).getRotareRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
     }
@@ -211,8 +242,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             Point endLine,
             int idTrack,
             MovingObject movingObject,
-            double currentMultiplicityStep,
-            int timeAdding
+            double standingTime,
+            double timeAdding
     ) {
 
         double angle = endLine.getAngleRotareRelative(startLine);
@@ -239,13 +270,14 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
                     idTrack,
                     movingObject,
                     position,
-                    timeAdding
+                    timeAdding,
+                    standingTime
             );
 
 
 
-            timeAdding += currentMultiplicityStep;
-            timeSum += currentMultiplicityStep;
+            timeAdding += standingTime;
+            timeSum += standingTime;
 
 
 

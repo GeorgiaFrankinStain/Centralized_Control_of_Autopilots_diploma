@@ -125,12 +125,6 @@ public class Main extends Application {
     private Path createPathWall() { //FIXME IMITATION
         Path resPath = new PathClass();
         resPath.addPoint(new PointClass(60, 60));
-        resPath.addPoint(new PointClass(60, 60));
-        resPath.addPoint(new PointClass(60, 60));
-        resPath.addPoint(new PointClass(60, 60));
-        resPath.addPoint(new PointClass(60, 60));
-        resPath.addPoint(new PointClass(60, 60));
-        resPath.addPoint(new PointClass(60, 60));
 
         return resPath;
     }

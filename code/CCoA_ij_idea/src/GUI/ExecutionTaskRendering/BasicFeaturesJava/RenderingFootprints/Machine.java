@@ -14,10 +14,8 @@ public class Machine extends Pane implements RenderingFootprint {
     public Machine(DataFootprintForRendering newProperties) {
         setTranslateX(newProperties.getPosition().getCoordinats().getX());
         setTranslateY(newProperties.getPosition().getCoordinats().getY());
-        getChildren().addAll(rectangle);
-
-
         this.rectangle = createRectangle(newProperties.getMovingObject().getPolygonExtended());
+        getChildren().addAll(this.rectangle);
     }
 
 

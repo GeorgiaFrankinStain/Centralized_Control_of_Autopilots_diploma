@@ -25,12 +25,16 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
             Create list deleting object. LINK_uVPgVFwt
             */
 
+        poolDataFootprintForRendering.clear();
+
         List<Footprint> footprints =
                 this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
 
         for (Footprint footprint : footprints) {
             poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);
         }
+
+        System.out.println("size: " + poolDataFootprintForRendering.size());
     }
 
     @Override
@@ -41,18 +45,14 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
 
     @Override
     public Iterator<DataFootprintForRendering> iterator() {
-        return new PoolDataFootprintForRenderingIterator(this);
+        return new PoolDataFootprintForRenderingIterator();
     }
 
 
     private class PoolDataFootprintForRenderingIterator implements Iterator<DataFootprintForRendering> {
-        private PoolDataFootprintForRendering poolDataFootprintForRendering;
         private Iterator iteratorMap;
 
-        public PoolDataFootprintForRenderingIterator(PoolDataFootprintForRendering poolDataFootprintForRendering) {
-            this.poolDataFootprintForRendering = poolDataFootprintForRendering;
-
-            
+        public PoolDataFootprintForRenderingIterator() {
             Set entrySet = PoolDataFootprintForRenderingClass.this.poolDataFootprintForRendering.entrySet();
             // Obtaining an iterator for the entry set
             this.iteratorMap = entrySet.iterator();

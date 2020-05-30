@@ -27,4 +27,6 @@ public interface PolygonExtended {
     );
 
     public Point getCenterAverage();
+
+    public Double[] getFormatDoubleArray();
 }

@@ -40,12 +40,17 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     }
 
     @Override
+    public double getTimeStanding() {
+        return Double.MAX_VALUE * 0.95;
+    }
+
+    @Override
     public PolygonExtended getLocation() {
         return polygonExtended;
     }
 
     @Override
-    public boolean getAccessPlace(PolygonExtended place, int time, TypesInLevel type) {
+    public boolean getAccessPlace(PolygonExtended place, double time, TypesInLevel type) {
         return false;
     }
 }

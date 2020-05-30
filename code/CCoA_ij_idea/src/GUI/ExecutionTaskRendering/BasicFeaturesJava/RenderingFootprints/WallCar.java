@@ -5,18 +5,19 @@ import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 
 public class WallCar extends Pane implements RenderingFootprint {
-    Rectangle rectangle;
+    Polygon polygon;
 
     public WallCar(DataFootprintForRendering newProperties) {
         setTranslateX(newProperties.getPosition().getCoordinats().getX());
         setTranslateY(newProperties.getPosition().getCoordinats().getY());
-        getChildren().addAll(rectangle);
 
 
-        this.rectangle = createRectangle(newProperties.getMovingObject().getPolygonExtended());
+        this.polygon = createPolygonJavaFX(newProperties.getMovingObject().getPolygonExtended());
+        getChildren().addAll(this.polygon);
     }
 
 
@@ -28,14 +29,11 @@ public class WallCar extends Pane implements RenderingFootprint {
 
 
     //==== <start> <Private_Methods> =======================================================================
-    private Rectangle createRectangle(PolygonExtended formMachine) {
-
-
-
-
-        double width = 0;
-        double height = 0;
-        return new Rectangle(width, height, Color.BLACK);
+    private Polygon createPolygonJavaFX(PolygonExtended formMachine) {
+        Polygon resultPolygon = new Polygon();
+        resultPolygon.getPoints().addAll(formMachine.getFormatDoubleArray());
+        resultPolygon.setStroke(Color.BLACK);
+        return resultPolygon;
     }
 
     //==== <end> <Private_Methods> =======================================================================

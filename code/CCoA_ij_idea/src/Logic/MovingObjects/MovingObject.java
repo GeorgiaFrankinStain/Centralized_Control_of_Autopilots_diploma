@@ -16,4 +16,8 @@ public interface MovingObject {
     public int getID();
 
     public int getLevel();
+
+    public double getStepSize();
+
+    public String toString();
 }
