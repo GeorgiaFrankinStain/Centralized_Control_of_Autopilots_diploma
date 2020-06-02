@@ -5,24 +5,114 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-//FIXME сделать тут класс рядом, который будет отрисовывать полигоны и проверяемую точку (чтобы было понятней, что не работает
 
 
 public class PolygonExtendedTest {
 
     @Test
     public void countPoints() {
-        //FIXME FORMALITY
+        //==== <start> <assertTrue> ====================
+        {
+            PolygonExtended square = new PolygonExtendedClass();
+            square.addPoint(new PointClass(10, 10));
+            square.addPoint(new PointClass(10, 20));
+            square.addPoint(new PointClass(20, 20));
+            square.addPoint(new PointClass(20, 10));
+
+            {
+                int actual = square.countPoints();
+                int expected = 4;
+                assertEquals(expected, actual);
+            }
+        }
+        {
+            PolygonExtended square = new PolygonExtendedClass();
+            square.addPoint(new PointClass(10, 10));
+
+            {
+                int actual = square.countPoints();
+                int expected = 1;
+                assertEquals(expected, actual);
+            }
+        }
+        {
+            PolygonExtended square = new PolygonExtendedClass();
+
+            {
+                int actual = square.countPoints();
+                int expected = 0;
+                assertEquals(expected, actual);
+            }
+        }
+        //==== <end> <assertTrue> ====================
     }
 
     @Test
     public void getPoint() {
-        //FIXME FORMALITY
+        {
+
+            PolygonExtended square = new PolygonExtendedClass();
+            Point[] arrayPoints = {
+                    new PointClass(10, 10),
+                    new PointClass(10, 20),
+                    new PointClass(20, 20),
+                    new PointClass(20, 10),
+            };
+
+
+            for (Point point : arrayPoints) {
+                square.addPoint(point);
+            }
+
+
+
+            //==== <start> <assertTrue> ====================
+            {
+                for (int i = 0; i < arrayPoints.length; i++) {
+                    Point actual = square.getPoint(i);
+                    Point expected = arrayPoints[i];
+                    assertEquals(expected, actual);
+                }
+            }
+            //==== <end> <assertTrue> ====================
+        }
     }
 
     @Test
     public void contains() {
-        //FIXME FORMALITY
+        {
+            PolygonExtended square = new PolygonExtendedClass();
+            square.addPoint(new PointClass(10, 10));
+            square.addPoint(new PointClass(10, 20));
+            square.addPoint(new PointClass(20, 20));
+            square.addPoint(new PointClass(20, 10));
+
+            //==== <start> <assertTrue> ====================
+            {
+                boolean actual = square.contains(new PointClass(10, 10));
+                assertTrue(actual);
+            }
+            {
+                boolean actual = square.contains(new PointClass(10, 20));
+                assertTrue(actual);
+            }
+            {
+                boolean actual = square.contains(new PointClass(20, 20));
+                assertTrue(actual);
+            }
+            {
+                boolean actual = square.contains(new PointClass(20, 10));
+                assertTrue(actual);
+            }
+            //==== <end> <assertTrue> ====================
+
+            //==== <start> <assertFalse> ====================
+            {
+                boolean actual = square.contains(new PointClass(10.1, 10));
+                assertFalse(actual);
+            }
+            //==== <end> <assertFalse> ====================
+        }
     }
 
     @Test
@@ -531,6 +621,22 @@ public class PolygonExtendedTest {
             Point expectedAverageCenter = new PointClass(0, 0);
 
             assertEquals(actualAverageCenter, expectedAverageCenter);
+        }
+    }
+
+    @Test
+    public void getFormatDoubleArray() {
+        {
+            PolygonExtended polygonExtended = new PolygonExtendedClass();
+            polygonExtended.addPoint(new PointClass(0, 0));
+            polygonExtended.addPoint(new PointClass(10, 0));
+            polygonExtended.addPoint(new PointClass(10, 10));
+            polygonExtended.addPoint(new PointClass(0, 10));
+
+            Double[] actualArray = polygonExtended.getFormatDoubleArray();
+            Double[] expectedArray = {0.0, 0.0, 10.0, 0.0, 10.0, 10.0, 0.0, 10.0};
+
+            assertArrayEquals(expectedArray, actualArray);
         }
     }
 }

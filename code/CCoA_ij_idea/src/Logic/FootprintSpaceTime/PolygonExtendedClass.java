@@ -6,31 +6,35 @@ import java.util.List;
 
 public class PolygonExtendedClass implements PolygonExtended {
     private List<Point> points = new ArrayList<Point>();
-    ;
-
-    //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons and polygon without points)
 
 
-    public PolygonExtendedClass() {
-    }
+    //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons, no use polygon without points)
+
 
     public PolygonExtendedClass(List<Point> points) {
         this.points = points;
     }
+    public PolygonExtendedClass() {
+    }
 
     @Override
-    public int countPoints() {
+    public int countPoints() {//TEST+
         return points.size();
     }
 
     @Override
-    public Point getPoint(int index) {
+    public Point getPoint(int index) {//TEST+
         return this.points.get(index);
     }
 
     @Override
     public void addPoint(Point newPoint) {
         this.points.add(newPoint);
+    }
+
+    @Override
+    public void addAllPoint(List<Point> newPoints) {
+        this.points.addAll(newPoints);
     }
 
     @Override
@@ -43,14 +47,40 @@ public class PolygonExtendedClass implements PolygonExtended {
         //FIXME
     }
 
+    public boolean equals(Object obj) { //FIXME ADD_TEST
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+
+
+        PolygonExtended other = (PolygonExtended) obj;
+
+        if (this.points.size() != other.countPoints()) {
+            return false;
+        }
+
+        for (int i = 0; i < this.points.size(); i++) {
+            Point pointFromThis = this.points.get(i);
+            Point pointFromOther = other.getPoint(i);
+            if (!pointFromThis.equals(pointFromOther)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     @Override
-    public boolean contains(Point desirededPoint) {
+    public boolean contains(Point desirededPoint) {//TEST+
         return this.points.contains(desirededPoint);
     }
 
 
-    public boolean enteringPoint(Point testPoint) {
+    public boolean enteringPoint(Point testPoint) {//TEST+
 
         //FIXME использовать алгоримт зональной декйкстры с алгоритмом создания точек прямого доступа около каждого вектора
 
@@ -90,7 +120,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public boolean intersectionPolygon(PolygonExtended secondPolygon) {
+    public boolean intersectionPolygon(PolygonExtended secondPolygon) {//TEST+
 
         boolean mutualEnterPointOfPolygonsBOOL =
                 enteringMinimumOnePointOfFirstPolygonInSecondPolygon(this, secondPolygon)
@@ -107,7 +137,7 @@ public class PolygonExtendedClass implements PolygonExtended {
 
 
     @Override
-    public boolean intersecionLine(Point startLine, Point endLine) {
+    public boolean intersecionLine(Point startLine, Point endLine) {//TEST+
         int indexLastPoint = this.countPoints() - 1;
         Point startLocalLine = this.getPoint(indexLastPoint);
         Point endLocalLine = this.getPoint(0);
@@ -149,7 +179,7 @@ public class PolygonExtendedClass implements PolygonExtended {
             Point aEndLine,
             Point bStartLine,
             Point bEndLine
-    ) {
+    ) {//TEST+
         return Line2D.linesIntersect(
                 aStartLine.getX(),
                 aStartLine.getY(),
@@ -164,7 +194,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public Point getCenterAverage() { //FIXME ADD_TEST
+    public Point getCenterAverage() {//TEST+
         double xSum = 0;
         double ySum = 0;
         for (Point point : this.points) {
@@ -179,7 +209,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public Double[] getFormatDoubleArray() { //FIXME TEST_ADD
+    public Double[] getFormatDoubleArray() { //TEST+
         Double[] arrayDouble = new Double[this.countPoints() * 2];
 
         int indexWriteInDoubleArray = 0;

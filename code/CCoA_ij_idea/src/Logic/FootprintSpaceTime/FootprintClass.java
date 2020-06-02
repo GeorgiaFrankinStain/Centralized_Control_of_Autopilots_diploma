@@ -18,8 +18,10 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         this.movingObject = movingObject;
     }
 
+
+
     @Override
-    public PolygonExtended getLocation() { //FIXME ADD_TEST
+    public PolygonExtended getOccupiedLocation() { //FIXME ADD_TEST
         PolygonExtended rotarePolygon = new PolygonExtendedClass();
         PolygonExtended formMovingObject = this.movingObject.getPolygonExtended();
         Point averageCenterFormMovingObject = formMovingObject.getCenterAverage();
@@ -54,7 +56,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     }
 
 
-    //    ==== <start> <Implements RenderingFootprint> ==================================================
+    //==== <start> <Implements RenderingFootprint> ==================================================
     @Override
     public Position getPosition() {
         return position;

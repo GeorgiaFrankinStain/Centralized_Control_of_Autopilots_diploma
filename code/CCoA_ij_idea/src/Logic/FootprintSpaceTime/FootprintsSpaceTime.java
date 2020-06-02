@@ -1,7 +1,7 @@
 package Logic.FootprintSpaceTime;
 
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.Landscape.Landscape;
-import Logic.Landscape.ZonaLandscape;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.Position;
@@ -20,15 +20,15 @@ public interface FootprintsSpaceTime {
             int idTrack,
             MovingObject movingObject,
             Path path,
-            int startTime
-    );
+            double startTime
+    ) throws СrashIntoAnImpassableObstacleExeption;
     public void addFootprint(
             int idTrack,
             MovingObject movingObject,
             Position position,
             double time,
             double timeStanding
-    );
+    ) throws СrashIntoAnImpassableObstacleExeption;
 
     public void deleteFootprints(int ID);
 

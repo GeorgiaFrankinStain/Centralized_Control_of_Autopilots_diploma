@@ -1,15 +1,14 @@
 package Logic.MovingObjects;
 
 import Logic.FootprintSpaceTime.Point;
-import Wrapper.RandomWrapper;
-import Wrapper.RandowWrapperClass;
+import Wrapper.RandomWrapperClass;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PathClass implements Path {
     private List<Point> points = new ArrayList<Point>();
-    private int idTrack = new RandowWrapperClass().nextInt();
+    private int idTrack = new RandomWrapperClass().nextInt();
 
 
     @Override

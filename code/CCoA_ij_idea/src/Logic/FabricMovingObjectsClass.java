@@ -14,9 +14,9 @@ public class FabricMovingObjectsClass implements FabricMovingObjects {
         if (typeMachinesBody == TypeMachinesBody.PASSENGER_CAR) {
             PolygonExtended formMachine = new PolygonExtendedClass(); //FIXME IMITATION
             formMachine.addPoint(new PointClass(0, 0));
-            formMachine.addPoint(new PointClass(50, 0));
-            formMachine.addPoint(new PointClass(50, 50));
-            formMachine.addPoint(new PointClass(0, 50));
+            formMachine.addPoint(new PointClass(20, 0));
+            formMachine.addPoint(new PointClass(20, 20));
+            formMachine.addPoint(new PointClass(0, 20));
 
             MovingObject machine = new MovingObjectClass(formMachine, typeMachinesBody);
 

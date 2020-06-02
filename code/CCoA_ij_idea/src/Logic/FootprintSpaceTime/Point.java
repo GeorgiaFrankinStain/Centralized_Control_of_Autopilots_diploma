@@ -15,5 +15,6 @@ public interface Point {
     public Point getRotareRelative(Point origin, double angle);
     public int getQuarter(Point origin);
     public double getLengthVector();
-    public double distanceToPoint(Point point);
+    public double getDistanceToPoint(Point point);
+    public Point getVector(Point point);
 }

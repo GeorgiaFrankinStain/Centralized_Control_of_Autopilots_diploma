@@ -4,7 +4,7 @@ import Logic.FootprintSpaceTime.Footprint;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.Position;
 import Logic.TypesInLevel;
-import Wrapper.RandowWrapperClass;
+import Wrapper.RandomWrapperClass;
 
 public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     private int idObject;
@@ -12,7 +12,7 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     private PolygonExtended polygonExtended;
 
     public ZonaLandscapeClass(Position position, PolygonExtended polygonExtended) {
-        this.idObject = new RandowWrapperClass().nextInt();
+        this.idObject = new RandomWrapperClass().nextInt();
         this.position = position;
         this.polygonExtended = polygonExtended;
     }
@@ -45,7 +45,7 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     }
 
     @Override
-    public PolygonExtended getLocation() {
+    public PolygonExtended getOccupiedLocation() {
         return polygonExtended;
     }
 

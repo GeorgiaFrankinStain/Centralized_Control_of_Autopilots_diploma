@@ -39,7 +39,7 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
     @Override
     public void update(long now) {
         this.gameTime += this.speedRenderingGameSecondPerSecond; //FIXME add adapter now in gameTime
-        this.gameTime %= 700;
+//        this.gameTime %= 700;
 
         this.poolDataFootprintForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime);
 

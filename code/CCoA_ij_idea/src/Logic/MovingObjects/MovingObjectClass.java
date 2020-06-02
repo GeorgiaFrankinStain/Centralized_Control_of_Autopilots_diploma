@@ -2,14 +2,15 @@ package Logic.MovingObjects;
 
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
-import Wrapper.RandowWrapperClass;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Wrapper.RandomWrapperClass;
 
 public class MovingObjectClass implements MovingObject {
 
     private PolygonExtended polygonExtended;
     private TypeMachinesBody typeMachinesBody;
     private double speed;
-    private int idObject = new RandowWrapperClass().nextInt();
+    private int idObject = new RandomWrapperClass().nextInt();
 
     public MovingObjectClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
         this.polygonExtended = polygonExtended;
@@ -17,18 +18,21 @@ public class MovingObjectClass implements MovingObject {
     }
 
 
-
     @Override
-    public void mark(FootprintsSpaceTime footprintsSpaceTime, Path path) {
+    public void mark(
+            FootprintsSpaceTime footprintsSpaceTime,
+            Path path,
+            double timeAdding
+    ) throws СrashIntoAnImpassableObstacleExeption {
 
-        //run addSled
 
         footprintsSpaceTime.addFootprint(
                 path.getIdTrack(),
                 this,
                 path,
-                0
+                timeAdding
         );
+
 
 /*        Position position1 = new PositionClass(new PointClass(100, 100), 0);
         footprintsSpaceTime.addFootprint(13, testBody, position1, 1); //FIXME positions add
@@ -85,7 +89,7 @@ public class MovingObjectClass implements MovingObject {
     }
 
     @Override
-    public double getStepSize() {
+    public double getLength() {
         double maxCoordinatX = Double.MIN_VALUE;
 
         for (int i = 0; i < this.polygonExtended.countPoints(); i++) {

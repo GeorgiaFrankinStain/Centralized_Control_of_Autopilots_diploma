@@ -1,5 +1,6 @@
 package Logic.FootprintSpaceTime;
 
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.PathsMachines.PositionClass;
@@ -9,19 +10,21 @@ import Logic.Position;
 import Logic.TypesInLevel;
 import Wrapper.EntryPair;
 import Wrapper.MyMultiMap;
-import Wrapper.MyMultiMapClass;
+import Wrapper.MyMultiMapTree;
 
 import java.util.*;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChangesFromWhen {
+    final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
+
     private MyMultiMap<Double, Footprint> storageAllFootprints =
-            new MyMultiMapClass<Double, Footprint>();
+            new MyMultiMapTree<Double, Footprint>();
 
 
 //    ListMultimap<Double, Footprint> storageAllFootprints = ArrayListMultimap.create();
 
 
-//    private Map<Double, List<Footprint>> storageAllFootprints = new TreeMap<Double, List<Footprint>>();
+    //    private Map<Double, List<Footprint>> storageAllFootprints = new TreeMap<Double, List<Footprint>>();
 //    private List<MovingObject> imitationLadnscape = new ArrayList<MovingObject>(); //FIXME IMITATION Landscape
     private Landscape onlyLandscape;
 /*
@@ -30,7 +33,6 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     program max:
         rounds
  */
-
 
 
     public FootprintsSpaceTimeClass(Landscape onlyLandscape) {
@@ -45,22 +47,23 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             Position position,
             double time,
             double timeStanding
-    ) { //FIXME ADD_TEST
+    ) throws СrashIntoAnImpassableObstacleExeption { //FIXME ADD_TEST
 
 
         Footprint newFootprint = new FootprintClass(idTrack, position, timeStanding, movingObject);
 
-        boolean placeIsSeat = this.getIsSeatTaken(newFootprint.getLocation(), time, null);
+        boolean placeIsSeat = this.getIsSeatTaken(newFootprint.getOccupiedLocation(), time, null);
 
         if (!placeIsSeat) {
             storageAllFootprints.put(time, newFootprint);
+        } else {
+            throw new СrashIntoAnImpassableObstacleExeption();
         }
     }
 
 
-
     @Override
-    public void addFootprint(int idTrack, MovingObject movingObject, Path path, int startTime) {
+    public void addFootprint(int idTrack, MovingObject movingObject, Path path, double startTime) throws СrashIntoAnImpassableObstacleExeption {
 
         Point vertorMarginRouteApplication = new PointClass(0, 0); //detection point route application at polygonExtender //FIXME find central point
 
@@ -71,15 +74,15 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
          * speed = MachinePower / ResistancePower
          */
         double speed = movingObject.getSpeed(); //FIXME MAGIC NUMBER //FIXME IMITATION
-        double lengthStep = movingObject.getStepSize();
+        double lengthStep = movingObject.getLength();
         double timeStanding;
-        if (Math.abs(speed) < 0.00000000001) { //FIXME MAGIC_NUMBER
-            timeStanding = Double.MAX_VALUE * 0.95; //FIXME MAGIC_NUMBER
+        if (Math.abs(speed) < 0.00000000001) { //FIXME MAGIC_NUMBER //FIXME == 0 error divide on speed res > double max number
+            timeStanding = this.MAX_TIME_STANDING; //FIXME MAGIC_NUMBER
         } else {
             timeStanding = lengthStep / speed;
         }
 
-
+        //FIXME REFACTORING
         //processing 1 point
         if (path.getSize() == 0) {
             assert (false);
@@ -91,7 +94,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
                     movingObject,
                     position,
                     timeAdding,
-                    timeStanding
+                    this.MAX_TIME_STANDING
             );
         } else {
             int endIndex = path.getSize() - 1;
@@ -107,13 +110,45 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
                         timeStanding,
                         timeAdding
                 );
+
             }
+
+            /*
+             * number this is number interation cicle up
+             * number this is point
+             * -- this is time standing (Length equal length movingObject)
+             * - this is lastLittleStep (last Little Time Standing)
+             * 0--0--0--0-1
+             *            |
+             *            |
+             *            1
+             *            |
+             *            |
+             *            1
+             *            |
+             *            2--2--2--2--2-3
+             *                          ^
+             *               end point in endless
+             *
+             */
+            int indexLastPoint = path.getSize() - 1;
+            Point startLine = path.getPoint(indexLastPoint - 1);
+            Point endlessPoint = path.getPoint(indexLastPoint);
+            double angleStepVector = endlessPoint.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
+            Position position = new PositionClass(endlessPoint, angleStepVector);
+            this.addFootprint(
+                    idTrack,
+                    movingObject,
+                    position,
+                    timeAdding,
+                    this.MAX_TIME_STANDING
+            );
         }
     }
 
     @Override
     public void deleteFootprints(int ID) {
-
+        //FIXME
     }
 
     @Override
@@ -129,9 +164,9 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             boolean timeStandingIncludeTestedTime = timeStandingStart < testedTime && testedTime < timeStandingEnd;
 
             if (timeStandingIncludeTestedTime) {
-                PolygonExtended locationMovingObject = footprint.getLocation();
+                PolygonExtended locationMovingObject = footprint.getOccupiedLocation();
                 boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
-                if (placeIsSeat){
+                if (placeIsSeat) {
                     return true;
                 }
             }
@@ -149,7 +184,10 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
         while (iteratorEntryPair.hasNext()) {
             EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
             Footprint currentFootprint = entry.getValue();
-            boolean isFindObject = currentFootprint.getIdObject() == ID;
+            double startStanding = entry.getKey();
+            double endStanding = startStanding + currentFootprint.getTimeStanding();
+            boolean timeStandingIncludeFindTime = startStanding <= time && time < endStanding;
+            boolean isFindObject = currentFootprint.getIdObject() == ID && timeStandingIncludeFindTime;
             if (isFindObject) {
                 return currentFootprint.getPosition();
             }
@@ -195,15 +233,14 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             double startStanding = entry.getKey();
             double endStanding = startStanding + timeStanding;
 
-            boolean footprintIndcludeFindTimePoint = startStanding < timeFind && timeFind > endStanding;
+            boolean footprintIndcludeFindTimePoint = startStanding < timeFind && timeFind < endStanding;
             if (footprintIndcludeFindTimePoint) {
                 resRendringFootpring.add(currentFootprint);
             }
         }
 
 
-//        return resRendringFootpring;
-        return null;
+        return resRendringFootpring;
     }
 
     @Override
@@ -224,19 +261,19 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
     //==== <start> <Private_Methods> =======================================================================
 
-
     private boolean stepUnderTest(Point startLine, Point endLine, Point stepUnderTest) {
         int quarterStartLine = startLine.getQuarter(endLine);
         int quarterstepUnderTest = stepUnderTest.getQuarter(endLine);
 
         return quarterStartLine == quarterstepUnderTest;
     }
-    private Point stepVector(Point endLine, Point startLine) {
+
+    private Point stepVector(Point endLine, Point startLine, double lengthStep) {
         Point origin = new PointClass(0, 0);
-        double timeStep = 1; //FIXME
         double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
-        return new PointClass(10, 0).getRotareRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
+        return new PointClass(lengthStep, 0).getRotareRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
     }
+
     private int printEveryStepOnLine(
             Point startLine,
             Point endLine,
@@ -244,7 +281,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             MovingObject movingObject,
             double standingTime,
             double timeAdding
-    ) {
+    ) throws СrashIntoAnImpassableObstacleExeption {
 
         double angle = endLine.getAngleRotareRelative(startLine);
         double timeSum = 0;
@@ -254,16 +291,17 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
 
         Point currentCoordinat = startLine.clone();
-        Point stepVector = stepVector(endLine, startLine);
+        Point stepVector = stepVector(endLine, startLine, movingObject.getLength());
 
         double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
 
         double lengthStep = stepVector.getLengthVector();
-        double lengthStraightPath = endLine.distanceToPoint(startLine);
+        double lengthStraightPath = endLine.getDistanceToPoint(startLine);
         int counterMaxSteps = (int) (lengthStraightPath / lengthStep);
-        counterMaxSteps++; //in 3 metr 4 points |-|-|-|
+//        counterMaxSteps++; //
 
-        do {
+        for (int i = 0; (i < counterMaxSteps) && this.stepUnderTest(startLine, endLine, currentCoordinat); i++) {
+
             Position position = new PositionClass(currentCoordinat, angleStepVector);
             //add Footpint
             this.addFootprint(
@@ -275,10 +313,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             );
 
 
-
             timeAdding += standingTime;
             timeSum += standingTime;
-
 
 
             currentCoordinat = new PointClass(
@@ -286,8 +322,30 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
                     currentCoordinat.getY() + stepVector.getY()
             );
 
-            counterMaxSteps--;
-        } while (this.stepUnderTest(startLine, endLine, currentCoordinat) && counterMaxSteps > 0);
+        }
+
+        if (!endLine.equals(currentCoordinat)) {
+
+            /*
+             * |--|--|-
+             *        ^
+             * little step*/
+            Point penultimatePoint = currentCoordinat;
+            double lengthFinalStep = endLine.getDistanceToPoint(penultimatePoint);
+            standingTime = lengthFinalStep / movingObject.getSpeed();
+
+            Position position = new PositionClass(penultimatePoint, angleStepVector);
+            timeSum += standingTime;
+            this.addFootprint(
+                    idTrack,
+                    movingObject,
+                    position,
+                    timeAdding,
+                    standingTime
+            );
+        }
+
+
 
         return (int) timeSum;
     }

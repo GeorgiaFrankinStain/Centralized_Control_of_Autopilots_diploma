@@ -133,8 +133,14 @@ public class PointClass implements Point {
     }
 
     @Override
-    public double distanceToPoint(Point point) {
-        Point vector = new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
+    public double getDistanceToPoint(Point point) {
+//        Point vector = new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
+        Point vector = this.getVector(point);
         return vector.getLengthVector();
+    }
+
+    @Override
+    public Point getVector(Point point) {
+        return new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
     }
 }

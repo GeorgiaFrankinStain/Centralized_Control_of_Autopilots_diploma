@@ -1,11 +1,15 @@
 package Logic.FootprintSpaceTime;
 
+import java.util.List;
+
 public interface PolygonExtended {
     public int countPoints();
 
     public Point getPoint(int index);
 
     public void addPoint(Point newPoint);
+
+    public void addAllPoint(List<Point> newPoints);
 
     public void setPoint(int index, Point newPoint);
 
@@ -29,4 +33,6 @@ public interface PolygonExtended {
     public Point getCenterAverage();
 
     public Double[] getFormatDoubleArray();
-}
+
+    public boolean equals(Object obj);
+    }

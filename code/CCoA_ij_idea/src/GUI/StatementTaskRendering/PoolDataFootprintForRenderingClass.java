@@ -33,8 +33,6 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
         for (Footprint footprint : footprints) {
             poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);
         }
-
-        System.out.println("size: " + poolDataFootprintForRendering.size());
     }
 
     @Override

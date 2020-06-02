@@ -7,6 +7,7 @@ import GUI.StatementTaskRendering.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
 import Logic.FabricMovingObjects;
 import Logic.FabricMovingObjectsClass;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.PointClass;
@@ -69,14 +70,17 @@ public class Main extends Application {
             FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
 
             MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
-            wall.mark(onlyFootprintsSpaceTime, createPathWall());
+            try {
+                wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
 
 
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
-            movingObject.mark(onlyFootprintsSpaceTime, createPath());
-
-
-
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
         }
 
 
@@ -103,9 +107,6 @@ public class Main extends Application {
             }
         };
         timer.start();
-
-
-
     }
 
     //==== <start> <Private_Methods> =======================================================================

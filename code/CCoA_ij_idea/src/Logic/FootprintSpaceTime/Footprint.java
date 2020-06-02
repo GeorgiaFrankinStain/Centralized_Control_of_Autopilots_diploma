@@ -7,7 +7,7 @@ public interface Footprint {
     public int getIdTrack();
     public Position getPosition();
     public double getTimeStanding();
-    public PolygonExtended getLocation();
+    public PolygonExtended getOccupiedLocation();
     public String toString();
 
 }
