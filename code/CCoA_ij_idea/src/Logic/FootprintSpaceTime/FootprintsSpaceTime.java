@@ -22,12 +22,18 @@ public interface FootprintsSpaceTime {
             Path path,
             double startTime
     ) throws СrashIntoAnImpassableObstacleExeption;
+
     public void addFootprint(
             int idTrack,
             MovingObject movingObject,
             Position position,
             double time,
             double timeStanding
+    ) throws СrashIntoAnImpassableObstacleExeption;
+
+    public void addFootprint(
+            Footprint footprint,
+            double time
     ) throws СrashIntoAnImpassableObstacleExeption;
 
     public void deleteFootprints(int ID);

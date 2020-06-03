@@ -1,6 +1,7 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.DataFootprintForRendering;
+import Logic.GlobalVariable;
 import Logic.MovingObjects.MovingObject;
 import Logic.Position;
 
@@ -17,7 +18,6 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         this.timeStanding = timeStanding;
         this.movingObject = movingObject;
     }
-
 
 
     @Override
@@ -48,6 +48,27 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
                        + " timeStanding:" + this.getTimeStanding();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+
+        Footprint other = (Footprint) obj;
+
+        int oneId = this.getIdTrack();
+        int twoId = other.getIdTrack();
+        boolean idTrackEquals = oneId == twoId;
+        boolean positionEquals = this.getPosition().equals(other.getPosition());
+        boolean timeStandingEquals = GlobalVariable.equalsNumber(this.getTimeStanding(), other.getTimeStanding());
+        boolean movingEquals = this.getMovingObject().equals(other.getMovingObject());
+
+        return idTrackEquals && positionEquals && timeStandingEquals && movingEquals;
+    }
     //==== <start> <Getter_and_Setter> ==================================================
 
     @Override
@@ -64,7 +85,12 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public double getTimeStanding() {
-        return timeStanding;
+        return this.timeStanding;
+    }
+
+    @Override
+    public void setTimeStanding(double newTimeStanding) {
+        this.timeStanding = newTimeStanding;
     }
 
 

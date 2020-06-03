@@ -1,7 +1,9 @@
 package Logic.Landscape;
 
+import Logic.FootprintSpaceTime.CreatorMarksOfMovingObjectClass;
 import Logic.FootprintSpaceTime.Footprint;
 import Logic.FootprintSpaceTime.PolygonExtended;
+import Logic.MovingObjects.MovingObject;
 import Logic.Position;
 import Logic.TypesInLevel;
 import Wrapper.RandomWrapperClass;
@@ -10,6 +12,7 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     private int idObject;
     private Position position;
     private PolygonExtended polygonExtended;
+    private double timeStanding = CreatorMarksOfMovingObjectClass.MAX_TIME_STANDING;
 
     public ZonaLandscapeClass(Position position, PolygonExtended polygonExtended) {
         this.idObject = new RandomWrapperClass().nextInt();
@@ -41,7 +44,17 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
 
     @Override
     public double getTimeStanding() {
-        return Double.MAX_VALUE * 0.95;
+        return this.timeStanding;
+    }
+
+    @Override
+    public MovingObject getMovingObject() {
+        return null;
+    }
+
+    @Override
+    public void setTimeStanding(double newTimeStanding) {
+        this.timeStanding = newTimeStanding;
     }
 
     @Override

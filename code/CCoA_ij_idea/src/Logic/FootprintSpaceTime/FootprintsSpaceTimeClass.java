@@ -15,7 +15,7 @@ import Wrapper.MyMultiMapTree;
 import java.util.*;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChangesFromWhen {
-    final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
+
 
     private MyMultiMap<Double, Footprint> storageAllFootprints =
             new MyMultiMapTree<Double, Footprint>();
@@ -52,10 +52,16 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
         Footprint newFootprint = new FootprintClass(idTrack, position, timeStanding, movingObject);
 
-        boolean placeIsSeat = this.getIsSeatTaken(newFootprint.getOccupiedLocation(), time, null);
+        this.addFootprint(newFootprint, time);
+    }
+
+    @Override
+    public void addFootprint(Footprint footprint, double time) throws СrashIntoAnImpassableObstacleExeption {
+
+        boolean placeIsSeat = this.getIsSeatTaken(footprint.getOccupiedLocation(), time, null);
 
         if (!placeIsSeat) {
-            storageAllFootprints.put(time, newFootprint);
+            storageAllFootprints.put(time, footprint);
         } else {
             throw new СrashIntoAnImpassableObstacleExeption();
         }
@@ -64,86 +70,9 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
     @Override
     public void addFootprint(int idTrack, MovingObject movingObject, Path path, double startTime) throws СrashIntoAnImpassableObstacleExeption {
-
-        Point vertorMarginRouteApplication = new PointClass(0, 0); //detection point route application at polygonExtender //FIXME find central point
-
-        double timeAdding = startTime;
-
-        /**
-         * Landscape have getResistancePowerLandscape(pressurePaskaleOfMachine)
-         * speed = MachinePower / ResistancePower
-         */
-        double speed = movingObject.getSpeed(); //FIXME MAGIC NUMBER //FIXME IMITATION
-        double lengthStep = movingObject.getLength();
-        double timeStanding;
-        if (Math.abs(speed) < 0.00000000001) { //FIXME MAGIC_NUMBER //FIXME == 0 error divide on speed res > double max number
-            timeStanding = this.MAX_TIME_STANDING; //FIXME MAGIC_NUMBER
-        } else {
-            timeStanding = lengthStep / speed;
-        }
-
-        //FIXME REFACTORING
-        //processing 1 point
-        if (path.getSize() == 0) {
-            assert (false);
-        } else if (path.getSize() == 1) {
-            //FIXME add standing one the site of the machine
-            Position position = new PositionClass(path.getPoint(0), 0.0);
-            this.addFootprint(
-                    idTrack,
-                    movingObject,
-                    position,
-                    timeAdding,
-                    this.MAX_TIME_STANDING
-            );
-        } else {
-            int endIndex = path.getSize() - 1;
-            for (int i = 0; i < endIndex; i++) {
-                Point startLine = path.getPoint(i);
-                Point endLine = path.getPoint(i + 1);
-
-                timeAdding += printEveryStepOnLine(
-                        startLine,
-                        endLine,
-                        idTrack,
-                        movingObject,
-                        timeStanding,
-                        timeAdding
-                );
-
-            }
-
-            /*
-             * number this is number interation cicle up
-             * number this is point
-             * -- this is time standing (Length equal length movingObject)
-             * - this is lastLittleStep (last Little Time Standing)
-             * 0--0--0--0-1
-             *            |
-             *            |
-             *            1
-             *            |
-             *            |
-             *            1
-             *            |
-             *            2--2--2--2--2-3
-             *                          ^
-             *               end point in endless
-             *
-             */
-            int indexLastPoint = path.getSize() - 1;
-            Point startLine = path.getPoint(indexLastPoint - 1);
-            Point endlessPoint = path.getPoint(indexLastPoint);
-            double angleStepVector = endlessPoint.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
-            Position position = new PositionClass(endlessPoint, angleStepVector);
-            this.addFootprint(
-                    idTrack,
-                    movingObject,
-                    position,
-                    timeAdding,
-                    this.MAX_TIME_STANDING
-            );
-        }
+        CreatorMarksOfMovingObject creatorMarksOfMovingObject =
+                new CreatorMarksOfMovingObjectClass(this, idTrack, movingObject);
+        creatorMarksOfMovingObject.addFootprint(path, startTime);
     }
 
     @Override
@@ -205,7 +134,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, double timeFind) { //FIXME ADD_TEST
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, double timeFind) {
 
         //FIXME take DataFootprintForRendering from the landscape
 
@@ -233,7 +162,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             double startStanding = entry.getKey();
             double endStanding = startStanding + timeStanding;
 
-            boolean footprintIndcludeFindTimePoint = startStanding < timeFind && timeFind < endStanding;
+            boolean footprintIndcludeFindTimePoint = startStanding <= timeFind && timeFind < endStanding;
             if (footprintIndcludeFindTimePoint) {
                 resRendringFootpring.add(currentFootprint);
             }
@@ -259,97 +188,9 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     }
 
 
-    //==== <start> <Private_Methods> =======================================================================
-
-    private boolean stepUnderTest(Point startLine, Point endLine, Point stepUnderTest) {
-        int quarterStartLine = startLine.getQuarter(endLine);
-        int quarterstepUnderTest = stepUnderTest.getQuarter(endLine);
-
-        return quarterStartLine == quarterstepUnderTest;
-    }
-
-    private Point stepVector(Point endLine, Point startLine, double lengthStep) {
-        Point origin = new PointClass(0, 0);
-        double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
-        return new PointClass(lengthStep, 0).getRotareRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
-    }
-
-    private int printEveryStepOnLine(
-            Point startLine,
-            Point endLine,
-            int idTrack,
-            MovingObject movingObject,
-            double standingTime,
-            double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption {
-
-        double angle = endLine.getAngleRotareRelative(startLine);
-        double timeSum = 0;
-
-        //determination time and size of step //FIXME (until every second (LINK_RzRGrmTH), and on good need to would in half lenght)
-        //V = 10 px/sec //FIXME //    determination time insert (start + speed of passing throught the landscape)
-
-
-        Point currentCoordinat = startLine.clone();
-        Point stepVector = stepVector(endLine, startLine, movingObject.getLength());
-
-        double angleStepVector = endLine.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
-
-        double lengthStep = stepVector.getLengthVector();
-        double lengthStraightPath = endLine.getDistanceToPoint(startLine);
-        int counterMaxSteps = (int) (lengthStraightPath / lengthStep);
-//        counterMaxSteps++; //
-
-        for (int i = 0; (i < counterMaxSteps) && this.stepUnderTest(startLine, endLine, currentCoordinat); i++) {
-
-            Position position = new PositionClass(currentCoordinat, angleStepVector);
-            //add Footpint
-            this.addFootprint(
-                    idTrack,
-                    movingObject,
-                    position,
-                    timeAdding,
-                    standingTime
-            );
-
-
-            timeAdding += standingTime;
-            timeSum += standingTime;
-
-
-            currentCoordinat = new PointClass(
-                    currentCoordinat.getX() + stepVector.getX(),
-                    currentCoordinat.getY() + stepVector.getY()
-            );
-
-        }
-
-        if (!endLine.equals(currentCoordinat)) {
-
-            /*
-             * |--|--|-
-             *        ^
-             * little step*/
-            Point penultimatePoint = currentCoordinat;
-            double lengthFinalStep = endLine.getDistanceToPoint(penultimatePoint);
-            standingTime = lengthFinalStep / movingObject.getSpeed();
-
-            Position position = new PositionClass(penultimatePoint, angleStepVector);
-            timeSum += standingTime;
-            this.addFootprint(
-                    idTrack,
-                    movingObject,
-                    position,
-                    timeAdding,
-                    standingTime
-            );
-        }
 
 
 
-        return (int) timeSum;
-    }
 
 
-    //==== <end> <Private_Methods> =========================================================================
 }

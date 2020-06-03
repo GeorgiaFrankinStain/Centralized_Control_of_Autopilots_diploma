@@ -20,7 +20,7 @@ public class FabricMovingObjectsClass implements FabricMovingObjects {
 
             MovingObject machine = new MovingObjectClass(formMachine, typeMachinesBody);
 
-            machine.setSpeed(11.11); //40 kilometr / hour
+            machine.setSpeed(10); //~=40 kilometr / hour
 
 
             return machine;
@@ -35,7 +35,7 @@ public class FabricMovingObjectsClass implements FabricMovingObjects {
 
             MovingObject machine = new MovingObjectClass(formMachine, typeMachinesBody);
 
-            machine.setSpeed(0); //40 kilometr / hour
+            machine.setSpeed(0);
 
             return machine;
         }

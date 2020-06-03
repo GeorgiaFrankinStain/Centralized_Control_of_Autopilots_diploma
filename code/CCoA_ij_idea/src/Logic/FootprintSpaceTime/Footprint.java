@@ -1,5 +1,6 @@
 package Logic.FootprintSpaceTime;
 
+import Logic.MovingObjects.MovingObject;
 import Logic.Position;
 
 public interface Footprint {
@@ -7,7 +8,10 @@ public interface Footprint {
     public int getIdTrack();
     public Position getPosition();
     public double getTimeStanding();
+    public MovingObject getMovingObject();
+    public void setTimeStanding(double newTimeStanding);
     public PolygonExtended getOccupiedLocation();
-    public String toString();
 
+    public String toString();
+    public boolean equals(Object obj);
 }

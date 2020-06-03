@@ -1,0 +1,17 @@
+1
+	0: rotation: 0.0 (x: 0.0   y: 60.0) MovObjtype: WALL_CAR id: -1155484576 speed: 0.0 timeStanding:1.7078084781191998E308
+	1: rotation: 1.5707963267948966 (x: 20.0   y: 10.0) MovObjtype: PASSENGER_CAR id: -1154715079 speed: 10.0 timeStanding:2.0
+2
+	0: rotation: 0.0 (x: 0.0   y: 60.0) MovObjtype: WALL_CAR id: -1155484576 speed: 0.0 timeStanding:1.7078084781191998E308
+	1: rotation: 1.5707963267948966 (x: 20.0   y: 30.0) MovObjtype: PASSENGER_CAR id: -1154715079 speed: 10.0 timeStanding:1.7078084781191998E308
+3
+	0: rotation: 0.0 (x: 0.0   y: 60.0) MovObjtype: WALL_CAR id: -1155484576 speed: 0.0 timeStanding:1.7078084781191998E308
+	1: rotation: 1.5707963267948966 (x: 20.0   y: 30.0) MovObjtype: PASSENGER_CAR id: -1154715079 speed: 10.0 timeStanding:1.7078084781191998E308
+4
+	0: rotation: 0.0 (x: 0.0   y: 60.0) MovObjtype: WALL_CAR id: -1155484576 speed: 0.0 timeStanding:1.7078084781191998E308
+	1: rotation: 1.5707963267948966 (x: 20.0   y: 30.0) MovObjtype: PASSENGER_CAR id: -1154715079 speed: 10.0 timeStanding:1.7078084781191998E308
+5
+	0: rotation: 0.0 (x: 0.0   y: 60.0) MovObjtype: WALL_CAR id: -1155484576 speed: 0.0 timeStanding:1.7078084781191998E308
+	0: rotation: 1.5707963267948966 (x: 20.0   y: 30.0) MovObjtype: PASSENGER_CAR id: -1154715079 speed: 10.0 timeStanding:1.7078084781191998E308
+
+	
