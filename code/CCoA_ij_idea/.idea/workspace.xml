@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="33" mnemonic="Z" />
-    <bookmark url="file://$PROJECT_DIR$/src/Main.java" line="66" mnemonic="A" />
+    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="59" mnemonic="Z" />
+    <bookmark url="file://$PROJECT_DIR$/src/Main.java" line="64" mnemonic="A" />
     <bookmark url="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java" line="27" mnemonic="B" />
     <bookmark url="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java" line="41" mnemonic="C" />
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="20" mnemonic="D" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java" line="2" mnemonic="7" />
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java" line="9" mnemonic="8" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" line="102" mnemonic="Y" />
-    <bookmark url="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" line="700" mnemonic="5" />
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" line="40" mnemonic="6" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" line="71" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" line="51" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="23" mnemonic="D" />
+    <bookmark url="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" line="105" mnemonic="Y" />
+    <bookmark url="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" line="716" mnemonic="5" />
+    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" line="143" />
+    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="51" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/Main.java" line="92" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java" line="133" mnemonic="4" />
+    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConverterTime.java" line="5" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java" line="14" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java" line="165" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Logic/FabricMovingObjectsClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FabricMovingObjectsClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../architecture/situations/виды трасс.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../architecture/situations/виды трасс.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass$PoolDataFootprintForRenderingIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass$PoolDataFootprintForRenderingIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfMovingObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfMovingObjectClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Landscape/ZonaLandscapeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Landscape/ZonaLandscapeClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObjectClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObjectClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" afterDir="false" />
@@ -40,111 +62,43 @@
     <favorites_list name="CCoA_ij_idea" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5073607">
+    <splitter split-orientation="horizontal" split-proportion="0.47423765">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="292">
-                  <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+                <state relative-caret-position="298">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="n#!!doc;n#getRenderingFootprintsFromWhen#0;n#FootprintsSpaceTimeClass#0" />
-                    <element signature="e#8020#8031#0" expanded="true" />
-                    <element signature="e#9135#9136#0" expanded="true" />
-                    <element signature="e#9162#9163#0" expanded="true" />
-                    <element signature="e#9214#9215#0" expanded="true" />
-                    <element signature="e#9238#9239#0" expanded="true" />
+                    <element signature="e#304#324#0" expanded="true" />
+                    <element signature="e#754#755#0" expanded="true" />
+                    <element signature="e#827#828#0" expanded="true" />
+                    <element signature="e#854#855#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java">
+            <entry file="file://$PROJECT_DIR$/src/Logic/LevelLayer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Logic/LevelLayerClass.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
                   <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#1865#1866#0" expanded="true" />
-                    <element signature="e#1931#1932#0" expanded="true" />
-                    <element signature="method#enteringMinimumOnePointOfFirstPolygonInSecondPolygon#0;class#PolygonExtendedClass#0" />
-                    <element signature="method#intersectionMinumumTwoLineSegmentOfTwoPolygons#0;class#PolygonExtendedClass#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="248">
-                  <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-                  <folding>
-                    <element signature="e#2188#2189#0" expanded="true" />
-                    <element signature="e#2223#2224#0" expanded="true" />
-                    <element signature="e#2296#2297#0" expanded="true" />
-                    <element signature="e#2346#2347#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/GlobalVariable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
-                  <caret line="153" selection-start-line="153" selection-end-line="153" />
-                  <folding>
-                    <element signature="e#1070#1071#0" expanded="true" />
-                    <element signature="e#1098#1099#0" expanded="true" />
-                    <element signature="e#4764#4765#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRenderingFootprintClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="16" selection-start-line="16" selection-end-line="16" />
-                  <folding>
-                    <element signature="e#1093#1094#0" expanded="true" />
-                    <element signature="e#1120#1121#0" expanded="true" />
-                    <element signature="e#1234#1235#0" expanded="true" />
-                    <element signature="e#1261#1262#0" expanded="true" />
+                    <element signature="e#265#266#0" expanded="true" />
+                    <element signature="e#306#307#0" expanded="true" />
+                    <element signature="e#730#731#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -153,14 +107,23 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="32" selection-start-line="32" selection-end-line="32" />
+                <state relative-caret-position="581">
+                  <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
                   <folding>
-                    <element signature="method#PoolDataFootprintForRenderingClass#0;class#PoolDataFootprintForRenderingClass#0" />
-                    <element signature="e#678#968#0" />
                     <element signature="method#getDataFootprint#0;class#PoolDataFootprintForRenderingClass#0" />
-                    <element signature="e#1652#1653#0" expanded="true" />
-                    <element signature="e#1718#1719#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="434">
+                  <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+                  <folding>
+                    <element signature="e#5428#5429#0" expanded="true" />
+                    <element signature="e#5470#5471#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -169,11 +132,54 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
+                <state relative-caret-position="342">
                   <caret line="42" selection-start-line="42" selection-end-line="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#1208#1209#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="41" selection-start-line="41" selection-end-line="41" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="19" column="90" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="740">
+                  <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="85" selection-start-line="85" selection-end-line="85" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#2353#2354#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -184,43 +190,12 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObjectClass.java">
+            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="282">
-                  <caret line="51" selection-start-line="51" selection-end-line="51" />
+                <state relative-caret-position="343">
+                  <caret line="103" selection-start-line="103" selection-end-line="103" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="105" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
-                  <folding>
-                    <element signature="e#283#284#0" expanded="true" />
-                    <element signature="e#306#307#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="665">
-                  <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="20" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1282#1283#0" expanded="true" />
-                    <element signature="e#1308#1309#0" expanded="true" />
-                    <element signature="e#1422#1423#0" expanded="true" />
-                    <element signature="e#1449#1450#0" expanded="true" />
-                    <element signature="e#1395#1396#0" expanded="true" />
-                    <element signature="e#1445#1446#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -229,30 +204,68 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="952">
-                  <caret line="77" column="99" selection-start-line="77" selection-start-column="99" selection-end-line="77" selection-end-column="99" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="358">
-                  <caret line="60" selection-start-line="60" selection-end-line="60" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="52" selection-start-line="52" selection-end-line="52" />
+                <state relative-caret-position="393">
+                  <caret line="796" column="91" selection-start-line="796" selection-start-column="91" selection-end-line="796" selection-end-column="91" />
                   <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#2053#2054#0" expanded="true" />
-                    <element signature="e#2089#2090#0" expanded="true" />
+                    <element signature="e#2356#2446#0" />
+                    <element signature="e#2634#2728#0" />
+                    <element signature="e#3790#4542#1" />
+                    <element signature="e#4527#5263#1" />
+                    <element signature="e#6609#8683#1" />
+                    <element signature="e#7103#7851#1" />
+                    <element signature="e#7311#7447#0" />
+                    <element signature="e#7647#7768#0" />
+                    <element signature="e#7866#8673#1" />
+                    <element signature="e#8490#8658#0" />
+                    <element signature="method#getPosition#0;class#FootprintsSpaceTimeTest#0" />
+                    <element signature="e#8834#12854#1" />
+                    <element signature="e#9510#9748#0" />
+                    <element signature="e#9767#9886#0" />
+                    <element signature="e#9966#10326#1" />
+                    <element signature="e#10340#10700#1" />
+                    <element signature="e#10714#11074#1" />
+                    <element signature="e#11088#11448#1" />
+                    <element signature="e#11463#11860#1" />
+                    <element signature="e#11874#12440#1" />
+                    <element signature="e#12483#12844#1" />
+                    <element signature="e#12865#14422#1" />
+                    <element signature="e#13592#13830#0" />
+                    <element signature="e#13849#13968#0" />
+                    <element signature="e#14047#14411#1" />
+                    <element signature="e#14433#16324#1" />
+                    <element signature="e#15071#15190#0" />
+                    <element signature="e#15269#15605#1" />
+                    <element signature="e#15618#15956#1" />
+                    <element signature="e#15970#16314#1" />
+                    <element signature="e#16335#18067#1" />
+                    <element signature="e#16825#16944#0" />
+                    <element signature="e#17023#17355#1" />
+                    <element signature="e#17368#17704#1" />
+                    <element signature="e#17717#18057#1" />
+                    <element signature="e#18077#22608#1" />
+                    <element signature="e#18130#19220#0" />
+                    <element signature="e#19945#20183#0" />
+                    <element signature="e#20202#20321#0" />
+                    <element signature="e#20400#20758#1" />
+                    <element signature="e#20772#21130#1" />
+                    <element signature="e#21144#21502#1" />
+                    <element signature="e#21516#21863#1" />
+                    <element signature="e#21878#22231#1" />
+                    <element signature="e#22245#22598#1" />
+                    <element signature="e#22619#23633#1" />
+                    <element signature="e#23093#23212#0" />
+                    <element signature="e#23291#23623#1" />
+                    <element signature="e#23644#25376#1" />
+                    <element signature="e#24425#24663#0" />
+                    <element signature="e#24682#24801#0" />
+                    <element signature="e#24880#25366#1" />
+                    <element signature="e#25188#25241#0" />
+                    <element signature="e#25387#26405#1" />
+                    <element signature="e#25810#25921#0" />
+                    <element signature="e#18365#18455#0" />
+                    <element signature="e#18590#18635#0" />
+                    <element signature="method#createPath#0;class#FootprintsSpaceTimeTest#0" />
+                    <element signature="method#createPathWall#0;class#FootprintsSpaceTimeTest#0" />
                   </folding>
                 </state>
               </provider>
@@ -261,17 +274,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="394">
-                  <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+                <state relative-caret-position="318">
+                  <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Wrapper/MyMultiMap.java">
+            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+                <state relative-caret-position="34">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" selection-start-line="9" selection-end-line="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -280,102 +302,66 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/Wrapper/MyMultiMapTest.java">
+            <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+                <state relative-caret-position="434">
+                  <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java">
+            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="224">
-                  <caret line="54" selection-start-line="54" selection-end-line="64" selection-end-column="13" />
+                <state relative-caret-position="502">
+                  <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
                   <folding>
-                    <element signature="method#countPoints#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#367#817#1" />
-                    <element signature="e#663#788#1" />
-                    <element signature="e#826#1276#1" />
-                    <element signature="e#1118#1266#1" />
-                    <element signature="e#1126#1417#1" />
-                    <element signature="e#1259#1407#1" />
-                    <element signature="e#737#862#1" />
-                    <element signature="e#918#1056#1" />
-                    <element signature="method#contains#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#454#947#1" />
-                    <element signature="e#807#937#1" />
-                    <element signature="e#945#1070#1" />
-                    <element signature="e#1083#1208#1" />
-                    <element signature="e#1083#1208#1" />
-                    <element signature="e#1359#1405#0" />
-                    <element signature="e#1480#1605#1" />
-                    <element signature="method#enteringPoint#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#531#2729#1" />
-                    <element signature="e#884#1014#1" />
-                    <element signature="e#1029#1159#1" />
-                    <element signature="e#1172#1302#1" />
-                    <element signature="e#1315#1445#1" />
-                    <element signature="e#1458#1588#1" />
-                    <element signature="e#1591#1677#0" />
-                    <element signature="e#1949#2080#1" />
-                    <element signature="e#2093#2226#1" />
-                    <element signature="e#2239#2371#1" />
-                    <element signature="e#2384#2516#1" />
-                    <element signature="e#2529#2658#1" />
-                    <element signature="e#2740#4107#1" />
-                    <element signature="e#3038#3170#1" />
-                    <element signature="e#3183#3315#1" />
-                    <element signature="e#3328#3460#1" />
-                    <element signature="e#3475#3607#1" />
-                    <element signature="e#3673#3806#1" />
-                    <element signature="e#3819#3952#1" />
-                    <element signature="e#3965#4097#1" />
-                    <element signature="e#4118#4675#1" />
-                    <element signature="e#4525#4665#1" />
-                    <element signature="e#4686#5831#1" />
-                    <element signature="e#5069#5208#1" />
-                    <element signature="e#5222#5607#1" />
-                    <element signature="e#5348#5419#0" />
-                    <element signature="e#5622#5759#1" />
-                    <element signature="e#5843#7666#0" />
-                    <element signature="method#intersectionPolygon#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#7733#10442#1" />
-                    <element signature="e#8087#8495#1" />
-                    <element signature="e#8509#8923#1" />
-                    <element signature="e#8938#9366#1" />
-                    <element signature="e#9380#9820#1" />
-                    <element signature="e#9834#9880#0" />
-                    <element signature="e#9957#10372#1" />
-                    <element signature="docComment;method#intersecionLines#0;class#PolygonExtendedTest#0" />
-                    <element signature="method#intersecionLines#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#10765#11929#1" />
-                    <element signature="e#10885#11121#1" />
-                    <element signature="e#11136#11507#1" />
-                    <element signature="e#11520#11919#1" />
-                    <element signature="e#11940#13224#1" />
-                    <element signature="e#12061#12432#1" />
-                    <element signature="e#12447#12818#1" />
-                    <element signature="e#12833#13214#1" />
-                    <element signature="e#13234#13712#1" />
-                    <element signature="e#13353#13702#1" />
-                    <element signature="e#13723#14201#1" />
-                    <element signature="e#13842#14191#1" />
-                    <element signature="e#14212#14258#0" />
-                    <element signature="e#14329#14816#1" />
-                    <element signature="e#14448#14806#1" />
-                    <element signature="method#intersecionLine#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#14934#15892#1" />
-                    <element signature="e#15287#15487#1" />
-                    <element signature="e#15500#15546#0" />
-                    <element signature="e#15622#15822#1" />
-                    <element signature="method#getCenterAverage#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#15955#16502#1" />
-                    <element signature="e#16511#17064#1" />
-                    <element signature="e#17073#17610#1" />
-                    <element signature="method#getFormatDoubleArray#0;class#PolygonExtendedTest#0" />
-                    <element signature="e#17677#17716#1" />
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="171">
+                  <caret line="158" selection-start-line="158" selection-end-line="158" />
+                  <folding>
+                    <element signature="e#2111#2112#0" expanded="true" />
+                    <element signature="e#2155#2156#0" expanded="true" />
+                    <element signature="e#5951#6086#0" expanded="true" />
+                    <element signature="e#6484#6648#0" expanded="true" />
+                    <element signature="e#6647#6648#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/Suite.class">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="72" selection-start-line="72" selection-end-line="72" />
+                  <folding>
+                    <element signature="e#2535#2536#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="219">
+                  <caret line="153" column="9" lean-forward="true" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
+                  <folding>
+                    <element signature="method#addFootprint#0;class#LayerFootprintSpaceTimeClass#0" />
+                    <element signature="method#deleteFootprints#0;class#LayerFootprintSpaceTimeClass#0" />
+                    <element signature="method#getIsSeatTaken#0;class#LayerFootprintSpaceTimeClass#0" />
                   </folding>
                 </state>
               </provider>
@@ -389,33 +375,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Footprint&gt;</find>
-      <find>getKey</find>
-      <find>movingObject.mark(onlyFootprintsSpaceTime, resPath);</find>
-      <find>TEST_ADD</find>
-      <find>FAILED</find>
-      <find>ADD_TEST</find>
-      <find>new Moving</find>
-      <find>new Foot</find>
-      <find>new Position</find>
-      <find>arrayPoints</find>
-      <find>new Rando</find>
-      <find>void mark</find>
-      <find>addFootprint</find>
-      <find>succe</find>
-      <find>mark</find>
-      <find>movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);</find>
-      <find>return res</find>
-      <find>getRenderingFootprintsFromWhen</find>
-      <find>areaRendering</find>
       <find>setSpee</find>
       <find>Wall_CAR</find>
       <find>addFoot</find>
@@ -424,18 +391,30 @@
       <find>try</find>
       <find>LINK_RletVeVp</find>
       <find>fillYourself</find>
-      <find>equal</find>
       <find>equals</find>
       <find>FIXME NOW</find>
+      <find>Equ</find>
+      <find>comp</find>
+      <find>equal</find>
+      <find>wallCar.mark(onlyFootprintsSpaceTime, resPath, 0.0);</find>
+      <find>passengerCar.mark(onlyFootprintsSpaceTime, resPath, 0.0);</find>
+      <find>movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);</find>
+      <find>(?=,)(.*\n?)(?=;)</find>
+      <find>wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0);</find>
+      <find>wall.mark\(onlyFootprintsSpaceTime, createPathWall\(\), (.*\n?)\);</find>
+      <find>wall.mark\(onlyFootprintsSpaceTime, createPathWall\(\), (.*)\);</find>
+      <find>movingObject.mark\(onlyFootprintsSpaceTime, createPath\(\), (.*)\);</find>
+      <find>onlyLan</find>
+      <find>this.layers.get(0)</find>
+      <find>p</find>
+      <find>MAX_TIME</find>
+      <find>private</find>
+      <find>RandomWrapper</find>
+      <find>priva</find>
+      <find>hashCode</find>
+      <find>defaultLevelLayer</find>
     </findStrings>
     <replaceStrings>
-      <replace>a</replace>
-      <replace>b</replace>
-      <replace>aStartLine</replace>
-      <replace>aEndLine</replace>
-      <replace>bEndLine</replace>
-      <replace>.getX()</replace>
-      <replace>.getY()</replace>
       <replace>LocalLine</replace>
       <replace>bStartLine</replace>
       <replace>assertFalse</replace>
@@ -459,6 +438,13 @@
       <replace>V</replace>
       <replace>V&gt;</replace>
       <replace>movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);</replace>
+      <replace>wallCar.mark(onlyFootprintsSpaceTime, resPath, 0.0, defaultLevelLayer);</replace>
+      <replace>passengerCar.mark(onlyFootprintsSpaceTime, resPath, 0.0, defaultLevelLayer);</replace>
+      <replace>movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);</replace>
+      <replace>wall.mark(onlyFootprintsSpaceTime, createPathWall(), $1);</replace>
+      <replace>wall.mark(onlyFootprintsSpaceTime, createPathWall(), ($1));</replace>
+      <replace>wall.mark(onlyFootprintsSpaceTime, createPathWall(), $1, defaultLevelLayer);</replace>
+      <replace>this.layers.get(new LevelLayerClass(0))</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -467,22 +453,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintSpaceTime.java" />
-        <option value="$PROJECT_DIR$/test/SharedDevelop.java" />
-        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/LocalToolRenderingPolygon.java" />
-        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/FabricMovingObject.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/FabricMovingObjectClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/Position.java" />
-        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java" />
-        <option value="$PROJECT_DIR$/src/Logic/Log.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/StorageAllFootprintsClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/StorageAllFootprints.java" />
-        <option value="$PROJECT_DIR$/src/Wrapper/ResPair.java" />
-        <option value="$PROJECT_DIR$/src/Wrapper/EntryPair.java" />
         <option value="$PROJECT_DIR$/src/Wrapper/EntryPairClass.java" />
         <option value="$PROJECT_DIR$/src/Wrapper/StorageAllFootprintsClass.java" />
         <option value="$PROJECT_DIR$/src/Wrapper/StorageAllFootprints.java" />
@@ -499,25 +469,41 @@
         <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintTest.java" />
         <option value="$PROJECT_DIR$/src/Wrapper/RandowWrapperClass.java" />
         <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/PlaceIsSeat.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacle.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacleExeption.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" />
         <option value="$PROJECT_DIR$/src/Logic/FabricMovingObjectsClass.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObjectVO.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObject.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObjectClass.java" />
-        <option value="$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/GlobalVariable.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LevelLayerClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/LevelLayer.java" />
+        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" />
         <option value="$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" />
-        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" />
+        <option value="$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertingTime.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConverterTime.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstrationAlhorithm.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstrationAlhorithmClass.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" />
+        <option value="$PROJECT_DIR$/src/Logic/LevelLayerClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" />
+        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" />
+        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" />
+        <option value="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java" />
       </list>
     </option>
   </component>
@@ -588,6 +574,14 @@
               <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="StatementTaskRendering" type="462c0819:PsiDirectoryNode" />
+              <item name="ConvertersTime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="UserCommandInterface" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -609,6 +603,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Logic" type="462c0819:PsiDirectoryNode" />
               <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
+              <item name="Exeption" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+              <item name="MovingObjects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
@@ -675,6 +684,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="GUI.StatementTaskRendering.ConvertersTime" />
       <recent name="Logic.FootprintSpaceTime" />
       <recent name="Wrapper" />
       <recent name="GUI.Window" />
@@ -704,7 +714,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in CCoA_ij_idea">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="CCoA_ij_idea" />
@@ -720,17 +730,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FootprintsSpaceTimeTest.getPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FootprintsSpaceTimeTest.addFootprint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Wrapper.*" />
+          <option name="PATTERN" value="Logic.FootprintSpaceTime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
       <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.FootprintsSpaceTimeTest" />
-      <option name="METHOD_NAME" value="getPosition" />
+      <option name="METHOD_NAME" value="addFootprint" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -770,17 +780,17 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.All in CCoA_ij_idea" />
-      <item itemvalue="JUnit.FootprintsSpaceTimeTest.getPosition" />
       <item itemvalue="JUnit.MyMultiMapTest.iteratorEntryPair" />
       <item itemvalue="JUnit.MyMultiMapTest" />
+      <item itemvalue="JUnit.FootprintsSpaceTimeTest.addFootprint" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in CCoA_ij_idea" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FootprintsSpaceTimeTest.addFootprint" />
         <item itemvalue="JUnit.MyMultiMapTest" />
         <item itemvalue="JUnit.MyMultiMapTest.iteratorEntryPair" />
-        <item itemvalue="JUnit.FootprintsSpaceTimeTest.getPosition" />
       </list>
     </recent_temporary>
   </component>
@@ -798,34 +808,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 04m 20s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 35m 11s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 14m 53s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 35m 27s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 19m 32s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 35m 35s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 20m 13s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 35m 37s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 20m 17s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 35m 55s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 20m 22s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 37m 42s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 22h 20m 27s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 38m 55s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 23h 03m 24s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 38m 59s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 23h 03m 46s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 53m 37s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.03 at 23h 05m 27s.xml">
+    <history-entry file="All_in_CCoA_ij_idea - 2020.06.08 at 04h 55m 32s.xml">
       <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -847,7 +857,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49100968" visible="true" weight="0.11534884" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49100968" visible="true" weight="0.11534884" />
       <window_info id="Structure" order="6" sideWeight="0.5042373" side_tool="true" weight="0.24976744" />
       <window_info id="Favorites" order="7" sideWeight="0.50899035" side_tool="true" weight="0.29069766" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.15435606" />
@@ -856,7 +866,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32954547" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3276515" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3153409" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3153409" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4403409" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -910,35 +920,40 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <condition expression="currentFootprint.getIdObject() == -2039557538" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java</url>
-          <line>118</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>153</line>
+          <line>144</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java</url>
-          <line>29</line>
+          <line>39</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java</url>
-          <line>79</line>
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>86</line>
           <properties />
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java</url>
-          <line>64</line>
+          <url>file://$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java</url>
+          <line>63</line>
           <properties />
-          <option name="timeStamp" value="96" />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -981,175 +996,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Logic/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/shape/Rectangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="103" column="11" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/logging/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3264">
-          <caret line="217" column="13" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRendering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5627">
-          <caret line="357" column="63" selection-start-line="357" selection-start-column="63" selection-end-line="357" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/reflect/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="497" selection-start-line="497" selection-end-line="497" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/TreeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="1241" selection-start-line="1241" selection-end-line="1241" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wrapper/EntryPair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wrapper/EntryPairClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#701#702#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wrapper/MyMultiMapTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding>
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedClassTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="53" selection-start-line="53" selection-end-line="62" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/LocalToolRenderingPolygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacleExeption.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1171,16 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/animation/AnimationTimer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1195,7 +1031,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObject.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
@@ -1209,13 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1347,86 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2053#2054#0" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-          <folding>
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#4764#4765#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="105" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
-          <folding>
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="method#PoolDataFootprintForRenderingClass#0;class#PoolDataFootprintForRenderingClass#0" />
-            <element signature="e#678#968#0" />
-            <element signature="method#getDataFootprint#0;class#PoolDataFootprintForRenderingClass#0" />
-            <element signature="e#1652#1653#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-          <folding>
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1931#1932#0" expanded="true" />
-            <element signature="method#enteringMinimumOnePointOfFirstPolygonInSecondPolygon#0;class#PolygonExtendedClass#0" />
-            <element signature="method#intersectionMinumumTwoLineSegmentOfTwoPolygons#0;class#PolygonExtendedClass#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/GlobalVariable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1444,50 +1193,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="20" />
+        <state relative-caret-position="68">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1282#1283#0" expanded="true" />
-            <element signature="e#1308#1309#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1449#1450#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfMovingObjectClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="54">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/TypesInLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1931#1932#0" expanded="true" />
+            <element signature="method#enteringMinimumOnePointOfFirstPolygonInSecondPolygon#0;class#PolygonExtendedClass#0" />
+            <element signature="method#intersectionMinumumTwoLineSegmentOfTwoPolygons#0;class#PolygonExtendedClass#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+          <folding>
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="171">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="77" column="99" selection-start-line="77" selection-start-column="99" selection-end-line="77" selection-end-column="99" />
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+          <folding>
+            <element signature="e#2111#2112#0" expanded="true" />
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#5951#6086#0" expanded="true" />
+            <element signature="e#6484#6648#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/Suite.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#2535#2536#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wrapper/RandomWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        <state relative-caret-position="367">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
           <folding>
             <element signature="e#2188#2189#0" expanded="true" />
             <element signature="e#2223#2224#0" expanded="true" />
@@ -1497,18 +1343,269 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
+        <state relative-caret-position="136">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="n#!!doc;n#getRenderingFootprintsFromWhen#0;n#FootprintsSpaceTimeClass#0" />
-            <element signature="e#8020#8031#0" expanded="true" />
-            <element signature="e#9135#9136#0" expanded="true" />
-            <element signature="e#9162#9163#0" expanded="true" />
-            <element signature="e#9214#9215#0" expanded="true" />
-            <element signature="e#9238#9239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConverterTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#278#296#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2353#2354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/LevelLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#304#324#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/LevelLayerClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="153" column="9" lean-forward="true" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
+          <folding>
+            <element signature="method#addFootprint#0;class#LayerFootprintSpaceTimeClass#0" />
+            <element signature="method#deleteFootprints#0;class#LayerFootprintSpaceTimeClass#0" />
+            <element signature="method#getIsSeatTaken#0;class#LayerFootprintSpaceTimeClass#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+          <folding>
+            <element signature="e#5428#5429#0" expanded="true" />
+            <element signature="e#5470#5471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="method#getDataFootprint#0;class#PoolDataFootprintForRenderingClass#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="796" column="91" selection-start-line="796" selection-start-column="91" selection-end-line="796" selection-end-column="91" />
+          <folding>
+            <element signature="e#2356#2446#0" />
+            <element signature="e#2634#2728#0" />
+            <element signature="e#3790#4542#1" />
+            <element signature="e#4527#5263#1" />
+            <element signature="e#6609#8683#1" />
+            <element signature="e#7103#7851#1" />
+            <element signature="e#7311#7447#0" />
+            <element signature="e#7647#7768#0" />
+            <element signature="e#7866#8673#1" />
+            <element signature="e#8490#8658#0" />
+            <element signature="method#getPosition#0;class#FootprintsSpaceTimeTest#0" />
+            <element signature="e#8834#12854#1" />
+            <element signature="e#9510#9748#0" />
+            <element signature="e#9767#9886#0" />
+            <element signature="e#9966#10326#1" />
+            <element signature="e#10340#10700#1" />
+            <element signature="e#10714#11074#1" />
+            <element signature="e#11088#11448#1" />
+            <element signature="e#11463#11860#1" />
+            <element signature="e#11874#12440#1" />
+            <element signature="e#12483#12844#1" />
+            <element signature="e#12865#14422#1" />
+            <element signature="e#13592#13830#0" />
+            <element signature="e#13849#13968#0" />
+            <element signature="e#14047#14411#1" />
+            <element signature="e#14433#16324#1" />
+            <element signature="e#15071#15190#0" />
+            <element signature="e#15269#15605#1" />
+            <element signature="e#15618#15956#1" />
+            <element signature="e#15970#16314#1" />
+            <element signature="e#16335#18067#1" />
+            <element signature="e#16825#16944#0" />
+            <element signature="e#17023#17355#1" />
+            <element signature="e#17368#17704#1" />
+            <element signature="e#17717#18057#1" />
+            <element signature="e#18077#22608#1" />
+            <element signature="e#18130#19220#0" />
+            <element signature="e#19945#20183#0" />
+            <element signature="e#20202#20321#0" />
+            <element signature="e#20400#20758#1" />
+            <element signature="e#20772#21130#1" />
+            <element signature="e#21144#21502#1" />
+            <element signature="e#21516#21863#1" />
+            <element signature="e#21878#22231#1" />
+            <element signature="e#22245#22598#1" />
+            <element signature="e#22619#23633#1" />
+            <element signature="e#23093#23212#0" />
+            <element signature="e#23291#23623#1" />
+            <element signature="e#23644#25376#1" />
+            <element signature="e#24425#24663#0" />
+            <element signature="e#24682#24801#0" />
+            <element signature="e#24880#25366#1" />
+            <element signature="e#25188#25241#0" />
+            <element signature="e#25387#26405#1" />
+            <element signature="e#25810#25921#0" />
+            <element signature="e#18365#18455#0" />
+            <element signature="e#18590#18635#0" />
+            <element signature="method#createPath#0;class#FootprintsSpaceTimeTest#0" />
+            <element signature="method#createPathWall#0;class#FootprintsSpaceTimeTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="90" selection-start-line="19" selection-start-column="90" selection-end-line="19" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -10,9 +10,9 @@ import Logic.FabricMovingObjectsClass;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
+import Logic.LevelLayerClass;
 import Logic.FootprintSpaceTime.PointClass;
-import Logic.Landscape.Landscape;
-import Logic.Landscape.LandscapeClass;
+import Logic.LevelLayer;
 import Logic.MovingObjects.MovingObject;
 
 import Logic.MovingObjects.Path;
@@ -39,9 +39,7 @@ public class Main extends Application {
 
 
 
-        //create Landscape ()
-        Landscape onlyLandscape = new LandscapeClass();
-        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
 
         //PUNKT_2
@@ -67,18 +65,32 @@ public class Main extends Application {
         { //FIXME MOVE imitation in
 //            onlyFootprintsSpaceTime.addFootprint();
 
+            LevelLayer levelLayer = new LevelLayerClass(0);
+
             FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
 
             MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
             try {
-                wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0);
+                wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, levelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
 
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0);
+                movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+
+
+            MovingObject movingObject2 = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            LevelLayer levelLayer2 = new LevelLayerClass(1);
+            try {
+
+                Path resPath = new PathClass();
+                resPath.addPoint(new PointClass(440, 440));
+                resPath.addPoint(new PointClass(200, 200));
+                movingObject2.mark(onlyFootprintsSpaceTime, resPath, 0.0, levelLayer2);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
         }

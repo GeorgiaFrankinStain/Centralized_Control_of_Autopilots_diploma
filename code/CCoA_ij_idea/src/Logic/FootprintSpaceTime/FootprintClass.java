@@ -60,8 +60,8 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
         Footprint other = (Footprint) obj;
 
-        int oneId = this.getIdTrack();
-        int twoId = other.getIdTrack();
+        int oneId = this.getIdObject();
+        int twoId = other.getIdObject();
         boolean idTrackEquals = oneId == twoId;
         boolean positionEquals = this.getPosition().equals(other.getPosition());
         boolean timeStandingEquals = GlobalVariable.equalsNumber(this.getTimeStanding(), other.getTimeStanding());

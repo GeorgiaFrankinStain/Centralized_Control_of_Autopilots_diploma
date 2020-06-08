@@ -2,6 +2,7 @@ package Logic.FootprintSpaceTime;
 
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.Landscape.Landscape;
+import Logic.LevelLayer;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.Position;
@@ -11,39 +12,37 @@ import java.util.List;
 
 public interface FootprintsSpaceTime {
 
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time);
-
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time, TypesInLevel type);
-
+    public List<Footprint> getRenderingFootprintsFromWhen(
+            PolygonExtended areaFind,
+            double time,
+            LevelLayer levelLayer
+    );
 
     public void addFootprint(
             int idTrack,
             MovingObject movingObject,
             Path path,
-            double startTime
-    ) throws СrashIntoAnImpassableObstacleExeption;
-
-    public void addFootprint(
-            int idTrack,
-            MovingObject movingObject,
-            Position position,
-            double time,
-            double timeStanding
+            double startTime,
+            LevelLayer levelLayer
     ) throws СrashIntoAnImpassableObstacleExeption;
 
     public void addFootprint(
             Footprint footprint,
-            double time
+            double time,
+            LevelLayer levelLayer
     ) throws СrashIntoAnImpassableObstacleExeption;
 
     public void deleteFootprints(int ID);
 
+    public boolean getIsSeatTaken(PolygonExtended place, double time, LevelLayer levelLayer);
 
-    public boolean getIsSeatTaken(PolygonExtended place, double time, TypesInLevel type);
+    public Double averageTimeMovingToNextPointOfPath();
 
-    public Position getPosition(int ID, double time);
+    public Double getTimeAddingLastFootprints(LevelLayer levelLayer);
 
-    public Landscape getLandscape();
+    public Position getPositionInDefaultLevel(int ID, double time);
+
+
 
 
 

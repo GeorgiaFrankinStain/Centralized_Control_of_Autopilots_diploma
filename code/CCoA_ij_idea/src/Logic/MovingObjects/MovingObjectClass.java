@@ -3,6 +3,7 @@ package Logic.MovingObjects;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.LevelLayer;
 import Wrapper.RandomWrapperClass;
 
 public class MovingObjectClass implements MovingObject {
@@ -10,7 +11,7 @@ public class MovingObjectClass implements MovingObject {
     private PolygonExtended polygonExtended;
     private TypeMachinesBody typeMachinesBody;
     private double speed;
-    private int idObject = new RandomWrapperClass().nextInt();
+    private int idObject = new RandomWrapperClass(835).nextInt();
 
     public MovingObjectClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
         this.polygonExtended = polygonExtended;
@@ -22,7 +23,8 @@ public class MovingObjectClass implements MovingObject {
     public void mark(
             FootprintsSpaceTime footprintsSpaceTime,
             Path path,
-            double timeAdding
+            double timeAdding,
+            LevelLayer levelLayer
     ) throws СrashIntoAnImpassableObstacleExeption {
 
 
@@ -30,7 +32,8 @@ public class MovingObjectClass implements MovingObject {
                 path.getIdTrack(),
                 this,
                 path,
-                timeAdding
+                timeAdding,
+                levelLayer
         );
 
 

@@ -5,8 +5,7 @@ import GUI.ExecutionTaskRendering.BasicFeaturesJava.MapRenderClass;
 import GUI.StatementTaskRendering.PoolDataFootprintForRendering;
 import GUI.StatementTaskRendering.PoolDataFootprintForRenderingClass;
 import GUI.StatementTaskRendering.TypeMachinesBody;
-import Logic.FabricMovingObjects;
-import Logic.FabricMovingObjectsClass;
+import Logic.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.Landscape.Landscape;
 import Logic.Landscape.LandscapeClass;
@@ -14,22 +13,20 @@ import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.MovingObjects.PathClass;
 import Logic.PathsMachines.PositionClass;
-import Logic.Position;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.List;
 
 import static java.lang.Math.PI;
 import static org.junit.Assert.*;
 
 public class FootprintsSpaceTimeTest {
-
+    LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+    
     @Test
     public void getRenderingFootprintsFromWhen() {
         {
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
             PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
             MapRender subwindowMapRendering = new MapRenderClass(poolDataFootprintForRendering); //create MapRender (FootprintsSpaceTime)
@@ -41,7 +38,7 @@ public class FootprintsSpaceTimeTest {
             try {
                 Path resPath = new PathClass();
                 resPath.addPoint(new PointClass(0, 60));
-                wallCar.mark(onlyFootprintsSpaceTime, resPath, 0.0);
+                wallCar.mark(onlyFootprintsSpaceTime, resPath, 0.0, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
@@ -52,7 +49,7 @@ public class FootprintsSpaceTimeTest {
                 resPath.addPoint(new PointClass(20, 10));
                 resPath.addPoint(new PointClass(20, 115));
 
-                passengerCar.mark(onlyFootprintsSpaceTime, resPath, 0.0);
+                passengerCar.mark(onlyFootprintsSpaceTime, resPath, 0.0, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
@@ -67,37 +64,50 @@ public class FootprintsSpaceTimeTest {
                 areaRendering.addPoint(new PointClass(0, 900));
 
                 Footprint wallCarFootrpint = new FootprintClass(
-                        -1150098092,
+                        -1183596282,
                         new PositionClass(new PointClass(0, 60), 0.0),
-                        CreatorMarksOfMovingObjectClass.MAX_TIME_STANDING,
+                        CreatorMarksOfPathClass.MAX_TIME_STANDING,
                         wallCar
                 );
 
                 {
                     List<Footprint> footprints =
-                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, 0.0);
+                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                                    areaRendering,
+                                    0.0,
+                                    defaultLevelLayer
+                            );
 
-//                    assertTrue(wallCarFootrpint.equals(footprints.get(0)));
-                    assertEquals(wallCarFootrpint, footprints.get(0));
+                    assertTrue(wallCarFootrpint.equals(footprints.get(0)));
+//                    assertEquals(wallCarFootrpint, footprints.get(0));
 
+
+                    int idFindMovingObject = footprints.get(1).getIdObject();
                     Footprint carFootrpint = new FootprintClass(
-                            -1152406585,
+                            idFindMovingObject,
                             new PositionClass(new PointClass(20, 10), 1.5707963267948966),
                             2.0,
                             passengerCar
                     );
+                    int idFindMovingObject2 = footprints.get(1).getIdObject();
 
-                    assertEquals(carFootrpint, footprints.get(1));
+                    Footprint find = footprints.get(1);
+                    assertTrue(carFootrpint.equals(find));
+//                    assertEquals(carFootrpint, footprints.get(1));
                 }
                 {
                     List<Footprint> footprints =
-                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, 1.0);
+                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                                    areaRendering,
+                                    1.0,
+                                    this.defaultLevelLayer
+                            );
 
 //                    assertTrue(wallCarFootrpint.equals(footprints.get(0)));
                     assertEquals(wallCarFootrpint, footprints.get(0));
 
                     Footprint carFootrpint = new FootprintClass(
-                            -1152406585,
+                            footprints.get(1).getIdObject(),
                             new PositionClass(new PointClass(20, 10), 1.5707963267948966),
                             2.0,
                             passengerCar
@@ -109,15 +119,19 @@ public class FootprintsSpaceTimeTest {
                 for (int i = 1; i < 5; i++) {
 
                     List<Footprint> footprints =
-                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, 2.0 * i);
+                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                                    areaRendering,
+                                    2.0 * i,
+                                    defaultLevelLayer
+                            );
 
 //                    assertTrue(wallCarFootrpint.equals(footprints.get(0)));
                     assertEquals(wallCarFootrpint, footprints.get(0));
 
                     Footprint carFootrpint = new FootprintClass(
-                            -1152406585,
+                            footprints.get(1).getIdObject(),
                             new PositionClass(new PointClass(20, 30), 1.5707963267948966),
-                            CreatorMarksOfMovingObjectClass.MAX_TIME_STANDING,
+                            CreatorMarksOfPathClass.MAX_TIME_STANDING,
                             passengerCar
                     );
 
@@ -125,15 +139,19 @@ public class FootprintsSpaceTimeTest {
                 }
                 {
                     List<Footprint> footprints =
-                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, 1999);
+                            onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                                    areaRendering,
+                                    1999,
+                                    defaultLevelLayer
+                            );
 
 //                    assertTrue(wallCarFootrpint.equals(footprints.get(0)));
                     assertEquals(wallCarFootrpint, footprints.get(0));
 
                     Footprint carFootrpint = new FootprintClass(
-                            -1152406585,
+                            footprints.get(1).getIdObject(),
                             new PositionClass(new PointClass(20, 30), 1.5707963267948966),
-                            CreatorMarksOfMovingObjectClass.MAX_TIME_STANDING,
+                            CreatorMarksOfPathClass.MAX_TIME_STANDING,
                             passengerCar
                     );
 
@@ -145,7 +163,7 @@ public class FootprintsSpaceTimeTest {
         }
         {
             Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
             PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
             MapRender subwindowMapRendering = new MapRenderClass(poolDataFootprintForRendering); //create MapRender (FootprintsSpaceTime)
@@ -155,14 +173,14 @@ public class FootprintsSpaceTimeTest {
 
                 MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
                 try {
-                    wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0);
+                    wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, defaultLevelLayer);
                 } catch (СrashIntoAnImpassableObstacleExeption ex) {
                 }
 
 
                 MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
                 try {
-                    movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0);
+                    movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0, defaultLevelLayer);
                 } catch (СrashIntoAnImpassableObstacleExeption ex) {
                 }
             }
@@ -175,7 +193,11 @@ public class FootprintsSpaceTimeTest {
                 areaRendering.addPoint(new PointClass(900, 900));
                 areaRendering.addPoint(new PointClass(0, 900));
                 List<Footprint> footprints =
-                        onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, 0.0);
+                        onlyFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                                areaRendering,
+                                0.0,
+                                defaultLevelLayer
+                        );
 
 
 
@@ -203,8 +225,7 @@ public class FootprintsSpaceTimeTest {
 
 
         {// Test path from to
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 100));
@@ -229,13 +250,13 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 0
                 );
@@ -245,7 +266,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 1
                 );
@@ -255,7 +276,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 4
                 );
@@ -265,7 +286,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 5
                 );
@@ -276,7 +297,7 @@ public class FootprintsSpaceTimeTest {
 
 
             { //Test standing after stop machine
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 400
                 );
@@ -286,7 +307,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         10
                 );
@@ -303,7 +324,7 @@ public class FootprintsSpaceTimeTest {
 
             for (int i = 0; i < 6; i++) {
 
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * i
                 );
@@ -315,8 +336,7 @@ public class FootprintsSpaceTimeTest {
 
 
         {// Test path from to //Test last small step standing after stop machine
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 100));
@@ -341,12 +361,12 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 400
                 );
@@ -359,8 +379,7 @@ public class FootprintsSpaceTimeTest {
 
 
         {// Test path from to //Test last small step standing after stop machine
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 0));
@@ -377,12 +396,12 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         8
                 );
@@ -391,7 +410,7 @@ public class FootprintsSpaceTimeTest {
                 assertEquals(expected, actualPosition);
             }
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         10
                 );
@@ -401,7 +420,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         10000000
                 );
@@ -413,8 +432,7 @@ public class FootprintsSpaceTimeTest {
 
 
         {// Test standing
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 0));
@@ -429,12 +447,12 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         0
                 );
@@ -443,7 +461,7 @@ public class FootprintsSpaceTimeTest {
                 assertEquals(expected, actualPosition);
             }
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         23456
                 );
@@ -452,7 +470,7 @@ public class FootprintsSpaceTimeTest {
                 assertEquals(expected, actualPosition);
             }
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         234563456
                 );
@@ -499,8 +517,7 @@ public class FootprintsSpaceTimeTest {
              *
              */
 
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 0));
@@ -526,12 +543,12 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 0
                 );
@@ -541,7 +558,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 1
                 );
@@ -551,7 +568,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 4
                 );
@@ -561,7 +578,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 5
                 );
@@ -572,7 +589,7 @@ public class FootprintsSpaceTimeTest {
 
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 5 * 2
                 );
@@ -582,7 +599,7 @@ public class FootprintsSpaceTimeTest {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeStanding * 5 * 3
                 );
@@ -594,8 +611,7 @@ public class FootprintsSpaceTimeTest {
 
 
         {
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 0));
@@ -610,12 +626,12 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         0
                 );
@@ -627,9 +643,9 @@ public class FootprintsSpaceTimeTest {
 
 
         {//Test timeAdding is very big double
-            timeAddingPath = CreatorMarksOfMovingObjectClass.MAX_TIME_STANDING / 2;
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            timeAddingPath = CreatorMarksOfPathClass.MAX_TIME_STANDING / 2;
+            
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 100));
@@ -654,12 +670,12 @@ public class FootprintsSpaceTimeTest {
 
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
             {
-                Position actualPosition = onlyFootprintsSpaceTime.getPosition(
+                Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
                         movingObject.getID(),
                         timeAddingPath + timeStanding * 0
                 );
@@ -672,8 +688,8 @@ public class FootprintsSpaceTimeTest {
 
 
         {//TEST Exeption situation
-            Landscape onlyLandscape = new LandscapeClass();
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(onlyLandscape);
+            
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             Path resPath = new PathClass();
             resPath.addPoint(new PointClass(0, 0));
@@ -683,7 +699,7 @@ public class FootprintsSpaceTimeTest {
 
             MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
             try {
-                wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0);
+                wall.mark(onlyFootprintsSpaceTime, createPathWall(), (0.0), defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
@@ -691,7 +707,7 @@ public class FootprintsSpaceTimeTest {
             boolean exeptionThrowed = false;
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0);
+                movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0, defaultLevelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
                 exeptionThrowed = true;
             }
@@ -720,6 +736,68 @@ public class FootprintsSpaceTimeTest {
         resPath.addPoint(new PointClass(60, 60));
 
         return resPath;
+    }
+
+    @Test
+    public void averageTimeMovingToNextPointOfPath() {
+        double timeAddingPath = 0.0;
+
+
+        {
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
+
+            Path resPath = new PathClass();
+            resPath.addPoint(new PointClass(0, 0));
+            Point endPoint = new PointClass(10, 0);
+            resPath.addPoint(endPoint);
+
+
+            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+
+
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+
+
+            {
+                Double expected = 1.0;
+                Double actual = onlyFootprintsSpaceTime.averageTimeMovingToNextPointOfPath();
+                assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
+            }
+        }
+
+        {
+            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
+
+            /*
+            * - this is second
+            * 0-1-2
+            */
+            Path resPath = new PathClass();
+            resPath.addPoint(new PointClass(0, 0));
+            Point endPoint = new PointClass(20, 0);
+            resPath.addPoint(endPoint);
+
+
+            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+
+
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+
+
+            {
+                Double expected = 2.0;
+                Double actual = onlyFootprintsSpaceTime.averageTimeMovingToNextPointOfPath();
+                assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
+            }
+        }
     }
 
 

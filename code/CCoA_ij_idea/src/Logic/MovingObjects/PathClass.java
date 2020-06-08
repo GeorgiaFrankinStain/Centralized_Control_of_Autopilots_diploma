@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PathClass implements Path {
     private List<Point> points = new ArrayList<Point>();
-    private int idTrack = new RandomWrapperClass().nextInt();
+    private int idTrack = new RandomWrapperClass(45787694).nextInt();
 
 
     @Override

@@ -7,9 +7,9 @@ import Logic.MovingObjects.Path;
 import Logic.PathsMachines.PositionClass;
 import Logic.Position;
 
-public class CreatorMarksOfMovingObjectClass implements CreatorMarksOfMovingObject {
+public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
-    private FootprintsSpaceTime footprintsSpaceTime;
+    private LayerFootprintSpaceTime footprintsSpaceTime;
     private int idTrack;
     private MovingObject movingObject;
 
@@ -19,8 +19,8 @@ public class CreatorMarksOfMovingObjectClass implements CreatorMarksOfMovingObje
     private Footprint penultimateFootprintInPath = null;
     private Footprint lastFootprintInPath = null;
 
-    public CreatorMarksOfMovingObjectClass(
-            FootprintsSpaceTime footprintsSpaceTime,
+    public CreatorMarksOfPathClass(
+            LayerFootprintSpaceTime footprintsSpaceTime,
             int idTrack,
             MovingObject movingObject
     ) {

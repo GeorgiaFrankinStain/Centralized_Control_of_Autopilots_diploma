@@ -4,6 +4,7 @@ import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import GUI.StatementTaskRendering.TypeLandscapeBody;
 import Logic.FootprintSpaceTime.PolygonExtended;
+import Logic.GlobalVariable;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -37,7 +38,8 @@ public class Machine extends Pane implements RenderingFootprint {
         double width = formMachine.getPoint(1).getX() - formMachine.getPoint(0).getX();
         double height = formMachine.getPoint(3).getY() - formMachine.getPoint(0).getY();
 
-        if (Math.abs(width) < 0.001 || Math.abs(height) < 0.001) { //FIXME MAGIC_NUMBER
+        if (GlobalVariable.equalsNumber(width, 0)
+                    || GlobalVariable.equalsNumber(height, 0)) {
             assert(false);
             return null;
         }

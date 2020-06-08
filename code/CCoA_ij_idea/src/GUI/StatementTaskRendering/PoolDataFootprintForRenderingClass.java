@@ -1,6 +1,9 @@
 package GUI.StatementTaskRendering;
 
+import GUI.StatementTaskRendering.ConvertersTime.DemonstartionAlhorith;
 import Logic.FootprintSpaceTime.*;
+import Logic.LevelLayer;
+import Logic.LevelLayerClass;
 
 import java.util.*;
 
@@ -15,7 +18,7 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
     }
 
     @Override
-    public void fillYourself(PolygonExtended areaRendering, int gameTime) {
+    public void fillYourself(PolygonExtended areaRendering, int currentTime) {
 /*      //TODO REALISED
         min
             Complete removal. Create new list.
@@ -27,8 +30,31 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
 
         poolDataFootprintForRendering.clear();
 
+
+        ConverterTime converterTime = new DemonstartionAlhorith(
+                this.sourceFootprintsSpaceTime
+        );
+
+
+        LevelLayer defaultLevel = new LevelLayerClass(0);
         List<Footprint> footprints =
-                this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(areaRendering, gameTime);
+                this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                        areaRendering,
+                        converterTime.convert(currentTime, defaultLevel),
+                        defaultLevel
+                );
+
+        LevelLayer alhorithDemonstrationInformationLevel = new LevelLayerClass(1);
+        footprints.addAll(
+                this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(
+                        areaRendering,
+                        converterTime.convert(currentTime, alhorithDemonstrationInformationLevel),
+                        alhorithDemonstrationInformationLevel
+                )
+        );
+
+        System.out.println("default: " + converterTime.convert(currentTime, defaultLevel));
+        System.out.println("demonstartion: " + converterTime.convert(currentTime, alhorithDemonstrationInformationLevel));
 
         for (Footprint footprint : footprints) {
             poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);

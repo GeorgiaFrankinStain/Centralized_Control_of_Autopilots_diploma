@@ -3,12 +3,14 @@ package Logic.MovingObjects;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.PolygonExtended;
+import Logic.LevelLayer;
 
 public interface MovingObject {
     public void mark(
             FootprintsSpaceTime footprintsSpaceTime,
-            Path pat,
-            double timeAdding
+            Path path,
+            double timeAdding,
+            LevelLayer levelLayer
     ) throws СrashIntoAnImpassableObstacleExeption;
 
     public PolygonExtended getPolygonExtended();

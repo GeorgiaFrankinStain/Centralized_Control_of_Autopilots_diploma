@@ -1,20 +1,39 @@
 package Wrapper;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class RandomWrapperClass implements RandomWrapper {
-    private static int counterRandom = 0;
-    private Random random = new Random(this.counterRandom); //seed for debug, don't delete seed for debug
+    private Random random;
 //    private Random random = new Random();
+    private static Map<Integer, Integer> counters = new HashMap<Integer, Integer>();
 
 
-    public RandomWrapperClass() {
-        this.counterRandom++;
+    public RandomWrapperClass(int seedDebug) {
+        this.random = debug(seedDebug);
     }
 
 
     @Override
     public int nextInt() {
         return this.random.nextInt();
+    }
+
+    private Random debug(int seedDebug) {
+        increment(seedDebug);
+        return new Random(this.counters.get(seedDebug));
+    }
+    private void increment(int seedDebug) {
+        int currentValue = 0;
+        if (this.counters.containsKey(seedDebug)) {
+            currentValue = this.counters.get(seedDebug);
+        }
+
+        this.counters.put(seedDebug, currentValue + 1);
+    }
+
+    private Random realise() {
+        return new Random();
     }
 }

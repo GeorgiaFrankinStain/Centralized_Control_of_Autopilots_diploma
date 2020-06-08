@@ -1,6 +1,6 @@
 package Logic.Landscape;
 
-import Logic.FootprintSpaceTime.CreatorMarksOfMovingObjectClass;
+import Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
 import Logic.FootprintSpaceTime.Footprint;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.MovingObjects.MovingObject;
@@ -12,10 +12,10 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     private int idObject;
     private Position position;
     private PolygonExtended polygonExtended;
-    private double timeStanding = CreatorMarksOfMovingObjectClass.MAX_TIME_STANDING;
+    private double timeStanding = CreatorMarksOfPathClass.MAX_TIME_STANDING;
 
     public ZonaLandscapeClass(Position position, PolygonExtended polygonExtended) {
-        this.idObject = new RandomWrapperClass().nextInt();
+        this.idObject = new RandomWrapperClass( 134).nextInt();
         this.position = position;
         this.polygonExtended = polygonExtended;
     }
