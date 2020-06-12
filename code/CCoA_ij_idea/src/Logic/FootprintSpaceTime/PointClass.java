@@ -39,6 +39,7 @@ public class PointClass implements Point {
 
     @Override
     public int hashCode() {
+        //FIXME hash code from double is good?
         int  twoPow32 = 2147483647;
         final int prime = 31;
         int result = 1;
@@ -94,9 +95,13 @@ public class PointClass implements Point {
     }
 
     @Override
-    public Point getRotareRelative(Point origin, double angle) {
-        double rotatedX = Math.cos(angle) * (this.getX() - origin.getX()) - Math.sin(angle) * (this.getY()-origin.getY()) + origin.getX();
-        double rotatedY = Math.sin(angle) * (this.getX() - origin.getX()) + Math.cos(angle) * (this.getY() - origin.getY()) + origin.getY();
+    public Point getRotateRelative(Point origin, double angle) {
+        double rotatedX =
+                Math.cos(angle) * (this.getX() - origin.getX())
+                        - Math.sin(angle) * (this.getY() - origin.getY()) + origin.getX();
+        double rotatedY =
+                Math.sin(angle) * (this.getX() - origin.getX())
+                        + Math.cos(angle) * (this.getY() - origin.getY()) + origin.getY();
 
         return new PointClass((int) rotatedX, (int) rotatedY);
     }

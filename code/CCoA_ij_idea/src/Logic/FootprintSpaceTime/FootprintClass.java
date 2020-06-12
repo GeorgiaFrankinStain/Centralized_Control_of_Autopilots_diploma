@@ -26,10 +26,10 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         PolygonExtended formMovingObject = this.movingObject.getPolygonExtended();
         Point averageCenterFormMovingObject = formMovingObject.getCenterAverage();
 
-        for (int i = 0; i < formMovingObject.countPoints(); i++) {
+        for (int i = 0; i < formMovingObject.getCountPoints(); i++) {
             Point currentPoint = formMovingObject.getPoint(i);
             Point rotarePoint =
-                    currentPoint.getRotareRelative(averageCenterFormMovingObject, this.position.getRotation());
+                    currentPoint.getRotateRelative(averageCenterFormMovingObject, this.position.getRotation());
 
             Point coordinatMovingObject = this.position.getCoordinats();
             rotarePoint.setX(rotarePoint.getX() + coordinatMovingObject.getX());
@@ -80,7 +80,12 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     //==== <start> <Implements RenderingFootprint> ==================================================
     @Override
     public Position getPosition() {
-        return position;
+        return this.position;
+    }
+
+    @Override
+    public Point getCoordinat() {
+        return this.position.getCoordinats();
     }
 
     @Override

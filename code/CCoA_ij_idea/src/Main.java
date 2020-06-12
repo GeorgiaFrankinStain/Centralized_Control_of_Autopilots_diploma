@@ -5,6 +5,10 @@ import GUI.StatementTaskRendering.PoolDataFootprintForRenderingClass;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import GUI.StatementTaskRendering.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
+import Logic.AreasBenchmarkPaths.AreasBenchmarkPaths;
+import Logic.AreasBenchmarkPaths.StraightLineEstimatedClass;
+import Logic.ControllerMachines.ControllerMachines;
+import Logic.ControllerMachines.ControllerMachinesClass;
 import Logic.FabricMovingObjects;
 import Logic.FabricMovingObjectsClass;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
@@ -31,58 +35,37 @@ public class Main extends Application {
     }
 
 
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-
 
 
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
 
-        //PUNKT_2
-        //create MovingObjects (FootprintsSpaceTime)
-
-        //create AreasBenchmarkPathsDijkstra (FootprintsSpaceTime, Landscape)
-        //create PathsMachines (FootprintsSpaceTime, AreasBenchmarkPathsDijkstra) //class MovingObjects create new with (FootprintsSpaceTime)
-
-
-        //PUNKT_3
-        //== все из данного блока создавать только после полноценного создания (следящих и расчитывающих) объектов, на которые мы будем вообще влять
-        //create AutoDisainerMachines ()
-        //create DisainerLandscape (Landscape)
-        //create DriverMachine (MovingObjects)
-        //create ObserverUpdate(AreasBenchmarkPathsDijkstra, PathsMachines)
-
-
-        //create ConsoleManagement (AutoDisainerMachines, DisainerLandscape, DriverMachine, ObserverUpdate) //создавать только после полноценного создания входящих на вход объектов
-
         PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
         MapRender subwindowMapRendering = new MapRenderClass(poolDataFootprintForRendering); //create MapRender (FootprintsSpaceTime)
 
-        { //FIXME MOVE imitation in
+        //FIXME MOVE imitation in
 //            onlyFootprintsSpaceTime.addFootprint();
 
-            LevelLayer levelLayer = new LevelLayerClass(0);
+        LevelLayer levelLayer = new LevelLayerClass(0);
 
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
 
-            MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
-            try {
-                wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
-            }
-
-
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
-            try {
-                movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
-            }
+        MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
+        try {
+            wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, levelLayer);
+        } catch (СrashIntoAnImpassableObstacleExeption ex) {
+        }
 
 
+        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+        try {
+            movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0, levelLayer);
+        } catch (СrashIntoAnImpassableObstacleExeption ex) {
+        }
+
+/*
             MovingObject movingObject2 = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
             LevelLayer levelLayer2 = new LevelLayerClass(1);
             try {
@@ -92,14 +75,38 @@ public class Main extends Application {
                 resPath.addPoint(new PointClass(200, 200));
                 movingObject2.mark(onlyFootprintsSpaceTime, resPath, 0.0, levelLayer2);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
-            }
-        }
+            }*/
+
+
+        //PUNKT_2
+        //create MovingObjects (FootprintsSpaceTime)
+
+        //create AreasBenchmarkPaths (FootprintsSpaceTime)
+        AreasBenchmarkPaths areasBenchmarkPaths = new StraightLineEstimatedClass();
+
+        //create ControlledMachines (FootprintsSpaceTime, AreasBenchmarkPathsDijkstra) //class MovingObjects create new with (FootprintsSpaceTime)
+        ControllerMachines controllerMachines =
+                new ControllerMachinesClass(onlyFootprintsSpaceTime, 20); //FIXME magic number
+        controllerMachines.bringCarToEndOfRoad(
+                new PointClass(0, 0),
+                new PointClass(700, 700),
+                movingObject,
+                0.0
+        );
+
+
+        //PUNKT_3
+        //== все из данного блока создавать только после полноценного создания (следящих и расчитывающих) объектов, на которые мы будем вообще влять
+        //create AutoDisainerMachines ()
+        //create DisainerLandscape (Landscape)
+        //create DriverMachine (MovingObjects)
+        //create ObserverUpdate(AreasBenchmarkPathsDijkstra, ControlledMachines)
+
+
+        //create ConsoleManagement (AutoDisainerMachines, DisainerLandscape, DriverMachine, ObserverUpdate) //создавать только после полноценного создания входящих на вход объектов
 
 
         //create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintsSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
-
-
-
 
 
         this.generalWindows = new WindowsClass(primaryStage);
@@ -107,14 +114,15 @@ public class Main extends Application {
 
 
         AnimationTimer timer = new AnimationTimer() {
-            private long lastUpdate = 0 ;
+            private long lastUpdate = 0;
+
             @Override
             public void handle(long now) {
 //                update(now);
 
                 if (now - lastUpdate >= 280_000_000) {
                     update(now);
-                    lastUpdate = now ;
+                    lastUpdate = now;
                 }
             }
         };
@@ -135,12 +143,14 @@ public class Main extends Application {
 
         return resPath;
     }
+
     private Path createPathWall() { //FIXME IMITATION
         Path resPath = new PathClass();
         resPath.addPoint(new PointClass(60, 60));
 
         return resPath;
     }
+
     private void update(long now) {
         generalWindows.update(now);
     }

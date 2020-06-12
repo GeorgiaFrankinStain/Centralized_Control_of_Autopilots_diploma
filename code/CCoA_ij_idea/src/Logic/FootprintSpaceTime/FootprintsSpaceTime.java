@@ -36,6 +36,13 @@ public interface FootprintsSpaceTime {
 
     public boolean getIsSeatTaken(PolygonExtended place, double time, LevelLayer levelLayer);
 
+    public boolean getIsSeatTakenSpaceTime(
+            PolygonExtended place,
+            double fromTime,
+            double toTime,
+            LevelLayer levelLayer
+    );
+
     public Double averageTimeMovingToNextPointOfPath();
 
     public Double getTimeAddingLastFootprints(LevelLayer levelLayer);

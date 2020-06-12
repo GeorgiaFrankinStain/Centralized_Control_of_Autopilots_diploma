@@ -20,7 +20,7 @@ public class PolygonExtendedTest {
             square.addPoint(new PointClass(20, 10));
 
             {
-                int actual = square.countPoints();
+                int actual = square.getCountPoints();
                 int expected = 4;
                 assertEquals(expected, actual);
             }
@@ -30,7 +30,7 @@ public class PolygonExtendedTest {
             square.addPoint(new PointClass(10, 10));
 
             {
-                int actual = square.countPoints();
+                int actual = square.getCountPoints();
                 int expected = 1;
                 assertEquals(expected, actual);
             }
@@ -39,7 +39,7 @@ public class PolygonExtendedTest {
             PolygonExtended square = new PolygonExtendedClass();
 
             {
-                int actual = square.countPoints();
+                int actual = square.getCountPoints();
                 int expected = 0;
                 assertEquals(expected, actual);
             }
@@ -637,6 +637,56 @@ public class PolygonExtendedTest {
             Double[] expectedArray = {0.0, 0.0, 10.0, 0.0, 10.0, 10.0, 0.0, 10.0};
 
             assertArrayEquals(expectedArray, actualArray);
+        }
+    }
+
+    @Test
+    public void rotateRelative() {
+        {
+            PolygonExtended actualRectangle = new PolygonExtendedClass();
+            actualRectangle.addPoint(new PointClass(20, 20));
+            actualRectangle.addPoint(new PointClass(-20, 20));
+            actualRectangle.addPoint(new PointClass(-20, -20));
+            actualRectangle.addPoint(new PointClass(20, -20));
+
+
+            actualRectangle.rotateRelative(
+                    new PointClass(0, 0),
+                    Math.PI / 2
+            );
+
+
+
+            PolygonExtended expectedRectangle = new PolygonExtendedClass();
+            expectedRectangle.addPoint(new PointClass(-20, 20));
+            expectedRectangle.addPoint(new PointClass(-20, -20));
+            expectedRectangle.addPoint(new PointClass(20, -20));
+            expectedRectangle.addPoint(new PointClass(20, 20));
+
+            assertEquals(expectedRectangle, actualRectangle);
+        }
+    }
+
+    @Test
+    public void deposeOn() {
+        {
+            PolygonExtended actualRectangle = new PolygonExtendedClass();
+            actualRectangle.addPoint(new PointClass(20, 20));
+            actualRectangle.addPoint(new PointClass(-20, 20));
+            actualRectangle.addPoint(new PointClass(-20, -20));
+            actualRectangle.addPoint(new PointClass(20, -20));
+
+            Point vector = new PointClass(20, 20);
+
+            actualRectangle.deposeOn(vector);
+
+            PolygonExtended expectedRectangle = new PolygonExtendedClass();
+            expectedRectangle.addPoint(new PointClass(40, 40));
+            expectedRectangle.addPoint(new PointClass(0, 40));
+            expectedRectangle.addPoint(new PointClass(0, 0));
+            expectedRectangle.addPoint(new PointClass(40, 0));
+
+            assertEquals(expectedRectangle, actualRectangle);
         }
     }
 }

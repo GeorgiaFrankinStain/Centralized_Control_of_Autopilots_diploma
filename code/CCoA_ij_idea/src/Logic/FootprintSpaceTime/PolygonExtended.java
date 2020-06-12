@@ -3,7 +3,7 @@ package Logic.FootprintSpaceTime;
 import java.util.List;
 
 public interface PolygonExtended {
-    public int countPoints();
+    public int getCountPoints();
 
     public Point getPoint(int index);
 
@@ -11,9 +11,15 @@ public interface PolygonExtended {
 
     public void addAllPoint(List<Point> newPoints);
 
+    public void insertPoint(int index, Point newPoint);
+
     public void setPoint(int index, Point newPoint);
 
     public void insertBeforetPoint(int index, Point newPoint);
+
+    public void rotateRelative(Point origin, double angle);
+
+    public void deposeOn(Point vector);
 
     public boolean contains(Point desirededPoint);
 

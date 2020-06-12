@@ -75,6 +75,11 @@ public class MovingObjectClass implements MovingObject {
         this.speed = speed;
     }
 
+    @Override
+    public double timeTravel(double distance) {
+        return distance / this.getSpeed();
+    }
+
 
     @Override
     public String getType() {
@@ -95,7 +100,7 @@ public class MovingObjectClass implements MovingObject {
     public double getLength() {
         double maxCoordinatX = Double.MIN_VALUE;
 
-        for (int i = 0; i < this.polygonExtended.countPoints(); i++) {
+        for (int i = 0; i < this.polygonExtended.getCountPoints(); i++) {
             Point currentPoint = this.polygonExtended.getPoint(i);
 
             if (currentPoint.getX() > maxCoordinatX) {
@@ -104,6 +109,32 @@ public class MovingObjectClass implements MovingObject {
         }
 
         return maxCoordinatX;
+    }
+
+    private Point getCenterMovingObject() {
+        return this.getPolygonExtended().getCenterAverage();
+    }
+
+    @Override
+    public Point getPointWhereCoordinatesAreApplied() {
+        return this.getCenterMovingObject();
+    }
+
+    @Override
+    public double getRadius() { //FIXME ADD TEST NOW
+        Point center = this.getPointWhereCoordinatesAreApplied();
+
+        PolygonExtended polygonExtended = this.getPolygonExtended();
+
+        double maxRadius = Double.MIN_VALUE;
+
+        for (int i = 0; i < polygonExtended.getCountPoints(); i++) {
+            double currentRadius = polygonExtended.getPoint(i).getDistanceToPoint(center);
+            if (currentRadius > maxRadius) {
+                maxRadius = currentRadius;
+            }
+        }
+        return maxRadius;
     }
     //==== <start> <Getter_and_Setter> ==================================================
 

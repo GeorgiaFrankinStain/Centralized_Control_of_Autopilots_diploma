@@ -47,10 +47,10 @@ public class LocalToolRenderingPolygon {
     private class LocalPainter extends JPanel {
 
         public void paint(Graphics g) {
-            int[] xPoints = new int[LocalToolRenderingPolygon.this.objectOfRendering.countPoints()];
-            int[] yPoints = new int[LocalToolRenderingPolygon.this.objectOfRendering.countPoints()];
+            int[] xPoints = new int[LocalToolRenderingPolygon.this.objectOfRendering.getCountPoints()];
+            int[] yPoints = new int[LocalToolRenderingPolygon.this.objectOfRendering.getCountPoints()];
 
-            for (int i = 0; i < LocalToolRenderingPolygon.this.objectOfRendering.countPoints(); i++) {
+            for (int i = 0; i < LocalToolRenderingPolygon.this.objectOfRendering.getCountPoints(); i++) {
                 xPoints[i] = (int) LocalToolRenderingPolygon.this.objectOfRendering.getPoint(i).getX();
                 yPoints[i] = (int) LocalToolRenderingPolygon.this.objectOfRendering.getPoint(i).getY();
             }

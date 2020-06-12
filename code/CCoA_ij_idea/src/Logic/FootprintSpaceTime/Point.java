@@ -12,7 +12,7 @@ public interface Point {
 
     public boolean isLeftRelative(Point startLine, Point endLine);
     public double getAngleRotareRelative(Point origin);
-    public Point getRotareRelative(Point origin, double angle);
+    public Point getRotateRelative(Point origin, double angle);
     public int getQuarter(Point origin);
     public double getLengthVector();
     public double getDistanceToPoint(Point point);

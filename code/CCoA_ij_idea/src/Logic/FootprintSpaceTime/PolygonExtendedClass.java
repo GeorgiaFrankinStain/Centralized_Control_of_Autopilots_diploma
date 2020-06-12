@@ -18,7 +18,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public int countPoints() {//TEST+
+    public int getCountPoints() {//TEST+
         return points.size();
     }
 
@@ -38,8 +38,13 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public void setPoint(int index, Point newPoint) {
+    public void insertPoint(int index, Point newPoint) {
         this.points.add(index, newPoint);
+    }
+
+    @Override
+    public void setPoint(int index, Point newPoint) {
+        this.points.set(index, newPoint);
     }
 
     @Override
@@ -47,6 +52,37 @@ public class PolygonExtendedClass implements PolygonExtended {
         //FIXME
     }
 
+    @Override
+    public void rotateRelative(Point origin, double angle) { //FIXME TEST ADD
+        for (int i = 0; i < this.getCountPoints(); i++) {
+            this.setPoint(i, this.getPoint(i).getRotateRelative(origin, angle));
+        }
+    }
+
+    @Override
+    public void deposeOn(Point vector) { //FIXME TEST ADD
+        for (int i = 0; i < this.getCountPoints(); i++) {
+            Point currentPoint = this.getPoint(i);
+            Point newPoint = new PointClass(
+                    currentPoint.getX() + vector.getX(),
+                    currentPoint.getY() + vector.getY()
+            );
+            this.setPoint(i, newPoint);
+        }
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+
+        for (int i = 0; i < this.getCountPoints(); i++) {
+            result += this.getPoint(i) + " ";
+        }
+
+        return result;
+    }
+
+    @Override
     public boolean equals(Object obj) { //FIXME ADD_TEST
         if (this == obj)
             return true;
@@ -59,7 +95,7 @@ public class PolygonExtendedClass implements PolygonExtended {
 
         PolygonExtended other = (PolygonExtended) obj;
 
-        if (this.points.size() != other.countPoints()) {
+        if (this.points.size() != other.getCountPoints()) {
             return false;
         }
 
@@ -138,12 +174,12 @@ public class PolygonExtendedClass implements PolygonExtended {
 
     @Override
     public boolean intersecionLine(Point startLine, Point endLine) {//TEST+
-        int indexLastPoint = this.countPoints() - 1;
+        int indexLastPoint = this.getCountPoints() - 1;
         Point startLocalLine = this.getPoint(indexLastPoint);
         Point endLocalLine = this.getPoint(0);
 
 
-        for (int i = 0; i < this.countPoints(); i++) {
+        for (int i = 0; i < this.getCountPoints(); i++) {
             boolean isIntersectionBOOL = this.intersectionLines(
                     startLocalLine,
                     endLocalLine,
@@ -202,18 +238,18 @@ public class PolygonExtendedClass implements PolygonExtended {
             ySum += point.getY();
         }
 
-        double xAverage = xSum / this.countPoints();
-        double yAverage = ySum / this.countPoints();
+        double xAverage = xSum / this.getCountPoints();
+        double yAverage = ySum / this.getCountPoints();
 
         return new PointClass(xAverage, yAverage);
     }
 
     @Override
     public Double[] getFormatDoubleArray() { //TEST+
-        Double[] arrayDouble = new Double[this.countPoints() * 2];
+        Double[] arrayDouble = new Double[this.getCountPoints() * 2];
 
         int indexWriteInDoubleArray = 0;
-        for (int i = 0; i < this.countPoints(); i++) {
+        for (int i = 0; i < this.getCountPoints(); i++) {
             Point currentPoint = this.getPoint(i);
 
 
@@ -234,7 +270,7 @@ public class PolygonExtendedClass implements PolygonExtended {
             PolygonExtended firstPolygon,
             PolygonExtended secondPolygon
     ) {
-        for (int i = 0; i < firstPolygon.countPoints(); i++) {
+        for (int i = 0; i < firstPolygon.getCountPoints(); i++) {
             Point currentPoint = firstPolygon.getPoint(i);
 
             if (secondPolygon.enteringPoint(currentPoint)) {
@@ -249,12 +285,12 @@ public class PolygonExtendedClass implements PolygonExtended {
             PolygonExtended firstPolygon,
             PolygonExtended secondPoylgon
     ) {
-        int indexLastPoint = firstPolygon.countPoints() - 1;
+        int indexLastPoint = firstPolygon.getCountPoints() - 1;
         Point startLine1 = firstPolygon.getPoint(indexLastPoint);
         Point endLine1 = firstPolygon.getPoint(0);
 
 
-        for (int i = 0; i < firstPolygon.countPoints(); i++) {
+        for (int i = 0; i < firstPolygon.getCountPoints(); i++) {
 
             boolean isIntersectionBOOL = secondPoylgon.intersecionLine(startLine1, endLine1);
 

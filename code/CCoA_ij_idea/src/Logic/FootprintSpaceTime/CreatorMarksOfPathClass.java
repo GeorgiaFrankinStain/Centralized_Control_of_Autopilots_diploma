@@ -160,7 +160,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     private Point stepVector(Point endLine, Point startLine, double lengthStep) {
         Point origin = new PointClass(0, 0);
         double angleStepVector = endLine.getAngleRotareRelative(startLine);
-        return new PointClass(lengthStep, 0).getRotareRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
+        return new PointClass(lengthStep, 0).getRotateRelative(origin, angleStepVector); //FIXME MAGIC NUMBER
     }
 
     private double printEveryStepOnLine(

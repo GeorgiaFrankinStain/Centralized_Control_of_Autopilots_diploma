@@ -2,6 +2,7 @@ package Logic.Landscape;
 
 import Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
 import Logic.FootprintSpaceTime.Footprint;
+import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.MovingObjects.MovingObject;
 import Logic.Position;
@@ -40,6 +41,11 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     @Override
     public Position getPosition() {
         return this.position;
+    }
+
+    @Override
+    public Point getCoordinat() {
+        return null;
     }
 
     @Override

@@ -2,7 +2,6 @@ package GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprints;
 
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
-import GUI.StatementTaskRendering.TypeLandscapeBody;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.GlobalVariable;
 import javafx.scene.layout.Pane;
@@ -29,7 +28,7 @@ public class Machine extends Pane implements RenderingFootprint {
 
     //==== <start> <Private_Methods> =======================================================================
     private Rectangle createRectangle(PolygonExtended formMachine) {
-        if (formMachine.countPoints() != 4) {
+        if (formMachine.getCountPoints() != 4) {
             assert(false);
             return null;
         }

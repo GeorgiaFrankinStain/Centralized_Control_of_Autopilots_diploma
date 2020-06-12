@@ -53,8 +53,6 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
                 )
         );
 
-        System.out.println("default: " + converterTime.convert(currentTime, defaultLevel));
-        System.out.println("demonstartion: " + converterTime.convert(currentTime, alhorithDemonstrationInformationLevel));
 
         for (Footprint footprint : footprints) {
             poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);

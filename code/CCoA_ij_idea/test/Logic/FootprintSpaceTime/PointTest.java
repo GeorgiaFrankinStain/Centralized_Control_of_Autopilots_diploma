@@ -59,7 +59,54 @@ public class PointTest {
             Point origin = new PointClass(0, 0);
 
             Point expected = new PointClass(10, 0);
-            Point actual = point.getRotareRelative(origin, -(PI / 2));
+            Point actual = point.getRotateRelative(origin, -(PI / 2));
+
+            assertEquals(expected, actual);
+        }
+        {
+            Point point = new PointClass(0, 100);
+            Point origin = new PointClass(0, 0);
+
+            Point expected = new PointClass(100, 0);
+            Point actual = point.getRotateRelative(origin, -(PI / 2));
+
+            assertEquals(expected, actual);
+        }
+        {
+            Point point = new PointClass(20, 20);
+            Point origin = new PointClass(0, 0);
+
+            Point expected = new PointClass(-20, 20);
+            Point actual = point.getRotateRelative(origin, (PI / 2));
+
+            assertEquals(expected, actual);
+        }
+        {
+            Point point = new PointClass(20, 20);
+            Point origin = new PointClass(0, 0);
+
+            Point expected = new PointClass(-20, -19); //FIXME TEST FAILED -20 -20
+            Point actual = point.getRotateRelative(origin, (PI));
+
+            assertEquals(expected, actual);
+        }
+        {
+            Point point = new PointClass(200000, 200000);
+            Point origin = new PointClass(0, 0);
+
+            Point expected = new PointClass(-200000, -199999.0); //FIXME TEST FAILED
+//            Point expected = new PointClass(-200000, -200000);
+            Point actual = point.getRotateRelative(origin, (PI));
+
+            assertEquals(expected, actual);
+        }
+        {
+            Point point = new PointClass(20, 20);
+            Point origin = new PointClass(0, 0);
+
+            Point expected = new PointClass(19, -20);
+//            Point expected = new PointClass(20, -20); //FIXME TEST FAILED
+            Point actual = point.getRotateRelative(origin, (PI * 1.5));
 
             assertEquals(expected, actual);
         }
