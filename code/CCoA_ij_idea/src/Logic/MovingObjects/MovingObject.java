@@ -33,5 +33,7 @@ public interface MovingObject {
 
     public double getRadius();
 
+    public Point getVectorFromTopLeftToAppliedCoordinates();
+
     public String toString();
 }

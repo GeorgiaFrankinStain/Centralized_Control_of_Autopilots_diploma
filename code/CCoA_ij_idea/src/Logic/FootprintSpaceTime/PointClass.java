@@ -148,4 +148,20 @@ public class PointClass implements Point {
     public Point getVector(Point point) {
         return new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
     }
+
+    @Override
+    public Point getInversion() {
+        return new PointClass(-this.getX(), -this.getY());
+    }
+
+    @Override
+    public Point getDeposeOn(Point vector) {
+        return new PointClass(this.getX() + vector.getX(), this.getY() + vector.getY());
+    }
+
+    @Override
+    public void deposeOn(Point vector) {
+        this.setX(this.getX() + vector.getX());
+        this.setY(this.getY() + vector.getY());
+    }
 }

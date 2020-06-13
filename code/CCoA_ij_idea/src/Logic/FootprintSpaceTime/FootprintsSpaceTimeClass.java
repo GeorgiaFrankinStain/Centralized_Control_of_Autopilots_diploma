@@ -99,8 +99,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
     @Override
     public boolean getIsSeatTakenSpaceTime(PolygonExtended place, double fromTime, double toTime, LevelLayer levelLayer) {
-        double averageTime = (fromTime + toTime) / 2;
-        return this.getIsSeatTaken(place, averageTime, levelLayer);
+        return this.getIsSeatTaken(place, fromTime, levelLayer)
+                       && this.getIsSeatTaken(place, toTime, levelLayer);
     }
 
     @Override

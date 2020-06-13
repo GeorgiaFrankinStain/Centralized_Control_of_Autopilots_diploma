@@ -17,4 +17,7 @@ public interface Point {
     public double getLengthVector();
     public double getDistanceToPoint(Point point);
     public Point getVector(Point point);
+    public Point getInversion();
+    public Point getDeposeOn(Point vector);
+    public void deposeOn(Point vector);
 }

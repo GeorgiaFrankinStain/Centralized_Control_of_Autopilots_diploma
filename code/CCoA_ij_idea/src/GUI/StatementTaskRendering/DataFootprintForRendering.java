@@ -6,7 +6,7 @@ import Logic.Position;
 
 public interface DataFootprintForRendering {
     public int getIdObject();
-    public Position getPosition();
+    public Position getLocalOriginForPointMovingObject();
     public String getType();
     public MovingObject getMovingObject();
 }

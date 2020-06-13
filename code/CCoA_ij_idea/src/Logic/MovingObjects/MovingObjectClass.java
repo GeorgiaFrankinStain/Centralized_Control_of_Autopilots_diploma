@@ -136,6 +136,12 @@ public class MovingObjectClass implements MovingObject {
         }
         return maxRadius;
     }
+
+    @Override
+    public Point getVectorFromTopLeftToAppliedCoordinates() {
+        Point fristPoint = this.getPolygonExtended().getPoint(0); //FIXME finding
+        return this.getPointWhereCoordinatesAreApplied().getVector(fristPoint);
+    }
     //==== <start> <Getter_and_Setter> ==================================================
 
 

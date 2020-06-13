@@ -7,13 +7,13 @@ import GUI.StatementTaskRendering.Windows;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
 import Logic.AreasBenchmarkPaths.AreasBenchmarkPaths;
 import Logic.AreasBenchmarkPaths.StraightLineEstimatedClass;
-import Logic.ControllerMachines.ControllerMachines;
-import Logic.ControllerMachines.ControllerMachinesClass;
+import Logic.ControllerMachines.*;
 import Logic.FabricMovingObjects;
 import Logic.FabricMovingObjectsClass;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
+import Logic.FootprintSpaceTime.Point;
 import Logic.LevelLayerClass;
 import Logic.FootprintSpaceTime.PointClass;
 import Logic.LevelLayer;
@@ -50,18 +50,35 @@ public class Main extends Application {
 
         LevelLayer levelLayer = new LevelLayerClass(0);
 
+        NetworkNodes networkNodesFabrica = new SquareNetworkNodes(13.3);//FIXME add fabric
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTime(networkNodesFabrica, onlyFootprintsSpaceTime);
+
         FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+
+
+
 
         MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
+        Path wallPath = new PathClass();
+        wallPath.addPoint(new PointClass(50, 100));
+        wallPath.deposeOn(wall.getVectorFromTopLeftToAppliedCoordinates());
         try {
-            wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, levelLayer);
+            wall.mark(onlyFootprintsSpaceTime, wallPath, 0.0, levelLayer);
         } catch (СrashIntoAnImpassableObstacleExeption ex) {
         }
 
 
-        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+
+
+
+        Point from = new PointClass(60, 0);
+        Point to = new PointClass(60, 200);
+
+        Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+        System.out.println("resPath: " + actualPath);
         try {
-            movingObject.mark(onlyFootprintsSpaceTime, createPath(), 0.0, levelLayer);
+            movingObject.mark(onlyFootprintsSpaceTime, actualPath, 0.0, levelLayer);
         } catch (СrashIntoAnImpassableObstacleExeption ex) {
         }
 
@@ -85,14 +102,14 @@ public class Main extends Application {
         AreasBenchmarkPaths areasBenchmarkPaths = new StraightLineEstimatedClass();
 
         //create ControlledMachines (FootprintsSpaceTime, AreasBenchmarkPathsDijkstra) //class MovingObjects create new with (FootprintsSpaceTime)
-        ControllerMachines controllerMachines =
+/*        ControllerMachines controllerMachines =
                 new ControllerMachinesClass(onlyFootprintsSpaceTime, 20); //FIXME magic number
         controllerMachines.bringCarToEndOfRoad(
                 new PointClass(0, 0),
                 new PointClass(700, 700),
                 movingObject,
                 0.0
-        );
+        );*/
 
 
         //PUNKT_3

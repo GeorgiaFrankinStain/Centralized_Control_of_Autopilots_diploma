@@ -32,6 +32,14 @@ public class PathClass implements Path {
         this.points.add(index, point);
     }
 
+
+    @Override
+    public void deposeOn(Point vector) {
+        for (int i = 0; i < points.size(); i++) {
+            points.get(i).deposeOn(vector);
+        }
+    }
+
     @Override
     public int getIdTrack() {
         return this.idTrack;

@@ -12,8 +12,8 @@ public class Machine extends Pane implements RenderingFootprint {
     Rectangle rectangle;
 
     public Machine(DataFootprintForRendering newProperties) {
-        setTranslateX(newProperties.getPosition().getCoordinats().getX());
-        setTranslateY(newProperties.getPosition().getCoordinats().getY());
+        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY());
         this.rectangle = createRectangle(newProperties.getMovingObject().getPolygonExtended());
         getChildren().addAll(this.rectangle);
     }
@@ -21,8 +21,8 @@ public class Machine extends Pane implements RenderingFootprint {
 
     @Override
     public void update(long now, DataFootprintForRendering newProperties) {
-        setTranslateX(newProperties.getPosition().getCoordinats().getX());
-        setTranslateY(newProperties.getPosition().getCoordinats().getY());
+        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY());
     }
 
 

@@ -3,6 +3,7 @@ package Logic.FootprintSpaceTime;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.GlobalVariable;
 import Logic.MovingObjects.MovingObject;
+import Logic.PathsMachines.PositionClass;
 import Logic.Position;
 
 public class FootprintClass implements Footprint, DataFootprintForRendering {
@@ -22,9 +23,11 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public PolygonExtended getOccupiedLocation() { //FIXME ADD_TEST
-        PolygonExtended rotarePolygon = new PolygonExtendedClass();
+        PolygonExtended rotatePolygon = new PolygonExtendedClass();
         PolygonExtended formMovingObject = this.movingObject.getPolygonExtended();
         Point averageCenterFormMovingObject = formMovingObject.getCenterAverage();
+
+        Point vectorApplicateCoordinat = this.movingObject.getPointWhereCoordinatesAreApplied().getInversion(); //FIXME long calls //FIXME move functino in footprint
 
         for (int i = 0; i < formMovingObject.getCountPoints(); i++) {
             Point currentPoint = formMovingObject.getPoint(i);
@@ -32,13 +35,22 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
                     currentPoint.getRotateRelative(averageCenterFormMovingObject, this.position.getRotation());
 
             Point coordinatMovingObject = this.position.getCoordinats();
-            rotarePoint.setX(rotarePoint.getX() + coordinatMovingObject.getX());
-            rotarePoint.setY(rotarePoint.getY() + coordinatMovingObject.getY());
+            rotarePoint.setX(
+                    rotarePoint.getX()
+                            + coordinatMovingObject.getX()
+                            + vectorApplicateCoordinat.getX()
+            );
+            rotarePoint.setY(
+                    rotarePoint.getY()
+                            + coordinatMovingObject.getY()
+                            + vectorApplicateCoordinat.getY()
+            );
 
-            rotarePolygon.addPoint(rotarePoint);
+            rotatePolygon.addPoint(rotarePoint);
         }
 
-        return rotarePolygon;
+
+        return rotatePolygon;
     }
 
     @Override
@@ -63,7 +75,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         int oneId = this.getIdObject();
         int twoId = other.getIdObject();
         boolean idTrackEquals = oneId == twoId;
-        boolean positionEquals = this.getPosition().equals(other.getPosition());
+        boolean positionEquals = this.getLocalOriginForPointMovingObject().equals(other.getPosition());
         boolean timeStandingEquals = GlobalVariable.equalsNumber(this.getTimeStanding(), other.getTimeStanding());
         boolean movingEquals = this.getMovingObject().equals(other.getMovingObject());
 
@@ -76,11 +88,19 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         return idTrack;
     }
 
-
-    //==== <start> <Implements RenderingFootprint> ==================================================
     @Override
     public Position getPosition() {
         return this.position;
+    }
+
+
+    //==== <start> <Implements RenderingFootprint> ==================================================
+    @Override
+    public Position getLocalOriginForPointMovingObject() {
+        Point margin = this.movingObject.getVectorFromTopLeftToAppliedCoordinates().getInversion();
+        Point newCoordinat = this.position.getCoordinats().getDeposeOn(margin);
+        Position newPosition = new PositionClass(newCoordinat, this.position.getRotation());
+        return newPosition;
     }
 
     @Override

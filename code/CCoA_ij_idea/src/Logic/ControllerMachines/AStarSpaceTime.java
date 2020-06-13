@@ -28,7 +28,6 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
     @Override
     public Path getPath(Point start, Point destination, double radiusMovingObject, MovingObject movingObject) {
 
-
         Set<Node> closedNodes = new HashSet<Node>();
         Set<Node> opened = new HashSet<Node>();
         Map<Node, Double> f_score = new HashMap<Node, Double>();
@@ -53,10 +52,10 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
         while (opened.size() > 0) {
             System.out.println("==================================");
             j++;
-            if (j > 40) {
+/*            if (j > 40) {
                 System.out.println("break cicle general");
                 break;
-            }
+            }*/
 
             Node currentNode = getNodeWithMinialMassAndDeleteFromQueue(f_score); //FIXME 2 function in one
             System.out.println("currentNode: " + currentNode);
@@ -84,11 +83,11 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
             for (Node neighbor : allNeightbors) {
                 System.out.println(" - - - - - - - - - - - - - - - - ");
                 i++;
-                if (i > 40) {
+/*                if (i > 40) {
                     System.out.println("break cicle neighbor");
                     break;
 
-                }
+                }*/
 
 
                 double realDistanceFromStartToCurrentNode = gScopeRealBestKnownDistanceFromStart.get(currentNode);
@@ -175,12 +174,16 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
         );
 
 
-        return !this.footprintsSpaceTime.getIsSeatTakenSpaceTime(
+        boolean isAccess = !this.footprintsSpaceTime.getIsSeatTakenSpaceTime(
                 occupiedPlace,
                 timeAdding,
                 timeAdding + timeStanding,
                 new LevelLayerClass(0)
         );
+
+        System.out.println("++++ ++++ " + currentNode + " " + neighborNode + " ++++ " + occupiedPlace);
+
+        return isAccess;
     }
 
     private PolygonExtended spaceOccupiedDuringTheProcess(

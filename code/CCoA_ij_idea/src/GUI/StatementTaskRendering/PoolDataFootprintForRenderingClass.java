@@ -44,14 +44,14 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
                         defaultLevel
                 );
 
-        LevelLayer alhorithDemonstrationInformationLevel = new LevelLayerClass(1);
+/*        LevelLayer alhorithDemonstrationInformationLevel = new LevelLayerClass(1); //FIXME decomment
         footprints.addAll(
                 this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(
                         areaRendering,
                         converterTime.convert(currentTime, alhorithDemonstrationInformationLevel),
                         alhorithDemonstrationInformationLevel
                 )
-        );
+        );*/
 
 
         for (Footprint footprint : footprints) {

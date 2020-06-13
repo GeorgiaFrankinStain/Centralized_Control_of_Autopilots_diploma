@@ -1,0 +1,1748 @@
+"C:\Program Files\Java\jdk1.8.0_211\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.3\lib\idea_rt.jar=63106:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_211\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_211\jre\lib\rt.jar;D:\AF\2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma\code\CCoA_ij_idea\out\production\CCoA_ij_idea;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.3\lib\groovy-all-2.4.15.jar;D:\AF\2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma\code\CCoA_ij_idea\lib\guava-18.0.jar" Main
+(x: 60.0   y: 0.0) 200.0
+==================================
+currentNode: (x: 60.0   y: 0.0)
+isDestinationNode: false
+closedBefore: []
+openedBefore: [(x: 60.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 0.0)]
+opened: []
+allNeightbors: [(x: 80.0   y: 0.0), (x: 80.0   y: 20.0), (x: 60.0   y: 20.0), (x: 40.0   y: 20.0), (x: 40.0   y: 0.0), (x: 40.0   y: -19.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 14.0) (x: 60.0   y: -14.0) (x: 94.0   y: -14.0) (x: 94.0   y: 14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 20.0
+gScope 0.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: 0.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 80.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 20.0
+neighbor (x: 80.0   y: 0.0)real  20.0 estimated200.9975124224178
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 10.0) (x: 70.0   y: -10.0) (x: 100.0   y: 20.0) (x: 80.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 28.284271247461902
+gScope 0.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: 20.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 80.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 28.284271247461902
+neighbor (x: 80.0   y: 20.0)real  28.284271247461902 estimated181.10770276274835
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 46.0   y: 0.0) (x: 74.0   y: 0.0) (x: 74.0   y: 34.0) (x: 46.0   y: 34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 20.0
+gScope 0.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 20.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 60.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 20.0
+neighbor (x: 60.0   y: 20.0)real  20.0 estimated180.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: -10.0) (x: 70.0   y: 10.0) (x: 40.0   y: 40.0) (x: 20.0   y: 20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 28.284271247461902
+gScope 0.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 20.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 40.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 28.284271247461902
+neighbor (x: 40.0   y: 20.0)real  28.284271247461902 estimated181.10770276274835
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: -14.0) (x: 60.0   y: 14.0) (x: 26.0   y: 14.0) (x: 26.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 20.0
+gScope 0.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 0.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 40.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 20.0
+neighbor (x: 40.0   y: 0.0)real  20.0 estimated200.9975124224178
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 69.0   y: -10.0) (x: 51.0   y: 10.0) (x: 21.0   y: -18.0) (x: 40.0   y: -38.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 27.586228448267445
+gScope 0.0
+distance 27.586228448267445
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: -19.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 40.0   y: -19.0) realDistanceToNeightborFromStartTroughtCurrentNode 27.586228448267445
+neighbor (x: 40.0   y: -19.0)real  27.586228448267445 estimated219.91134577370036
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 74.0   y: 0.0) (x: 46.0   y: 0.0) (x: 45.0   y: -33.0) (x: 72.0   y: -34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 20.024984394500787
+gScope 0.0
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 59.0   y: -20.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 59.0   y: -20.0) realDistanceToNeightborFromStartTroughtCurrentNode 20.024984394500787
+neighbor (x: 59.0   y: -20.0)real  20.024984394500787 estimated220.00227271553356
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 10.0) (x: 50.0   y: -10.0) (x: 80.0   y: -40.0) (x: 100.0   y: -20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 28.284271247461902
+gScope 0.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: -20.0) cameFrom (x: 60.0   y: 0.0)
+neighbor (x: 80.0   y: -20.0) realDistanceToNeightborFromStartTroughtCurrentNode 28.284271247461902
+neighbor (x: 80.0   y: -20.0)real  28.284271247461902 estimated220.90722034374522
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 60.0   y: 20.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 0.0)]
+openedBefore: [(x: 80.0   y: 20.0), (x: 60.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 60.0   y: 0.0)]
+opened: [(x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+allNeightbors: [(x: 80.0   y: 20.0), (x: 80.0   y: 40.0), (x: 60.0   y: 40.0), (x: 40.0   y: 40.0), (x: 40.0   y: 20.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 80.0   y: 0.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 34.0) (x: 60.0   y: 6.0) (x: 94.0   y: 6.0) (x: 94.0   y: 34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.0
+gScope 20.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 30.0) (x: 70.0   y: 10.0) (x: 100.0   y: 40.0) (x: 80.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: 40.0) cameFrom (x: 60.0   y: 20.0)
+neighbor (x: 80.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.2842712474619
+neighbor (x: 80.0   y: 40.0)real  48.2842712474619 estimated161.24515496597098
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 46.0   y: 20.0) (x: 74.0   y: 20.0) (x: 74.0   y: 54.0) (x: 46.0   y: 54.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.0
+gScope 20.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 40.0) cameFrom (x: 60.0   y: 20.0)
+neighbor (x: 60.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 40.0
+neighbor (x: 60.0   y: 40.0)real  40.0 estimated160.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 10.0) (x: 70.0   y: 30.0) (x: 40.0   y: 60.0) (x: 20.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 40.0) cameFrom (x: 60.0   y: 20.0)
+neighbor (x: 40.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.2842712474619
+neighbor (x: 40.0   y: 40.0)real  48.2842712474619 estimated161.24515496597098
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 6.0) (x: 60.0   y: 34.0) (x: 26.0   y: 34.0) (x: 26.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.0
+gScope 20.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 10.0) (x: 50.0   y: 30.0) (x: 20.0   y: 0.0) (x: 40.0   y: -20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 74.0   y: 20.0) (x: 46.0   y: 20.0) (x: 45.0   y: -13.0) (x: 72.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.02498439450079
+gScope 20.0
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 59.0   y: 0.0) cameFrom (x: 60.0   y: 20.0)
+neighbor (x: 59.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 40.02498439450079
+neighbor (x: 59.0   y: 0.0)real  40.02498439450079 estimated200.0024999843752
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 30.0) (x: 50.0   y: 10.0) (x: 80.0   y: -20.0) (x: 100.0   y: 0.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 60.0   y: 40.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 60.0   y: 0.0)]
+openedBefore: [(x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 80.0   y: 40.0), (x: 60.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 0.0)]
+opened: [(x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+allNeightbors: [(x: 80.0   y: 40.0), (x: 80.0   y: 60.0), (x: 60.0   y: 60.0), (x: 40.0   y: 60.0), (x: 40.0   y: 40.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 19.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 54.0) (x: 60.0   y: 26.0) (x: 94.0   y: 26.0) (x: 94.0   y: 54.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 60.0
+gScope 40.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 50.0) (x: 70.0   y: 30.0) (x: 100.0   y: 60.0) (x: 80.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 40.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: 60.0) cameFrom (x: 60.0   y: 40.0)
+neighbor (x: 80.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 68.2842712474619
+neighbor (x: 80.0   y: 60.0)real  68.2842712474619 estimated141.4213562373095
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 46.0   y: 40.0) (x: 74.0   y: 40.0) (x: 74.0   y: 74.0) (x: 46.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 60.0
+gScope 40.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 60.0) cameFrom (x: 60.0   y: 40.0)
+neighbor (x: 60.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 60.0
+neighbor (x: 60.0   y: 60.0)real  60.0 estimated140.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 30.0) (x: 70.0   y: 50.0) (x: 40.0   y: 80.0) (x: 20.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 40.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 60.0) cameFrom (x: 60.0   y: 40.0)
+neighbor (x: 40.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 68.2842712474619
+neighbor (x: 40.0   y: 60.0)real  68.2842712474619 estimated141.4213562373095
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 26.0) (x: 60.0   y: 54.0) (x: 26.0   y: 54.0) (x: 26.0   y: 26.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 60.0
+gScope 40.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 30.0) (x: 50.0   y: 50.0) (x: 20.0   y: 20.0) (x: 40.0   y: 0.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 40.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 74.0   y: 40.0) (x: 46.0   y: 40.0) (x: 45.0   y: 7.0) (x: 72.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 60.02498439450079
+gScope 40.0
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 59.0   y: 20.0) cameFrom (x: 60.0   y: 40.0)
+neighbor (x: 59.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 60.02498439450079
+neighbor (x: 59.0   y: 20.0)real  60.02498439450079 estimated180.00277775634464
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 49.0) (x: 50.0   y: 31.0) (x: 79.0   y: 0.0) (x: 99.0   y: 19.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 69.0
+gScope 40.0
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: 19.0) cameFrom (x: 60.0   y: 40.0)
+neighbor (x: 80.0   y: 19.0) realDistanceToNeightborFromStartTroughtCurrentNode 69.0
+neighbor (x: 80.0   y: 19.0)real  69.0 estimated182.10161998181127
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 60.0   y: 60.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 0.0)]
+openedBefore: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 19.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 60.0), (x: 60.0   y: 60.0), (x: 40.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0)]
+opened: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 19.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+allNeightbors: [(x: 80.0   y: 60.0), (x: 80.0   y: 80.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 40.0   y: 60.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 80.0   y: 40.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 74.0) (x: 60.0   y: 46.0) (x: 94.0   y: 46.0) (x: 94.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 80.0
+gScope 60.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 70.0) (x: 70.0   y: 50.0) (x: 100.0   y: 80.0) (x: 80.0   y: 100.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 46.0   y: 60.0) (x: 74.0   y: 60.0) (x: 74.0   y: 94.0) (x: 46.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 80.0
+gScope 60.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 80.0) cameFrom (x: 60.0   y: 60.0)
+neighbor (x: 60.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 80.0
+neighbor (x: 60.0   y: 80.0)real  80.0 estimated120.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 50.0) (x: 70.0   y: 70.0) (x: 40.0   y: 100.0) (x: 20.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 60.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 80.0) cameFrom (x: 60.0   y: 60.0)
+neighbor (x: 40.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 88.2842712474619
+neighbor (x: 40.0   y: 80.0)real  88.2842712474619 estimated121.6552506059644
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 46.0) (x: 60.0   y: 74.0) (x: 26.0   y: 74.0) (x: 26.0   y: 46.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 80.0
+gScope 60.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 50.0) (x: 50.0   y: 70.0) (x: 20.0   y: 40.0) (x: 40.0   y: 20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 60.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 74.0   y: 60.0) (x: 46.0   y: 60.0) (x: 45.0   y: 27.0) (x: 72.0   y: 26.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 80.02498439450079
+gScope 60.0
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 59.0   y: 40.0) cameFrom (x: 60.0   y: 60.0)
+neighbor (x: 59.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 80.02498439450079
+neighbor (x: 59.0   y: 40.0)real  80.02498439450079 estimated160.00312496948303
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 70.0) (x: 50.0   y: 50.0) (x: 80.0   y: 20.0) (x: 100.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 60.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 60.0   y: 80.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0)]
+openedBefore: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 19.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 19.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+allNeightbors: [(x: 80.0   y: 80.0), (x: 80.0   y: 100.0), (x: 60.0   y: 100.0), (x: 40.0   y: 100.0), (x: 40.0   y: 80.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 60.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 94.0) (x: 60.0   y: 66.0) (x: 94.0   y: 66.0) (x: 94.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 100.0
+gScope 80.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 80.0   y: 80.0) cameFrom (x: 60.0   y: 80.0)
+neighbor (x: 80.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 100.0
+neighbor (x: 80.0   y: 80.0)real  100.0 estimated121.6552506059644
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 90.0) (x: 70.0   y: 70.0) (x: 100.0   y: 100.0) (x: 80.0   y: 120.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 46.0   y: 80.0) (x: 74.0   y: 80.0) (x: 74.0   y: 114.0) (x: 46.0   y: 114.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 70.0) (x: 70.0   y: 90.0) (x: 40.0   y: 120.0) (x: 20.0   y: 100.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 60.0   y: 66.0) (x: 60.0   y: 94.0) (x: 26.0   y: 94.0) (x: 26.0   y: 66.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 100.0
+gScope 80.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 70.0) (x: 50.0   y: 90.0) (x: 20.0   y: 60.0) (x: 40.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 108.2842712474619
+gScope 80.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 74.0   y: 80.0) (x: 46.0   y: 80.0) (x: 45.0   y: 47.0) (x: 72.0   y: 46.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 100.02498439450079
+gScope 80.0
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 59.0   y: 60.0) cameFrom (x: 60.0   y: 80.0)
+neighbor (x: 59.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 100.02498439450079
+neighbor (x: 59.0   y: 60.0)real  100.02498439450079 estimated140.00357138301865
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 90.0) (x: 50.0   y: 70.0) (x: 80.0   y: 40.0) (x: 100.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 108.2842712474619
+gScope 80.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 80.0   y: 20.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0)]
+allNeightbors: [(x: 100.0   y: 20.0), (x: 100.0   y: 40.0), (x: 80.0   y: 40.0), (x: 60.0   y: 40.0), (x: 60.0   y: 20.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 100.0   y: 0.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 80.0   y: 34.0) (x: 80.0   y: 6.0) (x: 114.0   y: 6.0) (x: 114.0   y: 34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 28.284271247461902
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: 20.0) cameFrom (x: 80.0   y: 20.0)
+neighbor (x: 100.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.2842712474619
+neighbor (x: 100.0   y: 20.0)real  48.2842712474619 estimated184.39088914585776
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 30.0) (x: 90.0   y: 10.0) (x: 120.0   y: 40.0) (x: 100.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 56.568542494923804
+gScope 28.284271247461902
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: 40.0) cameFrom (x: 80.0   y: 20.0)
+neighbor (x: 100.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 56.568542494923804
+neighbor (x: 100.0   y: 40.0)real  56.568542494923804 estimated164.92422502470643
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 66.0   y: 20.0) (x: 94.0   y: 20.0) (x: 94.0   y: 54.0) (x: 66.0   y: 54.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 28.284271247461902
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 94.0   y: 20.0) (x: 66.0   y: 20.0) (x: 66.0   y: -14.0) (x: 94.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 28.284271247461902
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 30.0) (x: 70.0   y: 10.0) (x: 100.0   y: -20.0) (x: 120.0   y: 0.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 56.568542494923804
+gScope 28.284271247461902
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: 0.0) cameFrom (x: 80.0   y: 20.0)
+neighbor (x: 100.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 56.568542494923804
+neighbor (x: 100.0   y: 0.0)real  56.568542494923804 estimated203.9607805437114
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 40.0   y: 20.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 40.0   y: 20.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0)]
+allNeightbors: [(x: 60.0   y: 20.0), (x: 60.0   y: 40.0), (x: 40.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 20.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 60.0   y: 0.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 26.0   y: 20.0) (x: 54.0   y: 20.0) (x: 54.0   y: 54.0) (x: 26.0   y: 54.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 28.284271247461902
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 10.0) (x: 50.0   y: 30.0) (x: 20.0   y: 60.0) (x: 0.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 56.568542494923804
+gScope 28.284271247461902
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 40.0) cameFrom (x: 40.0   y: 20.0)
+neighbor (x: 20.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 56.568542494923804
+neighbor (x: 20.0   y: 40.0)real  56.568542494923804 estimated164.92422502470643
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: 6.0) (x: 40.0   y: 34.0) (x: 6.0   y: 34.0) (x: 6.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 28.284271247461902
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 20.0) cameFrom (x: 40.0   y: 20.0)
+neighbor (x: 20.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.2842712474619
+neighbor (x: 20.0   y: 20.0)real  48.2842712474619 estimated184.39088914585776
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 49.0   y: 10.0) (x: 31.0   y: 30.0) (x: 0.0   y: 1.0) (x: 19.0   y: -19.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 57.2842712474619
+gScope 28.284271247461902
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 0.0) cameFrom (x: 40.0   y: 20.0)
+neighbor (x: 19.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 57.2842712474619
+neighbor (x: 19.0   y: 0.0)real  57.2842712474619 estimated204.15925156602626
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 54.0   y: 20.0) (x: 26.0   y: 20.0) (x: 25.0   y: -13.0) (x: 52.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.30925564196269
+gScope 28.284271247461902
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 39.0   y: 0.0) cameFrom (x: 40.0   y: 20.0)
+neighbor (x: 39.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.30925564196269
+neighbor (x: 39.0   y: 0.0)real  48.30925564196269 estimated201.0994778710278
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 80.0   y: 40.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 100.0   y: 40.0), (x: 100.0   y: 60.0), (x: 80.0   y: 60.0), (x: 60.0   y: 60.0), (x: 60.0   y: 40.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 100.0   y: 19.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 80.0   y: 54.0) (x: 80.0   y: 26.0) (x: 114.0   y: 26.0) (x: 114.0   y: 54.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 50.0) (x: 90.0   y: 30.0) (x: 120.0   y: 60.0) (x: 100.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 48.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: 60.0) cameFrom (x: 80.0   y: 40.0)
+neighbor (x: 100.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5685424949238
+neighbor (x: 100.0   y: 60.0)real  76.5685424949238 estimated145.60219778561037
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 66.0   y: 40.0) (x: 94.0   y: 40.0) (x: 94.0   y: 74.0) (x: 66.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 49.0) (x: 70.0   y: 31.0) (x: 99.0   y: 0.0) (x: 119.0   y: 19.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 77.2842712474619
+gScope 48.2842712474619
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: 19.0) cameFrom (x: 80.0   y: 40.0)
+neighbor (x: 100.0   y: 19.0) realDistanceToNeightborFromStartTroughtCurrentNode 77.2842712474619
+neighbor (x: 100.0   y: 19.0)real  77.2842712474619 estimated185.3672031401456
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 40.0   y: 40.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 40.0   y: 40.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 60.0   y: 40.0), (x: 60.0   y: 60.0), (x: 40.0   y: 60.0), (x: 20.0   y: 60.0), (x: 20.0   y: 40.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 60.0   y: 19.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 26.0   y: 40.0) (x: 54.0   y: 40.0) (x: 54.0   y: 74.0) (x: 26.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 30.0) (x: 50.0   y: 50.0) (x: 20.0   y: 80.0) (x: 0.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 48.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 60.0) cameFrom (x: 40.0   y: 40.0)
+neighbor (x: 20.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5685424949238
+neighbor (x: 20.0   y: 60.0)real  76.5685424949238 estimated145.60219778561037
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: 26.0) (x: 40.0   y: 54.0) (x: 6.0   y: 54.0) (x: 6.0   y: 26.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 49.0   y: 30.0) (x: 31.0   y: 50.0) (x: 0.0   y: 21.0) (x: 19.0   y: 1.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 77.2842712474619
+gScope 48.2842712474619
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 20.0) cameFrom (x: 40.0   y: 40.0)
+neighbor (x: 19.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 77.2842712474619
+neighbor (x: 19.0   y: 20.0)real  77.2842712474619 estimated184.61040057374882
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 54.0   y: 40.0) (x: 26.0   y: 40.0) (x: 25.0   y: 7.0) (x: 52.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.3092556419627
+gScope 48.2842712474619
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 39.0   y: 20.0) cameFrom (x: 40.0   y: 40.0)
+neighbor (x: 39.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 68.3092556419627
+neighbor (x: 39.0   y: 20.0)real  68.3092556419627 estimated181.22085972646747
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 49.0) (x: 30.0   y: 31.0) (x: 59.0   y: 0.0) (x: 79.0   y: 19.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 77.2842712474619
+gScope 48.2842712474619
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 19.0) cameFrom (x: 40.0   y: 40.0)
+neighbor (x: 60.0   y: 19.0) realDistanceToNeightborFromStartTroughtCurrentNode 77.2842712474619
+neighbor (x: 60.0   y: 19.0)real  77.2842712474619 estimated181.0
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 80.0   y: 60.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 100.0   y: 60.0), (x: 100.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 80.0), (x: 60.0   y: 60.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 100.0   y: 40.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 80.0   y: 74.0) (x: 80.0   y: 46.0) (x: 114.0   y: 46.0) (x: 114.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 68.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 70.0) (x: 90.0   y: 50.0) (x: 120.0   y: 80.0) (x: 100.0   y: 100.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 66.0   y: 60.0) (x: 94.0   y: 60.0) (x: 94.0   y: 94.0) (x: 66.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 68.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 80.0   y: 80.0) cameFrom (x: 80.0   y: 60.0)
+neighbor (x: 80.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 88.2842712474619
+neighbor (x: 80.0   y: 80.0)real  88.2842712474619 estimated121.6552506059644
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 70.0) (x: 70.0   y: 50.0) (x: 100.0   y: 20.0) (x: 120.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5685424949238
+gScope 68.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 40.0   y: 60.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 40.0   y: 60.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+opened: [(x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 60.0   y: 60.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 20.0   y: 80.0), (x: 20.0   y: 60.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 60.0   y: 40.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 26.0   y: 60.0) (x: 54.0   y: 60.0) (x: 54.0   y: 94.0) (x: 26.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 68.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 50.0) (x: 50.0   y: 70.0) (x: 20.0   y: 100.0) (x: 0.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5685424949238
+gScope 68.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 80.0) cameFrom (x: 40.0   y: 60.0)
+neighbor (x: 20.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 96.5685424949238
+neighbor (x: 20.0   y: 80.0)real  96.5685424949238 estimated126.49110640673517
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: 46.0) (x: 40.0   y: 74.0) (x: 6.0   y: 74.0) (x: 6.0   y: 46.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.2842712474619
+gScope 68.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 49.0   y: 50.0) (x: 31.0   y: 70.0) (x: 0.0   y: 41.0) (x: 19.0   y: 21.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 97.2842712474619
+gScope 68.2842712474619
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 40.0) cameFrom (x: 40.0   y: 60.0)
+neighbor (x: 19.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 97.2842712474619
+neighbor (x: 19.0   y: 40.0)real  97.2842712474619 estimated165.1696097955069
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 54.0   y: 60.0) (x: 26.0   y: 60.0) (x: 25.0   y: 27.0) (x: 52.0   y: 26.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 88.3092556419627
+gScope 68.2842712474619
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 39.0   y: 40.0) cameFrom (x: 40.0   y: 60.0)
+neighbor (x: 39.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 88.3092556419627
+neighbor (x: 39.0   y: 40.0)real  88.3092556419627 estimated161.37224048763778
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 40.0   y: 80.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0)]
+openedBefore: [(x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0)]
+opened: [(x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 60.0   y: 80.0), (x: 60.0   y: 100.0), (x: 40.0   y: 100.0), (x: 20.0   y: 100.0), (x: 20.0   y: 80.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 60.0   y: 60.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 90.0) (x: 50.0   y: 70.0) (x: 80.0   y: 100.0) (x: 60.0   y: 120.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 26.0   y: 80.0) (x: 54.0   y: 80.0) (x: 54.0   y: 114.0) (x: 26.0   y: 114.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 70.0) (x: 50.0   y: 90.0) (x: 20.0   y: 120.0) (x: 0.0   y: 100.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 116.5685424949238
+gScope 88.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 100.0) cameFrom (x: 40.0   y: 80.0)
+neighbor (x: 20.0   y: 100.0) realDistanceToNeightborFromStartTroughtCurrentNode 116.5685424949238
+neighbor (x: 20.0   y: 100.0)real  116.5685424949238 estimated107.70329614269008
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: 66.0) (x: 40.0   y: 94.0) (x: 6.0   y: 94.0) (x: 6.0   y: 66.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 108.2842712474619
+gScope 88.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 49.0   y: 70.0) (x: 31.0   y: 90.0) (x: 0.0   y: 61.0) (x: 19.0   y: 41.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 117.2842712474619
+gScope 88.2842712474619
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 60.0) cameFrom (x: 40.0   y: 80.0)
+neighbor (x: 19.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 117.2842712474619
+neighbor (x: 19.0   y: 60.0)real  117.2842712474619 estimated145.8800877433243
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 54.0   y: 80.0) (x: 26.0   y: 80.0) (x: 25.0   y: 47.0) (x: 52.0   y: 46.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 108.3092556419627
+gScope 88.2842712474619
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 39.0   y: 60.0) cameFrom (x: 40.0   y: 80.0)
+neighbor (x: 39.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 108.3092556419627
+neighbor (x: 39.0   y: 60.0)real  108.3092556419627 estimated141.56623891309678
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 80.0   y: 80.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0)]
+openedBefore: [(x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 100.0   y: 80.0), (x: 100.0   y: 100.0), (x: 80.0   y: 100.0), (x: 60.0   y: 100.0), (x: 60.0   y: 80.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 100.0   y: 60.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 80.0   y: 94.0) (x: 80.0   y: 66.0) (x: 114.0   y: 66.0) (x: 114.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 108.2842712474619
+gScope 88.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: 80.0) cameFrom (x: 80.0   y: 80.0)
+neighbor (x: 100.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 108.2842712474619
+neighbor (x: 100.0   y: 80.0)real  108.2842712474619 estimated126.49110640673517
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 90.0) (x: 90.0   y: 70.0) (x: 120.0   y: 100.0) (x: 100.0   y: 120.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 66.0   y: 80.0) (x: 94.0   y: 80.0) (x: 94.0   y: 114.0) (x: 66.0   y: 114.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 70.0) (x: 90.0   y: 90.0) (x: 60.0   y: 120.0) (x: 40.0   y: 100.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 90.0) (x: 70.0   y: 70.0) (x: 100.0   y: 40.0) (x: 120.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 116.5685424949238
+gScope 88.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 80.0   y: 0.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 40.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 100.0   y: 0.0), (x: 100.0   y: 20.0), (x: 80.0   y: 20.0), (x: 60.0   y: 20.0), (x: 60.0   y: 0.0), (x: 60.0   y: -19.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 80.0   y: 14.0) (x: 80.0   y: -14.0) (x: 114.0   y: -14.0) (x: 114.0   y: 14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.0
+gScope 20.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 100.0   y: 0.0) cameFrom (x: 80.0   y: 0.0)
+neighbor (x: 100.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 40.0
+neighbor (x: 100.0   y: 0.0)real  40.0 estimated203.9607805437114
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 70.0   y: 10.0) (x: 90.0   y: -10.0) (x: 120.0   y: 20.0) (x: 100.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 89.0   y: -10.0) (x: 71.0   y: 10.0) (x: 41.0   y: -18.0) (x: 60.0   y: -38.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 47.58622844826745
+gScope 20.0
+distance 27.586228448267445
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: -19.0) cameFrom (x: 80.0   y: 0.0)
+neighbor (x: 60.0   y: -19.0) realDistanceToNeightborFromStartTroughtCurrentNode 47.58622844826745
+neighbor (x: 60.0   y: -19.0)real  47.58622844826745 estimated219.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 94.0   y: 0.0) (x: 66.0   y: 0.0) (x: 66.0   y: -34.0) (x: 94.0   y: -34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.0
+gScope 20.0
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 10.0) (x: 70.0   y: -10.0) (x: 100.0   y: -40.0) (x: 120.0   y: -20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 100.0   y: -20.0) cameFrom (x: 80.0   y: 0.0)
+neighbor (x: 100.0   y: -20.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.2842712474619
+neighbor (x: 100.0   y: -20.0)real  48.2842712474619 estimated223.60679774997897
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 40.0   y: 0.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 40.0   y: 0.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0)]
+allNeightbors: [(x: 60.0   y: 0.0), (x: 60.0   y: 20.0), (x: 40.0   y: 20.0), (x: 20.0   y: 20.0), (x: 20.0   y: 0.0), (x: 19.0   y: -19.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: -10.0) (x: 50.0   y: 10.0) (x: 20.0   y: 40.0) (x: 0.0   y: 20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: -14.0) (x: 40.0   y: 14.0) (x: 6.0   y: 14.0) (x: 6.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.0
+gScope 20.0
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 0.0) cameFrom (x: 40.0   y: 0.0)
+neighbor (x: 20.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 40.0
+neighbor (x: 20.0   y: 0.0)real  40.0 estimated203.9607805437114
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 49.0   y: -10.0) (x: 31.0   y: 10.0) (x: 0.0   y: -18.0) (x: 19.0   y: -38.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.31960451701259
+gScope 20.0
+distance 28.319604517012593
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: -19.0) cameFrom (x: 40.0   y: 0.0)
+neighbor (x: 19.0   y: -19.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.31960451701259
+neighbor (x: 19.0   y: -19.0)real  48.31960451701259 estimated222.80484734403782
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 54.0   y: 0.0) (x: 26.0   y: 0.0) (x: 25.0   y: -33.0) (x: 52.0   y: -34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 40.02498439450079
+gScope 20.0
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 39.0   y: -20.0) cameFrom (x: 40.0   y: 0.0)
+neighbor (x: 39.0   y: -20.0) realDistanceToNeightborFromStartTroughtCurrentNode 40.02498439450079
+neighbor (x: 39.0   y: -20.0)real  40.02498439450079 estimated221.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 10.0) (x: 30.0   y: -10.0) (x: 60.0   y: -40.0) (x: 80.0   y: -20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 48.2842712474619
+gScope 20.0
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: -20.0) cameFrom (x: 40.0   y: 0.0)
+neighbor (x: 60.0   y: -20.0) realDistanceToNeightborFromStartTroughtCurrentNode 48.2842712474619
+neighbor (x: 60.0   y: -20.0)real  48.2842712474619 estimated220.0
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 100.0   y: 40.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 120.0   y: 40.0), (x: 120.0   y: 60.0), (x: 100.0   y: 60.0), (x: 80.0   y: 60.0), (x: 80.0   y: 40.0), (x: 80.0   y: 20.0), (x: 100.0   y: 20.0), (x: 120.0   y: 19.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 100.0   y: 54.0) (x: 100.0   y: 26.0) (x: 134.0   y: 26.0) (x: 134.0   y: 54.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 56.568542494923804
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 120.0   y: 40.0) cameFrom (x: 100.0   y: 40.0)
+neighbor (x: 120.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5685424949238
+neighbor (x: 120.0   y: 40.0)real  76.5685424949238 estimated170.88007490635061
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 50.0) (x: 110.0   y: 30.0) (x: 140.0   y: 60.0) (x: 120.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 84.8528137423857
+gScope 56.568542494923804
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 120.0   y: 60.0) cameFrom (x: 100.0   y: 40.0)
+neighbor (x: 120.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 84.8528137423857
+neighbor (x: 120.0   y: 60.0)real  84.8528137423857 estimated152.31546211727817
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 86.0   y: 40.0) (x: 114.0   y: 40.0) (x: 114.0   y: 74.0) (x: 86.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 56.568542494923804
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 114.0   y: 40.0) (x: 86.0   y: 40.0) (x: 86.0   y: 6.0) (x: 114.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 56.568542494923804
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 110.0   y: 49.0) (x: 90.0   y: 31.0) (x: 119.0   y: 0.0) (x: 139.0   y: 19.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 85.5685424949238
+gScope 56.568542494923804
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 120.0   y: 19.0) cameFrom (x: 100.0   y: 40.0)
+neighbor (x: 120.0   y: 19.0) realDistanceToNeightborFromStartTroughtCurrentNode 85.5685424949238
+neighbor (x: 120.0   y: 19.0)real  85.5685424949238 estimated190.68560512005095
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 20.0   y: 40.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 20.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 40.0), (x: 40.0   y: 60.0), (x: 20.0   y: 60.0), (x: 0.0   y: 60.0), (x: 0.0   y: 40.0), (x: 0.0   y: 20.0), (x: 19.0   y: 20.0), (x: 40.0   y: 19.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 40.0) (x: 34.0   y: 40.0) (x: 34.0   y: 74.0) (x: 6.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 56.568542494923804
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 30.0) (x: 30.0   y: 50.0) (x: 0.0   y: 80.0) (x: -20.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 84.8528137423857
+gScope 56.568542494923804
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 60.0) cameFrom (x: 20.0   y: 40.0)
+neighbor (x: 0.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 84.8528137423857
+neighbor (x: 0.0   y: 60.0)real  84.8528137423857 estimated152.31546211727817
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 26.0) (x: 20.0   y: 54.0) (x: -14.0   y: 54.0) (x: -14.0   y: 26.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 56.568542494923804
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 40.0) cameFrom (x: 20.0   y: 40.0)
+neighbor (x: 0.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5685424949238
+neighbor (x: 0.0   y: 40.0)real  76.5685424949238 estimated170.88007490635061
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 30.0) (x: 10.0   y: 50.0) (x: -20.0   y: 20.0) (x: 0.0   y: 0.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 84.8528137423857
+gScope 56.568542494923804
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 20.0) cameFrom (x: 20.0   y: 40.0)
+neighbor (x: 0.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 84.8528137423857
+neighbor (x: 0.0   y: 20.0)real  84.8528137423857 estimated189.73665961010275
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 40.0) (x: 6.0   y: 40.0) (x: 5.0   y: 7.0) (x: 32.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5935268894246
+gScope 56.568542494923804
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 19.0   y: 20.0) cameFrom (x: 20.0   y: 40.0)
+neighbor (x: 19.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5935268894246
+neighbor (x: 19.0   y: 20.0)real  76.5935268894246 estimated184.61040057374882
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 49.0) (x: 10.0   y: 31.0) (x: 39.0   y: 0.0) (x: 59.0   y: 19.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 85.5685424949238
+gScope 56.568542494923804
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 19.0) cameFrom (x: 20.0   y: 40.0)
+neighbor (x: 40.0   y: 19.0) realDistanceToNeightborFromStartTroughtCurrentNode 85.5685424949238
+neighbor (x: 40.0   y: 19.0)real  85.5685424949238 estimated182.10161998181127
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 100.0   y: 60.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 120.0   y: 60.0), (x: 120.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 80.0), (x: 80.0   y: 60.0), (x: 80.0   y: 40.0), (x: 100.0   y: 40.0), (x: 120.0   y: 40.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 100.0   y: 74.0) (x: 100.0   y: 46.0) (x: 134.0   y: 46.0) (x: 134.0   y: 74.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5685424949238
+gScope 76.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 70.0) (x: 110.0   y: 50.0) (x: 140.0   y: 80.0) (x: 120.0   y: 100.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 86.0   y: 60.0) (x: 114.0   y: 60.0) (x: 114.0   y: 94.0) (x: 86.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5685424949238
+gScope 76.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 100.0   y: 80.0) cameFrom (x: 100.0   y: 60.0)
+neighbor (x: 100.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 96.5685424949238
+neighbor (x: 100.0   y: 80.0)real  96.5685424949238 estimated126.49110640673517
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 110.0   y: 70.0) (x: 90.0   y: 50.0) (x: 120.0   y: 20.0) (x: 140.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 104.8528137423857
+gScope 76.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 20.0   y: 60.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 20.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 60.0), (x: 40.0   y: 80.0), (x: 20.0   y: 80.0), (x: 0.0   y: 80.0), (x: 0.0   y: 60.0), (x: 0.0   y: 40.0), (x: 19.0   y: 40.0), (x: 40.0   y: 40.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 60.0) (x: 34.0   y: 60.0) (x: 34.0   y: 94.0) (x: 6.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5685424949238
+gScope 76.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 50.0) (x: 30.0   y: 70.0) (x: 0.0   y: 100.0) (x: -20.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 104.8528137423857
+gScope 76.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 80.0) cameFrom (x: 20.0   y: 60.0)
+neighbor (x: 0.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 104.8528137423857
+neighbor (x: 0.0   y: 80.0)real  104.8528137423857 estimated134.16407864998737
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 46.0) (x: 20.0   y: 74.0) (x: -14.0   y: 74.0) (x: -14.0   y: 46.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5685424949238
+gScope 76.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 50.0) (x: 10.0   y: 70.0) (x: -20.0   y: 40.0) (x: 0.0   y: 20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 104.8528137423857
+gScope 76.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 60.0) (x: 6.0   y: 60.0) (x: 5.0   y: 27.0) (x: 32.0   y: 26.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 96.5935268894246
+gScope 76.5685424949238
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 19.0   y: 40.0) cameFrom (x: 20.0   y: 60.0)
+neighbor (x: 19.0   y: 40.0) realDistanceToNeightborFromStartTroughtCurrentNode 96.5935268894246
+neighbor (x: 19.0   y: 40.0)real  96.5935268894246 estimated165.1696097955069
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 20.0   y: 80.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 0.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 100.0   y: 80.0), (x: 0.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 80.0), (x: 40.0   y: 100.0), (x: 20.0   y: 100.0), (x: 0.0   y: 100.0), (x: 0.0   y: 80.0), (x: 0.0   y: 60.0), (x: 19.0   y: 60.0), (x: 40.0   y: 60.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 90.0) (x: 30.0   y: 70.0) (x: 60.0   y: 100.0) (x: 40.0   y: 120.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 80.0) (x: 34.0   y: 80.0) (x: 34.0   y: 114.0) (x: 6.0   y: 114.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 116.5685424949238
+gScope 96.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 70.0) (x: 30.0   y: 90.0) (x: 0.0   y: 120.0) (x: -20.0   y: 100.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 124.8528137423857
+gScope 96.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 100.0) cameFrom (x: 20.0   y: 80.0)
+neighbor (x: 0.0   y: 100.0) realDistanceToNeightborFromStartTroughtCurrentNode 124.8528137423857
+neighbor (x: 0.0   y: 100.0)real  124.8528137423857 estimated116.61903789690601
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 66.0) (x: 20.0   y: 94.0) (x: -14.0   y: 94.0) (x: -14.0   y: 66.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 116.5685424949238
+gScope 96.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 70.0) (x: 10.0   y: 90.0) (x: -20.0   y: 60.0) (x: 0.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 124.8528137423857
+gScope 96.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 80.0) (x: 6.0   y: 80.0) (x: 5.0   y: 47.0) (x: 32.0   y: 46.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 116.5935268894246
+gScope 96.5685424949238
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 19.0   y: 60.0) cameFrom (x: 20.0   y: 80.0)
+neighbor (x: 19.0   y: 60.0) realDistanceToNeightborFromStartTroughtCurrentNode 116.5935268894246
+neighbor (x: 19.0   y: 60.0)real  116.5935268894246 estimated145.8800877433243
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 100.0   y: 80.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 100.0   y: 80.0), (x: 0.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 0.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 0.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 120.0   y: 80.0), (x: 120.0   y: 100.0), (x: 100.0   y: 100.0), (x: 80.0   y: 100.0), (x: 80.0   y: 80.0), (x: 80.0   y: 60.0), (x: 100.0   y: 60.0), (x: 120.0   y: 60.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 100.0   y: 94.0) (x: 100.0   y: 66.0) (x: 134.0   y: 66.0) (x: 134.0   y: 94.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 116.5685424949238
+gScope 96.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 120.0   y: 80.0) cameFrom (x: 100.0   y: 80.0)
+neighbor (x: 120.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 116.5685424949238
+neighbor (x: 120.0   y: 80.0)real  116.5685424949238 estimated134.16407864998737
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 90.0) (x: 110.0   y: 70.0) (x: 140.0   y: 100.0) (x: 120.0   y: 120.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 86.0   y: 80.0) (x: 114.0   y: 80.0) (x: 114.0   y: 114.0) (x: 86.0   y: 114.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 70.0) (x: 110.0   y: 90.0) (x: 80.0   y: 120.0) (x: 60.0   y: 100.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 110.0   y: 90.0) (x: 90.0   y: 70.0) (x: 120.0   y: 40.0) (x: 140.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 124.8528137423857
+gScope 96.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+==================================
+currentNode: (x: 20.0   y: 100.0)
+isDestinationNode: false
+closedBefore: [(x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 100.0), (x: 0.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 0.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 100.0), (x: 40.0   y: 120.0), (x: 20.0   y: 120.0), (x: 0.0   y: 120.0), (x: 0.0   y: 100.0), (x: 0.0   y: 80.0), (x: 19.0   y: 80.0), (x: 40.0   y: 80.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 114.0) (x: 20.0   y: 86.0) (x: 54.0   y: 86.0) (x: 54.0   y: 114.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 110.0) (x: 30.0   y: 90.0) (x: 60.0   y: 120.0) (x: 40.0   y: 140.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 100.0) (x: 34.0   y: 100.0) (x: 34.0   y: 134.0) (x: 6.0   y: 134.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 136.5685424949238
+gScope 116.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 120.0) cameFrom (x: 20.0   y: 100.0)
+neighbor (x: 20.0   y: 120.0) realDistanceToNeightborFromStartTroughtCurrentNode 136.5685424949238
+neighbor (x: 20.0   y: 120.0)real  136.5685424949238 estimated89.44271909999159
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 90.0) (x: 30.0   y: 110.0) (x: 0.0   y: 140.0) (x: -20.0   y: 120.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 144.8528137423857
+gScope 116.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 120.0) cameFrom (x: 20.0   y: 100.0)
+neighbor (x: 0.0   y: 120.0) realDistanceToNeightborFromStartTroughtCurrentNode 144.8528137423857
+neighbor (x: 0.0   y: 120.0)real  144.8528137423857 estimated100.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 86.0) (x: 20.0   y: 114.0) (x: -14.0   y: 114.0) (x: -14.0   y: 86.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 136.5685424949238
+gScope 116.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 90.0) (x: 10.0   y: 110.0) (x: -20.0   y: 80.0) (x: 0.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 144.8528137423857
+gScope 116.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 100.0) (x: 6.0   y: 100.0) (x: 5.0   y: 67.0) (x: 32.0   y: 66.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 136.5935268894246
+gScope 116.5685424949238
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 80.0) cameFrom (x: 20.0   y: 100.0)
+neighbor (x: 19.0   y: 80.0) realDistanceToNeightborFromStartTroughtCurrentNode 136.5935268894246
+neighbor (x: 19.0   y: 80.0)real  136.5935268894246 estimated126.81088281373961
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 20.0   y: 120.0)
+isDestinationNode: false
+closedBefore: [(x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 0.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 20.0   y: 120.0), (x: 0.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 0.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 120.0), (x: 40.0   y: 140.0), (x: 20.0   y: 140.0), (x: 0.0   y: 140.0), (x: 0.0   y: 120.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 40.0   y: 100.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 134.0) (x: 20.0   y: 106.0) (x: 54.0   y: 106.0) (x: 54.0   y: 134.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 130.0) (x: 30.0   y: 110.0) (x: 60.0   y: 140.0) (x: 40.0   y: 160.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 120.0) (x: 34.0   y: 120.0) (x: 34.0   y: 154.0) (x: 6.0   y: 154.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 156.5685424949238
+gScope 136.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 140.0) cameFrom (x: 20.0   y: 120.0)
+neighbor (x: 20.0   y: 140.0) realDistanceToNeightborFromStartTroughtCurrentNode 156.5685424949238
+neighbor (x: 20.0   y: 140.0)real  156.5685424949238 estimated72.11102550927978
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 110.0) (x: 30.0   y: 130.0) (x: 0.0   y: 160.0) (x: -20.0   y: 140.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 164.8528137423857
+gScope 136.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 140.0) cameFrom (x: 20.0   y: 120.0)
+neighbor (x: 0.0   y: 140.0) realDistanceToNeightborFromStartTroughtCurrentNode 164.8528137423857
+neighbor (x: 0.0   y: 140.0)real  164.8528137423857 estimated84.8528137423857
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 106.0) (x: 20.0   y: 134.0) (x: -14.0   y: 134.0) (x: -14.0   y: 106.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 156.5685424949238
+gScope 136.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 110.0) (x: 10.0   y: 130.0) (x: -20.0   y: 100.0) (x: 0.0   y: 80.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 164.8528137423857
+gScope 136.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 120.0) (x: 6.0   y: 120.0) (x: 5.0   y: 87.0) (x: 32.0   y: 86.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 156.5935268894246
+gScope 136.5685424949238
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 100.0) cameFrom (x: 20.0   y: 120.0)
+neighbor (x: 19.0   y: 100.0) realDistanceToNeightborFromStartTroughtCurrentNode 156.5935268894246
+neighbor (x: 19.0   y: 100.0)real  156.5935268894246 estimated108.07867504739313
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 130.0) (x: 10.0   y: 110.0) (x: 40.0   y: 80.0) (x: 60.0   y: 100.0) 
+no access to neighbor, continue
+==================================
+currentNode: (x: 20.0   y: 140.0)
+isDestinationNode: false
+closedBefore: [(x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 20.0   y: 140.0), (x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 140.0), (x: 40.0   y: 160.0), (x: 20.0   y: 160.0), (x: 0.0   y: 160.0), (x: 0.0   y: 140.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 40.0   y: 120.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 154.0) (x: 20.0   y: 126.0) (x: 54.0   y: 126.0) (x: 54.0   y: 154.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 150.0) (x: 30.0   y: 130.0) (x: 60.0   y: 160.0) (x: 40.0   y: 180.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 140.0) (x: 34.0   y: 140.0) (x: 34.0   y: 174.0) (x: 6.0   y: 174.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 176.5685424949238
+gScope 156.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 160.0) cameFrom (x: 20.0   y: 140.0)
+neighbor (x: 20.0   y: 160.0) realDistanceToNeightborFromStartTroughtCurrentNode 176.5685424949238
+neighbor (x: 20.0   y: 160.0)real  176.5685424949238 estimated56.568542494923804
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 130.0) (x: 30.0   y: 150.0) (x: 0.0   y: 180.0) (x: -20.0   y: 160.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 184.8528137423857
+gScope 156.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 160.0) cameFrom (x: 20.0   y: 140.0)
+neighbor (x: 0.0   y: 160.0) realDistanceToNeightborFromStartTroughtCurrentNode 184.8528137423857
+neighbor (x: 0.0   y: 160.0)real  184.8528137423857 estimated72.11102550927978
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 126.0) (x: 20.0   y: 154.0) (x: -14.0   y: 154.0) (x: -14.0   y: 126.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 176.5685424949238
+gScope 156.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 130.0) (x: 10.0   y: 150.0) (x: -20.0   y: 120.0) (x: 0.0   y: 100.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 184.8528137423857
+gScope 156.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 140.0) (x: 6.0   y: 140.0) (x: 5.0   y: 107.0) (x: 32.0   y: 106.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 176.5935268894246
+gScope 156.5685424949238
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 120.0) cameFrom (x: 20.0   y: 140.0)
+neighbor (x: 19.0   y: 120.0) realDistanceToNeightborFromStartTroughtCurrentNode 176.5935268894246
+neighbor (x: 19.0   y: 120.0)real  176.5935268894246 estimated89.89438247187641
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 150.0) (x: 10.0   y: 130.0) (x: 40.0   y: 100.0) (x: 60.0   y: 120.0) 
+no access to neighbor, continue
+==================================
+currentNode: (x: 100.0   y: 20.0)
+isDestinationNode: false
+closedBefore: [(x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 160.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 20.0   y: 160.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0)]
+allNeightbors: [(x: 120.0   y: 20.0), (x: 120.0   y: 40.0), (x: 100.0   y: 40.0), (x: 80.0   y: 40.0), (x: 80.0   y: 20.0), (x: 80.0   y: 0.0), (x: 100.0   y: 0.0), (x: 120.0   y: 0.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 100.0   y: 34.0) (x: 100.0   y: 6.0) (x: 134.0   y: 6.0) (x: 134.0   y: 34.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 120.0   y: 20.0) cameFrom (x: 100.0   y: 20.0)
+neighbor (x: 120.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 68.2842712474619
+neighbor (x: 120.0   y: 20.0)real  68.2842712474619 estimated189.73665961010275
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 90.0   y: 30.0) (x: 110.0   y: 10.0) (x: 140.0   y: 40.0) (x: 120.0   y: 60.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 48.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 114.0   y: 20.0) (x: 86.0   y: 20.0) (x: 86.0   y: -14.0) (x: 114.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 110.0   y: 30.0) (x: 90.0   y: 10.0) (x: 120.0   y: -20.0) (x: 140.0   y: 0.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 48.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 120.0   y: 0.0) cameFrom (x: 100.0   y: 20.0)
+neighbor (x: 120.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5685424949238
+neighbor (x: 120.0   y: 0.0)real  76.5685424949238 estimated208.806130178211
+neightbor not contains in opened; add it in
+==================================
+currentNode: (x: 20.0   y: 20.0)
+isDestinationNode: false
+closedBefore: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 20.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 120.0   y: 20.0), (x: 20.0   y: 160.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0), (x: 120.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 120.0   y: 20.0), (x: 20.0   y: 160.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0), (x: 120.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 20.0), (x: 40.0   y: 40.0), (x: 20.0   y: 40.0), (x: 0.0   y: 40.0), (x: 0.0   y: 20.0), (x: 0.0   y: 0.0), (x: 19.0   y: 0.0), (x: 40.0   y: 0.0)]
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 10.0) (x: 30.0   y: 30.0) (x: 0.0   y: 60.0) (x: -20.0   y: 40.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 48.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 6.0) (x: 20.0   y: 34.0) (x: -14.0   y: 34.0) (x: -14.0   y: 6.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.2842712474619
+gScope 48.2842712474619
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: true
+neighbor (x: 0.0   y: 20.0) cameFrom (x: 20.0   y: 20.0)
+neighbor (x: 0.0   y: 20.0) realDistanceToNeightborFromStartTroughtCurrentNode 68.2842712474619
+neighbor (x: 0.0   y: 20.0)real  68.2842712474619 estimated189.73665961010275
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 10.0) (x: 10.0   y: 30.0) (x: -20.0   y: 0.0) (x: 0.0   y: -20.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 76.5685424949238
+gScope 48.2842712474619
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 0.0) cameFrom (x: 20.0   y: 20.0)
+neighbor (x: 0.0   y: 0.0) realDistanceToNeightborFromStartTroughtCurrentNode 76.5685424949238
+neighbor (x: 0.0   y: 0.0)real  76.5685424949238 estimated208.806130178211
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 20.0) (x: 6.0   y: 20.0) (x: 5.0   y: -13.0) (x: 32.0   y: -14.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 68.3092556419627
+gScope 48.2842712474619
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+neigboring in closed list, continue
+==================================
+currentNode: (x: 20.0   y: 160.0)
+isDestinationNode: false
+closedBefore: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 120.0   y: 20.0), (x: 20.0   y: 160.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0), (x: 120.0   y: 0.0), (x: 0.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 20.0   y: 160.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 120.0   y: 20.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0), (x: 120.0   y: 0.0), (x: 0.0   y: 0.0)]
+allNeightbors: [(x: 40.0   y: 160.0), (x: 40.0   y: 180.0), (x: 20.0   y: 180.0), (x: 0.0   y: 180.0), (x: 0.0   y: 160.0), (x: 0.0   y: 140.0), (x: 19.0   y: 140.0), (x: 40.0   y: 140.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 174.0) (x: 20.0   y: 146.0) (x: 54.0   y: 146.0) (x: 54.0   y: 174.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 170.0) (x: 30.0   y: 150.0) (x: 60.0   y: 180.0) (x: 40.0   y: 200.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 204.8528137423857
+gScope 176.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 180.0) cameFrom (x: 20.0   y: 160.0)
+neighbor (x: 40.0   y: 180.0) realDistanceToNeightborFromStartTroughtCurrentNode 204.8528137423857
+neighbor (x: 40.0   y: 180.0)real  204.8528137423857 estimated28.284271247461902
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 6.0   y: 160.0) (x: 34.0   y: 160.0) (x: 34.0   y: 194.0) (x: 6.0   y: 194.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 196.5685424949238
+gScope 176.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 180.0) cameFrom (x: 20.0   y: 160.0)
+neighbor (x: 20.0   y: 180.0) realDistanceToNeightborFromStartTroughtCurrentNode 196.5685424949238
+neighbor (x: 20.0   y: 180.0)real  196.5685424949238 estimated44.721359549995796
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 10.0   y: 150.0) (x: 30.0   y: 170.0) (x: 0.0   y: 200.0) (x: -20.0   y: 180.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 204.8528137423857
+gScope 176.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 0.0   y: 180.0) cameFrom (x: 20.0   y: 160.0)
+neighbor (x: 0.0   y: 180.0) realDistanceToNeightborFromStartTroughtCurrentNode 204.8528137423857
+neighbor (x: 0.0   y: 180.0)real  204.8528137423857 estimated63.245553203367585
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 20.0   y: 146.0) (x: 20.0   y: 174.0) (x: -14.0   y: 174.0) (x: -14.0   y: 146.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 196.5685424949238
+gScope 176.5685424949238
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 150.0) (x: 10.0   y: 170.0) (x: -20.0   y: 140.0) (x: 0.0   y: 120.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 204.8528137423857
+gScope 176.5685424949238
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 34.0   y: 160.0) (x: 6.0   y: 160.0) (x: 5.0   y: 127.0) (x: 32.0   y: 126.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 196.5935268894246
+gScope 176.5685424949238
+distance 20.024984394500787
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 140.0) cameFrom (x: 20.0   y: 160.0)
+neighbor (x: 19.0   y: 140.0) realDistanceToNeightborFromStartTroughtCurrentNode 196.5935268894246
+neighbor (x: 19.0   y: 140.0)real  196.5935268894246 estimated72.67048919609665
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 170.0) (x: 10.0   y: 150.0) (x: 40.0   y: 120.0) (x: 60.0   y: 140.0) 
+no access to neighbor, continue
+==================================
+currentNode: (x: 40.0   y: 180.0)
+isDestinationNode: false
+closedBefore: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 20.0   y: 160.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+openedBefore: [(x: 0.0   y: 140.0), (x: 19.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 120.0   y: 20.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 40.0   y: 180.0), (x: 20.0   y: 180.0), (x: 0.0   y: 180.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0), (x: 120.0   y: 0.0), (x: 0.0   y: 0.0)]
+closedNodes: [(x: 20.0   y: 140.0), (x: 60.0   y: 80.0), (x: 40.0   y: 80.0), (x: 80.0   y: 80.0), (x: 20.0   y: 80.0), (x: 100.0   y: 80.0), (x: 60.0   y: 20.0), (x: 80.0   y: 20.0), (x: 40.0   y: 20.0), (x: 100.0   y: 20.0), (x: 20.0   y: 20.0), (x: 20.0   y: 160.0), (x: 20.0   y: 100.0), (x: 60.0   y: 40.0), (x: 80.0   y: 40.0), (x: 40.0   y: 40.0), (x: 100.0   y: 40.0), (x: 20.0   y: 40.0), (x: 40.0   y: 180.0), (x: 20.0   y: 120.0), (x: 60.0   y: 60.0), (x: 80.0   y: 60.0), (x: 40.0   y: 60.0), (x: 100.0   y: 60.0), (x: 20.0   y: 60.0), (x: 60.0   y: 0.0), (x: 80.0   y: 0.0), (x: 40.0   y: 0.0)]
+opened: [(x: 0.0   y: 140.0), (x: 19.0   y: 140.0), (x: 0.0   y: 80.0), (x: 120.0   y: 80.0), (x: 19.0   y: 80.0), (x: 80.0   y: 19.0), (x: 100.0   y: 19.0), (x: 60.0   y: 19.0), (x: 120.0   y: 19.0), (x: 40.0   y: 19.0), (x: 59.0   y: 20.0), (x: 19.0   y: 20.0), (x: 39.0   y: 20.0), (x: 0.0   y: 20.0), (x: 120.0   y: 20.0), (x: 0.0   y: 160.0), (x: 0.0   y: 100.0), (x: 19.0   y: 100.0), (x: 59.0   y: 40.0), (x: 19.0   y: 40.0), (x: 39.0   y: 40.0), (x: 120.0   y: 40.0), (x: 0.0   y: 40.0), (x: 59.0   y: -20.0), (x: 80.0   y: -20.0), (x: 100.0   y: -20.0), (x: 39.0   y: -20.0), (x: 60.0   y: -20.0), (x: 40.0   y: -19.0), (x: 60.0   y: -19.0), (x: 19.0   y: -19.0), (x: 20.0   y: 180.0), (x: 0.0   y: 180.0), (x: 0.0   y: 120.0), (x: 19.0   y: 120.0), (x: 59.0   y: 60.0), (x: 19.0   y: 60.0), (x: 39.0   y: 60.0), (x: 120.0   y: 60.0), (x: 0.0   y: 60.0), (x: 59.0   y: 0.0), (x: 100.0   y: 0.0), (x: 19.0   y: 0.0), (x: 39.0   y: 0.0), (x: 20.0   y: 0.0), (x: 120.0   y: 0.0), (x: 0.0   y: 0.0)]
+allNeightbors: [(x: 60.0   y: 180.0), (x: 60.0   y: 200.0), (x: 40.0   y: 200.0), (x: 20.0   y: 200.0), (x: 20.0   y: 180.0), (x: 19.0   y: 160.0), (x: 39.0   y: 160.0), (x: 60.0   y: 160.0)]
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: 194.0) (x: 40.0   y: 166.0) (x: 74.0   y: 166.0) (x: 74.0   y: 194.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 224.8528137423857
+gScope 204.8528137423857
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 180.0) cameFrom (x: 40.0   y: 180.0)
+neighbor (x: 60.0   y: 180.0) realDistanceToNeightborFromStartTroughtCurrentNode 224.8528137423857
+neighbor (x: 60.0   y: 180.0)real  224.8528137423857 estimated20.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 190.0) (x: 50.0   y: 170.0) (x: 80.0   y: 200.0) (x: 60.0   y: 220.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 233.1370849898476
+gScope 204.8528137423857
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 60.0   y: 200.0) cameFrom (x: 40.0   y: 180.0)
+neighbor (x: 60.0   y: 200.0) realDistanceToNeightborFromStartTroughtCurrentNode 233.1370849898476
+neighbor (x: 60.0   y: 200.0)real  233.1370849898476 estimated0.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 26.0   y: 180.0) (x: 54.0   y: 180.0) (x: 54.0   y: 214.0) (x: 26.0   y: 214.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 224.8528137423857
+gScope 204.8528137423857
+distance 20.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 40.0   y: 200.0) cameFrom (x: 40.0   y: 180.0)
+neighbor (x: 40.0   y: 200.0) realDistanceToNeightborFromStartTroughtCurrentNode 224.8528137423857
+neighbor (x: 40.0   y: 200.0)real  224.8528137423857 estimated20.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 30.0   y: 170.0) (x: 50.0   y: 190.0) (x: 20.0   y: 220.0) (x: 0.0   y: 200.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 233.1370849898476
+gScope 204.8528137423857
+distance 28.284271247461902
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 20.0   y: 200.0) cameFrom (x: 40.0   y: 180.0)
+neighbor (x: 20.0   y: 200.0) realDistanceToNeightborFromStartTroughtCurrentNode 233.1370849898476
+neighbor (x: 20.0   y: 200.0)real  233.1370849898476 estimated40.0
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 40.0   y: 166.0) (x: 40.0   y: 194.0) (x: 6.0   y: 194.0) (x: 6.0   y: 166.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 224.8528137423857
+gScope 204.8528137423857
+distance 20.0
+thisIsNotAStudiedNeighbor: false
+findMoreBestSolution: false
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 49.0   y: 170.0) (x: 31.0   y: 190.0) (x: 0.0   y: 161.0) (x: 19.0   y: 141.0) 
+realDistanceToNeightborFromStartTroughtCurrentNode: 233.8528137423857
+gScope 204.8528137423857
+distance 29.0
+thisIsNotAStudiedNeighbor: true
+findMoreBestSolution: false
+neighbor (x: 19.0   y: 160.0) cameFrom (x: 40.0   y: 180.0)
+neighbor (x: 19.0   y: 160.0) realDistanceToNeightborFromStartTroughtCurrentNode 233.8528137423857
+neighbor (x: 19.0   y: 160.0)real  233.8528137423857 estimated57.28001396647874
+neightbor not contains in opened; add it in
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 54.0   y: 180.0) (x: 26.0   y: 180.0) (x: 25.0   y: 147.0) (x: 52.0   y: 146.0) 
+no access to neighbor, continue
+ - - - - - - - - - - - - - - - - 
+spaceOccupiedDuringTheProcess (x: 50.0   y: 190.0) (x: 30.0   y: 170.0) (x: 60.0   y: 140.0) (x: 80.0   y: 160.0) 
+no access to neighbor, continue
+==================================
+currentNode: (x: 60.0   y: 200.0)
+isDestinationNode: true
+
+Process finished with exit code 0
