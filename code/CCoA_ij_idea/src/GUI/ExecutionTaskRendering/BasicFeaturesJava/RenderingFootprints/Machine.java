@@ -22,7 +22,8 @@ public class Machine extends Pane implements RenderingFootprint {
     @Override
     public void update(long now, DataFootprintForRendering newProperties) {
         setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
-        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY()); //FIXME long calls function
+        setRotate(newProperties.getLocalOriginForPointMovingObject().getRotationDegree());
     }
 
 

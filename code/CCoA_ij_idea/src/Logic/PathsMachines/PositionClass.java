@@ -22,6 +22,11 @@ public class PositionClass implements Position {
         return this.rotation;
     }
 
+    @Override
+    public double getRotationDegree() {
+        return this.getRotation() * 180 / Math.PI;
+    }
+
 
     @Override
     public boolean equals(Object obj) {
