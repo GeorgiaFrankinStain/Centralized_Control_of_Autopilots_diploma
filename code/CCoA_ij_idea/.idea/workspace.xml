@@ -24,14 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/PathsMachines/PositionClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/Position.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Position.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +43,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.51582277">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="25" column="88" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
+                <state relative-caret-position="376">
+                  <caret line="62" column="145" selection-start-line="62" selection-start-column="145" selection-end-line="62" selection-end-column="145" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -62,10 +55,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
+                <state relative-caret-position="357">
                   <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
                   <folding>
                     <element signature="e#543#544#0" expanded="true" />
@@ -408,8 +401,8 @@
         <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java" />
         <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/Position.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" />
         <option value="$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" />
       </list>
     </option>
   </component>
@@ -788,11 +781,11 @@
       <window_info id="Favorites" order="7" sideWeight="0.5103735" side_tool="true" weight="0.118139535" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.15435606" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="2" visible="true" weight="0.3276515" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.3276515" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32954547" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3276515" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.3409091" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3409091" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3125" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -1378,23 +1371,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="88" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="357">
           <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
           <folding>
             <element signature="e#543#544#0" expanded="true" />
             <element signature="e#567#568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="62" column="145" selection-start-line="62" selection-start-column="145" selection-end-line="62" selection-end-column="145" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
