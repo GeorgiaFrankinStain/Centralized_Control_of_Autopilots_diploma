@@ -1,5 +1,6 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprints;
 
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.DisplaingSpacesClass;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.FootprintSpaceTime.PolygonExtended;
@@ -43,6 +44,9 @@ public class Machine extends Pane implements RenderingFootprint {
 
     //==== <start> <Private_Methods> =======================================================================
     private ImageView createRectangle(PolygonExtended formMachine) {
+
+        formMachine = DisplaingSpacesClass.resiseOccupiedPlace(formMachine); //FIXME STATIC
+
         if (formMachine.getCountPoints() != 4) {
             assert(false);
             return null;

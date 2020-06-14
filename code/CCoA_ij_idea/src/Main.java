@@ -54,7 +54,6 @@ public class Main extends Application {
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTime(networkNodesFabrica, onlyFootprintsSpaceTime);
 
         FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
 
 
 
@@ -68,18 +67,35 @@ public class Main extends Application {
         } catch (СrashIntoAnImpassableObstacleExeption ex) {
         }
 
+        {
+
+            Point from = new PointClass(20, 0); //FIXME BAG don't multipoly 20 (size car)
+            Point to = new PointClass(20, 220);
+
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, 0.0, levelLayer); //FIXME bag sequense time adding
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
 
 
 
+        {
 
-        Point from = new PointClass(60, 0);
-        Point to = new PointClass(60, 200);
+            Point from = new PointClass(60, 0);
+            Point to = new PointClass(60, 200);
 
-        Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
-        System.out.println("resPath: " + actualPath);
-        try {
-            movingObject.mark(onlyFootprintsSpaceTime, actualPath, 0.0, levelLayer);
-        } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, 4.0, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
         }
 
 /*

@@ -1,5 +1,6 @@
 package GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprints;
 
+import GUI.ExecutionTaskRendering.BasicFeaturesJava.DisplaingSpacesClass;
 import GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint;
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.FootprintSpaceTime.PolygonExtended;
@@ -30,7 +31,8 @@ public class WallCar extends Pane implements RenderingFootprint {
     //==== <start> <Private_Methods> =======================================================================
     private Polygon createPolygonJavaFX(PolygonExtended formMachine) {
         Polygon resultPolygon = new Polygon();
-        resultPolygon.getPoints().addAll(formMachine.getFormatDoubleArray());
+        PolygonExtended resizeFormMachne = DisplaingSpacesClass.resiseOccupiedPlace(formMachine); //FIXME STATIC
+        resultPolygon.getPoints().addAll(resizeFormMachne.getFormatDoubleArray());
         resultPolygon.setStroke(Color.BLACK);
         return resultPolygon;
     }

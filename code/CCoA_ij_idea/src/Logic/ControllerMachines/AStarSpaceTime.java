@@ -71,7 +71,7 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
             System.out.println("openedBefore: " + opened);
             opened.remove(currentNode);
             f_score.remove(currentNode);
-            closedNodes.add(currentNode);
+            closedNodes.add(currentNode);  //FIXME bag не видит появившееся пустое место
             System.out.println("closedNodes: " + closedNodes);
             System.out.println("opened: " + opened);
 
@@ -96,7 +96,6 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
                         realDistanceFromStartToCurrentNode
                                 + realDistanceToNeighbor;
 
-
                 if (closedNodes.contains(neighbor)) {
                     System.out.println("neigboring in closed list, continue");
                     continue;
@@ -106,7 +105,8 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
                         currentNode,
                         radiusMovingObject,
                         movingObject.timeTravel(realDistanceFromStartToCurrentNode),
-                        movingObject.timeTravel(realDistanceToNeightborFromStartTroughtCurrentNode)
+                        movingObject.timeTravel(realDistanceToNeightborFromStartTroughtCurrentNode),
+                        movingObject
                 )) {
                     System.out.println("no access to neighbor, continue");
                     continue;
@@ -165,7 +165,8 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
             Node currentNode,
             double radiusMovingObject,
             double timeAdding,
-            double timeStanding
+            double timeStanding,
+            MovingObject movingObject
     ) {
         PolygonExtended occupiedPlace = spaceOccupiedDuringTheProcess(
                 neighborNode,
@@ -181,7 +182,7 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
                 new LevelLayerClass(0)
         );
 
-        System.out.println("++++ ++++ " + currentNode + " " + neighborNode + " ++++ " + occupiedPlace);
+        System.out.println("++++ ++++ isAccess: " + isAccess + " id: " + movingObject.getID() +  "  :: " + currentNode + " " + neighborNode + " ++++ " + occupiedPlace);
 
         return isAccess;
     }
