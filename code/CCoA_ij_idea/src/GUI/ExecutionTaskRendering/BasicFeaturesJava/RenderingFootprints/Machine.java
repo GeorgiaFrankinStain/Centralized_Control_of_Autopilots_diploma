@@ -42,6 +42,7 @@ public class Machine extends Pane implements RenderingFootprint {
     }
 
 
+    private static int number = 0;
     //==== <start> <Private_Methods> =======================================================================
     private ImageView createRectangle(PolygonExtended formMachine) {
 
@@ -63,8 +64,10 @@ public class Machine extends Pane implements RenderingFootprint {
         }
 
 
+
         ImageView imageView = new ImageView();
-        File file = new File("D:\\AF\\2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma\\code\\CCoA_ij_idea\\sourse_files\\machine.png");
+        File file = new File("D:\\AF\\2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma\\code\\CCoA_ij_idea\\sourse_files\\machine" + this.number + ".png");
+        this.number = (this.number + 1) % 10;
         Image image = new Image(file.toURI().toString());
         imageView.setImage(image);
         imageView.setFitWidth(width);

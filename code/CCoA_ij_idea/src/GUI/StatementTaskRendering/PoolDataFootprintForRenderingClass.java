@@ -31,9 +31,12 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
         poolDataFootprintForRendering.clear();
 
 
-        ConverterTime converterTime = new DemonstartionAlhorith(
-                this.sourceFootprintsSpaceTime
-        );
+        ConverterTime converterTime = new ConverterTime() {
+            @Override //FIXME COSTIL
+            public double convert(double time, LevelLayer levelLayer) {
+                return time;
+            }
+        };
 
 
         LevelLayer defaultLevel = new LevelLayerClass(0);

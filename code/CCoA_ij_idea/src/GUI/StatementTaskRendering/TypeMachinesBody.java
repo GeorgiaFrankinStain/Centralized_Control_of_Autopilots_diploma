@@ -8,5 +8,6 @@ public enum TypeMachinesBody {
     NIER_AUTOMATA_2B,
     TURTLE,
     STAR_DESTROYER,
-    WALL_CAR
+    WALL_CAR,
+    WALL_SQUARE
 }

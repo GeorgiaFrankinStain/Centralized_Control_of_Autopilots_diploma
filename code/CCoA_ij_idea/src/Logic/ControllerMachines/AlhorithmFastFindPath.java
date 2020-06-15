@@ -5,5 +5,6 @@ import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 
 public interface AlhorithmFastFindPath {
-    public Path getPath(Point start, Point destination, double radiusMovingObject, MovingObject movingObject);
+    public Path getPath(Point start, Point destination, double radiusMovingObject, MovingObject movingObject,
+                        double timeAdding);
 }

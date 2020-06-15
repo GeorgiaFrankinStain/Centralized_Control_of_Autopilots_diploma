@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 public class WindowsClass implements Windows {
 
-    private int heightGeneralWindowDefault = 700;
-    private int widthGeneralWindowDefault = 1000;
+    private int heightGeneralWindowDefault = 600;
+    private int widthGeneralWindowDefault = 800;
     private String titleGeneralWindowDefault = "Centralized Control of Autopilots";
 
     private Stage primaryStage;

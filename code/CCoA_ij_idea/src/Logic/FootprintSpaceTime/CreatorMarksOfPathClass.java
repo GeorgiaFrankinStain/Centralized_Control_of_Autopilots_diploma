@@ -185,15 +185,15 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         for (int i = 0; (i < counterMaxSteps) && this.stepUnderTest(startLine, endLine, currentCoordinat); i++) {
 
             Position position = new PositionClass(currentCoordinat, angleStepVector);
-            this.addFootprint(
+            double sumTimeAddFootprint = this.addFootprint(
                     position,
                     timeAdding,
                     standingTime
             );
 
 
-            timeAdding += standingTime;
-            timeSum += standingTime;
+            timeAdding += standingTime + sumTimeAddFootprint; //FIXME TECHNICAL CREDIT
+            timeSum += standingTime + sumTimeAddFootprint;
 
 
             currentCoordinat = new PointClass(
@@ -246,14 +246,36 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         return localTimeSum;
     }
 
-    private void addFootprint(
+    private double addFootprint( //FIXME must type void TECHNICAL CREDIT
             Position position,
             double time,
             double timeStanding
     ) throws СrashIntoAnImpassableObstacleExeption {
-        this.penultimateFootprintInPath = this.lastFootprintInPath;
-        this.lastFootprintInPath = new FootprintClass(idTrack, position, timeStanding, movingObject);
-        this.footprintsSpaceTime.addFootprint(this.lastFootprintInPath, time);
+
+        double addSum = 0;
+
+        while (true) {
+            boolean susseful = true;
+            try {
+                this.penultimateFootprintInPath = this.lastFootprintInPath;
+                this.lastFootprintInPath = new FootprintClass(idTrack, position, timeStanding, movingObject);
+
+                this.footprintsSpaceTime.addFootprint(this.lastFootprintInPath, time);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+                susseful = false;
+            }
+
+            if (susseful) {
+                break;
+            } else {
+                time += timeStanding;
+                addSum += timeStanding;
+            }
+
+
+        }
+
+        return addSum;
     }
     //==== <end> <Private_Methods> =========================================================================
 }

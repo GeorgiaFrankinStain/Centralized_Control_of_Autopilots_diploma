@@ -13,15 +13,16 @@ import java.util.*;
 public class MapRenderClass extends Pane implements MapRender, SubWindow {
     private int xSubWindow = 50;
     private int ySubWindow = 50;
-    private int widthSubWindow = 900;
-    private int heightSubWindow = 900;
+    private int widthSubWindow = 500;
+    private int heightSubWindow = 500;
     private String titleSubWindow = "";
 
 
     private int xOriginRendering = 0;
+//    private int xOriginRendering = -100; //FIXME DON'T WORK
     private int yOriginRendering = 0;
-    private int widthRendring = 900;
-    private int heightRendring = 900;
+    private int widthRendring = 500;
+    private int heightRendring = 500;
     private float widthMapScaleRendering = 1; //FIXME QESTION мне кажется, что лучше его каждый раз пересчитывать
     private float heightMapScaleRendering = 1; //FIXME CRITICAL
     private float gameTime = 0;
@@ -38,8 +39,9 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
 
     @Override
     public void update(long now) {
-        this.gameTime += this.speedRenderingGameSecondPerSecond; //FIXME add adapter now in gameTime
-//        this.gameTime %= 700;
+//        this.gameTime += this.speedRenderingGameSecondPerSecond; //FIXME add adapter now in gameTime
+        this.gameTime++;
+        this.gameTime %= 250;
 
         this.poolDataFootprintForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime);
 

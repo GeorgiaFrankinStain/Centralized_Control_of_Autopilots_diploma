@@ -34,7 +34,7 @@ public class ControllerMachinesClass implements ControllerMachines {
     ) throws СrashIntoAnImpassableObstacleExeption {
         this.subordinateMachines.add(movingObject);
 
-        Path path = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+        Path path = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
         movingObject.mark(
                 this.footprintsSpaceTime,
                 path,

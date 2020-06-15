@@ -26,7 +26,8 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
      * @return
      */
     @Override
-    public Path getPath(Point start, Point destination, double radiusMovingObject, MovingObject movingObject) {
+    public Path getPath(Point start, Point destination, double radiusMovingObject, MovingObject movingObject,
+                        double timeAdding) {
 
         Set<Node> closedNodes = new HashSet<Node>();
         Set<Node> opened = new HashSet<Node>();
@@ -35,12 +36,12 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
 
         Map<Node, Double> gScopeRealBestKnownDistanceFromStart = new HashMap<Node, Double>();
 
-        Node startNode = this.networkNodes.createNode(start, radiusMovingObject); //FIXME FIRST radius and lenght definition
+        Node startNode = this.networkNodes.createFirstNode(start, radiusMovingObject, timeAdding); //FIXME FIRST radius and lenght definition
 
 
         gScopeRealBestKnownDistanceFromStart.put(startNode, 0.0);
 
-        double hevristic = startNode.getEstimatedToDestination(destination);
+        double hevristic = movingObject.timeTravel(startNode.getEstimatedDistanceToDestination(destination));
         double g = 0.0;
         double f = g + hevristic;
         f_score.put(startNode, f);
@@ -57,7 +58,7 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
                 break;
             }*/
 
-            Node currentNode = getNodeWithMinialMassAndDeleteFromQueue(f_score); //FIXME 2 function in one
+            Node currentNode = getNodeWithMinialMass(f_score); //FIXME 2 function in one
             System.out.println("currentNode: " + currentNode);
 
 
@@ -75,7 +76,7 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
             System.out.println("closedNodes: " + closedNodes);
             System.out.println("opened: " + opened);
 
-            List<Node> allNeightbors = currentNode.getNeighboringNodes(radiusMovingObject);
+            List<Node> allNeightbors = currentNode.getNeighboringNodes(radiusMovingObject, movingObject);
 
             System.out.println("allNeightbors: " + allNeightbors);
 
@@ -141,11 +142,15 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
                                                + " realDistanceToNeightborFromStartTroughtCurrentNode "
                                                + realDistanceToNeightborFromStartTroughtCurrentNode);
 
+//                    double g = realDistanceToNeightborFromStartTroughtCurrentNode + neighbor.getEstimatedDistanceToDestination(destination);
+                    double score =
+                            neighbor.getTimeTravelFromStart()
+                                    + movingObject.timeTravel(neighbor.getEstimatedDistanceToDestination(destination));
                     f_score.put(neighbor,
-                            realDistanceToNeightborFromStartTroughtCurrentNode + neighbor.getEstimatedToDestination(destination));
+                            score);
                     System.out.println("neighbor " + neighbor
                                                + "real  " + realDistanceToNeightborFromStartTroughtCurrentNode
-                                               + " estimated" + neighbor.getEstimatedToDestination(destination));
+                                               + " estimated" + neighbor.getEstimatedDistanceToDestination(destination));
 
 
                     if (!opened.contains(neighbor)) {
@@ -240,7 +245,7 @@ public class AStarSpaceTime implements AlhorithmFastFindPath {
         return path;
     }
 
-    private Node getNodeWithMinialMassAndDeleteFromQueue(Map<Node, Double> map) { //FIXME FIRST add test
+    private Node getNodeWithMinialMass(Map<Node, Double> map) { //FIXME FIRST add test
 /*//        Map<String,String> map = new HashMap<>();
         Map.Entry<Double, Node> entry = map.entrySet().iterator().next();
 //        String key = entry.getKey();

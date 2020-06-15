@@ -38,6 +38,21 @@ public class FabricMovingObjectsClass implements FabricMovingObjects {
             machine.setSpeed(0);
 
             return machine;
+        } else if (typeMachinesBody == TypeMachinesBody.WALL_SQUARE) {
+
+            PolygonExtended formMachine = new PolygonExtendedClass();
+
+            formMachine.addPoint(new PointClass(0, 0));
+            formMachine.addPoint(new PointClass(50, 0));
+            formMachine.addPoint(new PointClass(50, 50));
+            formMachine.addPoint(new PointClass(0, 50));
+
+
+            MovingObject machine = new MovingObjectClass(formMachine, typeMachinesBody);
+
+            machine.setSpeed(0);
+
+            return machine;
         }
 
 

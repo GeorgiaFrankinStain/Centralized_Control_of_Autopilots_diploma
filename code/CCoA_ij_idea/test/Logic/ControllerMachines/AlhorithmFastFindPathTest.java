@@ -129,8 +129,9 @@ public class AlhorithmFastFindPathTest {
             MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
             Path wallPath = new PathClass();
             wallPath.addPoint(new PointClass(50, 100));
+            double timeAdding = 0.0;
             try {
-                wall.mark(onlyFootprintsSpaceTime, wallPath, 0.0, levelLayer);
+                wall.mark(onlyFootprintsSpaceTime, wallPath, timeAdding, levelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
 
@@ -141,7 +142,7 @@ public class AlhorithmFastFindPathTest {
             Point from = new PointClass(60, 0);
             Point to = new PointClass(60, 200);
 
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
 
             Path expectedPath = new PathClass();
             expectedPath.addPoint(new PointClass(60.0, 0.0));

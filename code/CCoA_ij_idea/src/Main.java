@@ -60,7 +60,7 @@ public class Main extends Application {
 
         MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
         Path wallPath = new PathClass();
-        wallPath.addPoint(new PointClass(50, 100));
+        wallPath.addPoint(new PointClass(120, 160));
         wallPath.deposeOn(wall.getVectorFromTopLeftToAppliedCoordinates());
         try {
             wall.mark(onlyFootprintsSpaceTime, wallPath, 0.0, levelLayer);
@@ -68,35 +68,165 @@ public class Main extends Application {
         }
 
         {
+            Point from = new PointClass(80, 60); //FIXME BAG don't multipoly 20 (size car)
+            Point to = new PointClass(60, 300);
 
-            Point from = new PointClass(20, 0); //FIXME BAG don't multipoly 20 (size car)
-            Point to = new PointClass(20, 220);
 
-
+            double timeAdding = 0.0;
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
             System.out.println("resPath: " + actualPath);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, 0.0, levelLayer); //FIXME bag sequense time adding
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer); //FIXME bag sequense time adding
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
         }
 
-
+//FIXME почему у длинной стены нету огромного радиуса? как это работает?
 
         {
 
-            Point from = new PointClass(60, 0);
-            Point to = new PointClass(60, 200);
+            Point from = new PointClass(120, 60);
+            Point to = new PointClass(180, 260);
+
+            double timeAdding = 0.0;
 
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
             System.out.println("resPath: " + actualPath);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, 4.0, levelLayer);
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
             } catch (СrashIntoAnImpassableObstacleExeption ex) {
             }
         }
+        {
+
+            Point from = new PointClass(220, 400);
+            Point to = new PointClass(100, 20);
+
+            double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(200, 360);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(60, 20);
+
+            double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(400, 140);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(180, 300);
+
+            double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(440, 140);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(140, 300);
+
+            double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(540, 140);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(220, 300);
+
+            double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(20, 20);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(100, 300);
+
+            double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(60, 560);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(20, 20);
+
+            double timeAdding = 20.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(600, 100);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(20, 300);
+
+            double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+
 
 /*
             MovingObject movingObject2 = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);

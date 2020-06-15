@@ -1,23 +1,26 @@
 package Logic.ControllerMachines;
 
 import Logic.FootprintSpaceTime.Point;
+import Logic.MovingObjects.MovingObject;
 
 import java.util.List;
 
 public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     private NetworkNodes networkNodes;
     private Point coordinat;
-    private Double timeTravelFromStart = null;
+    private Double timeTravelFromStart;
 
-    public NodeClass(NetworkNodes networkNodes, Point coordinat) {
+
+    public NodeClass(NetworkNodes networkNodes, Point coordinat, Double timeTravelFromStart) {
         this.networkNodes = networkNodes;
         this.coordinat = coordinat;
+        this.timeTravelFromStart = timeTravelFromStart;
     }
 
     @Override
-    public List<Node> getNeighboringNodes(double radiusMovingObject) {
+    public List<Node> getNeighboringNodes(double radiusMovingObject, MovingObject movingObject) {
         double dimensionNetworkNodes = networkNodes.getDimension(); //radius;
-        return networkNodes.getNeightboringNodes(coordinat, radiusMovingObject);
+        return networkNodes.getNeightboringNodes(this, coordinat, radiusMovingObject, movingObject);
     }
 
     @Override
@@ -26,7 +29,7 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     }
 
     @Override
-    public double getEstimatedToDestination(Point to) {
+    public double getEstimatedDistanceToDestination(Point to) {
         return to.getDistanceToPoint(this.coordinat); //FIXME FIRST move in AreasBenchmarkPaths
     }
 
@@ -37,7 +40,9 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
 
     @Override
     public void setTimeTravelFromStart(Double timeTravelFromStart) {
+        this.networkNodes.cleanInfoAbout(this);
         this.timeTravelFromStart = timeTravelFromStart;
+        this.networkNodes.addNode(this);
     }
 
     @Override
@@ -71,6 +76,8 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
         int result = 1;
         result = prime * result + (int) (this.coordinat.getY() % twoPow32);
         result = prime * result + (int) (this.coordinat.getX() / twoPow32);
+        result = prime * result + (int) (this.timeTravelFromStart / twoPow32);
+        result = prime * result + (int) (this.networkNodes.hashCode() / twoPow32);
         result = prime * result + prime;
         return result;
     }

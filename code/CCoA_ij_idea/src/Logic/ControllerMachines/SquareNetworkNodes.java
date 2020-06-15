@@ -1,17 +1,23 @@
 package Logic.ControllerMachines;
 
-import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PointClass;
-import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.GlobalVariable;
+import Logic.MovingObjects.MovingObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SquareNetworkNodes implements NetworkNodes {
+    /*
+     * //FIXME добавить фабрику, у которой все объекты в системе будут запрашивать сетку,
+     *    создание узлов (чтобы в них можно было хранить данные о конкретном движущимся оъекте во время работы А*)
+     *    должно быть привязанным к двжущемуся объекту (внутри должна храниться перменная), но в тоже время это все должно
+     *    координироваться с размерностью сетки, как-то округляться*/
 
+    private Node nodeWithMinimalScoreToEnd = null;
     private double angle90grad = Math.PI / 2;
+
+    private Map<Node, Node> storageNodes = new HashMap<Node, Node>();
     private double dimension; //FIXME dimension no use
 
     public SquareNetworkNodes(double dimension) {
@@ -19,8 +25,27 @@ public class SquareNetworkNodes implements NetworkNodes {
     }
 
     @Override
-    public Node createNode(Point coordinat, double radius) {
-        return new NodeClass(this, coordinat);
+    public Node createFirstNode(Point coordinat, double radius, double timeTravelFromStart) {
+        Node firstNode = new NodeClass(this, coordinat, timeTravelFromStart);
+        this.putInStorage(firstNode, firstNode);
+        return firstNode;
+    }
+    @Override
+    public Node createFirstNode(Point coordinat, double radius) {
+        return new NodeClass(this, coordinat, 0.0);
+    }
+
+    @Override
+    public void cleanInfoAbout(Node node) {
+        this.storageNodes.remove(node);
+    }
+
+
+
+    @Override
+    public void addNode(Node node) {
+//        this.storageNodes.put(node, node);
+        this.putInStorage(node, node);
     }
 
     /**
@@ -93,7 +118,7 @@ public class SquareNetworkNodes implements NetworkNodes {
      * -------------x3------------x0
      */
     @Override
-    public List<Node> getNeightboringNodes(Point coordinat, double radius) {
+    public List<Node> getNeightboringNodes(Node currentNode, Point coordinat, double radius, MovingObject movingObject) {
 
 
         //FIXME add test on minus radius
@@ -127,7 +152,9 @@ public class SquareNetworkNodes implements NetworkNodes {
                     positionMovingObject,
                     sideSquare,
                     coordinat,
-                    radius
+                    radius,
+                    movingObject,
+                    currentNode
             );
         }/* else if (currentPositionOnSideSquare) {
             //FIXME
@@ -136,7 +163,9 @@ public class SquareNetworkNodes implements NetworkNodes {
                     positionMovingObject,
                     sideSquare,
                     coordinat,
-                    radius
+                    radius,
+                    movingObject,
+                    currentNode
             );
         }
 
@@ -153,7 +182,9 @@ public class SquareNetworkNodes implements NetworkNodes {
             Point positionMovingObject,
             double sideSquare,
             Point coordinatAndCenterMachine,
-            double radius
+            double radius,
+            MovingObject movingObject,
+            Node currentNode
     ) {
 
         double xMod = positionMovingObject.getX() % sideSquare;
@@ -172,15 +203,30 @@ public class SquareNetworkNodes implements NetworkNodes {
         List<Node> listNeightborint = new ArrayList<Node>();
 
         for (int i = 0; i < 4; i++) {
+            Point coordinateNeighbor = firstNode.getRotateRelative(coordinatAndCenterMachine, angle90grad * i);
+            double distanceToNeighbor = coordinateNeighbor.getDistanceToPoint(coordinatAndCenterMachine);
+            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
             listNeightborint.add(new NodeClass(
                     this,
-                    firstNode.getRotateRelative(coordinatAndCenterMachine, angle90grad * i)
+                    coordinateNeighbor,
+                    timeAdding
             ));
+
+
+            Point coordinateNeighborDiagonal =
+                    firstDiagonalPoint.getRotateRelative(coordinatAndCenterMachine, angle90grad * i);
+            double distanceToNeighborDiagonal =
+                    coordinateNeighborDiagonal.getDistanceToPoint(coordinatAndCenterMachine);
+
+            double timeAddingDiagonal =
+                    currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighborDiagonal);
             listNeightborint.add(new NodeClass(
                     this,
-                    firstDiagonalPoint.getRotateRelative(coordinatAndCenterMachine, angle90grad * i)
+                    coordinateNeighborDiagonal,
+                    timeAddingDiagonal
             ));
         }
+
 
         return listNeightborint;
     }
@@ -193,9 +239,10 @@ public class SquareNetworkNodes implements NetworkNodes {
             Point positionMovingObject,
             double sideSquare,
             Point coordinatAndCenterMachine,
-            double radius
+            double radius,
+            MovingObject movingObject,
+            Node currentNode
     ) {
-
         double xMod = positionMovingObject.getX() % sideSquare;
         double xTopLeftNode = positionMovingObject.getX() - xMod;
 
@@ -205,29 +252,82 @@ public class SquareNetworkNodes implements NetworkNodes {
         Point topLeftNode = new PointClass(xTopLeftNode, yTopLeftNode);
 
 
+        List<Node> resListNeightborint = new ArrayList<Node>();
 
+        {
+            Point coordinateNeighbor = new PointClass(topLeftNode.getX() + sideSquare, topLeftNode.getY());
+            double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            Node addingInStorageNode = this.addingInStorageIfNoElement(
+                    new NodeClass(
+                            this,
+                            coordinateNeighbor,
+                            timeAdding
+                    )
+            );
+            resListNeightborint.add(addingInStorageNode);
+        }
+        {
+            Point coordinateNeighbor =
+                    new PointClass(topLeftNode.getX() + sideSquare, topLeftNode.getY() + sideSquare);
+            double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            Node addingInStorageNode = this.addingInStorageIfNoElement(
+                    new NodeClass(
+                            this,
+                            coordinateNeighbor,
+                            timeAdding
+                    )
+            );
+            resListNeightborint.add(addingInStorageNode);
+        }
+        {
+            Point coordinateNeighbor =
+                    new PointClass(topLeftNode.getX(), topLeftNode.getY() + sideSquare);
+            double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            Node addingInStorageNode = this.addingInStorageIfNoElement(
+                    new NodeClass(
+                            this,
+                            coordinateNeighbor,
+                            timeAdding
+                    )
+            );
+            resListNeightborint.add(addingInStorageNode);
+        }
+        {
+            Point coordinateNeighbor =
+                    topLeftNode;
+            double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            Node addingInStorageNode = this.addingInStorageIfNoElement(
+                    new NodeClass(
+                            this,
+                            coordinateNeighbor,
+                            timeAdding
+                    )
+            );
+            resListNeightborint.add(addingInStorageNode);
+        }
 
-        List<Node> listNeightborint = new ArrayList<Node>();
-
-        listNeightborint.add(new NodeClass(
-                this,
-                new PointClass(topLeftNode.getX() + sideSquare, topLeftNode.getY())
-        ));
-        listNeightborint.add(new NodeClass(
-                this,
-                new PointClass(topLeftNode.getX() + sideSquare, topLeftNode.getY() + sideSquare)
-        ));
-        listNeightborint.add(new NodeClass(
-                this,
-                new PointClass(topLeftNode.getX(), topLeftNode.getY() + sideSquare)
-        ));
-        listNeightborint.add(new NodeClass(
-                this,
-                topLeftNode
-        ));
-
-        return listNeightborint;
+        return resListNeightborint;
     }
 
+    private Node addingInStorageIfNoElement(Node justCreatedNode) {
+        boolean previouslyCreated = this.storageNodes.containsKey(justCreatedNode);
+        if (previouslyCreated) {
+            return this.storageNodes.get(justCreatedNode);
+        } else {
+//            this.storageNodes.put(justCreatedNode, justCreatedNode);
+            this.putInStorage(justCreatedNode, justCreatedNode);
+            return justCreatedNode;
+        }
+    }
+
+
+    private void putInStorage(Node key, Node value) {
+
+        this.storageNodes.put(key, value);
+    }
 
 }

@@ -12,6 +12,7 @@ public class RandomWrapperClass implements RandomWrapper {
 
     public RandomWrapperClass(int seedDebug) {
         this.random = debug(seedDebug);
+//        this.random = realise();
     }
 
 
