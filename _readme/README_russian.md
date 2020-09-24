@@ -3,7 +3,7 @@
 <hr>
 
 
-![](russian/the_advantages_of_the_autopilot_under_centralized_control.jpg)
+![](image/the_advantages_of_the_autopilot_under_centralized_control.jpg)
 
 # СОДЕРЖАНИЕ <a name="coderzanie"></a>
 
@@ -53,7 +53,7 @@
 При низкой координации движения машин могут возникать фантомные перекрестки, из-за того, что кто-то притормозил, за ним следующий, а за ним следующий и т.д.
 
 
-![](russian/snake.png)
+![](image/snake.png)
 <center>
 <i>фантомный перекресток</i>
 </center>
@@ -62,7 +62,7 @@
 
 Пробки могут возникать при отсутствии препятствий, даже когда водители специально пытаются скоординироваться и не создавать пробок. Как бы водители не старались, у них не получается двигаться организованно более 5 минут. (ссылка на видеозапись проведенного эксперимента в списке литературы под названием «Видеозапись проведенного эксперимента с движением машин по кругу без препятствий»).
 
-<center><img src="russian/snake_round.png" width="400"/></center>
+<center><img src="image/snake_round.png" width="400"/></center>
 <center><i>Пробка на кольцевой трассе без препятствий с небольшим количеством машин.</i>
 </center>
 </center>
@@ -105,7 +105,7 @@
     во вторых) это позволяет найти оптимальный путь, так как можно планировать маршрут на протяжении всего движения машины.
 
 
-<center><img src="russian/animation_storage_footprints.jpg" /></center>
+<center><img src="image/animation_storage_footprints.jpg" /></center>
 <center><i>Хранение истории движения машины.</i></center>
 
 ## <a name="nGAamu"> A-Star с приоритетом обхода</a> [🕮](#coderzanie)
@@ -155,7 +155,7 @@ for k = 1 to n
       W[i][j] = min(W[i][j], W[i][k] + W[k][j])
 ```
 
-<center><img src="russian/animation_storage_footprints_2_machine.jpg" /></center>
+<center><img src="image/animation_storage_footprints_2_machine.jpg" /></center>
 <center><i>Проезд по ранее занятому месту (предоление динамических препятствий).</i></center>
 
 
@@ -175,22 +175,22 @@ for k = 1 to n
 
 
 
-<center><img src="russian/list_class_of_project.jpg" width="300px" /></center>
+<center><img src="image/list_class_of_project.jpg" width="300px" /></center>
 <center><i>Список классов проекта.</i></center>
 
 
 
-<center><img src="russian/right_arrow.png" /></center>
+<center><img src="image/right_arrow.png" /></center>
 <center><i>Обращение к другому классу с изменением объекта. </i></center>
 
-<center><img src="russian/left_arrow.png" /></center>
+<center><img src="image/left_arrow.png" /></center>
 <center><i>Обращение к другому классу, получение данных без изменения объекта.</i></center>
 
-<center><img src="russian/realization_interface.png" /></center>
+<center><img src="image/realization_interface.png" /></center>
 <center><i>Реализация интерфейса (обобщение)</i></center>
 
-<center><img src="russian/architecture.png" /></center>
-<center><i>Проезд по ранее занятому месту (предоление динамических препятствий).</i></center>
+<center><img src="image/architecture.png" /></center>
+<center><i>UML диаграмма проекта</i></center>
 
 
 
@@ -243,7 +243,7 @@ for k = 1 to n
 - заранее останавливаются, чтобы пропустить проезжающие мимо машины, если подождать занимает меньше времени, чем объехать рядом едущие машины.
 
 
-<center><img src="russian/2_machines_coordinations.png" /></center>
+<center><img src="image/2_machines_coordinations.png" /></center>
 <center><i>Две машины остановились, чтобы пропустить серую машину</i></center>
 
 - машины чувствуют, что место, ранее занятое, освободилось. (могут проезжать по местам, которые ранее объезжали, так как они были заняты другими машинами)
@@ -251,15 +251,15 @@ for k = 1 to n
 Недоработки реализации алгоритма:
 - машина №9 при движении из нижнего левого угла в верхний левый угол периодически поворачивает направо без необходимости
 
-<center><img src="russian/defect_car.png" /></center>
+<center><img src="image/defect_car.png" /></center>
 <center><i>Дефектная машина №9</i></center>
 
 
-<center><a href="https://youtu.be/lgNUmRd3vHg?t=1" target="_blank"><img src="russian/video_from_youtube_ccoa_2020-06-15_07-22-54.png" /></a></center>
+<center><a href="https://youtu.be/lgNUmRd3vHg?t=1" target="_blank"><img src="image/video_from_youtube_ccoa_2020-06-15_07-22-54.png" /></a></center>
 <center><i>Видео эксперимента на YouTube</i></center>
 
 
-<center><img src="russian/machines_move.jpg" /></center>
+<center><img src="image/machines_move.jpg" /></center>
 <center><i>Движение машин с 3 по 14 секунду.</i></center>
 
 
@@ -279,28 +279,28 @@ for k = 1 to n
 <table>
     <tr>
         <td><div style="text-align: right;">Изменить ландшафт</div></td>
-        <td><img src="russian/change_landscape.png" width="100px" /></td>
-        <td rowspan="6"><img src="russian/grathic_interface.jpeg" width="900px" /></td>
+        <td><img src="image/change_landscape.png" width="100px" /></td>
+        <td rowspan="6"><img src="image/grathic_interface.jpeg" width="900px" /></td>
     </tr>
     <tr>
         <td><div style="text-align: right;">Добавить поток создающий</div></td>
-        <td><img src="russian/flow_created.png" width="100px" /></td>
+        <td><img src="image/flow_created.png" width="100px" /></td>
     </tr>
     <tr>
         <td><div style="text-align: right;">Добавить поток поглощающий</div></td>
-        <td><img src="russian/flow_absorbing.png" width="100px" /></td>
+        <td><img src="image/flow_absorbing.png" width="100px" /></td>
     </tr>
     <tr>
         <td><div style="text-align: right;">Добавить машину</div></td>
-        <td><img src="russian/add_machine.png" width="100px" /></td>
+        <td><img src="image/add_machine.png" width="100px" /></td>
     </tr>
     <tr>
         <td><div style="text-align: right;">Удалить (ластик, очистить)</div></td>
-        <td><img src="russian/deleting_object.png" width="100px" /></td>
+        <td><img src="image/deleting_object.png" width="100px" /></td>
     </tr>
     <tr>
         <td><div style="text-align: right;">Перевести в состояние разрушен</div></td>
-        <td><img src="russian/break.png" width="100px" /></td>
+        <td><img src="image/break.png" width="100px" /></td>
     </tr>
 </table>
 
@@ -314,19 +314,19 @@ for k = 1 to n
 
 <table>
     <tr>
-        <td><img src="russian/test_maps/image10.jpeg"/><center>Часы</center></td>
-        <td><img src="russian/test_maps/image11.jpeg"/><center>Острова</center></td>
+        <td><img src="image/test_maps/image10.jpeg"/><center>Часы</center></td>
+        <td><img src="image/test_maps/image11.jpeg"/><center>Острова</center></td>
     </tr>
     <tr>
-        <td><img src="russian/test_maps/image12.jpeg"/><center>Шахматы</center></td>
-        <td><img src="russian/test_maps/image13.jpeg"/><center>Обход большого камня</center></td>
+        <td><img src="image/test_maps/image12.jpeg"/><center>Шахматы</center></td>
+        <td><img src="image/test_maps/image13.jpeg"/><center>Обход большого камня</center></td>
     </tr>
     <tr>
-        <td><img src="russian/test_maps/image14.jpeg"/><center>Длинный мост</center></td>
-        <td><img src="russian/test_maps/image15.jpeg"/><center>Много мостов</center></td>
+        <td><img src="image/test_maps/image14.jpeg"/><center>Длинный мост</center></td>
+        <td><img src="image/test_maps/image15.jpeg"/><center>Много мостов</center></td>
     </tr>
     <tr>
-        <td><img src="russian/test_maps/image16.jpeg"/><center>Проверка проходимости по размеру в ущелье</center></td>
-        <td><img src="russian/test_maps/image17.jpeg"/><center>Амебное пятно</center></td>
+        <td><img src="image/test_maps/image16.jpeg"/><center>Проверка проходимости по размеру в ущелье</center></td>
+        <td><img src="image/test_maps/image17.jpeg"/><center>Амебное пятно</center></td>
     </tr>
 </table>
