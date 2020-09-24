@@ -219,6 +219,40 @@ public class Main extends Application {
             double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
             MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            movingObject.setSpeed(30);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+            Point from = new PointClass(660, 100);
+//            Point from = new PointClass(20, 20);
+            Point to = new PointClass(40, 200);
+
+            double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
+            movingObject.setSpeed(60);
+            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            System.out.println("resPath: " + actualPath);
+            try {
+                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            }
+        }
+        {
+
+//            Point from = new PointClass(20, 20);
+            Point from = new PointClass(600, 40);
+            Point to = new PointClass(20, 100);
+
+            double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
+
+            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
             Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
             System.out.println("resPath: " + actualPath);
             try {
