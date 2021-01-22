@@ -10,7 +10,7 @@ import Logic.AreasBenchmarkPaths.StraightLineEstimatedClass;
 import Logic.ControllerMachines.*;
 import Logic.FabricMovingObjects;
 import Logic.FabricMovingObjectsClass;
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.Point;
@@ -37,7 +37,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        //FIXME codestule
 
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
@@ -64,7 +64,7 @@ public class Main extends Application {
         wallPath.deposeOn(wall.getVectorFromTopLeftToAppliedCoordinates());
         try {
             wall.mark(onlyFootprintsSpaceTime, wallPath, 0.0, levelLayer);
-        } catch (СrashIntoAnImpassableObstacleExeption ex) {
+        } catch (СrashIntoAnImpassableObjectExeption ex) {
         }
 
         {
@@ -78,7 +78,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer); //FIXME bag sequense time adding
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
 
@@ -96,7 +96,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -111,7 +111,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -127,7 +127,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -143,7 +143,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -159,7 +159,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -175,7 +175,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -191,7 +191,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -207,7 +207,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -224,7 +224,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -241,7 +241,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
         {
@@ -257,7 +257,7 @@ public class Main extends Application {
             System.out.println("resPath: " + actualPath);
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
 

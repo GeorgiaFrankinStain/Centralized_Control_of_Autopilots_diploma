@@ -1,96 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java" line="27" mnemonic="B" />
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java" line="43" mnemonic="C" />
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="23" mnemonic="D" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" line="150" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/ControllerMachines/SquareNetworkNodes.java" line="121" mnemonic="2" />
-    <bookmark url="file://$PROJECT_DIR$/src/Main.java" line="284" mnemonic="3" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/AreasBenchmarkPaths/StraightLineEstimatedClass.java" line="8" mnemonic="4" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/AreasBenchmarkPaths/AreasBenchmarkPaths.java" line="5" mnemonic="7" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" line="123" mnemonic="8" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/ControllerMachines/SquareNetworkNodes.java" line="134" mnemonic="0" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java" line="237" mnemonic="6" />
-    <bookmark url="file://$PROJECT_DIR$/test/Logic/ControllerMachines/NodeTest.java" line="15" mnemonic="9" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java" line="13" mnemonic="5" />
-    <bookmark url="file://$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java" line="157" mnemonic="A" />
-    <bookmark url="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" line="49" mnemonic="Z" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java" line="30" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java" line="189" mnemonic="Y" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" line="75" mnemonic="E" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" line="29" mnemonic="F" />
-    <bookmark url="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java" line="60" mnemonic="G" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/ПЗ 2020-06-16.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/Пояснительная записка - Тимофеев Д.А..dotx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/Пояснительная записка Тимофеев Д.А..docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/тру записка.dotx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/шаблоны/Antipova_EP_IV621.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/шаблоны/Biblio-rules2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/шаблоны/Biblio-rules2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/шаблоны/bachwork_v4.5.dotx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/шаблоны/Диплом_Сенченко_Александр.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/пояснительна записка/шаблоны/Федеральное агентство связи.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/24.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/29-292140_symmetry-clipart-paper-line-angle-4-by-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/AStar.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/Screenshot_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/Screenshot_131.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/Screenshot_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/Screenshot_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/allStepsAStar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/image6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/image7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/image8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/image9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/network.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/withNumericMatrix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/преимущества автопилота под централизованным управлением presentatino version.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image12.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image14.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image15.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image16.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image17.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image24.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/zip/image5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/__bufer_pdf_for_sending/TimofeevDA-622.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/FQ1i9_Od-3M.jpg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/MPhBtCkIqJw.jpg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/doc08251220000519191020.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/image--000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/image--001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/согласие на размещение.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/заявления на защиту диплома/указывать не указывать.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/TimofeevDA.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/TimofeevDA.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/преимущества автопилота под централизованным управлением.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../../_legal_documentation/преддипломная практика/presentation/преимущества автопилота под централизованным управлением.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/заявление на тему диплома/заявление на тему диплома Тимофеев Д.А. Магистратура.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/заявление на тему диплома/заявление на тему диплома Тимофеев Д.А. Магистратура.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Corridor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObjectExeption.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Line.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LineClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass$ConstructorTextFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass$ConstructorTextFormatClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Round.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundsCorridorClass$CheckerPolygonEntering.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundsCorridorClass$CheckerPolygonEnteringClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundsCorridorClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/StorageFootprintsSpaceTime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest$AverageTimeMeter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest$AverageTimeMeterClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/LineTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClassTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/TesterOneMarkClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest$TestedFootprintSpaceTime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest$TesterOneMark.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest$TesterOneMarkClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Corridor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObjectExeption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Line.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LineClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Round.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/RoundClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/RoundsCorridorClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/StorageFootprintsSpaceTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/LineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/RoundsCorridorClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/TesterOneMarkClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/MovingObjectTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../__system_infrastructure/CCoA.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../__system_infrastructure/CCoA.sublime-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../__system_infrastructure/code_CCoA.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../__system_infrastructure/code_CCoA.sublime-workspace" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/bufer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/bufer.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCoA_ij_idea.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CCoA_ij_idea.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRederingBodys.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRenderingBodysClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/MapRender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/SubWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/Windows.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/HistChangesFromWhen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRenderClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/PhisicalBodysFromWhen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/TableObjectRendering.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/TableObjectRenderingClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/TypePhisicalBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachines.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachines.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachinesClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachinesClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacleExeption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtended.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtended.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObjectClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObjectClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/PathClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/PathClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/META-INF/CCoA_ij_idea.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Wrapper/MyMultiMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Wrapper/MyMultiMapTree$EntryPairMapClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Wrapper/MyMultiMapTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/ControllerMachines/AlhorithmFastFindPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/ControllerMachines/AlhorithmFastFindPathTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PointTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/META-INF/CCoA_ij_idea.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Wrapper/MyMultiMapTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacleExeption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wrapper/MyMultiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wrapper/MultiMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wrapper/MyMultiMapTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wrapper/MultiMapTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Wrapper/MyMultiMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Wrapper/MultiMapTest.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,589 +164,38 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="CCoA_ij_idea" />
-  </component>
-  <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51582277">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="240" column="19" selection-start-line="240" selection-start-column="19" selection-end-line="240" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="7" column="34" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1020">
-                  <caret line="66" selection-start-line="66" selection-end-line="66" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="952">
-                  <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/SubWindow.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="57" column="15" selection-end-line="150" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1054">
-                  <caret line="82" column="10" selection-end-line="219" />
-                  <folding>
-                    <element signature="method#addFootprint#0;class#LayerFootprintSpaceTimeClass#0" />
-                    <element signature="method#deleteFootprints#0;class#LayerFootprintSpaceTimeClass#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="83">
-                  <caret line="227" column="23" selection-end-line="281" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="9" column="32" selection-end-line="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="36" column="24" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1122">
-                  <caret line="70" selection-end-line="159" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#3292#3293#0" expanded="true" />
-                    <element signature="e#3328#3329#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>rotate</find>
-      <find>Scope</find>
-      <find>gScope</find>
-      <find>equ</find>
-      <find>wall.ma</find>
-      <find>time</find>
-      <find>toString</find>
-      <find>getPat</find>
-      <find>radiusMoving</find>
-      <find>*=</find>
-      <find>mark(</find>
-      <find>deposeOn</find>
-      <find>occupied</find>
-      <find>pool</find>
-      <find>fillYour</find>
-      <find>update</find>
-      <find>avera</find>
-      <find>f</find>
-      <find>average</find>
-      <find>closed</find>
-      <find>closedNodes</find>
-      <find>isDesti</find>
-      <find>gameT</find>
-      <find>Nodes.put</find>
-      <find>f_score</find>
-      <find>wall</find>
-      <find>gamet</find>
-      <find>setTi</find>
-      <find>DemonstartionAlhorith</find>
-      <find>gameTi</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>bStartLine</replace>
-      <replace>assertFalse</replace>
-      <replace>newList</replace>
-      <replace>this.polygonExtended</replace>
-      <replace>RenderingFootprint</replace>
-      <replace>phisicalBody.getP</replace>
-      <replace>phisicalBody.getPolygonExtended()</replace>
-      <replace>currentPoint</replace>
-      <replace>getY</replace>
-      <replace>this.getX</replace>
-      <replace>this.getX()</replace>
-      <replace>origin.getX()</replace>
-      <replace>this.getY()</replace>
-      <replace>origin.getY()</replace>
-      <replace>this</replace>
-      <replace>30</replace>
-      <replace>50</replace>
-      <replace>double time</replace>
-      <replace>60</replace>
-      <replace>V</replace>
-      <replace>V&gt;</replace>
-      <replace>movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath);</replace>
-      <replace>wallCar.mark(onlyFootprintsSpaceTime, resPath, 0.0, defaultLevelLayer);</replace>
-      <replace>passengerCar.mark(onlyFootprintsSpaceTime, resPath, 0.0, defaultLevelLayer);</replace>
-      <replace>movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);</replace>
-      <replace>wall.mark(onlyFootprintsSpaceTime, createPathWall(), $1);</replace>
-      <replace>wall.mark(onlyFootprintsSpaceTime, createPathWall(), ($1));</replace>
-      <replace>wall.mark(onlyFootprintsSpaceTime, createPathWall(), $1, defaultLevelLayer);</replace>
-      <replace>this.layers.get(new LevelLayerClass(0))</replace>
-      <replace>ControlledMachines</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Logic/ControlledMachines/ControllerMachines.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControlledMachines/ControlledMachinesClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControlledMachines/ControllerMachinesClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControlledMachines/FastFindPath.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControlledMachines/AlhorithmFastFindPath.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControlledMachines/AStarSpaceTime.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachines.java" />
-        <option value="$PROJECT_DIR$/src/Logic/Landscape/ZonaLandscapeClass.java" />
-        <option value="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" />
-        <option value="$PROJECT_DIR$/src/Logic/GlobalVariable.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/temp.java" />
-        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java" />
-        <option value="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/Path.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/Position.java" />
-        <option value="$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/DisplaingSpaces.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/DisplaingSpacesClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/Node.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/AlhorithmFastFindPath.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java" />
-        <option value="$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java" />
-        <option value="$PROJECT_DIR$/test/Logic/ControllerMachines/NodeTest.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/NodeClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/NetworkNodes.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/SquareNetworkNodes.java" />
-        <option value="$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java" />
-        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/TypeMachinesBody.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FabricMovingObjectsClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallSquare.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRenderingFootprintClass.java" />
-        <option value="$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java" />
-        <option value="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="y" value="-14" />
-    <option name="width" value="2714" />
-    <option name="height" value="1390" />
-  </component>
+  <component name="ProjectId" id="1kg3BwXlwFF3dS7KUCpQ1EkZsSI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ConsoleManegement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicFeaturesJava" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicFeaturesJava" type="462c0819:PsiDirectoryNode" />
-              <item name="RenderingFootprints" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="StatementTaskRendering" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="StatementTaskRendering" type="462c0819:PsiDirectoryNode" />
-              <item name="ConvertersTime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="UserCommandInterface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Window" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="AreasBenchmarkPaths" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="ControllerMachines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
-              <item name="Exeption" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Landscape" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Landscape" type="462c0819:PsiDirectoryNode" />
-              <item name="costil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="MovingObjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="PathsMachines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Wrapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="ConvertersTime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="ControllerMachines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="FootprintSpaceTime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Wrapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCoA_ij_idea" type="462c0819:PsiDirectoryNode" />
-              <item name="test_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="groovy-all-2.4.15.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCoA_ij_idea" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="JUnit4" type="70bed36:NamedLibraryElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -689,12 +203,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="Logic.FootprintSpaceTime" />
-      <recent name="Logic.ControllerMachines" />
-      <recent name="GUI.StatementTaskRendering.ConvertersTime" />
-      <recent name="Wrapper" />
-      <recent name="GUI.Window" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Logic.FootprintSpaceTime" />
@@ -703,31 +214,15 @@
       <recent name="Logic" />
       <recent name="Logic.FootprintSpaceTime" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-      <recent name="groovy.util.GroovyTestCase" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Logic.FootprintSpaceTime" />
+      <recent name="Logic.MovingObjects" />
+      <recent name="Logic.ControllerMachines" />
+      <recent name="GUI.StatementTaskRendering.ConvertersTime" />
+      <recent name="Wrapper" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="CCoA_ij_idea" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.All in CCoA_ij_idea">
     <configuration name="All in CCoA_ij_idea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <option name="PACKAGE_NAME" value="" />
@@ -736,7 +231,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FootprintsSpaceTimeTest.addFootprint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FootprintTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <extension name="coverage">
         <pattern>
@@ -745,61 +240,75 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
-      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.FootprintsSpaceTimeTest" />
-      <option name="METHOD_NAME" value="addFootprint" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyMultiMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCoA_ij_idea" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Wrapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Wrapper" />
-      <option name="MAIN_CLASS_NAME" value="Wrapper.MyMultiMapTest" />
+      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.FootprintTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyMultiMapTest.iteratorEntryPair" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PolygonExtendedClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Wrapper.*" />
+          <option name="PATTERN" value="Logic.FootprintSpaceTime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Wrapper" />
-      <option name="MAIN_CLASS_NAME" value="Wrapper.MyMultiMapTest" />
-      <option name="METHOD_NAME" value="iteratorEntryPair" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
+      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.PolygonExtendedClassTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoundTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCoA_ij_idea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Logic.FootprintSpaceTime.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
+      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.RoundTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoundsCorridorClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCoA_ij_idea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Logic.FootprintSpaceTime.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
+      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.RoundsCorridorClassTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.RoundTest" />
+      <item itemvalue="JUnit.FootprintTest" />
+      <item itemvalue="JUnit.RoundsCorridorClassTest" />
+      <item itemvalue="JUnit.PolygonExtendedClassTest" />
       <item itemvalue="JUnit.All in CCoA_ij_idea" />
-      <item itemvalue="JUnit.FootprintsSpaceTimeTest.addFootprint" />
-      <item itemvalue="JUnit.MyMultiMapTest" />
-      <item itemvalue="JUnit.MyMultiMapTest.iteratorEntryPair" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in CCoA_ij_idea" />
-        <item itemvalue="JUnit.FootprintsSpaceTimeTest.addFootprint" />
-        <item itemvalue="JUnit.MyMultiMapTest" />
-        <item itemvalue="JUnit.MyMultiMapTest.iteratorEntryPair" />
+        <item itemvalue="JUnit.RoundsCorridorClassTest" />
+        <item itemvalue="JUnit.PolygonExtendedClassTest" />
+        <item itemvalue="JUnit.FootprintTest" />
+        <item itemvalue="JUnit.RoundTest" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -813,38 +322,6 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 02h 43m 42s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 02m 03s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 02m 49s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 03m 32s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 06m 06s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 06m 30s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 11m 31s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 11m 35s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 15m 00s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_CCoA_ij_idea - 2020.06.13 at 03h 17m 51s.xml">
-      <configuration name="All in CCoA_ij_idea" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -854,67 +331,17 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="817" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Learn" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.48962656" visible="true" weight="0.1375839" />
-      <window_info id="Structure" order="6" sideWeight="0.5042373" side_tool="true" weight="0.24976744" />
-      <window_info id="Favorites" order="7" sideWeight="0.5103735" side_tool="true" weight="0.118139535" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.15435606" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.3276515" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32954547" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.3276515" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.3409091" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.3125" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.32954547" />
-      <window_info anchor="right" id="Theme Preview" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Learn" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49100968" visible="true" weight="0.14883721" />
-      <window_info id="Structure" order="6" sideWeight="0.5042373" side_tool="true" weight="0.24976744" />
-      <window_info id="Favorites" order="7" sideWeight="0.50899035" side_tool="true" weight="0.29069766" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.15435606" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.3276515" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32954547" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.3276515" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3153409" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4403409" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.32954547" />
-      <window_info anchor="right" id="Theme Preview" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-    </layout-to-restore>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -922,39 +349,58 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/LocalToolRenderingPolygon.java</url>
           <line>34</line>
-          <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>351</line>
-          <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java</url>
           <line>42</line>
-          <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java</url>
           <line>33</line>
-          <properties />
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/Logic/ControllerMachines/NodeTest.java</url>
           <line>138</line>
-          <properties />
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <condition expression="isDestinationNode == true" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java</url>
           <line>66</line>
-          <properties />
           <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java</url>
+          <line>280</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java</url>
+          <line>270</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/RoundClass.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/RoundClassTest.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/RoundClassTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="126" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1004,458 +450,6 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Logic/LevelLayerClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/stage/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/AreasBenchmarkPaths/StraightLineEstimatedClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/AreasBenchmarkPaths/AreasBenchmarkPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
-          <folding>
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#4472#4473#0" expanded="true" />
-            <element signature="e#4499#4500#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRendering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/DataFootprintForRendering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/PathsMachines/PositionClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/DisplaingSpaces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="method#enteringMinimumOnePointOfFirstPolygonInSecondPolygon#0;class#PolygonExtendedClass#0" />
-            <element signature="method#intersectionMinumumTwoLineSegmentOfTwoPolygons#0;class#PolygonExtendedClass#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/DisplaingSpacesClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="94" selection-start-line="8" selection-start-column="94" selection-end-line="8" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="103" selection-start-line="36" selection-start-column="103" selection-end-line="36" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Logic/ControllerMachines/NodeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/NodeClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="144" column="113" selection-start-line="144" selection-start-column="113" selection-end-line="144" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/AlhorithmFastFindPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/NetworkNodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/SquareNetworkNodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="328" selection-start-line="328" selection-end-line="328" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#494#506#0" expanded="true" />
-            <element signature="e#1465#1466#0" expanded="true" />
-            <element signature="e#1523#1524#0" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2243#2244#0" expanded="true" />
-            <element signature="e#2292#2293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FabricMovingObjects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/TypeMachinesBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/reflect/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FabricMovingObjectsClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="40" column="67" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallSquare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRenderingFootprintClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="240" column="19" selection-start-line="240" selection-start-column="19" selection-end-line="240" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/ControllerMachines/AStarSpaceTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wrapper/RandomWrapperClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="69" column="44" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatementTaskRendering/SubWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/WindowsClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="57" column="15" selection-end-line="150" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="82" column="10" selection-end-line="219" />
-          <folding>
-            <element signature="method#addFootprint#0;class#LayerFootprintSpaceTimeClass#0" />
-            <element signature="method#deleteFootprints#0;class#LayerFootprintSpaceTimeClass#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Footprint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="32" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="36" column="24" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="70" selection-end-line="159" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3292#3293#0" expanded="true" />
-            <element signature="e#3328#3329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="227" column="23" selection-end-line="281" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

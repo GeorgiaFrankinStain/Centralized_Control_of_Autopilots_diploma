@@ -1,12 +1,9 @@
 package Logic.FootprintSpaceTime;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
-import Logic.Landscape.Landscape;
-import Logic.LevelLayer;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.Position;
-import Logic.TypesInLevel;
 
 import java.util.List;
 
@@ -20,7 +17,7 @@ public interface LayerFootprintSpaceTime {
             MovingObject movingObject,
             Path path,
             double startTime
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 
     public void addFootprint(
             int idTrack,
@@ -28,12 +25,12 @@ public interface LayerFootprintSpaceTime {
             Position position,
             double time,
             double timeStanding
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 
     public void addFootprint(
             Footprint footprint,
             double time
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 
     public void deleteFootprints(int ID);
 
@@ -45,4 +42,6 @@ public interface LayerFootprintSpaceTime {
     public Double getAverageTimeMovingToNextPointOfPath();
 
     public Double getTimeAddingLastFootprints();
+
+    public boolean isPathMovingObjectEnteringCorridor(int idMovingObject, Corridor corridor);
 }

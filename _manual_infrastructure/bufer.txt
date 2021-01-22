@@ -1,114 +1,25 @@
-src
-	ConsoleManegement
-		ConsoleManagement.java
-	GUI
-		ExecutionTaskRendering.BasicFeaturesJava
-			RenderingFootprints
-				Machine.java
-				WallCar.java
-				WallSquare.java
-			DisplaingSpaces.java
-			DisplaingSpacesClass.java
-			FabricRenderingFootprintClass.java
-			FabricRendringFootprint.java
-			MapRender.java
-			MapRenderClass.java
-			RenderingFootprint.java
-			TableObjectRendering.java
-			TableObjectRenderingClass.java
-			WindowsClass.java
-		StatementTaskRendering
-			ConvertersTime.java
-			DemonstartionAlhorith.java
-			MarginTimeForLevel.java
-			MarginTimeForLevelClass.java
-			ConverterTime.java
-			DataFootprintForRendering.java
-			HistChangesFromWhen.java
-			PoolDataFootprintForRendering.java
-			PoolDataFootprintForRenderingClass.java
-			SubWindow.java
-			TypeLandscapeBody.java
-			TypeMachinesBody.java
-			Windows.java
-		UserCommandInterface
-			UserCommandInterface.java
-			UserCommandInterfaceClass.java
-		Window
-			AppearanceSettings.java
-		GlobalAppearanceSettings.java
-	Logic
-		AreasBenchmarkPaths
-			AreasBenchmarkPaths.java
-			StraightLineEstimatedClass.java
-		ControllerMachines
-			AlhorithmFastFindPath.java
-			AStarSpaceTime.java
-			ControllerMachines.java
-			ControllerMachinesClass.java
-			NetworkNodes.java
-			Node.java
-			NodeClass.java
-			SquareNetworkNodes.java
-		FootprintSpaceTime
-			Exeption
-				СrashIntoAnImpassableObstacleExeption.java
-			CreatorMarksOfPath.java
-			CreatorMarksOfPathClass.java
-			Footprint.java
-			FootprintClass.java
-			FootprintsSpaceTime.java
-			FootprintsSpaceTimeClass.java
-			LayerFootprintSpaceTime.java
-			LayerFootprintSpaceTimeClass.java
-			Point.java
-			PointClass.java
-			PolygonExtended.java
-			PolygonExtendedClass.java
-		Landscape
-			costil.java
-			CreatorLandscapeFromCommandInMachinesCostil.java
-			Landscape.java
-			LandscapeClass.java
-			ZonaLandscape.java
-			ZonaLandscapeClass.java
-		MovingObjects
-			MovingObject.java
-			MovingObjectClass.java
-			Path.java
-			PathClass.java
-		PathsMachines
-			PositionClass.java
-		FabricMovingObjects.java
-		FabricMovingObjectsClass.java
-		GlobalVariable.java
-		LevelLayer.java
-		LevelLayerClass.java
-		Log.java
-		Position.java
-		TypesInLevel.java
-		PercistanceDataAccessObjects.java
-	Wrapper
-		EntryPair.java
-		EntryPairClass.java
-		MyMultiMap.java
-		MyMultiMapTree.java
-		RandomWrapper.java
-		RandomWrapperClass.java
-	Main.java
-	test
-		GUI.StatementTaskRendering.ConvertersTime
-			DemonstartionAlhorithTest.java
-		Logic
-			ControllerMachines
-				AlhorithmFastFindPathTest.java
-				NodeTest.java
-			FootprintSpaceTime
-				FootprintsSpaceTimeTest.java
-				FootprintTest.java
-				LocalToolRenderingPolygon.java
-				PointTest.java
-				PolygonExtendedTest.java
-		Wrapper
-			MyMultiMapTest.java
-		SharedDevelop.java
+
+    private PolygonExtended polygon2d2Radius1 = createPolygon2d2Radius1();
+
+    private PolygonExtended createPolygon2d2Radius1() {
+        PolygonExtended polygon = polygonNearOriginRadius01.clone();
+        Point vector = new PointClass(1, 1);
+        polygon.deposeOn(vector);
+
+        return polygon;
+    }
+
+    @Test
+    void isPolygonEntering_corridorSize2Time0_endCorridorEntry() {
+        assertFalse(corridorSizeFrom0To2.isPolygonEntering(0.0, polygon2d2Radius1));
+    }
+
+    @Test
+    void isPolygonEntering_corridorSize2Time1_endCorridorEntry() {
+        assertTrue(corridorSizeFrom0To2.isPolygonEntering(1.0, polygon2d2Radius1));
+    }
+
+    @Test
+    void isPolygonEntering_corridorSize2Time2_endCorridorEntry() {
+        assertFalse(corridorSizeFrom0To2.isPolygonEntering(2.0, polygon2d2Radius1));
+    }

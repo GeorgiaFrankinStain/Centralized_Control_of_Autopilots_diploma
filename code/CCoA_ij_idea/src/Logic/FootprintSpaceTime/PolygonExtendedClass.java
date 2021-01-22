@@ -1,8 +1,9 @@
 package Logic.FootprintSpaceTime;
 
-import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class PolygonExtendedClass implements PolygonExtended {
     private List<Point> points = new ArrayList<Point>();
@@ -11,10 +12,86 @@ public class PolygonExtendedClass implements PolygonExtended {
     //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons, no use polygon without points)
 
 
+    public PolygonExtendedClass() {
+    }
+
+    public PolygonExtendedClass(String polygonTextFormat) {
+        this(getPointsForCreate(polygonTextFormat));
+    }
+    private static List<Point> getPointsForCreate(String polygonTextFormat) {
+        ConstructorTextFormat constructor = new ConstructorTextFormatClass();
+        List<Point> points = constructor.getPointsForCreate(polygonTextFormat);
+        return points;
+    }
+
     public PolygonExtendedClass(List<Point> points) {
         this.points = points;
     }
-    public PolygonExtendedClass() {
+
+    private interface ConstructorTextFormat {
+        public List<Point> getPointsForCreate(String textFormatPolygon);
+    }
+
+    private static class ConstructorTextFormatClass implements ConstructorTextFormat {
+        private Map<Integer, Point> points = new TreeMap<>();
+        private int x = 0;
+        private int y = 0;
+        private Point vectorDeposeRelativeNewOrigin = null;
+
+        @Override
+        public List<Point> getPointsForCreate(String polygonTextFormat) {
+            for (char currentChar : polygonTextFormat.toCharArray()) {
+                switchProcessing(currentChar);
+            }
+            List<Point> result = new ArrayList<Point>(points.values());
+            applyNewOrigin(result);
+            return result;
+        }
+
+
+        private void applyNewOrigin(List<Point> points) {
+            if (vectorDeposeRelativeNewOrigin == null) {
+                return;
+            }
+
+            for(Point point : points) {
+                point.deposeOn(vectorDeposeRelativeNewOrigin);
+            }
+        }
+
+        private void switchProcessing(char currentChar) {
+            boolean isNumber = '0' <= currentChar && currentChar <= '9';
+            if (isNumber) {
+                addPoint(currentChar);
+            } else if (currentChar == ' ') {
+                x++;
+            } else if (currentChar == '\n') {
+                toNextRowY();
+            } else if (currentChar == '+') {
+                saveNewOrigin();
+            } else {
+                assert (false);
+            }
+        }
+
+        private void saveNewOrigin() {
+            boolean isOnlyOrigin = vectorDeposeRelativeNewOrigin == null;
+            assert (isOnlyOrigin);
+            vectorDeposeRelativeNewOrigin = new PointClass(-x, -y);
+            x++;
+        }
+
+        private void addPoint(char currentChar) {
+            int sequenceAddInPolygon = currentChar - '0';
+            assert (0 <= sequenceAddInPolygon && sequenceAddInPolygon <= 9);
+            points.put(sequenceAddInPolygon, new PointClass(x, y));
+            x++;
+        }
+
+        private void toNextRowY() {
+            y++;
+            x = 0;
+        }
     }
 
     @Override
@@ -30,6 +107,20 @@ public class PolygonExtendedClass implements PolygonExtended {
     @Override
     public void addPoint(Point newPoint) {
         this.points.add(newPoint);
+    }
+
+    @Override
+    public void addPoint(Point[] points) {
+        for (Point point : points) {
+            this.addPoint(point);
+        }
+    }
+
+    @Override
+    public void addPoint(List<Point> points) {
+        for (Point point : points) {
+            this.addPoint(point);
+        }
     }
 
     @Override
@@ -92,7 +183,6 @@ public class PolygonExtendedClass implements PolygonExtended {
             return false;
 
 
-
         PolygonExtended other = (PolygonExtended) obj;
 
         if (this.points.size() != other.getCountPoints()) {
@@ -108,6 +198,12 @@ public class PolygonExtendedClass implements PolygonExtended {
         }
 
         return true;
+    }
+
+    @Override
+    public PolygonExtended clone() {
+        List<Point> cloneList = new ArrayList<Point>(this.points);
+        return new PolygonExtendedClass(cloneList);
     }
 
     @Override
@@ -173,7 +269,7 @@ public class PolygonExtendedClass implements PolygonExtended {
 
 
     @Override
-    public boolean intersecionLine(Point startLine, Point endLine) {//TEST+
+    public boolean intersectionLine(Point startLine, Point endLine) {//TEST+
         int indexLastPoint = this.getCountPoints() - 1;
         Point startLocalLine = this.getPoint(indexLastPoint);
         Point endLocalLine = this.getPoint(0);
@@ -203,30 +299,32 @@ public class PolygonExtendedClass implements PolygonExtended {
         return false;
     }
 
-
-    /**
-     * (https://martin-thoma.com/how-to-check-if-two-line-segments-intersect/)
-     * Check if bounding boxes do intersect. If one bounding box
-     * touches the other, they do intersect.
-     */
     @Override
-    public boolean intersectionLines(
+    public boolean intersectionLine(Line line) {
+        return intersectionLine(line.getStart(), line.getEnd());
+    }
+
+    @Override
+    public boolean isLiesInsideThe(Round round) {
+        for (int i = 0; i < this.getCountPoints(); i++) {
+            Point current = this.getPoint(i);
+            if (!round.isIncludes(current)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    private boolean intersectionLines(
             Point aStartLine,
             Point aEndLine,
             Point bStartLine,
             Point bEndLine
-    ) {//TEST+
-        return Line2D.linesIntersect(
-                aStartLine.getX(),
-                aStartLine.getY(),
-                aEndLine.getX(),
-                aEndLine.getY(),
-                bStartLine.getX(),
-                bStartLine.getY(),
-                bEndLine.getX(),
-                bEndLine.getY()
-
-        );
+    ) {
+        Line line = new LineClass(aStartLine, aEndLine);
+        Line line2 = new LineClass(bStartLine, bEndLine);
+        return line.intersectionLine(line2);
     }
 
     @Override
@@ -292,7 +390,7 @@ public class PolygonExtendedClass implements PolygonExtended {
 
         for (int i = 0; i < firstPolygon.getCountPoints(); i++) {
 
-            boolean isIntersectionBOOL = secondPoylgon.intersecionLine(startLine1, endLine1);
+            boolean isIntersectionBOOL = secondPoylgon.intersectionLine(startLine1, endLine1);
 
             if (isIntersectionBOOL) {
                 return true;

@@ -10,6 +10,7 @@ public class PointClass implements Point {
         this.y = y;
     }
 
+
     @Override
     public double getX() {
         return x;
@@ -28,6 +29,12 @@ public class PointClass implements Point {
     @Override
     public void setY(double y) {
         this.y = y;
+    }
+
+    @Override
+    public Point getMultipliedVector(double multiplier) {
+        Point result = new PointClass(this.getX() * multiplier, this.getY() * multiplier);
+        return result;
     }
 
     @Override
@@ -85,6 +92,7 @@ public class PointClass implements Point {
                         (endLine.getY() - startLine.getY())*(this.getX() - startLine.getX())) > 0;
     }
 
+
     @Override
     public double getAngleRotareRelative(Point origin) {
         Point vector = new PointClass(
@@ -104,6 +112,20 @@ public class PointClass implements Point {
                         + Math.cos(angle) * (this.getY() - origin.getY()) + origin.getY();
 
         return new PointClass((int) rotatedX, (int) rotatedY);
+    }
+
+    @Override
+    public Point getApproximationWith(double timeFirst, Point secondPoint, double timeSecond, double timeProximity) {
+        assert(timeFirst < timeSecond);
+        double timeInterval = timeSecond - timeFirst;
+        double percentProximityToFirst = (timeProximity - timeFirst) / timeInterval;
+
+        Point vector = secondPoint.getVector(this);
+        Point margin = vector.getMultipliedVector(percentProximityToFirst);
+
+        Point result = this.clone();
+        result.deposeOn(margin);
+        return result;
     }
 
     @Override
@@ -142,6 +164,16 @@ public class PointClass implements Point {
 //        Point vector = new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
         Point vector = this.getVector(point);
         return vector.getLengthVector();
+    }
+
+    @Override
+    public double getDistanceToPointProjectionX(Point point) {
+        return Math.abs(this.getX() - point.getX());
+    }
+
+    @Override
+    public double getDistanceToPointProjectionY(Point point) {
+        return Math.abs(this.getY() - point.getY());
     }
 
     @Override

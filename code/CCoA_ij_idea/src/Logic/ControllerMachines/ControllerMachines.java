@@ -1,6 +1,6 @@
 package Logic.ControllerMachines;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.Point;
 import Logic.MovingObjects.MovingObject;
 
@@ -10,5 +10,5 @@ public interface ControllerMachines {
             Point to,
             MovingObject movingObject,
             double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 }

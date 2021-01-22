@@ -1,12 +1,10 @@
 package Logic.FootprintSpaceTime;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
-import Logic.Landscape.Landscape;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.LevelLayer;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
 import Logic.Position;
-import Logic.TypesInLevel;
 
 import java.util.List;
 
@@ -17,6 +15,10 @@ public interface FootprintsSpaceTime {
             double time,
             LevelLayer levelLayer
     );
+    public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(
+            PolygonExtended areaFind,
+            double time
+    );
 
     public void addFootprint(
             int idTrack,
@@ -24,13 +26,13 @@ public interface FootprintsSpaceTime {
             Path path,
             double startTime,
             LevelLayer levelLayer
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 
     public void addFootprint(
             Footprint footprint,
             double time,
             LevelLayer levelLayer
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 
     public void deleteFootprints(int ID);
 

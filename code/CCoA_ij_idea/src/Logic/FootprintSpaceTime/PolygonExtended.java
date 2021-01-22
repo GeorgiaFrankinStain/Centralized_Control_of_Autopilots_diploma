@@ -9,6 +9,10 @@ public interface PolygonExtended {
 
     public void addPoint(Point newPoint);
 
+    public void addPoint(Point[] points);
+
+    public void addPoint(List<Point> points);
+
     public void addAllPoint(List<Point> newPoints);
 
     public void insertPoint(int index, Point newPoint);
@@ -27,18 +31,17 @@ public interface PolygonExtended {
 
     public boolean intersectionPolygon(PolygonExtended secondPolygon);
 
-    public boolean intersecionLine(Point startLine, Point endLine);
+    public boolean intersectionLine(Point startLine, Point endLine);
 
-    public boolean intersectionLines(
-            Point aStartLine,
-            Point aEndLine,
-            Point bStartLine,
-            Point bEndLine
-    );
+    public boolean intersectionLine(Line line);
+
+    public boolean isLiesInsideThe(Round round);
 
     public Point getCenterAverage();
 
     public Double[] getFormatDoubleArray();
 
     public boolean equals(Object obj);
-    }
+
+    public PolygonExtended clone();
+}

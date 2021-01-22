@@ -1,6 +1,6 @@
 package Logic.MovingObjects;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
@@ -12,7 +12,7 @@ public interface MovingObject {
             Path path,
             double timeAdding,
             LevelLayer levelLayer
-    ) throws СrashIntoAnImpassableObstacleExeption;
+    ) throws СrashIntoAnImpassableObjectExeption;
 
     public PolygonExtended getPolygonExtended();
 

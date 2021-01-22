@@ -3,7 +3,7 @@ package GUI.StatementTaskRendering.ConvertersTime;
 import GUI.StatementTaskRendering.ConverterTime;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.*;
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.Point;
@@ -41,7 +41,7 @@ public class DemonstartionAlhorithTest {
 
             try {
                 movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
 
 

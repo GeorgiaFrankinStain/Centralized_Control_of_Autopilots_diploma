@@ -2,7 +2,7 @@ package Logic.MovingObjects;
 
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.LevelLayer;
 import Wrapper.RandomWrapperClass;
 
@@ -25,7 +25,7 @@ public class MovingObjectClass implements MovingObject {
             Path path,
             double timeAdding,
             LevelLayer levelLayer
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
 
 
         footprintsSpaceTime.addFootprint(

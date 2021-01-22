@@ -12,6 +12,13 @@ public class PathClass implements Path {
     private int idTrack = new RandomWrapperClass(45787694).nextInt();
 
 
+    public PathClass() {
+    }
+    public PathClass(List<Point> points) {
+        this.points = points;
+    }
+
+
     @Override
     public int getSize() {
         return this.points.size();

@@ -1,6 +1,6 @@
 package Logic.ControllerMachines;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.Point;
 import Logic.LevelLayer;
@@ -31,7 +31,7 @@ public class ControllerMachinesClass implements ControllerMachines {
             Point to,
             MovingObject movingObject,
             double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
         this.subordinateMachines.add(movingObject);
 
         Path path = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);

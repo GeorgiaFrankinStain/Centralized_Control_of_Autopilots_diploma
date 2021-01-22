@@ -1,6 +1,6 @@
 package Logic.FootprintSpaceTime;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.LevelLayer;
 import Logic.LevelLayerClass;
 import Logic.MovingObjects.MovingObject;
@@ -11,7 +11,7 @@ import Logic.Position;
 import java.util.*;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChangesFromWhen {
-
+    private LevelLayer defaultLevelLayer = new LevelLayerClass(0);
     Map<LevelLayer, LayerFootprintSpaceTime> layers =
             new TreeMap<LevelLayer, LayerFootprintSpaceTime>();
 
@@ -35,6 +35,10 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
         return this.layers.get(levelLayer).getRenderingFootprintsFromWhen(areaFind, time);
     }
 
+    @Override
+    public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(PolygonExtended areaFind, double time) {
+        return this.getRenderingFootprintsFromWhen(areaFind, time, this.defaultLevelLayer);
+    }
 
 
     @Override
@@ -44,7 +48,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             Path path,
             double startTime,
             LevelLayer levelLayer
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(levelLayer);
         if (layerFootprintSpaceTime == null) {
@@ -65,7 +69,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
             Footprint footprint,
             double time,
             LevelLayer levelLayer
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(levelLayer);
         if (layerFootprintSpaceTime == null) {
@@ -100,13 +104,13 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     @Override
     public boolean getIsSeatTakenSpaceTime(PolygonExtended place, double fromTime, double toTime, LevelLayer levelLayer) {
         return this.getIsSeatTaken(place, fromTime, levelLayer) //FIXME
-                       && this.getIsSeatTaken(place, toTime, levelLayer)
-                       && this.getIsSeatTaken(place, (fromTime + toTime) / 2, levelLayer);
+                && this.getIsSeatTaken(place, toTime, levelLayer)
+                && this.getIsSeatTaken(place, (fromTime + toTime) / 2, levelLayer);
     }
 
     @Override
     public Double averageTimeMovingToNextPointOfPath() {
-        for(Map.Entry entry: this.layers.entrySet()) {
+        for (Map.Entry entry : this.layers.entrySet()) {
             LayerFootprintSpaceTime value = (LayerFootprintSpaceTime) entry.getValue();
             Double localResult = value.getAverageTimeMovingToNextPointOfPath();
             if (localResult != null) {
@@ -143,7 +147,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     //==== <start> <Private_Methods> =======================================================================
     private void setLayer(LevelLayer levelLayer) { //FIXME CODESTYLE
         LayerFootprintSpaceTime layerFootprintSpaceTime =
-                new LayerFootprintSpaceTimeClass();
+                new MultiMapLayerFootprintSpaceTimeClass();
         this.layers.put(levelLayer, layerFootprintSpaceTime);
     }
     //==== <end> <Private_Methods> =======================================================================

@@ -32,92 +32,94 @@ public class FootprintTest {
         //FIXME ADD_FORMALNOST_TEST
     }
 
+
+    private Point[] arrayPoints = {
+            new PointClass(10, 10),
+            new PointClass(10, 20),
+            new PointClass(20, 20),
+            new PointClass(20, 10),
+    };
+
+    private MovingObject getStandartMovingObjet() {
+        MovingObject movingObject = new MovingObjectClass(getStandartFormMachine(), TypeMachinesBody.PASSENGER_CAR);
+        return movingObject;
+    }
+
     @Test
-    public void getOccupiedLocation() {
-        {
-            PolygonExtended formMachine = new PolygonExtendedClass(); //FIXME IMITATION
-            Point[] arrayPoints = {
-                    new PointClass(10, 10),
-                    new PointClass(10, 20),
-                    new PointClass(20, 20),
-                    new PointClass(20, 10),
-            };
+    public void getOccupiedLocation_margin() {
+        Point margin = new PointClass(10, 10);
+        Position position = new PositionClass(margin, 0.0);
 
-            for (Point point : arrayPoints) {
-                formMachine.addPoint(point);
-            }
+        Footprint footprint = new FootprintClass(0, position, 1, getStandartMovingObjet());
+        PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
+        PolygonExtended expectedPolygonExtended = expectedAfterMargin(margin);
 
-            MovingObject movingObject = new MovingObjectClass(formMachine, TypeMachinesBody.PASSENGER_CAR);
+        assertTrue(expectedPolygonExtended.equals(actualOccupiedLocation));
+    }
 
-            Point margin = new PointClass(10, 10);
-            Position position = new PositionClass(margin, 0.0);
-            Footprint footprint = new FootprintClass(
-                    0,
-                    position,
-                    1,
-                    movingObject
+    private PolygonExtended expectedAfterMargin(Point margin) {
+        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
+
+        for (Point point : arrayPoints) {
+            Point marginedPoint = new PointClass(
+                    point.getX() + margin.getX(),
+                    point.getY() + margin.getY()
             );
-
-            PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
-            PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
-
-            for (Point point : arrayPoints) {
-                Point marginedPoint = new PointClass(
-                        point.getX() + margin.getX(),
-                        point.getY() + margin.getY()
-                );
-                expectedPolygonExtended.addPoint(marginedPoint);
-            }
-
-            assertTrue(expectedPolygonExtended.equals(actualOccupiedLocation));
+            expectedPolygonExtended.addPoint(marginedPoint);
         }
-        {
-            PolygonExtended formMachine = new PolygonExtendedClass(); //FIXME IMITATION
-            Point[] arrayPoints = {
-                    new PointClass(10, 10),
-                    new PointClass(10, 20),
-                    new PointClass(20, 20),
-                    new PointClass(20, 10),
-            };
 
-            for (Point point : arrayPoints) {
-                formMachine.addPoint(point);
-            }
+        return expectedPolygonExtended;
+    }
 
-            MovingObject movingObject = new MovingObjectClass(formMachine, TypeMachinesBody.PASSENGER_CAR);
+    private PolygonExtended getStandartFormMachine() {
+        PolygonExtended formMachine = new PolygonExtendedClass(); //FIXME IMITATION
 
-            Point margin = new PointClass(10, 10);
-            Position position = new PositionClass(margin, -PI / 2);
-            Footprint footprint = new FootprintClass(
-                    0,
-                    position,
-                    1,
-                    movingObject
+
+        for (Point point : arrayPoints) {
+            formMachine.addPoint(point);
+        }
+
+        return formMachine;
+    }
+
+    @Test
+    public void getOccupiedLocation_rotatedMargin() {
+        Point margin = new PointClass(10, 10);
+        Position position = new PositionClass(margin, -PI / 2);
+
+        Footprint footprint = new FootprintClass(0, position, 1, getStandartMovingObjet());
+        PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
+        PolygonExtended expectedPolygonExtended = expectedRoteted(margin);
+
+
+        assertTrue(expectedPolygonExtended.equals(actualOccupiedLocation));
+    }
+
+    private PolygonExtended expectedRoteted(Point margin) {
+        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
+
+        int endIndex = arrayPoints.length - 1;
+        for (int i = 0; i < arrayPoints.length; i++) {
+            int indexNextPoint = i + 1;
+            Point nextCyclePoint = nextCyclePoint(indexNextPoint, endIndex);
+
+            Point marginedPoint = new PointClass(
+                    nextCyclePoint.getX() + margin.getX(),
+                    nextCyclePoint.getY() + margin.getY()
             );
-
-            PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
-            PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
-
-            for (int i = 0; i < arrayPoints.length; i++) {
-
-                int indexNextPoint = i + 1;
-                int endIndex = arrayPoints.length - 1;
-                Point nextCiclePoint;
-                if (indexNextPoint <= endIndex) {
-                    nextCiclePoint = arrayPoints[indexNextPoint];
-                } else {
-                    nextCiclePoint = arrayPoints[0];
-                }
-                Point marginedPoint = new PointClass(
-                        nextCiclePoint.getX() + margin.getX(),
-                        nextCiclePoint.getY() + margin.getY()
-                );
-                expectedPolygonExtended.addPoint(marginedPoint);
-            }
-
-
-
-            assertTrue(expectedPolygonExtended.equals(actualOccupiedLocation));
+            expectedPolygonExtended.addPoint(marginedPoint);
         }
+
+        return expectedPolygonExtended;
+    }
+    private Point nextCyclePoint(int indexNextPoint, int endIndex) {
+        Point nextPoint;
+        if (indexNextPoint <= endIndex) {
+            nextPoint = arrayPoints[indexNextPoint];
+        } else {
+            nextPoint = arrayPoints[0];
+        }
+
+        return nextPoint;
     }
 }

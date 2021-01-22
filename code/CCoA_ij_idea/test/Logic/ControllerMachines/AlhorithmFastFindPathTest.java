@@ -3,7 +3,7 @@ package Logic.ControllerMachines;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FabricMovingObjects;
 import Logic.FabricMovingObjectsClass;
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.Point;
@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class AlhorithmFastFindPathTest {
 
     @Test
-    public void getPath() throws СrashIntoAnImpassableObstacleExeption {
+    public void getPath() throws СrashIntoAnImpassableObjectExeption {
         double timeAddingPath = 0.0;
         LevelLayer defaultLevelLayer = new LevelLayerClass(0);
 /*
@@ -132,7 +132,7 @@ public class AlhorithmFastFindPathTest {
             double timeAdding = 0.0;
             try {
                 wall.mark(onlyFootprintsSpaceTime, wallPath, timeAdding, levelLayer);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
 
 
@@ -169,7 +169,7 @@ public class AlhorithmFastFindPathTest {
                         timeAddingPath,
                         defaultLevelLayer
                 );
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
                 anExceptionWasTriggered = true;
             }
 

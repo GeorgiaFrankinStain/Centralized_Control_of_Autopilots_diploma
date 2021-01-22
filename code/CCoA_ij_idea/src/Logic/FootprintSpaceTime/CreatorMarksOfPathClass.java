@@ -1,6 +1,6 @@
     package Logic.FootprintSpaceTime;
 
-import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObstacleExeption;
+import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.GlobalVariable;
 import Logic.MovingObjects.MovingObject;
 import Logic.MovingObjects.Path;
@@ -46,13 +46,13 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     public void addFootprint(
             Path path,
             double startTime
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
 
         try {
             addFootprinsBasedOnThePath(path, startTime);
-        } catch (СrashIntoAnImpassableObstacleExeption ex) {
+        } catch (СrashIntoAnImpassableObjectExeption ex) {
             setTheStandingTimeUntilTheEndOfTimeInCaseOfAnAccident();
-            throw new СrashIntoAnImpassableObstacleExeption();
+            throw new СrashIntoAnImpassableObjectExeption();
         }
 
     }
@@ -66,7 +66,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     private void addFootprinsBasedOnThePath(
             Path path,
             double startTime
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
 
         double timeAdding = startTime;
 
@@ -89,7 +89,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     private double processingCreateFootprintsOnRouteStraightLineFromPairPoints(
             Path path,
             double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
         double sumTime = 0;
         int endIndex = path.getSize() - 1;
         for (int i = 0; i < endIndex; i++) {
@@ -131,12 +131,12 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
      *
      * @param path
      * @param timeAdding
-     * @throws СrashIntoAnImpassableObstacleExeption
+     * @throws СrashIntoAnImpassableObjectExeption
      */
     private void processingCreateFoorprintEndRouteFromSinglePoint(
             Path path,
             double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
         int indexLastPoint = path.getSize() - 1;
         Point startLine = path.getPoint(indexLastPoint - 1);
         Point endlessPoint = path.getPoint(indexLastPoint);
@@ -168,7 +168,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             Point endLine,
             double standingTime,
             double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
 
         double angle = endLine.getAngleRotareRelative(startLine);
         double timeSum = 0;
@@ -219,7 +219,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             Point currentCoordinat,
             double angleStepVector,
             double timeAdding
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
         double localTimeSum = 0;
         if (!endLine.equals(currentCoordinat)) {
 
@@ -250,7 +250,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             Position position,
             double time,
             double timeStanding
-    ) throws СrashIntoAnImpassableObstacleExeption {
+    ) throws СrashIntoAnImpassableObjectExeption {
 
         double addSum = 0;
 
@@ -261,7 +261,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
                 this.lastFootprintInPath = new FootprintClass(idTrack, position, timeStanding, movingObject);
 
                 this.footprintsSpaceTime.addFootprint(this.lastFootprintInPath, time);
-            } catch (СrashIntoAnImpassableObstacleExeption ex) {
+            } catch (СrashIntoAnImpassableObjectExeption ex) {
                 susseful = false;
             }
 
