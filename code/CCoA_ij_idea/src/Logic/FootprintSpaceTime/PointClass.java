@@ -103,15 +103,19 @@ public class PointClass implements Point {
     }
 
     @Override
-    public Point getRotateRelative(Point origin, double angle) {
+      public Point getRotateRelative(Point origin, double angle) {
+        double cosAngle = Math.cos(angle);
+        double sinAngle = Math.sin(angle);
+        double xDistanceOnProjection = this.getX() - origin.getX();
+        double yDistanceOnProjection = this.getY() - origin.getY();
         double rotatedX =
-                Math.cos(angle) * (this.getX() - origin.getX())
-                        - Math.sin(angle) * (this.getY() - origin.getY()) + origin.getX();
+                cosAngle * xDistanceOnProjection
+                        - sinAngle * yDistanceOnProjection + origin.getX();
         double rotatedY =
-                Math.sin(angle) * (this.getX() - origin.getX())
-                        + Math.cos(angle) * (this.getY() - origin.getY()) + origin.getY();
+                sinAngle * xDistanceOnProjection
+                        + cosAngle * yDistanceOnProjection + origin.getY();
 
-        return new PointClass((int) rotatedX, (int) rotatedY);
+        return new PointClass(rotatedX, rotatedY);
     }
 
     @Override

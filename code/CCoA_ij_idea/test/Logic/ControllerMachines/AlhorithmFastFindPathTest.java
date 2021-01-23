@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class AlhorithmFastFindPathTest {
 
     @Test
-    public void getPath() throws СrashIntoAnImpassableObjectExeption {
+    public void getPath() throws СrashIntoAnImpassableObjectExeption { //FIXME ADD TESTS
         double timeAddingPath = 0.0;
         LevelLayer defaultLevelLayer = new LevelLayerClass(0);
 /*
@@ -111,7 +111,7 @@ public class AlhorithmFastFindPathTest {
 
 
         }*/
-        {
+     /*   {
             FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
             NetworkNodes networkNodesFabrica = new SquareNetworkNodes(13.3);//FIXME add fabric
@@ -174,6 +174,6 @@ public class AlhorithmFastFindPathTest {
             }
 
             assertTrue(anExceptionWasTriggered);
-        }
+        }*/
     }
 }

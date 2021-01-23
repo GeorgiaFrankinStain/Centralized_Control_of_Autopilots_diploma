@@ -20,141 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/заявление на тему диплома/заявление на тему диплома Тимофеев Д.А. Магистратура.odt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_legal_documentation/заявление на тему диплома/заявление на тему диплома Тимофеев Д.А. Магистратура.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Corridor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObjectExeption.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Line.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LineClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass$ConstructorTextFormat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass$ConstructorTextFormatClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Round.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundsCorridorClass$CheckerPolygonEntering.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundsCorridorClass$CheckerPolygonEnteringClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/RoundsCorridorClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/StorageFootprintsSpaceTime.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest$AverageTimeMeter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest$AverageTimeMeterClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/LineTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClassTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/TesterOneMarkClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest$TestedFootprintSpaceTime.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest$TesterOneMark.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest$TesterOneMarkClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/MovingObjects/MovingObjectTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Corridor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObjectExeption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LineClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Round.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/RoundClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/RoundsCorridorClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/StorageFootprintsSpaceTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/LineTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedClassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/RoundsCorridorClassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/TesterOneMarkClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/MovingObjectTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../__system_infrastructure/CCoA.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../__system_infrastructure/CCoA.sublime-workspace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../__system_infrastructure/code_CCoA.sublime-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../__system_infrastructure/code_CCoA.sublime-workspace" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/bufer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/bufer.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCoA_ij_idea.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CCoA_ij_idea.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRederingBodys.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/BasicFeaturesJava/FabricRenderingBodysClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/MapRender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/SubWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/ExecutionTaskRendering/Windows.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/HistChangesFromWhen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/MapRenderClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/PhisicalBodysFromWhen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/TableObjectRendering.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/TableObjectRenderingClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/GUI/Rendering/TypePhisicalBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachines.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachines.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachinesClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/ControllerMachines/ControllerMachinesClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacleExeption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PointClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtended.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtended.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObjectClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/MovingObjectClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/PathClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Logic/MovingObjects/PathClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/META-INF/CCoA_ij_idea.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Wrapper/MyMultiMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Wrapper/MyMultiMapTree$EntryPairMapClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCoA_ij_idea/Wrapper/MyMultiMapTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/ControllerMachines/AlhorithmFastFindPathTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/ControllerMachines/AlhorithmFastFindPathTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PointTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PointTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Logic/FootprintSpaceTime/PolygonExtendedTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/META-INF/CCoA_ij_idea.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/CCoA_ij_idea/Wrapper/MyMultiMapTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/ControllerMachines/ControllerMachinesClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Exeption/СrashIntoAnImpassableObstacleExeption.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/LayerFootprintSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PointClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtended.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/FootprintSpaceTime/PolygonExtendedClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/MovingObjectClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/MovingObjects/PathClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wrapper/MyMultiMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wrapper/MultiMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wrapper/MyMultiMapTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wrapper/MultiMapTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/ControllerMachines/AlhorithmFastFindPathTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Wrapper/MyMultiMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Wrapper/MultiMapTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +67,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../learning/!JAVA/_POLIGON/shared_IJ_IDEA" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -223,6 +95,22 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in CCoA_ij_idea">
+    <configuration name="AlhorithmFastFindPathTest.getPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCoA_ij_idea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Logic.ControllerMachines.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Logic.ControllerMachines" />
+      <option name="MAIN_CLASS_NAME" value="Logic.ControllerMachines.AlhorithmFastFindPathTest" />
+      <option name="METHOD_NAME" value="getPath" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in CCoA_ij_idea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <option name="PACKAGE_NAME" value="" />
@@ -231,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FootprintTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointTest.getRotareRelative_halfTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <extension name="coverage">
         <pattern>
@@ -240,8 +128,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
-      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.FootprintTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.PointTest" />
+      <option name="METHOD_NAME" value="getRotareRelative_halfTurn" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -256,21 +145,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
       <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.PolygonExtendedClassTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoundTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCoA_ij_idea" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Logic.FootprintSpaceTime.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
-      <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.RoundTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -292,19 +166,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RoundTest" />
-      <item itemvalue="JUnit.FootprintTest" />
       <item itemvalue="JUnit.RoundsCorridorClassTest" />
       <item itemvalue="JUnit.PolygonExtendedClassTest" />
       <item itemvalue="JUnit.All in CCoA_ij_idea" />
+      <item itemvalue="JUnit.AlhorithmFastFindPathTest.getPath" />
+      <item itemvalue="JUnit.PointTest.getRotareRelative_halfTurn" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in CCoA_ij_idea" />
+        <item itemvalue="JUnit.PointTest.getRotareRelative_halfTurn" />
+        <item itemvalue="JUnit.AlhorithmFastFindPathTest.getPath" />
         <item itemvalue="JUnit.RoundsCorridorClassTest" />
         <item itemvalue="JUnit.PolygonExtendedClassTest" />
-        <item itemvalue="JUnit.FootprintTest" />
-        <item itemvalue="JUnit.RoundTest" />
       </list>
     </recent_temporary>
   </component>
@@ -401,6 +275,11 @@
           <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/RoundClassTest.java</url>
           <line>62</line>
           <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PointTest.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="129" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

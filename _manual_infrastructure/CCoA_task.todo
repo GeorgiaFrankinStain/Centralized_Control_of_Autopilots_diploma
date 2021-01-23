@@ -235,13 +235,13 @@
    ☐ to improve the quality of code in tests (2020.11.24 12:51:10)
       ✔ one assert - one function with name that displays the content (2020.11.24 13:09:27) @done (20-12-09 15:41)
       ✔ visual tests. Add the ability to set a polygon using a text drawing. (2020.11.24 13:09:31) @done (20-12-09 15:42)
-      ☐ function for testing issued routes with some accuracy. Intering the corridor. (2020.11.24 13:09:33) @today
+      ✔ function for testing issued routes with some accuracy. Intering the corridor. (2020.11.24 13:09:33) @done (21-01-22 19:22)
+   ☐ fix bugs (broken tests)
+   ☐ refactoring all code
       ☐ move tests from interface in class. Tests for class, but no interface
       ☐ delete idTrack using
       ☐ replace tests linked to specific points with entering a corridor.
       ☐ move tests from intefaceTest to interfaceClassTest
-   ☐ fix bugs (broken tests)
-   ☐ refactoring all code
    ☐ add tests (full cover) (and fix them if necessary)
 
 
