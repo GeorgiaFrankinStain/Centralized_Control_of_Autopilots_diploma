@@ -63,7 +63,6 @@ class RoundClassTest {
         int hash1 = round1.hashCode();
         int hash2 = round2.hashCode();
 
-        System.out.println(hash1 + " == " + hash2);
         assertNotEquals(hash1, hash2);
     }
     @Test
@@ -74,7 +73,6 @@ class RoundClassTest {
         int hash1 = round1.hashCode();
         int hash2 = round2.hashCode();
 
-        System.out.println(hash1 + " == " + hash2);
         assertNotEquals(hash1, hash2);
     }
 
@@ -86,7 +84,6 @@ class RoundClassTest {
         int hash1 = round1.hashCode();
         int hash2 = round2.hashCode();
 
-        System.out.println(hash1 + " == " + hash2);
         assertNotEquals(hash1, hash2);
     }
 
@@ -98,7 +95,6 @@ class RoundClassTest {
         int hash1 = round1.hashCode();
         int hash2 = round2.hashCode();
 
-        System.out.println(hash1 + " == " + hash2);
         assertNotEquals(hash1, hash2);
     }
 }

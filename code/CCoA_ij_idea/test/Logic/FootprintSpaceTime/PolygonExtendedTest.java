@@ -319,22 +319,22 @@ public class PolygonExtendedTest {
 
     @Test
     public void intersecionLine_BigDiagonale() {
-        assertTrue(square.intersectionLine(new LineClass(new PointClass(0, 0), new PointClass(40, 40))));
+        assertTrue(square.intersectionLine(new LineCutClass(new PointClass(0, 0), new PointClass(40, 40))));
     }
 
     @Test
     public void intersecionLine_onlyOneSharedPoint() {
-        assertTrue(square.intersectionLine(new LineClass(new PointClass(0, 0), new PointClass(10, 10))));
+        assertTrue(square.intersectionLine(new LineCutClass(new PointClass(0, 0), new PointClass(10, 10))));
     }
 
     @Test
     public void intersecionLine_noIntersection() {
-        assertFalse(square.intersectionLine(new LineClass(new PointClass(0, -4), new PointClass(0, 4))));
+        assertFalse(square.intersectionLine(new LineCutClass(new PointClass(0, -4), new PointClass(0, 4))));
     }
 
     @Test
     public void intersecionLine_noIntersectionHorizontal() {
-        assertFalse(square.intersectionLine(new LineClass(new PointClass(0, 0), new PointClass(0, 4))));
+        assertFalse(square.intersectionLine(new LineCutClass(new PointClass(0, 0), new PointClass(0, 4))));
     }
 
     @Test

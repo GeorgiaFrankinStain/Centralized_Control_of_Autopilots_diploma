@@ -17,53 +17,56 @@ import static org.junit.Assert.*;
 
 public class DemonstartionAlhorithTest {
 
+    LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+    private ConverterTime converterTime = createConverterTime();
+
+    private ConverterTime createConverterTime() {
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
+
+        /*
+         * - this is second
+         * 0-1-2
+         */
+        Path resPath = new PathClass();
+        resPath.addPoint(new PointClass(0, 0));
+        Point endPoint = new PointClass(20, 0);
+        resPath.addPoint(endPoint);
+
+
+        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+
+
+        double timeAddingPath = 0.0;
+        try {
+            movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
+        } catch (СrashIntoAnImpassableObjectExeption ex) {
+        }
+
+
+        ConverterTime converterTime = new DemonstartionAlhorith(onlyFootprintsSpaceTime);
+        return converterTime;
+    }
+
     @Test
     public void convert() {
-        double timeAddingPath = 0.0;
-        LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+        double requstedTime = 0.0;
 
-        {
-            FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
+        Double expected = -3.0;
+        Double actual = converterTime.convert(requstedTime, defaultLevelLayer);
 
-            /*
-             * - this is second
-             * 0-1-2
-             */
-            Path resPath = new PathClass();
-            resPath.addPoint(new PointClass(0, 0));
-            Point endPoint = new PointClass(20, 0);
-            resPath.addPoint(endPoint);
-
-
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.PASSENGER_CAR);
-
-
-            try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
-            } catch (СrashIntoAnImpassableObjectExeption ex) {
-            }
-
-
-            ConverterTime converterTime = new DemonstartionAlhorith(onlyFootprintsSpaceTime);
-
-            {
-                double requstedTime = 0.0;
-
-                Double expected = -4.0;
-                Double actual = converterTime.convert(requstedTime, defaultLevelLayer);
-                assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
-            }
-
-            {
-                double requstedTime = 0.0;
-
-                Double expected = requstedTime;
-
-                LevelLayer levelWithAlhorithInformation = new LevelLayerClass(1);
-                Double actual = converterTime.convert(requstedTime, levelWithAlhorithInformation);
-                assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
-            }
-        }
+        assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
     }
+
+    @Test
+    public void convert_0() {
+        double requstedTime = 0.0;
+
+        LevelLayer levelWithAlhorithInformation = new LevelLayerClass(1);
+        Double expected = requstedTime;
+        Double actual = converterTime.convert(requstedTime, levelWithAlhorithInformation);
+
+        assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
+    }
+
 }

@@ -41,7 +41,7 @@ public class FootprintTest {
     };
 
     private MovingObject getStandartMovingObjet() {
-        MovingObject movingObject = new MovingObjectClass(getStandartFormMachine(), TypeMachinesBody.PASSENGER_CAR);
+        MovingObject movingObject = new MovingObjectClass(getStandartFormMachine(), TypeMachinesBody.TEST_SQUARE_20);
         return movingObject;
     }
 
@@ -52,9 +52,13 @@ public class FootprintTest {
 
         Footprint footprint = new FootprintClass(0, position, 1, getStandartMovingObjet());
         PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
-        PolygonExtended expectedPolygonExtended = expectedAfterMargin(margin);
+        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
+        expectedPolygonExtended.addPoint(new PointClass(5, 5));
+        expectedPolygonExtended.addPoint(new PointClass(5, 15));
+        expectedPolygonExtended.addPoint(new PointClass(15, 15));
+        expectedPolygonExtended.addPoint(new PointClass(15, 5));
 
-        assertTrue(expectedPolygonExtended.equals(actualOccupiedLocation));
+        assertEquals(expectedPolygonExtended, actualOccupiedLocation);
     }
 
     private PolygonExtended expectedAfterMargin(Point margin) {
@@ -84,15 +88,19 @@ public class FootprintTest {
 
     @Test
     public void getOccupiedLocation_rotatedMargin() {
-        Point margin = new PointClass(10, 10);
+        Point margin = new PointClass(15, 15);
         Position position = new PositionClass(margin, -PI / 2);
 
         Footprint footprint = new FootprintClass(0, position, 1, getStandartMovingObjet());
         PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
-        PolygonExtended expectedPolygonExtended = expectedRoteted(margin);
+        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
+        expectedPolygonExtended.addPoint(new PointClass(10, 20));
+        expectedPolygonExtended.addPoint(new PointClass(20, 20));
+        expectedPolygonExtended.addPoint(new PointClass(20, 10));
+        expectedPolygonExtended.addPoint(new PointClass(10, 10));
 
 
-        assertTrue(expectedPolygonExtended.equals(actualOccupiedLocation));
+        assertEquals(expectedPolygonExtended, actualOccupiedLocation);
     }
 
     private PolygonExtended expectedRoteted(Point margin) {

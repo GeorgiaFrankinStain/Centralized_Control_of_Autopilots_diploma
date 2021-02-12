@@ -33,27 +33,27 @@ class RoundsCorridorClassTest {
 
     @Test
     void isPolygonEntering_corridorSize2TimeM1() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(-1.0, polygonNearOriginRadius01));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(-1.0, polygonNearOriginRadius01));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time0() {
-        assertTrue(corridorSizeFrom0To2.isPolygonEntering(0.0, polygonNearOriginRadius01));
+        assertTrue(corridorSizeFrom0To2.isCoverPolygon(0.0, polygonNearOriginRadius01));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time1() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(1.0, polygonNearOriginRadius01));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(1.0, polygonNearOriginRadius01));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time2() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(2.0, polygonNearOriginRadius01));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(2.0, polygonNearOriginRadius01));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time3() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(3.0, polygonNearOriginRadius01));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(3.0, polygonNearOriginRadius01));
     }
 
 
@@ -72,17 +72,17 @@ class RoundsCorridorClassTest {
 
     @Test
     void isPolygonEntering_CorridorSize2Time0_partialEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(0.0, polygonNearOriginRadius2));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(0.0, polygonNearOriginRadius2));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time1_partialEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(1.0, polygonNearOriginRadius2));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(1.0, polygonNearOriginRadius2));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time2_partialEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(2.0, polygonNearOriginRadius2));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(2.0, polygonNearOriginRadius2));
     }
 
 
@@ -98,17 +98,17 @@ class RoundsCorridorClassTest {
 
     @Test
     void isPolygonEntering_corridorSize2Time0_centralCorridorEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(0.0, polygon1d1Radius1));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(0.0, polygon1d1Radius1));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time1_centralCorridorEntry() {
-        assertTrue(corridorSizeFrom0To2.isPolygonEntering(1.0, polygon1d1Radius1));
+        assertTrue(corridorSizeFrom0To2.isCoverPolygon(1.0, polygon1d1Radius1));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time2_centralCorridorEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(2.0, polygon1d1Radius1));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(2.0, polygon1d1Radius1));
     }
 
 
@@ -124,17 +124,16 @@ class RoundsCorridorClassTest {
 
     @Test
     void isPolygonEntering_corridorSize2Time0_endCorridorEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(0.0, polygon2d2Radius1));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(0.0, polygon2d2Radius1));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time1_endCorridorEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(1.0, polygon2d2Radius1));
+        assertFalse(corridorSizeFrom0To2.isCoverPolygon(1.0, polygon2d2Radius1));
     }
 
     @Test
     void isPolygonEntering_corridorSize2Time2_endCorridorEntry() {
-        assertTrue(corridorSizeFrom0To2.isPolygonEntering(2.0, polygon2d2Radius1));
+        assertTrue(corridorSizeFrom0To2.isCoverPolygon(2.0, polygon2d2Radius1));
     }
-    //FIXME more tests add
 }

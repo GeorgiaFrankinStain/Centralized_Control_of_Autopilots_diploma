@@ -1,25 +1,115 @@
+package Logic.PathsMachines;
 
-    private PolygonExtended polygon2d2Radius1 = createPolygon2d2Radius1();
+import Logic.FootprintSpaceTime.Point;
+import Logic.GlobalVariable;
+import Logic.Position;
 
-    private PolygonExtended createPolygon2d2Radius1() {
-        PolygonExtended polygon = polygonNearOriginRadius01.clone();
-        Point vector = new PointClass(1, 1);
-        polygon.deposeOn(vector);
+public class PositionClass implements Position {
+    private Point point;
+    private double rotation;
 
-        return polygon;
+    public PositionClass(Point point, double rotation) {
+        this.point = point;
+        this.rotation = rotation;
     }
 
-    @Test
-    void isPolygonEntering_corridorSize2Time0_endCorridorEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(0.0, polygon2d2Radius1));
+    @Override
+    public Point getCoordinats() {
+        return this.point;
     }
 
-    @Test
-    void isPolygonEntering_corridorSize2Time1_endCorridorEntry() {
-        assertTrue(corridorSizeFrom0To2.isPolygonEntering(1.0, polygon2d2Radius1));
+    @Override
+    public double getRotation() {
+        return this.rotation;
     }
 
-    @Test
-    void isPolygonEntering_corridorSize2Time2_endCorridorEntry() {
-        assertFalse(corridorSizeFrom0To2.isPolygonEntering(2.0, polygon2d2Radius1));
+    @Override
+    public Position getApproximation(
+            double timeFirst,
+            Position secondPosition,
+            double timeSecond,
+            double timeApproximation
+    ) { //FIXME ass tests
+        Point approximationPoint = this.point.getApproximationWith(
+                timeFirst,
+                secondPosition.getCoordinats(),
+                timeSecond,
+                timeApproximation
+        );
+        double mediumAngle = mediumAngle(secondPosition.getRotation(), this.getRotation());
+        Position result = new PositionClass(approximationPoint, mediumAngle);
+        return result;
     }
+
+    @Override
+    public double getRotationDegree() {
+        return this.getRotation() * 180 / Math.PI;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+
+
+        Position other = (Position) obj;
+        return (this.getCoordinats().equals(other.getCoordinats()))
+                && GlobalVariable.equalsNumber(this.getRotation(), other.getRotation());
+    }
+
+    @Override
+    public String toString() {
+        return "rotation: " + rotation + " " + point.toString();
+    }
+
+    private double mediumAngle(double angle1, double angle2) {
+    }
+
+    private interface CalculatorMediumAngle {
+        public double getMediumAngle();
+    }
+
+    private class CalculatorMediumAngleClass implements CalculatorMediumAngle {
+        double minAngle;
+        double maxAngle;
+        double distanceBetweenAnglesForHalf1;
+        double distanceBetweenAnglesForHalf2;
+        double angle1Half;
+        double angle2Half;
+
+        public CalculatorMediumAngleClass(double angle1, double angle2) {
+            if (angle1 < angle2) {
+                this.minAngle = angle1;
+                this.maxAngle = angle2;
+            } else {
+                this.minAngle = angle2;
+                this.maxAngle = angle1;
+            }
+            assert(minAngle < 2 * Math.PI);
+            assert(maxAngle < 2 * Math.PI);
+        }
+
+        @Override
+        public double getMediumAngle() {
+            calculateAngle1Half();
+            calculateAngle2Half();
+        }
+
+        private double returnAngleWithMinDistanceBetweenAngles() {
+
+        }
+
+        private double calculateAngle1Half() {
+            angle1Half = (minAngle + maxAngle) / 2;
+        }
+
+        private double calculateAngle2Half() {
+
+        }
+    }
+}
