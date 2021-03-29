@@ -1,16 +1,16 @@
 package Logic.ControllerMachines;
 
 import GUI.StatementTaskRendering.TypeMachinesBody;
-import Logic.FabricMovingObjects;
-import Logic.FabricMovingObjectsClass;
+import Logic.MovingObjects.FabricParametersMoving;
+import Logic.MovingObjects.FabricParametersMovingClass;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PointClass;
-import Logic.LevelLayer;
-import Logic.LevelLayerClass;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayer;
+import Logic.IndexLayerClass;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.MovingObjects.PathClass;
 import org.junit.Test;
@@ -24,18 +24,19 @@ public class AStarSpaceTimePlanarGraphClassTest {
     private AlhorithmFastFindPath pathCreatedFastFingerPath() {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
-        NetworkNodes networkNodesFabrica = new SquareNetworkNodes(13.3);//FIXME add fabric
+
+        NetworkNodes networkNodesFabrica = new SquareNetworkNodes();
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
 
         return fastFinderPath;
     }
 
-    private MovingObject squareMovingObject = createSquareMovingObject();
+    private ParametersMoving squareParametersMoving = createSquareMovingObject();
 
-    private MovingObject createSquareMovingObject() {
-        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-        return movingObject;
+    private ParametersMoving createSquareMovingObject() {
+        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+        ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        return parametersMoving;
     }
 
     private double timeAddingPath = 0.0;
@@ -43,14 +44,14 @@ public class AStarSpaceTimePlanarGraphClassTest {
 
     @Test
     public void getPath_gorizontal() throws СrashIntoAnImpassableObjectExeption {
-        LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+        IndexLayer defaultIndexLayer = new IndexLayerClass(0);
         {
 
 
             Point from = new PointClass(0, 0);
             Point to = new PointClass(100, 0);
 
-            Path actualPath = fastFinderPath.getPath(from, to, squareMovingObject.getRadius(), squareMovingObject, timeAddingPath);
+            Path actualPath = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
 
             Path expectedPath = new PathClass();
             expectedPath.addPoint(new PointClass(0.0, 0.0));
@@ -68,18 +69,18 @@ public class AStarSpaceTimePlanarGraphClassTest {
     public void getPath_vertical() throws СrashIntoAnImpassableObjectExeption {
         {
 
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
 
-            LevelLayer levelLayer = new LevelLayerClass(0);
+            IndexLayer indexLayer = new IndexLayerClass(0);
 
 
-            MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
+            ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
 
 
             Point from = new PointClass(60, 0);
             Point to = new PointClass(60, 200);
 
-            Path actualPath = fastFinderPath.getPath(from, to, squareMovingObject.getRadius(), squareMovingObject, timeAddingPath);
+            Path actualPath = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
 
             Path expectedPath = new PathClass();
             expectedPath.addPoint(new PointClass(60.0, 0.0));

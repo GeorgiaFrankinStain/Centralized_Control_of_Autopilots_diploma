@@ -3,25 +3,25 @@ package Logic.ControllerMachines;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.Point;
-import Logic.LevelLayer;
-import Logic.LevelLayerClass;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayer;
+import Logic.IndexLayerClass;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerMachinesClass implements ControllerMachines {
-    private List<MovingObject> subordinateMachines = new ArrayList<MovingObject>();
-    private NetworkNodes networkNodesFabrica; //FIXME add fabric
+    private List<ParametersMoving> subordinateMachines = new ArrayList<ParametersMoving>();
+    private NetworkNodes networkNodesFabrica;
     private AlhorithmFastFindPath fastFinderPath;
     private FootprintsSpaceTime footprintsSpaceTime;
-    private LevelLayer defaultLevel = new LevelLayerClass(0);
+    private IndexLayer defaultLevel = new IndexLayerClass(0);
 
 
     public ControllerMachinesClass(FootprintsSpaceTime footprintsSpaceTime, double dimension) {
         this.footprintsSpaceTime = footprintsSpaceTime;
-        this.networkNodesFabrica = new SquareNetworkNodes(dimension); //FIXME add fabric
+        this.networkNodesFabrica = new SquareNetworkNodes();
         this.fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, footprintsSpaceTime);
     }
 
@@ -29,13 +29,13 @@ public class ControllerMachinesClass implements ControllerMachines {
     public void bringCarToEndOfRoad(
             Point from,
             Point to,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
-        this.subordinateMachines.add(movingObject);
+        this.subordinateMachines.add(parametersMoving);
 
-        Path path = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
-        movingObject.mark(
+        Path path = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
+        parametersMoving.mark(
                 this.footprintsSpaceTime,
                 path,
                 timeAdding,

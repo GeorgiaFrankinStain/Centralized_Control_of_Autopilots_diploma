@@ -1,8 +1,8 @@
 package Logic.FootprintSpaceTime;
 
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.LevelLayer;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayer;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.Position;
 
@@ -13,7 +13,7 @@ public interface FootprintsSpaceTime {
     public List<Footprint> getRenderingFootprintsFromWhen(
             PolygonExtended areaFind,
             double time,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     );
     public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(
             PolygonExtended areaFind,
@@ -22,43 +22,43 @@ public interface FootprintsSpaceTime {
 
     public void addFootprint(
             int idTrack,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Path path,
             double startTime,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption;
 
     public void addFootprint(
             Footprint footprint,
             double time,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption;
 
     public void deleteFootprints(int ID);
 
-    public boolean getIsSeatTaken(PolygonExtended place, double time, LevelLayer levelLayer);
+    public boolean getIsSeatTaken(PolygonExtended place, double time, IndexLayer indexLayer);
 
     public boolean getIsSeatTakenSpaceTime(
             PolygonExtended place,
             double fromTime,
             double toTime,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     );
 
 
     public boolean isPathMovingObjectEnteringCorridor(
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Corridor corridor,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     );
 
     public Double averageTimeMovingToNextPointOfPath();
 
     public Double totalTimeAllMoving();
 
-    public Double getTimeAddingLastFootprints(LevelLayer levelLayer);
+    public Double getTimeAddingLastFootprints(IndexLayer indexLayer);
 
-    public Position getPositionInDefaultLevel(MovingObject movingObjectWithID, double time);
+    public Position getPositionInDefaultLevel(ParametersMoving parametersMovingWithID, double time);
 
 
 

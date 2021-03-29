@@ -62,7 +62,7 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
             DataFootprintForRendering currentDataFootprintForRendering = it.next();
 
             RenderingFootprint takenRender =
-                    this.storageRenderingFootprints.get(currentDataFootprintForRendering.getIdObject());
+                    this.storageRenderingFootprints.get(currentDataFootprintForRendering.getIdMovingObject());
 
             boolean isTaken = takenRender != null;
             if (isTaken) {
@@ -83,7 +83,7 @@ public class MapRenderClass extends Pane implements MapRender, SubWindow {
         FabricRendringFootprint fabric = new FabricRenderingFootprintClass();
         Pane currentPane = fabric.getRenderingFootprint(dataFootprintForRendering);
         this.storageRenderingFootprints.put(
-                dataFootprintForRendering.getIdObject(),
+                dataFootprintForRendering.getIdMovingObject(),
                 (RenderingFootprint) currentPane
         );
         getChildren().addAll(currentPane);

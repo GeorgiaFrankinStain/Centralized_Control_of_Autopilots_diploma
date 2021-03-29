@@ -1,11 +1,9 @@
 package Logic;
 
-import Logic.LevelLayer;
-
-public class LevelLayerClass implements LevelLayer, Comparable<LevelLayer> {
+public class IndexLayerClass implements IndexLayer, Comparable<IndexLayer> {
     private int zIndex;
 
-    public LevelLayerClass(int zIndex) {
+    public IndexLayerClass(int zIndex) {
         this.zIndex = zIndex;
     }
 
@@ -31,7 +29,7 @@ public class LevelLayerClass implements LevelLayer, Comparable<LevelLayer> {
     }
 
     @Override
-    public int compareTo(LevelLayer o) {
+    public int compareTo(IndexLayer o) {
         if (this.getZIndex() == o.getZIndex()) {
             return 0;
         } else if (this.getZIndex() < o.getZIndex()){
@@ -41,7 +39,7 @@ public class LevelLayerClass implements LevelLayer, Comparable<LevelLayer> {
         }
     }
 
-    public boolean equals(Object obj) { //FIXME ADD_TEST
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
@@ -50,7 +48,7 @@ public class LevelLayerClass implements LevelLayer, Comparable<LevelLayer> {
             return false;
 
 
-        LevelLayer other = (LevelLayer) obj;
+        IndexLayer other = (IndexLayer) obj;
 
         return this.getZIndex() == other.getZIndex();
     }

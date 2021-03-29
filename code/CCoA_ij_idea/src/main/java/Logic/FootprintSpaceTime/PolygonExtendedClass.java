@@ -27,7 +27,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     public PolygonExtendedClass(List<Point> points) {
-        this.points = points;
+       addPoint(points);
     }
 
     private interface ConstructorTextFormat {
@@ -97,7 +97,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public int getCountPoints() {//TEST+
+    public int getCountPoints() {
         return points.size();
     }
 
@@ -108,7 +108,8 @@ public class PolygonExtendedClass implements PolygonExtended {
 
     @Override
     public void addPoint(Point newPoint) {
-        this.points.add(newPoint);
+        assert(newPoint != null);
+        this.points.add(newPoint.clone());
     }
 
     @Override
@@ -127,6 +128,7 @@ public class PolygonExtendedClass implements PolygonExtended {
 
     @Override
     public void addAllPoint(List<Point> newPoints) {
+        assert(newPoints != null);
         this.points.addAll(newPoints);
     }
 
@@ -140,10 +142,6 @@ public class PolygonExtendedClass implements PolygonExtended {
         this.points.set(index, newPoint);
     }
 
-    @Override
-    public void insertBeforetPoint(int index, Point newPoint) {
-        //FIXME
-    }
 
     @Override
     public void rotateRelative(Point origin, double angle) { //FIXME TEST ADD
@@ -172,11 +170,11 @@ public class PolygonExtendedClass implements PolygonExtended {
             result += this.getPoint(i) + " ";
         }
 
-        return result;
+        return "[" + result + "]";
     }
 
     @Override
-    public boolean equals(Object obj) { //FIXME ADD_TEST
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
@@ -202,6 +200,18 @@ public class PolygonExtendedClass implements PolygonExtended {
         return true;
     }
 
+
+    @Override
+    public int hashCode() {
+        int twoPow32 = 2147483647;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int) (this.points.hashCode() % twoPow32);
+        result = prime * result + prime;
+        return result;
+    }
+
+
     @Override
     public PolygonExtended clone() {
         List<Point> cloneList = new ArrayList<Point>(this.points);
@@ -209,7 +219,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public boolean contains(Point desirededPoint) {//TEST+
+    public boolean contains(Point desirededPoint) {
         return this.points.contains(desirededPoint);
     }
 
@@ -224,7 +234,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public boolean intersectionPolygon(PolygonExtended secondPolygon) {//TEST+
+    public boolean intersectionPolygon(PolygonExtended secondPolygon) {
 
         boolean mutualEnterPointOfPolygonsBOOL =
                 enteringMinimumOnePointOfFirstPolygonInSecondPolygon(this, secondPolygon)
@@ -241,7 +251,7 @@ public class PolygonExtendedClass implements PolygonExtended {
 
 
     @Override
-    public boolean intersectionLine(Point startLine, Point endLine) {//TEST+
+    public boolean intersectionLine(Point startLine, Point endLine) {
         int indexLastPoint = this.getCountPoints() - 1;
         Point startLocalLine = this.getPoint(indexLastPoint);
         Point endLocalLine = this.getPoint(0);
@@ -300,7 +310,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public Point getCenterAverage() {//TEST+
+    public Point getCenterAverage() {
         double xSum = 0;
         double ySum = 0;
         for (Point point : this.points) {
@@ -315,7 +325,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public Double[] getFormatDoubleArray() { //TEST+
+    public Double[] getFormatDoubleArray() {
         Double[] arrayDouble = new Double[this.getCountPoints() * 2];
 
         int indexWriteInDoubleArray = 0;
@@ -394,7 +404,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     private boolean intersectionMinumumTwoLineSegmentOfTwoPolygons(
             PolygonExtended firstPolygon,
             PolygonExtended secondPoylgon
-    ) {
+    ) { //FIXME codestyle
         int indexLastPoint = firstPolygon.getCountPoints() - 1;
         Point startLine1 = firstPolygon.getPoint(indexLastPoint);
         Point endLine1 = firstPolygon.getPoint(0);

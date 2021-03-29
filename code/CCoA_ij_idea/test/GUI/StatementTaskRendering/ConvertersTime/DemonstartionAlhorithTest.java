@@ -8,16 +8,14 @@ import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PointClass;
-import Logic.MovingObjects.MovingObject;
-import Logic.MovingObjects.Path;
-import Logic.MovingObjects.PathClass;
+import Logic.MovingObjects.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class DemonstartionAlhorithTest {
 
-    LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+    IndexLayer defaultIndexLayer = new IndexLayerClass(0);
     private ConverterTime converterTime = createConverterTime();
 
     private ConverterTime createConverterTime() {
@@ -33,13 +31,13 @@ public class DemonstartionAlhorithTest {
         resPath.addPoint(endPoint);
 
 
-        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+        ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
 
         double timeAddingPath = 0.0;
         try {
-            movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
+            parametersMoving.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultIndexLayer);
         } catch (СrashIntoAnImpassableObjectExeption ex) {
         }
 
@@ -53,7 +51,7 @@ public class DemonstartionAlhorithTest {
         double requstedTime = 0.0;
 
         Double expected = -3.0;
-        Double actual = converterTime.convert(requstedTime, defaultLevelLayer);
+        Double actual = converterTime.convert(requstedTime, defaultIndexLayer);
 
         assertEquals(expected, actual, GlobalVariable.DOUBLE_COMPARISON_ACCURACY);
     }
@@ -62,7 +60,7 @@ public class DemonstartionAlhorithTest {
     public void convert_0() {
         double requstedTime = 0.0;
 
-        LevelLayer levelWithAlhorithInformation = new LevelLayerClass(1);
+        IndexLayer levelWithAlhorithInformation = new IndexLayerClass(1);
         Double expected = requstedTime;
         Double actual = converterTime.convert(requstedTime, levelWithAlhorithInformation);
 

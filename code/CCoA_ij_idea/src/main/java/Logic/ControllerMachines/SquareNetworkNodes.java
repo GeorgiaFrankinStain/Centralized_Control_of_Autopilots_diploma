@@ -3,7 +3,7 @@ package Logic.ControllerMachines;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PointClass;
 import Logic.GlobalVariable;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 
 import java.util.*;
 
@@ -18,10 +18,8 @@ public class SquareNetworkNodes implements NetworkNodes {
     private double angle90grad = Math.PI / 2;
 
     private Map<Node, Node> storageNodes = new HashMap<Node, Node>();
-    private double dimension; //FIXME dimension no use
 
-    public SquareNetworkNodes(double dimension) {
-        this.dimension = dimension;
+    public SquareNetworkNodes() {
     }
 
     @Override
@@ -31,11 +29,6 @@ public class SquareNetworkNodes implements NetworkNodes {
         return firstNode;
     }
     @Override
-    public Node createFirstNode(Point coordinat, double radius) {
-        return new NodeClass(this, coordinat, 0.0);
-    }
-
-    @Override
     public void cleanInfoAbout(Node node) {
         this.storageNodes.remove(node);
     }
@@ -44,7 +37,6 @@ public class SquareNetworkNodes implements NetworkNodes {
 
     @Override
     public void addNode(Node node) {
-//        this.storageNodes.put(node, node);
         this.putInStorage(node, node);
     }
 
@@ -118,7 +110,7 @@ public class SquareNetworkNodes implements NetworkNodes {
      * -------------x3------------x0
      */
     @Override
-    public List<Node> getNeightboringNodes(Node currentNode, Point coordinat, double radius, MovingObject movingObject) {
+    public List<Node> getNeightboringNodes(Node currentNode, Point coordinat, double radius, ParametersMoving parametersMoving) {
 
 
         //FIXME add test on minus radius
@@ -153,7 +145,7 @@ public class SquareNetworkNodes implements NetworkNodes {
                     sideSquare,
                     coordinat,
                     radius,
-                    movingObject,
+                    parametersMoving,
                     currentNode
             );
         }/* else if (currentPositionOnSideSquare) {
@@ -164,7 +156,7 @@ public class SquareNetworkNodes implements NetworkNodes {
                     sideSquare,
                     coordinat,
                     radius,
-                    movingObject,
+                    parametersMoving,
                     currentNode
             );
         }
@@ -173,17 +165,13 @@ public class SquareNetworkNodes implements NetworkNodes {
 //        assert(false);
     }
 
-    @Override
-    public double getDimension() {
-        return this.dimension;
-    }
 
     private List<Node> coincidesCenterMachineWith(
             Point positionMovingObject,
             double sideSquare,
             Point coordinatAndCenterMachine,
             double radius,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Node currentNode
     ) {
 
@@ -205,7 +193,7 @@ public class SquareNetworkNodes implements NetworkNodes {
         for (int i = 0; i < 4; i++) {
             Point coordinateNeighbor = firstNode.getRotateRelative(coordinatAndCenterMachine, angle90grad * i);
             double distanceToNeighbor = coordinateNeighbor.getDistanceToPoint(coordinatAndCenterMachine);
-            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
             listNeightborint.add(new NodeClass(
                     this,
                     coordinateNeighbor,
@@ -219,7 +207,7 @@ public class SquareNetworkNodes implements NetworkNodes {
                     coordinateNeighborDiagonal.getDistanceToPoint(coordinatAndCenterMachine);
 
             double timeAddingDiagonal =
-                    currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighborDiagonal);
+                    currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighborDiagonal);
             listNeightborint.add(new NodeClass(
                     this,
                     coordinateNeighborDiagonal,
@@ -240,7 +228,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             double sideSquare,
             Point coordinatAndCenterMachine,
             double radius,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Node currentNode
     ) {
         double xMod = positionMovingObject.getX() % sideSquare;
@@ -257,7 +245,7 @@ public class SquareNetworkNodes implements NetworkNodes {
         {
             Point coordinateNeighbor = new PointClass(topLeftNode.getX() + sideSquare, topLeftNode.getY());
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,
@@ -271,7 +259,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             Point coordinateNeighbor =
                     new PointClass(topLeftNode.getX() + sideSquare, topLeftNode.getY() + sideSquare);
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,
@@ -285,7 +273,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             Point coordinateNeighbor =
                     new PointClass(topLeftNode.getX(), topLeftNode.getY() + sideSquare);
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,
@@ -299,7 +287,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             Point coordinateNeighbor =
                     topLeftNode;
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + movingObject.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,

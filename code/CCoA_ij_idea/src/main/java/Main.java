@@ -8,19 +8,15 @@ import GUI.ExecutionTaskRendering.BasicFeaturesJava.WindowsClass;
 import Logic.AreasBenchmarkPaths.AreasBenchmarkPaths;
 import Logic.AreasBenchmarkPaths.StraightLineEstimatedClass;
 import Logic.ControllerMachines.*;
-import Logic.FabricMovingObjects;
-import Logic.FabricMovingObjectsClass;
+import Logic.MovingObjects.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
 import Logic.FootprintSpaceTime.Point;
-import Logic.LevelLayerClass;
+import Logic.IndexLayerClass;
 import Logic.FootprintSpaceTime.PointClass;
-import Logic.LevelLayer;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayer;
 
-import Logic.MovingObjects.Path;
-import Logic.MovingObjects.PathClass;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -48,22 +44,22 @@ public class Main extends Application {
         //FIXME MOVE imitation in
 //            onlyFootprintsSpaceTime.addFootprint();
 
-        LevelLayer levelLayer = new LevelLayerClass(0);
+        IndexLayer indexLayer = new IndexLayerClass(0);
 
-        NetworkNodes networkNodesFabrica = new SquareNetworkNodes(13.3);//FIXME add fabric
+        NetworkNodes networkNodesFabrica = new SquareNetworkNodes();
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
 
-        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
 
 
 
 
-        MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
+        ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
         Path wallPath = new PathClass();
         wallPath.addPoint(new PointClass(120, 160));
         wallPath.deposeOn(wall.getVectorFromTopLeftToAppliedCoordinates());
         try {
-            wall.mark(onlyFootprintsSpaceTime, wallPath, 0.0, levelLayer);
+            wall.mark(onlyFootprintsSpaceTime, wallPath, 0.0, indexLayer);
         } catch (СrashIntoAnImpassableObjectExeption ex) {
         }
 
@@ -73,10 +69,10 @@ public class Main extends Application {
 
 
             double timeAdding = 0.0;
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer); //FIXME bag sequense time adding
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -90,10 +86,10 @@ public class Main extends Application {
 
             double timeAdding = 0.0;
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -104,10 +100,10 @@ public class Main extends Application {
 
             double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -119,10 +115,10 @@ public class Main extends Application {
 
             double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -134,10 +130,10 @@ public class Main extends Application {
 
             double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -149,10 +145,10 @@ public class Main extends Application {
 
             double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -164,10 +160,10 @@ public class Main extends Application {
 
             double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -179,10 +175,10 @@ public class Main extends Application {
 
             double timeAdding = 10.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -194,10 +190,10 @@ public class Main extends Application {
 
             double timeAdding = 20.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -209,11 +205,12 @@ public class Main extends Application {
 
             double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            movingObject.setSpeed(30);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            BuilderParametersMoving builder = fabricParametersMoving.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
+            builder.setSpeed(30);
+            ParametersMoving parametersMoving = builder.getParametersMoving();
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -225,11 +222,12 @@ public class Main extends Application {
 
             double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            movingObject.setSpeed(60);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            BuilderParametersMoving builder = fabricParametersMoving.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
+            builder.setSpeed(60);
+            ParametersMoving parametersMoving = builder.getParametersMoving();
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
@@ -241,10 +239,10 @@ public class Main extends Application {
 
             double timeAdding = 30.0; //FIXME don't work more 20 время добавления новой машины должно быть позже, чем остановка предыдущей. Хз почему
 
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            Path actualPath = fastFinderPath.getPath(from, to, movingObject.getRadius(), movingObject, timeAdding);
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            Path actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, levelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }

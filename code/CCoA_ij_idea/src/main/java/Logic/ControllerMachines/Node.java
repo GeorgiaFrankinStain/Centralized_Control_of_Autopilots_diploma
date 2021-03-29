@@ -1,12 +1,12 @@
 package Logic.ControllerMachines;
 
 import Logic.FootprintSpaceTime.Point;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 
 import java.util.List;
 
 public interface Node {
-    public List<Node> getNeighboringNodes(double radiusMovingObject, MovingObject movingObject);
+    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMoving parametersMoving);
 
     public double getCoveredDistanceFrom(Point from);
 

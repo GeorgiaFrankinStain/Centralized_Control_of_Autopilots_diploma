@@ -1,9 +1,8 @@
 package GUI.StatementTaskRendering;
 
-import GUI.StatementTaskRendering.ConvertersTime.DemonstartionAlhorith;
 import Logic.FootprintSpaceTime.*;
-import Logic.LevelLayer;
-import Logic.LevelLayerClass;
+import Logic.IndexLayer;
+import Logic.IndexLayerClass;
 
 import java.util.*;
 
@@ -33,13 +32,13 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
 
         ConverterTime converterTime = new ConverterTime() {
             @Override //FIXME COSTIL
-            public double convert(double time, LevelLayer levelLayer) {
+            public double convert(double time, IndexLayer levelLayer) {
                 return time;
             }
         };
 
 
-        LevelLayer defaultLevel = new LevelLayerClass(0);
+        IndexLayer defaultLevel = new IndexLayerClass(0);
         List<Footprint> footprints =
                 this.sourceFootprintsSpaceTime.getRenderingFootprintsFromWhen(
                         areaRendering,
@@ -58,7 +57,7 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
 
 
         for (Footprint footprint : footprints) {
-            poolDataFootprintForRendering.put(footprint.getIdObject(), (DataFootprintForRendering) footprint);
+            poolDataFootprintForRendering.put(footprint.getIdMovingObject(), (DataFootprintForRendering) footprint);
         }
     }
 

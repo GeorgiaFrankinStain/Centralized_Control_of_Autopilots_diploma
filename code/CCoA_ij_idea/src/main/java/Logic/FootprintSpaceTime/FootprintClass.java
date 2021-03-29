@@ -2,33 +2,30 @@ package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.DataFootprintForRendering;
 import Logic.GlobalVariable;
-import Logic.MovingObjects.MovingObject;
-import Logic.PathsMachines.PositionClass;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.Position;
 
 public class FootprintClass implements Footprint, DataFootprintForRendering {
-    private int idTrack;
     private Position position;
     private double timeToNextFootprint;
-    private MovingObject movingObject;
+    private ParametersMoving parametersMoving;
 
 
-    public FootprintClass(int idTrack, Position position, double timeToNextFootprint, MovingObject movingObject) {
-        this.idTrack = idTrack;
+    public FootprintClass(Position position, double timeToNextFootprint, ParametersMoving parametersMoving) {
         this.position = position;
         this.timeToNextFootprint = timeToNextFootprint;
-        this.movingObject = movingObject;
+        this.parametersMoving = parametersMoving;
     }
 
 
     @Override
     public PolygonExtended getOccupiedLocation() { //FIXME ADD_TEST
-        PolygonExtended formMovingObject = this.movingObject.getShape();
+        PolygonExtended formMovingObject = this.parametersMoving.getShape();
         PolygonExtended resultPolygon = formMovingObject.clone();
 
-        Point origin = this.movingObject.getPointWhereCoordinatesAreApplied();
+        Point origin = this.parametersMoving.getPointWhereCoordinatesAreApplied();
         resultPolygon.rotateRelative(origin, this.position.getRotation());
-        resultPolygon.deposeOn(this.position.getCoordinats());
+        resultPolygon.deposeOn(this.position.getCoordinates());
 
         return resultPolygon;
     }
@@ -36,9 +33,22 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     @Override
     public String toString() {
         return this.position.toString()
-                + " MovObj" + this.movingObject.toString()
-                + " timeStanding:" + this.getTimeToNextFootprint();
+                + " MovObj" + this.parametersMoving.toString()
+                + " timeStanding: " + this.getTimeToNextFootprint();
     }
+
+    @Override
+    public int hashCode() {
+        int twoPow32 = 2147483647;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int) (this.getTimeToNextFootprint() % twoPow32);
+        result = prime * result + (int) (this.getMovingObject().hashCode());
+        result = prime * result + (int) (this.getPosition().hashCode());
+        result = prime * result + prime;
+        return result;
+    }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -52,10 +62,12 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
         Footprint other = (Footprint) obj;
 
-        int oneId = this.getIdObject();
-        int twoId = other.getIdObject();
+        int oneId = this.getIdMovingObject();
+        int twoId = other.getIdMovingObject();
         boolean idTrackEquals = oneId == twoId;
-        boolean positionEquals = this.getLocalOriginForPointMovingObject().equals(other.getPosition());
+        Position thisPosition = this.getPosition();
+        Position otherPosition = other.getPosition();
+        boolean positionEquals = thisPosition.equals(otherPosition);
         boolean timeStandingEquals = GlobalVariable.equalsNumber(this.getTimeToNextFootprint(), other.getTimeToNextFootprint());
         boolean movingEquals = this.getMovingObject().equals(other.getMovingObject());
 
@@ -63,10 +75,6 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     }
     //==== <start> <Getter_and_Setter> ==================================================
 
-    @Override
-    public int getIdTrack() {
-        return idTrack;
-    }
 
     @Override
     public Position getPosition() {
@@ -76,16 +84,18 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     //==== <start> <Implements RenderingFootprint> ==================================================
     @Override
-    public Position getLocalOriginForPointMovingObject() {
+    public Position getLocalOriginForPointMovingObject() {/*
         Point margin = this.movingObject.getVectorFromTopLeftToAppliedCoordinates().getInversion();
         Point newCoordinat = this.position.getCoordinats().getDeposeOn(margin);
         Position newPosition = new PositionClass(newCoordinat, this.position.getRotation());
-        return newPosition;
+        return newPosition;*/
+
+        return this.getPosition();
     }
 
     @Override
     public Point getCoordinat() {
-        return this.position.getCoordinats();
+        return this.position.getCoordinates();
     }
 
     @Override
@@ -94,13 +104,11 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     }
 
     @Override
-    public Footprint getApproximation(double timeFirst, Footprint second, double timeSecond, double timeApproximation) { //FIXME add test
-        //FIXME add test on a + b = b + a
-
+    public Footprint getApproximation(double timeFirst, Footprint second, double timeSecond, double timeApproximation) {
         Position position =
                 this.getPosition().getApproximation(timeFirst, second.getPosition(), timeSecond, timeApproximation);
 
-        return new FootprintClass(this.getIdTrack(), position, this.getTimeToNextFootprint(), movingObject);
+        return new FootprintClass(position, this.getTimeToNextFootprint(), parametersMoving);
     }
 
     @Override
@@ -111,17 +119,17 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public String getType() {
-        return this.movingObject.getType();
+        return this.parametersMoving.getType();
     }
 
     @Override
-    public MovingObject getMovingObject() {
-        return this.movingObject;
+    public ParametersMoving getMovingObject() {
+        return this.parametersMoving;
     }
 
     @Override
-    public int getIdObject() {
-        return this.movingObject.getID();
+    public int getIdMovingObject() {
+        return this.parametersMoving.getID();
     }
 
     //    ==== <end> <Implements RenderingFootprint> ==================================================
@@ -137,7 +145,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     ) { //FIXME add origin of window
 
 
-        Point theUseCoordinatesPolygon = position.getCoordinats();
+        Point theUseCoordinatesPolygon = position.getCoordinates();
 
         return new PointClass(
                 point.getX() + theUseCoordinatesPolygon.getX(),

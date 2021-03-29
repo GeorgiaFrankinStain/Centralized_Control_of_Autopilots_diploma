@@ -1,7 +1,7 @@
 package Logic.ControllerMachines;
 
 import Logic.FootprintSpaceTime.Point;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 
 import java.util.List;
 
@@ -18,9 +18,8 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     }
 
     @Override
-    public List<Node> getNeighboringNodes(double radiusMovingObject, MovingObject movingObject) {
-        double dimensionNetworkNodes = networkNodes.getDimension(); //radius;
-        return networkNodes.getNeightboringNodes(this, coordinat, radiusMovingObject, movingObject);
+    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMoving parametersMoving) {
+        return networkNodes.getNeightboringNodes(this, coordinat, radiusMovingObject, parametersMoving);
     }
 
     @Override

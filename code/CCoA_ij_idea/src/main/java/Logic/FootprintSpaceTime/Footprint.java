@@ -1,12 +1,10 @@
 package Logic.FootprintSpaceTime;
 
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.Position;
 
 public interface Footprint {
-    public int getIdObject();
-
-    public int getIdTrack();
+    public int getIdMovingObject();
 
     public Position getPosition();
 
@@ -16,7 +14,7 @@ public interface Footprint {
 
     public Footprint getApproximation(double timeFirst, Footprint second , double timeSecond, double timeApproximation);
 
-    public MovingObject getMovingObject();
+    public ParametersMoving getMovingObject();
 
     public void setTimeToNextFootprint(double newTimeStanding);
 

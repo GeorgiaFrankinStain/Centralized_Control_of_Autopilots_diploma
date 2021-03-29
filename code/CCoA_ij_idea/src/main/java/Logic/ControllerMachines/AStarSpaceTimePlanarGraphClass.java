@@ -1,8 +1,8 @@
 package Logic.ControllerMachines;
 
 import Logic.FootprintSpaceTime.*;
-import Logic.LevelLayerClass;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayerClass;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.MovingObjects.PathClass;
 
@@ -26,7 +26,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
      * @return
      */
     @Override
-    public Path getPath(Point start, Point destination, double radiusMovingObject, MovingObject movingObject,
+    public Path getPath(Point start, Point destination, double radiusMovingObject, ParametersMoving parametersMoving,
                         double timeAdding) {
 
         Set<Node> closedNodes = new HashSet<Node>();
@@ -41,7 +41,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
 
         gScopeRealBestKnownDistanceFromStart.put(startNode, 0.0);
 
-        double hevristic = movingObject.timeTravel(startNode.getEstimatedDistanceToDestination(destination));
+        double hevristic = parametersMoving.timeTravel(startNode.getEstimatedDistanceToDestination(destination));
         double g = 0.0;
         double f = g + hevristic;
         f_score.put(startNode, f);
@@ -64,7 +64,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
             f_score.remove(currentNode);
             closedNodes.add(currentNode);  //FIXME bag не видит появившееся пустое место
 
-            List<Node> allNeightbors = currentNode.getNeighboringNodes(radiusMovingObject, movingObject);
+            List<Node> allNeightbors = currentNode.getNeighboringNodes(radiusMovingObject, parametersMoving);
 
 
             int i = 0;
@@ -89,9 +89,9 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
                         neighbor,
                         currentNode,
                         radiusMovingObject,
-                        movingObject.timeTravel(realDistanceFromStartToCurrentNode),
-                        movingObject.timeTravel(realDistanceToNeightborFromStartTroughtCurrentNode),
-                        movingObject
+                        parametersMoving.timeTravel(realDistanceFromStartToCurrentNode),
+                        parametersMoving.timeTravel(realDistanceToNeightborFromStartTroughtCurrentNode),
+                        parametersMoving
                 )) {
                     continue;
                 }
@@ -118,7 +118,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
 //                    double g = realDistanceToNeightborFromStartTroughtCurrentNode + neighbor.getEstimatedDistanceToDestination(destination);
                     double score =
                             neighbor.getTimeTravelFromStart()
-                                    + movingObject.timeTravel(neighbor.getEstimatedDistanceToDestination(destination));
+                                    + parametersMoving.timeTravel(neighbor.getEstimatedDistanceToDestination(destination));
                     f_score.put(neighbor,
                             score);
 
@@ -140,7 +140,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
             double radiusMovingObject,
             double timeAdding,
             double timeStanding,
-            MovingObject movingObject
+            ParametersMoving parametersMoving
     ) {
         PolygonExtended occupiedPlace = spaceOccupiedDuringTheProcess(
                 neighborNode,
@@ -153,7 +153,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
                 occupiedPlace,
                 timeAdding,
                 timeAdding + timeStanding,
-                new LevelLayerClass(0)
+                new IndexLayerClass(0)
         );
 
 

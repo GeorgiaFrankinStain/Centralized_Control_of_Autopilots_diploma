@@ -4,20 +4,19 @@ import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
-import Logic.LevelLayer;
+import Logic.IndexLayer;
 
-public interface MovingObject {
+public interface ParametersMoving {
     public void mark(
             FootprintsSpaceTime footprintsSpaceTime,
             Path path,
             double timeAdding,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption;
 
     public PolygonExtended getShape();
 
     public double getSpeed();
-    public void setSpeed(double speed);
 
     public double timeTravel(double distance);
 

@@ -19,8 +19,6 @@ public interface PolygonExtended {
 
     public void setPoint(int index, Point newPoint);
 
-    public void insertBeforetPoint(int index, Point newPoint);
-
     public void rotateRelative(Point origin, double angle);
 
     public void deposeOn(Point vector);

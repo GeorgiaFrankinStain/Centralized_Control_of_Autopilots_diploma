@@ -1,9 +1,9 @@
 package Logic.FootprintSpaceTime;
 
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.LevelLayer;
-import Logic.LevelLayerClass;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayer;
+import Logic.IndexLayerClass;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import GUI.StatementTaskRendering.HistChangesFromWhen;
 import Logic.Position;
@@ -11,13 +11,13 @@ import Logic.Position;
 import java.util.*;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChangesFromWhen {
-    private LevelLayer defaultLevelLayer = new LevelLayerClass(0);
-    private Map<LevelLayer, LayerFootprintSpaceTime> layers =
-            new TreeMap<LevelLayer, LayerFootprintSpaceTime>();
+    private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
+    private Map<IndexLayer, LayerFootprintSpaceTime> layers =
+            new TreeMap<IndexLayer, LayerFootprintSpaceTime>();
 
 
     public FootprintsSpaceTimeClass() {
-        setLayer(defaultLevelLayer);
+        setLayer(defaultIndexLayer);
     }
 
     @Override
@@ -32,33 +32,32 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
 
     @Override
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time, LevelLayer levelLayer) {
-        return this.layers.get(levelLayer).getRenderingFootprintsFromWhen(areaFind, time);
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time, IndexLayer indexLayer) {
+        return this.layers.get(indexLayer).getRenderingFootprintsFromWhen(areaFind, time);
     }
 
     @Override
     public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(PolygonExtended areaFind, double time) {
-        return this.getRenderingFootprintsFromWhen(areaFind, time, this.defaultLevelLayer);
+        return this.getRenderingFootprintsFromWhen(areaFind, time, this.defaultIndexLayer);
     }
 
 
     @Override
     public void addFootprint(
             int idTrack,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Path path,
             double startTime,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
-                this.layers.get(levelLayer);
+                this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
-            this.setLayer(levelLayer);
+            this.setLayer(indexLayer);
         }
 
-        this.layers.get(levelLayer).addFootprint(
-                idTrack,
-                movingObject,
+        this.layers.get(indexLayer).addFootprint(
+                parametersMoving,
                 path,
                 startTime
         );
@@ -69,16 +68,16 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     public void addFootprint(
             Footprint footprint,
             double time,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
-                this.layers.get(levelLayer);
+                this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
-            this.setLayer(levelLayer);
+            this.setLayer(indexLayer);
         }
 
 
-        this.layers.get(levelLayer).addFootprint(footprint, time);
+        this.layers.get(indexLayer).addFootprint(footprint, time);
     }
 
     @Override
@@ -90,11 +89,11 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     public boolean getIsSeatTaken(
             PolygonExtended place,
             double time,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) {
 
         LayerFootprintSpaceTime layerFootprintSpaceTime =
-                this.layers.get(levelLayer);
+                this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
             return false;
         }
@@ -103,22 +102,22 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     }
 
     @Override
-    public boolean getIsSeatTakenSpaceTime(PolygonExtended place, double fromTime, double toTime, LevelLayer levelLayer) {
-        return this.getIsSeatTaken(place, fromTime, levelLayer) //FIXME
-                && this.getIsSeatTaken(place, toTime, levelLayer)
-                && this.getIsSeatTaken(place, (fromTime + toTime) / 2, levelLayer);
+    public boolean getIsSeatTakenSpaceTime(PolygonExtended place, double fromTime, double toTime, IndexLayer indexLayer) {
+        return this.getIsSeatTaken(place, fromTime, indexLayer) //FIXME
+                && this.getIsSeatTaken(place, toTime, indexLayer)
+                && this.getIsSeatTaken(place, (fromTime + toTime) / 2, indexLayer);
     }
 
     @Override
-    public boolean isPathMovingObjectEnteringCorridor(MovingObject movingObject, Corridor corridor, LevelLayer levelLayer) {
+    public boolean isPathMovingObjectEnteringCorridor(ParametersMoving parametersMoving, Corridor corridor, IndexLayer indexLayer) {
 
         LayerFootprintSpaceTime layerFootprintSpaceTime =
-                this.layers.get(levelLayer);
+                this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
             return false;
         }
 
-        return layerFootprintSpaceTime.isPathMovingObjectEnteringCorridor(movingObject, corridor);
+        return layerFootprintSpaceTime.isPathMovingObjectEnteringCorridor(parametersMoving, corridor);
     }
 
     @Override
@@ -148,8 +147,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     }
 
     @Override
-    public Double getTimeAddingLastFootprints(LevelLayer levelLayer) {
-        LayerFootprintSpaceTime layerFootprintSpaceTime = this.layers.get(new LevelLayerClass(0));
+    public Double getTimeAddingLastFootprints(IndexLayer indexLayer) {
+        LayerFootprintSpaceTime layerFootprintSpaceTime = this.layers.get(new IndexLayerClass(0));
         if (layerFootprintSpaceTime == null) {
             return null;
         }
@@ -158,22 +157,22 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
     }
 
     @Override
-    public Position getPositionInDefaultLevel(MovingObject movingObjectWithID, double time) {
+    public Position getPositionInDefaultLevel(ParametersMoving parametersMovingWithID, double time) {
         //FIXME one machine with some ID in one moment time
-        LayerFootprintSpaceTime layerFootprintSpaceTime = this.layers.get(new LevelLayerClass(0));
+        LayerFootprintSpaceTime layerFootprintSpaceTime = this.layers.get(new IndexLayerClass(0));
         if (layerFootprintSpaceTime == null) {
             return null;
         }
 
-        return layerFootprintSpaceTime.getPosition(movingObjectWithID, time);
+        return layerFootprintSpaceTime.getPosition(parametersMovingWithID, time);
     }
 
 
     //==== <start> <Private_Methods> =======================================================================
-    private void setLayer(LevelLayer levelLayer) { //FIXME CODESTYLE
+    private void setLayer(IndexLayer indexLayer) { //FIXME CODESTYLE
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 new MultiMapLayerFootprintSpaceTimeClass();
-        this.layers.put(levelLayer, layerFootprintSpaceTime);
+        this.layers.put(indexLayer, layerFootprintSpaceTime);
     }
     //==== <end> <Private_Methods> =======================================================================
 }

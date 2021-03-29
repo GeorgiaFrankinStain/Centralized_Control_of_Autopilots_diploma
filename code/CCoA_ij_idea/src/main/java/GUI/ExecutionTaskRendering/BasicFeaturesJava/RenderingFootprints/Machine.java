@@ -16,8 +16,8 @@ public class Machine extends Pane implements RenderingFootprint {
     ImageView imageView;
 
     public Machine(DataFootprintForRendering newProperties) {
-        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
-        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY());
+        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getX());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getY());
 
 //        Image image = new Image("file:src.png",true);
 //        ImageView imageView = new ImageView(image);
@@ -32,8 +32,8 @@ public class Machine extends Pane implements RenderingFootprint {
 
     @Override
     public void update(long now, DataFootprintForRendering newProperties) {
-        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
-        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY()); //FIXME long calls function
+        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getX());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getY()); //FIXME long calls function
         setRotate(newProperties.getLocalOriginForPointMovingObject().getRotationDegree());
     }
 

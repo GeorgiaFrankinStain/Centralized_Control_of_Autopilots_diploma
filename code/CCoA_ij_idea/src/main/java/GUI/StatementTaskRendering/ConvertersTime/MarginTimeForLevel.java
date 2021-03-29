@@ -1,10 +1,10 @@
 package GUI.StatementTaskRendering.ConvertersTime;
 
 import GUI.StatementTaskRendering.ConverterTime;
-import Logic.LevelLayer;
+import Logic.IndexLayer;
 
 public interface MarginTimeForLevel {
-    public void setLevel(LevelLayer levelLayer, double marginTime);
+    public void setLevel(IndexLayer indexLayer, double marginTime);
 
     public ConverterTime getConverterTime();
 }

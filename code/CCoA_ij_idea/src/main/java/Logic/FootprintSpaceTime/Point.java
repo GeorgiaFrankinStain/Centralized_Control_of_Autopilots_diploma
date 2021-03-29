@@ -48,4 +48,5 @@ public interface Point {
     public Point getDeposeOn(Point vector);
 
     public void deposeOn(Point vector);
+
 }

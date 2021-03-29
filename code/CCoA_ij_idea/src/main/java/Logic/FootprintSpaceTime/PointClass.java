@@ -6,12 +6,10 @@ public class PointClass implements Point {
     private double x;
     private double y;
 
-
     public PointClass(double x, double y) {
         this.x = x;
         this.y = y;
     }
-
 
     @Override
     public double getX() {
@@ -122,7 +120,10 @@ public class PointClass implements Point {
 
     @Override
     public Point getApproximationWith(double timeFirst, Point secondPoint, double timeSecond, double timeProximity) {
-        assert(timeFirst < timeSecond);
+        if (timeFirst > timeSecond) {
+            return secondPoint.getApproximationWith(timeSecond, this, timeFirst, timeProximity);
+        }
+
         double timeInterval = timeSecond - timeFirst;
         double percentProximityToFirst = (timeProximity - timeFirst) / timeInterval;
 
@@ -201,4 +202,6 @@ public class PointClass implements Point {
         this.setX(this.getX() + vector.getX());
         this.setY(this.getY() + vector.getY());
     }
+
+
 }

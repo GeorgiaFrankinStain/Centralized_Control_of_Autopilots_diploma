@@ -4,7 +4,7 @@ import Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
 import Logic.FootprintSpaceTime.Footprint;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.Position;
 import Logic.TypesInLevel;
 import Wrapper.RandomWrapperClass;
@@ -28,12 +28,7 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     }
 
     @Override
-    public int getIdObject() {
-        return this.idObject;
-    }
-
-    @Override
-    public int getIdTrack() {
+    public int getIdMovingObject() {
         return this.idObject;
     }
 
@@ -60,7 +55,7 @@ public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
 
 
     @Override
-    public MovingObject getMovingObject() {
+    public ParametersMoving getMovingObject() {
         return null;
     }
 

@@ -3,9 +3,7 @@ package Logic.FootprintSpaceTime;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.MovingObjects.MovingObject;
-import Logic.MovingObjects.Path;
-import Logic.MovingObjects.PathClass;
+import Logic.MovingObjects.*;
 import Logic.PathsMachines.PositionClass;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +20,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     }
 
 
-    private LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+    private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
 
     PolygonExtended areaRendering = new PolygonExtendedClass(Arrays.asList(new PointClass[]{
             new PointClass(0, 0),
@@ -34,9 +32,9 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     private class TestedFootprintSpaceTime {
         private FootprintsSpaceTime localFootprintsSpaceTime = new FootprintsSpaceTimeClass();
-        private LevelLayer defaultLevelLayer = new LevelLayerClass(0);
-        private MovingObject passengerCar;
-        private MovingObject wallCar;
+        private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
+        private ParametersMoving passengerCar;
+        private ParametersMoving wallCar;
         private Footprint wallCarFootprint;
 
         private Path wallPath;
@@ -86,10 +84,9 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         public boolean toTest_positionPassengerCarAfterMove(double time, Position position, double timeStanding) {
             List<Footprint> footprints =
                     localFootprintsSpaceTime.getRenderingFootprintsFromWhenDefaultLayer(areaRendering, time);
-            int idFindMovingObject = footprints.get(1).getIdObject();
+            int idFindMovingObject = footprints.get(1).getIdMovingObject();
 
             Footprint carFootrpint = new FootprintClass(
-                    idFindMovingObject,
                     position,
                     timeStanding,
                     passengerCar
@@ -102,27 +99,25 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         private void markFootprintsTwoMachine() throws СrashIntoAnImpassableObjectExeption {
             wallCarMarkFootprint();
             passangerCarStopsCrashing();
-
         }
 
         private void wallCarMarkFootprint() throws СrashIntoAnImpassableObjectExeption {
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-            wallCar = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
-            wallCar.mark(localFootprintsSpaceTime, wallPath, 0.0, defaultLevelLayer);
+            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+            wallCar = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
+            wallCar.mark(localFootprintsSpaceTime, wallPath, 0.0, defaultIndexLayer);
         }
 
         private void passangerCarStopsCrashing() throws СrashIntoAnImpassableObjectExeption {
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-            passengerCar = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+            passengerCar = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
             try {
-                passengerCar.mark(localFootprintsSpaceTime, carPath, 0.0, defaultLevelLayer);
+                passengerCar.mark(localFootprintsSpaceTime, carPath, 0.0, defaultIndexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
 
         private void wallCarFootprintCreatePrivateVariable() {
             wallCarFootprint = new FootprintClass(
-                    -1183596282, //FIXME
                     new PositionClass(new PointClass(0, 60), 0.0),
                     CreatorMarksOfPathClass.MAX_TIME_STANDING,
                     wallCar
@@ -169,26 +164,26 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     }*/
 
     private FootprintsSpaceTime footprintSpaceTimeSimplyMovingOnLine = footprintSpaceTimeSimplyMovingOnLine();
-    private MovingObject movingObjectSimpleMovingOnLine;
+    private ParametersMoving movingObjectSimpleParametersMovingOnLine;
 
     private FootprintsSpaceTime footprintSpaceTimeSimplyMovingOnLine() throws СrashIntoAnImpassableObjectExeption {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
-        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-        movingObjectSimpleMovingOnLine = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+        movingObjectSimpleParametersMovingOnLine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
         Path path = new PathClass();
         path.addPoint(new PointClass(0, 0));
         path.addPoint(new PointClass(10, 0));
 
-        movingObjectSimpleMovingOnLine.mark(onlyFootprintsSpaceTime, path, 0.0, defaultLevelLayer);
+        movingObjectSimpleParametersMovingOnLine.mark(onlyFootprintsSpaceTime, path, 0.0, defaultIndexLayer);
         return onlyFootprintsSpaceTime;
     }
 
     @Test
     void getPositionInDefaultLevel_0() throws СrashIntoAnImpassableObjectExeption {
         Position actualPosition = footprintSpaceTimeSimplyMovingOnLine.getPositionInDefaultLevel(
-                movingObjectSimpleMovingOnLine,
+                movingObjectSimpleParametersMovingOnLine,
                 0.0
         );
         Position expected = new PositionClass(new PointClass(0, 0), 0.0);
@@ -199,7 +194,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void getPositionInDefaultLevel_05() throws СrashIntoAnImpassableObjectExeption {
         Position actualPosition = footprintSpaceTimeSimplyMovingOnLine.getPositionInDefaultLevel(
-                movingObjectSimpleMovingOnLine,
+                movingObjectSimpleParametersMovingOnLine,
                 0.5
         );
         Position expected = new PositionClass(new PointClass(5, 0), 0.0);
@@ -209,7 +204,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void getPositionInDefaultLevel_1() throws СrashIntoAnImpassableObjectExeption {
         Position actualPosition = footprintSpaceTimeSimplyMovingOnLine.getPositionInDefaultLevel(
-                movingObjectSimpleMovingOnLine,
+                movingObjectSimpleParametersMovingOnLine,
                 1.0
         );
         Position expected = new PositionClass(new PointClass(10, 0), 0.0);
@@ -229,7 +224,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
         private double timeAddingPath;
         private FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
-        private MovingObject movingObject;
+        private ParametersMoving parametersMoving;
         private double timeStandingOnOneStep = 2;
         private double lengthStep = 20;
         double speed = 10;
@@ -260,13 +255,14 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         private void sharedConstructor() throws СrashIntoAnImpassableObjectExeption {
             setValueForNullVariable();
             createPassangerCar();
-            movingObject.mark(onlyFootprintsSpaceTime, path, timeAddingPath, defaultLevelLayer);
+            parametersMoving.mark(onlyFootprintsSpaceTime, path, timeAddingPath, defaultIndexLayer);
         }
 
         private void createPassangerCar() {
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-            movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
-            movingObject.setSpeed(speed);
+            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+            BuilderParametersMoving builder = fabricParametersMoving.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
+            builder.setSpeed(speed);
+            parametersMoving = builder.getParametersMoving();
         }
 
         private void setValueForNullVariable() {
@@ -283,7 +279,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         @Override
         public boolean isCarPassedRightPlace(Position expected, double timePosition) {
             Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
-                    movingObject,
+                    parametersMoving,
                     timePosition
             );
 
@@ -584,21 +580,21 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     private void wallInstalation(FootprintsSpaceTime onlyFootprintsSpaceTime) {
 
-        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
+        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
 
-        MovingObject wall = fabricMovingObjects.getMachine(TypeMachinesBody.WALL_CAR);
+        ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
         try {
-            wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, defaultLevelLayer);
+            wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, defaultIndexLayer);
         } catch (СrashIntoAnImpassableObjectExeption ex) {
             int error = 5; //for debugger, checking the passage through this place
         }
     }
 
     private boolean throwingExeptionWhenTryingPassThroughWall(FootprintsSpaceTime onlyFootprintsSpaceTime) {
-        FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-        MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+        ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         try {
-            movingObject.mark(onlyFootprintsSpaceTime, createPassengerCarPath(), 0.0, defaultLevelLayer);
+            parametersMoving.mark(onlyFootprintsSpaceTime, createPassengerCarPath(), 0.0, defaultIndexLayer);
         } catch (СrashIntoAnImpassableObjectExeption ex) {
             return true;
         }

@@ -3,22 +3,24 @@ package Logic.MovingObjects;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.LevelLayer;
+import Logic.IndexLayer;
 import Wrapper.RandomWrapperClass;
 
-public class MovingObjectClass implements MovingObject {
+public class ParametersMovingClass implements ParametersMoving {
 
     private PolygonExtended polygonExtended;
     private TypeMachinesBody typeMachinesBody;
     private double speed;
     private int id;
 
-    public MovingObjectClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
+    public ParametersMovingClass(double speed, PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
+        testCorrectnessIncomingData(speed, polygonExtended);
         this.id = new RandomWrapperClass(835).nextInt();
         this.polygonExtended = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonExtended);
         this.typeMachinesBody = typeMachinesBody;
+        this.speed = speed;
     }
-    public MovingObjectClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody, int movingObject) {
+    public ParametersMovingClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody, int movingObject) {
         this.id = movingObject;
         this.polygonExtended = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonExtended);
         this.typeMachinesBody = typeMachinesBody;
@@ -30,16 +32,16 @@ public class MovingObjectClass implements MovingObject {
             FootprintsSpaceTime footprintsSpaceTime,
             Path path,
             double timeAdding,
-            LevelLayer levelLayer
+            IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption {
-        assert (levelLayer != null);
+        assert (indexLayer != null);
 
         footprintsSpaceTime.addFootprint(
                 path.getIdTrack(),
                 this,
                 path,
                 timeAdding,
-                levelLayer
+                indexLayer
         );
     }
 
@@ -58,10 +60,7 @@ public class MovingObjectClass implements MovingObject {
         return this.speed;
     }
 
-    @Override
-    public void setSpeed(double speed) {
-        this.speed = speed;
-    }
+
 
     @Override
     public double timeTravel(double distance) {
@@ -138,5 +137,15 @@ public class MovingObjectClass implements MovingObject {
     private PolygonExtended renderingShapeAreVectorsFromCoordinateApplicationPoints(PolygonExtended polygon) {
         polygon.deposeOn(polygon.getCenterAverage().getInversion());
         return polygon;
+    }
+
+    private void testCorrectnessIncomingData(double speed, PolygonExtended shape) {
+        if (speed < 0) {
+            throw new IllegalArgumentException("speed is negative");
+        }
+
+        if (shape.getCountPoints() < 3) {
+            throw new IllegalArgumentException("the area of the shape is 0");
+        }
     }
 }

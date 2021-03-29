@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MovingObjectClassTest {
+class ParametersMovingClassTest {
 
     @Test
     void getShape_allPointsOfShapeAreVectorsFromCoordinateApplicationPointQuarter1() {
@@ -15,7 +15,7 @@ class MovingObjectClassTest {
         inputFormMachine.addPoint(new PointClass(0, 10));
         inputFormMachine.addPoint(new PointClass(10, 10));
         inputFormMachine.addPoint(new PointClass(10, 0));
-        MovingObject movingObject = new MovingObjectClass(inputFormMachine, TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMoving parametersMoving = new ParametersMovingClass(10, inputFormMachine, TypeMachinesBody.TEST_SQUARE_20);
 
         PolygonExtended expectedShapeMachine = new PolygonExtendedClass();
         expectedShapeMachine.addPoint(new PointClass(-5, -5));
@@ -23,7 +23,7 @@ class MovingObjectClassTest {
         expectedShapeMachine.addPoint(new PointClass(5, 5));
         expectedShapeMachine.addPoint(new PointClass(5, -5));
 
-        PolygonExtended actualShape = movingObject.getShape();
+        PolygonExtended actualShape = parametersMoving.getShape();
         assertEquals(expectedShapeMachine, actualShape);
     }
     @Test
@@ -33,9 +33,20 @@ class MovingObjectClassTest {
         expectedShapeMachine.addPoint(new PointClass(-5, 5));
         expectedShapeMachine.addPoint(new PointClass(5, 5));
         expectedShapeMachine.addPoint(new PointClass(5, -5));
-        MovingObject movingObject = new MovingObjectClass(expectedShapeMachine, TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMoving parametersMoving = new ParametersMovingClass(10, expectedShapeMachine, TypeMachinesBody.TEST_SQUARE_20);
 
-        PolygonExtended actualShape = movingObject.getShape();
+        PolygonExtended actualShape = parametersMoving.getShape();
         assertEquals(expectedShapeMachine, actualShape);
+    }
+
+    @Test
+    void constructor_withSpeed() {
+        PolygonExtended shape = new PolygonExtendedClass();
+        shape.addPoint(new PointClass(0, 0));
+        shape.addPoint(new PointClass(0, 1));
+        shape.addPoint(new PointClass(1, 0));
+        try {
+            ParametersMoving moving = new ParametersMovingClass()
+        }
     }
 }

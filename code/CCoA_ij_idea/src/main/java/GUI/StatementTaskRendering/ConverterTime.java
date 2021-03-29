@@ -1,7 +1,7 @@
 package GUI.StatementTaskRendering;
 
-import Logic.LevelLayer;
+import Logic.IndexLayer;
 
 public interface ConverterTime {
-    public double convert(double time, LevelLayer levelLayer);
+    public double convert(double time, IndexLayer indexLayer);
 }

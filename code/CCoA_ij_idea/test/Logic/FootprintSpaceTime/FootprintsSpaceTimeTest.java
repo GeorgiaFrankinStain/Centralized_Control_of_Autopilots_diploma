@@ -3,9 +3,7 @@ package Logic.FootprintSpaceTime;
 import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.MovingObjects.MovingObject;
-import Logic.MovingObjects.Path;
-import Logic.MovingObjects.PathClass;
+import Logic.MovingObjects.*;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -15,7 +13,7 @@ import static org.junit.Assert.*;
 public class FootprintsSpaceTimeTest {
 
 
-    private LevelLayer defaultLevelLayer = new LevelLayerClass(0);
+    private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
 
     private interface AverageTimeMeter {
         Double getTimeMovingToNextPointPath();
@@ -26,11 +24,11 @@ public class FootprintsSpaceTimeTest {
         private double timeAddingPath = 0.0;
 
         public AverageTimeMeterClass(Path resPath) {
-            FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-            MovingObject movingObject = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+            ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
             try {
-                movingObject.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultLevelLayer);
+                parametersMoving.mark(onlyFootprintsSpaceTime, resPath, timeAddingPath, defaultIndexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }

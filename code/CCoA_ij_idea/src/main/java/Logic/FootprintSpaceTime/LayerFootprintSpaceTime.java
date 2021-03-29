@@ -1,7 +1,7 @@
 package Logic.FootprintSpaceTime;
 
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.Position;
 
@@ -13,15 +13,13 @@ public interface LayerFootprintSpaceTime {
 
 
     public void addFootprint(
-            int idTrack,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Path path,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption;
 
     public void addFootprint(
-            int idTrack,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Position position,
             double time,
             double timeStanding
@@ -37,7 +35,7 @@ public interface LayerFootprintSpaceTime {
 
     public boolean getIsSeatTaken(PolygonExtended place, double time);
 
-    public Position getPosition(MovingObject movingObjectWithID, double time);
+    public Position getPosition(ParametersMoving parametersMovingWithID, double time);
 
     public Double getAverageTimeMovingToNextPointOfPath();
 
@@ -45,5 +43,5 @@ public interface LayerFootprintSpaceTime {
 
     public Double getTimeAddingLastFootprints();
 
-    public boolean isPathMovingObjectEnteringCorridor(MovingObject movingObject, Corridor corridor);
+    public boolean isPathMovingObjectEnteringCorridor(ParametersMoving parametersMoving, Corridor corridor);
 }

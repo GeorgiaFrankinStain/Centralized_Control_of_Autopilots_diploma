@@ -2,7 +2,7 @@ package Logic.FootprintSpaceTime;
 
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.GlobalVariable;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.PathsMachines.PositionClass;
 import Logic.Position;
@@ -10,8 +10,7 @@ import Logic.Position;
 public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
     private LayerFootprintSpaceTime footprintsSpaceTime;
-    private int idTrack;
-    private MovingObject movingObject;
+    private ParametersMoving parametersMoving;
 
     private double speed;
     private double lengthStep;
@@ -21,20 +20,18 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
 
     public CreatorMarksOfPathClass(
             LayerFootprintSpaceTime footprintsSpaceTime,
-            int idTrack,
-            MovingObject movingObject
+            ParametersMoving parametersMoving
     ) {
         this.footprintsSpaceTime = footprintsSpaceTime;
-        this.idTrack = idTrack;
-        this.movingObject = movingObject;
+        this.parametersMoving = parametersMoving;
 
 
         /**
          * Landscape have getResistancePowerLandscape(pressurePaskaleOfMachine)
          * speed = MachinePower / ResistancePower
          */
-        speed = movingObject.getSpeed();
-        lengthStep = movingObject.getLength();
+        speed = parametersMoving.getSpeed();
+        lengthStep = parametersMoving.getLength();
         if (Math.abs(speed) < GlobalVariable.DOUBLE_COMPARISON_ACCURACY) {
             timeStanding = this.MAX_TIME_STANDING;
         } else {
@@ -173,7 +170,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         double timeSum = 0;
 
         Point currentCoordinat = startLine.clone();
-        Point stepVector = stepVector(endLine, startLine, movingObject.getLength());
+        Point stepVector = stepVector(endLine, startLine, parametersMoving.getLength());
 
         double angleStepVector = endLine.getAngleRotareRelative(startLine);
 
@@ -224,7 +221,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
              * little step*/
             Point penultimatePoint = currentCoordinat;
             double lengthFinalStep = endLine.getDistanceToPoint(penultimatePoint);
-            double standingTime = lengthFinalStep / movingObject.getSpeed();
+            double standingTime = lengthFinalStep / parametersMoving.getSpeed();
 
             Position position = new PositionClass(penultimatePoint, angleStepVector);
             localTimeSum = standingTime;
@@ -247,7 +244,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             double timeStanding
     ) throws СrashIntoAnImpassableObjectExeption {
         this.penultimateFootprintInPath = this.lastFootprintInPath;
-        this.lastFootprintInPath = new FootprintClass(idTrack, position, timeStanding, movingObject);
+        this.lastFootprintInPath = new FootprintClass(position, timeStanding, parametersMoving);
 
         this.footprintsSpaceTime.addFootprint(this.lastFootprintInPath, time);
     }

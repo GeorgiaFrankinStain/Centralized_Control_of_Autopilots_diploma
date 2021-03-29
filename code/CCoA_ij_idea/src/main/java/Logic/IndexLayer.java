@@ -1,5 +1,5 @@
 package Logic;
 
-public interface LevelLayer {
+public interface IndexLayer {
     public int getZIndex();
 }

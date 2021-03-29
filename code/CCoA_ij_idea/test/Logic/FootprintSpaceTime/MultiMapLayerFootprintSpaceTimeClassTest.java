@@ -1,12 +1,12 @@
 package Logic.FootprintSpaceTime;
 
 import GUI.StatementTaskRendering.TypeMachinesBody;
-import Logic.FabricMovingObjects;
-import Logic.FabricMovingObjectsClass;
+import Logic.MovingObjects.FabricParametersMoving;
+import Logic.MovingObjects.FabricParametersMovingClass;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
-import Logic.LevelLayer;
-import Logic.LevelLayerClass;
-import Logic.MovingObjects.MovingObject;
+import Logic.IndexLayer;
+import Logic.IndexLayerClass;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.MovingObjects.PathClass;
 import org.junit.jupiter.api.Test;
@@ -17,10 +17,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MultiMapLayerFootprintSpaceTimeClassTest {
-    LevelLayer defaultLevel = new LevelLayerClass(0);
+    IndexLayer defaultLevel = new IndexLayerClass(0);
 
-    FabricMovingObjects fabricMovingObjects = new FabricMovingObjectsClass();
-    MovingObject squareMoving = fabricMovingObjects.getMachine(TypeMachinesBody.TEST_SQUARE_20);
+    FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+    ParametersMoving squareMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
     private Corridor tunnel1CorridorY0to20 = tunnel1CorridorY0to20();
 

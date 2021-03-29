@@ -2,7 +2,7 @@ package Logic.FootprintSpaceTime;
 
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.GlobalVariable;
-import Logic.MovingObjects.MovingObject;
+import Logic.MovingObjects.ParametersMoving;
 import Logic.MovingObjects.Path;
 import Logic.Position;
 import Wrapper.EntryPair;
@@ -28,15 +28,14 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     @Override
     public void addFootprint(
-            int idTrack,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Position position,
             double time,
             double timeStanding
     ) throws СrashIntoAnImpassableObjectExeption { //FIXME ADD_TEST
 
 
-        Footprint newFootprint = new FootprintClass(idTrack, position, timeStanding, movingObject);
+        Footprint newFootprint = new FootprintClass(position, timeStanding, parametersMoving);
 
         this.addFootprint(newFootprint, time);
     }
@@ -56,13 +55,12 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     @Override
     public void addFootprint(
-            int idTrack,
-            MovingObject movingObject,
+            ParametersMoving parametersMoving,
             Path path,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption {
         CreatorMarksOfPath creatorMarksOfPath =
-                new CreatorMarksOfPathClass(this, idTrack, movingObject);
+                new CreatorMarksOfPathClass(this, parametersMoving);
         creatorMarksOfPath.addFootprint(path, startTime);
     }
 
@@ -99,8 +97,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     @Override
-    public Position getPosition(MovingObject movingObjectWithID, double time) {
-        GetterPositionByID getter = new GetterPositionByIDClass(movingObjectWithID, time);
+    public Position getPosition(ParametersMoving parametersMovingWithID, double time) {
+        GetterPositionByID getter = new GetterPositionByIDClass(parametersMovingWithID, time);
         return getter.getPositionByID();
 
     }
@@ -168,9 +166,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     @Override
-    public boolean isPathMovingObjectEnteringCorridor(MovingObject movingObject, Corridor corridor) { //FIXME codestyle
+    public boolean isPathMovingObjectEnteringCorridor(ParametersMoving parametersMoving, Corridor corridor) { //FIXME codestyle
 
-        TesterPathEnteringInCorridor tester = new OneTimeTesterPathEnteringCorridorClass(movingObject, corridor);
+        TesterPathEnteringInCorridor tester = new OneTimeTesterPathEnteringCorridorClass(parametersMoving, corridor);
         return tester.isPathMovingObjectEnteringCorridor();
     }
 
@@ -266,7 +264,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     private class GetterPositionByIDClass implements GetterPositionByID {
         private IteratorFootprintWithID iteratorID = new IteratorFootprintWithIDClass();
-        private MovingObject movingObjectWithID;
+        private ParametersMoving parametersMovingWithID;
         private double timeApproximation;
         private Footprint previousFootprint = null;
         private Footprint currentFootprint = null;
@@ -277,15 +275,15 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
 
-        public GetterPositionByIDClass(MovingObject movingObjectWithID, double timeApproximation) {
-            this.movingObjectWithID = movingObjectWithID;
+        public GetterPositionByIDClass(ParametersMoving parametersMovingWithID, double timeApproximation) {
+            this.parametersMovingWithID = parametersMovingWithID;
             this.timeApproximation = timeApproximation;
         }
 
         @Override
         public Position getPositionByID() {
-            while (iteratorID.hasNext(movingObjectWithID)) {
-                Pair<Double, Footprint> entry = iteratorID.nextWithID(movingObjectWithID);
+            while (iteratorID.hasNext(parametersMovingWithID)) {
+                Pair<Double, Footprint> entry = iteratorID.nextWithID(parametersMovingWithID);
                 currentFootprint = entry.getValue();
                 timeStartTunnel = entry.getKey();
                 timeEndTunnel = timeStartTunnel + currentFootprint.getTimeToNextFootprint();
@@ -312,7 +310,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         private void endFootprint() {
-            Pair<Double, Footprint> next = iteratorID.nextWithID(movingObjectWithID);
+            Pair<Double, Footprint> next = iteratorID.nextWithID(parametersMovingWithID);
             if (next != null) {
                 endTunnel = next.getValue();
             } else {
@@ -332,7 +330,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     private class OneTimeTesterPathEnteringCorridorClass implements TesterPathEnteringInCorridor {
         private IteratorFootprintWithID iteratorID = new IteratorFootprintWithIDClass();
-        private MovingObject movingObject;
+        private ParametersMoving parametersMoving;
         private Corridor corridor;
 
         private Footprint startTunnel = null;
@@ -340,8 +338,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         private Footprint endTunnel = null;
         private Double timeEndTunnel = null;
 
-        public OneTimeTesterPathEnteringCorridorClass(MovingObject movingObject, Corridor corridor) {
-            this.movingObject = movingObject;
+        public OneTimeTesterPathEnteringCorridorClass(ParametersMoving parametersMoving, Corridor corridor) {
+            this.parametersMoving = parametersMoving;
             this.corridor = corridor;
         }
 
@@ -360,11 +358,11 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         private boolean isEnoughFootprintsForCreateFirstTunnel() {
-            return iteratorID.hasNextPairItem(movingObject);
+            return iteratorID.hasNextPairItem(parametersMoving);
         }
 
         private boolean isPossibleNextFootprintToTurnInEndTunnel() {
-            return iteratorID.hasNext(movingObject);
+            return iteratorID.hasNext(parametersMoving);
         }
 
         private boolean isCorridorMutuallyIncludesPathThisMachine() {
@@ -394,7 +392,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
             boolean isFirstIteration = startTunnel == null && endTunnel == null;
             if (isFirstIteration) {
-                Pair<Double, Footprint> pair = iteratorID.nextWithID(movingObject);
+                Pair<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
                 if (pair == null) {
                     return false;
                 }
@@ -412,7 +410,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private boolean prepareEndTunnelForCycle() {
 
-            Pair<Double, Footprint> pair = iteratorID.nextWithID(movingObject);
+            Pair<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
 
             if (pair == null) {
                 return false;
@@ -433,11 +431,11 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
     private interface IteratorFootprintWithID {
-        public Pair<Double, Footprint> nextWithID(MovingObject movingObject);
+        public Pair<Double, Footprint> nextWithID(ParametersMoving parametersMoving);
 
-        public boolean hasNextPairItem(MovingObject movingObject);
+        public boolean hasNextPairItem(ParametersMoving parametersMoving);
 
-        public boolean hasNext(MovingObject movingObject);
+        public boolean hasNext(ParametersMoving parametersMoving);
     }
 
     private class IteratorFootprintWithIDClass implements IteratorFootprintWithID { //FIXME add tests
@@ -445,23 +443,23 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         private LinkedList<Pair<Double, Footprint>> previouslyFound = new LinkedList<>();
 
         @Override
-        public Pair<Double, Footprint> nextWithID(MovingObject movingObject) {
+        public Pair<Double, Footprint> nextWithID(ParametersMoving parametersMoving) {
             boolean isAvailablePreFoundItems = previouslyFound.size() > 0;
             if (!isAvailablePreFoundItems) {
-                return getNextWithID(movingObject);
+                return getNextWithID(parametersMoving);
             } else {
                 return previouslyFound.pollFirst();
             }
         }
 
         @Override
-        public boolean hasNextPairItem(MovingObject movingObject) {
-            return fillQueueToSize(movingObject, 2);
+        public boolean hasNextPairItem(ParametersMoving parametersMoving) {
+            return fillQueueToSize(parametersMoving, 2);
         }
 
-        private boolean fillQueueToSize(MovingObject movingObject, int countItems) {
+        private boolean fillQueueToSize(ParametersMoving parametersMoving, int countItems) {
             while (isNecessaryToContinueFind(countItems) && isPossibleToContinueFind()) {
-                Pair<Double, Footprint> preFound = getNextWithID(movingObject);
+                Pair<Double, Footprint> preFound = getNextWithID(parametersMoving);
                 boolean isFoundFootprintWithTheID = preFound != null;
                 if (isFoundFootprintWithTheID) {
                     previouslyFound.addLast(preFound);
@@ -482,17 +480,17 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         @Override
-        public boolean hasNext(MovingObject movingObject) {
-            return fillQueueToSize(movingObject, 1);
+        public boolean hasNext(ParametersMoving parametersMoving) {
+            return fillQueueToSize(parametersMoving, 1);
         }
 
-        private Pair<Double, Footprint> getNextWithID(MovingObject movingObject) {
+        private Pair<Double, Footprint> getNextWithID(ParametersMoving parametersMoving) {
             while (iteratorStorage.hasNext()) {
                 EntryPair<Double, Footprint> entry = iteratorStorage.next();
                 Pair<Double, Footprint> result = new Pair<>(entry.getKey(), entry.getValue());
 
                 Footprint footprint = entry.getValue();
-                boolean isSearchable = footprint.getMovingObject().getID() == movingObject.getID();
+                boolean isSearchable = footprint.getMovingObject().getID() == parametersMoving.getID();
                 if (isSearchable) {
                     return result;
                 }

@@ -241,6 +241,7 @@
       to find bugs with the conversion to the int type:
          ☐ add tests on big numbers 
          ☐ add tests on small numbers
+      ☐ if there is an equality function, then there is also a hash function
    ☐ refactoring all code
       ☐ move tests from interface in class. Tests for class, but no interface
       ☐ delete idTrack using
@@ -331,6 +332,9 @@
       ☐ приоритет проезда (алгоритм LINK_goGvvP)
       ☐ оповещение о появившихся классных маршрутах
       ☐ объезд стены медленных машин (стена медленных машин разъезжается, чтобы уступить дорогу быстрой скорой помощи)
+
+   TESTS:
+      ☐ the wall with a speed 0 was given the task to travel 10 meters
 
    GLOBAL:
          * потому что по идее, алгоритм универсальный, и если работает на статическом ландшафте, то сразу будет работать на динамическом ландшафте. Однако всегда надо учитывать баги

@@ -12,8 +12,8 @@ public class WallCar extends Pane implements RenderingFootprint {
     Polygon polygon;
 
     public WallCar(DataFootprintForRendering newProperties) {
-        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
-        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY());
+        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getX());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getY());
 
 
         this.polygon = createPolygonJavaFX(newProperties.getMovingObject().getShape());
@@ -23,8 +23,8 @@ public class WallCar extends Pane implements RenderingFootprint {
 
     @Override
     public void update(long now, DataFootprintForRendering newProperties) {
-        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getX());
-        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinats().getY());
+        setTranslateX(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getX());
+        setTranslateY(newProperties.getLocalOriginForPointMovingObject().getCoordinates().getY());
     }
 
 

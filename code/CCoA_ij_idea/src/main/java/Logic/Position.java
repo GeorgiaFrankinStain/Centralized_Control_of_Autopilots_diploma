@@ -4,7 +4,7 @@ import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
 
 public interface Position {
-    public Point getCoordinats();
+    public Point getCoordinates();
 
     public double getRotation();
 
