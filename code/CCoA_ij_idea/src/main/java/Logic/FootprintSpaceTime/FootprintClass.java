@@ -119,7 +119,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public String getType() {
-        return this.parametersMoving.getType();
+        return this.parametersMoving.getTypeTitle();
     }
 
     @Override

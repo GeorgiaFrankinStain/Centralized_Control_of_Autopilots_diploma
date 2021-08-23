@@ -9,13 +9,12 @@ import java.util.List;
 
 public class PathClass implements Path {
     private List<Point> points = new ArrayList<Point>();
-    private int idTrack = new RandomWrapperClass(45787694).nextInt();
 
 
     public PathClass() {
     }
     public PathClass(List<Point> points) {
-        this.points = points;
+        this.points = cloneArray(points);
     }
 
 
@@ -31,12 +30,12 @@ public class PathClass implements Path {
 
     @Override
     public void addPoint(Point point) {
-        this.points.add(point);
+        this.points.add(point.clone());
     }
 
     @Override
     public void addPoint(int index, Point point) {
-        this.points.add(index, point);
+        this.points.add(index, point.clone());
     }
 
 
@@ -46,13 +45,6 @@ public class PathClass implements Path {
             points.get(i).deposeOn(vector);
         }
     }
-
-    @Override
-    public int getIdTrack() {
-        return this.idTrack;
-    }
-
-
 
     @Override
     public boolean equals(Object obj) { //FIXME ADD_TEST
@@ -88,6 +80,16 @@ public class PathClass implements Path {
         }
 
         return res; //FIXME ADD TEST ON SEAD NOW NOW
+    }
+
+    private List<Point> cloneArray(List<Point> input) {
+        List<Point> clone = new ArrayList<>();
+
+        for (Point point : input) {
+            clone.add(point.clone());
+        }
+
+        return clone;
     }
 
 }

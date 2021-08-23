@@ -10,6 +10,11 @@ public class BuilderParametersMovingClass implements BuilderParametersMoving {
 
     @Override
     public void setSpeed(double speed) {
+        boolean isValidSpeed = speed >= 0;
+        if (!isValidSpeed) {
+            throw new IllegalArgumentException("the speed is less than 0");
+        }
+
         this.speed = speed;
     }
 

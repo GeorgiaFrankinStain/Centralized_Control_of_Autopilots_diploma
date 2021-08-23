@@ -44,7 +44,6 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistChange
 
     @Override
     public void addFootprint(
-            int idTrack,
             ParametersMoving parametersMoving,
             Path path,
             double startTime,

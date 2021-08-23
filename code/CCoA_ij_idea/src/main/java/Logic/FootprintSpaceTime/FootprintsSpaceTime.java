@@ -21,7 +21,6 @@ public interface FootprintsSpaceTime {
     );
 
     public void addFootprint(
-            int idTrack,
             ParametersMoving parametersMoving,
             Path path,
             double startTime,

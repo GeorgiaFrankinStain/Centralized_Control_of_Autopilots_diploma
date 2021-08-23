@@ -45,8 +45,10 @@ class ParametersMovingClassTest {
         shape.addPoint(new PointClass(0, 0));
         shape.addPoint(new PointClass(0, 1));
         shape.addPoint(new PointClass(1, 0));
-        try {
-            ParametersMoving moving = new ParametersMovingClass()
-        }
+        double expectedSpeed = 10;
+        ParametersMoving parametersMoving = new ParametersMovingClass(expectedSpeed, shape, TypeMachinesBody.TEST_SQUARE_20);
+
+        double actualSpeed = parametersMoving.getSpeed();
+        assertEquals(expectedSpeed, actualSpeed);
     }
 }

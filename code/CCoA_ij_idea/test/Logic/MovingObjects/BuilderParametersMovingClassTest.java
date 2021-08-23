@@ -58,13 +58,34 @@ class BuilderParametersMovingClassTest {
 
         try {
             builder.setSpeed(-1);
-        } catch ();
-
-        ParametersMoving parametersMoving = builder.getParametersMoving();
+        } catch (IllegalArgumentException e) {
+            assertEquals("the speed is less than 0", e.getMessage());
+        };
     }
 
     @Test
-    void setShape() {
-        assert (false);
+    void setShape_offset_center() {
+        BuilderParametersMoving builder = new BuilderParametersMovingClass();
+
+        builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
+
+        PolygonExtended offsetShape = new PolygonExtendedClass();
+        offsetShape.addPoint(new PointClass(0, 0));
+        offsetShape.addPoint(new PointClass(0, 2));
+        offsetShape.addPoint(new PointClass(2, 2));
+        offsetShape.addPoint(new PointClass(2, 0));
+        builder.setShape(offsetShape);
+
+        builder.setSpeed(1);
+
+        PolygonExtended expectedShape = new PolygonExtendedClass();
+        expectedShape.addPoint(new PointClass(-1, -1));
+        expectedShape.addPoint(new PointClass(-1, 1));
+        expectedShape.addPoint(new PointClass(1, 1));
+        expectedShape.addPoint(new PointClass(1, -1));
+
+        ParametersMoving parametersMoving = builder.getParametersMoving();
+        PolygonExtended actualShape = parametersMoving.getShape();
+        assertEquals(expectedShape, actualShape);
     }
 }

@@ -5,6 +5,7 @@ import Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import Logic.FootprintSpaceTime.Point;
 import Logic.FootprintSpaceTime.PolygonExtended;
 import Logic.IndexLayer;
+import Logic.TypesInLevel;
 
 public interface ParametersMoving {
     public void mark(
@@ -20,13 +21,11 @@ public interface ParametersMoving {
 
     public double timeTravel(double distance);
 
-    public String getType();
+    public String getTypeTitle();
 
-    public int getID();
+    public TypesInLevel getTypeInLevel();
 
-    public int getLevel();
-
-    public double getLength();
+    public double getLengthStep();
 
     public Point getPointWhereCoordinatesAreApplied();
 
@@ -35,4 +34,6 @@ public interface ParametersMoving {
     public Point getVectorFromTopLeftToAppliedCoordinates();
 
     public String toString();
+
+    public int getID();
 }

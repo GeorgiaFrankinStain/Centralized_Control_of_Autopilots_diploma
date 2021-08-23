@@ -31,7 +31,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
          * speed = MachinePower / ResistancePower
          */
         speed = parametersMoving.getSpeed();
-        lengthStep = parametersMoving.getLength();
+        lengthStep = parametersMoving.getLengthStep();
         if (Math.abs(speed) < GlobalVariable.DOUBLE_COMPARISON_ACCURACY) {
             timeStanding = this.MAX_TIME_STANDING;
         } else {
@@ -170,7 +170,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         double timeSum = 0;
 
         Point currentCoordinat = startLine.clone();
-        Point stepVector = stepVector(endLine, startLine, parametersMoving.getLength());
+        Point stepVector = stepVector(endLine, startLine, parametersMoving.getLengthStep());
 
         double angleStepVector = endLine.getAngleRotareRelative(startLine);
 

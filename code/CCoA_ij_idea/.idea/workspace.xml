@@ -23,123 +23,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/Logic/IndexLayer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Logic/IndexLayerClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintClassTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/Logic/IndexLayerClassTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintClassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Logic/IndexLayerClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConverterTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConverterTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/DataFootprintForRendering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/DataFootprintForRendering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/AlhorithmFastFindPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/AlhorithmFastFindPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/ControllerMachines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/ControllerMachines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/ControllerMachinesClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/ControllerMachinesClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/NetworkNodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/NetworkNodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/NodeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/NodeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/SquareNetworkNodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/ControllerMachines/SquareNetworkNodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FabricMovingObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/FabricParametersMoving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FabricMovingObjectsClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/FabricParametersMovingClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/Footprint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/Footprint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/PointClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/PointClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/PolygonExtended.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/PolygonExtended.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/PolygonExtendedClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/PolygonExtendedClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/Landscape/ZonaLandscapeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/Landscape/ZonaLandscapeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/LevelLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/IndexLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/LevelLayerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/IndexLayerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/MovingObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMoving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/MovingObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMovingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/PathsMachines/PositionClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/PathsMachines/PositionClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/MapRenderClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallCar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallSquare.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprints/WallSquare.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConverterTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConverterTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/DataFootprintForRendering.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/DataFootprintForRendering.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass$PoolDataFootprintForRenderingIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass$PoolDataFootprintForRenderingIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/StatementTaskRendering/PoolDataFootprintForRenderingClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/AlhorithmFastFindPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/AlhorithmFastFindPath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/ControllerMachines.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/ControllerMachines.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/ControllerMachinesClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/ControllerMachinesClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/NetworkNodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/NetworkNodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/NodeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/NodeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/SquareNetworkNodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/ControllerMachines/SquareNetworkNodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FabricMovingObjects.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FabricMovingObjectsClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/Footprint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/Footprint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/FootprintClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/FootprintClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/FootprintsSpaceTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$GetterPositionByIDClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$GetterPositionByIDClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$IteratorFootprintWithID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$IteratorFootprintWithID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$IteratorFootprintWithIDClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$IteratorFootprintWithIDClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$OneTimeTesterPathEnteringCorridorClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass$OneTimeTesterPathEnteringCorridorClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/PointClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/PointClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/PolygonExtended.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/PolygonExtended.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/PolygonExtendedClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/FootprintSpaceTime/PolygonExtendedClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/Landscape/ZonaLandscapeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/Landscape/ZonaLandscapeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/LevelLayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/LevelLayerClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/MovingObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/MovingObjectClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/PathsMachines/PositionClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/PathsMachines/PositionClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest$TestedFootprintSpaceTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest$TestedFootprintSpaceTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest$TesterOneMarkClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest$TesterOneMarkClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest$AverageTimeMeterClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest$AverageTimeMeterClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/PolygonExtendedClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/PolygonExtendedClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/FootprintSpaceTime/PolygonExtendedTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/MovingObjectClassTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/MovingObjectTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/PathsMachines/PositionClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/PathsMachines/PositionClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GUI/StatementTaskRendering/ConvertersTime/DemonstartionAlhorithTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/FootprintsSpaceTimeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/FootprintSpaceTime/PolygonExtendedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/MovingObjectClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/ParametersMovingClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/MovingObjectTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/PathsMachines/PositionClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/PathsMachines/PositionClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/BuilderParametersMovingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/BuilderParametersMovingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMoving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMoving.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMovingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMovingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/PathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/PathClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/BuilderParametersMovingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/BuilderParametersMovingClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMoving.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMoving.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMovingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMovingClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/BuilderParametersMovingClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/BuilderParametersMovingClassTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/FabricParametersMovingClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/FabricParametersMovingClassTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/ParametersMovingClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/ParametersMovingClassTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/BuilderParametersMovingClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/BuilderParametersMovingClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/FabricParametersMovingClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/FabricParametersMovingClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/ParametersMovingClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/ParametersMovingClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/PathClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/PathClassTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,9 +57,9 @@
       <list>
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -217,11 +120,33 @@
       <recent name="Logic.ControllerMachines" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in CCoA_ij_idea">
+  <component name="RunManager" selected="JUnit.PathClassTest (1)">
     <configuration name="All in CCoA_ij_idea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCoA_ij_idea" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PathClassTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCoA_ij_idea" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:Logic.MovingObjects.PathClassTest]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PathClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCoA_ij_idea" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:Logic.MovingObjects.PathClassTest]" />
+      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -237,17 +162,6 @@
       <option name="PACKAGE_NAME" value="Logic.FootprintSpaceTime" />
       <option name="MAIN_CLASS_NAME" value="Logic.FootprintSpaceTime.PolygonExtendedClassTest" />
       <option name="METHOD_NAME" value="enteringPoint_perimeterTop" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:Logic.FootprintSpaceTime.PolygonExtendedClassTest]" />
-      </uniqueIds>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PolygonExtendedClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCoA_ij_idea" />
-      <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="uniqueId" />
       <uniqueIds>
         <uniqueId value="[engine:junit-jupiter]/[class:Logic.FootprintSpaceTime.PolygonExtendedClassTest]" />
@@ -275,35 +189,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PositionClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCoA_ij_idea" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Logic.PathsMachines.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Logic.PathsMachines" />
-      <option name="MAIN_CLASS_NAME" value="Logic.PathsMachines.PositionClassTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.PositionClassTest" />
       <item itemvalue="JUnit.All in CCoA_ij_idea" />
-      <item itemvalue="JUnit.PolygonExtendedClassTest" />
       <item itemvalue="JUnit.PolygonExtendedClassTest.enteringPoint_perimeterTop" />
       <item itemvalue="JUnit.PolygonExtendedClassTest (1)" />
+      <item itemvalue="JUnit.PathClassTest" />
+      <item itemvalue="JUnit.PathClassTest (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PathClassTest (1)" />
         <item itemvalue="JUnit.All in CCoA_ij_idea" />
+        <item itemvalue="JUnit.PathClassTest" />
         <item itemvalue="JUnit.PolygonExtendedClassTest (1)" />
         <item itemvalue="JUnit.PolygonExtendedClassTest.enteringPoint_perimeterTop" />
-        <item itemvalue="JUnit.PolygonExtendedClassTest" />
-        <item itemvalue="JUnit.PositionClassTest" />
       </list>
     </recent_temporary>
   </component>

@@ -4,14 +4,16 @@ import GUI.StatementTaskRendering.TypeMachinesBody;
 import Logic.FootprintSpaceTime.*;
 import Logic.FootprintSpaceTime.Exeption.СrashIntoAnImpassableObjectExeption;
 import Logic.IndexLayer;
+import Logic.TypesInLevel;
 import Wrapper.RandomWrapperClass;
 
 public class ParametersMovingClass implements ParametersMoving {
 
+    private int id;
     private PolygonExtended polygonExtended;
     private TypeMachinesBody typeMachinesBody;
     private double speed;
-    private int id;
+    private TypesInLevel typeInLevel = TypesInLevel.OBJECT;
 
     public ParametersMovingClass(double speed, PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
         testCorrectnessIncomingData(speed, polygonExtended);
@@ -37,7 +39,6 @@ public class ParametersMovingClass implements ParametersMoving {
         assert (indexLayer != null);
 
         footprintsSpaceTime.addFootprint(
-                path.getIdTrack(),
                 this,
                 path,
                 timeAdding,
@@ -47,7 +48,7 @@ public class ParametersMovingClass implements ParametersMoving {
 
     @Override
     public String toString() {
-        return "type: " + this.getType() + " id: " + this.getID() + " speed: " + this.getSpeed();
+        return "type: " + this.getTypeTitle() + " id: " + this.getID() + " speed: " + this.getSpeed();
     }
 
     @Override
@@ -69,7 +70,7 @@ public class ParametersMovingClass implements ParametersMoving {
 
 
     @Override
-    public String getType() {
+    public String getTypeTitle() {
         return this.typeMachinesBody.name();
     }
 
@@ -79,12 +80,12 @@ public class ParametersMovingClass implements ParametersMoving {
     }
 
     @Override
-    public int getLevel() {
-        return 0;
+    public TypesInLevel getTypeInLevel() {
+        return typeInLevel;
     }
 
     @Override
-    public double getLength() {
+    public double getLengthStep() {
         double maxCoordinatX = Double.MIN_VALUE;
 
         for (int i = 0; i < this.polygonExtended.getCountPoints(); i++) {
