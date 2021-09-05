@@ -237,18 +237,17 @@
       ✔ visual tests. Add the ability to set a polygon using a text drawing. (2020.11.24 13:09:31) @done (20-12-09 15:42)
       ✔ function for testing issued routes with some accuracy. Intering the corridor. (2020.11.24 13:09:33) @done (21-01-22 19:22)
    ✔ fix bugs (broken tests) @done (21-02-12 19:24)
-   ☐ add tests (full cover; at least 10 tests for each function) (and fix them if necessary)
+   ✔ add tests (full cover; at least 10 tests for each function) (and fix them if necessary) @done (21-08-24 22:09)
       to find bugs with the conversion to the int type:
-         ☐ add tests on big numbers 
-         ☐ add tests on small numbers
-      ☐ if there is an equality function, then there is also a hash function
-   ☐ refactoring all code
-      ☐ move tests from interface in class. Tests for class, but no interface
-      ☐ delete idTrack using
-      ☐ replace tests linked to specific points with entering a corridor.
-      ☐ move tests from intefaceTest to interfaceClassTest
+         ✘ add tests on big numbers @cancelled (21-08-24 22:09)
+         ✘ add tests on small numbers @cancelled (21-08-24 22:09)
+      ✔ if there is an equality function, then there is also a hash function @done (21-08-24 22:09)
+   ✔ refactoring all code @done (21-08-24 22:21)
+      ✔ move tests from interface in class. Tests for class, but no interface @done (21-08-24 22:09)
+      ✔ delete idTrack using @done (21-08-24 22:09)
+      ✔ replace tests linked to specific points with entering a corridor. @done (21-08-24 22:09)
+      ✔ move tests from intefaceTest to interfaceClassTest @done (21-08-24 22:09)
       ☐ compare idMovingObject in MovingObject (special function)
-   ☐ ...
 
 
 
@@ -308,8 +307,9 @@
       ☐ машины с разной проходимость и различная вязкость почвы LINK_PFOAif
 
 
-
  ☐ удаление старых следов (следов прошлого)
+    ☐ Красивый интерфейс на библиотеке libGDX 
+
 
 
 

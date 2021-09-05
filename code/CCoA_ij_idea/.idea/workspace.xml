@@ -23,26 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/libgdxView/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/BuilderParametersMovingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/BuilderParametersMovingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMoving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMoving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMovingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/ParametersMovingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/PathClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logic/MovingObjects/PathClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/BuilderParametersMovingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/BuilderParametersMovingClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMoving.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMoving.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMovingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Logic/MovingObjects/ParametersMovingClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/BuilderParametersMovingClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/BuilderParametersMovingClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/FabricParametersMovingClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/FabricParametersMovingClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/ParametersMovingClassTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Logic/MovingObjects/ParametersMovingClassTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/BuilderParametersMovingClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/BuilderParametersMovingClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/FabricParametersMovingClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/FabricParametersMovingClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/ParametersMovingClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/ParametersMovingClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Logic/MovingObjects/PathClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Logic/MovingObjects/PathClassTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/move_polygon_javaFX _ij_idea.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/out/production/move_polygon_javaFX _ij_idea/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/out/production/move_polygon_javaFX _ij_idea/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/out/production/move_polygon_javaFX _ij_idea/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/src/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/src/sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/src/sample/sample.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,12 +91,12 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../learning/!JAVA/_POLIGON/PolygonIntelJavaIDEProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -191,10 +190,10 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in CCoA_ij_idea" />
-      <item itemvalue="JUnit.PolygonExtendedClassTest.enteringPoint_perimeterTop" />
-      <item itemvalue="JUnit.PolygonExtendedClassTest (1)" />
-      <item itemvalue="JUnit.PathClassTest" />
       <item itemvalue="JUnit.PathClassTest (1)" />
+      <item itemvalue="JUnit.PathClassTest" />
+      <item itemvalue="JUnit.PolygonExtendedClassTest (1)" />
+      <item itemvalue="JUnit.PolygonExtendedClassTest.enteringPoint_perimeterTop" />
     </list>
     <recent_temporary>
       <list>
