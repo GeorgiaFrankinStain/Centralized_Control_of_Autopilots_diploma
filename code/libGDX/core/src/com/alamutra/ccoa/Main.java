@@ -1,12 +1,10 @@
 package com.alamutra.ccoa;
 
+import com.alamutra.ccoa.Logic.GameTime;
+import com.alamutra.ccoa.Logic.GameTimeClass;
 import com.alamutra.ccoa.libgdxView.GameScreen;
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Main extends Game {
 
@@ -14,7 +12,8 @@ public class Main extends Game {
 
 	@Override
 	public void create() {
-		this.gameScreen = new GameScreen();
+		GameTime gameTime = new GameTimeClass();
+		this.gameScreen = new GameScreen(gameTime);
 		setScreen(this.gameScreen);
 	}
 }

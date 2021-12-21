@@ -23,25 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/libgdxView/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/GameTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/GameTimeClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/SubWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/move_polygon_javaFX _ij_idea.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/out/production/move_polygon_javaFX _ij_idea/sample/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/out/production/move_polygon_javaFX _ij_idea/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/out/production/move_polygon_javaFX _ij_idea/sample/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/src/sample/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/src/sample/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move_polygon_javaFX _ij_idea/src/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/libgdxView/GameScreen.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,6 +300,14 @@
           <line>33</line>
           <properties field="localFootprintsSpaceTime" class="Logic.FootprintSpaceTime.FootprintsSpaceTimeClassTest.TestedFootprintSpaceTime" />
           <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprint.java</url>
+          <line>7</line>
+          <properties class="GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint" method="update">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="213" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
