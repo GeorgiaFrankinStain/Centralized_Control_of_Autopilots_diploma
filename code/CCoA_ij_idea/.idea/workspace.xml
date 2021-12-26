@@ -23,74 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/ConsoleManagement/ConsoleManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/AreasBenchmarkPaths/AreasBenchmarkPaths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/AreasBenchmarkPaths/StraightLineEstimatedClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/AlhorithmFastFindPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/ControllerMachines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/ControllerMachinesClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/NetworkNodes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/NodeClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/ControllerMachines/SquareNetworkNodes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/Corridor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/Exception/СrashIntoAnImpassableObjectExeption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/Footprint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/FootprintClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/LineCut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/LineCutClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/PointClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/PolygonExtended.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/PolygonExtendedClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/Round.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/RoundClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/FootprintSpaceTime/RoundsCorridorClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/GlobalVariable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/IndexLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/IndexLayerClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/Landscape/Landscape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/Landscape/LandscapeClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/Landscape/ZonaLandscape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/Landscape/ZonaLandscapeClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/BuilderParametersMoving.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/BuilderParametersMovingClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/FabricParametersMoving.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/FabricParametersMovingClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/ParametersMoving.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/ParametersMovingClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/MovingObjects/PathClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/PathsMachines/PositionClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Logic/TypesInLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/ConverterTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/ConvertersTime/DemonstartionAlhorith.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/ConvertersTime/MarginTimeForLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/ConvertersTime/MarginTimeForLevelClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/DataFootprintForRendering.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/PoolDataFootprintForRendering.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/PoolDataFootprintForRenderingClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/TypeLandscapeBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/StatementTaskRendering/TypeMachinesBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/EntryPair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/EntryPairClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/MultiMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/MultiMapTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/RandomWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/src/com/alamutra/ccoa/Wrappers/RandomWrapperClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libGDX/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../libGDX/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../libGDX/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../libGDX/core/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -368,7 +301,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/GUI/ExecutionTaskRendering/BasicFeaturesJava/RenderingFootprint.java</url>
           <line>7</line>
-          <properties class="GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint" method="update">
+          <properties class="GUI.ExecutionTaskRendering.BasicFeaturesJava.RenderingFootprint">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="213" />
