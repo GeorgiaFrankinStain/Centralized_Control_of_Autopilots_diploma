@@ -23,10 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e94dc8-db1b-4dc5-80c6-b18567c1012f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/FootprintClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/LineCutClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/PointClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/PolygonExtendedClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/RoundClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/FootprintSpaceTime/RoundsCorridorClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/IndexLayerClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/MovingObjects/BuilderParametersMovingClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/MovingObjects/FabricParametersMovingClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/MovingObjects/ParametersMovingClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/MovingObjects/PathClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Logic/PathsMachines/PositionClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../libGDX/core/test/com/alamutra/ccoa/Wrappers/MultiMapTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libGDX/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../libGDX/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libGDX/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../libGDX/core/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
