@@ -22,9 +22,9 @@ class MultiMapTreeTest {
         storage.put(-1, 9);
 
         int i = 0;
-        Iterator<EntryPair<Integer, Integer>> iteratorEntryPair = storage.iteratorEntryPair();
+        Iterator<PairCCoA<Integer, Integer>> iteratorEntryPair = storage.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
-            EntryPair<Integer, Integer> entry = iteratorEntryPair.next();
+            PairCCoA<Integer, Integer> entry = iteratorEntryPair.next();
 
             if (i == 0) {
                 {

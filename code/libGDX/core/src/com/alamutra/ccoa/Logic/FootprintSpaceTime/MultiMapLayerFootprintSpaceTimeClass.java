@@ -5,10 +5,7 @@ import com.alamutra.ccoa.Logic.GlobalVariable;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
 import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 import com.alamutra.ccoa.Logic.Position;
-import com.alamutra.ccoa.Wrappers.EntryPair;
-import com.alamutra.ccoa.Wrappers.MultiMap;
-import com.alamutra.ccoa.Wrappers.MultiMapTree;
-import com.alamutra.ccoa.Wrappers.Pair;
+import com.alamutra.ccoa.Wrappers.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -74,9 +71,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 //FIXME NOW
 
-        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
-            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            PairCCoA<Double, Footprint> entry = iteratorEntryPair.next();
             Footprint footprint = entry.getValue();
             double timeStandingStart = entry.getKey();
             double timeStandingEnd = timeStandingStart + footprint.getTimeToNextFootprint();
@@ -107,9 +104,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     public Double getAverageTimeMovingToNextPointOfPath() {
         Double averageRes = null;
 
-        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
-            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            PairCCoA<Double, Footprint> entry = iteratorEntryPair.next();
             Footprint footprint = entry.getValue();
             boolean isEndOfPath = GlobalVariable.equalsNumber(
                     footprint.getTimeToNextFootprint(),
@@ -134,9 +131,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         double averageRes = 0;
 
-        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
-            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            PairCCoA<Double, Footprint> entry = iteratorEntryPair.next();
             Footprint footprint = entry.getValue();
             boolean isEndOfPath = GlobalVariable.equalsNumber(
                     footprint.getTimeToNextFootprint(),
@@ -153,9 +150,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     @Override
     public Double getTimeAddingLastFootprints() { //FIXME ADD_TEST
         Double lastTime = Double.MIN_VALUE;
-        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
-            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            PairCCoA<Double, Footprint> entry = iteratorEntryPair.next();
             Double timeAdding = entry.getKey();
             if (timeAdding > lastTime) {
                 lastTime = timeAdding;
@@ -195,9 +192,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         //TODO add interpolation (LINK_RzRGrmTH)
 
         List<Footprint> resRendringFootpring = new ArrayList<Footprint>();
-        Iterator<EntryPair<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
-            EntryPair<Double, Footprint> entry = iteratorEntryPair.next();
+            PairCCoA<Double, Footprint> entry = iteratorEntryPair.next();
 
             Footprint currentFootprint = entry.getValue(); //FIXME NOW add test timeFind diapason intersection
             double timeStanding = currentFootprint.getTimeToNextFootprint();
@@ -283,7 +280,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         @Override
         public Position getPositionByID() {
             while (iteratorID.hasNext(parametersMovingWithID)) {
-                Pair<Double, Footprint> entry = iteratorID.nextWithID(parametersMovingWithID);
+                PairCCoA<Double, Footprint> entry = iteratorID.nextWithID(parametersMovingWithID);
                 currentFootprint = entry.getValue();
                 timeStartTunnel = entry.getKey();
                 timeEndTunnel = timeStartTunnel + currentFootprint.getTimeToNextFootprint();
@@ -310,7 +307,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         private void endFootprint() {
-            Pair<Double, Footprint> next = iteratorID.nextWithID(parametersMovingWithID);
+            PairCCoA<Double, Footprint> next = iteratorID.nextWithID(parametersMovingWithID);
             if (next != null) {
                 endTunnel = next.getValue();
             } else {
@@ -392,7 +389,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
             boolean isFirstIteration = startTunnel == null && endTunnel == null;
             if (isFirstIteration) {
-                Pair<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
+                PairCCoA<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
                 if (pair == null) {
                     return false;
                 }
@@ -410,7 +407,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private boolean prepareEndTunnelForCycle() {
 
-            Pair<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
+            PairCCoA<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
 
             if (pair == null) {
                 return false;
@@ -431,7 +428,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
     private interface IteratorFootprintWithID {
-        public Pair<Double, Footprint> nextWithID(ParametersMoving parametersMoving);
+        public PairCCoA<Double, Footprint> nextWithID(ParametersMoving parametersMoving);
 
         public boolean hasNextPairItem(ParametersMoving parametersMoving);
 
@@ -439,11 +436,11 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     private class IteratorFootprintWithIDClass implements IteratorFootprintWithID { //FIXME add tests
-        private Iterator<EntryPair<Double, Footprint>> iteratorStorage = storageAllFootprints.iteratorEntryPair();
-        private LinkedList<Pair<Double, Footprint>> previouslyFound = new LinkedList<>();
+        private Iterator<PairCCoA<Double, Footprint>> iteratorStorage = storageAllFootprints.iteratorEntryPair();
+        private LinkedList<PairCCoA<Double, Footprint>> previouslyFound = new LinkedList<>();
 
         @Override
-        public Pair<Double, Footprint> nextWithID(ParametersMoving parametersMoving) {
+        public PairCCoA<Double, Footprint> nextWithID(ParametersMoving parametersMoving) {
             boolean isAvailablePreFoundItems = previouslyFound.size() > 0;
             if (!isAvailablePreFoundItems) {
                 return getNextWithID(parametersMoving);
@@ -459,7 +456,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private boolean fillQueueToSize(ParametersMoving parametersMoving, int countItems) {
             while (isNecessaryToContinueFind(countItems) && isPossibleToContinueFind()) {
-                Pair<Double, Footprint> preFound = getNextWithID(parametersMoving);
+                PairCCoA<Double, Footprint> preFound = getNextWithID(parametersMoving);
                 boolean isFoundFootprintWithTheID = preFound != null;
                 if (isFoundFootprintWithTheID) {
                     previouslyFound.addLast(preFound);
@@ -484,10 +481,10 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             return fillQueueToSize(parametersMoving, 1);
         }
 
-        private Pair<Double, Footprint> getNextWithID(ParametersMoving parametersMoving) {
+        private PairCCoA<Double, Footprint> getNextWithID(ParametersMoving parametersMoving) {
             while (iteratorStorage.hasNext()) {
-                EntryPair<Double, Footprint> entry = iteratorStorage.next();
-                Pair<Double, Footprint> result = new Pair<>(entry.getKey(), entry.getValue());
+                PairCCoA<Double, Footprint> entry = iteratorStorage.next();
+                PairCCoA<Double, Footprint> result = new PairCCoAClass<>(entry.getKey(), entry.getValue());
 
                 Footprint footprint = entry.getValue();
                 boolean isSearchable = footprint.getMovingObject().getID() == parametersMoving.getID();

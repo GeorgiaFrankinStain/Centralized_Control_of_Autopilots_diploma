@@ -17,7 +17,7 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
 
 
     @Override
-    public Iterator<EntryPair<K, V>> iteratorEntryPair() {
+    public Iterator<PairCCoA<K, V>> iteratorEntryPair() {
         return new EntryPairMapClass();
     }
 
@@ -33,7 +33,7 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
     }
 
 
-    private class EntryPairMapClass implements Iterator<EntryPair<K, V>> { //FIXME ADD_TEST
+    private class EntryPairMapClass implements Iterator<PairCCoA<K, V>> { //FIXME ADD_TEST
         private int positionReturnedList = 0;
         private Iterator iteratorMap;
         List<V> currentList = null;
@@ -51,7 +51,7 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
         }
 
         @Override
-        public EntryPair<K, V> next() {
+        public PairCCoA<K, V> next() {
             boolean successfullyFindNonEmptyList = updateThisCurrentVarible();
 
             if (!successfullyFindNonEmptyList) {
@@ -65,7 +65,7 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
             positionReturnedList++;
 
 
-            return new EntryPairClass<K, V>(resKeyMap, resValue);
+            return new PairCCoAClass<K, V>(resKeyMap, resValue);
         }
 
         private boolean updateThisCurrentVarible() {
