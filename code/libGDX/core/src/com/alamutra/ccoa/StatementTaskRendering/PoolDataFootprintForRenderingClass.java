@@ -2,7 +2,7 @@ package com.alamutra.ccoa.StatementTaskRendering;
 
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Footprint;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Logic.IndexLayer;
 import com.alamutra.ccoa.Logic.IndexLayerClass;
 
@@ -20,7 +20,7 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
     }
 
     @Override
-    public void fillYourself(PolygonExtended areaRendering, int currentTime) {
+    public void fillYourself(PolygonCCoA areaRendering, int currentTime) {
 /*      //TODO REALISED
         min
             Complete removal. Create new list.

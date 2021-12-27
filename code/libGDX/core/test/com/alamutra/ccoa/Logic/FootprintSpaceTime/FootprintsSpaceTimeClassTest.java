@@ -24,11 +24,11 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
 
-    PolygonExtended areaRendering = new PolygonExtendedClass(Arrays.<Point>asList(new PointClass[]{
-            new PointClass(0, 0),
-            new PointClass(900, 0),
-            new PointClass(900, 900),
-            new PointClass(0, 900)
+    PolygonCCoA areaRendering = new PolygonCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+            new PointCCoAClass(0, 0),
+            new PointCCoAClass(900, 0),
+            new PointCCoAClass(900, 900),
+            new PointCCoAClass(0, 900)
     }));
 
 
@@ -39,12 +39,12 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         private ParametersMoving wallCar;
         private Footprint wallCarFootprint;
 
-        private Path wallPath;
-        private Path carPath;
+        private PathCCoA wallPathCCoA;
+        private PathCCoA carPathCCoA;
 
-        public TestedFootprintSpaceTime(Path wallPath, Path carPath) throws СrashIntoAnImpassableObjectExeption {
-            this.wallPath = wallPath;
-            this.carPath = carPath;
+        public TestedFootprintSpaceTime(PathCCoA wallPathCCoA, PathCCoA carPathCCoA) throws СrashIntoAnImpassableObjectExeption {
+            this.wallPathCCoA = wallPathCCoA;
+            this.carPathCCoA = carPathCCoA;
 
 
             markFootprintsTwoMachine();
@@ -52,12 +52,12 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         }
 
         public TestedFootprintSpaceTime() throws СrashIntoAnImpassableObjectExeption {
-            this.wallPath = new PathClass();
-            this.wallPath.addPoint(new PointClass(0, 60));
+            this.wallPathCCoA = new PathCCoAClass();
+            this.wallPathCCoA.addPoint(new PointCCoAClass(0, 60));
 
-            this.carPath = new PathClass();
-            this.carPath.addPoint(new PointClass(20, 10));
-            this.carPath.addPoint(new PointClass(20, 115));
+            this.carPathCCoA = new PathCCoAClass();
+            this.carPathCCoA.addPoint(new PointCCoAClass(20, 10));
+            this.carPathCCoA.addPoint(new PointCCoAClass(20, 115));
 
             markFootprintsTwoMachine();
             wallCarFootprintCreatePrivateVariable();
@@ -106,21 +106,21 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         private void wallCarMarkFootprint() throws СrashIntoAnImpassableObjectExeption {
             FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
             wallCar = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
-            wallCar.mark(localFootprintsSpaceTime, wallPath, 0.0, defaultIndexLayer);
+            wallCar.mark(localFootprintsSpaceTime, wallPathCCoA, 0.0, defaultIndexLayer);
         }
 
         private void passangerCarStopsCrashing() throws СrashIntoAnImpassableObjectExeption {
             FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
             passengerCar = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
             try {
-                passengerCar.mark(localFootprintsSpaceTime, carPath, 0.0, defaultIndexLayer);
+                passengerCar.mark(localFootprintsSpaceTime, carPathCCoA, 0.0, defaultIndexLayer);
             } catch (СrashIntoAnImpassableObjectExeption ex) {
             }
         }
 
         private void wallCarFootprintCreatePrivateVariable() {
             wallCarFootprint = new FootprintClass(
-                    new PositionClass(new PointClass(0, 60), 0.0),
+                    new PositionClass(new PointCCoAClass(0, 60), 0.0),
                     CreatorMarksOfPathClass.MAX_TIME_STANDING,
                     wallCar
             );
@@ -174,11 +174,11 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         movingObjectSimpleParametersMovingOnLine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(10, 0));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(10, 0));
 
-        movingObjectSimpleParametersMovingOnLine.mark(onlyFootprintsSpaceTime, path, 0.0, defaultIndexLayer);
+        movingObjectSimpleParametersMovingOnLine.mark(onlyFootprintsSpaceTime, pathCCoA, 0.0, defaultIndexLayer);
         return onlyFootprintsSpaceTime;
     }
 
@@ -188,7 +188,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
                 movingObjectSimpleParametersMovingOnLine,
                 0.0
         );
-        Position expected = new PositionClass(new PointClass(0, 0), 0.0);
+        Position expected = new PositionClass(new PointCCoAClass(0, 0), 0.0);
 
         assertEquals(expected, actualPosition);
     }
@@ -199,7 +199,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
                 movingObjectSimpleParametersMovingOnLine,
                 0.5
         );
-        Position expected = new PositionClass(new PointClass(5, 0), 0.0);
+        Position expected = new PositionClass(new PointCCoAClass(5, 0), 0.0);
 
         assertEquals(expected, actualPosition);
     }
@@ -209,7 +209,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
                 movingObjectSimpleParametersMovingOnLine,
                 1.0
         );
-        Position expected = new PositionClass(new PointClass(10, 0), 0.0);
+        Position expected = new PositionClass(new PointCCoAClass(10, 0), 0.0);
 
         assertEquals(expected, actualPosition);
     }
@@ -230,8 +230,8 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         private double timeStandingOnOneStep = 2;
         private double lengthStep = 20;
         double speed = 10;
-        private Point endPoint = null;
-        private Path path = null;
+        private PointCCoA endPointCCoA = null;
+        private PathCCoA pathCCoA = null;
 
         public TesterOneMarkClass(double timeAddingPath) throws СrashIntoAnImpassableObjectExeption {
             this.timeAddingPath = timeAddingPath;
@@ -239,16 +239,16 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             sharedConstructor();
         }
 
-        public TesterOneMarkClass(double timeAddingPath, Path path) throws СrashIntoAnImpassableObjectExeption {
+        public TesterOneMarkClass(double timeAddingPath, PathCCoA pathCCoA) throws СrashIntoAnImpassableObjectExeption {
             this.timeAddingPath = timeAddingPath;
-            this.path = path;
+            this.pathCCoA = pathCCoA;
 
             sharedConstructor();
         }
 
-        public TesterOneMarkClass(double timeAddingPath, Point endPoint) throws СrashIntoAnImpassableObjectExeption {
+        public TesterOneMarkClass(double timeAddingPath, PointCCoA endPointCCoA) throws СrashIntoAnImpassableObjectExeption {
             this.timeAddingPath = timeAddingPath;
-            this.endPoint = endPoint;
+            this.endPointCCoA = endPointCCoA;
 
             sharedConstructor();
 
@@ -257,7 +257,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         private void sharedConstructor() throws СrashIntoAnImpassableObjectExeption {
             setValueForNullVariable();
             createPassangerCar();
-            parametersMoving.mark(onlyFootprintsSpaceTime, path, timeAddingPath, defaultIndexLayer);
+            parametersMoving.mark(onlyFootprintsSpaceTime, pathCCoA, timeAddingPath, defaultIndexLayer);
         }
 
         private void createPassangerCar() {
@@ -268,13 +268,13 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         }
 
         private void setValueForNullVariable() {
-            if (endPoint == null) {
-                endPoint = new PointClass(100, 100);
+            if (endPointCCoA == null) {
+                endPointCCoA = new PointCCoAClass(100, 100);
             }
-            if (path == null) {
-                path = new PathClass();
-                path.addPoint(new PointClass(0, 100));
-                path.addPoint(endPoint);
+            if (pathCCoA == null) {
+                pathCCoA = new PathCCoAClass();
+                pathCCoA.addPoint(new PointCCoAClass(0, 100));
+                pathCCoA.addPoint(endPointCCoA);
             }
         }
 
@@ -306,7 +306,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         for (int numberStep = 0; numberStep < 6; numberStep++) {
             double lengthStep = testerOneMark0.getLengthStep();
             assert (testerOneMark0.isCarPassedRightPlace(
-                    new PositionClass(new PointClass(lengthStep * numberStep, 100), 0),
+                    new PositionClass(new PointCCoAClass(lengthStep * numberStep, 100), 0),
                     testerOneMark0.getTimePositionForTheSpeedCar(numberStep)
             )) : "numberStep: " + numberStep + " lengthStep: " + lengthStep;
         }
@@ -315,7 +315,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_stopAfterMove() {
         assert (testerOneMark0.isCarPassedRightPlace(
-                new PositionClass(new PointClass(testerOneMark0.getLengthStep() * 5, 100), 0),
+                new PositionClass(new PointCCoAClass(testerOneMark0.getLengthStep() * 5, 100), 0),
                 1000
         ));
     }
@@ -323,7 +323,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_approximationHalfFirstStep() {
         assert (testerOneMark0.isCarPassedRightPlace(
-                new PositionClass(new PointClass(5, 100), 0),
+                new PositionClass(new PointCCoAClass(5, 100), 0),
                 0.5
         ));
     }
@@ -331,7 +331,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_approximationStartFirstStep() {
         assert (testerOneMark0.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 100), 0),
+                new PositionClass(new PointCCoAClass(0, 100), 0),
                 0
         ));
     }
@@ -339,39 +339,39 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_approximationEndFirstStep() {
         assert (testerOneMark0.isCarPassedRightPlace(
-                new PositionClass(new PointClass(10, 100), 0),
+                new PositionClass(new PointCCoAClass(10, 100), 0),
                 1
         ));
     }
 
 
-    private Point endPoint = new PointClass(110, 100);
-    private TesterOneMark testerOneMark0NonMultipleStep = new TesterOneMarkClass(0.0, endPoint);
+    private PointCCoA endPointCCoA = new PointCCoAClass(110, 100);
+    private TesterOneMark testerOneMark0NonMultipleStep = new TesterOneMarkClass(0.0, endPointCCoA);
 
     @Test
     void addFootprint_littleStepInEnd() {
         boolean isExistRemainsDivide =
-                endPoint.getX() % testerOneMark0NonMultipleStep.getLengthStep() > GlobalVariable.DOUBLE_COMPARISON_ACCURACY;
+                endPointCCoA.getX() % testerOneMark0NonMultipleStep.getLengthStep() > GlobalVariable.DOUBLE_COMPARISON_ACCURACY;
         boolean isNeedForEndLittleStep = isExistRemainsDivide;
         assert (isNeedForEndLittleStep);
         assert (testerOneMark0NonMultipleStep.isCarPassedRightPlace(
-                new PositionClass(endPoint, 0),
+                new PositionClass(endPointCCoA, 0),
                 400
         ));
     }
 
 
-    private Path verticalPathMoreOneStep = new PathClass(Arrays.<Point>asList(new PointClass[]{
-            new PointClass(0, 0),
-            new PointClass(0, 100)
+    private PathCCoA verticalPathCCoAMoreOneStep = new PathCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+            new PointCCoAClass(0, 0),
+            new PointCCoAClass(0, 100)
     }));
     private TesterOneMark testerOneMark0VerticalPath =
-            new TesterOneMarkClass(0.0, verticalPathMoreOneStep);
+            new TesterOneMarkClass(0.0, verticalPathCCoAMoreOneStep);
 
     @Test
     void addFootprint_vertical_8() {
         assertTrue(testerOneMark0VerticalPath.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 80), PI / 2),
+                new PositionClass(new PointCCoAClass(0, 80), PI / 2),
                 8
         ));
     }
@@ -379,7 +379,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_vertical_10() {
         assert (testerOneMark0VerticalPath.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 100), PI / 2),
+                new PositionClass(new PointCCoAClass(0, 100), PI / 2),
                 10
         ));
     }
@@ -387,20 +387,20 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_verticalStandingAfterMove() {
         assert (testerOneMark0VerticalPath.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 100), PI / 2),
+                new PositionClass(new PointCCoAClass(0, 100), PI / 2),
                 10000000
         ));
     }
 
-    private Path pathStanding = new PathClass(Arrays.<Point>asList(new PointClass[]{
-            new PointClass(0, 0)
+    private PathCCoA pathCCoAStanding = new PathCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+            new PointCCoAClass(0, 0)
     }));
-    private TesterOneMark testerMarkStanding = new TesterOneMarkClass(0.0, pathStanding);
+    private TesterOneMark testerMarkStanding = new TesterOneMarkClass(0.0, pathCCoAStanding);
 
     @Test
     void addFootprint_verticalStandingAfterMove_0() {
         assert (testerMarkStanding.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 0), 0.0),
+                new PositionClass(new PointCCoAClass(0, 0), 0.0),
                 0
         ));
     }
@@ -408,7 +408,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_verticalStandingAfterMove_23456() {
         assert (testerMarkStanding.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 0), 0.0),
+                new PositionClass(new PointCCoAClass(0, 0), 0.0),
                 23456
         ));
     }
@@ -416,19 +416,19 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_verticalStandingAfterMove_234563456() {
         assert (testerMarkStanding.isCarPassedRightPlace(
-                new PositionClass(new PointClass(0, 0), 0.0),
+                new PositionClass(new PointCCoAClass(0, 0), 0.0),
                 234563456
         ));
     }
 
 
-    private Path zigZagPath = new PathClass(Arrays.<Point>asList(new PointClass[]{
-            new PointClass(0, 0),
-            new PointClass(100, 0),
-            new PointClass(100, 100),
-            new PointClass(200, 100)
+    private PathCCoA zigZagPathCCoA = new PathCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+            new PointCCoAClass(0, 0),
+            new PointCCoAClass(100, 0),
+            new PointCCoAClass(100, 100),
+            new PointCCoAClass(200, 100)
     }));
-    private TesterOneMark zigZagTester = new TesterOneMarkClass(0.0, zigZagPath);
+    private TesterOneMark zigZagTester = new TesterOneMarkClass(0.0, zigZagPathCCoA);
 
 
     /*
@@ -459,7 +459,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         for (int numberStep = 0; numberStep <= 4; numberStep++) {
             double lengthStep = zigZagTester.getLengthStep();
             assert (zigZagTester.isCarPassedRightPlace(
-                    new PositionClass(new PointClass(lengthStep * numberStep, 0), 0.0),
+                    new PositionClass(new PointCCoAClass(lengthStep * numberStep, 0), 0.0),
                     zigZagTester.getTimePositionForTheSpeedCar(numberStep)
             )) : "numberStep: " + numberStep + " lengthStep: " + lengthStep;
         }
@@ -471,7 +471,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             double timeMovingInFirstLine = zigZagTester.getTimePositionForTheSpeedCar(5);
             double lengthStep = zigZagTester.getLengthStep();
             assert (zigZagTester.isCarPassedRightPlace(
-                    new PositionClass(new PointClass(100, lengthStep * numberStep), 1.5707963267948966),
+                    new PositionClass(new PointCCoAClass(100, lengthStep * numberStep), 1.5707963267948966),
                     timeMovingInFirstLine + zigZagTester.getTimePositionForTheSpeedCar(numberStep)
             )) : "numberStep: " + numberStep + " lengthStep: " + lengthStep;
         }
@@ -481,7 +481,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     void addFootprint_zigZagSecondLine() {
         double length5Step = zigZagTester.getLengthStep() * 5;
         assert (zigZagTester.isCarPassedRightPlace(
-                new PositionClass(new PointClass(length5Step, length5Step), 0.0),
+                new PositionClass(new PointCCoAClass(length5Step, length5Step), 0.0),
                 zigZagTester.getTimePositionForTheSpeedCar(10)
         ));
     }
@@ -491,7 +491,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         double length5Step = zigZagTester.getLengthStep() * 5;
         double length10Step = zigZagTester.getLengthStep() * 10;
         assert (zigZagTester.isCarPassedRightPlace(
-                new PositionClass(new PointClass(length10Step, length5Step), 0.0),
+                new PositionClass(new PointCCoAClass(length10Step, length5Step), 0.0),
                 zigZagTester.getTimePositionForTheSpeedCar(15)
         ));
     }
@@ -523,14 +523,14 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
      * - this is lastLittleStep (last Little Time Standing)
      */
     private double tailLength = 3;
-    private Path zigZagPathWithTail = new PathClass(Arrays.<Point>asList(new PointClass[]{
-            new PointClass(0, 0),
-            new PointClass(100, 0),
-            new PointClass(100, 100),
-            new PointClass(200, 100),
-            new PointClass(200 + tailLength, 100)
+    private PathCCoA zigZagPathCCoAWithTail = new PathCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+            new PointCCoAClass(0, 0),
+            new PointCCoAClass(100, 0),
+            new PointCCoAClass(100, 100),
+            new PointCCoAClass(200, 100),
+            new PointCCoAClass(200 + tailLength, 100)
     }));
-    private TesterOneMark zigZagWithTailTester = new TesterOneMarkClass(0.0, zigZagPathWithTail);
+    private TesterOneMark zigZagWithTailTester = new TesterOneMarkClass(0.0, zigZagPathCCoAWithTail);
     @Test
     void addFootprint_zigZagWithLastLittleStep_endTailStep() {
         double length5Step = zigZagWithTailTester.getLengthStep() * 5;
@@ -538,20 +538,20 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         double speedTestedCarSquare = 10;
         double timeMovingTail = tailLength / speedTestedCarSquare;
         assert (zigZagWithTailTester.isCarPassedRightPlace(
-                new PositionClass(new PointClass(length10Step + tailLength, length5Step), 0.0),
+                new PositionClass(new PointCCoAClass(length10Step + tailLength, length5Step), 0.0),
                 zigZagWithTailTester.getTimePositionForTheSpeedCar(15) + timeMovingTail
         ));
     }
 
 
-    private Path standingPath = new PathClass(Arrays.<Point>asList(new PointClass[]{
-            new PointClass(0, 0)
+    private PathCCoA standingPathCCoA = new PathCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+            new PointCCoAClass(0, 0)
     }));
-    private TesterOneMark standingTester = new TesterOneMarkClass(0.0, standingPath);
+    private TesterOneMark standingTester = new TesterOneMarkClass(0.0, standingPathCCoA);
 
     @Test
     void addFootprint_standing() {
-        standingTester.isCarPassedRightPlace(new PositionClass(new PointClass(0, 0), 0.0), 0);
+        standingTester.isCarPassedRightPlace(new PositionClass(new PointCCoAClass(0, 0), 0.0), 0);
     }
 
 
@@ -561,7 +561,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     @Test
     void addFootprint_addInMaxTimeStanding() {
         maxTimeStanding.isCarPassedRightPlace(new PositionClass(
-                        new PointClass(0, 100), 0),
+                        new PointCCoAClass(0, 100), 0),
                 CreatorMarksOfPathClass.MAX_TIME_STANDING / 2
         );
     }
@@ -603,25 +603,25 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         return false;
     }
 
-    private Path createPassengerCarPath() { //FIXME IMITATION
-        Path resPath = new PathClass();
-        resPath.addPoint(new PointClass(10, 10));
-        resPath.addPoint(new PointClass(15, 15));
-        resPath.addPoint(new PointClass(200, 15));
-        resPath.addPoint(new PointClass(20, 250));
-        resPath.addPoint(new PointClass(30, 30));
-        resPath.addPoint(new PointClass(35, 35));
-        resPath.addPoint(new PointClass(40, 40));
-        resPath.addPoint(new PointClass(400, 40));
+    private PathCCoA createPassengerCarPath() { //FIXME IMITATION
+        PathCCoA resPathCCoA = new PathCCoAClass();
+        resPathCCoA.addPoint(new PointCCoAClass(10, 10));
+        resPathCCoA.addPoint(new PointCCoAClass(15, 15));
+        resPathCCoA.addPoint(new PointCCoAClass(200, 15));
+        resPathCCoA.addPoint(new PointCCoAClass(20, 250));
+        resPathCCoA.addPoint(new PointCCoAClass(30, 30));
+        resPathCCoA.addPoint(new PointCCoAClass(35, 35));
+        resPathCCoA.addPoint(new PointCCoAClass(40, 40));
+        resPathCCoA.addPoint(new PointCCoAClass(400, 40));
 
-        return resPath;
+        return resPathCCoA;
     }
 
-    private Path createPathWall() {
-        Path resPath = new PathClass();
-        resPath.addPoint(new PointClass(60, 60));
+    private PathCCoA createPathWall() {
+        PathCCoA resPathCCoA = new PathCCoAClass();
+        resPathCCoA.addPoint(new PointCCoAClass(60, 60));
 
-        return resPath;
+        return resPathCCoA;
     }
 
 }

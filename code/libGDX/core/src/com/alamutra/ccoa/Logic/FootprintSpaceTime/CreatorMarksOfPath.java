@@ -1,11 +1,11 @@
 package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 
 public interface CreatorMarksOfPath {
     public void addFootprint(
-            Path path,
+            PathCCoA pathCCoA,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption;
 }

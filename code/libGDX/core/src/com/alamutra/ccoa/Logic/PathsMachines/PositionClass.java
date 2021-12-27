@@ -1,22 +1,22 @@
 package com.alamutra.ccoa.Logic.PathsMachines;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Logic.GlobalVariable;
 import com.alamutra.ccoa.Logic.Position;
 
 public class PositionClass implements Position {
-    private Point point;
+    private PointCCoA pointCCoA;
     private double rotation;
 
-    public PositionClass(Point point, double rotation) {
-        this.point = point;
+    public PositionClass(PointCCoA pointCCoA, double rotation) {
+        this.pointCCoA = pointCCoA;
         this.rotation = rotation;
-        toTestInputDataIsValid(point, rotation);
+        toTestInputDataIsValid(pointCCoA, rotation);
     }
 
     @Override
-    public Point getCoordinates() {
-        return this.point;
+    public PointCCoA getCoordinates() {
+        return this.pointCCoA;
     }
 
     @Override
@@ -61,8 +61,8 @@ public class PositionClass implements Position {
 
 
         Position other = (Position) obj;
-        Point thisCoordinate = this.getCoordinates();
-        Point otherCoordinate = other.getCoordinates();
+        PointCCoA thisCoordinate = this.getCoordinates();
+        PointCCoA otherCoordinate = other.getCoordinates();
         boolean coordinateEquals = thisCoordinate.equals(otherCoordinate);
         boolean rotationEquals = GlobalVariable.equalsNumber(this.getRotation(), other.getRotation());
         return coordinateEquals && rotationEquals;
@@ -70,7 +70,7 @@ public class PositionClass implements Position {
 
     @Override
     public String toString() {
-        return "(" + point.toString() + " rotation: " + rotation + ")";
+        return "(" + pointCCoA.toString() + " rotation: " + rotation + ")";
     }
 
     @Override
@@ -90,7 +90,7 @@ public class PositionClass implements Position {
             double timeSecond,
             double timeApproximation
     ) {
-        Point approximationPoint = this.point.getApproximationWith(
+        PointCCoA approximationPointCCoA = this.pointCCoA.getApproximationWith(
                 timeFirst,
                 secondPosition.getCoordinates(),
                 timeSecond,
@@ -100,7 +100,7 @@ public class PositionClass implements Position {
                 approximationAngle(secondPosition.getRotation(), timeSecond, this.getRotation(), timeFirst, timeApproximation);
         verificationOutputData(approximationAngle);
 
-        Position result = new PositionClass(approximationPoint, approximationAngle);
+        Position result = new PositionClass(approximationPointCCoA, approximationAngle);
         return result;
     }
 
@@ -203,10 +203,10 @@ public class PositionClass implements Position {
         return -Math.PI <= rotation && rotation <= Math.PI;
     }
 
-    private void toTestInputDataIsValid(Point point, double rotation) {
+    private void toTestInputDataIsValid(PointCCoA pointCCoA, double rotation) {
         if (!isRotationIsValid(rotation)) {
             throw new IllegalArgumentException("rotation is no valid");
         }
-        assert (point != null);
+        assert (pointCCoA != null);
     }
 }

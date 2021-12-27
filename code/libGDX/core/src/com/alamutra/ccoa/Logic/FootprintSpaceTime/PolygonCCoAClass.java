@@ -9,57 +9,57 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class PolygonExtendedClass implements PolygonExtended {
-    private List<Point> points = new ArrayList<Point>();
+public class PolygonCCoAClass implements PolygonCCoA {
+    private List<PointCCoA> pointCCoAS = new ArrayList<PointCCoA>();
 
 
     //FIXME rule of create polygon (lines don't intersect; prohibit narrow polygons, no use polygon without points)
 
 
-    public PolygonExtendedClass() {
+    public PolygonCCoAClass() {
     }
 
-    public PolygonExtendedClass(String polygonTextFormat) {
+    public PolygonCCoAClass(String polygonTextFormat) {
         this(getPointsForCreate(polygonTextFormat));
     }
-    private static List<Point> getPointsForCreate(String polygonTextFormat) {
+    private static List<PointCCoA> getPointsForCreate(String polygonTextFormat) {
         ConstructorTextFormat constructor = new ConstructorTextFormatClass();
-        List<Point> points = constructor.getPointsForCreate(polygonTextFormat);
-        return points;
+        List<PointCCoA> pointCCoAS = constructor.getPointsForCreate(polygonTextFormat);
+        return pointCCoAS;
     }
 
-    public PolygonExtendedClass(List<Point> points) {
-        addPoint(points);
+    public PolygonCCoAClass(List<PointCCoA> pointCCoAS) {
+        addPoint(pointCCoAS);
     }
 
     private interface ConstructorTextFormat {
-        public List<Point> getPointsForCreate(String textFormatPolygon);
+        public List<PointCCoA> getPointsForCreate(String textFormatPolygon);
     }
 
     private static class ConstructorTextFormatClass implements ConstructorTextFormat {
-        private Map<Integer, Point> points = new TreeMap<>();
+        private Map<Integer, PointCCoA> points = new TreeMap<>();
         private int x = 0;
         private int y = 0;
-        private Point vectorDeposeRelativeNewOrigin = null;
+        private PointCCoA vectorDeposeRelativeNewOrigin = null;
 
         @Override
-        public List<Point> getPointsForCreate(String polygonTextFormat) {
+        public List<PointCCoA> getPointsForCreate(String polygonTextFormat) {
             for (char currentChar : polygonTextFormat.toCharArray()) {
                 switchProcessing(currentChar);
             }
-            List<Point> result = new ArrayList<Point>(points.values());
+            List<PointCCoA> result = new ArrayList<PointCCoA>(points.values());
             applyNewOrigin(result);
             return result;
         }
 
 
-        private void applyNewOrigin(List<Point> points) {
+        private void applyNewOrigin(List<PointCCoA> pointCCoAS) {
             if (vectorDeposeRelativeNewOrigin == null) {
                 return;
             }
 
-            for(Point point : points) {
-                point.deposeOn(vectorDeposeRelativeNewOrigin);
+            for(PointCCoA pointCCoA : pointCCoAS) {
+                pointCCoA.deposeOn(vectorDeposeRelativeNewOrigin);
             }
         }
 
@@ -81,14 +81,14 @@ public class PolygonExtendedClass implements PolygonExtended {
         private void saveNewOrigin() {
             boolean isOnlyOrigin = vectorDeposeRelativeNewOrigin == null;
             assert (isOnlyOrigin);
-            vectorDeposeRelativeNewOrigin = new PointClass(-x, -y);
+            vectorDeposeRelativeNewOrigin = new PointCCoAClass(-x, -y);
             x++;
         }
 
         private void addPoint(char currentChar) {
             int sequenceAddInPolygon = currentChar - '0';
             assert (0 <= sequenceAddInPolygon && sequenceAddInPolygon <= 9);
-            points.put(sequenceAddInPolygon, new PointClass(x, y));
+            points.put(sequenceAddInPolygon, new PointCCoAClass(x, y));
             x++;
         }
 
@@ -100,67 +100,67 @@ public class PolygonExtendedClass implements PolygonExtended {
 
     @Override
     public int getCountPoints() {
-        return points.size();
+        return pointCCoAS.size();
     }
 
     @Override
-    public Point getPoint(int index) {//TEST+
-        return this.points.get(index);
+    public PointCCoA getPoint(int index) {//TEST+
+        return this.pointCCoAS.get(index);
     }
 
     @Override
-    public void addPoint(Point newPoint) {
-        assert(newPoint != null);
-        this.points.add(newPoint.clone());
+    public void addPoint(PointCCoA newPointCCoA) {
+        assert(newPointCCoA != null);
+        this.pointCCoAS.add(newPointCCoA.clone());
     }
 
     @Override
-    public void addPoint(Point[] points) {
-        for (Point point : points) {
-            this.addPoint(point);
+    public void addPoint(PointCCoA[] pointCCoAS) {
+        for (PointCCoA pointCCoA : pointCCoAS) {
+            this.addPoint(pointCCoA);
         }
     }
 
     @Override
-    public void addPoint(List<Point> points) {
-        for (Point point : points) {
-            this.addPoint(point);
+    public void addPoint(List<PointCCoA> pointCCoAS) {
+        for (PointCCoA pointCCoA : pointCCoAS) {
+            this.addPoint(pointCCoA);
         }
     }
 
     @Override
-    public void addAllPoint(List<Point> newPoints) {
-        assert(newPoints != null);
-        this.points.addAll(newPoints);
+    public void addAllPoint(List<PointCCoA> newPointCCoAS) {
+        assert(newPointCCoAS != null);
+        this.pointCCoAS.addAll(newPointCCoAS);
     }
 
     @Override
-    public void insertPoint(int index, Point newPoint) {
-        this.points.add(index, newPoint);
+    public void insertPoint(int index, PointCCoA newPointCCoA) {
+        this.pointCCoAS.add(index, newPointCCoA);
     }
 
     @Override
-    public void setPoint(int index, Point newPoint) {
-        this.points.set(index, newPoint);
+    public void setPoint(int index, PointCCoA newPointCCoA) {
+        this.pointCCoAS.set(index, newPointCCoA);
     }
 
 
     @Override
-    public void rotateRelative(Point origin, double angle) { //FIXME TEST ADD
+    public void rotateRelative(PointCCoA origin, double angle) { //FIXME TEST ADD
         for (int i = 0; i < this.getCountPoints(); i++) {
             this.setPoint(i, this.getPoint(i).getRotateRelative(origin, angle));
         }
     }
 
     @Override
-    public void deposeOn(Point vector) { //FIXME TEST ADD
+    public void deposeOn(PointCCoA vector) { //FIXME TEST ADD
         for (int i = 0; i < this.getCountPoints(); i++) {
-            Point currentPoint = this.getPoint(i);
-            Point newPoint = new PointClass(
-                    currentPoint.getX() + vector.getX(),
-                    currentPoint.getY() + vector.getY()
+            PointCCoA currentPointCCoA = this.getPoint(i);
+            PointCCoA newPointCCoA = new PointCCoAClass(
+                    currentPointCCoA.getX() + vector.getX(),
+                    currentPointCCoA.getY() + vector.getY()
             );
-            this.setPoint(i, newPoint);
+            this.setPoint(i, newPointCCoA);
         }
     }
 
@@ -185,16 +185,16 @@ public class PolygonExtendedClass implements PolygonExtended {
             return false;
 
 
-        PolygonExtended other = (PolygonExtended) obj;
+        PolygonCCoA other = (PolygonCCoA) obj;
 
-        if (this.points.size() != other.getCountPoints()) {
+        if (this.pointCCoAS.size() != other.getCountPoints()) {
             return false;
         }
 
-        for (int i = 0; i < this.points.size(); i++) {
-            Point pointFromThis = this.points.get(i);
-            Point pointFromOther = other.getPoint(i);
-            if (!pointFromThis.equals(pointFromOther)) {
+        for (int i = 0; i < this.pointCCoAS.size(); i++) {
+            PointCCoA pointCCoAFromThis = this.pointCCoAS.get(i);
+            PointCCoA pointCCoAFromOther = other.getPoint(i);
+            if (!pointCCoAFromThis.equals(pointCCoAFromOther)) {
                 return false;
             }
         }
@@ -208,35 +208,35 @@ public class PolygonExtendedClass implements PolygonExtended {
         int twoPow32 = 2147483647;
         final int prime = 31;
         int result = 1;
-        result = prime * result + (int) (this.points.hashCode() % twoPow32);
+        result = prime * result + (int) (this.pointCCoAS.hashCode() % twoPow32);
         result = prime * result + prime;
         return result;
     }
 
 
     @Override
-    public PolygonExtended clone() {
-        List<Point> cloneList = new ArrayList<Point>(this.points);
-        return new PolygonExtendedClass(cloneList);
+    public PolygonCCoA clone() {
+        List<PointCCoA> cloneList = new ArrayList<PointCCoA>(this.pointCCoAS);
+        return new PolygonCCoAClass(cloneList);
     }
 
     @Override
-    public boolean contains(Point desirededPoint) {
-        return this.points.contains(desirededPoint);
+    public boolean contains(PointCCoA desirededPointCCoA) {
+        return this.pointCCoAS.contains(desirededPointCCoA);
     }
 
     @Override
-    public boolean enteringPoint(Point testedPoint) {//FIXME TEST+labirint + validate polygon
-        boolean isPointIsVertex = this.contains(testedPoint);
-        if (isPointIsVertex || perimeterContainsPoint(testedPoint)) {
+    public boolean enteringPoint(PointCCoA testedPointCCoA) {//FIXME TEST+labirint + validate polygon
+        boolean isPointIsVertex = this.contains(testedPointCCoA);
+        if (isPointIsVertex || perimeterContainsPoint(testedPointCCoA)) {
             return true;
         }
 
-        return jtc_contains_in_polygon(testedPoint);
+        return jtc_contains_in_polygon(testedPointCCoA);
     }
 
     @Override
-    public boolean intersectionPolygon(PolygonExtended secondPolygon) {
+    public boolean intersectionPolygon(PolygonCCoA secondPolygon) {
 
         boolean mutualEnterPointOfPolygonsBOOL =
                 enteringMinimumOnePointOfFirstPolygonInSecondPolygon(this, secondPolygon)
@@ -253,10 +253,10 @@ public class PolygonExtendedClass implements PolygonExtended {
 
 
     @Override
-    public boolean intersectionLine(Point startLine, Point endLine) {
+    public boolean intersectionLine(PointCCoA startLine, PointCCoA endLine) {
         int indexLastPoint = this.getCountPoints() - 1;
-        Point startLocalLine = this.getPoint(indexLastPoint);
-        Point endLocalLine = this.getPoint(0);
+        PointCCoA startLocalLine = this.getPoint(indexLastPoint);
+        PointCCoA endLocalLine = this.getPoint(0);
 
 
         for (int i = 0; i < this.getCountPoints(); i++) {
@@ -291,7 +291,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     @Override
     public boolean isLiesInsideThe(Round round) {
         for (int i = 0; i < this.getCountPoints(); i++) {
-            Point current = this.getPoint(i);
+            PointCCoA current = this.getPoint(i);
             if (!round.isIncludes(current)) {
                 return false;
             }
@@ -301,10 +301,10 @@ public class PolygonExtendedClass implements PolygonExtended {
 
 
     private boolean intersectionLines(
-            Point aStartLine,
-            Point aEndLine,
-            Point bStartLine,
-            Point bEndLine
+            PointCCoA aStartLine,
+            PointCCoA aEndLine,
+            PointCCoA bStartLine,
+            PointCCoA bEndLine
     ) {
         LineCut lineCut = new LineCutClass(aStartLine, aEndLine);
         LineCut lineCut2 = new LineCutClass(bStartLine, bEndLine);
@@ -312,18 +312,18 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     @Override
-    public Point getCenterAverage() {
+    public PointCCoA getCenterAverage() {
         double xSum = 0;
         double ySum = 0;
-        for (Point point : this.points) {
-            xSum += point.getX();
-            ySum += point.getY();
+        for (PointCCoA pointCCoA : this.pointCCoAS) {
+            xSum += pointCCoA.getX();
+            ySum += pointCCoA.getY();
         }
 
         double xAverage = xSum / this.getCountPoints();
         double yAverage = ySum / this.getCountPoints();
 
-        return new PointClass(xAverage, yAverage);
+        return new PointCCoAClass(xAverage, yAverage);
     }
 
     @Override
@@ -332,12 +332,12 @@ public class PolygonExtendedClass implements PolygonExtended {
 
         int indexWriteInDoubleArray = 0;
         for (int i = 0; i < this.getCountPoints(); i++) {
-            Point currentPoint = this.getPoint(i);
+            PointCCoA currentPointCCoA = this.getPoint(i);
 
 
-            arrayDouble[indexWriteInDoubleArray] = currentPoint.getX();
+            arrayDouble[indexWriteInDoubleArray] = currentPointCCoA.getX();
             indexWriteInDoubleArray++;
-            arrayDouble[indexWriteInDoubleArray] = currentPoint.getY();
+            arrayDouble[indexWriteInDoubleArray] = currentPointCCoA.getY();
             indexWriteInDoubleArray++;
         }
 
@@ -346,14 +346,14 @@ public class PolygonExtendedClass implements PolygonExtended {
 
 
     //==== <start> <Private_Methods> =======================================================================
-    private boolean perimeterContainsPoint(Point testedPoint) {
-        for (int i = 0; i < this.points.size(); i++) {
+    private boolean perimeterContainsPoint(PointCCoA testedPointCCoA) {
+        for (int i = 0; i < this.pointCCoAS.size(); i++) {
             int indexEndLine = indexEndLine(i);
-            Point startLine = this.points.get(i);
-            Point endLine = this.points.get(indexEndLine);
+            PointCCoA startLine = this.pointCCoAS.get(i);
+            PointCCoA endLine = this.pointCCoAS.get(indexEndLine);
             LineCut lineCut = new LineCutClass(startLine, endLine);
 
-            boolean lineContainPoint = lineCut.intersection(testedPoint);
+            boolean lineContainPoint = lineCut.intersection(testedPointCCoA);
             if (lineContainPoint) {
                 return true;
             }
@@ -363,7 +363,7 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     private int indexEndLine(int i) {
-        int indexLastItem = this.points.size() - 1;
+        int indexLastItem = this.pointCCoAS.size() - 1;
         int indexEndLine = i + 1;
         boolean isGoingBeyondBoundary = indexEndLine > indexLastItem;
         if (isGoingBeyondBoundary) {
@@ -372,30 +372,30 @@ public class PolygonExtendedClass implements PolygonExtended {
         return indexEndLine;
     }
 
-    private boolean jtc_contains_in_polygon(Point testedPoint) {
-        int sizeForClosedPolygon = this.points.size() + 1;
+    private boolean jtc_contains_in_polygon(PointCCoA testedPointCCoA) {
+        int sizeForClosedPolygon = this.pointCCoAS.size() + 1;
         Coordinate[] coordinates = new Coordinate[sizeForClosedPolygon];
 
-        for (int i = 0; i < this.points.size(); i++) {
-            Point current = this.points.get(i);
+        for (int i = 0; i < this.pointCCoAS.size(); i++) {
+            PointCCoA current = this.pointCCoAS.get(i);
             coordinates[i] = new Coordinate(current.getX(), current.getY(), 0);
         }
-        Point first = this.points.get(0);
+        PointCCoA first = this.pointCCoAS.get(0);
         coordinates[sizeForClosedPolygon - 1] = new Coordinate(first.getX(), first.getY(), 0);
 
         Geometry polygonGeometry = new GeometryFactory().createPolygon(coordinates);
-        Geometry point = new GeometryFactory().createPoint(new Coordinate(testedPoint.getX(),testedPoint.getY()));
+        Geometry point = new GeometryFactory().createPoint(new Coordinate(testedPointCCoA.getX(), testedPointCCoA.getY()));
         return polygonGeometry.contains(point);
     }
 
     private boolean enteringMinimumOnePointOfFirstPolygonInSecondPolygon(
-            PolygonExtended firstPolygon,
-            PolygonExtended secondPolygon
+            PolygonCCoA firstPolygon,
+            PolygonCCoA secondPolygon
     ) {
         for (int i = 0; i < firstPolygon.getCountPoints(); i++) {
-            Point currentPoint = firstPolygon.getPoint(i);
+            PointCCoA currentPointCCoA = firstPolygon.getPoint(i);
 
-            if (secondPolygon.enteringPoint(currentPoint)) {
+            if (secondPolygon.enteringPoint(currentPointCCoA)) {
                 return true;
             }
         }
@@ -404,12 +404,12 @@ public class PolygonExtendedClass implements PolygonExtended {
     }
 
     private boolean intersectionMinumumTwoLineSegmentOfTwoPolygons(
-            PolygonExtended firstPolygon,
-            PolygonExtended secondPoylgon
+            PolygonCCoA firstPolygon,
+            PolygonCCoA secondPoylgon
     ) { //FIXME codestyle
         int indexLastPoint = firstPolygon.getCountPoints() - 1;
-        Point startLine1 = firstPolygon.getPoint(indexLastPoint);
-        Point endLine1 = firstPolygon.getPoint(0);
+        PointCCoA startLine1 = firstPolygon.getPoint(indexLastPoint);
+        PointCCoA endLine1 = firstPolygon.getPoint(0);
 
 
         for (int i = 0; i < firstPolygon.getCountPoints(); i++) {

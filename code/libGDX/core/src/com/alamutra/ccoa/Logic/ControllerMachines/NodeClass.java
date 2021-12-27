@@ -1,17 +1,17 @@
 package com.alamutra.ccoa.Logic.ControllerMachines;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
 
 import java.util.List;
 
 public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     private NetworkNodes networkNodes;
-    private Point coordinat;
+    private PointCCoA coordinat;
     private Double timeTravelFromStart;
 
 
-    public NodeClass(NetworkNodes networkNodes, Point coordinat, Double timeTravelFromStart) {
+    public NodeClass(NetworkNodes networkNodes, PointCCoA coordinat, Double timeTravelFromStart) {
         this.networkNodes = networkNodes;
         this.coordinat = coordinat;
         this.timeTravelFromStart = timeTravelFromStart;
@@ -23,17 +23,17 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     }
 
     @Override
-    public double getCoveredDistanceFrom(Point from) {
+    public double getCoveredDistanceFrom(PointCCoA from) {
         return from.getDistanceToPoint(this.coordinat);
     }
 
     @Override
-    public double getEstimatedDistanceToDestination(Point to) {
+    public double getEstimatedDistanceToDestination(PointCCoA to) {
         return to.getDistanceToPoint(this.coordinat); //FIXME FIRST move in AreasBenchmarkPaths
     }
 
     @Override
-    public Point getCoordinate() {
+    public PointCCoA getCoordinate() {
         return this.coordinat;
     }
 

@@ -3,10 +3,10 @@ package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 import com.alamutra.ccoa.Logic.GlobalVariable;
 
 public class RoundClass implements Round {
-    private Point center;
+    private PointCCoA center;
     private double radius;
 
-    public RoundClass(Point center, double radius) {
+    public RoundClass(PointCCoA center, double radius) {
         assert (center != null);
         this.center = center;
         assert (radius >= 0);
@@ -14,7 +14,7 @@ public class RoundClass implements Round {
     }
 
     @Override
-    public Point getCenter() {
+    public PointCCoA getCenter() {
         return this.center;
     }
 
@@ -24,8 +24,8 @@ public class RoundClass implements Round {
     }
 
     @Override
-    public boolean isIncludes(Point point) {
-        double distanceToCenter = point.getDistanceToPoint(this.getCenter());
+    public boolean isIncludes(PointCCoA pointCCoA) {
+        double distanceToCenter = pointCCoA.getDistanceToPoint(this.getCenter());
         boolean isPointInsideRound = distanceToCenter <= this.getRadius();
         return isPointInsideRound;
     }
@@ -33,7 +33,7 @@ public class RoundClass implements Round {
     @Override
     public Round getApproximation(double timeFirst, Round secondRound, double timeSecond, double timeProximity) {
 
-        Point newCenter = center.getApproximationWith(
+        PointCCoA newCenter = center.getApproximationWith(
                 timeFirst,
                 secondRound.getCenter(),
                 timeSecond,

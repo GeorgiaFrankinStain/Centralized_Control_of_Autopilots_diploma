@@ -19,11 +19,11 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
 
     @Override
-    public PolygonExtended getOccupiedLocation() { //FIXME ADD_TEST
-        PolygonExtended formMovingObject = this.parametersMoving.getShape();
-        PolygonExtended resultPolygon = formMovingObject.clone();
+    public PolygonCCoA getOccupiedLocation() { //FIXME ADD_TEST
+        PolygonCCoA formMovingObject = this.parametersMoving.getShape();
+        PolygonCCoA resultPolygon = formMovingObject.clone();
 
-        Point origin = this.parametersMoving.getPointWhereCoordinatesAreApplied();
+        PointCCoA origin = this.parametersMoving.getPointWhereCoordinatesAreApplied();
         resultPolygon.rotateRelative(origin, this.position.getRotation());
         resultPolygon.deposeOn(this.position.getCoordinates());
 
@@ -94,7 +94,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     }
 
     @Override
-    public Point getCoordinat() {
+    public PointCCoA getCoordinat() {
         return this.position.getCoordinates();
     }
 
@@ -138,18 +138,18 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
 
     //==== <start> <Private_Methods> =======================================================================
-    private Point pointOfPolygonConsideringPosition(
-            Point point,
-            Point generalPointPolygonExtender,
+    private PointCCoA pointOfPolygonConsideringPosition(
+            PointCCoA pointCCoA,
+            PointCCoA generalPointCCoAPolygonExtender,
             Position position
     ) { //FIXME add origin of window
 
 
-        Point theUseCoordinatesPolygon = position.getCoordinates();
+        PointCCoA theUseCoordinatesPolygon = position.getCoordinates();
 
-        return new PointClass(
-                point.getX() + theUseCoordinatesPolygon.getX(),
-                point.getY() + theUseCoordinatesPolygon.getY()
+        return new PointCCoAClass(
+                pointCCoA.getX() + theUseCoordinatesPolygon.getX(),
+                pointCCoA.getY() + theUseCoordinatesPolygon.getY()
         );
     }
 

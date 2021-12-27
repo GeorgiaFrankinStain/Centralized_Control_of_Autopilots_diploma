@@ -2,29 +2,28 @@ package com.alamutra.ccoa.Logic.Landscape;
 
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Footprint;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
 import com.alamutra.ccoa.Logic.Position;
-import com.alamutra.ccoa.Logic.TypesInLevel;
 import com.alamutra.ccoa.Wrappers.RandomWrapperClass;
 
  public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     private int idObject;
     private Position position;
-    private PolygonExtended polygonExtended;
+    private PolygonCCoA polygonCCoA;
     private double timeStanding = CreatorMarksOfPathClass.MAX_TIME_STANDING;
 
-    public ZonaLandscapeClass(Position position, PolygonExtended polygonExtended) {
+    public ZonaLandscapeClass(Position position, PolygonCCoA polygonCCoA) {
         this.idObject = new RandomWrapperClass( 134).nextInt();
         this.position = position;
-        this.polygonExtended = polygonExtended;
+        this.polygonCCoA = polygonCCoA;
     }
 
-    public ZonaLandscapeClass(int idObject, Position position, PolygonExtended polygonExtended) {
+    public ZonaLandscapeClass(int idObject, Position position, PolygonCCoA polygonCCoA) {
         this.idObject = idObject;
         this.position = position;
-        this.polygonExtended = polygonExtended;
+        this.polygonCCoA = polygonCCoA;
     }
 
     @Override
@@ -39,7 +38,7 @@ import com.alamutra.ccoa.Wrappers.RandomWrapperClass;
     }
 
     @Override
-    public Point getCoordinat() {
+    public PointCCoA getCoordinat() {
         return null;
     }
 
@@ -65,8 +64,8 @@ import com.alamutra.ccoa.Wrappers.RandomWrapperClass;
     }
 
     @Override
-    public PolygonExtended getOccupiedLocation() {
-        return polygonExtended;
+    public PolygonCCoA getOccupiedLocation() {
+        return polygonCCoA;
     }
 
 }

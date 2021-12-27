@@ -2,19 +2,19 @@ package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 import com.alamutra.ccoa.Logic.Position;
 
 import java.util.List;
 
 public interface LayerFootprintSpaceTime {
 
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time);
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonCCoA areaFind, double time);
 
 
     public void addFootprint(
             ParametersMoving parametersMoving,
-            Path path,
+            PathCCoA pathCCoA,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption;
 
@@ -33,7 +33,7 @@ public interface LayerFootprintSpaceTime {
     public void deleteFootprints(int ID);
 
 
-    public boolean getIsSeatTaken(PolygonExtended place, double time);
+    public boolean getIsSeatTaken(PolygonCCoA place, double time);
 
     public Position getPosition(ParametersMoving parametersMovingWithID, double time);
 

@@ -8,7 +8,7 @@ public interface Footprint {
 
     public Position getPosition();
 
-    public Point getCoordinat();
+    public PointCCoA getCoordinat();
 
     public double getTimeToNextFootprint();
 
@@ -18,7 +18,7 @@ public interface Footprint {
 
     public void setTimeToNextFootprint(double newTimeStanding);
 
-    public PolygonExtended getOccupiedLocation();
+    public PolygonCCoA getOccupiedLocation();
 //    public double getTravelTimeFromLastFootprint();
 
     public String toString();

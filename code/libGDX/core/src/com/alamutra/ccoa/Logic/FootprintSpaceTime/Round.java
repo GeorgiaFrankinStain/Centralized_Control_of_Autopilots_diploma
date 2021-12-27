@@ -1,11 +1,11 @@
 package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 
 public interface Round {
-    public Point getCenter();
+    public PointCCoA getCenter();
 
     public double getRadius();
 
-    public boolean isIncludes(Point point);
+    public boolean isIncludes(PointCCoA pointCCoA);
 
     public Round getApproximation(double timeFirst, Round secondRound, double timeSecond, double timeProximity);
 }

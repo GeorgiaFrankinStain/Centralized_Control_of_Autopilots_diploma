@@ -12,7 +12,7 @@ public class RoundsCorridorClass implements Corridor {
     }
 
     @Override
-    public boolean isCoverPolygon(double time, PolygonExtended polygon) {
+    public boolean isCoverPolygon(double time, PolygonCCoA polygon) {
         CheckerPolygonEntering checker = new CheckerPolygonEnteringClass(time, polygon);
         return checker.isPolygonEntering();
     }
@@ -34,13 +34,13 @@ public class RoundsCorridorClass implements Corridor {
     }
     private class CheckerPolygonEnteringClass implements CheckerPolygonEntering {
         private double time;
-        private PolygonExtended polygon;
+        private PolygonCCoA polygon;
         private Round afterNearest = null;
         private Double afterNearestTime = null;
         private Round beforeNearest = null;
         private Double beforeNearestTime = null;
 
-        public CheckerPolygonEnteringClass(double time, PolygonExtended polygon) {
+        public CheckerPolygonEnteringClass(double time, PolygonCCoA polygon) {
             this.time = time;
             this.polygon = polygon;
         }

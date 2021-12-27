@@ -1,11 +1,11 @@
 package com.alamutra.ccoa.Logic.MovingObjects;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.StatementTaskRendering.TypeMachinesBody;
 
 public class BuilderParametersMovingClass implements BuilderParametersMoving {
     private double speed;
-    private PolygonExtended shape;
+    private PolygonCCoA shape;
     private TypeMachinesBody typeMachinesBody;
 
     @Override
@@ -19,7 +19,7 @@ public class BuilderParametersMovingClass implements BuilderParametersMoving {
     }
 
     @Override
-    public void setShape(PolygonExtended shape) {
+    public void setShape(PolygonCCoA shape) {
         this.shape = shape.clone();
     }
 

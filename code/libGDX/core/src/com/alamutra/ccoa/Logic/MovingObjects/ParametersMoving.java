@@ -2,20 +2,20 @@ package com.alamutra.ccoa.Logic.MovingObjects;
 
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Logic.IndexLayer;
 import com.alamutra.ccoa.Logic.TypesInLevel;
 
 public interface ParametersMoving {
     public void mark(
             FootprintsSpaceTime footprintsSpaceTime,
-            Path path,
+            PathCCoA pathCCoA,
             double timeAdding,
             IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption;
 
-    public PolygonExtended getShape();
+    public PolygonCCoA getShape();
 
     public double getSpeed();
 
@@ -27,11 +27,11 @@ public interface ParametersMoving {
 
     public double getLengthStep();
 
-    public Point getPointWhereCoordinatesAreApplied();
+    public PointCCoA getPointWhereCoordinatesAreApplied();
 
     public double getRadius();
 
-    public Point getVectorFromTopLeftToAppliedCoordinates();
+    public PointCCoA getVectorFromTopLeftToAppliedCoordinates();
 
     public String toString();
 

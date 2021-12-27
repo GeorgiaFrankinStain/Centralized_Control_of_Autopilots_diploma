@@ -4,7 +4,7 @@ import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassab
 import com.alamutra.ccoa.Logic.IndexLayer;
 import com.alamutra.ccoa.Logic.IndexLayerClass;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 import com.alamutra.ccoa.Logic.Position;
 
 import java.util.List;
@@ -22,12 +22,12 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     }
 
     @Override
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaFind, double time, IndexLayer indexLayer) {
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonCCoA areaFind, double time, IndexLayer indexLayer) {
         return this.layers.get(indexLayer).getRenderingFootprintsFromWhen(areaFind, time);
     }
 
     @Override
-    public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(PolygonExtended areaFind, double time) {
+    public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(PolygonCCoA areaFind, double time) {
         return this.getRenderingFootprintsFromWhen(areaFind, time, this.defaultIndexLayer);
     }
 
@@ -35,7 +35,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     @Override
     public void addFootprint(
             ParametersMoving parametersMoving,
-            Path path,
+            PathCCoA pathCCoA,
             double startTime,
             IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -47,7 +47,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
         this.layers.get(indexLayer).addFootprint(
                 parametersMoving,
-                path,
+                pathCCoA,
                 startTime
         );
     }
@@ -76,7 +76,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
     @Override
     public boolean getIsSeatTaken(
-            PolygonExtended place,
+            PolygonCCoA place,
             double time,
             IndexLayer indexLayer
     ) {
@@ -91,7 +91,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     }
 
     @Override
-    public boolean getIsSeatTakenSpaceTime(PolygonExtended place, double fromTime, double toTime, IndexLayer indexLayer) {
+    public boolean getIsSeatTakenSpaceTime(PolygonCCoA place, double fromTime, double toTime, IndexLayer indexLayer) {
         return this.getIsSeatTaken(place, fromTime, indexLayer) //FIXME
                 && this.getIsSeatTaken(place, toTime, indexLayer)
                 && this.getIsSeatTaken(place, (fromTime + toTime) / 2, indexLayer);

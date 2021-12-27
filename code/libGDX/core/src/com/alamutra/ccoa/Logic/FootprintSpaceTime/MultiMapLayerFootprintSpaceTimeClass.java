@@ -3,7 +3,7 @@ package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Logic.GlobalVariable;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 import com.alamutra.ccoa.Logic.Position;
 import com.alamutra.ccoa.Wrappers.EntryPair;
 import com.alamutra.ccoa.Wrappers.MultiMap;
@@ -56,12 +56,12 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     @Override
     public void addFootprint(
             ParametersMoving parametersMoving,
-            Path path,
+            PathCCoA pathCCoA,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption {
         CreatorMarksOfPath creatorMarksOfPath =
                 new CreatorMarksOfPathClass(this, parametersMoving);
-        creatorMarksOfPath.addFootprint(path, startTime);
+        creatorMarksOfPath.addFootprint(pathCCoA, startTime);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     @Override
-    public boolean getIsSeatTaken(PolygonExtended place, double testedTime) { //FIXME ADD_TEST
+    public boolean getIsSeatTaken(PolygonCCoA place, double testedTime) { //FIXME ADD_TEST
 
 //FIXME NOW
 
@@ -83,7 +83,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             boolean timeStandingIncludeTestedTime = timeStandingStart < testedTime && testedTime < timeStandingEnd;
 
             if (timeStandingIncludeTestedTime) {
-                PolygonExtended locationMovingObject = footprint.getOccupiedLocation();
+                PolygonCCoA locationMovingObject = footprint.getOccupiedLocation();
                 boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
                 if (placeIsSeat) {
                     return true;
@@ -176,7 +176,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
-    public List<Footprint> getRenderingFootprintsFromWhen(PolygonExtended areaVizibility, double timeFind) {
+    public List<Footprint> getRenderingFootprintsFromWhen(PolygonCCoA areaVizibility, double timeFind) {
 
         //FIXME take DataFootprintForRendering from the landscape
 
@@ -217,7 +217,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     private boolean isCorridorMutuallyIncludesPath(Corridor corridor, double timeAdding, Footprint footprint,
                                                    Footprint secondFootprint,
                                                    double timeSecondFootprint) {
-        PolygonExtended occupiedLocation = footprint.getOccupiedLocation();
+        PolygonCCoA occupiedLocation = footprint.getOccupiedLocation();
         boolean isCorridorCoverVertexPath = corridor.isCoverPolygon(timeSecondFootprint, occupiedLocation);
         boolean isTunnelCoveredCorridor = isVertexCorridorFromThisTimeDiapasonCoverPath(
                 timeAdding,
@@ -247,7 +247,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             if (isTimeDiapasonIncludeCurrentVertex) {
                 Footprint approximationFootprint =
                         firstFootprint.getApproximation(fromTime, secondFootprint, toTime, timeTested);
-                PolygonExtended approximationOccupiedLocation = approximationFootprint.getOccupiedLocation();
+                PolygonCCoA approximationOccupiedLocation = approximationFootprint.getOccupiedLocation();
                 if (!corridor.isCoverPolygon(timeTested, approximationOccupiedLocation)) {
                     return false;
                 }

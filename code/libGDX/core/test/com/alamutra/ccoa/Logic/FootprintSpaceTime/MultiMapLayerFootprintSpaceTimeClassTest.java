@@ -21,8 +21,8 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     private Corridor tunnel1CorridorY0to20() {
         TreeMap<Double, Round> corridorMap = new TreeMap<>();
-        corridorMap.put(0.0, new RoundClass(new PointClass(0, 0), 30));
-        corridorMap.put(2.0, new RoundClass(new PointClass(0, 20), 30));
+        corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 20), 30));
         Corridor corridor = new RoundsCorridorClass(corridorMap);
         return corridor;
     }
@@ -36,13 +36,13 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1CorridorDoesNotTakeIntoAccountStopUntilEndOfTime()
             throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 20));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 20));
 
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
         assertFalse(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
                 squareMoving,
@@ -53,13 +53,13 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1False() throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, -20));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, -20));
 
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
         assertFalse(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
                 squareMoving,
@@ -70,12 +70,12 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1MachineStanding() throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 0));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
         assertFalse(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
                 squareMoving,
@@ -89,11 +89,11 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     private Corridor tunnel1CorridorChangingRadius() {
         TreeMap<Double, Round> corridorMap = new TreeMap<>();
-        corridorMap.put(0.0, new RoundClass(new PointClass(0, 0), 30));
-        corridorMap.put(2.0, new RoundClass(new PointClass(0, 0), 50));
+        corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 0), 50));
         corridorMap.put(
                 CreatorMarksOfPathClass.MAX_TIME_STANDING,
-                new RoundClass(new PointClass(0, 0), 50)
+                new RoundClass(new PointCCoAClass(0, 0), 50)
         );
         Corridor corridor = new RoundsCorridorClass(corridorMap);
         return corridor;
@@ -102,12 +102,12 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_continuouslyChangingRadius() throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 0));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
 
         assertTrue(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
@@ -139,15 +139,15 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     private Corridor tunnel1CorridorZigZag() {
         TreeMap<Double, Round> corridorMap = new TreeMap<>();
-        corridorMap.put(0.0, new RoundClass(new PointClass(0, 0), 30));
-        corridorMap.put(2.0, new RoundClass(new PointClass(0, 20), 30));
-        corridorMap.put(4.0, new RoundClass(new PointClass(0, 0), 30));
-        corridorMap.put(6.0, new RoundClass(new PointClass(0, 20), 30));
-        corridorMap.put(8.0, new RoundClass(new PointClass(0, 0), 30));
-        corridorMap.put(10.0, new RoundClass(new PointClass(0, 20), 30));
+        corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 20), 30));
+        corridorMap.put(4.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(6.0, new RoundClass(new PointCCoAClass(0, 20), 30));
+        corridorMap.put(8.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(10.0, new RoundClass(new PointCCoAClass(0, 20), 30));
         corridorMap.put(
                 CreatorMarksOfPathClass.MAX_TIME_STANDING,
-                new RoundClass(new PointClass(0, 20), 30)
+                new RoundClass(new PointCCoAClass(0, 20), 30)
         );
         Corridor corridor = new RoundsCorridorClass(corridorMap);
         return corridor;
@@ -155,16 +155,16 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_zigZagTest() throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 20));
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 20));
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 20));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 20));
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 20));
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 20));
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
 
         assertTrue(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
@@ -176,12 +176,12 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_zigZagStraightPathMachineTest() throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 0));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
 
         assertFalse(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
@@ -196,11 +196,11 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     private Corridor tunnel1CorridorToEndOfTime() {
         TreeMap<Double, Round> corridorMap = new TreeMap<>();
-        corridorMap.put(0.0, new RoundClass(new PointClass(0, 0), 30));
-        corridorMap.put(2.0, new RoundClass(new PointClass(0, 20), 30));
+        corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 20), 30));
         corridorMap.put(
                 CreatorMarksOfPathClass.MAX_TIME_STANDING,
-                new RoundClass(new PointClass(0, 20), 30)
+                new RoundClass(new PointCCoAClass(0, 20), 30)
         );
         Corridor corridor = new RoundsCorridorClass(corridorMap);
         return corridor;
@@ -210,13 +210,13 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1ToEndOfTime()
             throws СrashIntoAnImpassableObjectExeption {
-        Path path = new PathClass();
-        path.addPoint(new PointClass(0, 0));
-        path.addPoint(new PointClass(0, 20));
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 20));
 
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
-        squareMoving.mark(footprintsSpaceTime, path, 0.0, defaultLevel);
+        squareMoving.mark(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
 
         assertTrue(footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
                 squareMoving,

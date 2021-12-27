@@ -1,6 +1,6 @@
 package com.alamutra.ccoa.Logic.ControllerMachines;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
 
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.List;
 public interface Node {
     public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMoving parametersMoving);
 
-    public double getCoveredDistanceFrom(Point from);
+    public double getCoveredDistanceFrom(PointCCoA from);
 
-    public double getEstimatedDistanceToDestination(Point to);
+    public double getEstimatedDistanceToDestination(PointCCoA to);
 
-    public Point getCoordinate();
+    public PointCCoA getCoordinate();
 
     public void setTimeTravelFromStart(Double timeTravelFromStart);
 

@@ -1,8 +1,8 @@
 package com.alamutra.ccoa.Logic.MovingObjects;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointClass;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtendedClass;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoAClass;
 import com.alamutra.ccoa.StatementTaskRendering.TypeMachinesBody;
 import org.junit.jupiter.api.Test;
 
@@ -80,11 +80,11 @@ class FabricParametersMovingClassTest {
     private BuilderParametersMoving actualBuilder = getActualBuilderReturned();
 
     private BuilderParametersMoving createBuilderTestSquare20() {
-        PolygonExtended formMachine = new PolygonExtendedClass();
-        formMachine.addPoint(new PointClass(0, 0));
-        formMachine.addPoint(new PointClass(20, 0));
-        formMachine.addPoint(new PointClass(20, 20));
-        formMachine.addPoint(new PointClass(0, 20));
+        PolygonCCoA formMachine = new PolygonCCoAClass();
+        formMachine.addPoint(new PointCCoAClass(0, 0));
+        formMachine.addPoint(new PointCCoAClass(20, 0));
+        formMachine.addPoint(new PointCCoAClass(20, 20));
+        formMachine.addPoint(new PointCCoAClass(0, 20));
 
         BuilderParametersMoving builder = new BuilderParametersMovingClass();
         builder.setSpeed(10); //~=40 kilometr / hour

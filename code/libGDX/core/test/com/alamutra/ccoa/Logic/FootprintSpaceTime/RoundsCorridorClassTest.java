@@ -12,20 +12,20 @@ class RoundsCorridorClassTest {
 
     private Corridor createCorridorFrom0To2() {
         TreeMap<Double, Round> forCorridor = new TreeMap<>();
-        forCorridor.put(0.0, new RoundClass(new PointClass(0, 0), 1));
-        forCorridor.put(2.0, new RoundClass(new PointClass(2, 2), 1));
+        forCorridor.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 1));
+        forCorridor.put(2.0, new RoundClass(new PointCCoAClass(2, 2), 1));
         Corridor corridor = new RoundsCorridorClass(forCorridor);
         return corridor;
     }
 
-    private PolygonExtended polygonNearOriginRadius01 = createPolygonNearOriginRadius01();
+    private PolygonCCoA polygonNearOriginRadius01 = createPolygonNearOriginRadius01();
 
-    private PolygonExtended createPolygonNearOriginRadius01() {
-        PolygonExtended polygon = new PolygonExtendedClass();
-        polygon.addPoint(new PointClass(0.1, 0.1));
-        polygon.addPoint(new PointClass(0.1, -0.1));
-        polygon.addPoint(new PointClass(-0.1, -0.1));
-        polygon.addPoint(new PointClass(-0.1, 0.1));
+    private PolygonCCoA createPolygonNearOriginRadius01() {
+        PolygonCCoA polygon = new PolygonCCoAClass();
+        polygon.addPoint(new PointCCoAClass(0.1, 0.1));
+        polygon.addPoint(new PointCCoAClass(0.1, -0.1));
+        polygon.addPoint(new PointCCoAClass(-0.1, -0.1));
+        polygon.addPoint(new PointCCoAClass(-0.1, 0.1));
 
         return polygon;
     }
@@ -57,14 +57,14 @@ class RoundsCorridorClassTest {
     }
 
 
-    private PolygonExtended polygonNearOriginRadius2 = createPolygonNearOriginRadius2();
+    private PolygonCCoA polygonNearOriginRadius2 = createPolygonNearOriginRadius2();
 
-    private PolygonExtended createPolygonNearOriginRadius2() {
-        PolygonExtended polygon = new PolygonExtendedClass();
-        polygon.addPoint(new PointClass(2, 2));
-        polygon.addPoint(new PointClass(2, -2));
-        polygon.addPoint(new PointClass(-2, -2));
-        polygon.addPoint(new PointClass(-2, 2));
+    private PolygonCCoA createPolygonNearOriginRadius2() {
+        PolygonCCoA polygon = new PolygonCCoAClass();
+        polygon.addPoint(new PointCCoAClass(2, 2));
+        polygon.addPoint(new PointCCoAClass(2, -2));
+        polygon.addPoint(new PointCCoAClass(-2, -2));
+        polygon.addPoint(new PointCCoAClass(-2, 2));
 
         return polygon;
     }
@@ -86,11 +86,11 @@ class RoundsCorridorClassTest {
     }
 
 
-    private PolygonExtended polygon1d1Radius1 = createPolygon1d1Radius1();
+    private PolygonCCoA polygon1d1Radius1 = createPolygon1d1Radius1();
 
-    private PolygonExtended createPolygon1d1Radius1() {
-        PolygonExtended polygon = polygonNearOriginRadius01.clone();
-        Point vector = new PointClass(1, 1);
+    private PolygonCCoA createPolygon1d1Radius1() {
+        PolygonCCoA polygon = polygonNearOriginRadius01.clone();
+        PointCCoA vector = new PointCCoAClass(1, 1);
         polygon.deposeOn(vector);
 
         return polygon;
@@ -112,11 +112,11 @@ class RoundsCorridorClassTest {
     }
 
 
-    private PolygonExtended polygon2d2Radius1 = createPolygon2d2Radius1();
+    private PolygonCCoA polygon2d2Radius1 = createPolygon2d2Radius1();
 
-    private PolygonExtended createPolygon2d2Radius1() {
-        PolygonExtended polygon = polygonNearOriginRadius01.clone();
-        Point vector = new PointClass(2, 2);
+    private PolygonCCoA createPolygon2d2Radius1() {
+        PolygonCCoA polygon = polygonNearOriginRadius01.clone();
+        PointCCoA vector = new PointCCoAClass(2, 2);
         polygon.deposeOn(vector);
 
         return polygon;

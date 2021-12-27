@@ -1,8 +1,8 @@
 package com.alamutra.ccoa.Logic.Landscape;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +22,12 @@ public class LandscapeClass implements Landscape {
     }
 
     @Override
-    public List<Point> getPointsDirectAccess(PolygonExtended area) {
+    public List<PointCCoA> getPointsDirectAccess(PolygonCCoA area) {
         return null;
     }
 
     @Override
-    public Path getDijkstraPath(Point from, Point to) {
+    public PathCCoA getDijkstraPath(PointCCoA from, PointCCoA to) {
         return null;
     }
 

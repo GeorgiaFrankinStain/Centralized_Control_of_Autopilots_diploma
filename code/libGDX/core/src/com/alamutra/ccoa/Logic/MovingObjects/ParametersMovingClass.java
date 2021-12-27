@@ -2,8 +2,8 @@ package com.alamutra.ccoa.Logic.MovingObjects;
 
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Logic.IndexLayer;
 import com.alamutra.ccoa.Logic.TypesInLevel;
 import com.alamutra.ccoa.StatementTaskRendering.TypeMachinesBody;
@@ -12,21 +12,21 @@ import com.alamutra.ccoa.Wrappers.RandomWrapperClass;
 public class ParametersMovingClass implements ParametersMoving {
 
     private int id;
-    private PolygonExtended polygonExtended;
+    private PolygonCCoA polygonCCoA;
     private TypeMachinesBody typeMachinesBody;
     private double speed;
     private TypesInLevel typeInLevel = TypesInLevel.OBJECT;
 
-    public ParametersMovingClass(double speed, PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody) {
-        testCorrectnessIncomingData(speed, polygonExtended);
+    public ParametersMovingClass(double speed, PolygonCCoA polygonCCoA, TypeMachinesBody typeMachinesBody) {
+        testCorrectnessIncomingData(speed, polygonCCoA);
         this.id = new RandomWrapperClass(835).nextInt();
-        this.polygonExtended = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonExtended);
+        this.polygonCCoA = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonCCoA);
         this.typeMachinesBody = typeMachinesBody;
         this.speed = speed;
     }
-    public ParametersMovingClass(PolygonExtended polygonExtended, TypeMachinesBody typeMachinesBody, int movingObject) {
+    public ParametersMovingClass(PolygonCCoA polygonCCoA, TypeMachinesBody typeMachinesBody, int movingObject) {
         this.id = movingObject;
-        this.polygonExtended = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonExtended);
+        this.polygonCCoA = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonCCoA);
         this.typeMachinesBody = typeMachinesBody;
     }
 
@@ -34,7 +34,7 @@ public class ParametersMovingClass implements ParametersMoving {
     @Override
     public void mark(
             FootprintsSpaceTime footprintsSpaceTime,
-            Path path,
+            PathCCoA pathCCoA,
             double timeAdding,
             IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -42,7 +42,7 @@ public class ParametersMovingClass implements ParametersMoving {
 
         footprintsSpaceTime.addFootprint(
                 this,
-                path,
+                pathCCoA,
                 timeAdding,
                 indexLayer
         );
@@ -54,8 +54,8 @@ public class ParametersMovingClass implements ParametersMoving {
     }
 
     @Override
-    public PolygonExtended getShape() {
-        return this.polygonExtended;
+    public PolygonCCoA getShape() {
+        return this.polygonCCoA;
     }
 
     @Override
@@ -90,36 +90,36 @@ public class ParametersMovingClass implements ParametersMoving {
     public double getLengthStep() {
         double maxCoordinatX = Double.MIN_VALUE;
 
-        for (int i = 0; i < this.polygonExtended.getCountPoints(); i++) {
-            Point currentPoint = this.polygonExtended.getPoint(i);
+        for (int i = 0; i < this.polygonCCoA.getCountPoints(); i++) {
+            PointCCoA currentPointCCoA = this.polygonCCoA.getPoint(i);
 
-            if (currentPoint.getX() > maxCoordinatX) {
-                maxCoordinatX = currentPoint.getX();
+            if (currentPointCCoA.getX() > maxCoordinatX) {
+                maxCoordinatX = currentPointCCoA.getX();
             }
         }
 
         return maxCoordinatX;
     }
 
-    private Point getCenterMovingObject() {
+    private PointCCoA getCenterMovingObject() {
         return this.getShape().getCenterAverage();
     }
 
     @Override
-    public Point getPointWhereCoordinatesAreApplied() {
+    public PointCCoA getPointWhereCoordinatesAreApplied() {
         return this.getCenterMovingObject();
     }
 
     @Override
     public double getRadius() { //FIXME ADD TEST NOW
-        Point center = this.getPointWhereCoordinatesAreApplied();
+        PointCCoA center = this.getPointWhereCoordinatesAreApplied();
 
-        PolygonExtended polygonExtended = this.getShape();
+        PolygonCCoA polygonCCoA = this.getShape();
 
         double maxRadius = Double.MIN_VALUE;
 
-        for (int i = 0; i < polygonExtended.getCountPoints(); i++) {
-            double currentRadius = polygonExtended.getPoint(i).getDistanceToPoint(center);
+        for (int i = 0; i < polygonCCoA.getCountPoints(); i++) {
+            double currentRadius = polygonCCoA.getPoint(i).getDistanceToPoint(center);
             if (currentRadius > maxRadius) {
                 maxRadius = currentRadius;
             }
@@ -128,21 +128,21 @@ public class ParametersMovingClass implements ParametersMoving {
     }
 
     @Override
-    public Point getVectorFromTopLeftToAppliedCoordinates() {
-        Point fristPoint = this.getShape().getPoint(0); //FIXME finding
-        return this.getPointWhereCoordinatesAreApplied().getVector(fristPoint);
+    public PointCCoA getVectorFromTopLeftToAppliedCoordinates() {
+        PointCCoA fristPointCCoA = this.getShape().getPoint(0); //FIXME finding
+        return this.getPointWhereCoordinatesAreApplied().getVector(fristPointCCoA);
     }
     //==== <start> <Getter_and_Setter> ==================================================
 
 
     //==== <end> <Getter_and_Setter> ==================================================
 
-    private PolygonExtended renderingShapeAreVectorsFromCoordinateApplicationPoints(PolygonExtended polygon) {
+    private PolygonCCoA renderingShapeAreVectorsFromCoordinateApplicationPoints(PolygonCCoA polygon) {
         polygon.deposeOn(polygon.getCenterAverage().getInversion());
         return polygon;
     }
 
-    private void testCorrectnessIncomingData(double speed, PolygonExtended shape) {
+    private void testCorrectnessIncomingData(double speed, PolygonCCoA shape) {
         if (speed < 0) {
             throw new IllegalArgumentException("speed is negative");
         }

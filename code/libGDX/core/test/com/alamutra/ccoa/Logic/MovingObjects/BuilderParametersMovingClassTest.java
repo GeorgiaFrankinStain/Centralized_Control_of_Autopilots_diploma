@@ -1,8 +1,8 @@
 package com.alamutra.ccoa.Logic.MovingObjects;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointClass;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtended;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonExtendedClass;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PolygonCCoAClass;
 import com.alamutra.ccoa.StatementTaskRendering.TypeMachinesBody;
 import org.junit.jupiter.api.Test;
 
@@ -16,10 +16,10 @@ class BuilderParametersMovingClassTest {
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
-        PolygonExtended polygon = new PolygonExtendedClass();
-        polygon.addPoint(new PointClass(0, 0));
-        polygon.addPoint(new PointClass(0, 1));
-        polygon.addPoint(new PointClass(1, 0));
+        PolygonCCoA polygon = new PolygonCCoAClass();
+        polygon.addPoint(new PointCCoAClass(0, 0));
+        polygon.addPoint(new PointCCoAClass(0, 1));
+        polygon.addPoint(new PointCCoAClass(1, 0));
         builder.setShape(polygon);
 
         builder.setSpeed(0);
@@ -33,10 +33,10 @@ class BuilderParametersMovingClassTest {
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
-        PolygonExtended polygon = new PolygonExtendedClass();
-        polygon.addPoint(new PointClass(0, 0));
-        polygon.addPoint(new PointClass(0, 1));
-        polygon.addPoint(new PointClass(1, 0));
+        PolygonCCoA polygon = new PolygonCCoAClass();
+        polygon.addPoint(new PointCCoAClass(0, 0));
+        polygon.addPoint(new PointCCoAClass(0, 1));
+        polygon.addPoint(new PointCCoAClass(1, 0));
         builder.setShape(polygon);
 
         builder.setSpeed(7);
@@ -50,10 +50,10 @@ class BuilderParametersMovingClassTest {
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
-        PolygonExtended polygon = new PolygonExtendedClass();
-        polygon.addPoint(new PointClass(0, 0));
-        polygon.addPoint(new PointClass(0, 1));
-        polygon.addPoint(new PointClass(1, 0));
+        PolygonCCoA polygon = new PolygonCCoAClass();
+        polygon.addPoint(new PointCCoAClass(0, 0));
+        polygon.addPoint(new PointCCoAClass(0, 1));
+        polygon.addPoint(new PointCCoAClass(1, 0));
         builder.setShape(polygon);
 
         try {
@@ -69,23 +69,23 @@ class BuilderParametersMovingClassTest {
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
-        PolygonExtended offsetShape = new PolygonExtendedClass();
-        offsetShape.addPoint(new PointClass(0, 0));
-        offsetShape.addPoint(new PointClass(0, 2));
-        offsetShape.addPoint(new PointClass(2, 2));
-        offsetShape.addPoint(new PointClass(2, 0));
+        PolygonCCoA offsetShape = new PolygonCCoAClass();
+        offsetShape.addPoint(new PointCCoAClass(0, 0));
+        offsetShape.addPoint(new PointCCoAClass(0, 2));
+        offsetShape.addPoint(new PointCCoAClass(2, 2));
+        offsetShape.addPoint(new PointCCoAClass(2, 0));
         builder.setShape(offsetShape);
 
         builder.setSpeed(1);
 
-        PolygonExtended expectedShape = new PolygonExtendedClass();
-        expectedShape.addPoint(new PointClass(-1, -1));
-        expectedShape.addPoint(new PointClass(-1, 1));
-        expectedShape.addPoint(new PointClass(1, 1));
-        expectedShape.addPoint(new PointClass(1, -1));
+        PolygonCCoA expectedShape = new PolygonCCoAClass();
+        expectedShape.addPoint(new PointCCoAClass(-1, -1));
+        expectedShape.addPoint(new PointCCoAClass(-1, 1));
+        expectedShape.addPoint(new PointCCoAClass(1, 1));
+        expectedShape.addPoint(new PointCCoAClass(1, -1));
 
         ParametersMoving parametersMoving = builder.getParametersMoving();
-        PolygonExtended actualShape = parametersMoving.getShape();
+        PolygonCCoA actualShape = parametersMoving.getShape();
         assertEquals(expectedShape, actualShape);
     }
 }

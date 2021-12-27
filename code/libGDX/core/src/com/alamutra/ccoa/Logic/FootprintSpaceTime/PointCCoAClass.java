@@ -2,11 +2,11 @@ package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Logic.GlobalVariable;
 
-public class PointClass implements Point {
+public class PointCCoAClass implements PointCCoA {
     private double x;
     private double y;
 
-    public PointClass(double x, double y) {
+    public PointCCoAClass(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -32,14 +32,14 @@ public class PointClass implements Point {
     }
 
     @Override
-    public Point getMultipliedVector(double multiplier) {
-        Point result = new PointClass(this.getX() * multiplier, this.getY() * multiplier);
+    public PointCCoA getMultipliedVector(double multiplier) {
+        PointCCoA result = new PointCCoAClass(this.getX() * multiplier, this.getY() * multiplier);
         return result;
     }
 
     @Override
-    public Point clone() {
-        return new PointClass(this.getX(), this.getY());
+    public PointCCoA clone() {
+        return new PointCCoAClass(this.getX(), this.getY());
     }
 
 
@@ -68,7 +68,7 @@ public class PointClass implements Point {
 
 
 
-        Point other = (Point) obj;
+        PointCCoA other = (PointCCoA) obj;
         boolean xEquals = GlobalVariable.equalsNumber(this.getX(), other.getX());
         boolean yEquals = GlobalVariable.equalsNumber(this.getY(), other.getY());
         return xEquals && yEquals;
@@ -87,15 +87,15 @@ public class PointClass implements Point {
      * position = sign((Bx - Ax) * (Y - Ay) - (By - Ay) * (X - Ax))
      */
     @Override
-    public boolean isLeftRelative(Point startLine, Point endLine){
+    public boolean isLeftRelative(PointCCoA startLine, PointCCoA endLine){
         return ((endLine.getX() - startLine.getX())*(this.getY() - startLine.getY()) -
                 (endLine.getY() - startLine.getY())*(this.getX() - startLine.getX())) > 0;
     }
 
 
     @Override
-    public double getAngleRotareRelative(Point origin) {
-        Point vector = new PointClass(
+    public double getAngleRotareRelative(PointCCoA origin) {
+        PointCCoA vector = new PointCCoAClass(
                 this.getX() - origin.getX(),
                 this.getY() - origin.getY()
         );
@@ -103,7 +103,7 @@ public class PointClass implements Point {
     }
 
     @Override
-    public Point getRotateRelative(Point origin, double angle) {
+    public PointCCoA getRotateRelative(PointCCoA origin, double angle) {
         double cosAngle = Math.cos(angle);
         double sinAngle = Math.sin(angle);
         double xDistanceOnProjection = this.getX() - origin.getX();
@@ -115,29 +115,29 @@ public class PointClass implements Point {
                 sinAngle * xDistanceOnProjection
                         + cosAngle * yDistanceOnProjection + origin.getY();
 
-        return new PointClass(rotatedX, rotatedY);
+        return new PointCCoAClass(rotatedX, rotatedY);
     }
 
     @Override
-    public Point getApproximationWith(double timeFirst, Point secondPoint, double timeSecond, double timeProximity) {
+    public PointCCoA getApproximationWith(double timeFirst, PointCCoA secondPointCCoA, double timeSecond, double timeProximity) {
         if (timeFirst > timeSecond) {
-            return secondPoint.getApproximationWith(timeSecond, this, timeFirst, timeProximity);
+            return secondPointCCoA.getApproximationWith(timeSecond, this, timeFirst, timeProximity);
         }
 
         double timeInterval = timeSecond - timeFirst;
         double percentProximityToFirst = (timeProximity - timeFirst) / timeInterval;
 
-        Point vector = secondPoint.getVector(this);
-        Point margin = vector.getMultipliedVector(percentProximityToFirst);
+        PointCCoA vector = secondPointCCoA.getVector(this);
+        PointCCoA margin = vector.getMultipliedVector(percentProximityToFirst);
 
-        Point result = this.clone();
+        PointCCoA result = this.clone();
         result.deposeOn(margin);
         return result;
     }
 
     @Override
-    public int getQuarter(Point origin) {
-        Point radiusVertor = new PointClass(
+    public int getQuarter(PointCCoA origin) {
+        PointCCoA radiusVertor = new PointCCoAClass(
                 this.getX() - origin.getX(),
                 this.getY() - origin.getY()
         );
@@ -167,38 +167,38 @@ public class PointClass implements Point {
     }
 
     @Override
-    public double getDistanceToPoint(Point point) {
-        Point vector = this.getVector(point);
+    public double getDistanceToPoint(PointCCoA pointCCoA) {
+        PointCCoA vector = this.getVector(pointCCoA);
         return vector.getLengthVector();
     }
 
     @Override
-    public double getDistanceToPointProjectionX(Point point) {
-        return Math.abs(this.getX() - point.getX());
+    public double getDistanceToPointProjectionX(PointCCoA pointCCoA) {
+        return Math.abs(this.getX() - pointCCoA.getX());
     }
 
     @Override
-    public double getDistanceToPointProjectionY(Point point) {
-        return Math.abs(this.getY() - point.getY());
+    public double getDistanceToPointProjectionY(PointCCoA pointCCoA) {
+        return Math.abs(this.getY() - pointCCoA.getY());
     }
 
     @Override
-    public Point getVector(Point point) {
-        return new PointClass(this.getX() - point.getX(), this.getY() - point.getY());
+    public PointCCoA getVector(PointCCoA pointCCoA) {
+        return new PointCCoAClass(this.getX() - pointCCoA.getX(), this.getY() - pointCCoA.getY());
     }
 
     @Override
-    public Point getInversion() {
-        return new PointClass(-this.getX(), -this.getY());
+    public PointCCoA getInversion() {
+        return new PointCCoAClass(-this.getX(), -this.getY());
     }
 
     @Override
-    public Point getDeposeOn(Point vector) {
-        return new PointClass(this.getX() + vector.getX(), this.getY() + vector.getY());
+    public PointCCoA getDeposeOn(PointCCoA vector) {
+        return new PointCCoAClass(this.getX() + vector.getX(), this.getY() + vector.getY());
     }
 
     @Override
-    public void deposeOn(Point vector) {
+    public void deposeOn(PointCCoA vector) {
         this.setX(this.getX() + vector.getX());
         this.setY(this.getY() + vector.getY());
     }

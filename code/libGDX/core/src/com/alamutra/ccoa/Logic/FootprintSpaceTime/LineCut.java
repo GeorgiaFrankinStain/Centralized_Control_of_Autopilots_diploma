@@ -1,9 +1,9 @@
 package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 
 public interface LineCut {
-    public Point getStart();
-    public Point getEnd();
+    public PointCCoA getStart();
+    public PointCCoA getEnd();
     public boolean intersectionLine(LineCut secondLineCut);
-    public boolean intersection(Point testedPoint);
+    public boolean intersection(PointCCoA testedPointCCoA);
     public double length();
 }

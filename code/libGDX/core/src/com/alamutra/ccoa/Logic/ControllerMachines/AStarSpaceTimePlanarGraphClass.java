@@ -3,8 +3,8 @@ package com.alamutra.ccoa.Logic.ControllerMachines;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.*;
 import com.alamutra.ccoa.Logic.IndexLayerClass;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
-import com.alamutra.ccoa.Logic.MovingObjects.PathClass;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoAClass;
 
 import java.util.*;
 
@@ -26,8 +26,8 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
      * @return
      */
     @Override
-    public Path getPath(Point start, Point destination, double radiusMovingObject, ParametersMoving parametersMoving,
-                        double timeAdding) {
+    public PathCCoA getPath(PointCCoA start, PointCCoA destination, double radiusMovingObject, ParametersMoving parametersMoving,
+                            double timeAdding) {
 
         Set<Node> closedNodes = new HashSet<Node>();
         Set<Node> opened = new HashSet<Node>();
@@ -142,7 +142,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
             double timeStanding,
             ParametersMoving parametersMoving
     ) {
-        PolygonExtended occupiedPlace = spaceOccupiedDuringTheProcess(
+        PolygonCCoA occupiedPlace = spaceOccupiedDuringTheProcess(
                 neighborNode,
                 currentNode,
                 radiusMovingObject
@@ -160,29 +160,29 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
         return isAccess;
     }
 
-    private PolygonExtended spaceOccupiedDuringTheProcess(
+    private PolygonCCoA spaceOccupiedDuringTheProcess(
             Node neighborNode,
             Node currentNode,
             double radiusMovingObject
     ) {
-        Point neighborCenter = neighborNode.getCoordinate();
-        Point currentCenter = currentNode.getCoordinate();
+        PointCCoA neighborCenter = neighborNode.getCoordinate();
+        PointCCoA currentCenter = currentNode.getCoordinate();
 
         double distance = neighborCenter.getDistanceToPoint(currentCenter);
 
         double widthRectangle = distance + radiusMovingObject; //FIXME cut angle, hexcagon is good, square more bed
         double heightRectangle = radiusMovingObject * 2;
 
-        PolygonExtended rectangle = new PolygonExtendedClass();
-        rectangle.addPoint(new PointClass(0, heightRectangle / 2));
-        rectangle.addPoint(new PointClass(0, -heightRectangle / 2));
-        rectangle.addPoint(new PointClass(widthRectangle, -heightRectangle / 2));
-        rectangle.addPoint(new PointClass(widthRectangle, heightRectangle / 2));
+        PolygonCCoA rectangle = new PolygonCCoAClass();
+        rectangle.addPoint(new PointCCoAClass(0, heightRectangle / 2));
+        rectangle.addPoint(new PointCCoAClass(0, -heightRectangle / 2));
+        rectangle.addPoint(new PointCCoAClass(widthRectangle, -heightRectangle / 2));
+        rectangle.addPoint(new PointCCoAClass(widthRectangle, heightRectangle / 2));
 
 
 
         double angle = neighborCenter.getAngleRotareRelative(currentCenter);
-        rectangle.rotateRelative(new PointClass(0, 0), angle);
+        rectangle.rotateRelative(new PointCCoAClass(0, 0), angle);
 
         rectangle.deposeOn(currentCenter);
 
@@ -198,18 +198,18 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
             }
             return null;
         }*/
-    private Path reconstructPath(Map<Node, Node> keyNodeCameFrom, Node current) {
+    private PathCCoA reconstructPath(Map<Node, Node> keyNodeCameFrom, Node current) {
 
-        Path path = new PathClass();
+        PathCCoA pathCCoA = new PathCCoAClass();
 
-        path.addPoint(0, current.getCoordinate());
+        pathCCoA.addPoint(0, current.getCoordinate());
 
         while (keyNodeCameFrom.containsKey(current)) {
             current = keyNodeCameFrom.get(current);
-            path.addPoint(0, current.getCoordinate());
+            pathCCoA.addPoint(0, current.getCoordinate());
         }
 
-        return path;
+        return pathCCoA;
     }
 
     private Node getNodeWithMinialMass(Map<Node, Double> map) { //FIXME FIRST add test

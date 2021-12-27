@@ -3,8 +3,8 @@ package com.alamutra.ccoa.Logic.ControllerMachines;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointClass;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Logic.IndexLayer;
 import com.alamutra.ccoa.Logic.IndexLayerClass;
 import com.alamutra.ccoa.Logic.MovingObjects.*;
@@ -43,20 +43,20 @@ class AStarSpaceTimePlanarGraphClassTest {
         {
 
 
-            Point from = new PointClass(0, 0);
-            Point to = new PointClass(100, 0);
+            PointCCoA from = new PointCCoAClass(0, 0);
+            PointCCoA to = new PointCCoAClass(100, 0);
 
-            Path actualPath = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
+            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
 
-            Path expectedPath = new PathClass();
-            expectedPath.addPoint(new PointClass(0.0, 0.0));
-            expectedPath.addPoint(new PointClass(20.0, 0.0));
-            expectedPath.addPoint(new PointClass(40.0, 0.0));
-            expectedPath.addPoint(new PointClass(60.0, 0.0));
-            expectedPath.addPoint(new PointClass(80.0, 0.0));
-            expectedPath.addPoint(new PointClass(100.0, 0.0));
+            PathCCoA expectedPathCCoA = new PathCCoAClass();
+            expectedPathCCoA.addPoint(new PointCCoAClass(0.0, 0.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(20.0, 0.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(40.0, 0.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 0.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(80.0, 0.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(100.0, 0.0));
 
-            assertEquals(expectedPath, actualPath);
+            assertEquals(expectedPathCCoA, actualPathCCoA);
         }
     }
 
@@ -72,25 +72,25 @@ class AStarSpaceTimePlanarGraphClassTest {
             ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
 
 
-            Point from = new PointClass(60, 0);
-            Point to = new PointClass(60, 200);
+            PointCCoA from = new PointCCoAClass(60, 0);
+            PointCCoA to = new PointCCoAClass(60, 200);
 
-            Path actualPath = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
+            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
 
-            Path expectedPath = new PathClass();
-            expectedPath.addPoint(new PointClass(60.0, 0.0));
-            expectedPath.addPoint(new PointClass(60.0, 20.0));
-            expectedPath.addPoint(new PointClass(60.0, 40.0));
-            expectedPath.addPoint(new PointClass(60.0, 60.0));
-            expectedPath.addPoint(new PointClass(60.0, 80.0));
-            expectedPath.addPoint(new PointClass(60.0, 100.0));
-            expectedPath.addPoint(new PointClass(60.0, 120.0));
-            expectedPath.addPoint(new PointClass(60.0, 140.0));
-            expectedPath.addPoint(new PointClass(60.0, 160.0));
-            expectedPath.addPoint(new PointClass(60.0, 180.0));
-            expectedPath.addPoint(new PointClass(60.0, 200.0));
+            PathCCoA expectedPathCCoA = new PathCCoAClass();
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 0.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 20.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 40.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 60.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 80.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 100.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 120.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 140.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 160.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 180.0));
+            expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 200.0));
 
-            assertEquals(expectedPath, actualPath);
+            assertEquals(expectedPathCCoA, actualPathCCoA);
         }
     }
 }

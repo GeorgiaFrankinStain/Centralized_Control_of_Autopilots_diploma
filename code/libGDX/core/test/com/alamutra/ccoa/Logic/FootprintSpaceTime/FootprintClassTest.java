@@ -31,11 +31,11 @@ class FootprintClassTest {
     }
 
 
-    private Point[] arrayPoints = {
-            new PointClass(10, 10),
-            new PointClass(10, 20),
-            new PointClass(20, 20),
-            new PointClass(20, 10),
+    private PointCCoA[] arrayPointCCoAS = {
+            new PointCCoAClass(10, 10),
+            new PointCCoAClass(10, 20),
+            new PointCCoAClass(20, 20),
+            new PointCCoAClass(20, 10),
     };
 
     private ParametersMoving getStandartMovingObjet() {
@@ -45,40 +45,40 @@ class FootprintClassTest {
 
     @Test
     public void getOccupiedLocation_margin() {
-        Point margin = new PointClass(10, 10);
+        PointCCoA margin = new PointCCoAClass(10, 10);
         Position position = new PositionClass(margin, 0.0);
 
         Footprint footprint = new FootprintClass(position, 1, getStandartMovingObjet());
-        PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
-        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
-        expectedPolygonExtended.addPoint(new PointClass(5, 5));
-        expectedPolygonExtended.addPoint(new PointClass(5, 15));
-        expectedPolygonExtended.addPoint(new PointClass(15, 15));
-        expectedPolygonExtended.addPoint(new PointClass(15, 5));
+        PolygonCCoA actualOccupiedLocation = footprint.getOccupiedLocation();
+        PolygonCCoA expectedPolygonCCoA = new PolygonCCoAClass();
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(5, 5));
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(5, 15));
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(15, 15));
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(15, 5));
 
-        assertEquals(expectedPolygonExtended, actualOccupiedLocation);
+        assertEquals(expectedPolygonCCoA, actualOccupiedLocation);
     }
 
-    private PolygonExtended expectedAfterMargin(Point margin) {
-        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
+    private PolygonCCoA expectedAfterMargin(PointCCoA margin) {
+        PolygonCCoA expectedPolygonCCoA = new PolygonCCoAClass();
 
-        for (Point point : arrayPoints) {
-            Point marginedPoint = new PointClass(
-                    point.getX() + margin.getX(),
-                    point.getY() + margin.getY()
+        for (PointCCoA pointCCoA : arrayPointCCoAS) {
+            PointCCoA marginedPointCCoA = new PointCCoAClass(
+                    pointCCoA.getX() + margin.getX(),
+                    pointCCoA.getY() + margin.getY()
             );
-            expectedPolygonExtended.addPoint(marginedPoint);
+            expectedPolygonCCoA.addPoint(marginedPointCCoA);
         }
 
-        return expectedPolygonExtended;
+        return expectedPolygonCCoA;
     }
 
-    private PolygonExtended getStandardFormMachine() {
-        PolygonExtended formMachine = new PolygonExtendedClass();
+    private PolygonCCoA getStandardFormMachine() {
+        PolygonCCoA formMachine = new PolygonCCoAClass();
 
 
-        for (Point point : arrayPoints) {
-            formMachine.addPoint(point);
+        for (PointCCoA pointCCoA : arrayPointCCoAS) {
+            formMachine.addPoint(pointCCoA);
         }
 
         return formMachine;
@@ -86,48 +86,48 @@ class FootprintClassTest {
 
     @Test
     public void getOccupiedLocation_rotatedMargin() {
-        Point margin = new PointClass(15, 15);
+        PointCCoA margin = new PointCCoAClass(15, 15);
         Position position = new PositionClass(margin, -PI / 2);
 
         Footprint footprint = new FootprintClass(position, 1, getStandartMovingObjet());
-        PolygonExtended actualOccupiedLocation = footprint.getOccupiedLocation();
-        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
-        expectedPolygonExtended.addPoint(new PointClass(10, 20));
-        expectedPolygonExtended.addPoint(new PointClass(20, 20));
-        expectedPolygonExtended.addPoint(new PointClass(20, 10));
-        expectedPolygonExtended.addPoint(new PointClass(10, 10));
+        PolygonCCoA actualOccupiedLocation = footprint.getOccupiedLocation();
+        PolygonCCoA expectedPolygonCCoA = new PolygonCCoAClass();
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(10, 20));
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(20, 20));
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(20, 10));
+        expectedPolygonCCoA.addPoint(new PointCCoAClass(10, 10));
 
 
-        assertEquals(expectedPolygonExtended, actualOccupiedLocation);
+        assertEquals(expectedPolygonCCoA, actualOccupiedLocation);
     }
 
-    private PolygonExtended expectedRoteted(Point margin) {
-        PolygonExtended expectedPolygonExtended = new PolygonExtendedClass();
+    private PolygonCCoA expectedRoteted(PointCCoA margin) {
+        PolygonCCoA expectedPolygonCCoA = new PolygonCCoAClass();
 
-        int endIndex = arrayPoints.length - 1;
-        for (int i = 0; i < arrayPoints.length; i++) {
+        int endIndex = arrayPointCCoAS.length - 1;
+        for (int i = 0; i < arrayPointCCoAS.length; i++) {
             int indexNextPoint = i + 1;
-            Point nextCyclePoint = nextCyclePoint(indexNextPoint, endIndex);
+            PointCCoA nextCyclePointCCoA = nextCyclePoint(indexNextPoint, endIndex);
 
-            Point marginedPoint = new PointClass(
-                    nextCyclePoint.getX() + margin.getX(),
-                    nextCyclePoint.getY() + margin.getY()
+            PointCCoA marginedPointCCoA = new PointCCoAClass(
+                    nextCyclePointCCoA.getX() + margin.getX(),
+                    nextCyclePointCCoA.getY() + margin.getY()
             );
-            expectedPolygonExtended.addPoint(marginedPoint);
+            expectedPolygonCCoA.addPoint(marginedPointCCoA);
         }
 
-        return expectedPolygonExtended;
+        return expectedPolygonCCoA;
     }
 
-    private Point nextCyclePoint(int indexNextPoint, int endIndex) {
-        Point nextPoint;
+    private PointCCoA nextCyclePoint(int indexNextPoint, int endIndex) {
+        PointCCoA nextPointCCoA;
         if (indexNextPoint <= endIndex) {
-            nextPoint = arrayPoints[indexNextPoint];
+            nextPointCCoA = arrayPointCCoAS[indexNextPoint];
         } else {
-            nextPoint = arrayPoints[0];
+            nextPointCCoA = arrayPointCCoAS[0];
         }
 
-        return nextPoint;
+        return nextPointCCoA;
     }
 
     @org.junit.jupiter.api.Test
@@ -135,11 +135,11 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 1.54);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
-        Position secondPosition = new PositionClass(new PointClass(10, 0), 1.54);
+        Position secondPosition = new PositionClass(new PointCCoAClass(10, 0), 1.54);
         Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
 
@@ -158,7 +158,7 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 1.54);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
         Footprint footprint = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
@@ -175,12 +175,12 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
         double any2TimeToNextFootprint = 0;
-        Position secondPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine);
 
         assertEquals(first.hashCode(), second.hashCode());
@@ -191,7 +191,7 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
@@ -205,7 +205,7 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 1.54);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
 
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
@@ -219,7 +219,7 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 1.54);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
 
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
@@ -233,7 +233,7 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
@@ -248,10 +248,10 @@ class FootprintClassTest {
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         double anyTimeToNextFootprint = 0;
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
-        Position secondPosition = new PositionClass(new PointClass(1, 0), 0);
+        Position secondPosition = new PositionClass(new PointCCoAClass(1, 0), 0);
         Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine);
 
         assertNotEquals(first, second);
@@ -263,10 +263,10 @@ class FootprintClassTest {
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         double anyTimeToNextFootprint = 0;
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
-        Position secondPosition = new PositionClass(new PointClass(0, 1), 0);
+        Position secondPosition = new PositionClass(new PointCCoAClass(0, 1), 0);
         Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine);
 
         assertNotEquals(first, second);
@@ -278,10 +278,10 @@ class FootprintClassTest {
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         double anyTimeToNextFootprint = 0;
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
-        Position secondPosition = new PositionClass(new PointClass(0, 0), 1);
+        Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 1);
         Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine);
 
         assertNotEquals(first, second);
@@ -293,11 +293,11 @@ class FootprintClassTest {
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         double anyTimeToNextFootprint = 0;
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
         double any2TimeToNextFootprint = 1;
-        Position secondPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine);
 
         assertNotEquals(first, second);
@@ -309,11 +309,11 @@ class FootprintClassTest {
         double anyTimeToNextFootprint = 0;
 
         ParametersMoving machine1 = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine1);
 
         ParametersMoving machine2 = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-        Position secondPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine2);
 
         assertNotEquals(first, second);
@@ -324,12 +324,12 @@ class FootprintClassTest {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
-        Position firstPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
 
         double any2TimeToNextFootprint = 0;
-        Position secondPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine);
 
         assertEquals(first, second);

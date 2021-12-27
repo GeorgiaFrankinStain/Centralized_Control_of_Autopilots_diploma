@@ -3,7 +3,7 @@ package com.alamutra.ccoa.Logic.FootprintSpaceTime;
 import com.alamutra.ccoa.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Logic.GlobalVariable;
 import com.alamutra.ccoa.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Logic.MovingObjects.Path;
+import com.alamutra.ccoa.Logic.MovingObjects.PathCCoA;
 import com.alamutra.ccoa.Logic.PathsMachines.PositionClass;
 import com.alamutra.ccoa.Logic.Position;
 
@@ -41,12 +41,12 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
 
     @Override
     public void addFootprint(
-            Path path,
+            PathCCoA pathCCoA,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption {
 
         try {
-            addFootprinsBasedOnThePath(path, startTime);
+            addFootprinsBasedOnThePath(pathCCoA, startTime);
         } catch (СrashIntoAnImpassableObjectExeption ex) {
             setTheStandingTimeUntilTheEndOfTimeInCaseOfAnAccident();
             throw new СrashIntoAnImpassableObjectExeption();
@@ -62,37 +62,37 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     }
 
     private void addFootprinsBasedOnThePath(
-            Path path,
+            PathCCoA pathCCoA,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption {
 
         double timeAdding = startTime;
 
-        if (path.getSize() == 0) {
+        if (pathCCoA.getSize() == 0) {
             assert (false);
-        } else if (path.getSize() == 1) {
-            Position position = new PositionClass(path.getPoint(0), 0.0);
+        } else if (pathCCoA.getSize() == 1) {
+            Position position = new PositionClass(pathCCoA.getPoint(0), 0.0);
             this.addFootprint(
                     position,
                     timeAdding,
                     this.MAX_TIME_STANDING
             );
         } else {
-            timeAdding += processingCreateFootprintsOnRouteStraightLineFromPairPoints(path, timeAdding);
+            timeAdding += processingCreateFootprintsOnRouteStraightLineFromPairPoints(pathCCoA, timeAdding);
             //FIXME ADD_TEST BAG += equals on result = (add sumTime equal on result adding positionTime)
-            processingCreateFoorprintEndRouteFromSinglePoint(path, timeAdding);
+            processingCreateFoorprintEndRouteFromSinglePoint(pathCCoA, timeAdding);
         }
     }
 
     private double processingCreateFootprintsOnRouteStraightLineFromPairPoints(
-            Path path,
+            PathCCoA pathCCoA,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
         double sumTime = 0;
-        int endIndex = path.getSize() - 1;
+        int endIndex = pathCCoA.getSize() - 1;
         for (int i = 0; i < endIndex; i++) {
-            Point startLine = path.getPoint(i);
-            Point endLine = path.getPoint(i + 1);
+            PointCCoA startLine = pathCCoA.getPoint(i);
+            PointCCoA endLine = pathCCoA.getPoint(i + 1);
 
             double lastSumTime = printEveryStepOnLine(
                     startLine,
@@ -125,19 +125,19 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
      * ^
      * end point in endless
      *
-     * @param path
+     * @param pathCCoA
      * @param timeAdding
      * @throws СrashIntoAnImpassableObjectExeption
      */
     private void processingCreateFoorprintEndRouteFromSinglePoint(
-            Path path,
+            PathCCoA pathCCoA,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
-        int indexLastPoint = path.getSize() - 1;
-        Point startLine = path.getPoint(indexLastPoint - 1);
-        Point endlessPoint = path.getPoint(indexLastPoint);
-        double angleStepVector = endlessPoint.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
-        Position position = new PositionClass(endlessPoint, angleStepVector);
+        int indexLastPoint = pathCCoA.getSize() - 1;
+        PointCCoA startLine = pathCCoA.getPoint(indexLastPoint - 1);
+        PointCCoA endlessPointCCoA = pathCCoA.getPoint(indexLastPoint);
+        double angleStepVector = endlessPointCCoA.getAngleRotareRelative(startLine); //FIXME dublication (LINK_RletVeVp)
+        Position position = new PositionClass(endlessPointCCoA, angleStepVector);
         this.addFootprint(
                 position,
                 timeAdding,
@@ -146,22 +146,22 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     }
 
 
-    private boolean stepUnderTest(Point startLine, Point endLine, Point stepUnderTest) {
+    private boolean stepUnderTest(PointCCoA startLine, PointCCoA endLine, PointCCoA stepUnderTest) {
         int quarterStartLine = startLine.getQuarter(endLine);
         int quarterstepUnderTest = stepUnderTest.getQuarter(endLine);
 
         return quarterStartLine == quarterstepUnderTest;
     }
 
-    private Point stepVector(Point endLine, Point startLine, double lengthStep) {
-        Point origin = new PointClass(0, 0);
+    private PointCCoA stepVector(PointCCoA endLine, PointCCoA startLine, double lengthStep) {
+        PointCCoA origin = new PointCCoAClass(0, 0);
         double angleStepVector = endLine.getAngleRotareRelative(startLine);
-        return new PointClass(lengthStep, 0).getRotateRelative(origin, angleStepVector);
+        return new PointCCoAClass(lengthStep, 0).getRotateRelative(origin, angleStepVector);
     }
 
     private double printEveryStepOnLine(
-            Point startLine,
-            Point endLine,
+            PointCCoA startLine,
+            PointCCoA endLine,
             double standingTime,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -169,8 +169,8 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         double angle = endLine.getAngleRotareRelative(startLine);
         double timeSum = 0;
 
-        Point currentCoordinat = startLine.clone();
-        Point stepVector = stepVector(endLine, startLine, parametersMoving.getLengthStep());
+        PointCCoA currentCoordinat = startLine.clone();
+        PointCCoA stepVector = stepVector(endLine, startLine, parametersMoving.getLengthStep());
 
         double angleStepVector = endLine.getAngleRotareRelative(startLine);
 
@@ -189,7 +189,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             timeAdding += standingTime;
             timeSum += standingTime;
 
-            currentCoordinat = new PointClass(
+            currentCoordinat = new PointCCoAClass(
                     currentCoordinat.getX() + stepVector.getX(),
                     currentCoordinat.getY() + stepVector.getY()
             );
@@ -207,8 +207,8 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     }
 
     private double littleStepInEndStraightLineBetweenTwoNeightborePointPaths(
-            Point endLine,
-            Point currentCoordinat,
+            PointCCoA endLine,
+            PointCCoA currentCoordinat,
             double angleStepVector,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -219,11 +219,11 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
              * |--|--|-
              *        ^
              * little step*/
-            Point penultimatePoint = currentCoordinat;
-            double lengthFinalStep = endLine.getDistanceToPoint(penultimatePoint);
+            PointCCoA penultimatePointCCoA = currentCoordinat;
+            double lengthFinalStep = endLine.getDistanceToPoint(penultimatePointCCoA);
             double standingTime = lengthFinalStep / parametersMoving.getSpeed();
 
-            Position position = new PositionClass(penultimatePoint, angleStepVector);
+            Position position = new PositionClass(penultimatePointCCoA, angleStepVector);
             localTimeSum = standingTime;
             this.addFootprint(
                     position,

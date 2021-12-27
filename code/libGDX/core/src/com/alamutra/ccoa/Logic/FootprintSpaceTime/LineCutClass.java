@@ -7,28 +7,28 @@ import java.awt.geom.Line2D;
 
 
 public class LineCutClass implements LineCut {
-    private Point start;
-    private Point end;
+    private PointCCoA start;
+    private PointCCoA end;
 
-    public LineCutClass(Point start, Point end) {
+    public LineCutClass(PointCCoA start, PointCCoA end) {
         this.start = start;
         this.end = end;
     }
 
     @Override
-    public Point getStart() {
+    public PointCCoA getStart() {
         return start;
     }
 
     @Override
-    public Point getEnd() {
+    public PointCCoA getEnd() {
         return end;
     }
 
     @Override
     public boolean intersectionLine(LineCut secondLineCut) {
-        Point bStartLine = secondLineCut.getStart();
-        Point bEndLine = secondLineCut.getEnd();
+        PointCCoA bStartLine = secondLineCut.getStart();
+        PointCCoA bEndLine = secondLineCut.getEnd();
         return Line2D.linesIntersect(
                 start.getX(),
                 start.getY(),
@@ -43,10 +43,10 @@ public class LineCutClass implements LineCut {
     }
 
     @Override
-    public boolean intersection(Point testedPoint) {
+    public boolean intersection(PointCCoA testedPointCCoA) {
         LineSegment lineAsPoint = new LineSegment(
-                new Coordinate(testedPoint.getX(), testedPoint.getY()),
-                new Coordinate(testedPoint.getX(), testedPoint.getY())
+                new Coordinate(testedPointCCoA.getX(), testedPointCCoA.getY()),
+                new Coordinate(testedPointCCoA.getX(), testedPointCCoA.getY())
         );
         LineSegment test = new LineSegment(
                 new Coordinate(start.getX(), start.getY()),

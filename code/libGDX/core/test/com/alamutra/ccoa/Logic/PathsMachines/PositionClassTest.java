@@ -1,7 +1,7 @@
 package com.alamutra.ccoa.Logic.PathsMachines;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointClass;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Logic.Position;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PositionClassTest {
 
     private double mediumAngleExtractionFromPrivate(double angle1, double angle2) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Position anyPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position anyPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
 
         Method method = PositionClass.class.getDeclaredMethod("mediumAngle", double.class, double.class);
         method.setAccessible(true);
@@ -64,7 +64,7 @@ class PositionClassTest {
             double time2,
             double timeApproximation
     ) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Position anyPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position anyPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
 
         Method method = PositionClass.class.getDeclaredMethod(
                 "approximationAngle",
@@ -107,7 +107,7 @@ class PositionClassTest {
             double time2,
             double timeApproximation
     ) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Position anyPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position anyPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
 
         Method method = PositionClass.class.getDeclaredMethod(
                 "percentageProximityFromAngle1ToFoundAngle",
@@ -143,7 +143,7 @@ class PositionClassTest {
             double time2,
             double timeApproximation
     ) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Position anyPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position anyPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
 
         Method method = PositionClass.class.getDeclaredMethod(
                 "isTimeApproximationIncludeInTimeInterval",
@@ -168,7 +168,7 @@ class PositionClassTest {
             double time2,
             double timeApproximation
     ) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Position anyPosition = new PositionClass(new PointClass(0, 0), 0);
+        Position anyPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
 
         Method method = PositionClass.class.getDeclaredMethod(
                 "percentageProximity",
@@ -190,63 +190,63 @@ class PositionClassTest {
 
     @Test
     void testEquals_0() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(0, 0), 0.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(0, 0), 0.0);
         assertEquals(first, second);
     }
 
     @Test
     void testEquals_1() {
-        Position first = new PositionClass(new PointClass(1, 1), 1.0);
-        Position second = new PositionClass(new PointClass(1, 1), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, 1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(first, second);
     }
 
     @Test
     void testEquals_1m1() {
-        Position first = new PositionClass(new PointClass(1, -1), 1.0);
-        Position second = new PositionClass(new PointClass(1, -1), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, -1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(1, -1), 1.0);
         assertEquals(first, second);
     }
 
     @Test
     void testEquals_m1p1() {
-        Position first = new PositionClass(new PointClass(-1, 1), 1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(-1, 1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), 1.0);
         assertEquals(first, second);
     }
 
     @Test
     void testEquals_m1p1Anglem1() {
-        Position first = new PositionClass(new PointClass(-1, 1), -1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
         assertEquals(first, second);
     }
 
     @Test
     void testEquals_differentAngle() {
-        Position first = new PositionClass(new PointClass(-1, 1), 1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(-1, 1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
         assertNotEquals(first, second);
     }
 
     @Test
     void testEquals_differentXCoordinate() {
-        Position first = new PositionClass(new PointClass(1, 1), -1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, 1), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
         assertNotEquals(first, second);
     }
 
     @Test
     void testEquals_differentYCoordinate() {
-        Position first = new PositionClass(new PointClass(1, -1), -1.0);
-        Position second = new PositionClass(new PointClass(1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, -1), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(1, 1), -1.0);
         assertNotEquals(first, second);
     }
 
     @Test
     void testToString() {
-        Position first = new PositionClass(new PointClass(1, -1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, -1), -1.0);
         String actual = first.toString();
         String expected = "((x: 1.0   y: -1.0) rotation: -1.0)";
         assertEquals(expected, actual);
@@ -254,90 +254,90 @@ class PositionClassTest {
 
     @Test
     void testHashCode_0() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(0, 0), 0.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(0, 0), 0.0);
         assertEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_1() {
-        Position first = new PositionClass(new PointClass(1, 1), 1.0);
-        Position second = new PositionClass(new PointClass(1, 1), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, 1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_1m1() {
-        Position first = new PositionClass(new PointClass(1, -1), 1.0);
-        Position second = new PositionClass(new PointClass(1, -1), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, -1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(1, -1), 1.0);
         assertEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_m1p1() {
-        Position first = new PositionClass(new PointClass(-1, 1), 1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(-1, 1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), 1.0);
         assertEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_m1p1Anglem1() {
-        Position first = new PositionClass(new PointClass(-1, 1), -1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
         assertEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_differentAngle() {
-        Position first = new PositionClass(new PointClass(-1, 1), 1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(-1, 1), 1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
         assertNotEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_differentXCoordinate() {
-        Position first = new PositionClass(new PointClass(1, 1), -1.0);
-        Position second = new PositionClass(new PointClass(-1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, 1), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(-1, 1), -1.0);
         assertNotEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void testHashCode_differentYCoordinate() {
-        Position first = new PositionClass(new PointClass(1, -1), -1.0);
-        Position second = new PositionClass(new PointClass(1, 1), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(1, -1), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(1, 1), -1.0);
         assertNotEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
     void getCoordinates_compareOneObjectPoint() {
-        Point coordinate = new PointClass(0, 0);
+        PointCCoA coordinate = new PointCCoAClass(0, 0);
         Position position = new PositionClass(coordinate, 0.0);
-        Point actual = position.getCoordinates();
+        PointCCoA actual = position.getCoordinates();
         assertEquals(coordinate, actual);
     }
 
     @Test
     void getCoordinates_compareDifferentObjectPoint() {
-        Point coordinate = new PointClass(0, 0);
+        PointCCoA coordinate = new PointCCoAClass(0, 0);
         Position position = new PositionClass(coordinate, 0.0);
-        Point actual = position.getCoordinates();
-        Point expected = new PointClass(0, 0);
+        PointCCoA actual = position.getCoordinates();
+        PointCCoA expected = new PointCCoAClass(0, 0);
         assertEquals(expected, actual);
     }
 
     @Test
     void getCoordinates_notEquals() {
-        Point coordinate = new PointClass(0, 0);
+        PointCCoA coordinate = new PointCCoAClass(0, 0);
         Position position = new PositionClass(coordinate, 0.0);
-        Point actual = position.getCoordinates();
-        Point expected = new PointClass(1, 1);
+        PointCCoA actual = position.getCoordinates();
+        PointCCoA expected = new PointCCoAClass(1, 1);
         assertNotEquals(expected, actual);
     }
 
     @Test
     void getRotation_0() {
         double rotation = 0.0;
-        Position position = new PositionClass(new PointClass(0, 0), rotation);
+        Position position = new PositionClass(new PointCCoAClass(0, 0), rotation);
         double actualRotation = position.getRotation();
         assertEquals(rotation, actualRotation);
     }
@@ -345,7 +345,7 @@ class PositionClassTest {
     @Test
     void getRotation_1() {
         double rotation = 1.0;
-        Position position = new PositionClass(new PointClass(0, 0), rotation);
+        Position position = new PositionClass(new PointCCoAClass(0, 0), rotation);
         double actualRotation = position.getRotation();
         assertEquals(rotation, actualRotation);
     }
@@ -365,7 +365,7 @@ class PositionClassTest {
         boolean isThrowIsActivate = false;
         boolean isTextErrorIsRight = false;
         try {
-            Position position = new PositionClass(new PointClass(0, 0), rotation);
+            Position position = new PositionClass(new PointCCoAClass(0, 0), rotation);
         } catch (IllegalArgumentException e) {
             isThrowIsActivate = true;
             isTextErrorIsRight = e.toString().equals("java.lang.IllegalArgumentException: rotation is no valid");
@@ -376,96 +376,96 @@ class PositionClassTest {
     @Test
     void getRotation_notEquals() {
         double rotation = 1.0;
-        Position position = new PositionClass(new PointClass(0, 0), rotation);
+        Position position = new PositionClass(new PointCCoAClass(0, 0), rotation);
         double actualRotation = position.getRotation();
         assertNotEquals(0.0, actualRotation);
     }
 
     @Test
     void getApproximation_from0to2Middle() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = first.getApproximation(0.0, second, 2.0, 1.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 1.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(expected, actual);
     }
     @Test
     void getApproximation_reverseOrder() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = second.getApproximation(2.0, first, 0.0, 1.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 1.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(expected, actual);
     }
     @Test
     void getApproximation_reverseOrderTime() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = first.getApproximation(2.0, second, 0.0, 1.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 1.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(expected, actual);
     }
     @Test
     void getApproximation_bothAnglesIsNegative() {
-        Position first = new PositionClass(new PointClass(0, 0), -3.0);
-        Position second = new PositionClass(new PointClass(2, 2), -1.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), -3.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), -1.0);
         Position actual = first.getApproximation(0.0, second, 2.0, 1.0);
-        Position expected = new PositionClass(new PointClass(1, 1), -2.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), -2.0);
         assertEquals(expected, actual);
     }
     @Test
     void getApproximation_bothAnglesIsPositive() {
-        Position first = new PositionClass(new PointClass(0, 0), 3.0);
-        Position second = new PositionClass(new PointClass(2, 2), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 3.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 1.0);
         Position actual = first.getApproximation(0.0, second, 2.0, 1.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 2.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 2.0);
         assertEquals(expected, actual);
     }
     @Test
     void getApproximation_angle1IsNegativeAngle2IsPositive() {
-        Position first = new PositionClass(new PointClass(0, 0), -1.0);
-        Position second = new PositionClass(new PointClass(2, 2), 1.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), -1.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 1.0);
         Position actual = first.getApproximation(-2.0, second, 2.0, 0.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 0.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 0.0);
         assertEquals(expected, actual);
     }
     @Test
     void getApproximation_sameTime() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = first.getApproximation(0.0, second, 2.0, 1.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 1.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(expected, actual);
     }
 
     @Test
     void getApproximation_fromM1ToP1Middle() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = first.getApproximation(-1.0, second, 1.0, 0.0);
-        Position expected = new PositionClass(new PointClass(1, 1), 1.0);
+        Position expected = new PositionClass(new PointCCoAClass(1, 1), 1.0);
         assertEquals(expected, actual);
     }
 
     @Test
     void getApproximation_fromM1ToP1Start() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = first.getApproximation(-1.0, second, 1.0, -1.0);
         assertEquals(first, actual);
     }
 
     @Test
     void getApproximation_fromM1ToP1End() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
-        Position second = new PositionClass(new PointClass(2, 2), 2.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
+        Position second = new PositionClass(new PointCCoAClass(2, 2), 2.0);
         Position actual = first.getApproximation(-1.0, second, 1.0, 1.0);
         assertEquals(second, actual);
     }
 
     @Test
     void getRotationDegree_0() {
-        Position first = new PositionClass(new PointClass(0, 0), 0.0);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), 0.0);
         double actual = first.getRotationDegree();
         double expected = 0;
         assertEquals(expected, actual);
@@ -473,7 +473,7 @@ class PositionClassTest {
 
     @Test
     void getRotationDegree_90() {
-        Position first = new PositionClass(new PointClass(0, 0), Math.PI / 2);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), Math.PI / 2);
         double actual = first.getRotationDegree();
         double expected = 90;
         assertEquals(expected, actual);
@@ -481,7 +481,7 @@ class PositionClassTest {
 
     @Test
     void getRotationDegree_180() {
-        Position first = new PositionClass(new PointClass(0, 0), Math.PI);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), Math.PI);
         double actual = first.getRotationDegree();
         double expected = 180;
         assertEquals(expected, actual);
@@ -490,7 +490,7 @@ class PositionClassTest {
 
     @Test
     void getRotationDegree_m90() {
-        Position first = new PositionClass(new PointClass(0, 0), -Math.PI / 2);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), -Math.PI / 2);
         double actual = first.getRotationDegree();
         double expected = -90;
         assertEquals(expected, actual);
@@ -498,7 +498,7 @@ class PositionClassTest {
 
     @Test
     void getRotationDegree_m180() {
-        Position first = new PositionClass(new PointClass(0, 0), -Math.PI);
+        Position first = new PositionClass(new PointCCoAClass(0, 0), -Math.PI);
         double actual = first.getRotationDegree();
         double expected = -180;
         assertEquals(expected, actual);

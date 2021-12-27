@@ -1,9 +1,9 @@
 package com.alamutra.ccoa.Logic;
 
-import com.alamutra.ccoa.Logic.FootprintSpaceTime.Point;
+import com.alamutra.ccoa.Logic.FootprintSpaceTime.PointCCoA;
 
 public interface Position {
-    public Point getCoordinates();
+    public PointCCoA getCoordinates();
 
     public double getRotation();
 
