@@ -20,7 +20,7 @@ public interface ParametersMoving {
 
     public double getSpeed();
 
-    public double timeTravel(double distance);
+    public double getTimeTravel(double distance);
 
     public Skins getSkin();
 

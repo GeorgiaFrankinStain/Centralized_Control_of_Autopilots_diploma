@@ -67,7 +67,7 @@ public class ParametersMovingClass implements ParametersMoving {
 
 
     @Override
-    public double timeTravel(double distance) {
+    public double getTimeTravel(double distance) {
         return distance / this.getSpeed();
     }
 

@@ -26,15 +26,34 @@ public class WallCar extends Sprite implements SpriteWrapper {
 
         Texture tempTexture = new Texture(pix);
 
-        Vector2 center = new Vector2(0, 0);
+
+        TextureRegion textureRegion = new TextureRegion(tempTexture);
+
+        FloatArray vertices = calculateVertices(newProperties);
+
+        EarClippingTriangulator triangulator = new EarClippingTriangulator();
+        ShortArray triangleindices = triangulator.computeTriangles(vertices);
+
+        PolygonRegion polyReg = new PolygonRegion(textureRegion, vertices.toArray(), triangleindices.toArray());
+        PolygonSprite polygonSprite = new PolygonSprite(polyReg);
 
 
+
+        float x = (float) newProperties.getCoordinates().getX();
+        float y = (float) newProperties.getCoordinates().getY();
+        float rotation = (float) newProperties.getRotationDegree();
+
+        polygonSprite.setPosition(x, y);;
+        polygonSprite.setRotation(rotation);
+
+        polygonSprite.draw(polygonBatch);
+    }
+
+    private FloatArray calculateVertices(DataFootprintForRendering newProperties) {
         PointCCoA topLeft = newProperties.getMovingObject().getShape().getPoint(0);
         PointCCoA topRight = newProperties.getMovingObject().getShape().getPoint(1);
         PointCCoA bottomLeft = newProperties.getMovingObject().getShape().getPoint(2);
         PointCCoA bottomRight = newProperties.getMovingObject().getShape().getPoint(3);
-
-        TextureRegion textureRegion = new TextureRegion(tempTexture);
 
         FloatArray vertices = new FloatArray(new float[] {
                 (float) topLeft.getX(),
@@ -47,30 +66,7 @@ public class WallCar extends Sprite implements SpriteWrapper {
                 (float) bottomRight.getY(),
         });
 
-        EarClippingTriangulator triangulator = new EarClippingTriangulator();
-        ShortArray triangleindices = triangulator.computeTriangles(vertices);
-
-        PolygonRegion polyReg = new PolygonRegion(textureRegion, vertices.toArray(), triangleindices.toArray());
-        PolygonSprite polygonSprite = new PolygonSprite(polyReg);
-
-
-        float width = (float) (newProperties.getMovingObject().getShape().getPoint(1).getX()
-                - newProperties.getMovingObject().getShape().getPoint(0).getX());
-        float height = (float) (newProperties.getMovingObject().getShape().getPoint(1).getY()
-                - newProperties.getMovingObject().getShape().getPoint(2).getX());
-
-        width = Math.abs(width);
-        height = Math.abs(height);
-
-        float x = (float) newProperties.getCoordinates().getX();
-//        x += width / 2;
-        float y = (float) newProperties.getCoordinates().getY();
-//        y += height / 2;
-        float rotation = (float) newProperties.getRotationDegree();
-
-        polygonSprite.setPosition(x, y);
-        polygonSprite.setRotation(rotation);
-
-        polygonSprite.draw(polygonBatch);
+        return vertices;
     }
+
 }
