@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.MovingObjects;
+package com.alamutra.ccoa.Core.Logic.MovingBody;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 

@@ -4,7 +4,7 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImp
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.*;
+import com.alamutra.ccoa.Core.Logic.MovingBody.*;
 import com.alamutra.ccoa.Core.Logic.PathsMachines.PositionClass;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
@@ -87,11 +87,13 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             List<Footprint> footprints =
                     localFootprintsSpaceTime.getRenderingFootprintsFromWhenDefaultLayer(areaRendering, time);
             int idFindMovingObject = footprints.get(1).getIdMovingObject();
+            Route route = new RouteClass();
 
             Footprint carFootrpint = new FootprintClass(
                     position,
                     timeStanding,
-                    passengerCar
+                    passengerCar,
+                    route
             );
 
             Footprint found = footprints.get(1);
@@ -119,10 +121,12 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         }
 
         private void wallCarFootprintCreatePrivateVariable() {
+            Route route = new RouteClass();
             wallCarFootprint = new FootprintClass(
                     new PositionClass(new PointCCoAClass(0, 60), 0.0),
                     CreatorMarksOfPathClass.MAX_TIME_STANDING,
-                    wallCar
+                    wallCar,
+                    route
             );
         }
     }

@@ -238,12 +238,12 @@ public class PolygonCCoAClass implements PolygonCCoA {
     @Override
     public boolean intersectionPolygon(PolygonCCoA secondPolygon) {
 
-        boolean mutualEnterPointOfPolygonsBOOL =
+        boolean isMutualEnterPointOfPolygons =
                 enteringMinimumOnePointOfFirstPolygonInSecondPolygon(this, secondPolygon)
                         || enteringMinimumOnePointOfFirstPolygonInSecondPolygon(secondPolygon, this)
                         || intersectionMinumumTwoLineSegmentOfTwoPolygons(this, secondPolygon);
 
-        if (mutualEnterPointOfPolygonsBOOL) {
+        if (isMutualEnterPointOfPolygons) {
             return true;
         }
 
@@ -308,7 +308,7 @@ public class PolygonCCoAClass implements PolygonCCoA {
     ) {
         LineCut lineCut = new LineCutClass(aStartLine, aEndLine);
         LineCut lineCut2 = new LineCutClass(bStartLine, bEndLine);
-        return lineCut.intersectionLine(lineCut2);
+        return lineCut.intersectionLineCut(lineCut2);
     }
 
     @Override

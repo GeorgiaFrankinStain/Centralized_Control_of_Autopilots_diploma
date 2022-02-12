@@ -2,8 +2,8 @@ package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.PathsMachines.PositionClass;
 import com.alamutra.ccoa.Core.Logic.Position;
 
@@ -11,6 +11,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
     private LayerFootprintSpaceTime footprintsSpaceTime;
     private ParametersMoving parametersMoving;
+    private Route route;
 
     private double speed;
     private double lengthStep;
@@ -20,10 +21,12 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
 
     public CreatorMarksOfPathClass(
             LayerFootprintSpaceTime footprintsSpaceTime,
-            ParametersMoving parametersMoving
+            ParametersMoving parametersMoving,
+            Route route
     ) {
         this.footprintsSpaceTime = footprintsSpaceTime;
         this.parametersMoving = parametersMoving;
+        this.route = route;
 
 
         /**
@@ -244,7 +247,8 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             double timeStanding
     ) throws СrashIntoAnImpassableObjectExeption {
         this.penultimateFootprintInPath = this.lastFootprintInPath;
-        this.lastFootprintInPath = new FootprintClass(position, timeStanding, parametersMoving);
+        this.lastFootprintInPath = new FootprintClass(position, timeStanding, parametersMoving, this.route);
+        route.addLastFootprint(time, this.lastFootprintInPath);
 
         this.footprintsSpaceTime.addFootprint(this.lastFootprintInPath, time);
     }

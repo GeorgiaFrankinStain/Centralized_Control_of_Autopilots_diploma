@@ -2,11 +2,11 @@ package com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.DataFootprintForRendering;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.Skins;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeLandscapeBody;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 import com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView.RenderingFootprints.Machine;
-import com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView.RenderingFootprints.WallCar;
+import com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView.RenderingFootprints.WallRectangleCar;
 
 public class FabricRenderingFootprintClass implements FabricSprite {
 
@@ -15,15 +15,15 @@ public class FabricRenderingFootprintClass implements FabricSprite {
 
     @Override
     public SpriteWrapper getRenderingFootprint(DataFootprintForRendering dataFootprintForRendering) {
-        Skins type = dataFootprintForRendering.getSkin();
-        if (type.equals(Skins.WALL_CAR)) {
-            return new WallCar();
-        } else if (type.equals(Skins.WALL_SQUARE)) {
-            return new WallCar();
-        } else if (type.equals(Skins.TEST_SQUARE_20)) {
+        SkinsCapacitor type = dataFootprintForRendering.getSkin();
+        if (type.equals(SkinsCapacitor.WALL_CAR)) {
+            return new WallRectangleCar();
+        } else if (type.equals(SkinsCapacitor.WALL_SQUARE)) {
+            return new WallRectangleCar();
+        } else if (type.equals(SkinsCapacitor.TEST_SQUARE_20)) {
             this.numberMachinePicture++;
             this.numberMachinePicture %= sumAllMachinePicture;
-            return new Machine(numberMachinePicture); //FIXME
+            return new Machine(numberMachinePicture);
         }
 
         assert (false); //ERROR: titlePictureNotFounded

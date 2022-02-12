@@ -1,6 +1,6 @@
 package com.alamutra.ccoa.Core.SettingRenderingTasks;
 
-public enum Skins {
+public enum SkinsCapacitor {
     TEST_SQUARE_20,
     TRUCK,
     TANK,
@@ -17,9 +17,9 @@ public enum Skins {
     GRASS,
     BUILDING;
 
-    public static Skins convertFrom(TypeMachinesBody typeMachinesBody) { //FIXME add tests
+    public static SkinsCapacitor convertFrom(TypeMachinesBody typeMachinesBody) {
         String nameTypeMachineBody = typeMachinesBody.name();
-        for (Skins skin : Skins.values()) {
+        for (SkinsCapacitor skin : SkinsCapacitor.values()) {
             if (skin.name().equals(nameTypeMachineBody)) {
                 return skin;
             }
@@ -28,9 +28,9 @@ public enum Skins {
         assert (false);
         return null;
     }
-    public static Skins convertFrom(TypeLandscapeBody typeLandscapeBody) { //FIXME add tests
+    public static SkinsCapacitor convertFrom(TypeLandscapeBody typeLandscapeBody) {
         String nameTypeLandscapeBody = typeLandscapeBody.name();
-        for (Skins skin : Skins.values()) {
+        for (SkinsCapacitor skin : SkinsCapacitor.values()) {
             if (skin.name().equals(nameTypeLandscapeBody)) {
                 return skin;
             }

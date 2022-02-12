@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.MovingObjects;
+package com.alamutra.ccoa.Core.Logic.MovingBody;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
@@ -6,7 +6,7 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.TypesInLevel;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.Skins;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 import com.alamutra.ccoa.Core.Wrappers.RandomWrapperClass;
 
@@ -73,8 +73,8 @@ public class ParametersMovingClass implements ParametersMoving {
 
 
     @Override
-    public Skins getSkin() {
-        return Skins.convertFrom(this.typeMachinesBody);
+    public SkinsCapacitor getSkin() {
+        return SkinsCapacitor.convertFrom(this.typeMachinesBody);
     }
 
     @Override

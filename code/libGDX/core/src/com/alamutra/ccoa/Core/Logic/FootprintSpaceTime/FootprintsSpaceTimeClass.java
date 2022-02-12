@@ -3,8 +3,8 @@ package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
 
     public FootprintsSpaceTimeClass() {
-        setLayer(defaultIndexLayer);
+        addLayer(defaultIndexLayer);
     }
 
     @Override
@@ -42,13 +42,16 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
-            this.setLayer(indexLayer);
+            this.addLayer(indexLayer);
         }
+
+        Route route = new RouteClass();
 
         this.layers.get(indexLayer).addFootprint(
                 parametersMoving,
                 pathCCoA,
-                startTime
+                startTime,
+                route
         );
     }
 
@@ -62,7 +65,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
-            this.setLayer(indexLayer);
+            this.addLayer(indexLayer);
         }
 
 
@@ -75,7 +78,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     }
 
     @Override
-    public boolean getIsSeatTaken(
+    public boolean isSeatTaken(
             PolygonCCoA place,
             double time,
             IndexLayer indexLayer
@@ -92,9 +95,9 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
     @Override
     public boolean getIsSeatTakenSpaceTime(PolygonCCoA place, double fromTime, double toTime, IndexLayer indexLayer) {
-        return this.getIsSeatTaken(place, fromTime, indexLayer) //FIXME
-                && this.getIsSeatTaken(place, toTime, indexLayer)
-                && this.getIsSeatTaken(place, (fromTime + toTime) / 2, indexLayer);
+        return this.isSeatTaken(place, fromTime, indexLayer) //FIXME
+                && this.isSeatTaken(place, toTime, indexLayer)
+                && this.isSeatTaken(place, (fromTime + toTime) / 2, indexLayer);
     }
 
     @Override
@@ -158,10 +161,10 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
 
     //==== <start> <Private_Methods> =======================================================================
-    private void setLayer(IndexLayer indexLayer) { //FIXME CODESTYLE
-        LayerFootprintSpaceTime layerFootprintSpaceTime =
+    private void addLayer(IndexLayer indexLayer) { //FIXME CODESTYLE
+        LayerFootprintSpaceTime newLayerFootprintSpaceTime =
                 new MultiMapLayerFootprintSpaceTimeClass();
-        this.layers.put(indexLayer, layerFootprintSpaceTime);
+        this.layers.put(indexLayer, newLayerFootprintSpaceTime);
     }
     //==== <end> <Private_Methods> =======================================================================
 }

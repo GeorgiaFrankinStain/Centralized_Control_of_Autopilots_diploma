@@ -26,7 +26,7 @@ public class LineCutClass implements LineCut {
     }
 
     @Override
-    public boolean intersectionLine(LineCut secondLineCut) {
+    public boolean intersectionLineCut(LineCut secondLineCut) {
         PointCCoA bStartLine = secondLineCut.getStart();
         PointCCoA bEndLine = secondLineCut.getEnd();
         return Line2D.linesIntersect(

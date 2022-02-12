@@ -4,7 +4,7 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Footprint;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.Wrappers.RandomWrapperClass;
 
@@ -52,8 +52,13 @@ import com.alamutra.ccoa.Core.Wrappers.RandomWrapperClass;
         return null;
     }
 
+     @Override
+     public Footprint getApproximationWithNextFootprint(double timeApproximation) {
+         return null;
+     }
 
-    @Override
+
+     @Override
     public ParametersMoving getMovingObject() {
         return null;
     }

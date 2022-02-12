@@ -784,6 +784,22 @@ class PolygonCCoAClassTest {
         assertTrue(square.enteringPoint(new PointCCoAClass(0, 20)));
     }
 
+    /*
+     * Y
+     * ^
+     * |               +-------+
+     * |               |       |
+     * |               |       |
+     * |               +-------+
+     * |
+     * |
+     * |
+     * |     +-------+
+     * |     |       |
+     * |     |       |
+     * |     +-------+
+     * +--------------------------------------> X
+     */
     @Test
     void intersectionPolygon_squareNoIntersection() {
         PolygonCCoA square = new PolygonCCoAClass();
@@ -802,6 +818,23 @@ class PolygonCCoAClassTest {
         assertFalse(square.intersectionPolygon(square2)); //FIXME rename polygon
     }
 
+
+    /*
+     * Y
+     * ^
+     * |
+     * |
+     * |
+     * |
+     * |             +-------+
+     * |             |       |
+     * |             |       |
+     * |     +-------+-------+
+     * |     |       |
+     * |     |       |
+     * |     +-------+
+     * +--------------------------------------> X
+     */
     @Test
     void intersectionPolygon_oneSharedPoint() {
         PolygonCCoA square = new PolygonCCoAClass();
@@ -819,8 +852,25 @@ class PolygonCCoAClassTest {
         assertTrue(square.intersectionPolygon(square2));
     }
 
+
+    /*
+     * Y
+     * ^
+     * |
+     * |
+     * |
+     * |
+     * |
+     * |
+     * |
+     * |     +-------+-------+
+     * |     |       |       |
+     * |     |       |       |
+     * |     +-------+-------+
+     * +--------------------------------------> X
+     */
     @Test
-    void intersectionPolygon_oneSharedLine() {
+    void intersectionPolygon_oneSharedLineCut() {
         PolygonCCoA square = new PolygonCCoAClass();
         square.addPoint(new PointCCoAClass(0, 0));
         square.addPoint(new PointCCoAClass(10, 0));
@@ -836,6 +886,66 @@ class PolygonCCoAClassTest {
         assertTrue(square.intersectionPolygon(square2));
     }
 
+    /*
+     *                                   Y
+     *                                   ^
+     *                                   |
+     *                                   |
+     *                                   |
+     *                                   |
+     *                                   |
+     *                  +------------------------------+
+     *                  |                |             |
+     *                  |                |     +-------+
+     *                  |                |     |       |
+     *                  |                |     |       |
+     *                  |                |     +-------+
+     * -----------------|----------------+--------------------------------------> X
+     *                  |                |             |
+     *                  |                |             |
+     *                  |                |             |
+     *                  |                |             |
+     *                  |                |             |
+     *                  +------------------------------+
+     *                                   |
+     *                                   |
+     *                                   |
+     *                                   |
+     */
+    @Test
+    void intersectionPolygon_oneSharedLineWithoutSharedVertex() {
+        PolygonCCoA square = new PolygonCCoAClass();
+        square.addPoint(new PointCCoAClass(0, 0));
+        square.addPoint(new PointCCoAClass(10, 0));
+        square.addPoint(new PointCCoAClass(10, 10));
+        square.addPoint(new PointCCoAClass(0, 10));
+
+        PolygonCCoA square2 = new PolygonCCoAClass();
+        square2.addPoint(new PointCCoAClass(-100, -100));
+        square2.addPoint(new PointCCoAClass(10, -100));
+        square2.addPoint(new PointCCoAClass(10, 100));
+        square2.addPoint(new PointCCoAClass(-100, 100));
+
+        assertTrue(square.intersectionPolygon(square2));
+    }
+
+    /*
+     * Y
+     * ^
+     * |
+     * |
+     * |
+     * |
+     * |
+     * |  +----------------+
+     * |  |                |
+     * |  |  +-------+     |
+     * |  |  |       |     |
+     * |  |  |       |     |
+     * |  |  +-------+     |
+     * |  +----------------+
+     * +--------------------------------------> X
+     */
     @Test
     void intersectionPolygon_secondInsideFirst() {
         PolygonCCoA first = new PolygonCCoAClass();
@@ -852,8 +962,6 @@ class PolygonCCoAClassTest {
 
         assertTrue(first.intersectionPolygon(second));
     }
-
-
 
 
     @Test

@@ -3,7 +3,7 @@ package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -196,7 +196,7 @@ public class SquareNetworkNodes implements NetworkNodes {
         for (int i = 0; i < 4; i++) {
             PointCCoA coordinateNeighbor = firstNode.getRotateRelative(coordinatAndCenterMachine, angle90grad * i);
             double distanceToNeighbor = coordinateNeighbor.getDistanceToPoint(coordinatAndCenterMachine);
-            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.getTimeTravel(distanceToNeighbor);
             listNeightborint.add(new NodeClass(
                     this,
                     coordinateNeighbor,
@@ -210,7 +210,7 @@ public class SquareNetworkNodes implements NetworkNodes {
                     coordinateNeighborDiagonal.getDistanceToPoint(coordinatAndCenterMachine);
 
             double timeAddingDiagonal =
-                    currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighborDiagonal);
+                    currentNode.getTimeTravelFromStart() + parametersMoving.getTimeTravel(distanceToNeighborDiagonal);
             listNeightborint.add(new NodeClass(
                     this,
                     coordinateNeighborDiagonal,
@@ -248,7 +248,7 @@ public class SquareNetworkNodes implements NetworkNodes {
         {
             PointCCoA coordinateNeighbor = new PointCCoAClass(topLeftNode.getX() + sideSquare, topLeftNode.getY());
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.getTimeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,
@@ -262,7 +262,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             PointCCoA coordinateNeighbor =
                     new PointCCoAClass(topLeftNode.getX() + sideSquare, topLeftNode.getY() + sideSquare);
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.getTimeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,
@@ -276,7 +276,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             PointCCoA coordinateNeighbor =
                     new PointCCoAClass(topLeftNode.getX(), topLeftNode.getY() + sideSquare);
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.getTimeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,
@@ -290,7 +290,7 @@ public class SquareNetworkNodes implements NetworkNodes {
             PointCCoA coordinateNeighbor =
                     topLeftNode;
             double distanceToNeighbor = coordinatAndCenterMachine.getDistanceToPoint(coordinateNeighbor);
-            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.timeTravel(distanceToNeighbor);
+            double timeAdding = currentNode.getTimeTravelFromStart() + parametersMoving.getTimeTravel(distanceToNeighbor);
             Node addingInStorageNode = this.addingInStorageIfNoElement(
                     new NodeClass(
                             this,

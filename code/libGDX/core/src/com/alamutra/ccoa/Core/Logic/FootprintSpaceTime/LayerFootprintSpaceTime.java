@@ -1,8 +1,8 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 
 import java.util.List;
@@ -15,7 +15,8 @@ public interface LayerFootprintSpaceTime {
     public void addFootprint(
             ParametersMoving parametersMoving,
             PathCCoA pathCCoA,
-            double startTime
+            double startTime,
+            Route route
     ) throws СrashIntoAnImpassableObjectExeption;
 
     public void addFootprint(

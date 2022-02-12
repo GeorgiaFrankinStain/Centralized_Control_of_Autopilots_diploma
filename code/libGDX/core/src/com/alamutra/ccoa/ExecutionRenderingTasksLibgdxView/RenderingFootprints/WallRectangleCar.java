@@ -11,14 +11,15 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.FloatArray;
 import com.badlogic.gdx.utils.ShortArray;
 
-public class WallCar extends Sprite implements SpriteWrapper {
+public class WallRectangleCar extends Sprite implements SpriteWrapper {
     private PolygonSprite sprite;
 
-    public WallCar() {
+    public WallRectangleCar() {
     }
 
     @Override
     public void update(DataFootprintForRendering newProperties, SpriteBatch batch, PolygonSpriteBatch polygonBatch) {
+        verificationInput(newProperties);
         //FIXME test exist add
         Pixmap pix = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
         pix.setColor(1, 0, 0, 1); //FIXME add color from hash id
@@ -67,6 +68,11 @@ public class WallCar extends Sprite implements SpriteWrapper {
         });
 
         return vertices;
+    }
+
+    private void verificationInput(DataFootprintForRendering newProperties) {
+        int countPointsPolygon = newProperties.getMovingObject().getShape().getCountPoints();
+        assert(countPointsPolygon == 4);
     }
 
 }

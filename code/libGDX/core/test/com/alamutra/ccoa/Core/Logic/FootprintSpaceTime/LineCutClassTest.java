@@ -10,63 +10,63 @@ class LineCutClassTest {
     @Test
     void intersectionLine_itself() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, -4), new PointCCoAClass(0, 4));
-        assertTrue(lineCut.intersectionLine(lineCut));
+        assertTrue(lineCut.intersectionLineCut(lineCut));
     }
 
     @Test
     void intersectionLine_cross() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, -4), new PointCCoAClass(0, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(-4, 0), new PointCCoAClass(4, 0));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_crossRightToLeft() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, -4), new PointCCoAClass(0, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(4, 0), new PointCCoAClass(-4, 0));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_sharedOnlyOnePoint() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, -4), new PointCCoAClass(0, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(0, -4), new PointCCoAClass(-100, -100));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_positiveNumber() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, 0), new PointCCoAClass(10, 10));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(2, 2), new PointCCoAClass(16, 4));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_positiveNumberCopy() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, 0), new PointCCoAClass(4, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(0, 0), new PointCCoAClass(4, 4));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_withoutZerosCopy() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(1, 1), new PointCCoAClass(4, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(1, 1), new PointCCoAClass(4, 4));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_withoutZeros() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(1, 1), new PointCCoAClass(4, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(4, 1), new PointCCoAClass(1, 4));
-        assertTrue(lineCut.intersectionLine(lineCut2));
+        assertTrue(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test
     void intersectionLine_parallel() {
         LineCut lineCut = new LineCutClass(new PointCCoAClass(0, -4), new PointCCoAClass(0, 4));
         LineCut lineCut2 = new LineCutClass(new PointCCoAClass(-4, -4), new PointCCoAClass(-4, 4));
-        assertFalse(lineCut.intersectionLine(lineCut2));
+        assertFalse(lineCut.intersectionLineCut(lineCut2));
     }
 
     @Test

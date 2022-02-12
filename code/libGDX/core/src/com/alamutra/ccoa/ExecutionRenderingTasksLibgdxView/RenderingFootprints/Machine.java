@@ -20,20 +20,31 @@ public class Machine extends Sprite implements SpriteWrapper {
     public void update(DataFootprintForRendering newProperties, SpriteBatch batch, PolygonSpriteBatch polygonBatch) {
         double x = newProperties.getCoordinates().getX();
         double y = newProperties.getCoordinates().getY();
-        float width = (float) (newProperties.getMovingObject().getShape().getPoint(1).getX()
-                        - newProperties.getMovingObject().getShape().getPoint(0).getX());
-        float height = (float) (newProperties.getMovingObject().getShape().getPoint(1).getY()
-                        - newProperties.getMovingObject().getShape().getPoint(2).getX());
-
-        width = Math.abs(width);
-        height = Math.abs(height);
 
         double rotation = newProperties.getRotationDegree();
+        float width = calculateWidth(newProperties);
+        float height = calculateHeight(newProperties);
 
         this.sprite.setPosition((float) x, (float) y); //FIXME добавить смещение координаты отрисовки
         this.sprite.setSize(width, height);
         this.sprite.setRotation((float) rotation);
 
         this.sprite.draw(batch);
+    }
+
+    private float calculateHeight(DataFootprintForRendering newProperties) {
+        float height = (float) (newProperties.getMovingObject().getShape().getPoint(1).getY()
+                - newProperties.getMovingObject().getShape().getPoint(2).getX());
+        height = Math.abs(height);
+
+        return height;
+    }
+
+    private float calculateWidth(DataFootprintForRendering newProperties) {
+        float width = (float) (newProperties.getMovingObject().getShape().getPoint(1).getX()
+                - newProperties.getMovingObject().getShape().getPoint(0).getX());
+        width = Math.abs(width);
+
+        return width;
     }
 }

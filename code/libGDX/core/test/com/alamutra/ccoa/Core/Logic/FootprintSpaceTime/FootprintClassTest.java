@@ -1,9 +1,9 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.MovingObjects.FabricParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.FabricParametersMovingClass;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMovingClass;
+import com.alamutra.ccoa.Core.Logic.MovingBody.FabricParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.FabricParametersMovingClass;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingClass;
 import com.alamutra.ccoa.Core.Logic.PathsMachines.PositionClass;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
@@ -47,8 +47,9 @@ class FootprintClassTest {
     public void getOccupiedLocation_margin() {
         PointCCoA margin = new PointCCoAClass(10, 10);
         Position position = new PositionClass(margin, 0.0);
+        Route route = new RouteClass();
 
-        Footprint footprint = new FootprintClass(position, 1, getStandartMovingObjet());
+        Footprint footprint = new FootprintClass(position, 1, getStandartMovingObjet(), route);
         PolygonCCoA actualOccupiedLocation = footprint.getOccupiedLocation();
         PolygonCCoA expectedPolygonCCoA = new PolygonCCoAClass();
         expectedPolygonCCoA.addPoint(new PointCCoAClass(5, 5));
@@ -88,8 +89,9 @@ class FootprintClassTest {
     public void getOccupiedLocation_rotatedMargin() {
         PointCCoA margin = new PointCCoAClass(15, 15);
         Position position = new PositionClass(margin, -PI / 2);
+        Route route = new RouteClass();
 
-        Footprint footprint = new FootprintClass(position, 1, getStandartMovingObjet());
+        Footprint footprint = new FootprintClass(position, 1, getStandartMovingObjet(), route);
         PolygonCCoA actualOccupiedLocation = footprint.getOccupiedLocation();
         PolygonCCoA expectedPolygonCCoA = new PolygonCCoAClass();
         expectedPolygonCCoA.addPoint(new PointCCoAClass(10, 20));
@@ -134,13 +136,14 @@ class FootprintClassTest {
     void getApproximation_commutativeProperty() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         Position secondPosition = new PositionClass(new PointCCoAClass(10, 0), 1.54);
-        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
 
         double timeFirst = 0;
@@ -157,10 +160,11 @@ class FootprintClassTest {
     void testToString() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
-        Footprint footprint = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint footprint = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         String actual = footprint.toString();
         String expected =
@@ -174,14 +178,15 @@ class FootprintClassTest {
     void testHashCode_createdFromDifferentEqualsObjects0() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         double any2TimeToNextFootprint = 0;
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine, route);
 
         assertEquals(first.hashCode(), second.hashCode());
     }
@@ -190,12 +195,13 @@ class FootprintClassTest {
     void testHashCode_createdFromSingleObjects0() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
-        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         assertEquals(first.hashCode(), second.hashCode());
     }
@@ -204,12 +210,13 @@ class FootprintClassTest {
     void testHashCode_createdFromSingleObjects() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
 
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
-        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
+        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         assertEquals(first.hashCode(), second.hashCode());
     }
@@ -218,12 +225,13 @@ class FootprintClassTest {
     void testEquals_createdFromSingleObjects() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
         double anyTimeToNextFootprint = 4;
 
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
-        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
+        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         assertEquals(first, second);
     }
@@ -232,12 +240,13 @@ class FootprintClassTest {
     void testEquals_createdFromSingleObjects0() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
-        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         assertEquals(first, second);
     }
@@ -246,13 +255,14 @@ class FootprintClassTest {
     void testEquals_differentXCoordinateInPoint() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         Position secondPosition = new PositionClass(new PointCCoAClass(1, 0), 0);
-        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine, route);
 
         assertNotEquals(first, second);
     }
@@ -261,13 +271,14 @@ class FootprintClassTest {
     void testEquals_differentYCoordinateInPoint() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 1), 0);
-        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine, route);
 
         assertNotEquals(first, second);
     }
@@ -276,13 +287,14 @@ class FootprintClassTest {
     void testEquals_differentAngle() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 1);
-        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine, route);
 
         assertNotEquals(first, second);
     }
@@ -291,14 +303,15 @@ class FootprintClassTest {
     void testEquals_differentTimeToNextFootprint() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         double any2TimeToNextFootprint = 1;
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine, route);
 
         assertNotEquals(first, second);
     }
@@ -306,15 +319,16 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_differentMovingObject() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+        Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
         ParametersMoving machine1 = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine1);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine1, route);
 
         ParametersMoving machine2 = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine2);
+        Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine2, route);
 
         assertNotEquals(first, second);
     }
@@ -323,14 +337,15 @@ class FootprintClassTest {
     void testEquals_createdFromDifferentEqualsObjects0() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving machine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         double anyTimeToNextFootprint = 0;
-        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine);
+        Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine, route);
 
         double any2TimeToNextFootprint = 0;
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
-        Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine);
+        Footprint second = new FootprintClass(secondPosition, any2TimeToNextFootprint, machine, route);
 
         assertEquals(first, second);
     }

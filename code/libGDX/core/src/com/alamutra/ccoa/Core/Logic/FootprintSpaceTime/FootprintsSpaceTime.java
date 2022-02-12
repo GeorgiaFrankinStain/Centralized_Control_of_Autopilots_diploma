@@ -2,8 +2,8 @@ package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 
 import java.util.List;
@@ -35,7 +35,7 @@ public interface FootprintsSpaceTime {
 
     public void deleteFootprints(int ID);
 
-    public boolean getIsSeatTaken(PolygonCCoA place, double time, IndexLayer indexLayer);
+    public boolean isSeatTaken(PolygonCCoA place, double time, IndexLayer indexLayer);
 
     public boolean getIsSeatTakenSpaceTime(
             PolygonCCoA place,

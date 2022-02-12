@@ -2,8 +2,8 @@ package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.Wrappers.*;
 
@@ -30,9 +30,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             double time,
             double timeStanding
     ) throws СrashIntoAnImpassableObjectExeption { //FIXME ADD_TEST
+        Route route = new RouteClass();
 
-
-        Footprint newFootprint = new FootprintClass(position, timeStanding, parametersMoving);
+        Footprint newFootprint = new FootprintClass(position, timeStanding, parametersMoving, route);
 
         this.addFootprint(newFootprint, time);
     }
@@ -54,10 +54,11 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     public void addFootprint(
             ParametersMoving parametersMoving,
             PathCCoA pathCCoA,
-            double startTime
+            double startTime,
+            Route route
     ) throws СrashIntoAnImpassableObjectExeption {
         CreatorMarksOfPath creatorMarksOfPath =
-                new CreatorMarksOfPathClass(this, parametersMoving);
+                new CreatorMarksOfPathClass(this, parametersMoving, route);
         creatorMarksOfPath.addFootprint(pathCCoA, startTime);
     }
 
@@ -77,10 +78,13 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             Footprint footprint = entry.getValue();
             double timeStandingStart = entry.getKey();
             double timeStandingEnd = timeStandingStart + footprint.getTimeToNextFootprint();
-            boolean timeStandingIncludeTestedTime = timeStandingStart < testedTime && testedTime < timeStandingEnd;
+            boolean timeStandingIncludeTestedTime = timeStandingStart <= testedTime && testedTime < timeStandingEnd;
 
             if (timeStandingIncludeTestedTime) {
-                PolygonCCoA locationMovingObject = footprint.getOccupiedLocation();
+                Footprint approximationFootprint = footprint.getApproximationWithNextFootprint(testedTime);
+
+                PolygonCCoA locationMovingObject = approximationFootprint.getOccupiedLocation();
+//                PolygonCCoA locationMovingObject = footprint.getOccupiedLocation();
                 boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
                 if (placeIsSeat) {
                     return true;
@@ -255,6 +259,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
 
+
     private interface GetterPositionByID {
         public Position getPositionByID();
     }
@@ -311,7 +316,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             if (next != null) {
                 endTunnel = next.getValue();
             } else {
-                endTunnel = imitationEndTunnel();
+                endTunnel = imitationEndTunnel(); //TODO use new version function
             }
         }
 
@@ -451,7 +456,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         @Override
         public boolean hasNextPairItem(ParametersMoving parametersMoving) {
-            return fillQueueToSize(parametersMoving, 2);
+            int numberOfRequiredElements = 2;
+            return fillQueueToSize(parametersMoving, numberOfRequiredElements);
         }
 
         private boolean fillQueueToSize(ParametersMoving parametersMoving, int countItems) {
@@ -478,7 +484,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         @Override
         public boolean hasNext(ParametersMoving parametersMoving) {
-            return fillQueueToSize(parametersMoving, 1);
+            int numberOfRequiredElements = 1;
+            return fillQueueToSize(parametersMoving, numberOfRequiredElements);
         }
 
         private PairCCoA<Double, Footprint> getNextWithID(ParametersMoving parametersMoving) {

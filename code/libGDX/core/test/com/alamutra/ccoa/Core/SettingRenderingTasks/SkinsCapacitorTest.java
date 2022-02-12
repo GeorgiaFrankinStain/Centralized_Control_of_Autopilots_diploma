@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SkinsTest {
+class SkinsCapacitorTest {
     @Test
     void findAllTypesFromTypeMachinesBody() {
         for (TypeMachinesBody typeMachinesBody : TypeMachinesBody.values()) {
-            boolean isNotFound = Skins.convertFrom(typeMachinesBody) == null;
+            boolean isNotFound = SkinsCapacitor.convertFrom(typeMachinesBody) == null;
             if (isNotFound) {
                 assertTrue(false, "convert error");
             }
@@ -19,7 +19,7 @@ class SkinsTest {
     @Test
     void findAllTypesFromTypeLandscapeBody() {
         for (TypeLandscapeBody typeLandscapeBody : TypeLandscapeBody.values()) {
-            boolean isNotFound = Skins.convertFrom(typeLandscapeBody) == null;
+            boolean isNotFound = SkinsCapacitor.convertFrom(typeLandscapeBody) == null;
             if (isNotFound) {
                 assertTrue(false, "convert error");
             }

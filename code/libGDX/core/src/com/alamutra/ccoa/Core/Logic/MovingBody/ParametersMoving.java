@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.MovingObjects;
+package com.alamutra.ccoa.Core.Logic.MovingBody;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
@@ -6,7 +6,7 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.TypesInLevel;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.Skins;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
 
 public interface ParametersMoving {
     public void mark(
@@ -22,7 +22,7 @@ public interface ParametersMoving {
 
     public double getTimeTravel(double distance);
 
-    public Skins getSkin();
+    public SkinsCapacitor getSkin();
 
     public TypesInLevel getTypeInLevel();
 

@@ -1,11 +1,11 @@
 package com.alamutra.ccoa.Core.SettingRenderingTasks;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
 
 public interface DataFootprintForRendering {
     public int getIdMovingObject();
-    public Skins getSkin();
+    public SkinsCapacitor getSkin();
     public ParametersMoving getMovingObject();
 
 

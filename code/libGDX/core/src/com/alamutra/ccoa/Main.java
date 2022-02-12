@@ -15,7 +15,7 @@ import com.alamutra.ccoa.Core.Logic.GameTime;
 import com.alamutra.ccoa.Core.Logic.GameTimeClass;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.*;
+import com.alamutra.ccoa.Core.Logic.MovingBody.*;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.PoolDataFootprintForRendering;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.PoolDataFootprintForRenderingClass;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;

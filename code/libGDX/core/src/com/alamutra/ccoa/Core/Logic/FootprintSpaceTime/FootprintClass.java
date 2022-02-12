@@ -1,20 +1,27 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.DataFootprintForRendering;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.Skins;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
 
 public class FootprintClass implements Footprint, DataFootprintForRendering {
     private Position position;
     private double timeToNextFootprint;
     private ParametersMoving parametersMoving;
+    private boolean isLastFootprintInPath = false;
+    private Route route;
 
 
-    public FootprintClass(Position position, double timeToNextFootprint, ParametersMoving parametersMoving) {
+    public FootprintClass(
+            Position position,
+            double timeToNextFootprint,
+            ParametersMoving parametersMoving,
+            Route route) {
+        this.route = route;
         this.position = position;
-        this.timeToNextFootprint = timeToNextFootprint;
+        this.timeToNextFootprint = timeToNextFootprint; //TODO: dubplicate information about time to next footprint
         this.parametersMoving = parametersMoving;
     }
 
@@ -97,10 +104,35 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public Footprint getApproximation(double timeFirst, Footprint second, double timeSecond, double timeApproximation) {
+        assert (second.getIdMovingObject() == this.getIdMovingObject());
+
         Position position =
                 this.getPosition().getApproximation(timeFirst, second.getPosition(), timeSecond, timeApproximation);
+        Route route = new RouteClass();
 
-        return new FootprintClass(position, this.getTimeToNextFootprint(), parametersMoving);
+        double timeToNextFootprint = Math.abs(timeSecond - timeFirst);
+
+        return new FootprintClass(position, timeToNextFootprint, parametersMoving, route); //FIXME getTimeToNextFootprint always constant add tests
+    }
+
+    @Override
+    public Footprint getApproximationWithNextFootprint(double timeApproximation) {
+        NextFootprintAndTimes nextFootprintAndTimes = this.route.getNextFootprint(this);
+
+        boolean isLastFootprint = nextFootprintAndTimes == null;
+        if (isLastFootprint) {
+            return getApproximationFromTimeStanding();
+        }
+        Footprint nextFootprint = nextFootprintAndTimes.getNextFootprint();
+
+
+        double timeNextFootprint = nextFootprintAndTimes.getTimeOfNextFootprint();
+
+
+        double timeThisFootprint = nextFootprintAndTimes.getTimeOfKeyFootprint();
+
+
+        return getApproximation(timeThisFootprint, nextFootprint, timeNextFootprint, timeApproximation);
     }
 
     @Override
@@ -110,7 +142,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
 
     @Override
-    public Skins getSkin() {
+    public SkinsCapacitor getSkin() {
         return this.parametersMoving.getSkin();
     }
 
@@ -133,6 +165,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     public double getRotation() {
         return this.position.getRotation();
     }
+
 
     @Override
     public int getIdMovingObject() {
@@ -158,6 +191,10 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
                 pointCCoA.getX() + theUseCoordinatesPolygon.getX(),
                 pointCCoA.getY() + theUseCoordinatesPolygon.getY()
         );
+    }
+
+    private Footprint getApproximationFromTimeStanding() {
+        return this;
     }
 
     //==== <end> <Private_Methods> =========================================================================

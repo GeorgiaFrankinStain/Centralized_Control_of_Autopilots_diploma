@@ -2,7 +2,7 @@ package com.alamutra.ccoa.Core.Logic.Landscape;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 
 import java.util.List;
 

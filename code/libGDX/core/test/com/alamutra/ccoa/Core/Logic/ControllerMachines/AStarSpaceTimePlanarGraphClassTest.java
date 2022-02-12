@@ -7,7 +7,7 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.*;
+import com.alamutra.ccoa.Core.Logic.MovingBody.*;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 import org.junit.jupiter.api.Test;
 

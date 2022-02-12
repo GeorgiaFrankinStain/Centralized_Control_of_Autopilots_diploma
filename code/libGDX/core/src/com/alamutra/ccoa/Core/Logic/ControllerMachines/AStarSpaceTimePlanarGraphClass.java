@@ -2,9 +2,9 @@ package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.*;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingObjects.PathCCoAClass;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
+import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoAClass;
 
 import java.util.*;
 
@@ -41,7 +41,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
 
         gScopeRealBestKnownDistanceFromStart.put(startNode, 0.0);
 
-        double hevristic = parametersMoving.timeTravel(startNode.getEstimatedDistanceToDestination(destination));
+        double hevristic = parametersMoving.getTimeTravel(startNode.getEstimatedDistanceToDestination(destination));
         double g = 0.0;
         double f = g + hevristic;
         f_score.put(startNode, f);
@@ -89,8 +89,8 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
                         neighbor,
                         currentNode,
                         radiusMovingObject,
-                        parametersMoving.timeTravel(realDistanceFromStartToCurrentNode),
-                        parametersMoving.timeTravel(realDistanceToNeightborFromStartTroughtCurrentNode),
+                        parametersMoving.getTimeTravel(realDistanceFromStartToCurrentNode),
+                        parametersMoving.getTimeTravel(realDistanceToNeightborFromStartTroughtCurrentNode),
                         parametersMoving
                 )) {
                     continue;
@@ -118,7 +118,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
 //                    double g = realDistanceToNeightborFromStartTroughtCurrentNode + neighbor.getEstimatedDistanceToDestination(destination);
                     double score =
                             neighbor.getTimeTravelFromStart()
-                                    + parametersMoving.timeTravel(neighbor.getEstimatedDistanceToDestination(destination));
+                                    + parametersMoving.getTimeTravel(neighbor.getEstimatedDistanceToDestination(destination));
                     f_score.put(neighbor,
                             score);
 
