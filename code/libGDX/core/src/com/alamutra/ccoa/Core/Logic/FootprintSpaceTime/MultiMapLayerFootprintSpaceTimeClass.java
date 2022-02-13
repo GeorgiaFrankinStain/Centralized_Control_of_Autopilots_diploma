@@ -207,7 +207,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
             boolean footprintIndcludeFindTimePoint = startStanding <= timeFind && timeFind < endStanding;
             if (footprintIndcludeFindTimePoint) {
-                resRendringFootpring.add(currentFootprint);
+                Footprint approximationFootprint = currentFootprint.getApproximationWithNextFootprint(timeFind);
+                resRendringFootpring.add(approximationFootprint);
             }
         }
 

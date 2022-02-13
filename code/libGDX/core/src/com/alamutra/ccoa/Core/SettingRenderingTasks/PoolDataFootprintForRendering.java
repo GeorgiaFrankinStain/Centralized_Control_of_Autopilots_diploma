@@ -5,7 +5,7 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import java.util.Iterator;
 
 public interface PoolDataFootprintForRendering {
-    public void fillYourself(PolygonCCoA areaRendering, int gameTime);
+    public void fillYourself(PolygonCCoA areaRendering, double gameTime);
     public DataFootprintForRendering getDataFootprint(int IdObject);
 
 

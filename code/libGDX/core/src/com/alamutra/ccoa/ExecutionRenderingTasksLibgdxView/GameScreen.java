@@ -57,8 +57,9 @@ public class GameScreen implements Screen {
 */
         gameTime.addGameTime(delta);
 
+        System.out.println(gameTime.getGameTime());
 
-        this.poolDataFootprintForRendering.fillYourself(this.getAreaOfRendering(), (int) gameTime.getGameTime());
+        this.poolDataFootprintForRendering.fillYourself(this.getAreaOfRendering(), gameTime.getGameTime());
 
 
         Gdx.gl.glClearColor(255, 255, 255, 1);

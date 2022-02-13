@@ -20,7 +20,7 @@ public class PoolDataFootprintForRenderingClass implements PoolDataFootprintForR
     }
 
     @Override
-    public void fillYourself(PolygonCCoA areaRendering, int currentTime) {
+    public void fillYourself(PolygonCCoA areaRendering, double currentTime) {
 /*      //TODO REALISED
         min
             Complete removal. Create new list.
