@@ -136,4 +136,10 @@ class RoundsCorridorClassTest {
     void isPolygonEntering_corridorSize2Time2_endCorridorEntry() {
         assertTrue(corridorSizeFrom0To2.isCoverPolygon(2.0, polygon2d2Radius1));
     }
+
+
+    @Test
+    void isPolygonEntering_startTunnel() {
+        assertTrue(corridorSizeFrom0To2.isCoverPolygon(2.0, polygon2d2Radius1));
+    }
 }

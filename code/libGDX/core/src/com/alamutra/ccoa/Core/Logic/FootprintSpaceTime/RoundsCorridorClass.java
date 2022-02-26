@@ -1,8 +1,13 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.*;
 
 public class RoundsCorridorClass implements Corridor {
+    private static final Logger LOGGER = LogManager.getLogger(RoundsCorridorClass.class);
+
     private TreeMap<Double, Round> corridor = new TreeMap<Double, Round>();
 
 
@@ -93,6 +98,11 @@ public class RoundsCorridorClass implements Corridor {
                 afterNearestTime = map.ceilingKey(time);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.corridor.toString();
     }
 }
 

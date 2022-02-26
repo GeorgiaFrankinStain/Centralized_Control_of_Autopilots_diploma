@@ -355,7 +355,6 @@ class FootprintClassTest {
         int endIndex = inputString.indexOf("speed");
         String replacement = "-0000000000 ";
         String toBeReplaced = inputString.substring(startIndex + 4, endIndex);
-        System.out.println(inputString.replace(toBeReplaced, replacement));
 
         return "";
     }

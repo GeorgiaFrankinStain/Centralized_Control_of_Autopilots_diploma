@@ -1,5 +1,7 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -10,6 +12,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class PolygonCCoAClass implements PolygonCCoA {
+    private static final Logger LOGGER = LogManager.getLogger(PolygonCCoAClass.class);
+
     private List<PointCCoA> pointCCoAS = new ArrayList<PointCCoA>();
 
 

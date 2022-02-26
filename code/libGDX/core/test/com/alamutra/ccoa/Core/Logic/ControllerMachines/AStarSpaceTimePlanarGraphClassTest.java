@@ -1,20 +1,30 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.*;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
 import com.alamutra.ccoa.Core.Logic.MovingBody.*;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.TreeMap;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class AStarSpaceTimePlanarGraphClassTest {
 
+    private static final Logger LOG = LoggerFactory.getLogger(AStarSpaceTimePlanarGraphClassTest.class);
+
+
     private AlhorithmFastFindPath fastFinderPath = pathCreatedFastFingerPath();
+    private IndexLayer defaultLayer = new IndexLayerClass(0);
+
+    AStarSpaceTimePlanarGraphClassTest() throws СrashIntoAnImpassableObjectExeption {
+    }
 
     private AlhorithmFastFindPath pathCreatedFastFingerPath() {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
@@ -26,9 +36,9 @@ class AStarSpaceTimePlanarGraphClassTest {
         return fastFinderPath;
     }
 
-    private ParametersMoving squareParametersMoving = createSquareMovingObject();
+    private ParametersMoving squareParametersMoving = createSquareParametersMoving();
 
-    private ParametersMoving createSquareMovingObject() {
+    private ParametersMoving createSquareParametersMoving() {
         FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
         ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         return parametersMoving;
@@ -91,6 +101,154 @@ class AStarSpaceTimePlanarGraphClassTest {
             expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 200.0));
 
             assertEquals(expectedPathCCoA, actualPathCCoA);
+        }
+    }
+
+    BoyNextDoorTest aheadBoyNextDoorTest = new BoyNextDoorTestClass();
+
+    @Test
+    void getPath_boyNextDoorAhead_car1EnteringCorridor() {
+        assertTrue(aheadBoyNextDoorTest.isCar1EnteringCorridor());
+    }
+
+    @Test
+    void getPath_boyNextDoorAhead_isCar1StartPointEqualsStartTaskPath() {
+        assertTrue(aheadBoyNextDoorTest.isCar1StartPointEqualsStartTaskPath());
+    }
+
+    @Test
+    void getPath_boyNextDoorAhead_isCar1EndPointEqualsEndTaskPath() {
+        assertTrue(aheadBoyNextDoorTest.isCar1EndPointEqualsEndTaskPath());
+    }
+
+    @Test
+    void getPath_boyNextDoorAhead_car2EnteringCorridor() {
+        assertTrue(aheadBoyNextDoorTest.isCar2EnteringCorridor());
+    }
+
+    @Test
+    void getPath_boyNextDoorAhead_isCar2StartPointEqualsStartTaskPath() {
+        assertTrue(aheadBoyNextDoorTest.isCar2StartPointEqualsStartTaskPath());
+    }
+
+    @Test
+    void getPath_boyNextDoorAhead_isCar2EndPointEqualsEndTaskPath() {
+        assertTrue(aheadBoyNextDoorTest.isCar1EndPointEqualsEndTaskPath());
+    }
+
+
+
+    private interface BoyNextDoorTest {
+        boolean isCar1EnteringCorridor();
+
+        boolean isCar1StartPointEqualsStartTaskPath();
+        boolean isCar1EndPointEqualsEndTaskPath();
+
+        boolean isCar2EnteringCorridor();
+
+        boolean isCar2StartPointEqualsStartTaskPath();
+        boolean isCar2EndPointEqualsEndTaskPath();
+    }
+
+    private class BoyNextDoorTestClass implements BoyNextDoorTest {
+        private ParametersMoving car1 = createSquareParametersMoving();
+        private ParametersMoving car2 = createSquareParametersMoving();
+
+
+        private PointCCoA from1 = new PointCCoAClass(0, 0);
+        private PointCCoA to1 = new PointCCoAClass(0, 200);
+
+
+        private double widthCar = 20;
+        private double withCar = widthCar + GlobalVariable.DOUBLE_COMPARISON_ACCURACY;
+        private PointCCoA aheadOffset = new PointCCoAClass(0, withCar);
+        private PointCCoA fromBoyNextDoor = from1.getDeposeOn(aheadOffset);
+        private PointCCoA toBoyNextDoor = to1.getDeposeOn(aheadOffset);
+
+        private FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
+
+        private PathCCoA actualPathCCoA = fastFinderPath.getPath(
+                from1,
+                to1,
+                car1.getRadius(),
+                car1, timeAddingPath
+        );
+
+        private PathCCoA pathCar2 = createPath2();
+
+        private Corridor corridor = createCorridor1();
+
+        private Corridor corridor2 = createCorridor2();
+
+        public BoyNextDoorTestClass() throws СrashIntoAnImpassableObjectExeption {
+            car1.mark(footprintsSpaceTime, actualPathCCoA, timeAddingPath, defaultLayer);
+            car2.mark(footprintsSpaceTime, pathCar2, timeAddingPath, defaultLayer);
+        }
+
+        @Override
+        public boolean isCar1EnteringCorridor() {
+            return footprintsSpaceTime.isPathMovingObjectEnteringCorridor(car1, corridor, defaultLayer);
+        }
+
+        @Override
+        public boolean isCar1StartPointEqualsStartTaskPath() {
+            PointCCoA startPath = actualPathCCoA.getPoint(0);
+            return from1.equals(startPath);
+        }
+
+        @Override
+        public boolean isCar1EndPointEqualsEndTaskPath() {
+            PointCCoA endPath = actualPathCCoA.getPointLast();
+            return to1.equals(endPath);
+        }
+
+        @Override
+        public boolean isCar2EnteringCorridor() {
+            return footprintsSpaceTime.isPathMovingObjectEnteringCorridor(car2, corridor2, defaultLayer);
+        }
+
+        @Override
+        public boolean isCar2StartPointEqualsStartTaskPath() {
+            PointCCoA startPath2 = pathCar2.getPoint(0);
+            return startPath2.equals(fromBoyNextDoor);
+        }
+
+        @Override
+        public boolean isCar2EndPointEqualsEndTaskPath() {
+            PointCCoA endPath2 = pathCar2.getPointLast();
+            return endPath2.equals(toBoyNextDoor);
+        }
+
+        private PathCCoA createPath2() {
+
+            PathCCoA pathCar2 = fastFinderPath.getPath(
+                    fromBoyNextDoor,
+                    toBoyNextDoor,
+                    car2.getRadius(),
+                    car2,
+                    timeAddingPath
+
+            );
+
+            return pathCar2;
+        }
+
+        private Corridor createCorridor1() {
+            TreeMap<Double, Round> forCorridor = new TreeMap<>();
+            forCorridor.put(-1.0, new RoundClass(from1, car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            forCorridor.put(20.1, new RoundClass(to1, car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            forCorridor.put(Double.MAX_VALUE, new RoundClass(to1, car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            Corridor corridor = new RoundsCorridorClass(forCorridor);
+            return corridor;
+        }
+
+        private Corridor createCorridor2() {
+            TreeMap<Double, Round> forCorridor2 = new TreeMap<>();
+            forCorridor2.put(-1.0, new RoundClass(fromBoyNextDoor, car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            forCorridor2.put(20.1, new RoundClass(toBoyNextDoor, car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            forCorridor2.put(Double.MAX_VALUE, new RoundClass(toBoyNextDoor, car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            Corridor corridor2 = new RoundsCorridorClass(forCorridor2);
+            return corridor2;
         }
     }
 }

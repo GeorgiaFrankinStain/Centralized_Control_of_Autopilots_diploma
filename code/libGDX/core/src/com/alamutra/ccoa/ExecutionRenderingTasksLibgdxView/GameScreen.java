@@ -57,7 +57,6 @@ public class GameScreen implements Screen {
 */
         gameTime.addGameTime(delta);
 
-        System.out.println(gameTime.getGameTime());
 
         this.poolDataFootprintForRendering.fillYourself(this.getAreaOfRendering(), gameTime.getGameTime());
 

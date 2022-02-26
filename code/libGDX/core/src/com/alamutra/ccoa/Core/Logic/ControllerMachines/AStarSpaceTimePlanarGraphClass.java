@@ -26,7 +26,10 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
      * @return
      */
     @Override
-    public PathCCoA getPath(PointCCoA start, PointCCoA destination, double radiusMovingObject, ParametersMoving parametersMoving,
+    public PathCCoA getPath(PointCCoA start,
+                            PointCCoA destination,
+                            double radiusMovingObject, //FIXME duplication arguments
+                            ParametersMoving parametersMoving,
                             double timeAdding) {
 
         Set<Node> closedNodes = new HashSet<Node>();

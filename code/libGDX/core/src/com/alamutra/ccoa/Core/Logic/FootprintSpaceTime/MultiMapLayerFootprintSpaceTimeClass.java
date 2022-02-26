@@ -6,6 +6,8 @@ import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.Wrappers.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,6 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpaceTime {
+    private static final Logger LOGGER = LogManager.getLogger(MultiMapLayerFootprintSpaceTimeClass.class);
 
 
     private MultiMap<Double, Footprint> storageAllFootprints =
@@ -216,23 +219,25 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         return resRendringFootpring;
     }
 
-    private boolean isCorridorMutuallyIncludesPath(Corridor corridor, double timeAdding, Footprint footprint,
-                                                   Footprint secondFootprint,
-                                                   double timeSecondFootprint) {
-        PolygonCCoA occupiedLocation = footprint.getOccupiedLocation();
-        boolean isCorridorCoverVertexPath = corridor.isCoverPolygon(timeSecondFootprint, occupiedLocation);
-        boolean isTunnelCoveredCorridor = isVertexCorridorFromThisTimeDiapasonCoverPath(
-                timeAdding,
-                footprint,
+    private boolean isCorridorMutuallyIncludesVertex(Corridor corridor,
+                                                     double timeStartFootprint, Footprint startFootprint,
+                                                     Footprint secondFootprint, double timeSecondFootprint) {
+        boolean isCorridorCoverStartTunnel = corridor.isCoverPolygon(timeStartFootprint, startFootprint.getOccupiedLocation());
+        PolygonCCoA occupiedSecondLocation = secondFootprint.getOccupiedLocation();
+        boolean isCorridorCoverEndTunnel = corridor.isCoverPolygon(timeSecondFootprint, occupiedSecondLocation);
+        boolean isCorridorCoverTunnelInTimestampsVertexesCorridor = isCorridorCoverTunnelInTimestampsVertexsCorridor(
+                timeStartFootprint,
+                startFootprint,
                 secondFootprint,
                 timeSecondFootprint,
                 corridor
         );
-        return isCorridorCoverVertexPath && isTunnelCoveredCorridor;
+        return isCorridorCoverStartTunnel && isCorridorCoverEndTunnel
+                && isCorridorCoverTunnelInTimestampsVertexesCorridor;
     }
 
 
-    private boolean isVertexCorridorFromThisTimeDiapasonCoverPath(
+    private boolean isCorridorCoverTunnelInTimestampsVertexsCorridor(
             double timeAdding,
             Footprint firstFootprint,
             Footprint secondFootprint,
@@ -370,12 +375,12 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private boolean isCorridorMutuallyIncludesPathThisMachine() {
             prepareDataStartTunnel();
-            boolean isDataPreparedSuccessfully = prepareEndTunnelForCycle();
+            boolean isDataPreparedSuccessfully = prepareEndTunnelForCycle(); //TODO codestyle get and change variation in one function
             if (!isDataPreparedSuccessfully) {
                 return false;
             }
 
-            return isCorridorMutuallyIncludesPath(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
+            return isCorridorMutuallyIncludesVertex(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
         }
 
         private boolean isImitationEndLastTunnelCorridorMutuallyIncludesPathThisMachine() {
@@ -385,7 +390,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
                 return false;
             }
             prepareEndTunnelForLastTunnel();
-            return isCorridorMutuallyIncludesPath(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
+            return isCorridorMutuallyIncludesVertex(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
         }
 
 

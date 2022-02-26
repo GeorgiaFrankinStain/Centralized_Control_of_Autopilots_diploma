@@ -27,6 +27,11 @@ public class PathCCoAClass implements PathCCoA {
     }
 
     @Override
+    public PointCCoA getPointLast() {
+        return this.pointCCoAS.get(pointCCoAS.size() - 1);
+    }
+
+    @Override
     public void addPoint(PointCCoA pointCCoA) {
         this.pointCCoAS.add(pointCCoA.clone());
     }
