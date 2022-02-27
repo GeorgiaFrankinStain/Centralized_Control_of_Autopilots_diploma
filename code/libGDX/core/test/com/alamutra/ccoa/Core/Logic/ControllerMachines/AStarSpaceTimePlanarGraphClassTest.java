@@ -133,7 +133,7 @@ class AStarSpaceTimePlanarGraphClassTest {
 
     @Test
     void getPath_boyNextDoorAhead_isCar2EndPointEqualsEndTaskPath() {
-        assertTrue(aheadBoyNextDoorTest.isCar1EndPointEqualsEndTaskPath());
+        assertTrue(aheadBoyNextDoorTest.isCar2EndPointEqualsEndTaskPath());
     }
 
 
@@ -234,19 +234,21 @@ class AStarSpaceTimePlanarGraphClassTest {
         }
 
         private Corridor createCorridor1() {
+            double diameterCar = car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY;
             TreeMap<Double, Round> forCorridor = new TreeMap<>();
-            forCorridor.put(-1.0, new RoundClass(from1, car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
-            forCorridor.put(20.1, new RoundClass(to1, car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
-            forCorridor.put(Double.MAX_VALUE, new RoundClass(to1, car1.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            forCorridor.put(-1.0, new RoundClass(from1, diameterCar));
+            forCorridor.put(20.1, new RoundClass(to1, diameterCar));
+            forCorridor.put(Double.MAX_VALUE, new RoundClass(to1, diameterCar));
             Corridor corridor = new RoundsCorridorClass(forCorridor);
             return corridor;
         }
 
         private Corridor createCorridor2() {
+            double diameterCar = car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY;
             TreeMap<Double, Round> forCorridor2 = new TreeMap<>();
-            forCorridor2.put(-1.0, new RoundClass(fromBoyNextDoor, car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
-            forCorridor2.put(20.1, new RoundClass(toBoyNextDoor, car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
-            forCorridor2.put(Double.MAX_VALUE, new RoundClass(toBoyNextDoor, car2.getRadius() * 2 + GlobalVariable.DOUBLE_COMPARISON_ACCURACY));
+            forCorridor2.put(-1.0, new RoundClass(fromBoyNextDoor, diameterCar));
+            forCorridor2.put(20.1, new RoundClass(toBoyNextDoor, diameterCar));
+            forCorridor2.put(Double.MAX_VALUE, new RoundClass(toBoyNextDoor, diameterCar));
             Corridor corridor2 = new RoundsCorridorClass(forCorridor2);
             return corridor2;
         }
