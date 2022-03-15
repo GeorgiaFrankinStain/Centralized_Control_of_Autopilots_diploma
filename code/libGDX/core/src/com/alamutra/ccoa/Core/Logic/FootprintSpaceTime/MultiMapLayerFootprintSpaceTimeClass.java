@@ -219,9 +219,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         return resRendringFootpring;
     }
 
-    private boolean isCorridorMutuallyIncludesVertex(Corridor corridor,
-                                                     double timeStartFootprint, Footprint startFootprint,
-                                                     Footprint secondFootprint, double timeSecondFootprint) {
+    private boolean isCorridorCoverTunnel(Corridor corridor,
+                                          double timeStartFootprint, Footprint startFootprint,
+                                          Footprint secondFootprint, double timeSecondFootprint) {
         boolean isCorridorCoverStartTunnel = corridor.isCoverPolygon(timeStartFootprint, startFootprint.getOccupiedLocation());
         PolygonCCoA occupiedSecondLocation = secondFootprint.getOccupiedLocation();
         boolean isCorridorCoverEndTunnel = corridor.isCoverPolygon(timeSecondFootprint, occupiedSecondLocation);
@@ -355,14 +355,14 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         public boolean isPathMovingObjectEnteringCorridor() {
             if (isEnoughFootprintsForCreateFirstTunnel()) {
                 while (isPossibleNextFootprintToTurnInEndTunnel()) {
-                    if (!isCorridorMutuallyIncludesPathThisMachine()) {
+                    if (!isTunnelExistEndCorridorCoverTunnel()) {
                         return false;
                     }
                 }
             }
-            boolean isLastFootprintStandingUntilEndOfTimeMutuallyIncludes =
-                    isImitationEndLastTunnelCorridorMutuallyIncludesPathThisMachine();
-            return isLastFootprintStandingUntilEndOfTimeMutuallyIncludes;
+            boolean isLastFootprintStandingUntilEndOfTimeCovered =
+                    isCorridorCoverImitationEndLastTunnel();
+            return isLastFootprintStandingUntilEndOfTimeCovered;
         }
 
         private boolean isEnoughFootprintsForCreateFirstTunnel() {
@@ -373,24 +373,24 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             return iteratorID.hasNext(parametersMoving);
         }
 
-        private boolean isCorridorMutuallyIncludesPathThisMachine() {
+        private boolean isTunnelExistEndCorridorCoverTunnel() {
             prepareDataStartTunnel();
             boolean isDataPreparedSuccessfully = prepareEndTunnelForCycle(); //TODO codestyle get and change variation in one function
             if (!isDataPreparedSuccessfully) {
                 return false;
             }
 
-            return isCorridorMutuallyIncludesVertex(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
+            return isCorridorCoverTunnel(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
         }
 
-        private boolean isImitationEndLastTunnelCorridorMutuallyIncludesPathThisMachine() {
+        private boolean isCorridorCoverImitationEndLastTunnel() {
             boolean isDataPreparedSuccessfully = prepareDataStartTunnel();
             boolean isThereAreNoFootprintsOfThisMovingObjectAtAll = !isDataPreparedSuccessfully;
             if (isThereAreNoFootprintsOfThisMovingObjectAtAll) {
                 return false;
             }
             prepareEndTunnelForLastTunnel();
-            return isCorridorMutuallyIncludesVertex(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
+            return isCorridorCoverTunnel(corridor, timeStartTunnel, startTunnel, endTunnel, timeEndTunnel);
         }
 
 
