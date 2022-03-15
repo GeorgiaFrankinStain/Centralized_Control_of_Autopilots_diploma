@@ -36,9 +36,6 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         } else {
             this.timeStandingInLastPath = this.MIN_TIME_STANDING;
         }
-        System.out.println(this.MAX_TIME_STANDING);
-        System.out.println(this.MIN_TIME_STANDING);
-        System.out.println("this.timeStandingInLastPath = " + this.timeStandingInLastPath);
 
 
         /**

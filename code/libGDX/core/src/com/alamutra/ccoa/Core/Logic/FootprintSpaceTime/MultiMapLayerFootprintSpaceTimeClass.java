@@ -424,9 +424,6 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
                 timeStartTunnel = timeEndTunnel;
             }
 
-
-            System.out.println("startTunnel: " + startTunnel);
-
             return true;
         }
 
@@ -447,9 +444,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private void prepareEndTunnelForLastTunnel() {
             endTunnel = startTunnel;
-            System.out.println("endTunnel: " + endTunnel);
             timeEndTunnel = timeStartTunnel + startTunnel.getTimeToNextFootprint();
-            System.out.println("startTunnel: " + startTunnel);
         }
     }
 
