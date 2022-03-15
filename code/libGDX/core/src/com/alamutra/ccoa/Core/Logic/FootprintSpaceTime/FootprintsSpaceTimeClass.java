@@ -33,7 +33,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
 
     @Override
-    public void addFootprint(
+    public void addFootprintsPath(
             ParametersMoving parametersMoving,
             PathCCoA pathCCoA,
             double startTime,
@@ -47,7 +47,30 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
         Route route = new RouteClass();
 
-        this.layers.get(indexLayer).addFootprint(
+        this.layers.get(indexLayer).addFootprintsPath(
+                parametersMoving,
+                pathCCoA,
+                startTime,
+                route
+        );
+    }
+
+    @Override
+    public void addFootprintsPathWithoutEndStandingUntilEndTime(
+            ParametersMoving parametersMoving,
+            PathCCoA pathCCoA,
+            double startTime,
+            IndexLayer indexLayer) throws СrashIntoAnImpassableObjectExeption {
+
+        LayerFootprintSpaceTime layerFootprintSpaceTime =
+                this.layers.get(indexLayer);
+        if (layerFootprintSpaceTime == null) {
+            this.addLayer(indexLayer);
+        }
+
+        Route route = new RouteClass();
+
+        this.layers.get(indexLayer).addFootprintsPathWithoutEndStandingUntilEndTime(
                 parametersMoving,
                 pathCCoA,
                 startTime,

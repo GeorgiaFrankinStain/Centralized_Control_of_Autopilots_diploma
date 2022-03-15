@@ -31,6 +31,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             new PointCCoAClass(0, 900)
     }));
 
+    @Test
+    void addFootprintsPathWithoutEndStandingUntilEndTime() {
+    }
+
 
     private class TestedFootprintSpaceTime {
         private FootprintsSpaceTime localFootprintsSpaceTime = new FootprintsSpaceTimeClass();

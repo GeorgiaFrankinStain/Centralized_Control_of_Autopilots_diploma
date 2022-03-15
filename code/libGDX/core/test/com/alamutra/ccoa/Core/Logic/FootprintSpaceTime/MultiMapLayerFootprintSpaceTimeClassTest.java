@@ -209,7 +209,6 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
         return corridor;
     }
 
-
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1ToEndOfTime()
             throws СrashIntoAnImpassableObjectExeption {
@@ -225,6 +224,42 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
                 squareMoving,
                 tunnel1CorridorY0to20ToEndOfTime,
                 defaultLevel)
+        );
+    }
+
+
+
+    private Corridor tunnel1CorridorY0to20WithoutStandingUntilEndTime = tunnel1Corridor();
+
+    private Corridor tunnel1Corridor() {
+        TreeMap<Double, Round> corridorMap = new TreeMap<>();
+        corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
+        corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 20), 30));
+        corridorMap.put(
+                2.0 + CreatorMarksOfPathClass.MIN_TIME_STANDING,
+                new RoundClass(new PointCCoAClass(0, 20), 30)
+        );
+
+        Corridor corridor = new RoundsCorridorClass(corridorMap);
+        return corridor;
+    }
+
+    @Test
+    void addFootprintsPathWithoutEndStandingUntilEndTime_tunnel1ToEndOfTime()
+            throws СrashIntoAnImpassableObjectExeption {
+        PathCCoA pathCCoA = new PathCCoAClass();
+        pathCCoA.addPoint(new PointCCoAClass(0, 0));
+        pathCCoA.addPoint(new PointCCoAClass(0, 20));
+
+
+        FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
+        squareMoving.markWithoutStandingUntilEndTime(footprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
+
+        boolean res = footprintsSpaceTime.isPathMovingObjectEnteringCorridor(
+                squareMoving,
+                tunnel1CorridorY0to20WithoutStandingUntilEndTime,
+                defaultLevel);
+        assertTrue(res
         );
     }
 
@@ -506,5 +541,6 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     void testGetIsSeatTaken_TopBorderIsTaken() {
 
     }
+
     //FIXME add test on idMovingObject. Different movingObjects with same id are included in the same corridor.
 }

@@ -15,17 +15,27 @@ public interface FootprintsSpaceTime {
             double time,
             IndexLayer indexLayer
     );
+
     public List<Footprint> getRenderingFootprintsFromWhenDefaultLayer(
             PolygonCCoA areaFind,
             double time
     );
 
-    public void addFootprint(
+    public void addFootprintsPath(
             ParametersMoving parametersMoving,
             PathCCoA pathCCoA,
             double startTime,
             IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption;
+
+
+    public void addFootprintsPathWithoutEndStandingUntilEndTime(
+            ParametersMoving parametersMoving,
+            PathCCoA pathCCoA,
+            double startTime,
+            IndexLayer indexLayer
+    ) throws СrashIntoAnImpassableObjectExeption;
+
 
     public void addFootprint(
             Footprint footprint,

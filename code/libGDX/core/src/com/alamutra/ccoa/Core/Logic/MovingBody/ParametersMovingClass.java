@@ -41,7 +41,23 @@ public class ParametersMovingClass implements ParametersMoving {
     ) throws СrashIntoAnImpassableObjectExeption {
         assert (indexLayer != null);
 
-        footprintsSpaceTime.addFootprint(
+        footprintsSpaceTime.addFootprintsPath(
+                this,
+                pathCCoA,
+                timeAdding,
+                indexLayer
+        );
+    }
+
+    @Override
+    public void markWithoutStandingUntilEndTime(
+            FootprintsSpaceTime footprintsSpaceTime,
+            PathCCoA pathCCoA,
+            double timeAdding,
+            IndexLayer indexLayer) throws СrashIntoAnImpassableObjectExeption {
+        assert (indexLayer != null);
+
+        footprintsSpaceTime.addFootprintsPathWithoutEndStandingUntilEndTime(
                 this,
                 pathCCoA,
                 timeAdding,

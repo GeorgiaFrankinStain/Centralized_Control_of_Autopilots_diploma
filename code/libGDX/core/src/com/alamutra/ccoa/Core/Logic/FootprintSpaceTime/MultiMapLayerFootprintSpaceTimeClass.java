@@ -54,14 +54,25 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
     @Override
-    public void addFootprint(
+    public void addFootprintsPath(
             ParametersMoving parametersMoving,
             PathCCoA pathCCoA,
             double startTime,
             Route route
     ) throws СrashIntoAnImpassableObjectExeption {
         CreatorMarksOfPath creatorMarksOfPath =
-                new CreatorMarksOfPathClass(this, parametersMoving, route);
+                new CreatorMarksOfPathClass(this, parametersMoving, route, true);
+        creatorMarksOfPath.addFootprint(pathCCoA, startTime);
+    }
+
+    @Override
+    public void addFootprintsPathWithoutEndStandingUntilEndTime(
+            ParametersMoving parametersMoving,
+            PathCCoA pathCCoA,
+            double startTime,
+            Route route) throws СrashIntoAnImpassableObjectExeption {
+        CreatorMarksOfPath creatorMarksOfPath =
+                new CreatorMarksOfPathClass(this, parametersMoving, route, false);
         creatorMarksOfPath.addFootprint(pathCCoA, startTime);
     }
 
@@ -413,6 +424,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
                 timeStartTunnel = timeEndTunnel;
             }
 
+
+            System.out.println("startTunnel: " + startTunnel);
+
             return true;
         }
 
@@ -433,7 +447,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private void prepareEndTunnelForLastTunnel() {
             endTunnel = startTunnel;
+            System.out.println("endTunnel: " + endTunnel);
             timeEndTunnel = timeStartTunnel + startTunnel.getTimeToNextFootprint();
+            System.out.println("startTunnel: " + startTunnel);
         }
     }
 

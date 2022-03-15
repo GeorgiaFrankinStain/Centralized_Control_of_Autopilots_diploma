@@ -16,6 +16,13 @@ public interface ParametersMoving {
             IndexLayer indexLayer
     ) throws СrashIntoAnImpassableObjectExeption;
 
+    public void markWithoutStandingUntilEndTime(
+            FootprintsSpaceTime footprintsSpaceTime,
+            PathCCoA pathCCoA,
+            double timeAdding,
+            IndexLayer indexLayer
+    ) throws СrashIntoAnImpassableObjectExeption;
+
     public PolygonCCoA getShape();
 
     public double getSpeed();

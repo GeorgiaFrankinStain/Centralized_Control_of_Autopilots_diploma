@@ -9,6 +9,8 @@ import com.alamutra.ccoa.Core.Logic.Position;
 
 public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
+    final public static double MIN_TIME_STANDING = Double.MIN_VALUE;
+    private double timeStandingInLastPath;
     private LayerFootprintSpaceTime footprintsSpaceTime;
     private ParametersMoving parametersMoving;
     private Route route;
@@ -22,11 +24,21 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     public CreatorMarksOfPathClass(
             LayerFootprintSpaceTime footprintsSpaceTime,
             ParametersMoving parametersMoving,
-            Route route
+            Route route,
+            boolean isStandingTimeEndPathIsUntilEndTime
     ) {
         this.footprintsSpaceTime = footprintsSpaceTime;
         this.parametersMoving = parametersMoving;
         this.route = route;
+
+        if (isStandingTimeEndPathIsUntilEndTime) {
+            this.timeStandingInLastPath = this.MAX_TIME_STANDING;
+        } else {
+            this.timeStandingInLastPath = this.MIN_TIME_STANDING;
+        }
+        System.out.println(this.MAX_TIME_STANDING);
+        System.out.println(this.MIN_TIME_STANDING);
+        System.out.println("this.timeStandingInLastPath = " + this.timeStandingInLastPath);
 
 
         /**
@@ -49,7 +61,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     ) throws СrashIntoAnImpassableObjectExeption {
 
         try {
-            addFootprinsBasedOnThePath(pathCCoA, startTime);
+            addFootprintsBasedOnThePath(pathCCoA, startTime);
         } catch (СrashIntoAnImpassableObjectExeption ex) {
             setTheStandingTimeUntilTheEndOfTimeInCaseOfAnAccident();
             throw new СrashIntoAnImpassableObjectExeption();
@@ -64,7 +76,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         }
     }
 
-    private void addFootprinsBasedOnThePath(
+    private void addFootprintsBasedOnThePath(
             PathCCoA pathCCoA,
             double startTime
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -78,16 +90,17 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             this.addFootprint(
                     position,
                     timeAdding,
-                    this.MAX_TIME_STANDING
+                    this.timeStandingInLastPath
             );
         } else {
-            timeAdding += processingCreateFootprintsOnRouteStraightLineFromPairPoints(pathCCoA, timeAdding);
+            timeAdding += processingCreateFootprintsOnRouteStraightLinesFromPairsPoints(pathCCoA, timeAdding);
             //FIXME ADD_TEST BAG += equals on result = (add sumTime equal on result adding positionTime)
-            processingCreateFoorprintEndRouteFromSinglePoint(pathCCoA, timeAdding);
+            processingCreateFootprintEndRouteFromSinglePoint(pathCCoA, timeAdding);
         }
     }
 
-    private double processingCreateFootprintsOnRouteStraightLineFromPairPoints(
+
+    private double processingCreateFootprintsOnRouteStraightLinesFromPairsPoints(
             PathCCoA pathCCoA,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -132,7 +145,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
      * @param timeAdding
      * @throws СrashIntoAnImpassableObjectExeption
      */
-    private void processingCreateFoorprintEndRouteFromSinglePoint(
+    private void processingCreateFootprintEndRouteFromSinglePoint(
             PathCCoA pathCCoA,
             double timeAdding
     ) throws СrashIntoAnImpassableObjectExeption {
@@ -144,7 +157,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         this.addFootprint(
                 position,
                 timeAdding,
-                this.MAX_TIME_STANDING
+                this.timeStandingInLastPath
         );
     }
 

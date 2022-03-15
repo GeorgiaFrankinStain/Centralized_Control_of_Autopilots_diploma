@@ -12,12 +12,22 @@ public interface LayerFootprintSpaceTime {
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonCCoA areaFind, double time);
 
 
-    public void addFootprint(
+    public void addFootprintsPath(
             ParametersMoving parametersMoving,
             PathCCoA pathCCoA,
             double startTime,
             Route route
     ) throws СrashIntoAnImpassableObjectExeption;
+
+
+    public void addFootprintsPathWithoutEndStandingUntilEndTime(
+            ParametersMoving parametersMoving,
+            PathCCoA pathCCoA,
+            double startTime,
+            Route route
+    ) throws СrashIntoAnImpassableObjectExeption;
+
+
 
     public void addFootprint(
             ParametersMoving parametersMoving,
