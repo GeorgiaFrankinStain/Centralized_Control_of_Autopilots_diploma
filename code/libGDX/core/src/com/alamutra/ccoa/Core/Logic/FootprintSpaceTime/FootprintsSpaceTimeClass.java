@@ -1,9 +1,9 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 
@@ -31,14 +31,13 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         return this.getRenderingFootprintsFromWhen(areaFind, time, this.defaultIndexLayer);
     }
 
-
     @Override
     public void addFootprintsPath(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             PathCCoA pathCCoA,
             double startTime,
             IndexLayer indexLayer
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
@@ -48,7 +47,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         Route route = new RouteClass();
 
         this.layers.get(indexLayer).addFootprintsPath(
-                parametersMoving,
+                parametersMovingUnique,
                 pathCCoA,
                 startTime,
                 route
@@ -57,10 +56,10 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
 
     @Override
     public void addFootprintsPathWithoutEndStandingUntilEndTime(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             PathCCoA pathCCoA,
             double startTime,
-            IndexLayer indexLayer) throws СrashIntoAnImpassableObjectExeption {
+            IndexLayer indexLayer) throws СrashIntoAnImpassableObjectException {
 
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
@@ -71,7 +70,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         Route route = new RouteClass();
 
         this.layers.get(indexLayer).addFootprintsPathWithoutEndStandingUntilEndTime(
-                parametersMoving,
+                parametersMovingUnique,
                 pathCCoA,
                 startTime,
                 route
@@ -84,7 +83,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
             Footprint footprint,
             double time,
             IndexLayer indexLayer
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
         if (layerFootprintSpaceTime == null) {
@@ -124,7 +123,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     }
 
     @Override
-    public boolean isPathMovingObjectEnteringCorridor(ParametersMoving parametersMoving, Corridor corridor, IndexLayer indexLayer) {
+    public boolean isPathMovingObjectEnteringCorridor(ParametersMovingUnique parametersMovingUnique, Corridor corridor, IndexLayer indexLayer) {
 
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
@@ -132,7 +131,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
             return false;
         }
 
-        return layerFootprintSpaceTime.isPathMovingObjectEnteringCorridor(parametersMoving, corridor);
+        return layerFootprintSpaceTime.isPathMovingObjectEnteringCorridor(parametersMovingUnique, corridor);
     }
 
     @Override
@@ -172,14 +171,14 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     }
 
     @Override
-    public Position getPositionInDefaultLevel(ParametersMoving parametersMovingWithID, double time) {
+    public Position getPositionInDefaultLevel(ParametersMovingUnique parametersMovingUniqueWithID, double time) {
         //FIXME one machine with some ID in one moment time
         LayerFootprintSpaceTime layerFootprintSpaceTime = this.layers.get(new IndexLayerClass(0));
         if (layerFootprintSpaceTime == null) {
             return null;
         }
 
-        return layerFootprintSpaceTime.getPosition(parametersMovingWithID, time);
+        return layerFootprintSpaceTime.getPosition(parametersMovingUniqueWithID, time);
     }
 
 

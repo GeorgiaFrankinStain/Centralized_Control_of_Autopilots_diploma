@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ParametersMovingClassTest {
+class ParametersMovingUniqueClassTest {
 
     @Test
     void getShape_allPointsOfShapeAreVectorsFromCoordinateApplicationPointQuarter1() {
@@ -17,7 +17,7 @@ class ParametersMovingClassTest {
         inputFormMachine.addPoint(new PointCCoAClass(0, 10));
         inputFormMachine.addPoint(new PointCCoAClass(10, 10));
         inputFormMachine.addPoint(new PointCCoAClass(10, 0));
-        ParametersMoving parametersMoving = new ParametersMovingClass(10, inputFormMachine, TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(10, inputFormMachine, TypeMachinesBody.TEST_SQUARE_20);
 
         PolygonCCoA expectedShapeMachine = new PolygonCCoAClass();
         expectedShapeMachine.addPoint(new PointCCoAClass(-5, -5));
@@ -25,7 +25,7 @@ class ParametersMovingClassTest {
         expectedShapeMachine.addPoint(new PointCCoAClass(5, 5));
         expectedShapeMachine.addPoint(new PointCCoAClass(5, -5));
 
-        PolygonCCoA actualShape = parametersMoving.getShape();
+        PolygonCCoA actualShape = parametersMovingUnique.getShape();
         assertEquals(expectedShapeMachine, actualShape);
     }
     @Test
@@ -35,9 +35,9 @@ class ParametersMovingClassTest {
         expectedShapeMachine.addPoint(new PointCCoAClass(-5, 5));
         expectedShapeMachine.addPoint(new PointCCoAClass(5, 5));
         expectedShapeMachine.addPoint(new PointCCoAClass(5, -5));
-        ParametersMoving parametersMoving = new ParametersMovingClass(10, expectedShapeMachine, TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(10, expectedShapeMachine, TypeMachinesBody.TEST_SQUARE_20);
 
-        PolygonCCoA actualShape = parametersMoving.getShape();
+        PolygonCCoA actualShape = parametersMovingUnique.getShape();
         assertEquals(expectedShapeMachine, actualShape);
     }
 
@@ -48,9 +48,9 @@ class ParametersMovingClassTest {
         shape.addPoint(new PointCCoAClass(0, 1));
         shape.addPoint(new PointCCoAClass(1, 0));
         double expectedSpeed = 10;
-        ParametersMoving parametersMoving = new ParametersMovingClass(expectedSpeed, shape, TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(expectedSpeed, shape, TypeMachinesBody.TEST_SQUARE_20);
 
-        double actualSpeed = parametersMoving.getSpeed();
+        double actualSpeed = parametersMovingUnique.getSpeed();
         assertEquals(expectedSpeed, actualSpeed);
     }
 }

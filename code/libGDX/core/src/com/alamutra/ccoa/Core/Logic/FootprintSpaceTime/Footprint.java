@@ -1,6 +1,6 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.Position;
 
 public interface Footprint {
@@ -16,7 +16,7 @@ public interface Footprint {
 
     public Footprint getApproximationWithNextFootprint(double timeApproximation);
 
-    public ParametersMoving getMovingObject();
+    public ParametersMovingUnique getMovingObject();
 
     public void setTimeToNextFootprint(double newTimeStanding);
 

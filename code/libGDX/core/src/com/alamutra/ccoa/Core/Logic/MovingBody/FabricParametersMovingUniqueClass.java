@@ -5,19 +5,19 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoAClass;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 
-public class FabricParametersMovingClass implements FabricParametersMoving {
+public class FabricParametersMovingUniqueClass implements FabricParametersMovingUnique {
     @Override
-    public ParametersMoving getMoving(TypeMachinesBody typeMachinesBody) {
+    public ParametersMovingUnique getMoving(TypeMachinesBody typeMachinesBody) {
 
-        BuilderParametersMoving builder = this.getBuilderMoving(typeMachinesBody);
+        BuilderParametersMovingUnique builder = this.getBuilderMoving(typeMachinesBody);
 
-        ParametersMoving parametersMoving = builder.getParametersMoving();
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
 
-        return parametersMoving;
+        return parametersMovingUnique;
     }
 
     @Override
-    public BuilderParametersMoving getBuilderMoving(TypeMachinesBody typeMachinesBody) {
+    public BuilderParametersMovingUnique getBuilderMoving(TypeMachinesBody typeMachinesBody) {
 
         if (typeMachinesBody == TypeMachinesBody.TEST_SQUARE_20) {
             PolygonCCoA formMachine = new PolygonCCoAClass();
@@ -27,7 +27,7 @@ public class FabricParametersMovingClass implements FabricParametersMoving {
             formMachine.addPoint(new PointCCoAClass(0, 20));
 
 
-            BuilderParametersMoving builder = new BuilderParametersMovingClass();
+            BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
             builder.setSpeed(10); //~=40 kilometr / hour
             builder.setShape(formMachine);
             builder.setTypeMachinesBody(typeMachinesBody);
@@ -42,7 +42,7 @@ public class FabricParametersMovingClass implements FabricParametersMoving {
             formMachine.addPoint(new PointCCoAClass(0, 50));
 
 
-            BuilderParametersMoving builder = new BuilderParametersMovingClass();
+            BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
             builder.setSpeed(0);
             builder.setShape(formMachine);
             builder.setTypeMachinesBody(typeMachinesBody);
@@ -57,7 +57,7 @@ public class FabricParametersMovingClass implements FabricParametersMoving {
             formMachine.addPoint(new PointCCoAClass(50, 50));
             formMachine.addPoint(new PointCCoAClass(0, 50));
 
-            BuilderParametersMoving builder = new BuilderParametersMovingClass();
+            BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
             builder.setSpeed(0);
             builder.setShape(formMachine);
             builder.setTypeMachinesBody(typeMachinesBody);

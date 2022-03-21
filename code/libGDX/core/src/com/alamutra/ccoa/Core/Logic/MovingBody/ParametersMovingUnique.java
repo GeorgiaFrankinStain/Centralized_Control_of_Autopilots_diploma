@@ -7,8 +7,9 @@ import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.TypesInLevel;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 
-public interface ParametersMoving {
+public interface ParametersMovingUnique {
     public void mark(
             FootprintsSpaceTime footprintsSpaceTime,
             PathCCoA pathCCoA,
@@ -33,6 +34,8 @@ public interface ParametersMoving {
 
     public TypesInLevel getTypeInLevel();
 
+    public TypeMachinesBody getTypeMachinesBody();
+
     public double getLengthStep();
 
     public PointCCoA getPointWhereCoordinatesAreApplied();
@@ -42,4 +45,6 @@ public interface ParametersMoving {
     public PointCCoA getVectorFromTopLeftToAppliedCoordinates();
 
     public String toString();
+
+    public int getID();
 }

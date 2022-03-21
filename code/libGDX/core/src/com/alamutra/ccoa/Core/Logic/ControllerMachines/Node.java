@@ -1,12 +1,12 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 
 import java.util.List;
 
 public interface Node {
-    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMoving parametersMoving);
+    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMovingUnique parametersMovingUnique);
 
     public double getCoveredDistanceFrom(PointCCoA from);
 

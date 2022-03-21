@@ -1,7 +1,7 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.*;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
@@ -23,7 +23,7 @@ class AStarSpaceTimePlanarGraphClassTest {
     private AlhorithmFastFindPath fastFinderPath = pathCreatedFastFingerPath();
     private IndexLayer defaultLayer = new IndexLayerClass(0);
 
-    AStarSpaceTimePlanarGraphClassTest() throws СrashIntoAnImpassableObjectExeption {
+    AStarSpaceTimePlanarGraphClassTest() throws СrashIntoAnImpassableObjectException {
     }
 
     private AlhorithmFastFindPath pathCreatedFastFingerPath() {
@@ -36,19 +36,19 @@ class AStarSpaceTimePlanarGraphClassTest {
         return fastFinderPath;
     }
 
-    private ParametersMoving squareParametersMoving = createSquareParametersMoving();
+    private ParametersMovingUnique squareParametersMovingUnique = createSquareParametersMoving();
 
-    private ParametersMoving createSquareParametersMoving() {
-        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-        ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-        return parametersMoving;
+    private ParametersMovingUnique createSquareParametersMoving() {
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        return parametersMovingUnique;
     }
 
     private double timeAddingPath = 0.0;
     ;
 
     @Test
-    public void getPath_gorizontal() throws СrashIntoAnImpassableObjectExeption {
+    public void getPath_gorizontal() throws СrashIntoAnImpassableObjectException {
         IndexLayer defaultIndexLayer = new IndexLayerClass(0);
         {
 
@@ -56,7 +56,7 @@ class AStarSpaceTimePlanarGraphClassTest {
             PointCCoA from = new PointCCoAClass(0, 0);
             PointCCoA to = new PointCCoAClass(100, 0);
 
-            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
+            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMovingUnique.getRadius(), squareParametersMovingUnique, timeAddingPath);
 
             PathCCoA expectedPathCCoA = new PathCCoAClass();
             expectedPathCCoA.addPoint(new PointCCoAClass(0.0, 0.0));
@@ -71,21 +71,21 @@ class AStarSpaceTimePlanarGraphClassTest {
     }
 
     @Test
-    public void getPath_vertical() throws СrashIntoAnImpassableObjectExeption {
+    public void getPath_vertical() throws СrashIntoAnImpassableObjectException {
         {
 
-            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+            FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
 
             IndexLayer indexLayer = new IndexLayerClass(0);
 
 
-            ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
+            ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
 
 
             PointCCoA from = new PointCCoAClass(60, 0);
             PointCCoA to = new PointCCoAClass(60, 200);
 
-            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMoving.getRadius(), squareParametersMoving, timeAddingPath);
+            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMovingUnique.getRadius(), squareParametersMovingUnique, timeAddingPath);
 
             PathCCoA expectedPathCCoA = new PathCCoAClass();
             expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 0.0));
@@ -151,8 +151,8 @@ class AStarSpaceTimePlanarGraphClassTest {
     }
 
     private class BoyNextDoorTestClass implements BoyNextDoorTest {
-        private ParametersMoving car1 = createSquareParametersMoving();
-        private ParametersMoving car2 = createSquareParametersMoving();
+        private ParametersMovingUnique car1 = createSquareParametersMoving();
+        private ParametersMovingUnique car2 = createSquareParametersMoving();
 
 
         private PointCCoA from1 = new PointCCoAClass(0, 0);
@@ -180,7 +180,7 @@ class AStarSpaceTimePlanarGraphClassTest {
 
         private Corridor corridor2 = createCorridor2();
 
-        public BoyNextDoorTestClass() throws СrashIntoAnImpassableObjectExeption {
+        public BoyNextDoorTestClass() throws СrashIntoAnImpassableObjectException {
             car1.mark(footprintsSpaceTime, actualPathCCoA, timeAddingPath, defaultLayer);
             car2.mark(footprintsSpaceTime, pathCar2, timeAddingPath, defaultLayer);
         }

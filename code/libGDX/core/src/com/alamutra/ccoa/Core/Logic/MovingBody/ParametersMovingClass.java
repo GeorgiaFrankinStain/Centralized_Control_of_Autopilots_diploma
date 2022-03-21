@@ -1,36 +1,41 @@
 package com.alamutra.ccoa.Core.Logic.MovingBody;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoAClass;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.TypesInLevel;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
-import com.alamutra.ccoa.Core.Wrappers.RandomWrapperClass;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ParametersMovingClass implements ParametersMoving {
+    private static final Logger LOGGER = LogManager.getLogger(ParametersMovingClass.class);
 
-    private int id;
+    private double speed;
     private PolygonCCoA polygonCCoA;
     private TypeMachinesBody typeMachinesBody;
-    private double speed;
-    private TypesInLevel typeInLevel = TypesInLevel.OBJECT;
+
+    private ParametersMovingUnique parametersMovingUnique;
 
     public ParametersMovingClass(double speed, PolygonCCoA polygonCCoA, TypeMachinesBody typeMachinesBody) {
-        testCorrectnessIncomingData(speed, polygonCCoA);
-        this.id = new RandomWrapperClass(835).nextInt();
-        this.polygonCCoA = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonCCoA);
-        this.typeMachinesBody = typeMachinesBody;
         this.speed = speed;
-    }
-    public ParametersMovingClass(PolygonCCoA polygonCCoA, TypeMachinesBody typeMachinesBody, int movingObject) {
-        this.id = movingObject;
-        this.polygonCCoA = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonCCoA);
+        this.polygonCCoA = polygonCCoA;
         this.typeMachinesBody = typeMachinesBody;
+
+        updateUniqueParametersMoving();
     }
 
+    public ParametersMovingClass(ParametersMovingUnique parametersMovingUnique) {
+        this.speed = parametersMovingUnique.getSpeed();
+        this.polygonCCoA = parametersMovingUnique.getShape();
+        this.typeMachinesBody = parametersMovingUnique.getTypeMachinesBody();
+
+        updateUniqueParametersMoving();
+    }
 
     @Override
     public void mark(
@@ -38,15 +43,10 @@ public class ParametersMovingClass implements ParametersMoving {
             PathCCoA pathCCoA,
             double timeAdding,
             IndexLayer indexLayer
-    ) throws СrashIntoAnImpassableObjectExeption {
-        assert (indexLayer != null);
-
-        footprintsSpaceTime.addFootprintsPath(
-                this,
-                pathCCoA,
-                timeAdding,
-                indexLayer
-        );
+    ) throws СrashIntoAnImpassableObjectException {
+        LOGGER.debug("noUnique mark {}", this.parametersMovingUnique);
+        this.parametersMovingUnique.mark(footprintsSpaceTime, pathCCoA, timeAdding, indexLayer);
+        updateUniqueParametersMoving();
     }
 
     @Override
@@ -54,119 +54,68 @@ public class ParametersMovingClass implements ParametersMoving {
             FootprintsSpaceTime footprintsSpaceTime,
             PathCCoA pathCCoA,
             double timeAdding,
-            IndexLayer indexLayer) throws СrashIntoAnImpassableObjectExeption {
-        assert (indexLayer != null);
-
-        footprintsSpaceTime.addFootprintsPathWithoutEndStandingUntilEndTime(
-                this,
+            IndexLayer indexLayer
+    ) throws СrashIntoAnImpassableObjectException {
+        LOGGER.debug("noUnique markWithoutStandingUntilEndTime {}", this.parametersMovingUnique);
+        this.parametersMovingUnique.markWithoutStandingUntilEndTime(
+                footprintsSpaceTime,
                 pathCCoA,
                 timeAdding,
                 indexLayer
         );
-    }
-
-    @Override
-    public String toString() {
-        return "type: " + this.getSkin() + " id: " + this.getID() + " speed: " + this.getSpeed();
+        updateUniqueParametersMoving();
     }
 
     @Override
     public PolygonCCoA getShape() {
-        return this.polygonCCoA;
+        return this.parametersMovingUnique.getShape();
     }
 
     @Override
     public double getSpeed() {
-        return this.speed;
+        return this.parametersMovingUnique.getSpeed();
     }
-
-
 
     @Override
     public double getTimeTravel(double distance) {
-        return distance / this.getSpeed();
+        return this.parametersMovingUnique.getTimeTravel(distance);
     }
-
 
     @Override
     public SkinsCapacitor getSkin() {
-        return SkinsCapacitor.convertFrom(this.typeMachinesBody);
-    }
-
-    @Override
-    public int getID() {
-        return this.id;
+        return this.parametersMovingUnique.getSkin();
     }
 
     @Override
     public TypesInLevel getTypeInLevel() {
-        return typeInLevel;
+        return this.parametersMovingUnique.getTypeInLevel();
     }
 
     @Override
     public double getLengthStep() {
-        double maxCoordinatX = Double.MIN_VALUE;
-
-        for (int i = 0; i < this.polygonCCoA.getCountPoints(); i++) {
-            PointCCoA currentPointCCoA = this.polygonCCoA.getPoint(i);
-
-            if (currentPointCCoA.getX() > maxCoordinatX) {
-                maxCoordinatX = currentPointCCoA.getX();
-            }
-        }
-
-        return maxCoordinatX;
-    }
-
-    private PointCCoA getCenterMovingObject() {
-        return this.getShape().getCenterAverage();
+        return this.parametersMovingUnique.getLengthStep();
     }
 
     @Override
     public PointCCoA getPointWhereCoordinatesAreApplied() {
-        return this.getCenterMovingObject();
+        return this.parametersMovingUnique.getPointWhereCoordinatesAreApplied();
     }
 
     @Override
-    public double getRadius() { //FIXME ADD TEST NOW
-        PointCCoA center = this.getPointWhereCoordinatesAreApplied();
-
-        PolygonCCoA polygonCCoA = this.getShape();
-
-        double maxRadius = Double.MIN_VALUE;
-
-        for (int i = 0; i < polygonCCoA.getCountPoints(); i++) {
-            double currentRadius = polygonCCoA.getPoint(i).getDistanceToPoint(center);
-            if (currentRadius > maxRadius) {
-                maxRadius = currentRadius;
-            }
-        }
-        return maxRadius;
+    public double getRadius() {
+        return this.parametersMovingUnique.getRadius();
     }
 
     @Override
     public PointCCoA getVectorFromTopLeftToAppliedCoordinates() {
-        PointCCoA fristPointCCoA = this.getShape().getPoint(0); //FIXME finding
-        return this.getPointWhereCoordinatesAreApplied().getVector(fristPointCCoA);
-    }
-    //==== <start> <Getter_and_Setter> ==================================================
-
-
-    //==== <end> <Getter_and_Setter> ==================================================
-
-    private PolygonCCoA renderingShapeAreVectorsFromCoordinateApplicationPoints(PolygonCCoA polygon) {
-        polygon.deposeOn(polygon.getCenterAverage().getInversion());
-        return polygon;
+        return this.parametersMovingUnique.getVectorFromTopLeftToAppliedCoordinates();
     }
 
-    private void testCorrectnessIncomingData(double speed, PolygonCCoA shape) {
-        if (speed < 0) {
-            throw new IllegalArgumentException("speed is negative");
-        }
-
-        if (shape.getCountPoints() < 3) {
-            throw new IllegalArgumentException("the area of the shape is 0");
-        }
+    private void updateUniqueParametersMoving() {
+        this.parametersMovingUnique = new ParametersMovingUniqueClass(
+                this.speed,
+                this.polygonCCoA.clone(),
+                this.typeMachinesBody
+        );
     }
 }
-

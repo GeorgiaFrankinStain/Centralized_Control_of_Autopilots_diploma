@@ -1,6 +1,6 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object with speed 0
 
-    FootprintsSpaceTimeClassTest() throws СrashIntoAnImpassableObjectExeption {
+    FootprintsSpaceTimeClassTest() throws СrashIntoAnImpassableObjectException {
     }
 
 
@@ -39,14 +39,14 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     private class TestedFootprintSpaceTime {
         private FootprintsSpaceTime localFootprintsSpaceTime = new FootprintsSpaceTimeClass();
         private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
-        private ParametersMoving passengerCar;
-        private ParametersMoving wallCar;
+        private ParametersMovingUnique passengerCar;
+        private ParametersMovingUnique wallCar;
         private Footprint wallCarFootprint;
 
         private PathCCoA wallPathCCoA;
         private PathCCoA carPathCCoA;
 
-        public TestedFootprintSpaceTime(PathCCoA wallPathCCoA, PathCCoA carPathCCoA) throws СrashIntoAnImpassableObjectExeption {
+        public TestedFootprintSpaceTime(PathCCoA wallPathCCoA, PathCCoA carPathCCoA) throws СrashIntoAnImpassableObjectException {
             this.wallPathCCoA = wallPathCCoA;
             this.carPathCCoA = carPathCCoA;
 
@@ -55,7 +55,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             wallCarFootprintCreatePrivateVariable();
         }
 
-        public TestedFootprintSpaceTime() throws СrashIntoAnImpassableObjectExeption {
+        public TestedFootprintSpaceTime() throws СrashIntoAnImpassableObjectException {
             this.wallPathCCoA = new PathCCoAClass();
             this.wallPathCCoA.addPoint(new PointCCoAClass(0, 60));
 
@@ -104,23 +104,23 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             return carFootrpint.equals(found);
         }
 
-        private void markFootprintsTwoMachine() throws СrashIntoAnImpassableObjectExeption {
+        private void markFootprintsTwoMachine() throws СrashIntoAnImpassableObjectException {
             wallCarMarkFootprint();
             passangerCarStopsCrashing();
         }
 
-        private void wallCarMarkFootprint() throws СrashIntoAnImpassableObjectExeption {
-            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-            wallCar = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
+        private void wallCarMarkFootprint() throws СrashIntoAnImpassableObjectException {
+            FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+            wallCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
             wallCar.mark(localFootprintsSpaceTime, wallPathCCoA, 0.0, defaultIndexLayer);
         }
 
-        private void passangerCarStopsCrashing() throws СrashIntoAnImpassableObjectExeption {
-            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-            passengerCar = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        private void passangerCarStopsCrashing() throws СrashIntoAnImpassableObjectException {
+            FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+            passengerCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
             try {
                 passengerCar.mark(localFootprintsSpaceTime, carPathCCoA, 0.0, defaultIndexLayer);
-            } catch (СrashIntoAnImpassableObjectExeption ex) {
+            } catch (СrashIntoAnImpassableObjectException ex) {
             }
         }
 
@@ -174,26 +174,26 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     }*/
 
     private FootprintsSpaceTime footprintSpaceTimeSimplyMovingOnLine = footprintSpaceTimeSimplyMovingOnLine();
-    private ParametersMoving movingObjectSimpleParametersMovingOnLine;
+    private ParametersMovingUnique movingObjectSimpleParametersMovingOnLineUnique;
 
-    private FootprintsSpaceTime footprintSpaceTimeSimplyMovingOnLine() throws СrashIntoAnImpassableObjectExeption {
+    private FootprintsSpaceTime footprintSpaceTimeSimplyMovingOnLine() throws СrashIntoAnImpassableObjectException {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
-        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-        movingObjectSimpleParametersMovingOnLine = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        movingObjectSimpleParametersMovingOnLineUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(10, 0));
 
-        movingObjectSimpleParametersMovingOnLine.mark(onlyFootprintsSpaceTime, pathCCoA, 0.0, defaultIndexLayer);
+        movingObjectSimpleParametersMovingOnLineUnique.mark(onlyFootprintsSpaceTime, pathCCoA, 0.0, defaultIndexLayer);
         return onlyFootprintsSpaceTime;
     }
 
     @Test
-    void getPositionInDefaultLevel_0() throws СrashIntoAnImpassableObjectExeption {
+    void getPositionInDefaultLevel_0() throws СrashIntoAnImpassableObjectException {
         Position actualPosition = footprintSpaceTimeSimplyMovingOnLine.getPositionInDefaultLevel(
-                movingObjectSimpleParametersMovingOnLine,
+                movingObjectSimpleParametersMovingOnLineUnique,
                 0.0
         );
         Position expected = new PositionClass(new PointCCoAClass(0, 0), 0.0);
@@ -202,9 +202,9 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     }
 
     @Test
-    void getPositionInDefaultLevel_05() throws СrashIntoAnImpassableObjectExeption {
+    void getPositionInDefaultLevel_05() throws СrashIntoAnImpassableObjectException {
         Position actualPosition = footprintSpaceTimeSimplyMovingOnLine.getPositionInDefaultLevel(
-                movingObjectSimpleParametersMovingOnLine,
+                movingObjectSimpleParametersMovingOnLineUnique,
                 0.5
         );
         Position expected = new PositionClass(new PointCCoAClass(5, 0), 0.0);
@@ -212,9 +212,9 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         assertEquals(expected, actualPosition);
     }
     @Test
-    void getPositionInDefaultLevel_1() throws СrashIntoAnImpassableObjectExeption {
+    void getPositionInDefaultLevel_1() throws СrashIntoAnImpassableObjectException {
         Position actualPosition = footprintSpaceTimeSimplyMovingOnLine.getPositionInDefaultLevel(
-                movingObjectSimpleParametersMovingOnLine,
+                movingObjectSimpleParametersMovingOnLineUnique,
                 1.0
         );
         Position expected = new PositionClass(new PointCCoAClass(10, 0), 0.0);
@@ -234,27 +234,27 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
         private double timeAddingPath;
         private FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
-        private ParametersMoving parametersMoving;
+        private ParametersMovingUnique parametersMovingUnique;
         private double timeStandingOnOneStep = 2;
         private double lengthStep = 20;
         double speed = 10;
         private PointCCoA endPointCCoA = null;
         private PathCCoA pathCCoA = null;
 
-        public TesterOneMarkClass(double timeAddingPath) throws СrashIntoAnImpassableObjectExeption {
+        public TesterOneMarkClass(double timeAddingPath) throws СrashIntoAnImpassableObjectException {
             this.timeAddingPath = timeAddingPath;
 
             sharedConstructor();
         }
 
-        public TesterOneMarkClass(double timeAddingPath, PathCCoA pathCCoA) throws СrashIntoAnImpassableObjectExeption {
+        public TesterOneMarkClass(double timeAddingPath, PathCCoA pathCCoA) throws СrashIntoAnImpassableObjectException {
             this.timeAddingPath = timeAddingPath;
             this.pathCCoA = pathCCoA;
 
             sharedConstructor();
         }
 
-        public TesterOneMarkClass(double timeAddingPath, PointCCoA endPointCCoA) throws СrashIntoAnImpassableObjectExeption {
+        public TesterOneMarkClass(double timeAddingPath, PointCCoA endPointCCoA) throws СrashIntoAnImpassableObjectException {
             this.timeAddingPath = timeAddingPath;
             this.endPointCCoA = endPointCCoA;
 
@@ -262,17 +262,17 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
         }
 
-        private void sharedConstructor() throws СrashIntoAnImpassableObjectExeption {
+        private void sharedConstructor() throws СrashIntoAnImpassableObjectException {
             setValueForNullVariable();
             createPassangerCar();
-            parametersMoving.mark(onlyFootprintsSpaceTime, pathCCoA, timeAddingPath, defaultIndexLayer);
+            parametersMovingUnique.mark(onlyFootprintsSpaceTime, pathCCoA, timeAddingPath, defaultIndexLayer);
         }
 
         private void createPassangerCar() {
-            FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-            BuilderParametersMoving builder = fabricParametersMoving.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
+            FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+            BuilderParametersMovingUnique builder = fabricParametersMovingUnique.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
             builder.setSpeed(speed);
-            parametersMoving = builder.getParametersMoving();
+            parametersMovingUnique = builder.getParametersMoving();
         }
 
         private void setValueForNullVariable() {
@@ -289,7 +289,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         @Override
         public boolean isCarPassedRightPlace(Position expected, double timePosition) {
             Position actualPosition = onlyFootprintsSpaceTime.getPositionInDefaultLevel(
-                    parametersMoving,
+                    parametersMovingUnique,
                     timePosition
             );
 
@@ -590,22 +590,22 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     private void wallInstalation(FootprintsSpaceTime onlyFootprintsSpaceTime) {
 
-        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
 
-        ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
+        ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
         try {
             wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, defaultIndexLayer);
-        } catch (СrashIntoAnImpassableObjectExeption ex) {
+        } catch (СrashIntoAnImpassableObjectException ex) {
             int error = 5; //for debugger, checking the passage through this place
         }
     }
 
     private boolean throwingExeptionWhenTryingPassThroughWall(FootprintsSpaceTime onlyFootprintsSpaceTime) {
-        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-        ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
         try {
-            parametersMoving.mark(onlyFootprintsSpaceTime, createPassengerCarPath(), 0.0, defaultIndexLayer);
-        } catch (СrashIntoAnImpassableObjectExeption ex) {
+            parametersMovingUnique.mark(onlyFootprintsSpaceTime, createPassengerCarPath(), 0.0, defaultIndexLayer);
+        } catch (СrashIntoAnImpassableObjectException ex) {
             return true;
         }
         return false;

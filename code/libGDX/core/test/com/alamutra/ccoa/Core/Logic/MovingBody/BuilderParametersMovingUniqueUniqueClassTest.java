@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BuilderParametersMovingClassTest {
+class BuilderParametersMovingUniqueUniqueClassTest {
 
     @Test
     void setSpeed_0() {
-        BuilderParametersMoving builder = new BuilderParametersMovingClass();
+        BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
@@ -24,12 +24,12 @@ class BuilderParametersMovingClassTest {
 
         builder.setSpeed(0);
 
-        ParametersMoving parametersMoving = builder.getParametersMoving();
-        assertEquals(parametersMoving.getSpeed(), 0);
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        assertEquals(parametersMovingUnique.getSpeed(), 0);
     }
     @Test
     void setSpeed_7() {
-        BuilderParametersMoving builder = new BuilderParametersMovingClass();
+        BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
@@ -41,12 +41,12 @@ class BuilderParametersMovingClassTest {
 
         builder.setSpeed(7);
 
-        ParametersMoving parametersMoving = builder.getParametersMoving();
-        assertEquals(parametersMoving.getSpeed(), 7);
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        assertEquals(parametersMovingUnique.getSpeed(), 7);
     }
     @Test
     void setSpeed_negativeThrow() {
-        BuilderParametersMoving builder = new BuilderParametersMovingClass();
+        BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
@@ -65,7 +65,7 @@ class BuilderParametersMovingClassTest {
 
     @Test
     void setShape_offset_center() {
-        BuilderParametersMoving builder = new BuilderParametersMovingClass();
+        BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
 
         builder.setTypeMachinesBody(TypeMachinesBody.TEST_SQUARE_20);
 
@@ -84,8 +84,8 @@ class BuilderParametersMovingClassTest {
         expectedShape.addPoint(new PointCCoAClass(1, 1));
         expectedShape.addPoint(new PointCCoAClass(1, -1));
 
-        ParametersMoving parametersMoving = builder.getParametersMoving();
-        PolygonCCoA actualShape = parametersMoving.getShape();
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        PolygonCCoA actualShape = parametersMovingUnique.getShape();
         assertEquals(expectedShape, actualShape);
     }
 }

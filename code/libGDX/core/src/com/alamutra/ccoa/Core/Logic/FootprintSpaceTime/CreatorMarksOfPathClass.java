@@ -1,18 +1,22 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.PathsMachines.PositionClass;
 import com.alamutra.ccoa.Core.Logic.Position;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
+    private static final Logger LOGGER = LogManager.getLogger(CreatorMarksOfPathClass.class);
+
     final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
     final public static double MIN_TIME_STANDING = Double.MIN_VALUE;
     private double timeStandingInLastPath;
     private LayerFootprintSpaceTime footprintsSpaceTime;
-    private ParametersMoving parametersMoving;
+    private ParametersMovingUnique parametersMovingUnique;
     private Route route;
 
     private double speed;
@@ -23,12 +27,12 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
 
     public CreatorMarksOfPathClass(
             LayerFootprintSpaceTime footprintsSpaceTime,
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             Route route,
             boolean isStandingTimeEndPathIsUntilEndTime
     ) {
         this.footprintsSpaceTime = footprintsSpaceTime;
-        this.parametersMoving = parametersMoving;
+        this.parametersMovingUnique = parametersMovingUnique;
         this.route = route;
 
         if (isStandingTimeEndPathIsUntilEndTime) {
@@ -42,8 +46,8 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
          * Landscape have getResistancePowerLandscape(pressurePaskaleOfMachine)
          * speed = MachinePower / ResistancePower
          */
-        speed = parametersMoving.getSpeed();
-        lengthStep = parametersMoving.getLengthStep();
+        speed = parametersMovingUnique.getSpeed();
+        lengthStep = parametersMovingUnique.getLengthStep();
         if (Math.abs(speed) < GlobalVariable.DOUBLE_COMPARISON_ACCURACY) {
             timeStanding = this.MAX_TIME_STANDING;
         } else {
@@ -55,13 +59,14 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     public void addFootprint(
             PathCCoA pathCCoA,
             double startTime
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
 
         try {
             addFootprintsBasedOnThePath(pathCCoA, startTime);
-        } catch (СrashIntoAnImpassableObjectExeption ex) {
+        } catch (СrashIntoAnImpassableObjectException ex) {
             setTheStandingTimeUntilTheEndOfTimeInCaseOfAnAccident();
-            throw new СrashIntoAnImpassableObjectExeption();
+            LOGGER.debug("path crash: {}", pathCCoA);
+            throw new СrashIntoAnImpassableObjectException();
         }
 
     }
@@ -76,7 +81,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     private void addFootprintsBasedOnThePath(
             PathCCoA pathCCoA,
             double startTime
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
 
         double timeAdding = startTime;
 
@@ -100,7 +105,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     private double processingCreateFootprintsOnRouteStraightLinesFromPairsPoints(
             PathCCoA pathCCoA,
             double timeAdding
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         double sumTime = 0;
         int endIndex = pathCCoA.getSize() - 1;
         for (int i = 0; i < endIndex; i++) {
@@ -140,12 +145,12 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
      *
      * @param pathCCoA
      * @param timeAdding
-     * @throws СrashIntoAnImpassableObjectExeption
+     * @throws СrashIntoAnImpassableObjectException
      */
     private void processingCreateFootprintEndRouteFromSinglePoint(
             PathCCoA pathCCoA,
             double timeAdding
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         int indexLastPoint = pathCCoA.getSize() - 1;
         PointCCoA startLine = pathCCoA.getPoint(indexLastPoint - 1);
         PointCCoA endlessPointCCoA = pathCCoA.getPoint(indexLastPoint);
@@ -177,13 +182,19 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             PointCCoA endLine,
             double standingTime,
             double timeAdding
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
 
         double angle = endLine.getAngleRotareRelative(startLine);
         double timeSum = 0;
 
+
         PointCCoA currentCoordinat = startLine.clone();
-        PointCCoA stepVector = stepVector(endLine, startLine, parametersMoving.getLengthStep());
+        PointCCoA stepVector = stepVector(endLine, startLine, parametersMovingUnique.getLengthStep());
+
+        LOGGER.debug(
+                "printEveryStepOnLine, startLine: {}, endLine: {}, stepVector: {}",
+                startLine, endLine, stepVector
+        );
 
         double angleStepVector = endLine.getAngleRotareRelative(startLine);
 
@@ -201,6 +212,11 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
 
             timeAdding += standingTime;
             timeSum += standingTime;
+
+            LOGGER.debug(
+                    "printEveryStepOnLine currentCoordinate: {}, ID: {}",
+                    currentCoordinat, this.parametersMovingUnique.getID()
+            );
 
             currentCoordinat = new PointCCoAClass(
                     currentCoordinat.getX() + stepVector.getX(),
@@ -224,7 +240,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             PointCCoA currentCoordinat,
             double angleStepVector,
             double timeAdding
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         double localTimeSum = 0;
         if (!endLine.equals(currentCoordinat)) {
 
@@ -234,7 +250,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
              * little step*/
             PointCCoA penultimatePointCCoA = currentCoordinat;
             double lengthFinalStep = endLine.getDistanceToPoint(penultimatePointCCoA);
-            double standingTime = lengthFinalStep / parametersMoving.getSpeed();
+            double standingTime = lengthFinalStep / parametersMovingUnique.getSpeed();
 
             Position position = new PositionClass(penultimatePointCCoA, angleStepVector);
             localTimeSum = standingTime;
@@ -255,9 +271,9 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
             Position position,
             double time,
             double timeStanding
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         this.penultimateFootprintInPath = this.lastFootprintInPath;
-        this.lastFootprintInPath = new FootprintClass(position, timeStanding, parametersMoving, this.route);
+        this.lastFootprintInPath = new FootprintClass(position, timeStanding, parametersMovingUnique, this.route);
         route.addLastFootprint(time, this.lastFootprintInPath);
 
         this.footprintsSpaceTime.addFootprint(this.lastFootprintInPath, time);

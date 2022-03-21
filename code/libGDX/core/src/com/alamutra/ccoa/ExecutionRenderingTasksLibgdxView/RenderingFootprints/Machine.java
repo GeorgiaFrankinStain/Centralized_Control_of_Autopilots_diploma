@@ -1,5 +1,6 @@
 package com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView.RenderingFootprints;
 
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintClass;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.DataFootprintForRendering;
 import com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView.SpriteWrapper;
 import com.badlogic.gdx.Gdx;
@@ -7,8 +8,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Machine extends Sprite implements SpriteWrapper {
+    private static final Logger LOGGER = LogManager.getLogger(Machine.class);
+
     private Sprite sprite;
 
     public Machine(int numberPicture) {
@@ -21,10 +26,15 @@ public class Machine extends Sprite implements SpriteWrapper {
         double x = newProperties.getCoordinates().getX();
         double y = newProperties.getCoordinates().getY();
 
+
         double rotation = newProperties.getRotationDegree();
         float width = calculateWidth(newProperties);
         float height = calculateHeight(newProperties);
 
+        LOGGER.debug("update x: {}, y: {}, x (float): {}, y (float): {}, rotation: {}", x, y, (float) x, (float) y, rotation);
+
+        this.sprite.setOriginCenter();
+//        this.sprite.setOriginCenter((float) x, (float) y);
         this.sprite.setPosition((float) x, (float) y); //FIXME добавить смещение координаты отрисовки
         this.sprite.setSize(width, height);
         this.sprite.setRotation((float) rotation);

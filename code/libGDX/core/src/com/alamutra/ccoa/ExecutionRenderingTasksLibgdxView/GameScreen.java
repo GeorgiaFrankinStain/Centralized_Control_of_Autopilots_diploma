@@ -1,5 +1,6 @@
 package com.alamutra.ccoa.ExecutionRenderingTasksLibgdxView;
 
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoAClass;
@@ -9,9 +10,12 @@ import com.alamutra.ccoa.Core.SettingRenderingTasks.PoolDataFootprintForRenderin
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.math.EarClippingTriangulator;
+import com.badlogic.gdx.utils.FloatArray;
+import com.badlogic.gdx.utils.ShortArray;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -65,6 +69,8 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         polyBatch.begin();
+        createOriginSquare(batch, polyBatch);
+        createX0Y100Square(batch, polyBatch);
 
         Iterator<DataFootprintForRendering> it = this.poolDataFootprintForRendering.iterator();
         while (it.hasNext()) {
@@ -155,4 +161,84 @@ public class GameScreen implements Screen {
 
         return spriteWrapper;
     }
+
+    public void createOriginSquare(SpriteBatch batch, PolygonSpriteBatch polygonBatch) {
+        Pixmap pix = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
+        pix.setColor(0, 1, 0, 1);
+        pix.fill();
+
+        Texture tempTexture = new Texture(pix);
+
+
+        TextureRegion textureRegion = new TextureRegion(tempTexture);
+
+        FloatArray vertices = calculateVerticesOrigin();
+
+        EarClippingTriangulator triangulator = new EarClippingTriangulator();
+        ShortArray triangleindices = triangulator.computeTriangles(vertices);
+
+        PolygonRegion polyReg = new PolygonRegion(textureRegion, vertices.toArray(), triangleindices.toArray());
+        PolygonSprite polygonSprite = new PolygonSprite(polyReg);
+
+
+
+        float x = 0;
+        float y = 0;
+        float rotation = 0;
+
+        polygonSprite.setPosition(x, y);;
+        polygonSprite.setRotation(rotation);
+
+        polygonSprite.draw(polygonBatch);
+    }
+    public void createX0Y100Square(SpriteBatch batch, PolygonSpriteBatch polygonBatch) {
+        Pixmap pix = new Pixmap(1, 1, Pixmap.Format.RGBA8888);
+        pix.setColor(1, 0, 0, 1);
+        pix.fill();
+
+        Texture tempTexture = new Texture(pix);
+
+
+        TextureRegion textureRegion = new TextureRegion(tempTexture);
+
+        FloatArray vertices = calculateVerticesOrigin();
+
+        EarClippingTriangulator triangulator = new EarClippingTriangulator();
+        ShortArray triangleindices = triangulator.computeTriangles(vertices);
+
+        PolygonRegion polyReg = new PolygonRegion(textureRegion, vertices.toArray(), triangleindices.toArray());
+        PolygonSprite polygonSprite = new PolygonSprite(polyReg);
+
+
+
+        float x = 0;
+        float y = 100;
+        float rotation = 0;
+
+        polygonSprite.setPosition(x, y);;
+        polygonSprite.setRotation(rotation);
+
+        polygonSprite.draw(polygonBatch);
+    }
+
+    private FloatArray calculateVerticesOrigin() {
+        PointCCoA topLeft = new PointCCoAClass(-10, 10);
+        PointCCoA topRight = new PointCCoAClass(10, 10);
+        PointCCoA bottomLeft = new PointCCoAClass(-10, -10);
+        PointCCoA bottomRight = new PointCCoAClass(10, -10);
+
+        FloatArray vertices = new FloatArray(new float[] {
+                (float) topLeft.getX(),
+                (float) topLeft.getY(),
+                (float) topRight.getX(),
+                (float) topRight.getY(),
+                (float) bottomLeft.getX(),
+                (float) bottomLeft.getY(),
+                (float) bottomRight.getX(),
+                (float) bottomRight.getY(),
+        });
+
+        return vertices;
+    }
+
 }

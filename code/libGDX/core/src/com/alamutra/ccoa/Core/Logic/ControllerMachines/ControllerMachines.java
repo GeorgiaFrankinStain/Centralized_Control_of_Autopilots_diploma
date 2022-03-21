@@ -1,14 +1,14 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 
 public interface ControllerMachines {
     public void bringCarToEndOfRoad(
             PointCCoA from,
             PointCCoA to,
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             double timeAdding
-    ) throws СrashIntoAnImpassableObjectExeption;
+    ) throws СrashIntoAnImpassableObjectException;
 }

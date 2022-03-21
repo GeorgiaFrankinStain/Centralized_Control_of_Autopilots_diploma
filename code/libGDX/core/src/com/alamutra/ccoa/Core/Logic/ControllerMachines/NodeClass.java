@@ -1,7 +1,7 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 
 import java.util.List;
 
@@ -18,8 +18,8 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     }
 
     @Override
-    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMoving parametersMoving) {
-        return networkNodes.getNeightboringNodes(this, coordinat, radiusMovingObject, parametersMoving);
+    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMovingUnique parametersMovingUnique) {
+        return networkNodes.getNeightboringNodes(this, coordinat, radiusMovingObject, parametersMovingUnique);
     }
 
     @Override

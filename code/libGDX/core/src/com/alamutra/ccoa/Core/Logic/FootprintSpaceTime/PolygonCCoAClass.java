@@ -158,12 +158,16 @@ public class PolygonCCoAClass implements PolygonCCoA {
 
     @Override
     public void deposeOn(PointCCoA vector) { //FIXME TEST ADD
+        LOGGER.debug("deposeOn - vector {}", vector);
         for (int i = 0; i < this.getCountPoints(); i++) {
+
             PointCCoA currentPointCCoA = this.getPoint(i);
+            LOGGER.debug("deposeOn - currentPointCCoA {}", currentPointCCoA);
             PointCCoA newPointCCoA = new PointCCoAClass(
                     currentPointCCoA.getX() + vector.getX(),
                     currentPointCCoA.getY() + vector.getY()
             );
+            LOGGER.debug("deposeOn - newPointCCoA {}", newPointCCoA);
             this.setPoint(i, newPointCCoA);
         }
     }
@@ -176,7 +180,7 @@ public class PolygonCCoAClass implements PolygonCCoA {
             result += this.getPoint(i) + " ";
         }
 
-        return "[" + result + "]";
+        return "Polygon [" + result + "]";
     }
 
     @Override

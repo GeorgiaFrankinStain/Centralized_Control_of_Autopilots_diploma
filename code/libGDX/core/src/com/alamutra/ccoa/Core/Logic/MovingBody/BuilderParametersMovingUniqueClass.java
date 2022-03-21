@@ -3,7 +3,7 @@ package com.alamutra.ccoa.Core.Logic.MovingBody;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 
-public class BuilderParametersMovingClass implements BuilderParametersMoving {
+public class BuilderParametersMovingUniqueClass implements BuilderParametersMovingUnique {
     private double speed;
     private PolygonCCoA shape;
     private TypeMachinesBody typeMachinesBody;
@@ -29,7 +29,7 @@ public class BuilderParametersMovingClass implements BuilderParametersMoving {
     }
 
     @Override
-    public ParametersMoving getParametersMoving() {
-        return new ParametersMovingClass(speed, shape, typeMachinesBody);
+    public ParametersMovingUnique getParametersMoving() {
+        return new ParametersMovingUniqueClass(speed, shape, typeMachinesBody);
     }
 }

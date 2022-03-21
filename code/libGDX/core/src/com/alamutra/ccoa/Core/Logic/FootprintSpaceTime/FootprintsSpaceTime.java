@@ -1,8 +1,8 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 
@@ -22,26 +22,26 @@ public interface FootprintsSpaceTime {
     );
 
     public void addFootprintsPath(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             PathCCoA pathCCoA,
             double startTime,
             IndexLayer indexLayer
-    ) throws СrashIntoAnImpassableObjectExeption;
+    ) throws СrashIntoAnImpassableObjectException;
 
 
     public void addFootprintsPathWithoutEndStandingUntilEndTime(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             PathCCoA pathCCoA,
             double startTime,
             IndexLayer indexLayer
-    ) throws СrashIntoAnImpassableObjectExeption;
+    ) throws СrashIntoAnImpassableObjectException;
 
 
     public void addFootprint(
             Footprint footprint,
             double time,
             IndexLayer indexLayer
-    ) throws СrashIntoAnImpassableObjectExeption;
+    ) throws СrashIntoAnImpassableObjectException;
 
     public void deleteFootprints(int ID);
 
@@ -56,7 +56,7 @@ public interface FootprintsSpaceTime {
 
 
     public boolean isPathMovingObjectEnteringCorridor(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             Corridor corridor,
             IndexLayer indexLayer
     );
@@ -67,7 +67,7 @@ public interface FootprintsSpaceTime {
 
     public Double getTimeAddingLastFootprints(IndexLayer indexLayer);
 
-    public Position getPositionInDefaultLevel(ParametersMoving parametersMovingWithID, double time);
+    public Position getPositionInDefaultLevel(ParametersMovingUnique parametersMovingUniqueWithID, double time);
 
 
 

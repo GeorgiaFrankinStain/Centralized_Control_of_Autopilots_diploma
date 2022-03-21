@@ -6,9 +6,11 @@ import com.alamutra.ccoa.Core.Logic.ControllerMachines.AStarSpaceTimePlanarGraph
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.SquareNetworkNodes;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.GeneratorFlowCars.RunnerSynchronizationGeneratorsCars;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.GeneratorFlowCars.StandardRunnerGeneratorsCars;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Core.Logic.GameTime;
@@ -42,19 +44,19 @@ public class Main extends Game {
 		NetworkNodes networkNodesFabrica = new SquareNetworkNodes();
 		AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
 
-		FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
+		FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
 
 		{
-			PointCCoA from = new PointCCoAClass(0, 0); //FIXME BAG don't multipoly 20 (size car)
+			PointCCoA from = new PointCCoAClass(0, 131); //FIXME BAG don't multipoly 20 (size car)
 			PointCCoA to = new PointCCoAClass(0, 300);
 
 
 			double timeAdding = 0.0;
-			ParametersMoving parametersMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-			PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMoving.getRadius(), parametersMoving, timeAdding);
+			ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+			PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique.getRadius(), parametersMovingUnique, timeAdding);
 			try {
-				parametersMoving.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
-			} catch (СrashIntoAnImpassableObjectExeption ex) {
+				parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+			} catch (СrashIntoAnImpassableObjectException ex) {
 			}
 		}
 /*
@@ -298,7 +300,8 @@ public class Main extends Game {
 
 		//create UserCommandInterface (ConsoleManagement) //in future may need +(FootprintsSpaceTime, MapRender) //создавать после создания полноценного ConsoleManagement //PUNKT_4
 
-
+		RunnerSynchronizationGeneratorsCars runnerGeneratorsCars = new StandardRunnerGeneratorsCars();
+		runnerGeneratorsCars.runIfPossible(onlyFootprintsSpaceTime);
 
 		GameTime gameTime = new GameTimeClass();
 		this.gameScreen = new GameScreen(gameTime, poolDataFootprintForRendering);

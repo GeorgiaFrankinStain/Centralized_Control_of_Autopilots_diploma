@@ -1,6 +1,6 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
 import com.alamutra.ccoa.Core.Logic.MovingBody.*;
@@ -14,12 +14,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class MultiMapLayerFootprintSpaceTimeClassTest {
     private IndexLayer defaultLevel = new IndexLayerClass(0);
 
-    FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-    ParametersMoving squareMoving = fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+    FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+    ParametersMovingUnique squareMoving = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
 
     private Corridor tunnel1CorridorY0to20 = tunnel1CorridorY0to20();
 
-    MultiMapLayerFootprintSpaceTimeClassTest() throws СrashIntoAnImpassableObjectExeption {
+    MultiMapLayerFootprintSpaceTimeClassTest() throws СrashIntoAnImpassableObjectException {
     }
 
     private Corridor tunnel1CorridorY0to20() {
@@ -38,7 +38,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1CorridorDoesNotTakeIntoAccountStopUntilEndOfTime()
-            throws СrashIntoAnImpassableObjectExeption {
+            throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 20));
@@ -55,7 +55,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     }
 
     @Test
-    void isPathMovingObjectEnteringCorridor_tunnel1False() throws СrashIntoAnImpassableObjectExeption {
+    void isPathMovingObjectEnteringCorridor_tunnel1False() throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, -20));
@@ -72,7 +72,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     }
 
     @Test
-    void isPathMovingObjectEnteringCorridor_tunnel1MachineStanding() throws СrashIntoAnImpassableObjectExeption {
+    void isPathMovingObjectEnteringCorridor_tunnel1MachineStanding() throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
@@ -104,7 +104,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
 
     @Test
-    void isPathMovingObjectEnteringCorridor_continuouslyChangingRadius() throws СrashIntoAnImpassableObjectExeption {
+    void isPathMovingObjectEnteringCorridor_continuouslyChangingRadius() throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
@@ -157,7 +157,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     }
 
     @Test
-    void isPathMovingObjectEnteringCorridor_zigZagTest() throws СrashIntoAnImpassableObjectExeption {
+    void isPathMovingObjectEnteringCorridor_zigZagTest() throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 20));
@@ -178,7 +178,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     }
 
     @Test
-    void isPathMovingObjectEnteringCorridor_zigZagStraightPathMachineTest() throws СrashIntoAnImpassableObjectExeption {
+    void isPathMovingObjectEnteringCorridor_zigZagStraightPathMachineTest() throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
@@ -211,7 +211,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void isPathMovingObjectEnteringCorridor_tunnel1ToEndOfTime()
-            throws СrashIntoAnImpassableObjectExeption {
+            throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 20));
@@ -246,7 +246,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
 
     @Test
     void addFootprintsPathWithoutEndStandingUntilEndTime_tunnel1ToEndOfTime()
-            throws СrashIntoAnImpassableObjectExeption {
+            throws СrashIntoAnImpassableObjectException {
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(0, 20));
@@ -320,29 +320,29 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     }
 
 
-    private FootprintsSpaceTime movingInStraightLine() throws СrashIntoAnImpassableObjectExeption {
+    private FootprintsSpaceTime movingInStraightLine() throws СrashIntoAnImpassableObjectException {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
-        ParametersMoving movingObjectSimpleParametersMovingOnLine = createTestSquare20Machine();
+        ParametersMovingUnique movingObjectSimpleParametersMovingOnLineUnique = createTestSquare20Machine();
 
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
         pathCCoA.addPoint(new PointCCoAClass(100, 0));
 
-        movingObjectSimpleParametersMovingOnLine.mark(onlyFootprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
+        movingObjectSimpleParametersMovingOnLineUnique.mark(onlyFootprintsSpaceTime, pathCCoA, 0.0, defaultLevel);
         return onlyFootprintsSpaceTime;
     }
 
-    private ParametersMoving createTestSquare20Machine() {
-        FabricParametersMoving fabricParametersMoving = new FabricParametersMovingClass();
-        ParametersMoving parametersMoving =
-                fabricParametersMoving.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-        return parametersMoving;
+    private ParametersMovingUnique createTestSquare20Machine() {
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique parametersMovingUnique =
+                fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        return parametersMovingUnique;
     }
 
     private double getSpeedTestSquare20() {
-        ParametersMoving parametersMoving = createTestSquare20Machine();
-        return parametersMoving.getSpeed();
+        ParametersMovingUnique parametersMovingUnique = createTestSquare20Machine();
+        return parametersMovingUnique.getSpeed();
     }
 
 

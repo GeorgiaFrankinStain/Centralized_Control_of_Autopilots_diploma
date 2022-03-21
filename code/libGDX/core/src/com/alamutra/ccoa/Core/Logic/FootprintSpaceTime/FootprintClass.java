@@ -1,15 +1,19 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.DataFootprintForRendering;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class FootprintClass implements Footprint, DataFootprintForRendering {
+    private static final Logger LOGGER = LogManager.getLogger(FootprintClass.class);
+
     private Position position;
     private double timeToNextFootprint;
-    private ParametersMoving parametersMoving;
+    private ParametersMovingUnique parametersMovingUnique;
     private boolean isLastFootprintInPath = false;
     private Route route;
 
@@ -17,23 +21,32 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     public FootprintClass(
             Position position,
             double timeToNextFootprint,
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             Route route) {
         this.route = route;
         this.position = position;
         this.timeToNextFootprint = timeToNextFootprint; //TODO: dubplicate information about time to next footprint
-        this.parametersMoving = parametersMoving;
+        this.parametersMovingUnique = parametersMovingUnique;
     }
 
 
     @Override
     public PolygonCCoA getOccupiedLocation() { //FIXME ADD_TEST
-        PolygonCCoA formMovingObject = this.parametersMoving.getShape();
+        PolygonCCoA formMovingObject = this.parametersMovingUnique.getShape();
         PolygonCCoA resultPolygon = formMovingObject.clone();
 
-        PointCCoA origin = this.parametersMoving.getPointWhereCoordinatesAreApplied();
+        LOGGER.debug("getOccupiedLocation shape: {}", resultPolygon);
+
+        PointCCoA origin = this.parametersMovingUnique.getPointWhereCoordinatesAreApplied();
         resultPolygon.rotateRelative(origin, this.position.getRotation());
+
+        LOGGER.debug("getOccupiedLocation shape after rotate: {}", resultPolygon);
+
+        LOGGER.debug("getOccupiedLocation positionCoordinates: {}", this.position.getCoordinates());
+
         resultPolygon.deposeOn(this.position.getCoordinates());
+
+        LOGGER.debug("getOccupiedLocation shape: after depose {}", resultPolygon);
 
         return resultPolygon;
     }
@@ -41,7 +54,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     @Override
     public String toString() {
         return this.position.toString()
-                + " MovObj" + this.parametersMoving.toString()
+                + " MovObj" + this.parametersMovingUnique.toString()
                 + " timeStanding: " + this.getTimeToNextFootprint();
     }
 
@@ -112,7 +125,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
         double timeToNextFootprint = Math.abs(timeSecond - timeFirst);
 
-        return new FootprintClass(position, timeToNextFootprint, parametersMoving, route); //FIXME getTimeToNextFootprint always constant add tests
+        return new FootprintClass(position, timeToNextFootprint, parametersMovingUnique, route); //FIXME getTimeToNextFootprint always constant add tests
     }
 
     @Override
@@ -143,12 +156,12 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public SkinsCapacitor getSkin() {
-        return this.parametersMoving.getSkin();
+        return this.parametersMovingUnique.getSkin();
     }
 
     @Override
-    public ParametersMoving getMovingObject() {
-        return this.parametersMoving;
+    public ParametersMovingUnique getMovingObject() {
+        return this.parametersMovingUnique;
     }
 
     @Override
@@ -169,7 +182,7 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
     @Override
     public int getIdMovingObject() {
-        return this.parametersMoving.getID();
+        return this.parametersMovingUnique.getID();
     }
 
     //    ==== <end> <Implements RenderingFootprint> ==================================================

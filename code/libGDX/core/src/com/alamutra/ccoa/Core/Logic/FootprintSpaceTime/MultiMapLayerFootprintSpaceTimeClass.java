@@ -1,8 +1,8 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectExeption;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.Wrappers.*;
@@ -28,51 +28,51 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     @Override
     public void addFootprint(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             Position position,
             double time,
             double timeStanding
-    ) throws СrashIntoAnImpassableObjectExeption { //FIXME ADD_TEST
+    ) throws СrashIntoAnImpassableObjectException { //FIXME ADD_TEST
         Route route = new RouteClass();
 
-        Footprint newFootprint = new FootprintClass(position, timeStanding, parametersMoving, route);
+        Footprint newFootprint = new FootprintClass(position, timeStanding, parametersMovingUnique, route);
 
         this.addFootprint(newFootprint, time);
     }
 
     @Override
-    public void addFootprint(Footprint footprint, double time) throws СrashIntoAnImpassableObjectExeption {
+    public void addFootprint(Footprint footprint, double time) throws СrashIntoAnImpassableObjectException {
 
         boolean placeIsSeat = this.getIsSeatTaken(footprint.getOccupiedLocation(), time);
 
         if (!placeIsSeat) {
             storageAllFootprints.put(time, footprint);
         } else {
-            throw new СrashIntoAnImpassableObjectExeption();
+            throw new СrashIntoAnImpassableObjectException(time, footprint);
         }
     }
 
 
     @Override
     public void addFootprintsPath(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             PathCCoA pathCCoA,
             double startTime,
             Route route
-    ) throws СrashIntoAnImpassableObjectExeption {
+    ) throws СrashIntoAnImpassableObjectException {
         CreatorMarksOfPath creatorMarksOfPath =
-                new CreatorMarksOfPathClass(this, parametersMoving, route, true);
+                new CreatorMarksOfPathClass(this, parametersMovingUnique, route, true);
         creatorMarksOfPath.addFootprint(pathCCoA, startTime);
     }
 
     @Override
     public void addFootprintsPathWithoutEndStandingUntilEndTime(
-            ParametersMoving parametersMoving,
+            ParametersMovingUnique parametersMovingUnique,
             PathCCoA pathCCoA,
             double startTime,
-            Route route) throws СrashIntoAnImpassableObjectExeption {
+            Route route) throws СrashIntoAnImpassableObjectException {
         CreatorMarksOfPath creatorMarksOfPath =
-                new CreatorMarksOfPathClass(this, parametersMoving, route, false);
+                new CreatorMarksOfPathClass(this, parametersMovingUnique, route, false);
         creatorMarksOfPath.addFootprint(pathCCoA, startTime);
     }
 
@@ -101,6 +101,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 //                PolygonCCoA locationMovingObject = footprint.getOccupiedLocation();
                 boolean placeIsSeat = place.intersectionPolygon(locationMovingObject);
                 if (placeIsSeat) {
+                    LOGGER.debug("place is seat taken. Place: {}, LocationMovingObject: {}", place, locationMovingObject);
                     return true;
                 }
             }
@@ -112,8 +113,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     @Override
-    public Position getPosition(ParametersMoving parametersMovingWithID, double time) {
-        GetterPositionByID getter = new GetterPositionByIDClass(parametersMovingWithID, time);
+    public Position getPosition(ParametersMovingUnique parametersMovingUniqueWithID, double time) {
+        GetterPositionByID getter = new GetterPositionByIDClass(parametersMovingUniqueWithID, time);
         return getter.getPositionByID();
 
     }
@@ -181,9 +182,9 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     @Override
-    public boolean isPathMovingObjectEnteringCorridor(ParametersMoving parametersMoving, Corridor corridor) { //FIXME codestyle
+    public boolean isPathMovingObjectEnteringCorridor(ParametersMovingUnique parametersMovingUnique, Corridor corridor) { //FIXME codestyle
 
-        TesterPathEnteringInCorridor tester = new OneTimeTesterPathEnteringCorridorClass(parametersMoving, corridor);
+        TesterPathEnteringInCorridor tester = new OneTimeTesterPathEnteringCorridorClass(parametersMovingUnique, corridor);
         return tester.isPathMovingObjectEnteringCorridor();
     }
 
@@ -219,9 +220,12 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             double startStanding = entry.getKey();
             double endStanding = startStanding + timeStanding;
 
+
             boolean footprintIndcludeFindTimePoint = startStanding <= timeFind && timeFind < endStanding;
             if (footprintIndcludeFindTimePoint) {
+                LOGGER.debug("getRenderingFootprintsFromWhen: startStanding: {}, timeFind: {}, endStanding: {}", startStanding, timeFind, endStanding);
                 Footprint approximationFootprint = currentFootprint.getApproximationWithNextFootprint(timeFind);
+                LOGGER.debug("approximationFootprint: {}", approximationFootprint);
                 resRendringFootpring.add(approximationFootprint);
             }
         }
@@ -283,7 +287,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     private class GetterPositionByIDClass implements GetterPositionByID {
         private IteratorFootprintWithID iteratorID = new IteratorFootprintWithIDClass();
-        private ParametersMoving parametersMovingWithID;
+        private ParametersMovingUnique parametersMovingUniqueWithID;
         private double timeApproximation;
         private Footprint previousFootprint = null;
         private Footprint currentFootprint = null;
@@ -294,15 +298,15 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
 
-        public GetterPositionByIDClass(ParametersMoving parametersMovingWithID, double timeApproximation) {
-            this.parametersMovingWithID = parametersMovingWithID;
+        public GetterPositionByIDClass(ParametersMovingUnique parametersMovingUniqueWithID, double timeApproximation) {
+            this.parametersMovingUniqueWithID = parametersMovingUniqueWithID;
             this.timeApproximation = timeApproximation;
         }
 
         @Override
         public Position getPositionByID() {
-            while (iteratorID.hasNext(parametersMovingWithID)) {
-                PairCCoA<Double, Footprint> entry = iteratorID.nextWithID(parametersMovingWithID);
+            while (iteratorID.hasNext(parametersMovingUniqueWithID)) {
+                PairCCoA<Double, Footprint> entry = iteratorID.nextWithID(parametersMovingUniqueWithID);
                 currentFootprint = entry.getValue();
                 timeStartTunnel = entry.getKey();
                 timeEndTunnel = timeStartTunnel + currentFootprint.getTimeToNextFootprint();
@@ -329,7 +333,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         private void endFootprint() {
-            PairCCoA<Double, Footprint> next = iteratorID.nextWithID(parametersMovingWithID);
+            PairCCoA<Double, Footprint> next = iteratorID.nextWithID(parametersMovingUniqueWithID);
             if (next != null) {
                 endTunnel = next.getValue();
             } else {
@@ -349,7 +353,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
     private class OneTimeTesterPathEnteringCorridorClass implements TesterPathEnteringInCorridor {
         private IteratorFootprintWithID iteratorID = new IteratorFootprintWithIDClass();
-        private ParametersMoving parametersMoving;
+        private ParametersMovingUnique parametersMovingUnique;
         private Corridor corridor;
 
         private Footprint startTunnel = null;
@@ -357,8 +361,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         private Footprint endTunnel = null;
         private Double timeEndTunnel = null;
 
-        public OneTimeTesterPathEnteringCorridorClass(ParametersMoving parametersMoving, Corridor corridor) {
-            this.parametersMoving = parametersMoving;
+        public OneTimeTesterPathEnteringCorridorClass(ParametersMovingUnique parametersMovingUnique, Corridor corridor) {
+            this.parametersMovingUnique = parametersMovingUnique;
             this.corridor = corridor;
         }
 
@@ -377,11 +381,11 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         private boolean isEnoughFootprintsForCreateFirstTunnel() {
-            return iteratorID.hasNextPairItem(parametersMoving);
+            return iteratorID.hasNextPairItem(parametersMovingUnique);
         }
 
         private boolean isPossibleNextFootprintToTurnInEndTunnel() {
-            return iteratorID.hasNext(parametersMoving);
+            return iteratorID.hasNext(parametersMovingUnique);
         }
 
         private boolean isTunnelExistEndCorridorCoverTunnel() {
@@ -411,7 +415,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
             boolean isFirstIteration = startTunnel == null && endTunnel == null;
             if (isFirstIteration) {
-                PairCCoA<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
+                PairCCoA<Double, Footprint> pair = iteratorID.nextWithID(parametersMovingUnique);
                 if (pair == null) {
                     return false;
                 }
@@ -429,7 +433,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
         private boolean prepareEndTunnelForCycle() {
 
-            PairCCoA<Double, Footprint> pair = iteratorID.nextWithID(parametersMoving);
+            PairCCoA<Double, Footprint> pair = iteratorID.nextWithID(parametersMovingUnique);
 
             if (pair == null) {
                 return false;
@@ -450,11 +454,11 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
     private interface IteratorFootprintWithID {
-        public PairCCoA<Double, Footprint> nextWithID(ParametersMoving parametersMoving);
+        public PairCCoA<Double, Footprint> nextWithID(ParametersMovingUnique parametersMovingUnique);
 
-        public boolean hasNextPairItem(ParametersMoving parametersMoving);
+        public boolean hasNextPairItem(ParametersMovingUnique parametersMovingUnique);
 
-        public boolean hasNext(ParametersMoving parametersMoving);
+        public boolean hasNext(ParametersMovingUnique parametersMovingUnique);
     }
 
     private class IteratorFootprintWithIDClass implements IteratorFootprintWithID { //FIXME add tests
@@ -462,24 +466,24 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         private LinkedList<PairCCoA<Double, Footprint>> previouslyFound = new LinkedList<>();
 
         @Override
-        public PairCCoA<Double, Footprint> nextWithID(ParametersMoving parametersMoving) {
+        public PairCCoA<Double, Footprint> nextWithID(ParametersMovingUnique parametersMovingUnique) {
             boolean isAvailablePreFoundItems = previouslyFound.size() > 0;
             if (!isAvailablePreFoundItems) {
-                return getNextWithID(parametersMoving);
+                return getNextWithID(parametersMovingUnique);
             } else {
                 return previouslyFound.pollFirst();
             }
         }
 
         @Override
-        public boolean hasNextPairItem(ParametersMoving parametersMoving) {
+        public boolean hasNextPairItem(ParametersMovingUnique parametersMovingUnique) {
             int numberOfRequiredElements = 2;
-            return fillQueueToSize(parametersMoving, numberOfRequiredElements);
+            return fillQueueToSize(parametersMovingUnique, numberOfRequiredElements);
         }
 
-        private boolean fillQueueToSize(ParametersMoving parametersMoving, int countItems) {
+        private boolean fillQueueToSize(ParametersMovingUnique parametersMovingUnique, int countItems) {
             while (isNecessaryToContinueFind(countItems) && isPossibleToContinueFind()) {
-                PairCCoA<Double, Footprint> preFound = getNextWithID(parametersMoving);
+                PairCCoA<Double, Footprint> preFound = getNextWithID(parametersMovingUnique);
                 boolean isFoundFootprintWithTheID = preFound != null;
                 if (isFoundFootprintWithTheID) {
                     previouslyFound.addLast(preFound);
@@ -500,18 +504,18 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
         @Override
-        public boolean hasNext(ParametersMoving parametersMoving) {
+        public boolean hasNext(ParametersMovingUnique parametersMovingUnique) {
             int numberOfRequiredElements = 1;
-            return fillQueueToSize(parametersMoving, numberOfRequiredElements);
+            return fillQueueToSize(parametersMovingUnique, numberOfRequiredElements);
         }
 
-        private PairCCoA<Double, Footprint> getNextWithID(ParametersMoving parametersMoving) {
+        private PairCCoA<Double, Footprint> getNextWithID(ParametersMovingUnique parametersMovingUnique) {
             while (iteratorStorage.hasNext()) {
                 PairCCoA<Double, Footprint> entry = iteratorStorage.next();
                 PairCCoA<Double, Footprint> result = new PairCCoAClass<>(entry.getKey(), entry.getValue());
 
                 Footprint footprint = entry.getValue();
-                boolean isSearchable = footprint.getMovingObject().getID() == parametersMoving.getID();
+                boolean isSearchable = footprint.getMovingObject().getID() == parametersMovingUnique.getID();
                 if (isSearchable) {
                     return result;
                 }
