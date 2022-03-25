@@ -1,14 +1,11 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 
 import java.util.List;
 
 public interface NetworkNodes {
-    public Node createFirstNode(PointCCoA coordinat, double radius, double timeTravelFromStart);
-    public void cleanInfoAbout(Node node); ////FIXME bad solution architecture
+    public List<Node> getNeighboringNodes(PointCCoA coordinates, double timeTravelFromStart);
 
-    public void addNode(Node node);
-    public List<Node> getNeightboringNodes(Node currentNode, PointCCoA coordinat, double radius, ParametersMovingUnique parametersMovingUnique); //FIXME надо, чтобы на одинаковые координаты, сеть возвращала уже созданные узлы, с хранящейся в них информацией соотвественно
+    public List<Node> getNeighboringNodes(Node currentNode);
 }

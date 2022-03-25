@@ -22,13 +22,11 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
      *
      * @param start
      * @param destination
-     * @param radiusMovingObject
      * @return
      */
     @Override
     public PathCCoA getPath(PointCCoA start,
                             PointCCoA destination,
-                            double radiusMovingObject, //FIXME duplication arguments
                             ParametersMovingUnique parametersMovingUnique,
                             double timeAdding) {
 
@@ -39,12 +37,13 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
 
         Map<Node, Double> gScopeRealBestKnownDistanceFromStart = new HashMap<Node, Double>();
 
-        Node startNode = this.networkNodes.createFirstNode(start, radiusMovingObject, timeAdding); //FIXME FIRST radius and lenght definition
+        List<Node> nodes = this.networkNodes.getNeighboringNodes(start, timeAdding); //FIXME FIRST radius and lenght definition
+        Node startNode = nodes.get(0);
 
 
         gScopeRealBestKnownDistanceFromStart.put(startNode, 0.0);
 
-        double hevristic = parametersMovingUnique.getTimeTravel(startNode.getEstimatedDistanceToDestination(destination));
+        double hevristic = parametersMovingUnique.getTimeTravel(startNode.getEstimateDistanceToDestinationHeuristicFunction(destination));
         double g = 0.0;
         double f = g + hevristic;
         f_score.put(startNode, f);
@@ -67,7 +66,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
             f_score.remove(currentNode);
             closedNodes.add(currentNode);  //FIXME bag не видит появившееся пустое место
 
-            List<Node> allNeightbors = currentNode.getNeighboringNodes(radiusMovingObject, parametersMovingUnique);
+            List<Node> allNeightbors = currentNode.getNeighboringNodes();
 
 
             int i = 0;
@@ -91,7 +90,6 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
                 if (!this.neightborNodeIsAccess(
                         neighbor,
                         currentNode,
-                        radiusMovingObject,
                         parametersMovingUnique.getTimeTravel(realDistanceFromStartToCurrentNode),
                         parametersMovingUnique.getTimeTravel(realDistanceToNeightborFromStartTroughtCurrentNode),
                         parametersMovingUnique
@@ -120,8 +118,8 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
 
 //                    double g = realDistanceToNeightborFromStartTroughtCurrentNode + neighbor.getEstimatedDistanceToDestination(destination);
                     double score =
-                            neighbor.getTimeTravelFromStart()
-                                    + parametersMovingUnique.getTimeTravel(neighbor.getEstimatedDistanceToDestination(destination));
+                            neighbor.getActualTimeTravelFromStart()
+                                    + parametersMovingUnique.getTimeTravel(neighbor.getEstimateDistanceToDestinationHeuristicFunction(destination));
                     f_score.put(neighbor,
                             score);
 
@@ -140,7 +138,6 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
     private boolean neightborNodeIsAccess(
             Node neighborNode,
             Node currentNode,
-            double radiusMovingObject,
             double timeAdding,
             double timeStanding,
             ParametersMovingUnique parametersMovingUnique
@@ -148,7 +145,7 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
         PolygonCCoA occupiedPlace = spaceOccupiedDuringTheProcess(
                 neighborNode,
                 currentNode,
-                radiusMovingObject
+                parametersMovingUnique.getRadius()
         );
 
 

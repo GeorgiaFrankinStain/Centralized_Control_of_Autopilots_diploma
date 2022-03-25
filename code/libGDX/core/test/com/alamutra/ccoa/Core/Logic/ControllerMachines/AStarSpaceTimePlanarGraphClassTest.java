@@ -20,6 +20,7 @@ class AStarSpaceTimePlanarGraphClassTest {
     private static final Logger LOG = LoggerFactory.getLogger(AStarSpaceTimePlanarGraphClassTest.class);
 
 
+    private ParametersMovingUnique squareParametersMovingUnique = createSquareParametersMoving();
     private AlhorithmFastFindPath fastFinderPath = pathCreatedFastFingerPath();
     private IndexLayer defaultLayer = new IndexLayerClass(0);
 
@@ -30,13 +31,12 @@ class AStarSpaceTimePlanarGraphClassTest {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
 
-        NetworkNodes networkNodesFabrica = new SquareNetworkNodes();
+        NetworkNodes networkNodesFabrica = new SquareNetworkNodes(squareParametersMovingUnique);
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
 
         return fastFinderPath;
     }
 
-    private ParametersMovingUnique squareParametersMovingUnique = createSquareParametersMoving();
 
     private ParametersMovingUnique createSquareParametersMoving() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
@@ -56,7 +56,7 @@ class AStarSpaceTimePlanarGraphClassTest {
             PointCCoA from = new PointCCoAClass(0, 0);
             PointCCoA to = new PointCCoAClass(100, 0);
 
-            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMovingUnique.getRadius(), squareParametersMovingUnique, timeAddingPath);
+            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMovingUnique, timeAddingPath);
 
             PathCCoA expectedPathCCoA = new PathCCoAClass();
             expectedPathCCoA.addPoint(new PointCCoAClass(0.0, 0.0));
@@ -85,7 +85,7 @@ class AStarSpaceTimePlanarGraphClassTest {
             PointCCoA from = new PointCCoAClass(60, 0);
             PointCCoA to = new PointCCoAClass(60, 200);
 
-            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMovingUnique.getRadius(), squareParametersMovingUnique, timeAddingPath);
+            PathCCoA actualPathCCoA = fastFinderPath.getPath(from, to, squareParametersMovingUnique, timeAddingPath);
 
             PathCCoA expectedPathCCoA = new PathCCoAClass();
             expectedPathCCoA.addPoint(new PointCCoAClass(60.0, 0.0));
@@ -170,7 +170,6 @@ class AStarSpaceTimePlanarGraphClassTest {
         private PathCCoA actualPathCCoA = fastFinderPath.getPath(
                 from1,
                 to1,
-                car1.getRadius(),
                 car1, timeAddingPath
         );
 
@@ -224,7 +223,6 @@ class AStarSpaceTimePlanarGraphClassTest {
             PathCCoA pathCar2 = fastFinderPath.getPath(
                     fromBoyNextDoor,
                     toBoyNextDoor,
-                    car2.getRadius(),
                     car2,
                     timeAddingPath
 

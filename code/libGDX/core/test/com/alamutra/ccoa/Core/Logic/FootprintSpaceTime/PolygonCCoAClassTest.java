@@ -558,7 +558,7 @@ class PolygonCCoAClassTest {
         square.addPoint(new PointCCoAClass(20, -20));
 
         String actual = square.toString();
-        String expected = "[(x: 20.0   y: 20.0) (x: -20.0   y: 20.0) (x: -20.0   y: -20.0) (x: 20.0   y: -20.0) ]";
+        String expected = "Polygon [(x: 20.0   y: 20.0) (x: -20.0   y: 20.0) (x: -20.0   y: -20.0) (x: 20.0   y: -20.0) ]";
         assertEquals(expected, actual);
     }
 

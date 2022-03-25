@@ -18,17 +18,12 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
     }
 
     @Override
-    public List<Node> getNeighboringNodes(double radiusMovingObject, ParametersMovingUnique parametersMovingUnique) {
-        return networkNodes.getNeightboringNodes(this, coordinat, radiusMovingObject, parametersMovingUnique);
+    public List<Node> getNeighboringNodes() {
+        return networkNodes.getNeighboringNodes(this);
     }
 
     @Override
-    public double getCoveredDistanceFrom(PointCCoA from) {
-        return from.getDistanceToPoint(this.coordinat);
-    }
-
-    @Override
-    public double getEstimatedDistanceToDestination(PointCCoA to) {
+    public double getEstimateDistanceToDestinationHeuristicFunction(PointCCoA to) {
         return to.getDistanceToPoint(this.coordinat); //FIXME FIRST move in AreasBenchmarkPaths
     }
 
@@ -37,15 +32,9 @@ public class NodeClass implements Node {//FIXME NOW add equals, hashcode
         return this.coordinat;
     }
 
-    @Override
-    public void setTimeTravelFromStart(Double timeTravelFromStart) {
-        this.networkNodes.cleanInfoAbout(this);
-        this.timeTravelFromStart = timeTravelFromStart;
-        this.networkNodes.addNode(this);
-    }
 
     @Override
-    public Double getTimeTravelFromStart() {
+    public Double getActualTimeTravelFromStart() {
         return this.timeTravelFromStart;
     }
 

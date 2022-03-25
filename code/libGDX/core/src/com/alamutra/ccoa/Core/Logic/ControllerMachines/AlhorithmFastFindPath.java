@@ -5,6 +5,6 @@ import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 
 public interface AlhorithmFastFindPath {
-    public PathCCoA getPath(PointCCoA start, PointCCoA destination, double radiusMovingObject, ParametersMovingUnique parametersMovingUnique,
+    public PathCCoA getPath(PointCCoA start, PointCCoA destination, ParametersMovingUnique parametersMovingUnique,
                             double timeAdding);
 }

@@ -41,10 +41,11 @@ public class Main extends Game {
 
 		IndexLayer indexLayer = new IndexLayerClass(0);
 
-		NetworkNodes networkNodesFabrica = new SquareNetworkNodes();
+		FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+		ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+		NetworkNodes networkNodesFabrica = new SquareNetworkNodes(parametersMovingUnique);
 		AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
 
-		FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
 
 		{
 			PointCCoA from = new PointCCoAClass(0, 131); //FIXME BAG don't multipoly 20 (size car)
@@ -52,8 +53,7 @@ public class Main extends Game {
 
 
 			double timeAdding = 0.0;
-			ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-			PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique.getRadius(), parametersMovingUnique, timeAdding);
+			PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
 			try {
 				parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
 			} catch (СrashIntoAnImpassableObjectException ex) {
