@@ -59,7 +59,6 @@ public class GeneratorCarsClass implements GeneratorCars {
 
 
         boolean isNowTimeMark = nextStartInterval <= currentTime && currentTime < nextEndInterval;
-        System.out.println("interval: " + interval + " startTime: " + startTime + " nextStartInterval: " + nextStartInterval + " currentTime: " + currentTime + " nextEndInterval: " + nextEndInterval);
 
         if (isNowTimeMark) {
             try {
@@ -86,8 +85,6 @@ public class GeneratorCarsClass implements GeneratorCars {
 
         nextStartInterval += interval;
         nextEndInterval += interval;
-        System.out.println("---- ++ interval");
-
     }
 
     @Override

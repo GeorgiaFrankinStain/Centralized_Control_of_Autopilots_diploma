@@ -12,7 +12,9 @@ public class StandardGeneratorCars implements GeneratorCars {
 
     private PathCCoA path = new StandardPathX0Y100ToX100Y100();
     private double heightSquare20Car = 20;
-    private double interval = (heightSquare20Car / square20Car.getSpeed() + GlobalVariable.DOUBLE_COMPARISON_ACCURACY + 2);
+    private double protectionAccuracyError = GlobalVariable.DOUBLE_COMPARISON_ACCURACY * 5;
+    private double timeToDriveYourLength = heightSquare20Car / square20Car.getSpeed();
+    private double interval = timeToDriveYourLength + protectionAccuracyError;
     private IndexLayer defaultLayer = new IndexLayerClass(0);
     private GeneratorCars generatorCars =
             new GeneratorCarsClass(square20Car, path, interval, 0, 9, defaultLayer);
