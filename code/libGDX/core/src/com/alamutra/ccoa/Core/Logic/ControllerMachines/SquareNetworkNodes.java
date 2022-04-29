@@ -162,6 +162,16 @@ public class SquareNetworkNodes implements NetworkNodes {
 //        assert(false);
     }
 
+    @Override
+    public Node createNode(PointCCoA coordinates, double timeTravelFromStart) {
+        return new NodeClass(this, coordinates, timeTravelFromStart);
+    }
+
+    @Override
+    public void createManualNodeAnyTime(PointCCoA coordinates) {
+
+    }
+
 
     private List<Node> coincidesCenterMachineWith(
             PointCCoA positionMovingObject,

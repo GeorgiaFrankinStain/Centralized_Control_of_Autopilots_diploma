@@ -110,21 +110,10 @@ public class ParametersMovingUniqueClass implements ParametersMovingUnique {
 
     @Override
     public double getLengthStep() {
-        double maxCoordinatX = Double.MIN_VALUE;
+        double minCoordinateX = getMinCoordinateX();
+        double maxCoordinateX = getMaxCoordinateX();
 
-        for (int i = 0; i < this.polygonCCoA.getCountPoints(); i++) {
-            PointCCoA currentPointCCoA = this.polygonCCoA.getPoint(i);
-
-            if (currentPointCCoA.getX() > maxCoordinatX) {
-                maxCoordinatX = currentPointCCoA.getX();
-            }
-        }
-
-        return maxCoordinatX;
-    }
-
-    private PointCCoA getCenterMovingObject() {
-        return this.getShape().getCenterAverage();
+        return Math.abs(maxCoordinateX - minCoordinateX);
     }
 
     @Override
@@ -173,5 +162,38 @@ public class ParametersMovingUniqueClass implements ParametersMovingUnique {
             throw new IllegalArgumentException("the area of the shape is 0");
         }
     }
+
+
+    private double getMaxCoordinateX() {
+        double maxCoordinateX = Double.MIN_VALUE;
+
+        for (int i = 0; i < this.polygonCCoA.getCountPoints(); i++) {
+            PointCCoA currentPointCCoA = this.polygonCCoA.getPoint(i);
+
+            if (currentPointCCoA.getX() > maxCoordinateX) {
+                maxCoordinateX = currentPointCCoA.getX();
+            }
+        }
+
+        return maxCoordinateX;
+    }
+    private double getMinCoordinateX() {
+        double minCoordinateX = Double.MAX_VALUE;
+
+        for (int i = 0; i < this.polygonCCoA.getCountPoints(); i++) {
+            PointCCoA currentPointCCoA = this.polygonCCoA.getPoint(i);
+
+            if (currentPointCCoA.getX() < minCoordinateX) {
+                minCoordinateX = currentPointCCoA.getX();
+            }
+        }
+
+        return minCoordinateX;
+    }
+
+    private PointCCoA getCenterMovingObject() {
+        return this.getShape().getCenterAverage();
+    }
+
 }
 

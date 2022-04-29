@@ -82,9 +82,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
     @Override
-    public boolean getIsSeatTaken(PolygonCCoA place, double testedTime) { //FIXME ADD_TEST
-
-//FIXME NOW
+    public boolean getIsSeatTaken(PolygonCCoA place, double testedTime) {
 
         Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
         while (iteratorEntryPair.hasNext()) {
@@ -409,7 +407,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         }
 
 
-        private boolean prepareDataStartTunnel() { //FIXME codestyle
+        private boolean prepareDataStartTunnel() {
             boolean isEmergensySituation = startTunnel != null && endTunnel == null;
             assert (!isEmergensySituation);
 

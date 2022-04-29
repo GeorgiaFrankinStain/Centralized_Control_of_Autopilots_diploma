@@ -40,6 +40,9 @@ public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
         List<Node> nodes = this.networkNodes.getNeighboringNodes(start, timeAdding); //FIXME FIRST radius and lenght definition
         Node startNode = nodes.get(0);
 
+        this.networkNodes.createManualNodeAnyTime(destination);
+
+
 
         gScopeRealBestKnownDistanceFromStart.put(startNode, 0.0);
 

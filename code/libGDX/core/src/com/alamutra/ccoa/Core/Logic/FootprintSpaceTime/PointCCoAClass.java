@@ -104,6 +104,9 @@ public class PointCCoAClass implements PointCCoA {
 
     @Override
     public PointCCoA getRotateRelative(PointCCoA origin, double angle) {
+        double degreeM180 = -3.14159;
+        double degree180 = 3.14159;
+
         double cosAngle = Math.cos(angle);
         double sinAngle = Math.sin(angle);
         double xDistanceOnProjection = this.getX() - origin.getX();

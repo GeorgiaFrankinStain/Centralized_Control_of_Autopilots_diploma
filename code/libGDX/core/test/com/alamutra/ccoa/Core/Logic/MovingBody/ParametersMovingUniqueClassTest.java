@@ -53,4 +53,34 @@ class ParametersMovingUniqueClassTest {
         double actualSpeed = parametersMovingUnique.getSpeed();
         assertEquals(expectedSpeed, actualSpeed);
     }
+
+    @Test
+    void getLengthStep_20() {
+        ParametersMovingUnique car = new Square20ParametersMovingUnique();
+        assertEquals(car.getLengthStep(), 20.0);
+    }
+    @Test
+    void getLengthStep_10() {
+        PolygonCCoA expectedShapeMachine = new PolygonCCoAClass();
+        expectedShapeMachine.addPoint(new PointCCoAClass(-5, -5));
+        expectedShapeMachine.addPoint(new PointCCoAClass(-5, 5));
+        expectedShapeMachine.addPoint(new PointCCoAClass(5, 5));
+        expectedShapeMachine.addPoint(new PointCCoAClass(5, -5));
+        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(10, expectedShapeMachine, TypeMachinesBody.TEST_SQUARE_20);
+
+
+        assertEquals(parametersMovingUnique.getLengthStep(), 10.0);
+    }
+    @Test
+    void getLengthStep_10OnlyNegativeCoordinates() {
+        PolygonCCoA expectedShapeMachine = new PolygonCCoAClass();
+        expectedShapeMachine.addPoint(new PointCCoAClass(0, 0));
+        expectedShapeMachine.addPoint(new PointCCoAClass(-10, 0));
+        expectedShapeMachine.addPoint(new PointCCoAClass(-10, -10));
+        expectedShapeMachine.addPoint(new PointCCoAClass(0, -10));
+        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(10, expectedShapeMachine, TypeMachinesBody.TEST_SQUARE_20);
+
+
+        assertEquals(parametersMovingUnique.getLengthStep(), 10.0);
+    }
 }

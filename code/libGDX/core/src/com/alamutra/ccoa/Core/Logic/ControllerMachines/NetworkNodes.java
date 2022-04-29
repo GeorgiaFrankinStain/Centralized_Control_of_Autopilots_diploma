@@ -8,4 +8,8 @@ public interface NetworkNodes {
     public List<Node> getNeighboringNodes(PointCCoA coordinates, double timeTravelFromStart);
 
     public List<Node> getNeighboringNodes(Node currentNode);
+
+    public Node createNode(PointCCoA coordinates, double timeTravelFromStart);
+
+    public void createManualNodeAnyTime(PointCCoA coordinates);
 }
