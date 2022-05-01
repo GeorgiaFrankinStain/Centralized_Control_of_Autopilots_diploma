@@ -191,6 +191,11 @@ public class HexagonClass implements PolygonCCoA, HexagonVectors {
     }
 
     @Override
+    public PolygonCCoA getDeposeOn(PointCCoA vector) {
+        return this.getDeposeOn(vector);
+    }
+
+    @Override
     public boolean contains(PointCCoA desirededPointCCoA) {
         return this.hexagon.contains(desirededPointCCoA);
     }

@@ -2,8 +2,6 @@ package com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon;
 
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.NodeClass;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;

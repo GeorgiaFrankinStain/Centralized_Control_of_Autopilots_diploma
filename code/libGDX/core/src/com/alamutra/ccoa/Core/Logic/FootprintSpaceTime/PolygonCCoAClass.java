@@ -173,6 +173,13 @@ public class PolygonCCoAClass implements PolygonCCoA {
     }
 
     @Override
+    public PolygonCCoA getDeposeOn(PointCCoA vector) {
+        PolygonCCoA newPolygon = this.clone();
+        newPolygon.deposeOn(vector);
+        return newPolygon;
+    }
+
+    @Override
     public String toString() {
         String result = "";
 

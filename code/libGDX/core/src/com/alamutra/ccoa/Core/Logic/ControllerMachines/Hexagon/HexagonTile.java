@@ -1,10 +1,8 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon;
 
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.*;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.HexagonClass;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.HexagonVectors;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 
 import java.util.ArrayList;

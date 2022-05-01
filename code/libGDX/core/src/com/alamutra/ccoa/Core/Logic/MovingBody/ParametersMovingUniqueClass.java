@@ -72,7 +72,7 @@ public class ParametersMovingUniqueClass implements ParametersMovingUnique {
 
     @Override
     public PolygonCCoA getShape() {
-        return this.polygonCCoA;
+        return this.polygonCCoA.clone();
     }
 
     @Override

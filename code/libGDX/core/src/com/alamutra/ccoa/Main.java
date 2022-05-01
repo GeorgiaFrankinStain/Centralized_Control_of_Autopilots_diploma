@@ -2,11 +2,12 @@ package com.alamutra.ccoa;
 
 import com.alamutra.ccoa.Core.Logic.AreasBenchmarkPaths.AreasBenchmarkPaths;
 import com.alamutra.ccoa.Core.Logic.AreasBenchmarkPaths.StraightLineEstimatedClass;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.AStarSpaceTimePlanarGraphClass;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar.AStarSpaceTimePlanarGraphClass;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricHexagonNodes;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon.HexagonTile;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.SquareNetworkNodes;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
@@ -47,7 +48,8 @@ public class Main extends Game {
 //		NetworkNodes networkNodesFabrica = new SquareNetworkNodes(parametersMovingUnique);
 		double degree60 = 1.0472;
 		NetworkNodes networkNodesFabrica = new HexagonTile(degree60, parametersMovingUnique);
-		AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
+		FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60, parametersMovingUnique);
+		AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
 
 
 		{
@@ -59,6 +61,19 @@ public class Main extends Game {
 			PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
 			try {
 				parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+			} catch (СrashIntoAnImpassableObjectException ex) {
+			}
+		}
+		{
+			ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+			PointCCoA from = new PointCCoAClass(30, 131); //FIXME BAG don't multipoly 20 (size car)
+			PointCCoA to = new PointCCoAClass(70, 300);
+
+
+			double timeAdding = 0.0;
+			PathCCoA actualPath = fastFinderPath.getPath(from, to, localNewCar, timeAdding);
+			try {
+				localNewCar.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
 			} catch (СrashIntoAnImpassableObjectException ex) {
 			}
 		}

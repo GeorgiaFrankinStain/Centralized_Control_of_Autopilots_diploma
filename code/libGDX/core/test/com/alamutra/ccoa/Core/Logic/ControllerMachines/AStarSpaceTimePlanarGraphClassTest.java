@@ -1,5 +1,8 @@
 package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar.AStarSpaceTimePlanarGraphClass;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricSquareNetworkNodes;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.*;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
@@ -31,8 +34,8 @@ class AStarSpaceTimePlanarGraphClassTest {
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
 
-        NetworkNodes networkNodesFabrica = new SquareNetworkNodes(squareParametersMovingUnique);
-        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(networkNodesFabrica, onlyFootprintsSpaceTime);
+        FabricNetworkNodes fabricNetworkNodes = new FabricSquareNetworkNodes(squareParametersMovingUnique);
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
 
         return fastFinderPath;
     }
@@ -135,7 +138,6 @@ class AStarSpaceTimePlanarGraphClassTest {
     void getPath_boyNextDoorAhead_isCar2EndPointEqualsEndTaskPath() {
         assertTrue(aheadBoyNextDoorTest.isCar2EndPointEqualsEndTaskPath());
     }
-
 
 
     private interface BoyNextDoorTest {

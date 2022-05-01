@@ -23,6 +23,8 @@ public interface PolygonCCoA {
 
     public void deposeOn(PointCCoA vector);
 
+    public PolygonCCoA getDeposeOn(PointCCoA vector);
+
     public boolean contains(PointCCoA desirededPointCCoA);
 
     public boolean enteringPoint(PointCCoA position);

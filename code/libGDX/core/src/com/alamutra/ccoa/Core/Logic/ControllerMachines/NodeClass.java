@@ -3,8 +3,6 @@ package com.alamutra.ccoa.Core.Logic.ControllerMachines;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.List;
 
 public class NodeClass implements Node {//FIXME NOW add equals, hashcode
