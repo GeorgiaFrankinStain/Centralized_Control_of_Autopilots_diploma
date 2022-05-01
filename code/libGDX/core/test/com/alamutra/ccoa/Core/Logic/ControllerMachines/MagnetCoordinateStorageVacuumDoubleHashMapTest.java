@@ -39,7 +39,7 @@ class MagnetCoordinateStorageVacuumDoubleHashMapTest {
 
         one = new NodeClass(hexagonTile, new PointCCoAClass(xOne, 0), 0.0);
 
-        double distanceBetweenMagnets = GlobalVariable.DOUBLE_COMPARISON_ACCURACY * 4;
+        double distanceBetweenMagnets = GlobalVariable.LENGTH_DIAPASON_MAGNET;
         double distanceIsLessThanTheDistanceBetweenTheMagnets = distanceBetweenMagnets / 10;
         double xSecond = xOne - distanceIsLessThanTheDistanceBetweenTheMagnets;
 
