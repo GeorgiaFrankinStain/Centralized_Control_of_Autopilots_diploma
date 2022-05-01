@@ -48,7 +48,7 @@ public class Main extends Game {
 //		NetworkNodes networkNodesFabrica = new SquareNetworkNodes(parametersMovingUnique);
 		double degree60 = 1.0472;
 		NetworkNodes networkNodesFabrica = new HexagonTile(degree60, parametersMovingUnique);
-		FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60, parametersMovingUnique);
+		FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
 		AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
 
 

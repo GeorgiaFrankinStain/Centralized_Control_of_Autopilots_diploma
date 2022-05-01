@@ -16,11 +16,12 @@ import java.util.*;
 
 public class AStartPathSearchEngineClass implements AStartPathSearchEngine {
 
-    private Set<Node> closedNodes;
-    private Set<Node> opened;
-    private Map<Node, Double> fScoreHeuristic;
-    private Map<Node, Node> keyNodeCameFrom;
-    private Map<Node, Double> gScopeRealBestKnownDistanceFromStart;
+    private Set<Node> closedNodes = new HashSet<Node>();
+    private Set<Node> opened = new HashSet<Node>();
+    private HeuristicStorage heuristicStorage;
+
+    private Map<Node, Node> keyNodeCameFrom = new HashMap<Node, Node>();
+    private Map<Node, Double> gScopeRealBestKnownDistanceFromStart = new HashMap<Node, Double>();
     private NetworkNodes networkNodes;
     private PointCCoA destination;
     private ParametersMovingUnique parametersMovingUnique;
@@ -37,60 +38,35 @@ public class AStartPathSearchEngineClass implements AStartPathSearchEngine {
         this.parametersMovingUnique = parametersMovingUnique;
         this.destination = destination;
         this.networkNodes = networkNodes;
-        closedNodes = new HashSet<Node>();
-        opened = new HashSet<Node>();
-        fScoreHeuristic = new HashMap<Node, Double>();
-        keyNodeCameFrom = new HashMap<Node, Node>();
 
-        gScopeRealBestKnownDistanceFromStart = new HashMap<Node, Double>();
-
-        Node startNode = new NodeClass(this.networkNodes, start, timeAdding);
+        this.heuristicStorage = new HeuristicStorageClass(this.parametersMovingUnique, this.destination);
 
         this.networkNodes.createManualNodeAnyTime(destination);
 
-
-
+        Node startNode = new NodeClass(this.networkNodes, start, timeAdding);
         gScopeRealBestKnownDistanceFromStart.put(startNode, 0.0); //FIXME not 0.0, replace in timeAdding
 
-        double heuristic = parametersMovingUnique.getTimeTravel(startNode.getEstimateDistanceToDestinationHeuristicFunction(destination));
-        double g = 0.0;
-        double f = g + heuristic;
-        fScoreHeuristic.put(startNode, f);
+        this.heuristicStorage.addNode(startNode);
         opened.add(startNode);
     }
 
     @Override
     public PathCCoA getPath() {
-        int j = 0;
         while (opened.size() > 0) {
-            j++;
-
-            Node currentNode = getNodeWithMinialMass(fScoreHeuristic); //FIXME 2 function in one
-
+            Node currentNode = this.heuristicStorage.getNodeWithBestHeuristicScope();
 
             boolean isDestinationNode = currentNode.getCoordinate().equals(destination);
             if (isDestinationNode) {
                 return reconstructPath(keyNodeCameFrom, currentNode);
             }
 
-            opened.remove(currentNode);
-            fScoreHeuristic.remove(currentNode);
-            closedNodes.add(currentNode);  //FIXME bag не видит появившееся пустое место
+            moveNodeToClosedList(currentNode);
 
-            List<Node> allNeightbors = currentNode.getNeighboringNodes();
-
-
-            int i = 0;
-            for (Node neighbor : allNeightbors) {
-                i++;
-/*                if (i > 40) {
-                    break;
-
-                }*/
+            List<Node> allNeighbors = currentNode.getNeighboringNodes();
+            for (Node neighbor : allNeighbors) {
                 ProcessedNeighborsOfNearestCoDirectionalDestinationNode processNeighbors =
                         new ProcessedNeighborsOfNearestCoDirectionalDestinationNodeClass(currentNode, neighbor);
                 processNeighbors.processed();
-
             }
         }
 
@@ -100,6 +76,12 @@ public class AStartPathSearchEngineClass implements AStartPathSearchEngine {
          * forever, then the algorithm will forever look for a way.
          */
         return null;
+    }
+
+    private void moveNodeToClosedList(Node currentNode) {
+        opened.remove(currentNode);
+        this.heuristicStorage.removeNode(currentNode);
+        closedNodes.add(currentNode);
     }
 
     private PathCCoA reconstructPath(Map<Node, Node> keyNodeCameFrom, Node current) {
@@ -114,25 +96,6 @@ public class AStartPathSearchEngineClass implements AStartPathSearchEngine {
         }
 
         return pathCCoA;
-    }
-
-    private Node getNodeWithMinialMass(Map<Node, Double> map) {
-
-        Node nodeWithMinScopes = null;
-        double minScopes = Double.MAX_VALUE;
-
-
-        for (Map.Entry<Node, Double> entry : map.entrySet()) {
-            Double scopeOfCurrentNode = entry.getValue();
-
-            if (scopeOfCurrentNode < minScopes) {
-                nodeWithMinScopes = entry.getKey();
-                minScopes = scopeOfCurrentNode;
-            }
-
-        }
-
-        return nodeWithMinScopes;
     }
 
     private interface ProcessedNeighborsOfNearestCoDirectionalDestinationNode {
@@ -174,23 +137,15 @@ public class AStartPathSearchEngineClass implements AStartPathSearchEngine {
                 keyNodeCameFrom.put(neighbor, currentNode);
                 gScopeRealBestKnownDistanceFromStart.put(neighbor, realDistanceToNeighborFromStartTroughCurrentNode);
 
-                putNewHeuristicScopeForNeighbor();
+                heuristicStorage.addNode(currentNode, neighbor);
+            }
 
-                if (!opened.contains(neighbor)) {
-                    opened.add(neighbor);
-                }
+            if (thisIsNotAStudiedNeighbor) {
+                opened.add(neighbor);
             }
         }
 
-        private void putNewHeuristicScopeForNeighbor() {
-            double scoreHeuristic = neighbor.getActualTimeTravelFromStart()
-                    + parametersMovingUnique.getTimeTravel(neighbor.getEstimateDistanceToDestinationHeuristicFunction(destination));
-            fScoreHeuristic.put(neighbor, scoreHeuristic);
-        }
-
-
         private boolean isMakesSenseToProcessTheNode() {
-
             if (closedNodes.contains(neighbor) || !this.isNeighborNodeIsAccess()) {
                 return false;
             }
