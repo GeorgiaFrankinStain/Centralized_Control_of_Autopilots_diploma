@@ -41,6 +41,7 @@ public class Main extends Game {
 		PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
 
 
+
 		IndexLayer indexLayer = new IndexLayerClass(0);
 
 		FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();

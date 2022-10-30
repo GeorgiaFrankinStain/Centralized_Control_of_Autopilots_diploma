@@ -4,8 +4,16 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class GlobalVariable { //FIXME is good? (global variable in java is good?)
+    private static double degree60 = 1.0472;
+
+    private static double accuracyMoving = degree60 / 9;
+
     public static final double DOUBLE_COMPARISON_ACCURACY = 0.001; //mm
     public static final double LENGTH_DIAPASON_MAGNET = GlobalVariable.DOUBLE_COMPARISON_ACCURACY * 4;
+
+    public static double getAccuracyMoving() {
+        return accuracyMoving;
+    }
 
     public static boolean equalsNumber(double one, double two) {
         double difference = Math.abs(one - two);

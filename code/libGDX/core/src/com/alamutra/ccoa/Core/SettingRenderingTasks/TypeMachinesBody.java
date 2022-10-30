@@ -1,6 +1,7 @@
 package com.alamutra.ccoa.Core.SettingRenderingTasks;
 
 public enum TypeMachinesBody {
+    SIMPLE_CAR,
     TEST_SQUARE_20,
     TRUCK,
     TANK,

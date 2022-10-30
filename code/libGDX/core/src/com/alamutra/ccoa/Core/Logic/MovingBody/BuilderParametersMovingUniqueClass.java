@@ -6,7 +6,7 @@ import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 public class BuilderParametersMovingUniqueClass implements BuilderParametersMovingUnique {
     private double speed;
     private PolygonCCoA shape;
-    private TypeMachinesBody typeMachinesBody;
+    private TypeMachinesBody typeMachinesBody = TypeMachinesBody.SIMPLE_CAR;
 
     @Override
     public void setSpeed(double speed) {
