@@ -9,6 +9,7 @@ import com.alamutra.ccoa.Core.Logic.Position;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
@@ -181,6 +182,18 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         return layerFootprintSpaceTime.getPosition(parametersMovingUniqueWithID, time);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FootprintsSpaceTimeClass that = (FootprintsSpaceTimeClass) o;
+        return Objects.equals(defaultIndexLayer, that.defaultIndexLayer) && Objects.equals(layers, that.layers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(defaultIndexLayer, layers);
+    }
 
     //==== <start> <Private_Methods> =======================================================================
     private void addLayer(IndexLayer indexLayer) { //FIXME CODESTYLE

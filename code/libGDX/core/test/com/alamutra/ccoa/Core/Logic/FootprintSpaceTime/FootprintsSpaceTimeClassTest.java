@@ -1,5 +1,11 @@
 package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
 
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar.AStarSpaceTimePlanarGraphClass;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricHexagonNodes;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon.HexagonTile;
+import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
@@ -7,6 +13,8 @@ import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
 import com.alamutra.ccoa.Core.Logic.MovingBody.*;
 import com.alamutra.ccoa.Core.Logic.PathsMachines.PositionClass;
 import com.alamutra.ccoa.Core.Logic.Position;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.PoolDataFootprintForRendering;
+import com.alamutra.ccoa.Core.SettingRenderingTasks.PoolDataFootprintForRenderingClass;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
 import org.junit.jupiter.api.Test;
 
@@ -33,6 +41,42 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     @Test
     void addFootprintsPathWithoutEndStandingUntilEndTime() {
+    }
+
+    @Test
+    void testEquals_sameCommand() {
+
+
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+
+
+        PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
+
+
+
+        IndexLayer indexLayer = new IndexLayerClass(0);
+
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+//		NetworkNodes networkNodesFabrica = new SquareNetworkNodes(parametersMovingUnique);
+        double degree60 = 1.0472;
+        NetworkNodes networkNodesFabrica = new HexagonTile(degree60, parametersMovingUnique);
+        FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
+
+
+        {
+            PointCCoA from = new PointCCoAClass(0, 131); //FIXME BAG don't multipoly 20 (size car)
+            PointCCoA to = new PointCCoAClass(0, 300);
+
+
+            double timeAdding = 0.0;
+            PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
+            try {
+                parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+            } catch (СrashIntoAnImpassableObjectException ex) {
+            }
+        }
     }
 
 

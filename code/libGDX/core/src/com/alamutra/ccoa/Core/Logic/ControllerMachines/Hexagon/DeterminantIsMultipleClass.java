@@ -32,13 +32,13 @@ public class DeterminantIsMultipleClass implements DeterminantIsMultiple {
     }
 
     private boolean isMultipleEvenString() {
-        PointCCoA startOfSetsOfEvenMultipleNodes = new PointCCoAClass(littleRadius, lengthSideHexagon / 2);
+        PointCCoA startOfSetsOfEvenMultipleNodes = new PointCCoAClass(littleRadius, lengthSideHexagon );
 
         return isMultiplePoint(startOfSetsOfEvenMultipleNodes);
     }
 
     private boolean isMultipleOddString() {
-        PointCCoA startOfSetsOfOddEvenMultipleNodes = new PointCCoAClass(0.0, 23.09400627955275);
+        PointCCoA startOfSetsOfOddEvenMultipleNodes = new PointCCoAClass(0.0, 2.5 * lengthSideHexagon); //documentation pictures LINK_BRDcuS
 
         return isMultiplePoint(startOfSetsOfOddEvenMultipleNodes);
     }

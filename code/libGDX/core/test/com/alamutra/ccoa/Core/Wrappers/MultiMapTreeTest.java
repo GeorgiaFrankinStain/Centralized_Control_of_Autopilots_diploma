@@ -75,4 +75,65 @@ class MultiMapTreeTest {
             i++;
         }
     }
+
+    @Test
+    void testEquals_int() {
+        MultiMap<Integer, Integer> storage = new MultiMapTree<>();
+
+        storage.put(0, 10);
+        storage.put(0, 11);
+        storage.put(1, 12);
+        storage.put(-1, 9);
+
+
+        MultiMap<Integer, Integer> storage2 = new MultiMapTree<>();
+
+        storage2.put(0, 10);
+        storage2.put(0, 11);
+        storage2.put(1, 12);
+        storage2.put(-1, 9);
+
+        assertEquals(storage, storage2);
+    }
+    @Test
+    void testEquals_intNotEqualsOneKey() {
+        MultiMap<Integer, Integer> storage = new MultiMapTree<>();
+
+        storage.put(0, 10);
+        storage.put(0, 11);
+        storage.put(0, 12);
+        storage.put(1, 12);
+        storage.put(-1, 9);
+
+
+        MultiMap<Integer, Integer> storage2 = new MultiMapTree<>();
+
+        storage2.put(0, 10);
+        storage2.put(0, 11);
+        storage2.put(1, 12);
+        storage2.put(-1, 9);
+
+        assertNotEquals(storage, storage2);
+    }
+    @Test
+    void testEquals_intNotEqualsDifferenceKey() {
+        MultiMap<Integer, Integer> storage = new MultiMapTree<>();
+
+        storage.put(0, 10);
+        storage.put(0, 11);
+        storage.put(0, 12);
+        storage.put(1, 12);
+        storage.put(-1, 9);
+
+
+        MultiMap<Integer, Integer> storage2 = new MultiMapTree<>();
+
+        storage2.put(0, 10);
+        storage2.put(0, 11);
+        storage2.put(1, 12);
+        storage2.put(-1, 9);
+        storage2.put(-2, 9);
+
+        assertNotEquals(storage, storage2);
+    }
 }

@@ -32,6 +32,18 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
         return size;
     }
 
+    @Override
+    public boolean equals(Object o) { //FIXME add tests
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MultiMapTree<?, ?> that = (MultiMapTree<?, ?>) o;
+        return Objects.equals(map, that.map);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(map);
+    }
 
     private class EntryPairMapClass implements Iterator<PairCCoA<K, V>> { //FIXME ADD_TEST
         private int positionReturnedList = 0;

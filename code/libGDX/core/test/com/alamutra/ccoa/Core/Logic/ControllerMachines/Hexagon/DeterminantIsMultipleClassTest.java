@@ -13,6 +13,9 @@ class DeterminantIsMultipleClassTest {
     private double distanceBetweenHorizontalNeighboringNodes = 20;
     private double distanceBetweenVerticalNeighborThroughOneNodes = 34.64101615137755;
 
+    private PointCCoA startEvenMultipleSetCoordinates = new PointCCoAClass(10.0,11.547005383792516);
+    private PointCCoA startOddMultipleSetCoordinates = new PointCCoAClass(0.0, 28.86751345948129);
+
     @Test
     void isCoordinateIsMultiple_noMultiple_x0y0() {
         DeterminantIsMultiple determinant = new DeterminantIsMultipleClass(littleRadius, new PointCCoAClass(0, 0));
@@ -22,34 +25,33 @@ class DeterminantIsMultipleClassTest {
     @Test
     void isCoordinateIsMultiple_evenMultiple_x10y5p77() {
         DeterminantIsMultiple determinant = new DeterminantIsMultipleClass(littleRadius,
-                new PointCCoAClass(9.99999222649604, 5.773500447880849));
+                startEvenMultipleSetCoordinates);
         assertTrue(determinant.isCoordinateIsMultiple());
     }
 
     @Test
     void isCoordinateIsMultiple_evenMultiple_xM10y5p77() {
         DeterminantIsMultiple determinant = new DeterminantIsMultipleClass(littleRadius,
-                new PointCCoAClass(-10.00000777350396, 5.773500447880849));
+                new PointCCoAClass(-littleRadius, 11.547005383792516));
         assertTrue(determinant.isCoordinateIsMultiple());
     }
 
     @Test
     void isCoordinateIsMultiple_oddMultiple_x0y23() {
         DeterminantIsMultiple determinant = new DeterminantIsMultipleClass(littleRadius,
-                new PointCCoAClass(-9.069088036994799E-6, 23.09400627955275));
+                startOddMultipleSetCoordinates);
         assertTrue(determinant.isCoordinateIsMultiple());
     }
 
     @Test
     void isCoordinateIsMultiple_oddMultiple_x19y23() {
         DeterminantIsMultiple determinant = new DeterminantIsMultipleClass(littleRadius,
-                new PointCCoAClass(19.999990930911963, 23.09400627955275));
+                new PointCCoAClass(distanceBetweenHorizontalNeighboringNodes, 28.86751345948129));
         assertTrue(determinant.isCoordinateIsMultiple());
     }
 
     @Test
     void isCoordinateIsMultiple_oddMultipleFor() {
-        PointCCoA startOddMultipleSetCoordinates = new PointCCoAClass(0, 23.09400627955275);
 
         int anyMultiplier = -5;
 
@@ -70,7 +72,7 @@ class DeterminantIsMultipleClassTest {
 
     @Test
     void isCoordinateIsMultiple_evenMultipleFor() {
-        PointCCoA startEvenMultipleSetCoordinates = new PointCCoAClass(10, 5.773502691896258);
+
 
         int anyMultiplier = -5;
 

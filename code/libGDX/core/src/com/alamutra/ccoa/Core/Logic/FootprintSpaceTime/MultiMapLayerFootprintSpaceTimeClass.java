@@ -6,6 +6,7 @@ import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 import com.alamutra.ccoa.Core.Wrappers.*;
+import com.alamutra.ccoa.PercistanceDataAccessObjects.AdderMarks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -230,6 +231,25 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
 
         return resRendringFootpring;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+
+        MultiMapLayerFootprintSpaceTimeClass other = (MultiMapLayerFootprintSpaceTimeClass) obj;
+        return other.getStorageAllFootprints().equals(this.storageAllFootprints);
+    }
+
+    public MultiMap<Double, Footprint> getStorageAllFootprints() {
+        return storageAllFootprints;
     }
 
     private boolean isCorridorCoverTunnel(Corridor corridor,
