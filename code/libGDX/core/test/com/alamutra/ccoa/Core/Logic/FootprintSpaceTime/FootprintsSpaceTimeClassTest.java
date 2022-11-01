@@ -44,25 +44,32 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
     }
 
     @Test
-    void testEquals_sameCommand() {
+    void testEquals_sameCommand() throws СrashIntoAnImpassableObjectException {
+        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime();
+        FootprintsSpaceTime footprintsSpaceTime2 = createFootprintSpaceTime();
 
+        assertTrue(footprintsSpaceTime1.equalsWithoutUniqueId(footprintsSpaceTime2));
+    }
 
-        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+    @Test
+    void testEquals_sameSelf() throws СrashIntoAnImpassableObjectException {
+        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime();
 
+        assertEquals(footprintsSpaceTime1, footprintsSpaceTime1);
+    }
 
-        PoolDataFootprintForRendering poolDataFootprintForRendering = new PoolDataFootprintForRenderingClass(onlyFootprintsSpaceTime);
+    private FootprintsSpaceTime createFootprintSpaceTime() throws СrashIntoAnImpassableObjectException {
 
-
+        FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
         IndexLayer indexLayer = new IndexLayerClass(0);
 
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
         ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
-//		NetworkNodes networkNodesFabrica = new SquareNetworkNodes(parametersMovingUnique);
         double degree60 = 1.0472;
         NetworkNodes networkNodesFabrica = new HexagonTile(degree60, parametersMovingUnique);
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
-        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, footprintsSpaceTime);
 
 
         {
@@ -72,11 +79,9 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
             double timeAdding = 0.0;
             PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
-            try {
-                parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
-            } catch (СrashIntoAnImpassableObjectException ex) {
-            }
+            parametersMovingUnique.mark(footprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
         }
+        return footprintsSpaceTime;
     }
 
 

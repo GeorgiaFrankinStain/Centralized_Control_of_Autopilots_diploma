@@ -73,5 +73,20 @@ import com.alamutra.ccoa.Core.Wrappers.RandomWrapperClass;
         return polygonCCoA;
     }
 
-}
+     @Override
+     public boolean equalsWithoutUniqueId(Object obj) {
+         if (this == obj)
+             return true;
+         if (obj == null)
+             return false;
+         if (this.getClass() != obj.getClass())
+             return false;
+
+
+         ZonaLandscapeClass other = (ZonaLandscapeClass) obj;
+         return this.getPosition().equals(other.getPosition())
+                 && this.getOccupiedLocation().equals(other.getOccupiedLocation());
+     }
+
+ }
 

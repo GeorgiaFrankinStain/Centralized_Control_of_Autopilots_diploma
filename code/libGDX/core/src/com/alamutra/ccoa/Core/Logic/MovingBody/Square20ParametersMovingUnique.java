@@ -82,4 +82,9 @@ public class Square20ParametersMovingUnique implements ParametersMovingUnique {
     public int getID() {
         return this.car20.getID();
     }
+
+    @Override
+    public boolean equalsWithoutUniqueId(Object other) {
+        return this.car20.equalsWithoutUniqueId(other);
+    }
 }

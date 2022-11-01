@@ -47,4 +47,6 @@ public interface ParametersMovingUnique {
     public String toString();
 
     public int getID();
+
+    public boolean equalsWithoutUniqueId(Object other);
 }

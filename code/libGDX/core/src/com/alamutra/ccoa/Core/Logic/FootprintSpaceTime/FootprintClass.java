@@ -94,6 +94,27 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
         return idTrackEquals && positionEquals && timeStandingEquals && movingEquals;
     }
+
+    @Override
+    public boolean equalsWithoutUniqueId(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+
+        Footprint other = (Footprint) obj;
+
+        Position thisPosition = this.getPosition();
+        Position otherPosition = other.getPosition();
+        boolean positionEquals = thisPosition.equals(otherPosition);
+        boolean timeStandingEquals = GlobalVariable.equalsNumber(this.getTimeToNextFootprint(), other.getTimeToNextFootprint());
+        boolean movingEquals = this.getMovingObject().equalsWithoutUniqueId(other.getMovingObject());
+
+        return positionEquals && timeStandingEquals && movingEquals;
+    }
     //==== <start> <Getter_and_Setter> ==================================================
 
 

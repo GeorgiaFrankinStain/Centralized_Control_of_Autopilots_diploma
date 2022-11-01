@@ -54,4 +54,6 @@ public interface LayerFootprintSpaceTime {
     public Double getTimeAddingLastFootprints();
 
     public boolean isPathMovingObjectEnteringCorridor(ParametersMovingUnique parametersMovingUnique, Corridor corridor);
+
+    public boolean equalsWithoutUniqueId(Object obj);
 }

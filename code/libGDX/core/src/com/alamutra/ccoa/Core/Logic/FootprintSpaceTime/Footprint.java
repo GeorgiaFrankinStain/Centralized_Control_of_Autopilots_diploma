@@ -25,4 +25,6 @@ public interface Footprint {
     public String toString();
 
     public boolean equals(Object obj);
+
+    public boolean equalsWithoutUniqueId(Object obj);
 }

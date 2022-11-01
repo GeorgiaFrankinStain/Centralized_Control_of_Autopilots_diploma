@@ -7,15 +7,11 @@ import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
 import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
 import com.alamutra.ccoa.Core.Logic.Position;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.TreeMap;
+import java.util.*;
 
 public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
     private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
-    private Map<IndexLayer, LayerFootprintSpaceTime> layers =
-            new TreeMap<IndexLayer, LayerFootprintSpaceTime>();
+    private Map<IndexLayer, LayerFootprintSpaceTime> layers = new TreeMap<IndexLayer, LayerFootprintSpaceTime>();
 
 
     public FootprintsSpaceTimeClass() {
@@ -182,17 +178,50 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         return layerFootprintSpaceTime.getPosition(parametersMovingUniqueWithID, time);
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FootprintsSpaceTimeClass that = (FootprintsSpaceTimeClass) o;
-        return Objects.equals(defaultIndexLayer, that.defaultIndexLayer) && Objects.equals(layers, that.layers);
+        return layers.equals(that.layers);
+    }
+
+    @Override
+    public boolean equalsWithoutUniqueId(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        FootprintsSpaceTimeClass that = (FootprintsSpaceTimeClass) obj;
+
+        if (that.layers.size() != this.layers.size()) {
+            return false;
+        }
+
+        Iterator<Map.Entry<IndexLayer, LayerFootprintSpaceTime>> iterator = that.layers.entrySet().iterator();
+        for (Map.Entry<IndexLayer, LayerFootprintSpaceTime> layerEntryPair : layers.entrySet()) {
+
+            Map.Entry<IndexLayer, LayerFootprintSpaceTime> otherEntryPair = iterator.next();
+
+            IndexLayer otherIndexLayer = otherEntryPair.getKey();
+            IndexLayer thisIndexLayer = layerEntryPair.getKey();
+
+            if (!otherIndexLayer.equals(thisIndexLayer)) {
+                return false;
+            }
+
+            LayerFootprintSpaceTime otherLayer = otherEntryPair.getValue();
+            LayerFootprintSpaceTime thisLayer = layerEntryPair.getValue();
+
+            if (!otherLayer.equalsWithoutUniqueId(thisLayer)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(defaultIndexLayer, layers);
+        return Objects.hash(layers);
     }
 
     //==== <start> <Private_Methods> =======================================================================

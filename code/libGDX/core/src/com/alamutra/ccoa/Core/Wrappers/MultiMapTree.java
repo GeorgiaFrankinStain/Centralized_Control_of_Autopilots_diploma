@@ -1,15 +1,19 @@
 package com.alamutra.ccoa.Core.Wrappers;
 
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Footprint;
+import com.alamutra.ccoa.Core.Logic.GlobalVariable;
+import com.alamutra.ccoa.Core.Logic.IndexLayer;
+
 import java.util.*;
 
-public class MultiMapTree<K, V> implements MultiMap<K, V> {
-    private Map<K, List<V>> map = new TreeMap<K, List<V>>();
+public class MultiMapTree implements MultiMap {
+    private Map<Double, List<Footprint>> map = new TreeMap<Double, List<Footprint>>();
 
 
     @Override
-    public void put(K key, V value) {
+    public void put(Double key, Footprint value) {
         if (this.map.get(key) == null) {
-            this.map.put(key, new ArrayList<V>());
+            this.map.put(key, new ArrayList<Footprint>());
         }
 
         this.map.get(key).add(value);
@@ -17,15 +21,15 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
 
 
     @Override
-    public Iterator<PairCCoA<K, V>> iteratorEntryPair() {
+    public Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair() {
         return new EntryPairMapClass();
     }
 
     @Override
     public int size() { //FIXME add tests
         int size = 0;
-        for (Map.Entry<K, List<V>> entry : map.entrySet()) {
-            List<V> test = entry.getValue();
+        for (Map.Entry<Double, List<Footprint>> entry : map.entrySet()) {
+            List<Footprint> test = entry.getValue();
             size += test.size();
         }
 
@@ -33,10 +37,63 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
     }
 
     @Override
+    public boolean equalsWithoutUniqueId(Object obj) {
+
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+        MultiMap other = (MultiMap) obj;
+
+        if (other.size() != this.size()) {
+            return false;
+        }
+
+        Iterator<PairCCoA<Double, Footprint>> thisIterator = this.iteratorEntryPair();
+
+        boolean isOnlyOneEnded = false;
+        boolean isSizeNotEquals;
+        Iterator<PairCCoA<Double, Footprint>> otherIterator = other.iteratorEntryPair();
+        while (true) {
+
+            boolean isAreNotEnoughElementsToCompare = !otherIterator.hasNext() || !thisIterator.hasNext();
+            isSizeNotEquals = isAreNotEnoughElementsToCompare;
+            if (isSizeNotEquals) {
+                isOnlyOneEnded = otherIterator.hasNext() ^ thisIterator.hasNext();
+                break;
+            }
+            PairCCoA<Double, Footprint> entryOther = otherIterator.next();
+            PairCCoA<Double, Footprint> entryThis = thisIterator.next();
+
+
+            if (!GlobalVariable.equalsNumber(entryThis.getKey(), entryThis.getKey())) {
+                return false;
+            }
+
+            Footprint thisFootprint = entryOther.getValue();
+            Footprint otherFootprint = entryThis.getValue();
+
+            if (!thisFootprint.equalsWithoutUniqueId(otherFootprint)) {
+                return false;
+            }
+
+        }
+
+        if (isOnlyOneEnded) {
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
     public boolean equals(Object o) { //FIXME add tests
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MultiMapTree<?, ?> that = (MultiMapTree<?, ?>) o;
+        MultiMapTree that = (MultiMapTree) o;
         return Objects.equals(map, that.map);
     }
 
@@ -45,11 +102,11 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
         return Objects.hash(map);
     }
 
-    private class EntryPairMapClass implements Iterator<PairCCoA<K, V>> { //FIXME ADD_TEST
+    private class EntryPairMapClass implements Iterator<PairCCoA<Double, Footprint>> { //FIXME ADD_TEST
         private int positionReturnedList = 0;
         private Iterator iteratorMap;
-        List<V> currentList = null;
-        K currentKey = null;
+        List<Footprint> currentList = null;
+        Double currentKey = null;
 
         public EntryPairMapClass() {
             this.iteratorMap = MultiMapTree.this.map.entrySet().iterator();
@@ -63,7 +120,7 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
         }
 
         @Override
-        public PairCCoA<K, V> next() {
+        public PairCCoA<Double, Footprint> next() {
             boolean successfullyFindNonEmptyList = updateThisCurrentVarible();
 
             if (!successfullyFindNonEmptyList) {
@@ -71,13 +128,13 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
             }
 
 
-            K resKeyMap = this.currentKey;
-            V resValue = this.currentList.get(positionReturnedList);
+            Double resKeyMap = this.currentKey;
+            Footprint resValue = this.currentList.get(positionReturnedList);
 
             positionReturnedList++;
 
 
-            return new PairCCoAClass<K, V>(resKeyMap, resValue);
+            return new PairCCoAClass<Double, Footprint>(resKeyMap, resValue);
         }
 
         private boolean updateThisCurrentVarible() {
@@ -89,8 +146,8 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
             boolean needAndAbilityToSwitchToTheNextMap = this.currentList == null && this.iteratorMap.hasNext();
             if (needAndAbilityToSwitchToTheNextMap) {
                 Map.Entry me = (Map.Entry) this.iteratorMap.next();
-                this.currentList = (List<V>) me.getValue();
-                this.currentKey = (K) me.getKey();
+                this.currentList = (List<Footprint>) me.getValue();
+                this.currentKey = (Double) me.getKey();
                 this.positionReturnedList = 0;
             }
 
@@ -103,8 +160,8 @@ public class MultiMapTree<K, V> implements MultiMap<K, V> {
             while (!this.hasReturnedNowItemInCurrentArrayList()) {
                 if (this.iteratorMap.hasNext()) {
                     Map.Entry me = (Map.Entry) this.iteratorMap.next();
-                    this.currentList = (List<V>) me.getValue();
-                    this.currentKey = (K) me.getKey();
+                    this.currentList = (List<Footprint>) me.getValue();
+                    this.currentKey = (Double) me.getKey();
                     this.positionReturnedList = 0;
                 } else {
                     return false;

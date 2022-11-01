@@ -69,6 +69,7 @@ public interface FootprintsSpaceTime {
 
     public Position getPositionInDefaultLevel(ParametersMovingUnique parametersMovingUniqueWithID, double time);
 
+    public boolean equalsWithoutUniqueId(Object obj);
 
 
 

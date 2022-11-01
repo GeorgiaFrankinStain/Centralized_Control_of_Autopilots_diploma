@@ -1,9 +1,13 @@
 package com.alamutra.ccoa.Core.Wrappers;
 
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Footprint;
+
 import java.util.Iterator;
 
-public interface MultiMap<K, V> {
-    public void put(K key, V value);
-    public Iterator<PairCCoA<K, V>> iteratorEntryPair();
+public interface MultiMap {
+    public void put(Double key, Footprint value);
+    public Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair();
     public int size();
+
+    public boolean equalsWithoutUniqueId(Object obj);
 }

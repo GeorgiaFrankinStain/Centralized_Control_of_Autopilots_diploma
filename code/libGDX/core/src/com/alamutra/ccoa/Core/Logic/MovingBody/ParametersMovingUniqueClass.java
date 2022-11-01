@@ -1,9 +1,11 @@
 package com.alamutra.ccoa.Core.Logic.MovingBody;
 
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Footprint;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.ccoa.Core.Logic.GlobalVariable;
 import com.alamutra.ccoa.Core.Logic.IndexLayer;
 import com.alamutra.ccoa.Core.Logic.TypesInLevel;
 import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
@@ -96,6 +98,24 @@ public class ParametersMovingUniqueClass implements ParametersMovingUnique {
     @Override
     public int getID() {
         return this.id;
+    }
+
+    @Override
+    public boolean equalsWithoutUniqueId(Object obj) {
+
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+
+        ParametersMovingUnique other = (ParametersMovingUniqueClass) obj;
+
+        return other.getShape().equals(this.polygonCCoA)
+                && other.getTypeMachinesBody().equals(this.typeMachinesBody)
+                && GlobalVariable.equalsNumber(other.getSpeed(), this.getSpeed());
     }
 
     @Override

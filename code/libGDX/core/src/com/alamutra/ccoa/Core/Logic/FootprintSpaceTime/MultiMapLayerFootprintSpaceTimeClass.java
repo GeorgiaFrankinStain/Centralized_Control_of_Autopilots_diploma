@@ -19,8 +19,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     private static final Logger LOGGER = LogManager.getLogger(MultiMapLayerFootprintSpaceTimeClass.class);
 
 
-    private MultiMap<Double, Footprint> storageAllFootprints =
-            new MultiMapTree<Double, Footprint>();
+    private MultiMap storageAllFootprints =
+            new MultiMapTree();
 
 
     public MultiMapLayerFootprintSpaceTimeClass() {
@@ -188,6 +188,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
 
+
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
     @Override
@@ -248,7 +249,23 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
         return other.getStorageAllFootprints().equals(this.storageAllFootprints);
     }
 
-    public MultiMap<Double, Footprint> getStorageAllFootprints() {
+
+    @Override
+    public boolean equalsWithoutUniqueId(Object obj) {
+
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+
+
+        MultiMapLayerFootprintSpaceTimeClass other = (MultiMapLayerFootprintSpaceTimeClass) obj;
+        return other.getStorageAllFootprints().equalsWithoutUniqueId(this.storageAllFootprints);
+    }
+
+    public MultiMap getStorageAllFootprints() {
         return storageAllFootprints;
     }
 
