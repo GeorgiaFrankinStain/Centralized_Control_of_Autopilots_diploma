@@ -45,20 +45,77 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     @Test
     void testEquals_sameCommand() throws СrashIntoAnImpassableObjectException {
-        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime();
-        FootprintsSpaceTime footprintsSpaceTime2 = createFootprintSpaceTime();
+        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime1();
+        FootprintsSpaceTime footprintsSpaceTime2 = createFootprintSpaceTime1();
+
+        assertTrue(footprintsSpaceTime1.equalsWithoutUniqueId(footprintsSpaceTime2));
+    }
+
+    @Test
+    void testEquals_notSameCommand() throws СrashIntoAnImpassableObjectException {
+        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime1();
+        FootprintsSpaceTime footprintsSpaceTime2 = createFootprintSpaceTime2();
+
+        assertFalse(footprintsSpaceTime1.equalsWithoutUniqueId(footprintsSpaceTime2));
+    }
+    @Test
+    void testEquals_twoMachinesCommand() throws СrashIntoAnImpassableObjectException {
+        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTimeTwoMachines();
+        FootprintsSpaceTime footprintsSpaceTime2 = createFootprintSpaceTimeTwoMachines();
 
         assertTrue(footprintsSpaceTime1.equalsWithoutUniqueId(footprintsSpaceTime2));
     }
 
     @Test
     void testEquals_sameSelf() throws СrashIntoAnImpassableObjectException {
-        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime();
+        FootprintsSpaceTime footprintsSpaceTime1 = createFootprintSpaceTime1();
 
         assertEquals(footprintsSpaceTime1, footprintsSpaceTime1);
     }
 
-    private FootprintsSpaceTime createFootprintSpaceTime() throws СrashIntoAnImpassableObjectException {
+    private FootprintsSpaceTime createFootprintSpaceTimeTwoMachines() throws СrashIntoAnImpassableObjectException {
+
+
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+
+        IndexLayer indexLayer = new IndexLayerClass(0);
+
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        double degree60 = 1.0472;
+        FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
+
+
+        {
+            PointCCoA from = new PointCCoAClass(0, 131); //FIXME BAG don't multipoly 20 (size car)
+            PointCCoA to = new PointCCoAClass(0, 300);
+
+
+            double timeAdding = 0.0;
+            PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
+            try {
+                parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+            } catch (СrashIntoAnImpassableObjectException ex) {
+            }
+        }
+        {
+            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            PointCCoA from = new PointCCoAClass(30, 131); //FIXME BAG don't multipoly 20 (size car)
+            PointCCoA to = new PointCCoAClass(70, 300);
+
+
+            double timeAdding = 0.0;
+            PathCCoA actualPath = fastFinderPath.getPath(from, to, localNewCar, timeAdding);
+            try {
+                localNewCar.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+            } catch (СrashIntoAnImpassableObjectException ex) {
+            }
+        }
+
+        return onlyFootprintsSpaceTime;
+    }
+    private FootprintsSpaceTime createFootprintSpaceTime1() throws СrashIntoAnImpassableObjectException {
 
         FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
 
@@ -80,6 +137,36 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             double timeAdding = 0.0;
             PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
             parametersMovingUnique.mark(footprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+        }
+        return footprintsSpaceTime;
+    }
+
+    private FootprintsSpaceTime createFootprintSpaceTime2() throws СrashIntoAnImpassableObjectException {
+
+        FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass(); //create FootprintsSpaceTime (Landscape) //PUNKT_1
+
+        IndexLayer indexLayer = new IndexLayerClass(0);
+
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        double degree60 = 1.0472;
+        FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, footprintsSpaceTime);
+
+
+
+        {
+            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            PointCCoA from = new PointCCoAClass(30, 131); //FIXME BAG don't multipoly 20 (size car)
+            PointCCoA to = new PointCCoAClass(70, 300);
+
+
+            double timeAdding = 0.0;
+            PathCCoA actualPath = fastFinderPath.getPath(from, to, localNewCar, timeAdding);
+            try {
+                localNewCar.mark(footprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+            } catch (СrashIntoAnImpassableObjectException ex) {
+            }
         }
         return footprintsSpaceTime;
     }
