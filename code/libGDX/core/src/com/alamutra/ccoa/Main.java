@@ -132,9 +132,8 @@ public class Main extends Game {
 			} catch (СrashIntoAnImpassableObjectException ex) {
 			}
 		}
-/*
 
-		ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
+/*		ParametersMoving wall = fabricParametersMoving.getMoving(TypeMachinesBody.WALL_CAR);
 		PathCCoA wallPath = new PathCCoAClass();
 		wallPath.addPoint(new PointCCoAClass(120, 160));
 		wallPath.deposeOn(wall.getVectorFromTopLeftToAppliedCoordinates());

@@ -4,8 +4,6 @@ import com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar.AStarSpaceTimePlana
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricHexagonNodes;
 import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon.HexagonTile;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.*;
 import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
 import com.alamutra.ccoa.Core.Logic.GlobalVariable;
@@ -40,15 +38,22 @@ public class OrderFromString implements Order {
     private boolean isSetAngleEnd;
 
     private boolean isStanding;
+
+    private boolean isNeedExtractionDynamicParameters = false;
     private boolean isStandingAfter;
 
     public OrderFromString(JsonObject orderJsonObject) throws Exception {
+
+        extractionStanding(orderJsonObject);
 
         extractionParameterMoving(orderJsonObject);
 
         extractionStart(orderJsonObject);
 
-        extractionEnd(orderJsonObject);
+
+        if (isNeedExtractionDynamicParameters) {
+            extractionEndOperation(orderJsonObject);
+        }
 
         extractionStandingAfter(orderJsonObject);
     }
@@ -62,15 +67,20 @@ public class OrderFromString implements Order {
     public void mark(FootprintsSpaceTime footprintsSpaceTime) { //FIXME add tests result adding in FootprintSpaceTime
 
         //FIXME type_in_level
-
-
-
         ParametersMovingUnique parametersMovingUnique = determinationParametersMovingUnique();
 
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(GlobalVariable.getAccuracyMoving(), parametersMovingUnique);
 
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, footprintsSpaceTime);
-        {
+
+        if (isStanding) {
+            PathCCoA wallPath = new PathCCoAClass();
+            wallPath.addPoint(this.startCoordinate);
+            try {
+                parametersMovingUnique.mark(footprintsSpaceTime, wallPath, this.startTime, this.startLayer);  //FIXME set start and end layer //FIXME end standing
+            } catch (СrashIntoAnImpassableObjectException e) {
+            }
+        } else {
             PathCCoA actualPath = fastFinderPath.getPath(this.startCoordinate, this.endCoordinate, parametersMovingUnique, this.startTime); //FIXME set start and end layer
             try {
                 parametersMovingUnique.mark(footprintsSpaceTime, actualPath, this.startTime, this.startLayer);  //FIXME set start and end layer //FIXME end standing
@@ -185,23 +195,17 @@ public class OrderFromString implements Order {
         this.isStandingAfter = standingAfterElement.getAsBoolean();
     }
 
-    private void extractionEnd(JsonObject orderJsonObject) throws NotEnoughDataException {
-
-        boolean isNeedExtractionEnd = false;
-
+    private void extractionStanding(JsonObject orderJsonObject) throws NotEnoughDataException {
         JsonElement standingElement = orderJsonObject.get("standing");
         if (standingElement == null) {
-            isNeedExtractionEnd = true;
+            isNeedExtractionDynamicParameters = true;
         }
         else {
             this.isStanding = standingElement.getAsBoolean();
             boolean isDynamicMovingObject = !this.isStanding;
-            isNeedExtractionEnd = isDynamicMovingObject;
+            isNeedExtractionDynamicParameters = isDynamicMovingObject;
         }
 
-        if (isNeedExtractionEnd) {
-            extractionEndOperation(orderJsonObject);
-        }
     }
 
     private void extractionParameterMoving(JsonObject orderJson) throws NotEnoughDataException {
@@ -210,7 +214,9 @@ public class OrderFromString implements Order {
 
         extractionTypes(parametersMovingJson);
 
-        extractionSpeed(parametersMovingJson);
+        if (isNeedExtractionDynamicParameters) {
+            extractionSpeed(parametersMovingJson);
+        }
 
         extractionUniquePolygonForm(parametersMovingJson);
     }
@@ -245,6 +251,15 @@ public class OrderFromString implements Order {
         }
 
         this.speed = speedElementJson.getAsDouble();
+
+        if (this.speed < 0) {
+            throw new NotEnoughDataException("speed is negative");
+        }
+
+        boolean isDynamicMovingObject = !this.isStanding;
+        if (GlobalVariable.equalsNumber(this.speed, 0) && isDynamicMovingObject) {
+            throw new NotEnoughDataException("speed is 0 for dynamic moving object");
+        }
     }
 
     private void extractionUniquePolygon(JsonObject parametersMovingJson) throws NotEnoughDataException {

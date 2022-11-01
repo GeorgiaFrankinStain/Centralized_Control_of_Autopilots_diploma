@@ -15,6 +15,9 @@ public class DeterminantIsMultipleClass implements DeterminantIsMultiple {
     private double littleDiameterHexagon;
 
     public DeterminantIsMultipleClass(double littleRadius, PointCCoA coordinate) {
+        if (coordinate == null) {
+            assert(false);
+        }
         this.coordinate = coordinate;
         this.littleRadius = littleRadius;
         this.littleDiameterHexagon = littleRadius * 2;
