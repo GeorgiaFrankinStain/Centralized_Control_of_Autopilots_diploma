@@ -265,6 +265,11 @@ public class OrderFromString implements Order {
             throw new NotEnoughDataException("polygon_form has minimum 3 points");
         }
 
+        double areaPolygon = polygonForm.getArea();
+        if (areaPolygon <= 0) {
+            throw new NotEnoughDataException("polygon_form has positive area (area > 0)");
+        }
+
         this.form = polygonForm;
 
 

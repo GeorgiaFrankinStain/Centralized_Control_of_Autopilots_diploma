@@ -1498,7 +1498,7 @@ class PolygonCCoAClassTest {
             for (int j = -40; j < 40; j = j + 5) {
                 PointCCoA vector = new PointCCoAClass(i, j);
                 PolygonCCoA deposedSquare = square.getDeposeOn(vector);
-                
+
                 assertEquals(100, deposedSquare.getArea());
             }
         }

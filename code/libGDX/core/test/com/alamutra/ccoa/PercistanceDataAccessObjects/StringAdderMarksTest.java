@@ -169,7 +169,57 @@ class StringAdderMarksTest {
 
     @Test
     void addMarksIn_notEnoughDataException_polygonPositiveArea() throws Exception {
-        assert(false);
+
+        String jsonContent =
+                "            {\n" +
+                        "                \"version\":1,\n" +
+                        "                \"orders\": [\n" +
+                        "                    {\n" +
+                        "                        \"parameters_moving\": {\n" +
+                        "                            \"polygon_form\": [\n" +
+                        "                                {\"x\":\"-10\",\"y\":\"-10\"},\n" +
+                        "                                {\"x\":\"-10\",\"y\":\"10\"},\n" +
+                        "                                {\"x\":\"-10\",\"y\":\"20\"},\n" +
+                        "                                {\"x\":\"-10\",\"y\":\"30\"}\n" +
+                        "                            ],\n" +
+                        "                            \"type\": {\n" +
+                        "                                \"type_in_layer\":\"OBJECT\",\n" +
+                        "                                \"type_landscape_body\":\"ASPHALT\"\n" +
+//                        "                                \"type_machines_body\":\"TEST_SQUARE_20\"\n" +
+                        "                            },\n" +
+                        "                    \"speed\":10\n" +
+                        "                        },\n" +
+                        "                        \"start\": {\n" +
+                        "                            \"coordinate\": {\n" +
+                        "                            \t\"x\": 10, \"y\": 10\n" +
+                        "                            },\n" +
+                        "                            \"layer\":0,\n" +
+                        "                            \"angle\":0.0, \n" +
+                        "                            \"time\":0.0\n" +
+                        "                        },\n" +
+                        "                        \"end\": {\n" +
+                        "                            \"coordinate\": {\n" +
+                        "                            \t\"x\": 10, \"y\": 40\n" +
+                        "                            },\n" +
+                        "                            \"layer\":0,\n" +
+                        "                            \"angle\":0.0\n" +
+                        "                        },\n" +
+                        "                        \"standing\": \"false\",\n" +
+                        "                        \"standing_after\": \"false\"\n" +
+                        "                    }\n" +
+                        "                ]\n" +
+                        "            }";
+
+        String expectedErrorText = "polygon_form has positive area (area > 0)";
+
+        String actualErrorText = "";
+        try {
+            AdderMarks adderMarks = new StringAdderMarks(jsonContent);
+        } catch (NotEnoughDataException e) {
+            actualErrorText = e.getMessage();
+        }
+
+        assertEquals(expectedErrorText, actualErrorText);
 
     }
 
