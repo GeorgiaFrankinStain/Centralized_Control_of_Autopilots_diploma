@@ -41,6 +41,8 @@ public interface PolygonCCoA {
 
     public Double[] getFormatDoubleArray();
 
+    public double getArea();
+
     public boolean equals(Object obj);
 
     public PolygonCCoA clone();

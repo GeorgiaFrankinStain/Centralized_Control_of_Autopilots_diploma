@@ -236,6 +236,11 @@ public class HexagonClass implements PolygonCCoA, HexagonVectors {
     }
 
     @Override
+    public double getArea() {
+        return this.hexagon.getArea();
+    }
+
+    @Override
     public PolygonCCoA clone() {
         return this.hexagon.clone();
     }

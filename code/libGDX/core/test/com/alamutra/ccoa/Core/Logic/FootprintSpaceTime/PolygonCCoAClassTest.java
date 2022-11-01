@@ -1472,4 +1472,37 @@ class PolygonCCoAClassTest {
 
         assertTrue(square.isLiesInsideThe(round));
     }
+
+    @Test
+    void getArea_100() {
+        PolygonCCoA square = new PolygonCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+                new PointCCoAClass(0, 0),
+                new PointCCoAClass(0, 10),
+                new PointCCoAClass(10, 10),
+                new PointCCoAClass(10, 0)
+        }));
+
+        assertEquals(100, square.getArea());
+    }
+
+    @Test
+    void getArea_100MoveTo() {
+        PolygonCCoA square = new PolygonCCoAClass(Arrays.<PointCCoA>asList(new PointCCoAClass[]{
+                new PointCCoAClass(0, 0),
+                new PointCCoAClass(0, 10),
+                new PointCCoAClass(10, 10),
+                new PointCCoAClass(10, 0)
+        }));
+
+        for (int i = -40; i < 40; i = i + 5) {
+            for (int j = -40; j < 40; j = j + 5) {
+                PointCCoA vector = new PointCCoAClass(i, j);
+                PolygonCCoA deposedSquare = square.getDeposeOn(vector);
+                
+                assertEquals(100, deposedSquare.getArea());
+            }
+        }
+
+
+    }
 }

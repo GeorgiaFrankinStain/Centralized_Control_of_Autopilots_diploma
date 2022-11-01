@@ -359,6 +359,13 @@ public class PolygonCCoAClass implements PolygonCCoA {
         return arrayDouble;
     }
 
+    @Override
+    public double getArea() {
+        Coordinate[] coordinates = toCoordinate();
+        Geometry polygonGeometry = new GeometryFactory().createPolygon(coordinates);
+        return polygonGeometry.getArea();
+    }
+
 
     //==== <start> <Private_Methods> =======================================================================
     private boolean perimeterContainsPoint(PointCCoA testedPointCCoA) {
@@ -388,6 +395,13 @@ public class PolygonCCoAClass implements PolygonCCoA {
     }
 
     private boolean jtc_contains_in_polygon(PointCCoA testedPointCCoA) {
+        Coordinate[] coordinates = toCoordinate();
+        Geometry polygonGeometry = new GeometryFactory().createPolygon(coordinates);
+        Geometry point = new GeometryFactory().createPoint(new Coordinate(testedPointCCoA.getX(), testedPointCCoA.getY()));
+        return polygonGeometry.contains(point);
+    }
+
+    private Coordinate[] toCoordinate() {
         int sizeForClosedPolygon = this.pointCCoAS.size() + 1;
         Coordinate[] coordinates = new Coordinate[sizeForClosedPolygon];
 
@@ -398,9 +412,7 @@ public class PolygonCCoAClass implements PolygonCCoA {
         PointCCoA first = this.pointCCoAS.get(0);
         coordinates[sizeForClosedPolygon - 1] = new Coordinate(first.getX(), first.getY(), 0);
 
-        Geometry polygonGeometry = new GeometryFactory().createPolygon(coordinates);
-        Geometry point = new GeometryFactory().createPoint(new Coordinate(testedPointCCoA.getX(), testedPointCCoA.getY()));
-        return polygonGeometry.contains(point);
+        return coordinates;
     }
 
     private boolean enteringMinimumOnePointOfFirstPolygonInSecondPolygon(
