@@ -247,6 +247,17 @@
 											? правильно обращаться к директории target, если у меня gradle (2022.11.11 21:24:19) ?
 											? если у меня gradle, то мне обязательны плагины для docker (2022.11.11 21:48:50) ?
 												? они хотя бы запустятся (2022.11.11 21:49:02) ?
+													? почему плагины выдают ошибку при нажатии синхронизирующего слона Illegal null value provided in this collection: [inspect, --format={{.State.Running}}, null] (2022.11.11 22:38:26) ?
+														: по крайней мере ошибка не синтаксическая
+											<?> сработает ли починить эту ошибку переделав переменную среды в флаг команды COPY --from=build build/*.jar app.jar (2022.11.11 23:33:10) ?
+												LINK_fAzBAr invalid from flag value build: pull access denied for build, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+
+												ошибка стала другой.
+											<?> сработает ли другой способ: заменить директорию target на build (2022.11.11 23:44:10) ?
+												LINK_fAzBAr точно такая же ошибка.
+												? как возможна точно такая же ошибка, если я вырезал вроде бы важную часть (2022.11.11 23:48:45) ?
+													? поломка идет на предыдущем этапе (2022.11.12 00:36:56) ?
+
 					<?> LINK_ZvXFXo_2 найти другой туториал ?
 
 
