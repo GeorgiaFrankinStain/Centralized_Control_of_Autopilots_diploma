@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic;
+package com.alamutra.CCoAWeb.Core.Logic;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
 
 public interface Position {
     public PointCCoA getCoordinates();

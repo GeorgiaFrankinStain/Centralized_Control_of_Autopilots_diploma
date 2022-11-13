@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.GlobalVariable;
+import com.alamutra.CCoAWeb.Core.Logic.GlobalVariable;
 
 import java.util.ArrayList;
 import java.util.List;

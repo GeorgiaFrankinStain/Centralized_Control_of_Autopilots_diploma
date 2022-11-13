@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime;
 
 public interface Round {
     public PointCCoA getCenter();

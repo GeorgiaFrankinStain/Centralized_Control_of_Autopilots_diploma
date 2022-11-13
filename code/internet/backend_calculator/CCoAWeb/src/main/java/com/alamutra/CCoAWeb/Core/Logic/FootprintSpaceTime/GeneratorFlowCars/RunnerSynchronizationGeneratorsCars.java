@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.GeneratorFlowCars;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.GeneratorFlowCars;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 
 public interface RunnerSynchronizationGeneratorsCars {
 

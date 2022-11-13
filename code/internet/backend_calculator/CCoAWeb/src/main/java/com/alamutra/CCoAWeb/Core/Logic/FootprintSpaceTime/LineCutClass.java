@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime;
 
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.LineSegment;

@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Wrappers;
+package com.alamutra.CCoAWeb.Core.Wrappers;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.PercistanceDataAccessObjects;
+package com.alamutra.CCoAWeb.PercistanceDataAccessObjects;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
 
 import java.util.List;
 

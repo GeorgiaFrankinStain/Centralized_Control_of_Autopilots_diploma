@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,10 +1,10 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Hexagon;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.NodeClass;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.NetworkNodes;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Node;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.NodeClass;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

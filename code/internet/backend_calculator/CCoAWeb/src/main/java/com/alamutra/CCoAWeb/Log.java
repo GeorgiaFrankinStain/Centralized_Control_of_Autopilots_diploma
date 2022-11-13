@@ -1,4 +1,4 @@
-package com.alamutra.ccoa;
+package com.alamutra.CCoAWeb;
 
 public class Log {
 }

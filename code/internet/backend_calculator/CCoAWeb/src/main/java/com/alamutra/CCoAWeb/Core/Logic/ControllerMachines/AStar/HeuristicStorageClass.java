@@ -1,8 +1,8 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AStar;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Node;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
 
 import java.util.HashMap;
 import java.util.List;

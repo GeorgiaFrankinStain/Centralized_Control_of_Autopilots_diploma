@@ -1,7 +1,7 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime;
 
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
-import com.alamutra.ccoa.Core.Logic.Position;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
+import com.alamutra.CCoAWeb.Core.Logic.Position;
 
 public interface Footprint {
     public int getIdMovingObject();

@@ -1,8 +1,8 @@
-package com.alamutra.ccoa.Core.Wrappers;
+package com.alamutra.CCoAWeb.Core.Wrappers;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Footprint;
-import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.IndexLayer;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.Footprint;
+import com.alamutra.CCoAWeb.Core.Logic.GlobalVariable;
+import com.alamutra.CCoAWeb.Core.Logic.IndexLayer;
 
 import java.util.*;
 

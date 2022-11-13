@@ -1,7 +1,7 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Node;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
 
 import java.util.List;
 

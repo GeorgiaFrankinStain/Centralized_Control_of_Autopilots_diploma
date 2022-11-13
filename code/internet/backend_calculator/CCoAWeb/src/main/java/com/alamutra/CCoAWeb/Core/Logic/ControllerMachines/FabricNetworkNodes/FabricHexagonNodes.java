@@ -1,8 +1,8 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.FabricNetworkNodes;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon.HexagonTile;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Hexagon.HexagonTile;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.NetworkNodes;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
 
 public class FabricHexagonNodes implements FabricNetworkNodes {
 

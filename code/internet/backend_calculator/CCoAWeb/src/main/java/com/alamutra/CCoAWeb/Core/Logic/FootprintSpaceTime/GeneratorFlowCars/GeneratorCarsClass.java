@@ -1,11 +1,11 @@
-package com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.GeneratorFlowCars;
+package com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.GeneratorFlowCars;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.ccoa.Core.Logic.IndexLayer;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMoving;
-import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.CreatorMarksOfPathClass;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.alamutra.CCoAWeb.Core.Logic.IndexLayer;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMoving;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.PathCCoA;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.SettingRenderingTasks;
+package com.alamutra.CCoAWeb.Core.SettingRenderingTasks;
 
 public enum SkinsCapacitor {
     SIMPLE_CAR,

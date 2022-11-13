@@ -1,7 +1,7 @@
-package com.alamutra.ccoa.Core.Logic.MovingBody;
+package com.alamutra.CCoAWeb.Core.Logic.MovingBody;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoAClass;
 
 public class StandardPathX0Y100ToX100Y100 implements PathCCoA {
 

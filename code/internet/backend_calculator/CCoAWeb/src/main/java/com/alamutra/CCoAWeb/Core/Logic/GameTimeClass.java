@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic;
+package com.alamutra.CCoAWeb.Core.Logic;
 
 public class GameTimeClass implements GameTime {
     private float gameTime = 0;

@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic.AreasBenchmarkPaths;
+package com.alamutra.CCoAWeb.Core.Logic.AreasBenchmarkPaths;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
 
 public class StraightLineEstimatedClass implements AreasBenchmarkPaths {
 

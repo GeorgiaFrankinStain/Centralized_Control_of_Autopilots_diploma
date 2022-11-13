@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Hexagon;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Node;
 
 import java.util.List;
 

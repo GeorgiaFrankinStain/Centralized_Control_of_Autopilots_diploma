@@ -1,14 +1,14 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AStar;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.NetworkNodes;
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.*;
-import com.alamutra.ccoa.Core.Logic.IndexLayerClass;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
-import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoAClass;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.NetworkNodes;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Node;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.*;
+import com.alamutra.CCoAWeb.Core.Logic.IndexLayerClass;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.PathCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.PathCCoAClass;
 
 import java.util.*;
 

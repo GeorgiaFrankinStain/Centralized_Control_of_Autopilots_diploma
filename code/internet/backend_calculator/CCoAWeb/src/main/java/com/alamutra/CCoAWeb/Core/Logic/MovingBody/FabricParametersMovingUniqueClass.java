@@ -1,9 +1,9 @@
-package com.alamutra.ccoa.Core.Logic.MovingBody;
+package com.alamutra.CCoAWeb.Core.Logic.MovingBody;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoAClass;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PolygonCCoAClass;
+import com.alamutra.CCoAWeb.Core.SettingRenderingTasks.TypeMachinesBody;
 
 public class FabricParametersMovingUniqueClass implements FabricParametersMovingUnique {
     @Override

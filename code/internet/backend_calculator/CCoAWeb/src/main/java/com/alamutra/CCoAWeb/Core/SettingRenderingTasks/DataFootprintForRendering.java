@@ -1,7 +1,7 @@
-package com.alamutra.ccoa.Core.SettingRenderingTasks;
+package com.alamutra.CCoAWeb.Core.SettingRenderingTasks;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.ParametersMovingUnique;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
 
 public interface DataFootprintForRendering {
     public int getIdMovingObject();

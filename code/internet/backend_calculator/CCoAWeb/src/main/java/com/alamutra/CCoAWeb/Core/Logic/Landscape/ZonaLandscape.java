@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.Landscape;
+package com.alamutra.CCoAWeb.Core.Logic.Landscape;
 
 public interface ZonaLandscape {
 }

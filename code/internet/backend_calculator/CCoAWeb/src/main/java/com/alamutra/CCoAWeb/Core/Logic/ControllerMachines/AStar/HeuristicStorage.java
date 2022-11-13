@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AStar;
 
-import com.alamutra.ccoa.Core.Logic.ControllerMachines.Node;
+import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Node;
 
 import java.util.List;
 

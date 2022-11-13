@@ -1,8 +1,8 @@
-package com.alamutra.ccoa.Core.Logic.Landscape;
+package com.alamutra.CCoAWeb.Core.Logic.Landscape;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.PathCCoA;
 
 import java.util.ArrayList;
 import java.util.List;

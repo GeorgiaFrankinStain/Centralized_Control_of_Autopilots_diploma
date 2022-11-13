@@ -1,8 +1,8 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.Hexagon;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Hexagon;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoAClass;
-import com.alamutra.ccoa.Core.Logic.GlobalVariable;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.CCoAWeb.Core.Logic.GlobalVariable;
 
 public class DeterminantIsMultipleClass implements DeterminantIsMultiple {
     private double distanceBetweenHorizontalNeighboringNodes;

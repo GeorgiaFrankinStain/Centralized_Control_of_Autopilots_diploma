@@ -1,12 +1,12 @@
-package com.alamutra.ccoa.Core.Logic.MovingBody;
+package com.alamutra.CCoAWeb.Core.Logic.MovingBody;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.ccoa.Core.Logic.IndexLayer;
-import com.alamutra.ccoa.Core.Logic.TypesInLevel;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.SkinsCapacitor;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.IndexLayer;
+import com.alamutra.CCoAWeb.Core.Logic.TypesInLevel;
+import com.alamutra.CCoAWeb.Core.SettingRenderingTasks.SkinsCapacitor;
 
 public interface ParametersMoving {
     public void mark(

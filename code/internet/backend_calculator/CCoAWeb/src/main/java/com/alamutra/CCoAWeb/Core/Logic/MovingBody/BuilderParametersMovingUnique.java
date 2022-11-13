@@ -1,7 +1,7 @@
-package com.alamutra.ccoa.Core.Logic.MovingBody;
+package com.alamutra.CCoAWeb.Core.Logic.MovingBody;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.ccoa.Core.SettingRenderingTasks.TypeMachinesBody;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PolygonCCoA;
+import com.alamutra.CCoAWeb.Core.SettingRenderingTasks.TypeMachinesBody;
 
 public interface BuilderParametersMovingUnique {
     public void setSpeed(double speed);

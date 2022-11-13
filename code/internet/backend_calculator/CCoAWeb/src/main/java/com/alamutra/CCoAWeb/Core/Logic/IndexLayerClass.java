@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic;
+package com.alamutra.CCoAWeb.Core.Logic;
 
 public class IndexLayerClass implements IndexLayer, Comparable<IndexLayer> {
     private int zIndex;

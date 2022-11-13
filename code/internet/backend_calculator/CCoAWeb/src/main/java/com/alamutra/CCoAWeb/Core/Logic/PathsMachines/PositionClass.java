@@ -1,8 +1,8 @@
-package com.alamutra.ccoa.Core.Logic.PathsMachines;
+package com.alamutra.CCoAWeb.Core.Logic.PathsMachines;
 
-import com.alamutra.ccoa.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.ccoa.Core.Logic.GlobalVariable;
-import com.alamutra.ccoa.Core.Logic.Position;
+import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.GlobalVariable;
+import com.alamutra.CCoAWeb.Core.Logic.Position;
 
 public class PositionClass implements Position {
     private PointCCoA pointCCoA;

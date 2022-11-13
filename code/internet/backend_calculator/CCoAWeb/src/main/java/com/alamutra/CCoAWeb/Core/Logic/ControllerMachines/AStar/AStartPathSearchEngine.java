@@ -1,6 +1,6 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines.AStar;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AStar;
 
-import com.alamutra.ccoa.Core.Logic.MovingBody.PathCCoA;
+import com.alamutra.CCoAWeb.Core.Logic.MovingBody.PathCCoA;
 
 public interface AStartPathSearchEngine {
     public PathCCoA getPath();

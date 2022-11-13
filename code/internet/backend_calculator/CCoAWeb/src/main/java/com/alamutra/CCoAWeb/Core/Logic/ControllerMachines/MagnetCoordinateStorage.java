@@ -1,4 +1,4 @@
-package com.alamutra.ccoa.Core.Logic.ControllerMachines;
+package com.alamutra.CCoAWeb.Core.Logic.ControllerMachines;
 
 public interface MagnetCoordinateStorage {
     public Node getFirstMagnetizedNodeTryAdd(Node tryAddingNode);
