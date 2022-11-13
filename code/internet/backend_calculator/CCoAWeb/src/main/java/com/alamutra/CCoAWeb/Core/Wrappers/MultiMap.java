@@ -1,6 +1,6 @@
 package com.alamutra.CCoAWeb.Core.Wrappers;
 
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.Footprint;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Footprint;
 
 import java.util.Iterator;
 

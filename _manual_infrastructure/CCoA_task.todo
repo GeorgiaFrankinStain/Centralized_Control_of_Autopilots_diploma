@@ -386,7 +386,7 @@ GLOBAL:
 
 
    прочее:
-      ☐ тест onLine ломается, если запускать его с режимом Debug
+      ☐ тест HeuristicStorageClassTest.getNodeWithBestHeuristicScope_onLine:75 ломается, если запускать его с режимом Debug
 
 
 

@@ -1,23 +1,19 @@
 package com.alamutra.CCoAWeb.PercistanceDataAccessObjects;
 
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AStar.AStarSpaceTimePlanarGraphClass;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricHexagonNodes;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTimeClass;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoAClass;
-import com.alamutra.CCoAWeb.Core.Logic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.Logic.IndexLayerClass;
-import com.alamutra.CCoAWeb.Core.Logic.MovingBody.*;
-import com.alamutra.CCoAWeb.Core.SettingRenderingTasks.TypeMachinesBody;
+import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AStar.AStarSpaceTimePlanarGraphClass;
+import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AlhorithmFastFindPath;
+import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.FabricNetworkNodes.FabricHexagonNodes;
+import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTimeClass;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoAClass;
+import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
+import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayerClass;
+import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.*;
+import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.TypeMachinesBody;
 import com.alamutra.CCoAWeb.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

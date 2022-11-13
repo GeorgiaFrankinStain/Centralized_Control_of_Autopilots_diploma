@@ -1,22 +1,6 @@
 package com.alamutra.CCoAWeb.PercistanceDataAccessObjects;
 
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AStar.AStarSpaceTimePlanarGraphClass;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.AlhorithmFastFindPath;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricHexagonNodes;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.Hexagon.HexagonTile;
-import com.alamutra.CCoAWeb.Core.Logic.ControllerMachines.NetworkNodes;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.Logic.FootprintSpaceTime.PointCCoAClass;
-import com.alamutra.CCoAWeb.Core.Logic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.Logic.IndexLayerClass;
-import com.alamutra.CCoAWeb.Core.Logic.MovingBody.FabricParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.Logic.MovingBody.FabricParametersMovingUniqueClass;
-import com.alamutra.CCoAWeb.Core.Logic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.Logic.MovingBody.PathCCoA;
-import com.alamutra.CCoAWeb.Core.SettingRenderingTasks.TypeMachinesBody;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.alamutra.CCoAWeb.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
