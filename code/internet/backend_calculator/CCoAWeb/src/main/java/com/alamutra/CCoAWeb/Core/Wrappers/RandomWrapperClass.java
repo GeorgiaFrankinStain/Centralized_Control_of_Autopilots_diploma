@@ -1,5 +1,7 @@
 package com.alamutra.CCoAWeb.Core.Wrappers;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -19,6 +21,13 @@ public class RandomWrapperClass implements RandomWrapper {
     @Override
     public int nextInt() {
         return this.random.nextInt();
+    }
+
+    @Override
+    public String nextString(int length) {
+        String generatedString = RandomStringUtils.randomAlphanumeric(this.random.nextInt());
+
+        return generatedString;
     }
 
     private Random debug(int seedDebug) {
