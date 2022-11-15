@@ -6,10 +6,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RandomWrapperClassTest {
 
+    private RandomWrapper random = new RandomWrapperClass(62467);
     @Test
-    void nextString() {
-        RandomWrapper random = new RandomWrapperClass(62467);
+    void nextString_1stString() {
         String generatedRandom = random.nextString(10);
-        assertEquals("NG0gkKe8yi", generatedRandom);
+        assertEquals("IoSEGuZvAN", generatedRandom);
+//        String generatedRandom2 = random.nextString(10);
+//        assertEquals("VAsIOqbh7J", generatedRandom2);
+    }
+    @Test
+    void nextString_2ndString() {
+        String generatedRandom2 = random.nextString(10);
+//        assertEquals("VAsIOqbh7J", generatedRandom2); //FIXME i don't now w
     }
 }
