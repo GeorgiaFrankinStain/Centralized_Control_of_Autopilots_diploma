@@ -5,7 +5,7 @@ import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTi
 public interface StorageFootprintSpaceTimes {
     public FootprintsSpaceTime get(String id);
 
-    public void delete(String id);
+    public void remove(String id);
 
     public String addFootprintSpaceTime(FootprintsSpaceTime addingFootprintSpaceTime);
 }
