@@ -11,6 +11,7 @@ public class GlobalVariable { //FIXME is good? (global variable in java is good?
     public static final double DOUBLE_COMPARISON_ACCURACY = 0.001; //mm
     public static final double LENGTH_DIAPASON_MAGNET = GlobalVariable.DOUBLE_COMPARISON_ACCURACY * 4;
 
+    private static int LENGTH_RAND_STRING_KEY = 16;
     public static double getAccuracyMoving() {
         return accuracyMoving;
     }
@@ -149,4 +150,7 @@ public class GlobalVariable { //FIXME is good? (global variable in java is good?
         return startDiapason <= coordinate && coordinate < endDiapason;
     }
 
+    public static int getLengthRandStringKey() {
+        return LENGTH_RAND_STRING_KEY;
+    }
 }
