@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Canvas from "./Canvas";
 
 function App() {
 
@@ -48,12 +49,14 @@ function App() {
     console.log(data);
 
 
-  return (
-    <div className="App">
-      Прилоежение работает 3
-      <button onClick={handleClick}>Создать новую комнату</button>
-    </div>
-  );
+    return <Canvas />;
+    // return (
+    //     <div className="App">
+    //         Прилоежение работает 3
+    //         <button onClick={handleClick}>Создать новую комнату</button>
+    //         <Canvas />
+    //     </div>
+    // );
 }
 
 export default App;
