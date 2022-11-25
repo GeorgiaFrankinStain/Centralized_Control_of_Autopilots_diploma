@@ -43,43 +43,6 @@ function App() {
             .catch(error => {
                 console.log('Looks like there was a problem: \n', error);
             });
-    //
-    //     try {
-    //         const response = await fetch('http://localhost:8080/create_room', {
-    //             mode: 'no-cors',
-    //             method: 'POST',
-    //             body: JSON.stringify({
-    //                 name: 'John Smith',
-    //                 job: 'manager',
-    //             }),
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //                 Accept: 'application/json',
-    //             },
-    //         });
-    //
-    //         console.log(response);
-    //
-    //         if (!response.ok) {
-    //             throw new Error(`Error! status: ${response.status}`);
-    //         }
-    //
-    //         const result = await response.json();
-    //
-    //
-    //         console.log("result");
-    //         console.log('result is: ', JSON.stringify(result, null, 4));
-    //
-    //
-    //         console.log("result: " + result);
-    //         setData(result);
-    //     } catch (err) {
-    //         setErr(err.message);
-    //         console.log("setError" + err.message);
-    //     } finally {
-    //         console.log("setFinally");
-    //         setIsLoading(false);
-    //     }
     };
 
     console.log(data);
