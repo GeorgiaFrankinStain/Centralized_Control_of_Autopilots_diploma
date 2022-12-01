@@ -6,10 +6,11 @@ import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayerClass;
 import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
 import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
 import com.alamutra.CCoAWeb.Core.ModelLogic.Position;
+import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.HistoryChanges;
 
 import java.util.*;
 
-public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
+public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryChanges {
     private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
     private Map<IndexLayer, LayerFootprintSpaceTime> layers = new TreeMap<IndexLayer, LayerFootprintSpaceTime>();
 
@@ -224,7 +225,17 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime {
         return Objects.hash(layers);
     }
 
+    @Override
+    public String getElbowDTOToEndCalculateExistJSONFrom(Double fromTime) {
+        return null;
+
+        //get list footprints from timeStamp
+
+        //write to json id, form
+        //getToEndCalculateExistFrom
+    }
     //==== <start> <Private_Methods> =======================================================================
+
     private void addLayer(IndexLayer indexLayer) { //FIXME CODESTYLE
         LayerFootprintSpaceTime newLayerFootprintSpaceTime =
                 new MultiMapLayerFootprintSpaceTimeClass();

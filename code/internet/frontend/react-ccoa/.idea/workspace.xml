@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de0ba67e-0a1c-486a-a632-fce6f787333d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/HistoryChanges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/PathMovingUniqueJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../_manual_infrastructure/CCoA_task.todo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../_manual_infrastructure/CCoA_task.todo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/ControllerSpring/ManagerRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/ControllerSpring/ManagerRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RouteClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RouteClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +62,9 @@
       <workItem from="1669174590015" duration="6033000" />
       <workItem from="1669267409766" duration="693000" />
       <workItem from="1669336862162" duration="5807000" />
-      <workItem from="1669538559149" duration="4852000" />
+      <workItem from="1669538559149" duration="6365000" />
+      <workItem from="1669801091279" duration="1272000" />
+      <workItem from="1669871254451" duration="6139000" />
     </task>
     <servers />
   </component>

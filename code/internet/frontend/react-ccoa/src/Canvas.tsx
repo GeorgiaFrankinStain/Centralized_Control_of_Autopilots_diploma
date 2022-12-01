@@ -22,15 +22,27 @@ const Canvas = () => {
         context.fillStyle = 'blue';
         context.fillRect(0, 0, 100, 100);
         setInterval(function() {
+
+
             context.fillStyle = 'white';
             context.fillRect(0,0, canvas.width, canvas.height);
 
+
+            context.beginPath();
+            context.beginPath();
+            context.moveTo(0, 0);
+            context.lineTo(100, 50);
+            context.lineTo(50, 100);
+            context.lineTo(0, 90);
+            context.closePath();
+            context.fill();
+
             context.fillStyle = 'red';
-            context.fillRect(x = x + 5, 50, 300, 200);
+            context.fillRect(x = x + 15, 50, 300, 200);
 
             context.fill();
 
-        }, 25)
+        }, 105)
     }, []);
 
     return <canvas ref={canvasRef} />;

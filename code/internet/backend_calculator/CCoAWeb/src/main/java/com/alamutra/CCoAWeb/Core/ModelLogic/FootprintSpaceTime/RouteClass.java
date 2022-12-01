@@ -1,9 +1,11 @@
 package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime;
 
+import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.PathMovingUniqueJSON;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class RouteClass implements Route { //FIXME add tests
+public class RouteClass implements Route, PathMovingUniqueJSON { //FIXME add tests
     private Map<Footprint, NextFootprintAndTimes> nextFootprints = new HashMap<Footprint, NextFootprintAndTimes>();
     private Footprint lastFootprint = null;
     private double timeLastFootprint = 0.0;
@@ -25,6 +27,11 @@ public class RouteClass implements Route { //FIXME add tests
     public NextFootprintAndTimes getNextFootprint(Footprint currentFootprint) {
         NextFootprintAndTimes nextFootprintAndTimes = nextFootprints.get(currentFootprint);
         return nextFootprintAndTimes;
+    }
+
+    @Override
+    public String toString() {
+        return this.lastFootprint.toString();
     }
 
 }

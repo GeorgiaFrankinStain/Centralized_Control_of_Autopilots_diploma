@@ -2,7 +2,9 @@ package com.alamutra.CCoAWeb.ControllerSpring;
 
 import com.alamutra.CCoAWeb.Core.Controller.ManagerRoom;
 import com.alamutra.CCoAWeb.Core.Controller.ManagerRoomClass;
+import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.RouteClass;
 import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
+import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.PathMovingUniqueJSON;
 import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapper;
 import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapperClass;
 import com.alamutra.CCoAWeb.Model.RoomApi;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class ManagerRoomController {
@@ -31,5 +35,17 @@ public class ManagerRoomController {
         
         managerRoom.createNewRoom(generatedRandomString);
         return new RoomApi(generatedRandomString);
+    }
+
+
+
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @PostMapping(value = "get_elbow_footprint", consumes = "application/json", produces = "application/json")
+    public List<PathMovingUniqueJSON> getElbowFootprint(Model model, HttpServletResponse response) {
+
+        List<PathMovingUniqueJSON> list = new ArrayList<>();
+        list.add(new RouteClass());
+
+        return list;
     }
 }
