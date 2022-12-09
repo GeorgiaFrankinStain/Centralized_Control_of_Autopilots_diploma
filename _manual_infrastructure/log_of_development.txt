@@ -314,6 +314,11 @@
 		<+> просто скопировав все папки с файлами ?
 			да
 
+
+		: замена пакетов в названии
+			find src -type f -print0 | xargs -0 sed -i 's/package com.alamutra.ccoa/package com.alamutra.CCoAWeb/g'
+			find src -type f -print0 | xargs -0 sed -i 's/import com.alamutra.ccoa/import com.alamutra.CCoAWeb/g'
+
 	+ делать DTO на lomboc (2022.11.14 12:19:45) ?
 		+ где находится проект, где я успешно возвращал JSON ?
 			imitatinoServiceApi
@@ -1214,6 +1219,12 @@
 
 
 													? последствия интеграции виноваты (2022.12.05 22:43:34) ?
+
+										( ) перенос проекта на java 17 spring
+
+											: замена пакетов в названии
+												find src -type f -print0 | xargs -0 sed -i 's/package com.alamutra.ccoa/package com.alamutra.CCoAWeb/g'
+												find src -type f -print0 | xargs -0 sed -i 's/import com.alamutra.ccoa/import com.alamutra.CCoAWeb/g'
 
 
 

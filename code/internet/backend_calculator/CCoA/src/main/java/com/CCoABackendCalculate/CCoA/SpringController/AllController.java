@@ -1,6 +1,6 @@
-package com.CCoABackendCalculate.CCoA.Controller;
+package com.CCoABackendCalculate.CCoA.SpringController;
 
-import com.CCoABackendCalculate.CCoA.Model.RoomDTO;
+import com.CCoABackendCalculate.CCoA.SpringModel.RoomDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

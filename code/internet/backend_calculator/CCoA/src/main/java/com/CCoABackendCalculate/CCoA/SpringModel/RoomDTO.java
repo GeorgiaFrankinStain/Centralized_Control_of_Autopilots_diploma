@@ -1,4 +1,4 @@
-package com.CCoABackendCalculate.CCoA.Model;
+package com.CCoABackendCalculate.CCoA.SpringModel;
 
 public class RoomDTO {
 
