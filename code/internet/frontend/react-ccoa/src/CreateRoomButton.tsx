@@ -52,7 +52,7 @@ export function ButtonCreateRoom() {
             border: '1px solid gray',
             borderRadius: '5px'
         }}>
-            Send data to backend
+            Create room
         </div>
     );
 

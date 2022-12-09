@@ -498,15 +498,15 @@
 																																	: сейчас увидел пример (https://zetcode.com/springboot/json/) в котором DTO (in Model) делает json через toString. 
 																																		Решено сделать функцию @Override toString 
 
+																													: сохранил на память 
+																													    @Override
+																													    public JsonElement getToEndCalculateExistFrom(Footprint fromStep) {
+																													        return null;
 
-    @Override
-    public JsonElement getToEndCalculateExistFrom(Footprint fromStep) {
-        return null;
-
-        //foreach footprints
-        //  foreach next
-        //      print to json Position
-    }
+																													        //foreach footprints
+																													        //  foreach next
+																													        //      print to json Position
+																													    }
 
 
 																													<-> можно ли поставить аннтацию Entity над интерфейсом, который будет реализовывать класс в рендеринт таск пакет ?
@@ -624,9 +624,603 @@
 									}
 								}
 							}
+
+
 					( ) сделать плавную отрисовку полигонов из массива локтевой-передачи, имитирующий приход с бэкэнда
+
+						+ он вообще чувствует мои изменения на бэкэнде (2022.12.05 14:58:54) ?
+							да, чувствует (2022.12.05 15:00:44)
+
+							<?> если нет, то это потому что у меня там некоторые тесты с эврестической функцией падают (2022.12.05 14:59:22) ?
+
+						? почему не работает SendOrdersButton.tsx:50 An error occurred: SyntaxError: Unexpected end of input (415) (2022.12.05 15:35:58) ?
+
+
+							spring get json from model /////////////FIXME
+
+								(+) @ResponseBody попробовать добавить перед функцией
+								(+) попробовать получить запрос через консоль
+
+									curl -i \
+									-H "Accept: application/json" \
+									-H "Content-Type: application/json" \
+									-X POST --data \
+									  '{"name": "Asus Zenbook","price": 800}' "http://localhost:8080/to_application_orders"
+
+									такая же херь, не работает, ровно такая же ошибка
+
+								( ) curl -H 'Content-Type: application/json' -s -X POST "http://localhost:8080/to_application_orders" -d '{"id": "AsusZenbook"}'
+
+
+
+
+							(+) попробовать достать входящий объект из Model
+
+							разные запросы выдают разные ошибки
+								curl -H 'Content-Type: application/json' -s -XPOST "http://localhost:8080/to_application_orders/" -d "{\"id\": \"AsusZenbook\"}"
+
+									ошибка 400 плохое соединение
+
+									на сервере попробовал достать входящий объект из Model
+										11:29:17.403 [http-nio-8080-exec-8] WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver][logException]  - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.alamutra.CCoAWeb.Model.OrderDTO` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.alamutra.CCoAWeb.Model.OrderDTO` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 2]]
+
+								curl -i "Accept: application/json" "Content-Type: application/json" POST --data  '{"id": "Asus_Zenbook"}' "http://localhost:8080/to_application_orders"
+
+									ошибка 415 неподдерживаемый медиа тип
+
+									на сервере
+										11:29:55.343 [http-nio-8080-exec-9] WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver][logException]  - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+
+
+							? интересная часть ошибки nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.alamutra.CCoAWeb.Model.OrderDTO` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 2]] ?
+								: в самое начало функции я поставил sout входящей строки. Оно не вывелось. Видимо поломка где-то до этого
+									+ в create_room так же работает (2022.12.05 19:04:37) ?
+										не работает вывод System.out.println() 
+
+									: интересный момент жалуется на проблемы с этой DTO com.alamutra.CCoAWeb.Model.OrderDTO, хотя я в запросах везде везде использую RoomApi
+
+
+
+
+									? видимо дело с этой ошибкой связано (2022.12.05 20:35:26) ?
+
+										Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+										19:53:11.229 [main] ERROR [org.springframework.boot.SpringApplication][reportFailure]  - Application run failed
+										org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+											at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[?:?]
+											at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[?:?]
+											at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+											at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+											at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312) ~[?:?]
+											at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[?:?]
+											at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[?:?]
+											at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658) ~[?:?]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at java.util.Optional.orElseGet(Optional.java:369) ~[?:?]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+											at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+											at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) ~[surefire-booter-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) ~[surefire-booter-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-2.22.2.jar:2.22.2]
+										Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+											at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+											... 85 more
+										Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+											at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:94) ~[spring-web-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:215) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:702) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createRequestMappingHandlerAdapter(WebMvcAutoConfiguration.java:432) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:671) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerAdapter(WebMvcAutoConfiguration.java:417) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+											at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+											at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+											at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+											... 85 more
+										Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.databind.exc.InvalidDefinitionException
+											at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[?:?]
+											at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[?:?]
+											at java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[?:?]
+											at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:94) ~[spring-web-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:215) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:702) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createRequestMappingHandlerAdapter(WebMvcAutoConfiguration.java:432) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:671) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerAdapter(WebMvcAutoConfiguration.java:417) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+											at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+											at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+											at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+											... 85 more
+										19:53:11.315 [main] ERROR [org.springframework.test.context.TestContextManager][prepareTestInstance]  - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1623bbe5] to prepare test instance [com.alamutra.CCoAWeb.CCoAWebApplicationTests@5ccb85d6]
+										java.lang.IllegalStateException: Failed to load ApplicationContext
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+											at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) ~[?:?]
+											at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[?:?]
+											at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+											at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+											at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312) ~[?:?]
+											at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[?:?]
+											at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[?:?]
+											at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658) ~[?:?]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at java.util.Optional.orElseGet(Optional.java:369) ~[?:?]
+											at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+											at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at java.util.ArrayList.forEach(ArrayList.java:1541) ~[?:?]
+											at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+											at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128) ~[junit-platform-launcher-1.3.1.jar:1.3.1]
+											at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) ~[surefire-booter-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) ~[surefire-booter-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-2.22.2.jar:2.22.2]
+											at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-2.22.2.jar:2.22.2]
+										Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+											... 67 more
+										Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+											at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+											... 67 more
+										Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+											at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:94) ~[spring-web-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:215) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:702) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createRequestMappingHandlerAdapter(WebMvcAutoConfiguration.java:432) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:671) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerAdapter(WebMvcAutoConfiguration.java:417) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+											at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+											at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+											at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+											... 67 more
+										Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.databind.exc.InvalidDefinitionException
+											at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[?:?]
+											at jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[?:?]
+											at java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[?:?]
+											at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:94) ~[spring-web-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.<init>(RequestMappingHandlerAdapter.java:215) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.createRequestMappingHandlerAdapter(WebMvcConfigurationSupport.java:702) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createRequestMappingHandlerAdapter(WebMvcAutoConfiguration.java:432) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter(WebMvcConfigurationSupport.java:671) ~[spring-webmvc-5.3.23.jar:5.3.23]
+											at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerAdapter(WebMvcAutoConfiguration.java:417) ~[spring-boot-autoconfigure-2.7.5.jar:2.7.5]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+											at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+											at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+											at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+											at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+											at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.5.jar:2.7.5]
+											at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:132) ~[spring-boot-test-2.7.5.jar:2.7.5]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141) ~[spring-test-5.3.23.jar:5.3.23]
+											at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90) ~[spring-test-5.3.23.jar:5.3.23]
+											... 67 more
+										[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 16.921 s <<< FAILURE! - in com.alamutra.CCoAWeb.CCoAWebApplicationTests
+										[ERROR] contextLoads  Time elapsed: 0.021 s  <<< ERROR!
+										java.lang.IllegalStateException: Failed to load ApplicationContext
+										Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerAdapter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+										Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]: Factory method 'requestMappingHandlerAdapter' threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+										Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+										Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.databind.exc.InvalidDefinitionException
+
+
+									: убрал jackson из pom файла, теперь все компилируется без ошибок, но по прежнему пишет ответ сервера 400 bad request
+
+									: попытки починить с выводом журнала
+
+										SLF4J: Defaulting to no-operation (NOP) logger implementation
+										SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+										14:39:09.085 [main] INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext]  - Root WebApplicationContext: initialization completed in 7016 ms
+										14:39:10.319 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter][initControllerAdviceCache]  - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+										14:39:10.911 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][handlerMethodsInitialized]  - 6 mappings in 'requestMappingHandlerMapping'
+										14:39:11.037 [main] DEBUG [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][logMappings]  - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+										14:39:11.113 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][initExceptionHandlerAdviceCache]  - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+										14:39:11.324 [main] WARN  [org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration][checkTemplateLocationExists]  - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+										14:39:12.035 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start]  - Tomcat started on port(s): 8080 (http) with context path ''
+										14:39:12.134 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStarted]  - Started CCoAWebApplication in 12.845 seconds (JVM running for 18.871)
+
+
+										14:41:47.787 [http-nio-8080-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - Initializing Servlet 'dispatcherServlet'
+										14:41:47.789 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initMultipartResolver]  - Detected StandardServletMultipartResolver
+										14:41:47.791 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initLocaleResolver]  - Detected AcceptHeaderLocaleResolver
+										14:41:47.792 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initThemeResolver]  - Detected FixedThemeResolver
+										14:41:47.798 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initRequestToViewNameTranslator]  - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@557683d1
+										14:41:47.804 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initFlashMapManager]  - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2c251f88
+										14:41:47.806 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+										14:41:47.807 [http-nio-8080-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - Completed initialization in 19 ms
+										14:41:47.882 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - POST "/to_application_orders/", parameters={}
+										14:41:47.935 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController#toApplicationOrders(RoomApi)
+										14:41:48.030 [http-nio-8080-exec-2] DEBUG [org.springframework.web.method.HandlerMethod][getMethodArgumentValues]  - Could not resolve parameter [0] in public com.alamutra.CCoAWeb.Model.RoomApi com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController.toApplicationOrders(com.alamutra.CCoAWeb.Model.RoomApi) throws java.io.IOException: Required request parameter 'orders' for method parameter type RoomApi is not present
+										14:41:48.044 [http-nio-8080-exec-2] WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver][logException]  - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'orders' for method parameter type RoomApi is not present]
+										14:41:48.054 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Completed 400 BAD_REQUEST
+										14:41:48.081 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - "ERROR" dispatch for POST "/error", parameters={}
+										14:41:48.089 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+										14:41:48.277 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor][writeWithMessageConverters]  - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+										14:41:48.282 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor][traceDebug]  - Writing [{timestamp=Mon Dec 05 14:41:48 GMT 2022, status=400, error=Bad Request, path=/to_application_orders/ (truncated)...]
+										14:41:48.560 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Exiting from "ERROR" dispatch, status 400
+										14:42:43.558 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - POST "/to_application_orders", parameters={masked}
+										14:42:43.560 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController#toApplicationOrders(RoomApi)
+										14:42:43.563 [http-nio-8080-exec-1] DEBUG [org.springframework.web.method.HandlerMethod][getMethodArgumentValues]  - Could not resolve parameter [0] in public com.alamutra.CCoAWeb.Model.RoomApi com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController.toApplicationOrders(com.alamutra.CCoAWeb.Model.RoomApi) throws java.io.IOException: Required request parameter 'orders' for method parameter type RoomApi is not present
+										14:42:43.566 [http-nio-8080-exec-1] WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver][logException]  - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'orders' for method parameter type RoomApi is not present]
+										14:42:43.567 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Completed 400 BAD_REQUEST
+										14:42:43.571 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - "ERROR" dispatch for POST "/error", parameters={masked}
+										14:42:43.574 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+										14:42:43.581 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor][writeWithMessageConverters]  - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+										14:42:43.583 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor][traceDebug]  - Writing [{timestamp=Mon Dec 05 14:42:43 GMT 2022, status=400, error=Bad Request, path=/to_application_orders}]
+										14:42:43.590 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Exiting from "ERROR" dispatch, status 400
+
+
+
+
+
+
+										gfs@machine-gfs:~$ nmap -p 80 google.com
+										Starting Nmap 7.80 ( https://nmap.org ) at 2022-12-06 23:12 +07
+										Nmap scan report for google.com (74.125.131.139)
+										Host is up (0.24s latency).
+										Other addresses for google.com (not scanned): 74.125.131.138 74.125.131.113 74.125.131.101 74.125.131.102 74.125.131.100 2a00:1450:4010:c0e::71 2a00:1450:4010:c0e::8a 2a00:1450:4010:c0e::8b 2a00:1450:4010:c0e::65
+										rDNS record for 74.125.131.139: lu-in-f139.1e100.net
+
+										PORT   STATE SERVICE
+										80/tcp open  http
+
+										Nmap done: 1 IP address (1 host up) scanned in 0.71 seconds
+										gfs@machine-gfs:~$ nmap -p 8080 localhost
+										Starting Nmap 7.80 ( https://nmap.org ) at 2022-12-06 23:13 +07
+										Nmap scan report for localhost (127.0.0.1)
+										Host is up (0.00011s latency).
+
+										PORT     STATE SERVICE
+										8080/tcp open  http-proxy
+
+										Nmap done: 1 IP address (1 host up) scanned in 0.06 seconds
+
+
+
+
+
+
+
+
+
+
+
+
+										убрал библиотеку thymealef просто из pom файла
+
+
+
+										  .   ____          _            __ _ _
+										 /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+										( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+										 \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+										  '  |____| .__|_| |_|_| |_\__, | / / / /
+										 =========|_|==============|___/=/_/_/_/
+										 :: Spring Boot ::                (v2.7.5)
+
+										17:02:21.054 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version][<clinit>]  - HV000001: Hibernate Validator 6.2.5.Final
+										17:02:21.154 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStarting]  - Starting CCoAWebApplication v0.0.1-SNAPSHOT using Java 1.8.0_212 on c11aded07828 with PID 1 (/app.jar started by root in /)
+										17:02:21.173 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStartupProfileInfo]  - No active profile set, falling back to 1 default profile: "default"
+										17:02:24.886 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize]  - Tomcat initialized with port(s): 8080 (http)
+										SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+										SLF4J: Defaulting to no-operation (NOP) logger implementation
+										SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+										17:02:26.622 [main] INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext]  - Root WebApplicationContext: initialization completed in 5133 ms
+										17:02:27.020 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter][initControllerAdviceCache]  - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+										17:02:27.263 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][handlerMethodsInitialized]  - 6 mappings in 'requestMappingHandlerMapping'
+										17:02:27.296 [main] DEBUG [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][logMappings]  - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+										17:02:27.313 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][initExceptionHandlerAdviceCache]  - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+										17:02:27.745 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start]  - Tomcat started on port(s): 8080 (http) with context path ''
+										17:02:27.766 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStarted]  - Started CCoAWebApplication in 7.51 seconds (JVM running for 16.276)
+
+
+										17:05:42.676 [http-nio-8080-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - Initializing Servlet 'dispatcherServlet'
+										17:05:42.676 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initMultipartResolver]  - Detected StandardServletMultipartResolver
+										17:05:42.677 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initLocaleResolver]  - Detected AcceptHeaderLocaleResolver
+										17:05:42.677 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initThemeResolver]  - Detected FixedThemeResolver
+										17:05:42.678 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initRequestToViewNameTranslator]  - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@31bcc54
+										17:05:42.679 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initFlashMapManager]  - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4633188d
+										17:05:42.679 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+										17:05:42.680 [http-nio-8080-exec-2] INFO  [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - Completed initialization in 4 ms
+										17:05:42.817 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - POST "/to_application_orders", parameters={}
+										17:05:42.925 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController#toApplicationOrders(RoomApi)
+										17:05:43.116 [http-nio-8080-exec-2] DEBUG [org.springframework.web.method.HandlerMethod][getMethodArgumentValues]  - Could not resolve parameter [0] in public com.alamutra.CCoAWeb.Model.RoomApi com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController.toApplicationOrders(com.alamutra.CCoAWeb.Model.RoomApi): Required request parameter 'id' for method parameter type RoomApi is not present
+										17:05:43.127 [http-nio-8080-exec-2] WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver][logException]  - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type RoomApi is not present]
+										17:05:43.130 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Completed 400 BAD_REQUEST
+										17:05:43.142 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - "ERROR" dispatch for POST "/error", parameters={}
+										17:05:43.155 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+										17:05:43.384 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor][writeWithMessageConverters]  - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+										17:05:43.386 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor][traceDebug]  - Writing [{timestamp=Tue Dec 06 17:05:43 GMT 2022, status=400, error=Bad Request, path=/to_application_orders}]
+										17:05:43.573 [http-nio-8080-exec-2] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Exiting from "ERROR" dispatch, status 400
+
+
+
+
+
+										Смена аннотации класса с @RestController на @Controller тоже ничего не дала
+
+
+
+
+
+
+
+											
+
+										сделал такое извлечение
+
+										    public @ResponseBody RoomApi toApplicationOrders(HttpServletRequest request,
+										                                                     HttpServletResponse response, Model model) {
+
+												String idJson = request.getParameter("id"); //выдает null
+
+
+										  .   ____          _            __ _ _
+										 /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+										( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+										 \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+										  '  |____| .__|_| |_|_| |_\__, | / / / /
+										 =========|_|==============|___/=/_/_/_/
+										 :: Spring Boot ::                (v2.7.5)
+
+										17:32:13.150 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version][<clinit>]  - HV000001: Hibernate Validator 6.2.5.Final
+										17:32:13.252 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStarting]  - Starting CCoAWebApplication v0.0.1-SNAPSHOT using Java 1.8.0_212 on e94f4c33dc72 with PID 1 (/app.jar started by root in /)
+										17:32:13.261 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStartupProfileInfo]  - No active profile set, falling back to 1 default profile: "default"
+										17:32:14.722 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize]  - Tomcat initialized with port(s): 8080 (http)
+										SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+										SLF4J: Defaulting to no-operation (NOP) logger implementation
+										SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+										17:32:14.954 [main] INFO  [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext]  - Root WebApplicationContext: initialization completed in 1552 ms
+										17:32:15.250 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter][initControllerAdviceCache]  - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+										17:32:15.419 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][handlerMethodsInitialized]  - 6 mappings in 'requestMappingHandlerMapping'
+										17:32:15.454 [main] DEBUG [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping][logMappings]  - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+										17:32:15.472 [main] DEBUG [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][initExceptionHandlerAdviceCache]  - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+										17:32:15.631 [main] INFO  [org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start]  - Tomcat started on port(s): 8080 (http) with context path ''
+										17:32:15.647 [main] INFO  [com.alamutra.CCoAWeb.CCoAWebApplication][logStarted]  - Started CCoAWebApplication in 2.865 seconds (JVM running for 4.078)
+										17:33:50.834 [http-nio-8080-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - Initializing Servlet 'dispatcherServlet'
+										17:33:50.834 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][initMultipartResolver]  - Detected StandardServletMultipartResolver
+										17:33:50.834 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][initLocaleResolver]  - Detected AcceptHeaderLocaleResolver
+										17:33:50.834 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][initThemeResolver]  - Detected FixedThemeResolver
+										17:33:50.836 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][initRequestToViewNameTranslator]  - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@234ac1c1
+										17:33:50.836 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][initFlashMapManager]  - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4ed77d6c
+										17:33:50.836 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+										17:33:50.837 [http-nio-8080-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet][initServletBean]  - Completed initialization in 2 ms
+										17:33:50.850 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][traceDebug]  - POST "/to_application_orders", parameters={}
+										17:33:50.858 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping][getHandler]  - Mapped to com.alamutra.CCoAWeb.ControllerSpring.ManagerRoomController#toApplicationOrders(HttpServletRequest, HttpServletResponse, Model)
+										17:33:50.963 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor][writeWithMessageConverters]  - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+										17:33:50.964 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor][traceDebug]  - Writing [RoomApi(id=Oqbh7JIoSEGuZvAN__win_control)]
+										17:33:50.985 [http-nio-8080-exec-1] DEBUG [org.springframework.web.servlet.DispatcherServlet][logResult]  - Completed 200 OK
+
+
+
+
+
+
+
+
+											( ) попробовать сделать из моего сайта http, а не http proxy
+
+
+
+										(+) по приколу сгенерировать проект чистый новый проект и попробовать там все сделать по инструкции.
+
+											: сгенерировал проект с зависимостями
+												Spring Boot DevTools DEVELOPER TOOLS
+												Spring Web WEB
+												Spring Data JPA SQL
+
+
+												: возникла проблема - у меня установлена java 8, а сгенерированная система под java 8 на spring.start почему то все равно генерирует 17 и выше
+													+ причина моих бед в том, что в CCoA используются 8 версия java, а для Spring запросов необходимо 17 и выше (2022.12.07 19:12:37) ?
+														да
+
+													? переходить ли на версию 17, будут ли последствия при написании игры (2022.12.07 19:15:27) ?
+														: игра это крайняя цель, для неё времени неограничено, не к спеху
+														: что мне помешает сделать понижение всяких фич 17 языка для LibGDX
+															: все равно придется много всякого игрового функционала писать, хотя если подумать то, в систему перемещений мало что придется добавлять. Но вот видимо буду встраивать в пространство-время встраивать функции, которые будут информацию отдавать о ... чем-нибудь
+
+
+													? последствия интеграции виноваты (2022.12.05 22:43:34) ?
+
+
+
 						( ) сделать машинки в виде изображений, а не закрашенных квадратов
 							: картинка обязательно должна формироваться по id машинки
+
+
 
 
 					+ какая должна быть основа/библиотека/технология полигонов (2022.11.24 14:56:26) ?
