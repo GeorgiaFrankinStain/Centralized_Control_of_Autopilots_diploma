@@ -1,21 +1,18 @@
-package com.alamutra.CCoAWeb.ControllerSpring;
+package com.CCoABackendCalculate.CCoA.ControllerSpring;
 
-import com.alamutra.CCoAWeb.Core.Controller.ManagerRoom;
-import com.alamutra.CCoAWeb.Core.Controller.ManagerRoomClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.RouteClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
-import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.PathMovingUniqueJSON;
-import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapper;
-import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapperClass;
-import com.alamutra.CCoAWeb.Model.RoomApi;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.CCoABackendCalculate.CCoA.Core.Controller.ManagerRoom;
+import com.CCoABackendCalculate.CCoA.Core.Controller.ManagerRoomClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.RouteClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.PathMovingUniqueJSON;
+import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapper;
+import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
+import com.CCoABackendCalculate.CCoA.SpringModel.RoomDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +23,7 @@ public class ManagerRoomController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/create_room", produces = "application/json")
-    public RoomApi createRoom(Model model, HttpServletResponse response) {
+    public RoomDTO createRoom(Model model) {
 
         System.out.println("------------- TEST SOUT ------------: ");
 
@@ -35,14 +32,14 @@ public class ManagerRoomController {
         generatedRandomString = generatedRandomString + "__testMakesDeploy2222";
         
         managerRoom.createNewRoom(generatedRandomString);
-        return new RoomApi(generatedRandomString);
+        return new RoomDTO(generatedRandomString);
     }
 
 
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "get_elbow_footprint", consumes = "application/json", produces = "application/json")
-    public List<PathMovingUniqueJSON> getElbowFootprint(Model model, HttpServletResponse response) {
+    public List<PathMovingUniqueJSON> getElbowFootprint(Model model) {
 
 
 
@@ -71,15 +68,9 @@ public class ManagerRoomController {
     @PostMapping(path = "/to_application_orders", consumes = "application/json", produces = "application/json")
 //            consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
 //    public @ResponseBody RoomApi toApplicationOrders(@RequestParam RoomApi id) {
-    public @ResponseBody RoomApi toApplicationOrders(HttpServletRequest request,
-                                                     HttpServletResponse response, Model model) {
+    public @ResponseBody RoomDTO toApplicationOrders(Model model) {
 
 
-        String idJson = request.getParameter("id");
-
-
-        LOG.info("idJson: " + idJson);
-        LOG.info("request: " + request);
 
 //        System.out.println("------------- orders ------------: " + id);
 //        ObjectMapper objectMapper = new ObjectMapper();
@@ -90,7 +81,7 @@ public class ManagerRoomController {
         generatedRandomString = generatedRandomString + "__win_control";
 
         managerRoom.createNewRoom(generatedRandomString);
-        return new RoomApi(idJson);
+        return new RoomDTO("idJson");
     }
 
 //    @CrossOrigin(origins = "http://localhost:3000")
