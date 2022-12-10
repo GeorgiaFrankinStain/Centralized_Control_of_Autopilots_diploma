@@ -1,8 +1,8 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.Landscape;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.Landscape;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
 
 import java.util.ArrayList;
 import java.util.List;

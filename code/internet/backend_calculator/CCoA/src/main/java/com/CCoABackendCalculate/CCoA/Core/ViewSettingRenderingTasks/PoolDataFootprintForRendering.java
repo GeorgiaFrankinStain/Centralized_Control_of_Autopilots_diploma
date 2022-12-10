@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks;
+package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
 
 import java.util.Iterator;
 

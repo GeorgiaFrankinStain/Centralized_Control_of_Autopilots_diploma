@@ -1,11 +1,11 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.Position;
-import com.alamutra.CCoAWeb.Core.Wrappers.*;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
+import com.CCoABackendCalculate.CCoA.Core.Wrappers.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

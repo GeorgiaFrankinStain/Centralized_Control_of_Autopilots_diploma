@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
 /**
  * it differs from PathCCoA in that it is the movement

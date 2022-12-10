@@ -1,4 +1,4 @@
-package com.CCoABackendCalculate.CCoA.ControllerSpring;
+package com.CCoABackendCalculate.CCoA.SpringController;
 
 import com.CCoABackendCalculate.CCoA.Core.Controller.ManagerRoom;
 import com.CCoABackendCalculate.CCoA.Core.Controller.ManagerRoomClass;
@@ -7,7 +7,11 @@ import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
 import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.PathMovingUniqueJSON;
 import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapper;
 import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
+import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.AdderMarks;
+import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.StringAdderMarks;
+import com.CCoABackendCalculate.CCoA.SpringModel.OrderDTO;
 import com.CCoABackendCalculate.CCoA.SpringModel.RoomDTO;
+import com.CCoABackendCalculate.CCoA.SpringModel.StatusResponseDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.Model;
@@ -25,23 +29,19 @@ public class ManagerRoomController {
     @PostMapping(value = "/create_room", produces = "application/json")
     public RoomDTO createRoom(Model model) {
 
-        System.out.println("------------- TEST SOUT ------------: ");
+//        RandomWrapper random = new RandomWrapperClass(3463734);
+//        String generatedId = random.nextString(GlobalVariable.getLengthRandStringKey());
+//        generatedId = generatedId;
 
-        RandomWrapper random = new RandomWrapperClass(3463734);
-        String generatedRandomString = random.nextString(GlobalVariable.getLengthRandStringKey());
-        generatedRandomString = generatedRandomString + "__testMakesDeploy2222";
-        
-        managerRoom.createNewRoom(generatedRandomString);
-        return new RoomDTO(generatedRandomString);
+        String generatedId = managerRoom.createNewRoom();
+        return new RoomDTO(generatedId);
     }
 
 
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @PostMapping(value = "get_elbow_footprint", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/get_elbow_footprint", consumes = "application/json", produces = "application/json")
     public List<PathMovingUniqueJSON> getElbowFootprint(Model model) {
-
-
 
         List<PathMovingUniqueJSON> list = new ArrayList<>();
         list.add(new RouteClass());
@@ -51,48 +51,25 @@ public class ManagerRoomController {
 
 
 
-//    @CrossOrigin(origins = "http://localhost:3000")
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
-//    @PostMapping(value = "to_application_orders", consumes = "application/json", produces = "application/json")
-//    @RequestMapping(
-//            path = "/to_application_orders",
-//            method = RequestMethod.POST,
-//            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
-//            produces = {
-//                    MediaType.APPLICATION_ATOM_XML_VALUE,
-//                    MediaType.APPLICATION_JSON_VALUE
-//            })
-//    @RequestMapping(value = "to_application_orders",
-//            method = RequestMethod.POST, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-//    public @ResponseBody RoomApi toApplicationOrders(@RequestParam RoomApi orders) {
-    @PostMapping(path = "/to_application_orders", consumes = "application/json", produces = "application/json")
-//            consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
-//    public @ResponseBody RoomApi toApplicationOrders(@RequestParam RoomApi id) {
-    public @ResponseBody RoomDTO toApplicationOrders(Model model) {
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping(path = "/to_application_orders", produces = "application/json")
+    public @ResponseBody StatusResponseDTO toApplicationOrders(@RequestBody String orders) throws Exception {
+        this.managerRoom.toApplicationOrders(orders);
 
+//        AdderMarks adderMarks = new StringAdderMarks(orders);
 
-//        System.out.println("------------- orders ------------: " + id);
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        RoomApi prod = objectMapper.readValue(request, RoomApi.class);
-
-        RandomWrapper random = new RandomWrapperClass(3463734);
-        String generatedRandomString = random.nextString(GlobalVariable.getLengthRandStringKey());
-        generatedRandomString = generatedRandomString + "__win_control";
-
-        managerRoom.createNewRoom(generatedRandomString);
-        return new RoomDTO("idJson");
+        return new StatusResponseDTO(true);
     }
 
+//
 //    @CrossOrigin(origins = "http://localhost:3000")
-//    @PostMapping(value = "to_application_orders", consumes = "application/json", produces = "application/json")
-//    public PathMovingUniqueJSON toApplicationOrders(@RequestBody List<OrderDTO> orders, Model model, HttpServletResponse response) {
+//    @PostMapping(path = "/to_application_orders", produces = "application/json")
+//    public @ResponseBody String toApplicationOrders(@RequestBody String orders) throws Exception {
 //
-//        List<PathMovingUniqueJSON> list = new ArrayList<>();
-//        list.add(new RouteClass());
+////        AdderMarks adderMarks = new StringAdderMarks(orders);
 //
-////        return list;
-//
-//        return new RouteClass();
+//        return "susseful_textString";
+////        return new StatusResponseDTO(true);
 //    }
 }

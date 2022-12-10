@@ -1,10 +1,10 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.GeneratorFlowCars;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.GeneratorFlowCars;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMoving;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMoving;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

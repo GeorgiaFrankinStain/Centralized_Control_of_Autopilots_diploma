@@ -1,9 +1,9 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.Hexagon;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.Hexagon;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.*;
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.NetworkNodes;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.*;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.NetworkNodes;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,10 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.GeneratorFlowCars;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.GeneratorFlowCars;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayerClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.*;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.*;
 
 public class StandardGeneratorCars implements GeneratorCars {
 

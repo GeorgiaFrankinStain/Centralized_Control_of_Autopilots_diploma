@@ -1,16 +1,16 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AStar;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.AStar;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.NetworkNodes;
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.Node;
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.NodeClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoAClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayerClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoAClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.NetworkNodes;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.Node;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.NodeClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoAClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoAClass;
 
 import java.util.*;
 

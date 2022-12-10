@@ -1,6 +1,5 @@
-package com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks;
+package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks;
 
-import com.google.gson.JsonElement;
 
 public interface PathMovingUniqueJSON {
 //    public JsonElement getToEndCalculateExistFrom(Footprint fromStep);

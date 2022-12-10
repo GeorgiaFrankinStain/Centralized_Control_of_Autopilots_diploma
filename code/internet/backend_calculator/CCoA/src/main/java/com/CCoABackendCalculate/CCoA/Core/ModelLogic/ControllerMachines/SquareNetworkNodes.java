@@ -1,9 +1,9 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoAClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoAClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
 
 import java.util.ArrayList;
 import java.util.HashMap;

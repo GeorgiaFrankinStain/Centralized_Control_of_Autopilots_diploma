@@ -1,7 +1,7 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.Hexagon;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.Hexagon;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.*;
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.*;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

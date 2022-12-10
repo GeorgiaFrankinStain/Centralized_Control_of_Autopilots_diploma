@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Exception;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Exception;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Footprint;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Footprint;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

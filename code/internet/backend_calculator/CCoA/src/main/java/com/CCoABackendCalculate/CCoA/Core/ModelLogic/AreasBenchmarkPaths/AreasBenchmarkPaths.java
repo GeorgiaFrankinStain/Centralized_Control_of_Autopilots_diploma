@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.AreasBenchmarkPaths;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.AreasBenchmarkPaths;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
 
 public interface AreasBenchmarkPaths {
     public double getEstimatedDistanceFromTo(PointCCoA from, PointCCoA to, double radiusMovingObject);

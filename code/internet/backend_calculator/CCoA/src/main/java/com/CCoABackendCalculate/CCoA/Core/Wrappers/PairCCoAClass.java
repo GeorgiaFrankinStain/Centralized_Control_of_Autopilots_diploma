@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.Wrappers;
+package com.CCoABackendCalculate.CCoA.Core.Wrappers;
 
 public class PairCCoAClass<K, V> implements PairCCoA<K, V> {
     private K key;

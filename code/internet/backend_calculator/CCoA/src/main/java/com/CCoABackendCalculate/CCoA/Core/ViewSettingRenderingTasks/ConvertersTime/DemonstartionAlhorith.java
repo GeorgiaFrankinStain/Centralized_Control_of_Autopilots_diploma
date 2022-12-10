@@ -1,9 +1,9 @@
-package com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.ConvertersTime;
+package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.ConvertersTime;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayerClass;
-import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.ConverterTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.ConverterTime;
 
 public class DemonstartionAlhorith implements ConverterTime {
 

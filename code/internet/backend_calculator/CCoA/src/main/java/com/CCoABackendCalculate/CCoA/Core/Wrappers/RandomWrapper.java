@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.Wrappers;
+package com.CCoABackendCalculate.CCoA.Core.Wrappers;
 
 public interface RandomWrapper {
     public int nextInt();

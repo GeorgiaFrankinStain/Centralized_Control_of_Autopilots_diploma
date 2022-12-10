@@ -8,22 +8,47 @@ export function ButtonSendOrders() {
 
 
 
-    const jsonData = {"id": "textid"};
+    // const jsonData = {"id": "textid"};
 
-    // const jsonData = {
-    //     "orders": [
-    //         {
-    //             "name": "alan",
-    //             "age": 23,
-    //             "username": "aturing"
-    //         },
-    //         {
-    //             "name": "john",
-    //             "age": 29,
-    //             "username": "__john__"
-    //         }
-    //     ]
-    // }
+    const jsonData = {
+        "version": 1,
+        "id_room": "VAsIOqbh7JIoSEGuZvAN", //option
+        "orders": [
+            {
+                "parameters_moving": {
+                    "polygon_form": [
+                        {"x":"-10","y":"-10"},
+                        {"x":"-10","y":"10"},
+                        {"x":"10","y":"10"},
+                        {"x":"10","y":"-10"}
+                    ],
+                    "type": {
+                        "type_in_layer":"OBJECT",
+                        "type_landscape_body":"ASPHALT",
+                        "type_machines_body":"TEST_SQUARE_20"
+                    },
+                    "speed":10
+                },
+                "start": {
+                    "coordinate": {
+                        "x": 10, "y": 10
+                    },
+                    "layer":0,
+                    "angle":0.0,
+                    "time":0.0
+                },
+                "end": {
+                    "coordinate": {
+                        "x": 10, "y": 40
+                    },
+                    "layer":0,
+                    "angle":0.0
+                },
+                "standing": "false",
+                "standing_after": "false"
+            }
+        ]
+    }
 
 
 
@@ -36,8 +61,8 @@ export function ButtonSendOrders() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            mode: 'no-cors',
-            body: JSON.stringify({    name: "Corrected post"  }) // body data type must match "Content-Type" header
+            mode: 'cors',
+            body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
 
         })
             .then(response => response.json())

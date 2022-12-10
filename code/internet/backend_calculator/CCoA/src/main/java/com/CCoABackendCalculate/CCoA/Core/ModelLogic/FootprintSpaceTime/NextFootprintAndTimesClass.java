@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
 public class NextFootprintAndTimesClass implements NextFootprintAndTimes { //FIXME add tests
     private double timeNextFootprint;

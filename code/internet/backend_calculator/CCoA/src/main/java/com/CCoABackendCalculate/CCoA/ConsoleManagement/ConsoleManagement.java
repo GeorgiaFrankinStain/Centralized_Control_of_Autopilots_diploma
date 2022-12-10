@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.ConsoleManagement;
+package com.CCoABackendCalculate.CCoA.ConsoleManagement;
 
 public interface ConsoleManagement {
 }

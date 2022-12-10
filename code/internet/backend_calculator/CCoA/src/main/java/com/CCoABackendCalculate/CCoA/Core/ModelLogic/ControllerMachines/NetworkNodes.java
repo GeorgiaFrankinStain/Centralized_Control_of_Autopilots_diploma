@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
 
 import java.util.List;
 

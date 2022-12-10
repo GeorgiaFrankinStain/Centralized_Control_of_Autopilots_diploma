@@ -1,8 +1,8 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
 
 public interface AlhorithmFastFindPath {
     public PathCCoA getPath(PointCCoA start, PointCCoA destination, ParametersMovingUnique parametersMovingUnique,

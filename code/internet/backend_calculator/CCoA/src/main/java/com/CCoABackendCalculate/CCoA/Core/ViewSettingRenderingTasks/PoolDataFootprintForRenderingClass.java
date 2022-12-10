@@ -1,10 +1,10 @@
-package com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks;
+package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Footprint;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayerClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Footprint;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
 
 import java.util.*;
 import java.util.function.Consumer;

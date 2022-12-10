@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

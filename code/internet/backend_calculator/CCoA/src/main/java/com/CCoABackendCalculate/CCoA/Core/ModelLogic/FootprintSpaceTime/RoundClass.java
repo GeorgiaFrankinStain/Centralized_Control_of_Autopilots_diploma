@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
 
 public class RoundClass implements Round {
     private PointCCoA center;

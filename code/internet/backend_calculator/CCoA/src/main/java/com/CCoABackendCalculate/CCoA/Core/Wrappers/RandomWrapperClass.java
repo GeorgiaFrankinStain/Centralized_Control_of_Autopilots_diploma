@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.Wrappers;
+package com.CCoABackendCalculate.CCoA.Core.Wrappers;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

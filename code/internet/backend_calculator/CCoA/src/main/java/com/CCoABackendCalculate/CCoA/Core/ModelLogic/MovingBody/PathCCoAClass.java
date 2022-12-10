@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
 
 import java.util.ArrayList;
 import java.util.List;

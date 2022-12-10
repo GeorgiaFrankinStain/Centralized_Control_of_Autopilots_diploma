@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody;
 
-import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.TypeMachinesBody;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.TypeMachinesBody;
 
 public interface FabricParametersMovingUnique {
     public ParametersMovingUnique getMoving(TypeMachinesBody typeMachinesBody);

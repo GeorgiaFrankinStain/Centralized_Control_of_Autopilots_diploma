@@ -1,7 +1,7 @@
-package com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.ConvertersTime;
+package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.ConvertersTime;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
-import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.ConverterTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.ConverterTime;
 
 import java.util.HashMap;
 import java.util.Map;

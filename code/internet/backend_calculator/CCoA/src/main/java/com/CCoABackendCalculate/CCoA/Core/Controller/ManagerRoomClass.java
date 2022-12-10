@@ -1,10 +1,10 @@
-package com.alamutra.CCoAWeb.Core.Controller;
+package com.CCoABackendCalculate.CCoA.Core.Controller;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTimeClass;
-import com.alamutra.CCoAWeb.PercistanceDataAccessObjects.AdderMarks;
-import com.alamutra.CCoAWeb.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
-import com.alamutra.CCoAWeb.PercistanceDataAccessObjects.StringAdderMarks;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTimeClass;
+import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.AdderMarks;
+import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
+import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.StringAdderMarks;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -15,7 +15,7 @@ public class ManagerRoomClass implements ManagerRoom {
     StorageFootprintSpaceTimes storageRoom = new StorageFootprintSpaceTimeClass();
 
     @Override
-    public String createNewRoom(String titleRoom) {
+    public String createNewRoom() {
         FootprintsSpaceTime newFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
         String id = storageRoom.addFootprintSpaceTime(newFootprintsSpaceTime);

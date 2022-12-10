@@ -1,10 +1,10 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.GlobalVariable;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.ModelLogic.Position;
-import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.DataFootprintForRendering;
-import com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks.SkinsCapacitor;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.DataFootprintForRendering;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.SkinsCapacitor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

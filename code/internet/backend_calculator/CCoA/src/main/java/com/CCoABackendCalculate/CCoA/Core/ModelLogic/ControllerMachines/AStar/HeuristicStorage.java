@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AStar;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.AStar;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.Node;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.Node;
 
 public interface HeuristicStorage {
     public Node getNodeWithBestHeuristicScope();

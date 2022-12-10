@@ -1,8 +1,8 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AStar;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.AStar;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.Node;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.Node;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
 
 import java.util.HashMap;
 import java.util.Map;

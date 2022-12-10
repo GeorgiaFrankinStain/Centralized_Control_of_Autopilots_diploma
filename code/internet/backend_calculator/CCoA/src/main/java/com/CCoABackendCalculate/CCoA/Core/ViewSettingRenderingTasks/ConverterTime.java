@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ViewSettingRenderingTasks;
+package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.IndexLayer;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
 
 public interface ConverterTime {
     public double convert(double time, IndexLayer indexLayer);

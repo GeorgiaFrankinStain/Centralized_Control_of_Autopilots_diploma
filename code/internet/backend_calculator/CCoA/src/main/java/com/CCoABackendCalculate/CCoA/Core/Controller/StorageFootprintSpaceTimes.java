@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.Controller;
+package com.CCoABackendCalculate.CCoA.Core.Controller;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
 
 public interface StorageFootprintSpaceTimes {
     public FootprintsSpaceTime get(String id);

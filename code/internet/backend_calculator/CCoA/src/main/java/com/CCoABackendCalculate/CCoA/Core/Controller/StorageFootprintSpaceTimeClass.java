@@ -1,8 +1,8 @@
-package com.alamutra.CCoAWeb.Core.Controller;
+package com.CCoABackendCalculate.CCoA.Core.Controller;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapper;
-import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapperClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapper;
+import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
 
 import java.util.HashMap;
 import java.util.Map;

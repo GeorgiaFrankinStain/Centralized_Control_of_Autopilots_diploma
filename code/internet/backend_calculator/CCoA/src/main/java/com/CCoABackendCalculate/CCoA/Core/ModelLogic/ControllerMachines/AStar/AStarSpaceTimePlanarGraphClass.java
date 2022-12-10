@@ -1,11 +1,11 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AStar;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.AStar;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.AlhorithmFastFindPath;
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
-import com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.NetworkNodes;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.*;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.PathCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.AlhorithmFastFindPath;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.FabricNetworkNodes.FabricNetworkNodes;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.NetworkNodes;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.*;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
 
 public class AStarSpaceTimePlanarGraphClass implements AlhorithmFastFindPath {
     private FabricNetworkNodes fabricNetworkNodes;

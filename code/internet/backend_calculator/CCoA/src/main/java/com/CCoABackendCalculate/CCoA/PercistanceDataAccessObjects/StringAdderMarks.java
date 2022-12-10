@@ -1,7 +1,7 @@
-package com.alamutra.CCoAWeb.PercistanceDataAccessObjects;
+package com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
-import com.alamutra.CCoAWeb.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
+import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

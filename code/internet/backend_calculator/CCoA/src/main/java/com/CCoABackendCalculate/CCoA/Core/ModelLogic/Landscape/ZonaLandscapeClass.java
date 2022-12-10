@@ -1,12 +1,12 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.Landscape;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.Landscape;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.CreatorMarksOfPathClass;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.Footprint;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
-import com.alamutra.CCoAWeb.Core.ModelLogic.MovingBody.ParametersMovingUnique;
-import com.alamutra.CCoAWeb.Core.ModelLogic.Position;
-import com.alamutra.CCoAWeb.Core.Wrappers.RandomWrapperClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.CreatorMarksOfPathClass;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Footprint;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
+import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
 
  public class ZonaLandscapeClass implements ZonaLandscape, Footprint {
     private int idObject;

@@ -1,6 +1,6 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines.Hexagon;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines.Hexagon;
 
-import com.alamutra.CCoAWeb.Core.ModelLogic.FootprintSpaceTime.*;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.*;
 
 public class HexagonVectorsToNeighborsHexagonTile implements HexagonVectors {
     private HexagonVectors hexagonVectors;

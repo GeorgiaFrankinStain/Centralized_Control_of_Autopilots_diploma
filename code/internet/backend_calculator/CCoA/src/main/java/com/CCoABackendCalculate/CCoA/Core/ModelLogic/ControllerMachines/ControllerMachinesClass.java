@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.Core.ModelLogic.ControllerMachines;
+package com.CCoABackendCalculate.CCoA.Core.ModelLogic.ControllerMachines;
 
 public class ControllerMachinesClass {
 }

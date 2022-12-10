@@ -1,4 +1,4 @@
-package com.alamutra.CCoAWeb.PercistanceDataAccessObjects.Exception;
+package com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.Exception;
 
 public class NotEnoughDataException extends Exception {
 
