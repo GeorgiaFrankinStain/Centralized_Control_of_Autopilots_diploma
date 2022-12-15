@@ -20,18 +20,96 @@ const imitationDataFromGetElbowFootprint = { //формируется PathMoving
     ]
 }
 
+
+interface SpacePosition {
+    x: number;
+    y: number;
+}
+
+interface VectorSpaceTimePosition {
+    timeFrom: number;
+    from: SpacePosition;
+    timeTo: number;
+    to: SpacePosition;
+}
+
+function getPositionFor(time: number): SpacePosition | null {
+    const vectorSpaceTime: VectorSpaceTimePosition | null = getVectorMoveInSpaceTime(time);
+    if (vectorSpaceTime == null) {
+        return null;
+    } else {
+        return getApproximationPosition(
+            vectorSpaceTime.from,
+            vectorSpaceTime.timeFrom,
+            vectorSpaceTime.to,
+            vectorSpaceTime.timeTo,
+            time
+        );
+    }
+}
+
+function getVectorMoveInSpaceTime(time: number): VectorSpaceTimePosition | null {
+
+    if (imitationDataFromGetElbowFootprint.timeSpaceCoordinates.length < 2) {
+        throw new Error("no exist diapasons");
+    }
+
+    const arrayTimeSpaceCoordinates = imitationDataFromGetElbowFootprint.timeSpaceCoordinates;
+    for (let j = 0; j < arrayTimeSpaceCoordinates.length; j++) {
+
+        const currentItem = arrayTimeSpaceCoordinates[j];
+        const fromTime: number = +currentItem.t;
+
+        const nextIndex = j + 1;
+        const nextItem = arrayTimeSpaceCoordinates[nextIndex];
+        const isRangesAreOver = !nextItem;
+
+
+        if (isRangesAreOver) {
+            break;
+        }
+        const toTime: number = +nextItem.t;
+
+        if (fromTime <= time && time <= toTime) {
+            return  {
+                timeFrom: fromTime,
+                from: {x: +currentItem.x, y: +currentItem.y},
+                timeTo: toTime,
+                to: {x: +nextItem.x, y: +nextItem.y}
+            };
+        }
+    }
+
+    return null;
+}
+
+
+
 function getApproximationPosition(
-    position1: number,
+    position1: SpacePosition,
     time1: number,
-    position2: number,
+    position2: SpacePosition,
+    time2: number,
+    timeApproximation: number
+): SpacePosition {
+    const xApproximation = getApproximationCoordinate(position1.x, time1, position2.x, time2, timeApproximation);
+    const yApproximation = getApproximationCoordinate(position1.y, time1, position2.y, time2, timeApproximation);
+
+    return {x: xApproximation, y: yApproximation};
+}
+
+function getApproximationCoordinate(
+    coordination1: number,
+    time1: number,
+    coordination2: number,
     time2: number,
     timeApproximation: number
 ): number {
     const isReverseOrder: boolean = time1 > time2;
     if (isReverseOrder) {
-        return getApproximationPosition(position2, time2, position1, time1, timeApproximation);
+        return getApproximationCoordinate(coordination2, time2, coordination1, time1, timeApproximation);
     } else {
-        return getApproximationAscendingOrderOfTime(position1, time1, position2, time2, timeApproximation);
+        return getApproximationAscendingOrderOfTime(coordination1, time1, coordination2, time2, timeApproximation);
     }
 }
 
@@ -120,7 +198,7 @@ function percentageProximity(
 
 
 interface NextAnimationFrameHandler {
-    (progress: number) : void;
+    (nowTime: number) : void;
 }
 
 type SetParameters = {
@@ -149,24 +227,17 @@ const useAnimationFrame = ({
     const frame = React.useRef(0);
     // keep track of when animation is started
     const firstFrameTime = React.useRef(performance.now());
+    const start = Date.now();
 
     const animate = (now: number) => {
         // calculate at what time fraction we are currently of whole time of animation
-        let timeFraction = (now - firstFrameTime.current) / duration;
-        if (timeFraction > 1) {
-            timeFraction = 1;
-        }
-
-        if (timeFraction <= 1) {
-            nextAnimationFrameHandler(timeFraction);
-
-            // request next frame only in cases when we not reached 100% of duration
-            if (timeFraction != 1) frame.current = requestAnimationFrame(animate);
-        }
+        const timeFromStartAnimation = Date.now() - start;
+        nextAnimationFrameHandler(timeFromStartAnimation);
+        requestAnimationFrame(animate);
     };
 
     React.useEffect(() => {
-        console.log(shouldAnimate);
+        // console.log(shouldAnimate);
         if (shouldAnimate) {
             firstFrameTime.current = performance.now();
             frame.current = requestAnimationFrame(animate);
@@ -185,22 +256,103 @@ const Canvas = () => {
     const brickRef = React.useRef()  as MutableRefObject<HTMLDivElement>;
     const [shouldAnimate, setShouldAnimate] = React.useState(false);
 
+
+
+
+    // const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const canvasRef = useRef()   as MutableRefObject<HTMLDivElement>;
+    let timeCurrent = 0;
+
+
+
+
+
+
+
     const reset = () => {
         brickRef.current.style.left = String(0);
     };
 
-    const nextAnimationFrameHandler = (progress: number) => {
-        console.log(progress);
+    const nextAnimationFrameHandler = (nowTime: number) => {
         const brick = brickRef.current;
-        if (brick) {
-            const currentLeft = Number(brick.style.left.replace("px", "") || 0);
+        // if (brick) {
+        //     const currentLeft = Number(brick.style.left.replace("px", "") || 0);
+        //
+        //     if (nowTime < 1) {
+        //         brick.style.left = `${1000 * nowTime}px`;
+        //     } else {
+        //         setShouldAnimate(false);
+        //         brick.style.left = `1000px`;
+        //     }
+        // }
 
-            if (progress < 1) {
-                brick.style.left = `${1000 * progress}px`;
-            } else {
-                setShouldAnimate(false);
-                brick.style.left = `1000px`;
+        // const canvas = canvasRef.current;
+        // const canvas: HTMLCanvasElement = canvasRef.current;
+        const canvas = document.getElementById('myChart') as HTMLCanvasElement;
+        // const canvas: HTMLCanvasElement = document.getElementById('myChart');
+
+        if (canvas) {
+
+            // canvas.width = 400;
+
+
+            // canvas.height = 400;
+            const context = canvas.getContext('2d');
+
+
+
+
+            let x = 50;
+
+            if (!context) {
+
+                return;
             }
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            context.fillStyle = 'blue';
+            context.fillRect(0, 0, 100, 100);
+
+
+
+
+            if (imitationDataFromGetElbowFootprint.appearanceType == "non-uniform") {
+                console.log(getPositionFor(nowTime / 1000));
+                context.fillStyle = 'green';
+
+                context.beginPath();
+                let i = 0;
+                imitationDataFromGetElbowFootprint.appearancePolygonForm.forEach(pointForm => {
+                    if (i == 0) {
+                        context.moveTo(Number(pointForm.x), Number(pointForm.y));
+                    } else {
+                        context.lineTo(Number(pointForm.x), Number(pointForm.y));
+                    }
+                    i++;
+
+                });
+
+                context.closePath();
+
+                context.fill();
+
+
+            }
+            // context.fillStyle = 'yellow';
+            // context.fillRect(0,0, canvas.width, canvas.height);
+            //
+            // context.beginPath();
+            // context.moveTo(0, 0);
+            // context.lineTo(100, 50);
+            // context.lineTo(50, 100);
+            // context.lineTo(0, 90);
+            // context.closePath();
+            // context.fill();
+
+            // context.fillStyle = 'green';
+            // context.fillRect(x = x + 15, 50, 300, 200);
+
+            // context.fill();
         }
     };
 
@@ -222,6 +374,8 @@ const Canvas = () => {
                     Click me!
                 </div>
             </main>
+
+            <canvas  id="myChart"  />;
         </>
     );
 };
