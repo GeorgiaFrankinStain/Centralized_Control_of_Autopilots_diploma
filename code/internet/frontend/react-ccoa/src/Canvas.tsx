@@ -1,5 +1,6 @@
 import React, {MutableRefObject, useEffect, useRef} from "react";
 import assert from "assert";
+import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA} from "./Polygon";
 
 
 
@@ -15,25 +16,21 @@ const imitationDataFromGetElbowFootprint = { //формируется PathMoving
     ],
     timeSpaceCoordinates: [
         {"t": "0", "layer": "0", "x": "10", "y": "0", "angle": "0"},
-        {"t": "1", "layer": "0", "x": "10", "y": "10", "angle": "0"},
-        {"t": "2", "layer": "0", "x": "10", "y": "20", "angle": "0"}
+        {"t": "1", "layer": "0", "x": "20", "y": "20", "angle": 3.141592653589793},
+        {"t": "2", "layer": "0", "x": "50", "y": "50", "angle": "0"}
     ]
 }
 
 
-interface SpacePosition {
-    x: number;
-    y: number;
-}
 
 interface VectorSpaceTimePosition {
     timeFrom: number;
-    from: SpacePosition;
+    from: PositionCCoA;
     timeTo: number;
-    to: SpacePosition;
+    to: PositionCCoA;
 }
 
-function getPositionFor(time: number): SpacePosition | null {
+function getPositionFor(time: number): PositionCCoA | null {
     const vectorSpaceTime: VectorSpaceTimePosition | null = getVectorMoveInSpaceTime(time);
     if (vectorSpaceTime == null) {
         return null;
@@ -73,9 +70,9 @@ function getVectorMoveInSpaceTime(time: number): VectorSpaceTimePosition | null 
         if (fromTime <= time && time <= toTime) {
             return  {
                 timeFrom: fromTime,
-                from: {x: +currentItem.x, y: +currentItem.y},
+                from: {point: {x: +currentItem.x, y: +currentItem.y}, angle: +currentItem.angle},
                 timeTo: toTime,
-                to: {x: +nextItem.x, y: +nextItem.y}
+                to: {point: {x: +nextItem.x, y: +nextItem.y}, angle: +nextItem.angle}
             };
         }
     }
@@ -86,17 +83,118 @@ function getVectorMoveInSpaceTime(time: number): VectorSpaceTimePosition | null 
 
 
 function getApproximationPosition(
-    position1: SpacePosition,
+    position1: PositionCCoA,
     time1: number,
-    position2: SpacePosition,
+    position2: PositionCCoA,
     time2: number,
     timeApproximation: number
-): SpacePosition {
-    const xApproximation = getApproximationCoordinate(position1.x, time1, position2.x, time2, timeApproximation);
-    const yApproximation = getApproximationCoordinate(position1.y, time1, position2.y, time2, timeApproximation);
+): PositionCCoA {
+    const xApproximation = getApproximationCoordinate(position1.point.x, time1, position2.point.x, time2, timeApproximation);
+    const yApproximation = getApproximationCoordinate(position1.point.y, time1, position2.point.y, time2, timeApproximation);
+    const angleApproximation = getApproximationAngle(position1.angle, time1, position2.angle, time2, timeApproximation);
 
-    return {x: xApproximation, y: yApproximation};
+    return {point: {x: xApproximation, y: yApproximation}, angle: angleApproximation};
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getApproximationAngle(
+    angle1: number,
+    time1: number,
+    angle2: number,
+    time2: number,
+    timeApproximation: number
+): number {
+    if (angle1 <= angle2) {
+        return approximationAngleAscendingOrderOfAngle(angle1, time1, angle2, time2, timeApproximation);
+    } else {
+        return approximationAngleAscendingOrderOfAngle(angle2, time2, angle1, time1, timeApproximation);
+    }
+}
+
+function approximationAngleAscendingOrderOfAngle(
+    angle1: number,
+    time1: number,
+    angle2: number,
+    time2: number,
+    timeApproximation: number
+): number {
+    const coefficientApproximation = percentageProximityFromAngle1ToFoundAngle(time1, time2, timeApproximation);
+
+    const mediumAngle = getMediumAngle(angle1, angle2);
+
+    const angularDistanceToMediumAngle = mediumAngle - angle1;
+    const rotationVectorThatConvertsFirstAngleToSecond = angularDistanceToMediumAngle * 2;
+
+    const angularVectorThatConvertsFirstAngleToFoundApproximationAngle =
+        rotationVectorThatConvertsFirstAngleToSecond * coefficientApproximation;
+
+    const approximationAngle = angle1 + angularVectorThatConvertsFirstAngleToFoundApproximationAngle;
+
+    return approximationAngle;
+}
+
+
+function percentageProximityFromAngle1ToFoundAngle(
+    time1: number,
+    time2: number,
+    timeProximity: number
+): number {
+    if (time1 <= time2) {
+        return percentageProximity(time1, time2, timeProximity);
+    } else {
+        return 1 - percentageProximity(time2, time1, timeProximity);
+    }
+}
+
+function getMediumAngle(a: number, b: number): number {
+    const halfRound = Math.PI;
+    const fullRound = halfRound * 2;
+
+    a = a % fullRound;
+    b = b % fullRound;
+
+    let sum = a + b;
+
+    if (fullRound < sum && sum < fullRound * 1.5) {
+        sum = sum % halfRound;
+    }
+    return sum / 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function getApproximationCoordinate(
     coordination1: number,
@@ -237,7 +335,6 @@ const useAnimationFrame = ({
     };
 
     React.useEffect(() => {
-        // console.log(shouldAnimate);
         if (shouldAnimate) {
             firstFrameTime.current = performance.now();
             frame.current = requestAnimationFrame(animate);
@@ -293,6 +390,7 @@ const Canvas = () => {
 
         if (canvas) {
 
+
             // canvas.width = 400;
 
 
@@ -308,33 +406,82 @@ const Canvas = () => {
 
                 return;
             }
-            context.clearRect(0, 0, canvas.width, canvas.height);
 
-            context.fillStyle = 'blue';
-            context.fillRect(0, 0, 100, 100);
+            // context.fillStyle = 'blue';
+            // context.fillRect(0, 0, 100, 100);
+
 
 
 
 
             if (imitationDataFromGetElbowFootprint.appearanceType == "non-uniform") {
-                console.log(getPositionFor(nowTime / 1000));
-                context.fillStyle = 'green';
+                const position = getPositionFor(nowTime / 1000);
+                console.log(position);
 
-                context.beginPath();
+
+                let polygon: PolygonCCoA = new PolygonCCoAClass();
+
+                //create polygon
+
+
                 let i = 0;
                 imitationDataFromGetElbowFootprint.appearancePolygonForm.forEach(pointForm => {
+                    polygon.addPoint({x: Number(pointForm.x), y: Number(pointForm.y)});
                     if (i == 0) {
+
                         context.moveTo(Number(pointForm.x), Number(pointForm.y));
                     } else {
                         context.lineTo(Number(pointForm.x), Number(pointForm.y));
                     }
                     i++;
-
                 });
 
-                context.closePath();
+                let movedPolygon = null;
+                if (position) {
 
-                context.fill();
+
+
+                    movedPolygon = polygon.rotateRelative00(position.angle);
+                    movedPolygon = movedPolygon.getDeposeOn(position.point);
+                }
+
+
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+                context.fillStyle = 'green';
+
+
+
+                if (movedPolygon) {
+
+                    console.log("movedPolygon");
+                    console.log(movedPolygon);
+
+
+                    context.beginPath();
+
+                    for (let index = 0; index < movedPolygon.getSize(); index++) {
+                        let polygonCoordinate = movedPolygon.getPoint(index);
+
+                        if (index == 0) {
+                            context.moveTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                        } else {
+                            context.lineTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                        }
+                    }
+
+                    context.closePath();
+
+                    context.fill();
+
+                }
+
+
+
+
+
+
 
 
             }
