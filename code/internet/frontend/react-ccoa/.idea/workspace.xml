@@ -70,6 +70,8 @@
       <workItem from="1671271177946" duration="21710000" />
       <workItem from="1671350387302" duration="590000" />
       <workItem from="1671365360565" duration="5074000" />
+      <workItem from="1671383636863" duration="8393000" />
+      <workItem from="1671438311494" duration="1169000" />
     </task>
     <servers />
   </component>
@@ -92,7 +94,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Canvas.tsx</url>
-          <line>60</line>
+          <line>208</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

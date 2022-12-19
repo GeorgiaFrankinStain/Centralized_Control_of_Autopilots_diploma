@@ -4,22 +4,51 @@ import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA} from "./Polygon"
 
 
 
+interface ElbowMovingObject {
+    id_moving_unique_object: string;
+    appearanceType: string;
+    appearancePolygonForm: PolygonCCoA[];
+    timeSpaceCoordinates: TimeSpaceCoordinateInput[];
+}
+
+
 
 const imitationDataFromGetElbowFootprint = { //формируется PathMovingUniqueDataForRendering
-    "id_moving_unique_object": "235662",
-    "appearanceType": "non-uniform", //non-uniform is simple colorFill polygon
-    "appearancePolygonForm": [ //(half_option_LINK_nEfBkQ, if appearanceType: non-uniform)
-        {"x": "-13", "y": "-13"},
-        {"x": "-13", "y": "13"},
-        {"x": "13", "y": "13"},
-        {"x": "13", "y": "-13"}
-    ],
-    timeSpaceCoordinates: [
-        {"t": "0", "layer": "0", "x": "10", "y": "0", "angle": "0"},
-        {"t": "1", "layer": "0", "x": "20", "y": "20", "angle": 3.141592653589793},
-        {"t": "2", "layer": "0", "x": "50", "y": "50", "angle": "0"}
+    "elbow_moving_objects": [
+        {
+            "id_moving_unique_object": "235662",
+            "appearanceType": "non-uniform", //non-uniform is simple colorFill polygon
+            "appearancePolygonForm": [ //(half_option_LINK_nEfBkQ, if appearanceType: non-uniform)
+                {"x": "-13", "y": "-13"},
+                {"x": "-13", "y": "13"},
+                {"x": "13", "y": "13"},
+                {"x": "13", "y": "-13"}
+            ],
+            timeSpaceCoordinates: [
+                {"t": "0", "layer": "0", "x": "10", "y": "0", "angle": "0"},
+                {"t": "1", "layer": "0", "x": "20", "y": "20", "angle": 3.141592653589793},
+                {"t": "2", "layer": "0", "x": "50", "y": "50", "angle": "0"}
+            ]
+        },
+        {
+            "id_moving_unique_object": "34773",
+            "appearanceType": "non-uniform", //non-uniform is simple colorFill polygon
+            "appearancePolygonForm": [ //(half_option_LINK_nEfBkQ, if appearanceType: non-uniform)
+                {"x": "-13", "y": "-13"},
+                {"x": "-13", "y": "13"},
+                {"x": "13", "y": "13"},
+                {"x": "13", "y": "-13"}
+            ],
+            timeSpaceCoordinates: [
+                {"t": "0", "layer": "0", "x": "55", "y": "0", "angle": "0"},
+                {"t": "1", "layer": "0", "x": "70", "y": "20", "angle": 3.141592653589793},
+                {"t": "2", "layer": "0", "x": "90", "y": "50", "angle": "0"}
+            ]
+        }
     ]
 }
+
+
 
 
 
@@ -30,8 +59,8 @@ interface VectorSpaceTimePosition {
     to: PositionCCoA;
 }
 
-function getPositionFor(time: number): PositionCCoA | null {
-    const vectorSpaceTime: VectorSpaceTimePosition | null = getVectorMoveInSpaceTime(time);
+function getPositionFor(time: number, jsonElbowMovingObject: JSON): PositionCCoA | null {
+    const vectorSpaceTime: VectorSpaceTimePosition | null = getVectorMoveInSpaceTime(time, jsonElbowMovingObject);
     if (vectorSpaceTime == null) {
         return null;
     } else {
@@ -45,13 +74,132 @@ function getPositionFor(time: number): PositionCCoA | null {
     }
 }
 
-function getVectorMoveInSpaceTime(time: number): VectorSpaceTimePosition | null {
 
-    if (imitationDataFromGetElbowFootprint.timeSpaceCoordinates.length < 2) {
-        throw new Error("no exist diapasons");
+
+
+
+
+
+
+interface StorageElbowJsonDTO {
+    setJson(json: JSON): void;
+    getCountElbowMovingObjects(): number;
+    getElbowMovingObject(index: number): ElbowDTO;
+}
+
+interface ElbowDTO {
+    getIdMovingUniqueObject(): string;
+    getAppearanceType(): string;
+
+    getCountAppearancePolygonFormPoints(): number;
+    getFormPoint(index: number): PointCCoA;
+
+    getCountVectorsMoveInTimeSpace(): number;
+    getVectorMoveInSpaceTime(index: number): VectorSpaceTimePosition;
+}
+
+
+interface TimeSpaceCoordinate {
+    t: number;
+    layer: number;
+    x: number;
+    y: number;
+    angle: number;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class StorageElbowJsonDTOClass implements StorageElbowJsonDTO {
+
+    private elbowsJsonDTO: Array<ElbowDTO> = new Array<ElbowDTO>();
+
+
+
+    constructor(elbowsJSON: JSON) {
+
     }
 
-    const arrayTimeSpaceCoordinates = imitationDataFromGetElbowFootprint.timeSpaceCoordinates;
+    setJson(json: JSON): void {
+
+    }
+
+    getCountElbowMovingObjects(): number {
+        return this.elbowsJsonDTO.length;
+    }
+
+    getElbowMovingObject(index: number): ElbowDTO {
+        return this.elbowsJsonDTO[index];
+    }
+
+}
+
+
+class ElbowJsonDTOClass implements ElbowDTO {
+    private appearanceType: string = "";
+    private id: string = "";
+    private polygonForm: PolygonCCoA;
+    private timeSpaceCoordinates: Array<TimeSpaceCoordinate> = new Array<TimeSpaceCoordinate>();
+
+
+    constructor(elbowJSON: JSON) {
+
+    }
+
+    getIdMovingUniqueObject(): string {
+        return this.id;
+    }
+
+    getAppearanceType(): string {
+        return this.appearanceType;
+    }
+
+    getCountAppearancePolygonFormPoints(): number {
+        return this.polygonForm.getSize();
+    }
+
+    getFormPoint(index: number): PointCCoA {
+        return this.polygonForm.getPoint(index);
+    }
+
+    getCountVectorsMoveInTimeSpace(): number {
+        return 0;
+    }
+
+    getVectorMoveInSpaceTime(index: number): VectorSpaceTimePosition {
+        return undefined;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getVectorMoveInSpaceTime(time: number, jsonElbowMovingObject: ElbowMovingObject): VectorSpaceTimePosition | null {
+
+    const arrayTimeSpaceCoordinates = jsonElbowMovingObject.timeSpaceCoordinates;
+    if (arrayTimeSpaceCoordinates.length < 2) {
+        throw new Error("no exist diapasons");
+
+    }
     for (let j = 0; j < arrayTimeSpaceCoordinates.length; j++) {
 
         const currentItem = arrayTimeSpaceCoordinates[j];
@@ -412,79 +560,73 @@ const Canvas = () => {
 
 
 
+            imitationDataFromGetElbowFootprint.elbow_moving_objects.forEach((elbow_moving_object: ElbowMovingObject) => {
+
+                if (elbow_moving_object.appearanceType == "non-uniform") {
+                    const position = getPositionFor(nowTime / 1000, elbow_moving_object);
+                    console.log(position);
 
 
-            if (imitationDataFromGetElbowFootprint.appearanceType == "non-uniform") {
-                const position = getPositionFor(nowTime / 1000);
-                console.log(position);
+                    let polygon: PolygonCCoA = new PolygonCCoAClass();
+
+                    //create polygon
 
 
-                let polygon: PolygonCCoA = new PolygonCCoAClass();
+                    let i = 0;
+                    elbow_moving_object.appearancePolygonForm.forEach((pointForm: PointStringDTO) => {
+                        polygon.addPoint({x: Number(pointForm.x), y: Number(pointForm.y)});
+                        if (i == 0) {
 
-                //create polygon
-
-
-                let i = 0;
-                imitationDataFromGetElbowFootprint.appearancePolygonForm.forEach(pointForm => {
-                    polygon.addPoint({x: Number(pointForm.x), y: Number(pointForm.y)});
-                    if (i == 0) {
-
-                        context.moveTo(Number(pointForm.x), Number(pointForm.y));
-                    } else {
-                        context.lineTo(Number(pointForm.x), Number(pointForm.y));
-                    }
-                    i++;
-                });
-
-                let movedPolygon = null;
-                if (position) {
-
-
-
-                    movedPolygon = polygon.rotateRelative00(position.angle);
-                    movedPolygon = movedPolygon.getDeposeOn(position.point);
-                }
-
-
-                context.clearRect(0, 0, canvas.width, canvas.height);
-
-
-                context.fillStyle = 'green';
-
-
-
-                if (movedPolygon) {
-
-                    console.log("movedPolygon");
-                    console.log(movedPolygon);
-
-
-                    context.beginPath();
-
-                    for (let index = 0; index < movedPolygon.getSize(); index++) {
-                        let polygonCoordinate = movedPolygon.getPoint(index);
-
-                        if (index == 0) {
-                            context.moveTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                            context.moveTo(Number(pointForm.x), Number(pointForm.y));
                         } else {
-                            context.lineTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                            context.lineTo(Number(pointForm.x), Number(pointForm.y));
                         }
+                        i++;
+                    });
+
+                    let movedPolygon = null;
+                    if (position) {
+
+
+
+                        movedPolygon = polygon.rotateRelative00(position.angle);
+                        movedPolygon = movedPolygon.getDeposeOn(position.point);
                     }
 
-                    context.closePath();
 
-                    context.fill();
+                    context.clearRect(0, 0, canvas.width, canvas.height);
 
+
+                    context.fillStyle = 'green';
+
+
+
+                    if (movedPolygon) {
+
+                        console.log("movedPolygon");
+                        console.log(movedPolygon);
+
+
+                        context.beginPath();
+
+                        for (let index = 0; index < movedPolygon.getSize(); index++) {
+                            let polygonCoordinate = movedPolygon.getPoint(index);
+
+                            if (index == 0) {
+                                context.moveTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                            } else {
+                                context.lineTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                            }
+                        }
+
+                        context.closePath();
+                        context.fill();
+                    }
                 }
+            });
 
 
 
-
-
-
-
-
-            }
             // context.fillStyle = 'yellow';
             // context.fillRect(0,0, canvas.width, canvas.height);
             //
