@@ -12,6 +12,7 @@ export interface PositionCCoA {
 
 export interface PolygonCCoA {
     addPoint(newPoint: PointCCoA): void;
+    addPoints(pointsPolygonForm: Array<PointCCoA>): void;
     getPoint(index: number):PointCCoA;
     getSize():number;
     getDeposeOn(vector: PointCCoA):PolygonCCoA;
@@ -21,6 +22,13 @@ export interface PolygonCCoA {
 export class PolygonCCoAClass implements PolygonCCoA {
 
     private points: Array<PointCCoA> = new Array<PointCCoA>();
+
+
+    addPoints(pointsPolygonForm: Array<PointCCoA>): void {
+        for (let j = 0; j < pointsPolygonForm.length; j++) {
+            this.addPoint(pointsPolygonForm[j]);
+        }
+    }
 
     addPoint(newPoint: PointCCoA): void {
         this.points.push(newPoint);

@@ -14,6 +14,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -32,6 +35,7 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/mnt/alfa/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/internet/frontend/react-ccoa/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -71,7 +75,8 @@
       <workItem from="1671350387302" duration="590000" />
       <workItem from="1671365360565" duration="5074000" />
       <workItem from="1671383636863" duration="8393000" />
-      <workItem from="1671438311494" duration="1169000" />
+      <workItem from="1671438311494" duration="4008000" />
+      <workItem from="1671450840711" duration="14461000" />
     </task>
     <servers />
   </component>
@@ -88,16 +93,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Canvas.tsx</url>
-          <line>208</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

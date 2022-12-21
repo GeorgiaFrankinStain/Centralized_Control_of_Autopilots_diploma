@@ -4,14 +4,6 @@ import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA} from "./Polygon"
 
 
 
-interface ElbowMovingObject {
-    id_moving_unique_object: string;
-    appearanceType: string;
-    appearancePolygonForm: PolygonCCoA[];
-    timeSpaceCoordinates: TimeSpaceCoordinateInput[];
-}
-
-
 
 const imitationDataFromGetElbowFootprint = { //формируется PathMovingUniqueDataForRendering
     "elbow_moving_objects": [
@@ -50,56 +42,24 @@ const imitationDataFromGetElbowFootprint = { //формируется PathMoving
 
 
 
+const imitationDataFromGetElbowFootprint2 = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"0\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"20\", \"y\": \"20\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"34773\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"55\", \"y\": \"0\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"70\", \"y\": \"20\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"90\", \"y\": \"50\", \"angle\": \"0\"} ] } ] }";
 
 
-interface VectorSpaceTimePosition {
-    timeFrom: number;
-    from: PositionCCoA;
-    timeTo: number;
-    to: PositionCCoA;
+
+
+
+interface SetElbowsJson {
+    elbow_moving_objects: ElbowJson[];
 }
 
-function getPositionFor(time: number, jsonElbowMovingObject: JSON): PositionCCoA | null {
-    const vectorSpaceTime: VectorSpaceTimePosition | null = getVectorMoveInSpaceTime(time, jsonElbowMovingObject);
-    if (vectorSpaceTime == null) {
-        return null;
-    } else {
-        return getApproximationPosition(
-            vectorSpaceTime.from,
-            vectorSpaceTime.timeFrom,
-            vectorSpaceTime.to,
-            vectorSpaceTime.timeTo,
-            time
-        );
-    }
+interface ElbowJson {
+    id_moving_unique_object: string;
+    appearanceType: string;
+    appearancePolygonForm: PointCCoA[];
+    timeSpaceCoordinates: TimeSpaceCoordinateJson[];
 }
 
-
-
-
-
-
-
-
-interface StorageElbowJsonDTO {
-    setJson(json: JSON): void;
-    getCountElbowMovingObjects(): number;
-    getElbowMovingObject(index: number): ElbowDTO;
-}
-
-interface ElbowDTO {
-    getIdMovingUniqueObject(): string;
-    getAppearanceType(): string;
-
-    getCountAppearancePolygonFormPoints(): number;
-    getFormPoint(index: number): PointCCoA;
-
-    getCountVectorsMoveInTimeSpace(): number;
-    getVectorMoveInSpaceTime(index: number): VectorSpaceTimePosition;
-}
-
-
-interface TimeSpaceCoordinate {
+interface TimeSpaceCoordinateJson {
     t: number;
     layer: number;
     x: number;
@@ -110,6 +70,21 @@ interface TimeSpaceCoordinate {
 
 
 
+interface DataFootprintForRendering {
+    id_machine: string;
+    polygonInPosition: PolygonCCoA;
+}
+
+
+
+
+
+interface VectorSpaceTimePosition {
+    timeFrom: number;
+    from: PositionCCoA;
+    timeTo: number;
+    to: PositionCCoA;
+}
 
 
 
@@ -118,65 +93,148 @@ interface TimeSpaceCoordinate {
 
 
 
-class StorageElbowJsonDTOClass implements StorageElbowJsonDTO {
-
-    private elbowsJsonDTO: Array<ElbowDTO> = new Array<ElbowDTO>();
 
 
 
-    constructor(elbowsJSON: JSON) {
 
+
+
+
+
+interface StorageElbowsJsonDTO {
+    setJsonString(stringJson: string): void;
+    setJson(setElbows: SetElbowsJson): void;
+    getDataMultiFootprintsForRendering(time: number): DataFootprintForRendering[];
+}
+
+interface ElbowMovingObject {
+    getIdMovingUniqueObject(): string;
+
+    getDataFootprintForRendering(time: number): DataFootprintForRendering | null;
+}
+
+class StorageElbowJsonDTOClass implements StorageElbowsJsonDTO {
+
+    private elbowsJsonDTO: Array<ElbowMovingObject> = new Array<ElbowMovingObject>();
+
+    setJsonString(stringJson: string): void {
+        let setElbows: SetElbowsJson = JSON.parse(imitationDataFromGetElbowFootprint2) as SetElbowsJson;
+        this.setJson(setElbows);
+    }
+    setJson(setElbows: SetElbowsJson): void {
+        for (let i = 0; i < setElbows.elbow_moving_objects.length; i++) {
+            let newElbowMovingObject = new ElbowMovingObjectClass(setElbows.elbow_moving_objects[i]);
+            this.elbowsJsonDTO.push(newElbowMovingObject)
+        }
     }
 
-    setJson(json: JSON): void {
+    getDataMultiFootprintsForRendering(time: number): DataFootprintForRendering[] {
+        let dataMultiFootprintsForRendering: Array<DataFootprintForRendering> = new Array<DataFootprintForRendering>();
 
-    }
+        for (let i = 0; i < this.elbowsJsonDTO.length; i++) {
+            let elbow = this.elbowsJsonDTO[i];
+            if (elbow) {
+                let dataFootprintForRendering = elbow.getDataFootprintForRendering(time);
+                if (dataFootprintForRendering) {
+                    dataMultiFootprintsForRendering.push(dataFootprintForRendering);
+                }
+            }
+        }
 
-    getCountElbowMovingObjects(): number {
-        return this.elbowsJsonDTO.length;
-    }
-
-    getElbowMovingObject(index: number): ElbowDTO {
-        return this.elbowsJsonDTO[index];
+        return dataMultiFootprintsForRendering;
     }
 
 }
 
 
-class ElbowJsonDTOClass implements ElbowDTO {
-    private appearanceType: string = "";
-    private id: string = "";
-    private polygonForm: PolygonCCoA;
-    private timeSpaceCoordinates: Array<TimeSpaceCoordinate> = new Array<TimeSpaceCoordinate>();
+class ElbowMovingObjectClass implements ElbowMovingObject {
+    private readonly appearanceType: string = "";
+    private readonly id: string = "";
+    private polygonForm: PolygonCCoA = new PolygonCCoAClass();
+    private readonly timeSpaceCoordinates: Array<TimeSpaceCoordinateJson> = new Array<TimeSpaceCoordinateJson>();
 
 
-    constructor(elbowJSON: JSON) {
-
+    constructor(elbowJson: ElbowJson) {
+        this.appearanceType = elbowJson.appearanceType;
+        this.id = elbowJson.id_moving_unique_object;
+        this.timeSpaceCoordinates = elbowJson.timeSpaceCoordinates;
+        this.polygonForm.addPoints(elbowJson.appearancePolygonForm);
     }
 
     getIdMovingUniqueObject(): string {
         return this.id;
     }
 
-    getAppearanceType(): string {
-        return this.appearanceType;
+    getDataFootprintForRendering(time: number): DataFootprintForRendering | null {
+
+        if (this.appearanceType == "non-uniform") {
+            const position = this.getPositionFor(time);
+
+
+            let movedPolygon = null;
+            if (position) {
+                movedPolygon = this.polygonForm.rotateRelative00(position.angle);
+                movedPolygon = movedPolygon.getDeposeOn(position.point);
+                return {id_machine: this.id, polygonInPosition: movedPolygon};
+            }
+        }
+        return null;
     }
 
-    getCountAppearancePolygonFormPoints(): number {
-        return this.polygonForm.getSize();
+
+
+
+
+    private getPositionFor(time: number): PositionCCoA | null {
+        const vectorSpaceTime: VectorSpaceTimePosition | null = this.getVectorMoveInSpaceTime(time);
+        if (vectorSpaceTime == null) {
+            return null;
+        } else {
+            return getApproximationPosition(
+                vectorSpaceTime.from,
+                vectorSpaceTime.timeFrom,
+                vectorSpaceTime.to,
+                vectorSpaceTime.timeTo,
+                time
+            );
+        }
     }
 
-    getFormPoint(index: number): PointCCoA {
-        return this.polygonForm.getPoint(index);
+    private getVectorMoveInSpaceTime(time: number): VectorSpaceTimePosition | null {
+
+        const arrayTimeSpaceCoordinates = this.timeSpaceCoordinates;
+        if (arrayTimeSpaceCoordinates.length < 2) {
+            throw new Error("no exist diapasons");
+
+        }
+        for (let j = 0; j < arrayTimeSpaceCoordinates.length; j++) {
+
+            const currentItem = arrayTimeSpaceCoordinates[j];
+            const fromTime: number = +currentItem.t;
+
+            const nextIndex = j + 1;
+            const nextItem = arrayTimeSpaceCoordinates[nextIndex];
+            const isRangesAreOver = !nextItem;
+
+
+            if (isRangesAreOver) {
+                break;
+            }
+            const toTime: number = +nextItem.t;
+
+            if (fromTime <= time && time <= toTime) {
+                return  {
+                    timeFrom: fromTime,
+                    from: {point: {x: +currentItem.x, y: +currentItem.y}, angle: +currentItem.angle},
+                    timeTo: toTime,
+                    to: {point: {x: +nextItem.x, y: +nextItem.y}, angle: +nextItem.angle}
+                };
+            }
+        }
+
+        return null;
     }
 
-    getCountVectorsMoveInTimeSpace(): number {
-        return 0;
-    }
-
-    getVectorMoveInSpaceTime(index: number): VectorSpaceTimePosition {
-        return undefined;
-    }
 
 }
 
@@ -187,46 +245,6 @@ class ElbowJsonDTOClass implements ElbowDTO {
 
 
 
-
-
-
-
-
-
-function getVectorMoveInSpaceTime(time: number, jsonElbowMovingObject: ElbowMovingObject): VectorSpaceTimePosition | null {
-
-    const arrayTimeSpaceCoordinates = jsonElbowMovingObject.timeSpaceCoordinates;
-    if (arrayTimeSpaceCoordinates.length < 2) {
-        throw new Error("no exist diapasons");
-
-    }
-    for (let j = 0; j < arrayTimeSpaceCoordinates.length; j++) {
-
-        const currentItem = arrayTimeSpaceCoordinates[j];
-        const fromTime: number = +currentItem.t;
-
-        const nextIndex = j + 1;
-        const nextItem = arrayTimeSpaceCoordinates[nextIndex];
-        const isRangesAreOver = !nextItem;
-
-
-        if (isRangesAreOver) {
-            break;
-        }
-        const toTime: number = +nextItem.t;
-
-        if (fromTime <= time && time <= toTime) {
-            return  {
-                timeFrom: fromTime,
-                from: {point: {x: +currentItem.x, y: +currentItem.y}, angle: +currentItem.angle},
-                timeTo: toTime,
-                to: {point: {x: +nextItem.x, y: +nextItem.y}, angle: +nextItem.angle}
-            };
-        }
-    }
-
-    return null;
-}
 
 
 
@@ -455,15 +473,6 @@ type SetParameters = {
     shouldAnimate: boolean;
 }
 
-//
-// const useAnimationFrame = ({
-//                                nextAnimationFrameHandler: NextAnimationFrameHandler,
-//                                // we still want to have "infinite" animations in some cases
-//                                duration = Number.POSITIVE_INFINITY,
-//                                shouldAnimate = true
-//                            }) => {
-
-
 const useAnimationFrame = ({
                                nextAnimationFrameHandler,
                                // we still want to have "infinite" animations in some cases
@@ -501,147 +510,59 @@ const Canvas = () => {
     const brickRef = React.useRef()  as MutableRefObject<HTMLDivElement>;
     const [shouldAnimate, setShouldAnimate] = React.useState(false);
 
-
-
-
-    // const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    const canvasRef = useRef()   as MutableRefObject<HTMLDivElement>;
-    let timeCurrent = 0;
-
-
-
-
-
-
+    let storageElbows: StorageElbowsJsonDTO = new StorageElbowJsonDTOClass();
+    storageElbows.setJsonString(imitationDataFromGetElbowFootprint2);
 
     const reset = () => {
         brickRef.current.style.left = String(0);
     };
 
     const nextAnimationFrameHandler = (nowTime: number) => {
+
         const brick = brickRef.current;
-        // if (brick) {
-        //     const currentLeft = Number(brick.style.left.replace("px", "") || 0);
-        //
-        //     if (nowTime < 1) {
-        //         brick.style.left = `${1000 * nowTime}px`;
-        //     } else {
-        //         setShouldAnimate(false);
-        //         brick.style.left = `1000px`;
-        //     }
-        // }
-
-        // const canvas = canvasRef.current;
-        // const canvas: HTMLCanvasElement = canvasRef.current;
         const canvas = document.getElementById('myChart') as HTMLCanvasElement;
-        // const canvas: HTMLCanvasElement = document.getElementById('myChart');
 
-        if (canvas) {
+        if (!canvas) {
+            return;
+        }
 
-
-            // canvas.width = 400;
-
-
-            // canvas.height = 400;
-            const context = canvas.getContext('2d');
+        canvas.width = 400;
+        canvas.height = 400;
+        const context = canvas.getContext('2d');
 
 
+        if (!context) {
+            return;
+        }
 
 
-            let x = 50;
+        context.clearRect(0, 0, canvas.width, canvas.height);
 
-            if (!context) {
+        let dataForRendering = storageElbows.getDataMultiFootprintsForRendering(nowTime / 1000);
+        for (let i = 0; i < dataForRendering.length; i++) {
 
-                return;
-            }
-
-            // context.fillStyle = 'blue';
-            // context.fillRect(0, 0, 100, 100);
+            let movedPolygon: PolygonCCoA = dataForRendering[i].polygonInPosition;
 
 
+            if (movedPolygon) {
+                context.beginPath();
 
-            imitationDataFromGetElbowFootprint.elbow_moving_objects.forEach((elbow_moving_object: ElbowMovingObject) => {
+                for (let index = 0; index < movedPolygon.getSize(); index++) {
+                    let polygonCoordinate = movedPolygon.getPoint(index);
 
-                if (elbow_moving_object.appearanceType == "non-uniform") {
-                    const position = getPositionFor(nowTime / 1000, elbow_moving_object);
-                    console.log(position);
-
-
-                    let polygon: PolygonCCoA = new PolygonCCoAClass();
-
-                    //create polygon
-
-
-                    let i = 0;
-                    elbow_moving_object.appearancePolygonForm.forEach((pointForm: PointStringDTO) => {
-                        polygon.addPoint({x: Number(pointForm.x), y: Number(pointForm.y)});
-                        if (i == 0) {
-
-                            context.moveTo(Number(pointForm.x), Number(pointForm.y));
-                        } else {
-                            context.lineTo(Number(pointForm.x), Number(pointForm.y));
-                        }
-                        i++;
-                    });
-
-                    let movedPolygon = null;
-                    if (position) {
-
-
-
-                        movedPolygon = polygon.rotateRelative00(position.angle);
-                        movedPolygon = movedPolygon.getDeposeOn(position.point);
-                    }
-
-
-                    context.clearRect(0, 0, canvas.width, canvas.height);
-
-
-                    context.fillStyle = 'green';
-
-
-
-                    if (movedPolygon) {
-
-                        console.log("movedPolygon");
-                        console.log(movedPolygon);
-
-
-                        context.beginPath();
-
-                        for (let index = 0; index < movedPolygon.getSize(); index++) {
-                            let polygonCoordinate = movedPolygon.getPoint(index);
-
-                            if (index == 0) {
-                                context.moveTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
-                            } else {
-                                context.lineTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
-                            }
-                        }
-
-                        context.closePath();
-                        context.fill();
+                    if (index == 0) {
+                        context.moveTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                    } else {
+                        context.lineTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
                     }
                 }
-            });
+
+                context.closePath();
+                context.fillStyle = 'green';
+                context.fill();
+            }
 
 
-
-            // context.fillStyle = 'yellow';
-            // context.fillRect(0,0, canvas.width, canvas.height);
-            //
-            // context.beginPath();
-            // context.moveTo(0, 0);
-            // context.lineTo(100, 50);
-            // context.lineTo(50, 100);
-            // context.lineTo(0, 90);
-            // context.closePath();
-            // context.fill();
-
-            // context.fillStyle = 'green';
-            // context.fillRect(x = x + 15, 50, 300, 200);
-
-            // context.fill();
         }
     };
 
@@ -668,18 +589,5 @@ const Canvas = () => {
         </>
     );
 };
-
-
-
-// ReactDOM.render(<Counter />, document.getElementById('app'))
-
-
-//
-// const Canvas = () => {
-//
-//
-//     return <canvas />;
-// };
-
 
 export default Canvas;
