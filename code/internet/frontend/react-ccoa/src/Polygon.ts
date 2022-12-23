@@ -2,6 +2,36 @@
 export interface PointCCoA {
     x: number;
     y: number;
+    getDistanceTo(point: PointCCoA): number;
+    getAngleRotateRelative(origin: PointCCoA): number;
+}
+export class PointCCoAClass implements PointCCoA {
+    x: number;
+    y: number;
+
+
+    constructor(x: number, y: number) {
+        this.x = x;
+        this.y = y;
+    }
+
+    getDistanceTo(point: PointCCoA): number {
+        const vector = this.getVector(point);
+        return vector.getLengthVector();
+    }
+
+    getAngleRotateRelative(origin: PointCCoA): number {
+        const vector = this.getVector(origin);
+        return Math.atan2(-vector.y, -vector.x); //I don't understand why it works that way
+    }
+
+    private getVector(point: PointCCoA) {
+        return new PointCCoAClass(this.x - point.x, this.y - point.y);
+    }
+
+    private getLengthVector() {
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
 }
 
 
@@ -43,14 +73,13 @@ export class PolygonCCoAClass implements PolygonCCoA {
     }
 
     getDeposeOn(vector: PointCCoA): PolygonCCoA {
-
         let newPolygon = new PolygonCCoAClass();
 
         this.points.forEach((point: PointCCoA) => {
-            let deposedPoint: PointCCoA = {
-                x: point.x + vector.x,
-                y: point.y + vector.y
-            };
+            let deposedPoint: PointCCoA = new PointCCoAClass(
+                point.x + vector.x,
+                point.y + vector.y
+            );
             newPolygon.addPoint(deposedPoint);
         });
 
@@ -64,7 +93,7 @@ export class PolygonCCoAClass implements PolygonCCoA {
         // }
 
 
-        const origin: PointCCoA = {x: 0, y: 0};
+        const origin: PointCCoA = new PointCCoAClass(0, 0);
 
         const degreeM180 = -3.14159;
         const degree180 = 3.14159;
@@ -85,10 +114,10 @@ export class PolygonCCoAClass implements PolygonCCoA {
             let yRotate = sinAngle * xDistanceOnProjection + cosAngle * yDistanceOnProjection + origin.y;
 
 
-            let deposedPoint: PointCCoA = {
-                x: xRotate,
-                y: yRotate
-            };
+            let deposedPoint: PointCCoA = new PointCCoAClass(
+                xRotate,
+                yRotate
+            );
 
             newPolygon.addPoint(deposedPoint);
             // newPolygon.addPoint(origin);
