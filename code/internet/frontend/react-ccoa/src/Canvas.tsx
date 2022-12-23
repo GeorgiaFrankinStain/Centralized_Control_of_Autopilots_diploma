@@ -1008,33 +1008,29 @@ const Canvas = () => {
             let movedPolygon: PolygonCCoA = dataForRenderingItem.polygonInPosition;
 
             let indexFrameMachine = getIndexForId(dataForRenderingItem.id_machine);
+            const scale = 3;
 
 
             if (movedPolygon) {
-
-
                 if (dataForRenderingItem.typeObject == "TEST_SQUARE_20") {
                     const sideSize = getSideSquare(movedPolygon);
 
-                    const x = dataForRenderingItem.position.point.x;
-                    const y = dataForRenderingItem.position.point.y;
-                    const scale = 3;
+                    const halfScaleSideSquare = sideSize * scale / 2;
+
+                    const x = dataForRenderingItem.position.point.x * scale - halfScaleSideSquare;
+                    const y = dataForRenderingItem.position.point.y * scale - halfScaleSideSquare;
                     const angle = dataForRenderingItem.position.angle;
 
                     context.save();
                     context.translate(
-                        x + sideSize * scale / 2,
-                        y + sideSize * scale / 2
+                        x + halfScaleSideSquare,
+                        y + halfScaleSideSquare
                     );
                     context.rotate(angle);
                     context.translate(
-                        - x - sideSize * scale / 2,
-                        - y - sideSize * scale / 2
+                        - x - halfScaleSideSquare,
+                        - y - halfScaleSideSquare
                     );
-
-
-
-
                     context.drawImage(
                         image,
                         coordinates_sprite_machines[indexFrameMachine].frame.x,
@@ -1056,9 +1052,15 @@ const Canvas = () => {
                         let polygonCoordinate = movedPolygon.getPoint(index);
 
                         if (index == 0) {
-                            context.moveTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                            context.moveTo(Number(
+                                polygonCoordinate.x * scale),
+                                Number(polygonCoordinate.y * scale)
+                            );
                         } else {
-                            context.lineTo(Number(polygonCoordinate.x), Number(polygonCoordinate.y));
+                            context.lineTo(Number(
+                                polygonCoordinate.x  * scale),
+                                Number(polygonCoordinate.y  * scale)
+                            );
                         }
                     }
 
