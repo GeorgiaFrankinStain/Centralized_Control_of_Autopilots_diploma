@@ -1,5 +1,7 @@
 package com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks;
 
+import com.google.gson.JsonObject;
+
 public interface HistoryChanges {
-    public String getElbowDTOToEndCalculateExistJSONFrom(Double fromTime);
+    public JsonObject getElbowDTOToEndCalculateExistJSONFrom(Double fromTime);
 }

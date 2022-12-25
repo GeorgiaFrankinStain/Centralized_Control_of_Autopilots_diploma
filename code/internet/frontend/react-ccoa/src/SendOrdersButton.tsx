@@ -53,6 +53,7 @@ export function ButtonSendOrders() {
 
 
     function sendApplicationOrdersClick() {
+        console.log("sendApplicationOrdersClick");
 
         // Send data to the backend via POST
         fetch('http://localhost:8080/to_application_orders', {  // Enter your IP address here
@@ -68,36 +69,41 @@ export function ButtonSendOrders() {
             .then(response => response.json())
             .then((usefulData) => {
                 console.log(usefulData);
+                console.log("succeful send orders");
+                setLoading(false);
+                setData(usefulData);
+                getElbowFootprint();
+            })
+            .catch((e) => {
+                console.error(`An error occurred: ${e}`);
+
+            });
+
+    }
+
+    function getElbowFootprint() {
+        // Send data to the backend via POST
+        fetch('http://localhost:8080/get_elbow_footprint', {  // Enter your IP address here
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
+
+        })
+            .then(response => response.json())
+            .then((usefulData) => {
+                console.log("userful_data");
+                console.log(usefulData);
                 setLoading(false);
                 setData(usefulData);
             })
             .catch((e) => {
                 console.error(`An error occurred: ${e}`);
-
-                // getElbowFootprint();
             });
-
     }
-
-    // function getElbowFootprint() {
-    //     // Send data to the backend via POST
-    //     fetch('http://localhost:8080/get_elbow_footprint', {  // Enter your IP address here
-    //
-    //         method: 'POST',
-    //         mode: 'no-cors',
-    //         body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
-    //
-    //     })
-    //         .then(response => response.json())
-    //         .then((usefulData) => {
-    //             console.log(usefulData);
-    //             setLoading(false);
-    //             setData(usefulData);
-    //         })
-    //         .catch((e) => {
-    //             console.error(`An error occurred: ${e}`);
-    //         });
-    // }
 
     return (
         <div onClick={sendApplicationOrdersClick} style={{

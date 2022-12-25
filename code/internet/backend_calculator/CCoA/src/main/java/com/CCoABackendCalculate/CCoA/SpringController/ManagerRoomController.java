@@ -40,13 +40,20 @@ public class ManagerRoomController {
 
 
     @CrossOrigin(origins = "http://localhost:3000")
-    @PostMapping(value = "/get_elbow_footprint", consumes = "application/json", produces = "application/json")
-    public List<PathMovingUniqueJSON> getElbowFootprint(Model model) {
+    @PostMapping(value = "/get_elbow_footprint", produces = "application/json")
+    public @ResponseBody String getElbowFootprint(@RequestBody String orders) {
 
-        List<PathMovingUniqueJSON> list = new ArrayList<>();
-        list.add(new RouteClass());
+//        List<PathMovingUniqueJSON> list = new ArrayList<>();
+//        list.add(new RouteClass());
 
-        return list;
+
+
+        //get list all footprints from timeStamp
+
+        //write to json id, form, type
+        //getToEndCalculateExistFrom
+
+        return "{\"boom_suka\": \"win_control\"}";
     }
 
 
@@ -61,15 +68,4 @@ public class ManagerRoomController {
 
         return new StatusResponseDTO(true);
     }
-
-//
-//    @CrossOrigin(origins = "http://localhost:3000")
-//    @PostMapping(path = "/to_application_orders", produces = "application/json")
-//    public @ResponseBody String toApplicationOrders(@RequestBody String orders) throws Exception {
-//
-////        AdderMarks adderMarks = new StringAdderMarks(orders);
-//
-//        return "susseful_textString";
-////        return new StatusResponseDTO(true);
-//    }
 }

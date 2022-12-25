@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de0ba67e-0a1c-486a-a632-fce6f787333d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/Core/ViewSettingRenderingTasks/HistoryChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/Core/ViewSettingRenderingTasks/HistoryChanges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringController/ManagerRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringController/ManagerRoomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
@@ -79,6 +83,8 @@
       <workItem from="1671450840711" duration="14461000" />
       <workItem from="1671612891080" duration="19382000" />
       <workItem from="1671786816759" duration="7391000" />
+      <workItem from="1671856142286" duration="1168000" />
+      <workItem from="1671945746682" duration="687000" />
     </task>
     <servers />
   </component>

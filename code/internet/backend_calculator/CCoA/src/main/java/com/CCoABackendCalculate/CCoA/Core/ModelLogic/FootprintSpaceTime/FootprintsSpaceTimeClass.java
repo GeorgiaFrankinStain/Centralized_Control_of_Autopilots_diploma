@@ -7,6 +7,7 @@ import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMoving
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
 import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.HistoryChanges;
+import com.google.gson.JsonObject;
 
 import java.util.*;
 
@@ -226,13 +227,17 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
     }
 
     @Override
-    public String getElbowDTOToEndCalculateExistJSONFrom(Double fromTime) {
+    public JsonObject getElbowDTOToEndCalculateExistJSONFrom(Double fromTime) {
+
+        //get footprint approximation from fromTime
+
+        //for add all next footprints
+
+        //return all footprints
+
+
         return null;
 
-        //get list footprints from timeStamp
-
-        //write to json id, form
-        //getToEndCalculateExistFrom
     }
     //==== <start> <Private_Methods> =======================================================================
 
