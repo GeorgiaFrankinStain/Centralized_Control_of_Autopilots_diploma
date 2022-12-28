@@ -328,7 +328,7 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
         pointRoute.add("x", doubleToJsonElement(currentFootprint.getCoordinat().getX()));
         pointRoute.add("y", doubleToJsonElement(currentFootprint.getCoordinat().getY()));
         double imitationAngle = 0;
-        pointRoute.add("y", doubleToJsonElement(imitationAngle));
+        pointRoute.add("angle", doubleToJsonElement(imitationAngle));
 
         return pointRoute;
     }

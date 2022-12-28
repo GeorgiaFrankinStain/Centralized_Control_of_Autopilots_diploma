@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {setDataElbow, SetElbowsJson} from "./Canvas"
 
 export function ButtonSendOrders() {
 
@@ -12,7 +13,7 @@ export function ButtonSendOrders() {
 
     const jsonData = {
         "version": 1,
-        "id_room": "VAsIOqbh7JIoSEGuZvAN", //option
+        "id_room": "dWP5WK1gVqjHCVh4NvjS", //option
         "orders": [
             {
                 "parameters_moving": {
@@ -39,7 +40,7 @@ export function ButtonSendOrders() {
                 },
                 "end": {
                     "coordinate": {
-                        "x": 10, "y": 40
+                        "x": 40, "y": 50
                     },
                     "layer":0,
                     "angle":0.0
@@ -76,7 +77,6 @@ export function ButtonSendOrders() {
             })
             .catch((e) => {
                 console.error(`An error occurred: ${e}`);
-
             });
 
     }
@@ -87,18 +87,26 @@ export function ButtonSendOrders() {
 
             method: 'POST',
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             mode: 'cors',
-            body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
+            body: "dWP5WK1gVqjHCVh4NvjS" // body data type must match "Content-Type" header
 
         })
-            .then(response => response.json())
+            // .then(response => response.text())
+            // .then(response => response.json())
+            .then(response => response.text())
             .then((usefulData) => {
                 console.log("userful_data");
                 console.log(usefulData);
                 setLoading(false);
-                setData(usefulData);
+                // setData(usefulData);
+
+
+                setDataElbow({"jsonElbow": usefulData});
+                //switch to mode view
+                //run rendering
             })
             .catch((e) => {
                 console.error(`An error occurred: ${e}`);

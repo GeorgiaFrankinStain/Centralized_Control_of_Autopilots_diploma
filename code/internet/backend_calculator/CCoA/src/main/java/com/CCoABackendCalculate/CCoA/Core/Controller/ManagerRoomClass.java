@@ -2,6 +2,7 @@ package com.CCoABackendCalculate.CCoA.Core.Controller;
 
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTime;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.FootprintsSpaceTimeClass;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.HistoryChanges;
 import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.AdderMarks;
 import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.Exception.NotEnoughDataException;
 import com.CCoABackendCalculate.CCoA.PercistanceDataAccessObjects.StringAdderMarks;
@@ -13,6 +14,23 @@ import java.util.NoSuchElementException;
 
 public class ManagerRoomClass implements ManagerRoom {
     StorageFootprintSpaceTimes storageRoom = new StorageFootprintSpaceTimeClass();
+
+    @Override
+    public String getElbowFootprintJson(String idRoom) {
+
+
+        FootprintsSpaceTime footprintsSpaceTime = this.storageRoom.get(idRoom);
+
+
+        if (footprintsSpaceTime == null) {
+            throw new NoSuchElementException("not found footprintSpaceTime in getElbowFootprintJson");
+        }
+
+        HistoryChanges historyChanges = (HistoryChanges) footprintsSpaceTime;
+
+        JsonObject jsonResponse = historyChanges.getElbowDTOToEndCalculateExistJSONFrom(0.0);
+        return jsonResponse.toString();
+    }
 
     @Override
     public String createNewRoom() {
@@ -32,7 +50,7 @@ public class ManagerRoomClass implements ManagerRoom {
         FootprintsSpaceTime footprintsSpaceTime = this.storageRoom.get(idRoom);
 
         if (footprintsSpaceTime == null) {
-            throw new NoSuchElementException("not found footprintSpaceTime");
+            throw new NoSuchElementException("not found footprintSpaceTime in toApplicationOrders");
         }
 
         AdderMarks adderMarks = new StringAdderMarks(jsonOrders);

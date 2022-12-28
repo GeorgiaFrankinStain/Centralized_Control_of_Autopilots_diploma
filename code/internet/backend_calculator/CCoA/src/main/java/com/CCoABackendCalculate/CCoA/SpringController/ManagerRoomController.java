@@ -41,7 +41,7 @@ public class ManagerRoomController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/get_elbow_footprint", produces = "application/json")
-    public @ResponseBody String getElbowFootprint(@RequestBody String orders) {
+    public @ResponseBody String getElbowFootprint(@RequestBody String idRoom) {
 
 //        List<PathMovingUniqueJSON> list = new ArrayList<>();
 //        list.add(new RouteClass());
@@ -53,7 +53,9 @@ public class ManagerRoomController {
         //write to json id, form, type
         //getToEndCalculateExistFrom
 
-        return "{\"boom_suka\": \"win_control\"}";
+//        return "{\"boom_suka\": \"win_control\"}";
+
+        return this.managerRoom.getElbowFootprintJson(idRoom);
     }
 
 

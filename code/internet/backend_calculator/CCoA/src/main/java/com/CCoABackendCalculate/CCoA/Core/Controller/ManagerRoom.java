@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ManagerRoom {
 
 
+    public String getElbowFootprintJson(String idRoom);
     public String createNewRoom();
 
     public void toApplicationOrders(String jsonOrders) throws Exception;

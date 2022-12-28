@@ -44,14 +44,17 @@ const imitationDataFromGetElbowFootprint = { //формируется PathMoving
 
 
 
-const imitationDataFromGetElbowFootprint2 = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"TEST_SQUARE_20\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] } ] }";
+let imitationDataFromGetElbowFootprint2: string = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"TEST_SQUARE_20\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] } ] }";
 // const imitationDataFromGetElbowFootprint2 = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"10\", \"y\": \"10\"}, {\"x\": \"50\", \"y\": \"10\"}, {\"x\": \"50\", \"y\": \"50\"}, {\"x\": \"100\", \"y\": \"100\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"0\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"20\", \"y\": \"20\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"34773\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"55\", \"y\": \"0\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"70\", \"y\": \"20\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"90\", \"y\": \"50\", \"angle\": \"0\"} ] } ] }";
 
 
+export function setDataElbow({jsonElbow}: { jsonElbow: string }) {
+    imitationDataFromGetElbowFootprint2 = jsonElbow;
+}
 
 
 
-interface SetElbowsJson {
+export interface SetElbowsJson {
     elbow_moving_objects: ElbowJson[];
 }
 
@@ -123,6 +126,8 @@ class StorageElbowJsonDTOClass implements StorageElbowsJsonDTO {
     private elbowsJsonDTO: Array<ElbowMovingObject> = new Array<ElbowMovingObject>();
 
     setJsonString(stringJson: string): void {
+        console.log("++++++++ (+) (-)");
+        console.log(imitationDataFromGetElbowFootprint2);
         let setElbows: SetElbowsJson = JSON.parse(imitationDataFromGetElbowFootprint2) as SetElbowsJson;
         this.setJson(setElbows);
     }
