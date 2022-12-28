@@ -24,7 +24,7 @@ class BuilderParametersMovingUniqueUniqueClassTest {
 
         builder.setSpeed(0);
 
-        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving(452);
         assertEquals(parametersMovingUnique.getSpeed(), 0);
     }
     @Test
@@ -41,7 +41,7 @@ class BuilderParametersMovingUniqueUniqueClassTest {
 
         builder.setSpeed(7);
 
-        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving(5732457);
         assertEquals(parametersMovingUnique.getSpeed(), 7);
     }
     @Test
@@ -84,7 +84,7 @@ class BuilderParametersMovingUniqueUniqueClassTest {
         expectedShape.addPoint(new PointCCoAClass(1, 1));
         expectedShape.addPoint(new PointCCoAClass(1, -1));
 
-        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving(2547345);
         PolygonCCoA actualShape = parametersMovingUnique.getShape();
         assertEquals(expectedShape, actualShape);
     }

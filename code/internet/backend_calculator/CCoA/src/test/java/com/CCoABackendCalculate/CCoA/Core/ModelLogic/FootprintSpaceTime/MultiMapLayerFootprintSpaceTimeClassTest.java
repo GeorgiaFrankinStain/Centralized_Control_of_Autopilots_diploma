@@ -1,6 +1,7 @@
 package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.*;
@@ -15,7 +16,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     private IndexLayer defaultLevel = new IndexLayerClass(0);
 
     FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-    ParametersMovingUnique squareMoving = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+    ParametersMovingUnique squareMoving = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
 
     private Corridor tunnel1CorridorY0to20 = tunnel1CorridorY0to20();
 
@@ -95,7 +96,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
         corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
         corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 0), 50));
         corridorMap.put(
-                CreatorMarksOfPathClass.MAX_TIME_STANDING,
+                GlobalVariable.MAX_TIME_STANDING,
                 new RoundClass(new PointCCoAClass(0, 0), 50)
         );
         Corridor corridor = new RoundsCorridorClass(corridorMap);
@@ -149,7 +150,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
         corridorMap.put(8.0, new RoundClass(new PointCCoAClass(0, 0), 30));
         corridorMap.put(10.0, new RoundClass(new PointCCoAClass(0, 20), 30));
         corridorMap.put(
-                CreatorMarksOfPathClass.MAX_TIME_STANDING,
+                GlobalVariable.MAX_TIME_STANDING,
                 new RoundClass(new PointCCoAClass(0, 20), 30)
         );
         Corridor corridor = new RoundsCorridorClass(corridorMap);
@@ -202,7 +203,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
         corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
         corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 20), 30));
         corridorMap.put(
-                CreatorMarksOfPathClass.MAX_TIME_STANDING,
+                GlobalVariable.MAX_TIME_STANDING,
                 new RoundClass(new PointCCoAClass(0, 20), 30)
         );
         Corridor corridor = new RoundsCorridorClass(corridorMap);
@@ -236,7 +237,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
         corridorMap.put(0.0, new RoundClass(new PointCCoAClass(0, 0), 30));
         corridorMap.put(2.0, new RoundClass(new PointCCoAClass(0, 20), 30));
         corridorMap.put(
-                2.0 + CreatorMarksOfPathClass.MIN_TIME_STANDING,
+                2.0 + GlobalVariable.MIN_TIME_STANDING,
                 new RoundClass(new PointCCoAClass(0, 20), 30)
         );
 
@@ -336,7 +337,7 @@ class MultiMapLayerFootprintSpaceTimeClassTest {
     private ParametersMovingUnique createTestSquare20Machine() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
         ParametersMovingUnique parametersMovingUnique =
-                fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+                fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         return parametersMovingUnique;
     }
 

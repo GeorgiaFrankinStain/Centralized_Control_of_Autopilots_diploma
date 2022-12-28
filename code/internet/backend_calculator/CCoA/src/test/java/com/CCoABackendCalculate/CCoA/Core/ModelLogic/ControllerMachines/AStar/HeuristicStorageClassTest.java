@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HeuristicStorageClassTest {
 
-    private ParametersMovingUnique car20 = new Square20ParametersMovingUnique();
+    private ParametersMovingUnique car20 = new Square20ParametersMovingUnique(13);
 
     /*
      *     B3

@@ -18,13 +18,14 @@ public class ParametersMovingUniqueClass implements ParametersMovingUnique {
 
     private int id;
     private PolygonCCoA polygonCCoA;
+
     private TypeMachinesBody typeMachinesBody;
     private double speed;
     private TypesInLevel typeInLevel = TypesInLevel.OBJECT;
 
-    public ParametersMovingUniqueClass(double speed, PolygonCCoA polygonCCoA, TypeMachinesBody typeMachinesBody) {
+    public ParametersMovingUniqueClass(double speed, PolygonCCoA polygonCCoA, TypeMachinesBody typeMachinesBody, int id) {
         testCorrectnessIncomingData(speed, polygonCCoA);
-        this.id = new RandomWrapperClass(835).nextInt();
+        this.id = id;
         this.polygonCCoA = renderingShapeAreVectorsFromCoordinateApplicationPoints(polygonCCoA);
         this.typeMachinesBody = typeMachinesBody;
         this.speed = speed;
@@ -75,6 +76,7 @@ public class ParametersMovingUniqueClass implements ParametersMovingUnique {
     public PolygonCCoA getShape() {
         return this.polygonCCoA.clone();
     }
+
 
     @Override
     public double getSpeed() {

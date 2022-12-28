@@ -13,7 +13,10 @@ import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.*;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.PathsMachines.PositionClass;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.HistoryChanges;
 import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.TypeMachinesBody;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -78,8 +81,13 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
         IndexLayer indexLayer = new IndexLayerClass(0);
 
+
+
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
         double degree60 = 1.0472;
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
@@ -98,7 +106,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             }
         }
         {
-            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(
+                    TypeMachinesBody.TEST_SQUARE_20,
+                    onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+            );
             PointCCoA from = new PointCCoAClass(30, 131); //FIXME BAG don't multipoly 20 (size car)
             PointCCoA to = new PointCCoAClass(70, 300);
 
@@ -120,7 +131,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         IndexLayer indexLayer = new IndexLayerClass(0);
 
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                footprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
         double degree60 = 1.0472;
         NetworkNodes networkNodesFabrica = new HexagonTile(degree60, parametersMovingUnique);
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
@@ -146,7 +160,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         IndexLayer indexLayer = new IndexLayerClass(0);
 
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                footprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
         double degree60 = 1.0472;
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, footprintsSpaceTime);
@@ -154,7 +171,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
 
         {
-            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(
+                    TypeMachinesBody.TEST_SQUARE_20,
+                    footprintsSpaceTime.getIdForNewParametersMovingUnique()
+            );
             PointCCoA from = new PointCCoAClass(30, 131); //FIXME BAG don't multipoly 20 (size car)
             PointCCoA to = new PointCCoAClass(70, 300);
 
@@ -168,6 +188,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         }
         return footprintsSpaceTime;
     }
+
 
 
     private class TestedFootprintSpaceTime {
@@ -245,13 +266,19 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
         private void wallCarMarkFootprint() throws СrashIntoAnImpassableObjectException {
             FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-            wallCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
+            wallCar = fabricParametersMovingUnique.getMoving(
+                    TypeMachinesBody.WALL_CAR,
+                    localFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+            );
             wallCar.mark(localFootprintsSpaceTime, wallPathCCoA, 0.0, defaultIndexLayer);
         }
 
         private void passangerCarStopsCrashing() throws СrashIntoAnImpassableObjectException {
             FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-            passengerCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            passengerCar = fabricParametersMovingUnique.getMoving(
+                    TypeMachinesBody.TEST_SQUARE_20,
+                    localFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+            );
             try {
                 passengerCar.mark(localFootprintsSpaceTime, carPathCCoA, 0.0, defaultIndexLayer);
             } catch (СrashIntoAnImpassableObjectException ex) {
@@ -262,7 +289,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             Route route = new RouteClass();
             wallCarFootprint = new FootprintClass(
                     new PositionClass(new PointCCoAClass(0, 60), 0.0),
-                    CreatorMarksOfPathClass.MAX_TIME_STANDING,
+                    GlobalVariable.MAX_TIME_STANDING,
                     wallCar,
                     route
             );
@@ -293,7 +320,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
             assertTrue(this.onlyFootprintSpaceTime.toTestPositionsCars(
                     time,
                     new PositionClass(new PointClass(20, 10), 1.5707963267948966),
-                    CreatorMarksOfPathClass.MAX_TIME_STANDING
+                    GlobalVariable.MAX_TIME_STANDING
             ));
         }
     }
@@ -303,7 +330,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         assertTrue(this.onlyFootprintSpaceTime.toTestPositionsCars(
                 1999,
                 new PositionClass(new PointClass(20, 10), 1.5707963267948966),
-                CreatorMarksOfPathClass.MAX_TIME_STANDING
+                GlobalVariable.MAX_TIME_STANDING
         ));
     }*/
 
@@ -314,7 +341,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
 
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        movingObjectSimpleParametersMovingOnLineUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        movingObjectSimpleParametersMovingOnLineUnique = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
 
         PathCCoA pathCCoA = new PathCCoAClass();
         pathCCoA.addPoint(new PointCCoAClass(0, 0));
@@ -404,9 +434,9 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
         private void createPassangerCar() {
             FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-            BuilderParametersMovingUnique builder = fabricParametersMovingUnique.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
+            BuilderParametersMovingUnique builder = fabricParametersMovingUnique.getNewBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
             builder.setSpeed(speed);
-            parametersMovingUnique = builder.getParametersMoving();
+            parametersMovingUnique = builder.getParametersMoving(245);
         }
 
         private void setValueForNullVariable() {
@@ -698,13 +728,13 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
 
     private TesterOneMark maxTimeStanding =
-            new TesterOneMarkClass(CreatorMarksOfPathClass.MAX_TIME_STANDING / 2);
+            new TesterOneMarkClass(GlobalVariable.MAX_TIME_STANDING / 2);
 
     @Test
     void addFootprint_addInMaxTimeStanding() {
         maxTimeStanding.isCarPassedRightPlace(new PositionClass(
                         new PointCCoAClass(0, 100), 0),
-                CreatorMarksOfPathClass.MAX_TIME_STANDING / 2
+                GlobalVariable.MAX_TIME_STANDING / 2
         );
     }
 
@@ -722,11 +752,68 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         assertTrue(exeptionThrowed);
     }
 
+
+
+    @Test
+    void getElbowDTOToEndCalculateExistJSONFrom_car() {
+
+
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
+
+        FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
+        ParametersMovingUnique car = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
+
+        PathCCoA path = new PathCCoAClass();
+        path.addPoint(new PointCCoAClass(10, 10));
+        path.addPoint(new PointCCoAClass(10, 50));
+
+        try {
+            car.markWithoutStandingUntilEndTime(onlyFootprintsSpaceTime, path, 0.0, defaultIndexLayer);
+        } catch (СrashIntoAnImpassableObjectException e) {
+            throw new RuntimeException(e);
+        }
+
+        double anyTime = 0.1;
+        HistoryChanges historyChanges = (HistoryChanges) onlyFootprintsSpaceTime;
+
+
+        JsonObject expected = JsonParser.parseString("{\"elbow_moving_objects\":[{\"id_moving_unique_object\":3,\"appearanceType\":\"TEST_SQUARE_20\",\"appearancePolygonForm\":[{\"x\":-10.0,\"y\":-10.0},{\"x\":10.0,\"y\":-10.0},{\"x\":10.0,\"y\":10.0},{\"x\":-10.0,\"y\":10.0}],\"timeSpaceCoordinates\":[{\"t\":0.0,\"layer\":0,\"x\":10.0,\"y\":0.0},{\"t\":2.0,\"layer\":0,\"x\":10.000000000000002,\"y\":0.0},{\"t\":4.0,\"layer\":0,\"x\":10.0,\"y\":0.0}]}]}").getAsJsonObject();
+
+        JsonObject actual = historyChanges.getElbowDTOToEndCalculateExistJSONFrom(anyTime);
+
+        assertEquals(expected, actual);
+
+
+    }
+
+
+    @Test
+    void getElbowDTOToEndCalculateExistJSONFrom_wall() {
+
+        FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
+
+        wallInstalation(onlyFootprintsSpaceTime);
+
+        double anyTime = 0.1;
+        HistoryChanges historyChanges = (HistoryChanges) onlyFootprintsSpaceTime;
+
+        JsonObject expected = JsonParser.parseString("{\"elbow_moving_objects\":[{\"id_moving_unique_object\":3,\"appearanceType\":\"non-uniform\",\"appearancePolygonForm\":[{\"x\":-250.0,\"y\":-25.0},{\"x\":250.0,\"y\":-25.0},{\"x\":250.0,\"y\":25.0},{\"x\":-250.0,\"y\":25.0}],\"timeSpaceCoordinates\":[{\"t\":0.0,\"layer\":0,\"x\":60.0,\"y\":0.0},{\"t\":1.7078084781191998E308,\"layer\":0,\"x\":60.0,\"y\":0.0}]}]}\n").getAsJsonObject();
+
+        JsonObject actual = historyChanges.getElbowDTOToEndCalculateExistJSONFrom(anyTime);
+        assertEquals(expected, actual);
+    }
+
     private void wallInstalation(FootprintsSpaceTime onlyFootprintsSpaceTime) {
 
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
 
-        ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
+        ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.WALL_CAR,
+                onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
         try {
             wall.mark(onlyFootprintsSpaceTime, createPathWall(), 0.0, defaultIndexLayer);
         } catch (СrashIntoAnImpassableObjectException ex) {
@@ -736,7 +823,10 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
 
     private boolean throwingExeptionWhenTryingPassThroughWall(FootprintsSpaceTime onlyFootprintsSpaceTime) {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
         try {
             parametersMovingUnique.mark(onlyFootprintsSpaceTime, createPassengerCarPath(), 0.0, defaultIndexLayer);
         } catch (СrashIntoAnImpassableObjectException ex) {

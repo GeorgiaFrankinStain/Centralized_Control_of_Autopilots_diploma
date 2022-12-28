@@ -39,7 +39,7 @@ class FootprintClassTest {
     };
 
     private ParametersMovingUnique getStandartMovingObjet() {
-        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(10, getStandardFormMachine(), TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = new ParametersMovingUniqueClass(10, getStandardFormMachine(), TypeMachinesBody.TEST_SQUARE_20, 13);
         return parametersMovingUnique;
     }
 
@@ -135,7 +135,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void getApproximation_commutativeProperty() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
@@ -159,7 +159,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testToString() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
@@ -177,7 +177,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testHashCode_createdFromDifferentEqualsObjects0() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
@@ -194,7 +194,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testHashCode_createdFromSingleObjects0() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
@@ -209,7 +209,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testHashCode_createdFromSingleObjects() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
@@ -224,7 +224,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_createdFromSingleObjects() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 1.54);
@@ -239,7 +239,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_createdFromSingleObjects0() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
@@ -254,7 +254,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_differentXCoordinateInPoint() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
@@ -270,7 +270,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_differentYCoordinateInPoint() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
@@ -286,7 +286,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_differentAngle() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
@@ -302,7 +302,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_differentTimeToNextFootprint() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
@@ -322,11 +322,11 @@ class FootprintClassTest {
         Route route = new RouteClass();
         double anyTimeToNextFootprint = 0;
 
-        ParametersMovingUnique machine1 = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine1 = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint first = new FootprintClass(firstPosition, anyTimeToNextFootprint, machine1, route);
 
-        ParametersMovingUnique machine2 = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine2 = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Position secondPosition = new PositionClass(new PointCCoAClass(0, 0), 0);
         Footprint second = new FootprintClass(secondPosition, anyTimeToNextFootprint, machine2, route);
 
@@ -336,7 +336,7 @@ class FootprintClassTest {
     @org.junit.jupiter.api.Test
     void testEquals_createdFromDifferentEqualsObjects0() {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique machine = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
         Route route = new RouteClass();
 
         Position firstPosition = new PositionClass(new PointCCoAClass(0, 0), 0);

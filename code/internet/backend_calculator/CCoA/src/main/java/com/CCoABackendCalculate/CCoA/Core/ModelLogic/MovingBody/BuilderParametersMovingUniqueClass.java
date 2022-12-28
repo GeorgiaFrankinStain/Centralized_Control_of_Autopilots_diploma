@@ -8,6 +8,7 @@ public class BuilderParametersMovingUniqueClass implements BuilderParametersMovi
     private PolygonCCoA shape;
     private TypeMachinesBody typeMachinesBody = TypeMachinesBody.SIMPLE_CAR;
 
+
     @Override
     public void setSpeed(double speed) {
         boolean isValidSpeed = speed >= 0;
@@ -29,7 +30,7 @@ public class BuilderParametersMovingUniqueClass implements BuilderParametersMovi
     }
 
     @Override
-    public ParametersMovingUnique getParametersMoving() {
-        return new ParametersMovingUniqueClass(speed, shape, typeMachinesBody);
+    public ParametersMovingUnique getParametersMoving(int idParametersMovingUnique) {
+        return new ParametersMovingUniqueClass(speed, shape, typeMachinesBody, idParametersMovingUnique);
     }
 }

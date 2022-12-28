@@ -17,6 +17,8 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     private boolean isLastFootprintInPath = false;
     private Route route;
 
+    private Footprint nextElbowFootprintForApproximationFootprint = null;
+
 
     public FootprintClass(
             Position position,
@@ -27,6 +29,19 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         this.position = position;
         this.timeToNextFootprint = timeToNextFootprint; //TODO: dubplicate information about time to next footprint
         this.parametersMovingUnique = parametersMovingUnique;
+    }
+
+    public FootprintClass(
+            Position position,
+            double timeToNextFootprint,
+            ParametersMovingUnique parametersMovingUnique,
+            Route route,
+            Footprint nextElbowFootprintForApproximationFootprint) {
+        this.route = route;
+        this.position = position;
+        this.timeToNextFootprint = timeToNextFootprint; //TODO: dubplicate information about time to next footprint
+        this.parametersMovingUnique = parametersMovingUnique;
+        this.nextElbowFootprintForApproximationFootprint = nextElbowFootprintForApproximationFootprint;
     }
 
 
@@ -49,6 +64,11 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
         LOGGER.debug("getOccupiedLocation shape: after depose {}", resultPolygon);
 
         return resultPolygon;
+    }
+
+    @Override
+    public boolean isStanding() {
+        return GlobalVariable.equalsNumber(this.timeToNextFootprint, GlobalVariable.MAX_TIME_STANDING);
     }
 
     @Override
@@ -137,6 +157,22 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
     }
 
     @Override
+    public Footprint getNextFootprint() {
+
+        boolean isThisFootprintIsApproximation = this.nextElbowFootprintForApproximationFootprint != null;
+        if (isThisFootprintIsApproximation) {
+            return this.nextElbowFootprintForApproximationFootprint;
+        }
+
+
+        NextFootprintAndTimes nextFootprintAndTimes = this.route.getNextFootprint(this);
+        if (nextFootprintAndTimes == null) {
+            return null;
+        }
+        return nextFootprintAndTimes.getNextFootprint();
+    }
+
+    @Override
     public Footprint getApproximation(double timeFirst, Footprint second, double timeSecond, double timeApproximation) {
         assert (second.getIdMovingObject() == this.getIdMovingObject());
 
@@ -146,7 +182,8 @@ public class FootprintClass implements Footprint, DataFootprintForRendering {
 
         double timeToNextFootprint = Math.abs(timeSecond - timeFirst);
 
-        return new FootprintClass(position, timeToNextFootprint, parametersMovingUnique, route); //FIXME getTimeToNextFootprint always constant add tests
+
+        return new FootprintClass(position, timeToNextFootprint, parametersMovingUnique, route, this.getNextFootprint()); //FIXME getTimeToNextFootprint always constant add tests
     }
 
     @Override

@@ -10,5 +10,5 @@ public interface BuilderParametersMovingUnique {
 
     public void setTypeMachinesBody(TypeMachinesBody typeMachinesBody);
 
-    public ParametersMovingUnique getParametersMoving();
+    public ParametersMovingUnique getParametersMoving(int idParametersMovingUnique);
 }

@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class MagnetCoordinateStorageVacuumDoubleHashMapTest {
 
-    private ParametersMovingUnique car = new Square20ParametersMovingUnique();
+    private ParametersMovingUnique car = new Square20ParametersMovingUnique(13);
 
     private Node one;
     private Node second;

@@ -4,6 +4,7 @@ import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.CreatorM
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Footprint;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PointCCoA;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.PolygonCCoA;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
 import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
@@ -12,7 +13,7 @@ import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
     private int idObject;
     private Position position;
     private PolygonCCoA polygonCCoA;
-    private double timeStanding = CreatorMarksOfPathClass.MAX_TIME_STANDING;
+    private double timeStanding = GlobalVariable.MAX_TIME_STANDING;
 
     public ZonaLandscapeClass(Position position, PolygonCCoA polygonCCoA) {
         this.idObject = new RandomWrapperClass( 134).nextInt();
@@ -47,7 +48,12 @@ import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
         return this.timeStanding;
     }
 
-    @Override
+     @Override
+     public Footprint getNextFootprint() {
+         return null;
+     }
+
+     @Override
     public Footprint getApproximation(double timeFirst, Footprint second, double timeSecond, double timeApproximation) {
         return null;
     }
@@ -72,6 +78,11 @@ import com.CCoABackendCalculate.CCoA.Core.Wrappers.RandomWrapperClass;
     public PolygonCCoA getOccupiedLocation() {
         return polygonCCoA;
     }
+
+     @Override
+     public boolean isStanding() {
+         return true;
+     }
 
      @Override
      public boolean equalsWithoutUniqueId(Object obj) {

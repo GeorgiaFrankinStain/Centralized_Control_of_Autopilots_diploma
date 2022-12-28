@@ -13,9 +13,9 @@ public class Square20ParametersMovingUnique implements ParametersMovingUnique {
 
     private ParametersMovingUnique car20;
 
-    public Square20ParametersMovingUnique() {
+    public Square20ParametersMovingUnique(int idParametersMovingUnique) {
         FabricParametersMovingUnique fabric = new FabricParametersMovingUniqueClass();
-        this.car20 = fabric.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        this.car20 = fabric.getMoving(TypeMachinesBody.TEST_SQUARE_20, idParametersMovingUnique);
     }
 
     @Override

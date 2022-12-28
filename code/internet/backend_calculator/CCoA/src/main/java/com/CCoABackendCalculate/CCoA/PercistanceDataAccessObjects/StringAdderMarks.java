@@ -13,6 +13,7 @@ import java.util.List;
 
 public class StringAdderMarks implements AdderMarks {
 
+
     List<Order> orders = new ArrayList<>();
 
     public StringAdderMarks(String jsonMapAim) throws Exception {

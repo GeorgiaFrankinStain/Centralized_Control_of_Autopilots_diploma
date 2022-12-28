@@ -26,6 +26,7 @@ public interface ParametersMovingUnique {
 
     public PolygonCCoA getShape();
 
+
     public double getSpeed();
 
     public double getTimeTravel(double distance);

@@ -11,11 +11,13 @@ import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.TypeMachines
 
 public class Square20ParametersMoving implements ParametersMoving {
 
+    private int lastId = 0;
     private ParametersMoving parametersMoving;
 
     public Square20ParametersMoving() {
         FabricParametersMovingUnique fabric = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabric.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabric.getMoving(TypeMachinesBody.TEST_SQUARE_20, lastId);
+        lastId++;
         this.parametersMoving = new ParametersMovingClass(parametersMovingUnique);
     }
 

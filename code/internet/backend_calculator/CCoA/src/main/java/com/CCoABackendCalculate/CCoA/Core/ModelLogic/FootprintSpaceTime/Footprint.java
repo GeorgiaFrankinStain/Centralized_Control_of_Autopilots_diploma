@@ -12,6 +12,8 @@ public interface Footprint {
 
     public double getTimeToNextFootprint();
 
+    public Footprint getNextFootprint();
+
     public Footprint getApproximation(double timeFirst, Footprint second , double timeSecond, double timeApproximation);
 
     public Footprint getApproximationWithNextFootprint(double timeApproximation);
@@ -21,6 +23,8 @@ public interface Footprint {
     public void setTimeToNextFootprint(double newTimeStanding);
 
     public PolygonCCoA getOccupiedLocation();
+
+    public boolean isStanding();
 
     public String toString();
 

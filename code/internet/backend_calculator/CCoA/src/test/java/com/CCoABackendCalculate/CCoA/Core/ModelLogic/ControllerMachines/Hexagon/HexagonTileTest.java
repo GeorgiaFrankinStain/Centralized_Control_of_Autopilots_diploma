@@ -21,7 +21,7 @@ class HexagonTileTest {
 
     private static final Logger LOGGER = LogManager.getLogger(HexagonTileTest.class);
 
-    private ParametersMovingUnique car20 = new Square20ParametersMovingUnique();
+    private ParametersMovingUnique car20 = new Square20ParametersMovingUnique(13);
     private double degree87 = 1.51844;
 
     private NetworkNodes networkNodesForCar20 = new HexagonTile(degree87, car20);

@@ -1,13 +1,18 @@
 package com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime;
 
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.FootprintSpaceTime.Exception.СrashIntoAnImpassableObjectException;
+import com.CCoABackendCalculate.CCoA.Core.ModelLogic.GlobalVariable;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayer;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.IndexLayerClass;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.ParametersMovingUnique;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.MovingBody.PathCCoA;
 import com.CCoABackendCalculate.CCoA.Core.ModelLogic.Position;
 import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.HistoryChanges;
+import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.TypeMachinesBody;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.util.*;
 
@@ -15,9 +20,21 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
     private IndexLayer defaultIndexLayer = new IndexLayerClass(0);
     private Map<IndexLayer, LayerFootprintSpaceTime> layers = new TreeMap<IndexLayer, LayerFootprintSpaceTime>();
 
+    private int lastIssuedId = 3; //LINK_ldKzPu (text find) before builder numerator for test start from 3
+    private Set<Integer> setIdMovingObjects = new HashSet<>();
+
 
     public FootprintsSpaceTimeClass() {
         addLayer(defaultIndexLayer);
+    }
+
+    @Override
+    public List<Footprint> getRenderingFootprintsWhen(double time) {
+        List<Footprint> footprints = new ArrayList<>();
+        for (LayerFootprintSpaceTime layer : this.layers.values()) {
+            footprints.addAll(layer.getRenderingFootprintsWhen(time));
+        }
+        return footprints;
     }
 
     @Override
@@ -43,6 +60,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
             this.addLayer(indexLayer);
         }
 
+        this.setIdMovingObjects.add(parametersMovingUnique.getID());
+
         Route route = new RouteClass();
 
         this.layers.get(indexLayer).addFootprintsPath(
@@ -59,6 +78,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
             PathCCoA pathCCoA,
             double startTime,
             IndexLayer indexLayer) throws СrashIntoAnImpassableObjectException {
+
+        this.setIdMovingObjects.add(parametersMovingUnique.getID());
 
         LayerFootprintSpaceTime layerFootprintSpaceTime =
                 this.layers.get(indexLayer);
@@ -88,6 +109,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
         if (layerFootprintSpaceTime == null) {
             this.addLayer(indexLayer);
         }
+
+        this.setIdMovingObjects.add(footprint.getMovingObject().getID());
 
 
         this.layers.get(indexLayer).addFootprint(footprint, time);
@@ -222,24 +245,138 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
     }
 
     @Override
+    public int getIdForNewParametersMovingUnique() { //FIXME add tests
+
+        while (this.setIdMovingObjects.contains(lastIssuedId)) {
+            this.lastIssuedId++;
+        }
+        return this.lastIssuedId;
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(layers);
     }
 
     @Override
     public JsonObject getElbowDTOToEndCalculateExistJSONFrom(Double fromTime) {
-
+        List<Footprint> allFirstFootprintsFromTime = this.getRenderingFootprintsWhen(fromTime);
         //get footprint approximation from fromTime
 
-        //for add all next footprints
+        JsonArray elbowOrdersArray = new JsonArray();
 
-        //return all footprints
+        for (Footprint movingObjectFirstFootprint : allFirstFootprintsFromTime) {
 
 
-        return null;
+            ParametersMovingUnique parametersMovingUnique = movingObjectFirstFootprint.getMovingObject();
+            JsonObject elbowOrdersJson = getJsonWithParametersUniqueMoving(parametersMovingUnique);
+
+            JsonArray routeTimeSpaceCoordinates = getJsonItemArrayRoute(movingObjectFirstFootprint);
+
+            elbowOrdersJson.add("timeSpaceCoordinates", routeTimeSpaceCoordinates);
+
+            elbowOrdersArray.add(elbowOrdersJson);
+        }
+
+
+        JsonObject result = new JsonObject();
+
+        result.add("elbow_moving_objects", elbowOrdersArray);
+
+
+        return result;
 
     }
+
     //==== <start> <Private_Methods> =======================================================================
+
+    private JsonArray getJsonItemArrayRoute(Footprint movingObjectFirstFootprint) {
+        double timeMoment = 0;
+        Footprint currentFootprint = movingObjectFirstFootprint;
+
+        JsonArray timeSpaceCoordinatesJson = new JsonArray();
+
+        while (true) {
+
+            timeSpaceCoordinatesJson.add(getTimeSpaceCoordinate(currentFootprint, timeMoment));
+
+
+            boolean isNeedAddLastPointInEndlessFuture = currentFootprint.isStanding();
+            if (isNeedAddLastPointInEndlessFuture) {
+                timeSpaceCoordinatesJson.add(getTimeSpaceCoordinate(currentFootprint, GlobalVariable.MAX_TIME_STANDING));
+            }
+
+
+            timeMoment += currentFootprint.getTimeToNextFootprint();
+            currentFootprint = currentFootprint.getNextFootprint();
+
+            if (currentFootprint == null) {
+                break;
+            }
+        }
+
+        return timeSpaceCoordinatesJson;
+    }
+
+    private JsonObject getTimeSpaceCoordinate(Footprint currentFootprint, double timeMoment) {
+
+        JsonObject pointRoute = new JsonObject();
+
+        pointRoute.add("t", doubleToJsonElement(timeMoment));
+        int imitationDefaultLevel = 0;
+        pointRoute.add("layer", intToJsonElement(imitationDefaultLevel));
+        pointRoute.add("x", doubleToJsonElement(currentFootprint.getCoordinat().getX()));
+        pointRoute.add("y", doubleToJsonElement(currentFootprint.getCoordinat().getY()));
+        double imitationAngle = 0;
+        pointRoute.add("y", doubleToJsonElement(imitationAngle));
+
+        return pointRoute;
+    }
+
+    private JsonObject getJsonWithParametersUniqueMoving(ParametersMovingUnique parametersMovingUnique) {
+        JsonObject parametersJson = new JsonObject();
+
+        parametersJson.add("id_moving_unique_object", intToJsonElement(parametersMovingUnique.getID()));
+        parametersJson.add("appearanceType", getTypeMachineBody(parametersMovingUnique));
+        parametersJson.add("appearancePolygonForm", getJsonFormMachine(parametersMovingUnique));
+
+        return parametersJson;
+    }
+    private JsonElement getTypeMachineBody(ParametersMovingUnique parametersMovingUnique) {
+        if (parametersMovingUnique.getTypeMachinesBody() == TypeMachinesBody.TEST_SQUARE_20) {
+            return JsonParser.parseString(TypeMachinesBody.TEST_SQUARE_20.toString());
+        } else {
+            return JsonParser.parseString("non-uniform");
+        }
+    }
+
+    private JsonElement intToJsonElement(int number) {
+        String numberString = String.valueOf(number);
+        return JsonParser.parseString(numberString);
+    }
+
+    private JsonArray getJsonFormMachine(ParametersMovingUnique parametersMovingUnique) {
+        JsonArray formJsonArray = new JsonArray();
+
+        PolygonCCoA polygonForm = parametersMovingUnique.getShape();
+        for (int i = 0; i < polygonForm.getCountPoints(); i++) {
+            PointCCoA currentPoint = polygonForm.getPoint(i);
+
+            JsonObject pointJson = new JsonObject();
+            pointJson.add("x", doubleToJsonElement(currentPoint.getX()));
+            pointJson.add("y", doubleToJsonElement(currentPoint.getY()));
+
+            formJsonArray.add(pointJson);
+        }
+
+        return formJsonArray;
+    }
+
+
+    private JsonElement doubleToJsonElement(double number) {
+        String numberString = String.valueOf(number);
+        return JsonParser.parseString(numberString);
+    }
 
     private void addLayer(IndexLayer indexLayer) { //FIXME CODESTYLE
         LayerFootprintSpaceTime newLayerFootprintSpaceTime =

@@ -17,12 +17,12 @@ class FabricParametersMovingUniqueUniqueClassTest {
     private ParametersMovingUnique createParametersTestSquare20() {
         BuilderParametersMovingUnique builder = createBuilderTestSquare20();
 
-        return builder.getParametersMoving();
+        return builder.getParametersMoving(4);
     }
 
     private ParametersMovingUnique actualParametersReturned() {
         FabricParametersMovingUnique fabric = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique actual = fabric.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique actual = fabric.getMoving(TypeMachinesBody.TEST_SQUARE_20, 13);
 
         return actual;
     }
@@ -96,64 +96,64 @@ class FabricParametersMovingUniqueUniqueClassTest {
 
     private BuilderParametersMovingUnique getActualBuilderReturned() {
         FabricParametersMovingUnique fabric = new FabricParametersMovingUniqueClass();
-        BuilderParametersMovingUnique actual = fabric.getBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
+        BuilderParametersMovingUnique actual = fabric.getNewBuilderMoving(TypeMachinesBody.TEST_SQUARE_20);
 
         return actual;
     }
 
     @Test
     void getBuilderMoving_uniqueId() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(4);
         assertNotEquals(actualParametersMovingUnique.getID(), expectedParametersMovingUnique.getID());
     }
 
     @Test
     void getBuilderMoving_square20EqualsShape() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(actualParametersMovingUnique.getShape(), expectedParametersMovingUnique.getShape());
     }
 
     @Test
     void getBuilderMoving_square20EqualsSpeed() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(actualParametersMovingUnique.getSpeed(), expectedParametersMovingUnique.getSpeed());
     }
 
     @Test
     void getBuilderMoving_square20EqualsType() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(actualParametersMovingUnique.getSkin(), expectedParametersMovingUnique.getSkin());
     }
 
     @Test
     void getBuilderMoving_square20EqualsTypeInLevel() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(actualParametersMovingUnique.getTypeInLevel(), expectedParametersMovingUnique.getTypeInLevel());
     }
 
     @Test
     void getBuilderMoving_square20EqualsRadius() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(actualParametersMovingUnique.getRadius(), expectedParametersMovingUnique.getRadius());
     }
 
     @Test
     void getBuilderMoving_square20EqualsVectorFromTopLEftToAppliedCoordinates() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(actualParametersMovingUnique.getRadius(), expectedParametersMovingUnique.getRadius());
     }
 
     @Test
     void getBuilderMoving_square20EqualsPointWhereCoordinatesAreApplied() {
-        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving();
-        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving();
+        ParametersMovingUnique expectedParametersMovingUnique = builderTestSquare20.getParametersMoving(13);
+        ParametersMovingUnique actualParametersMovingUnique = actualBuilder.getParametersMoving(13);
         assertEquals(
                 actualParametersMovingUnique.getPointWhereCoordinatesAreApplied(),
                 expectedParametersMovingUnique.getPointWhereCoordinatesAreApplied()

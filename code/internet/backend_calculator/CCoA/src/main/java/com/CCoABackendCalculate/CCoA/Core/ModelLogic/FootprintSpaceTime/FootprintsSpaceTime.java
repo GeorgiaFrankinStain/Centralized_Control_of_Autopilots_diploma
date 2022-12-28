@@ -10,6 +10,10 @@ import java.util.List;
 
 public interface FootprintsSpaceTime {
 
+    public List<Footprint> getRenderingFootprintsWhen(
+            double time
+    );
+
     public List<Footprint> getRenderingFootprintsFromWhen(
             PolygonCCoA areaFind,
             double time,
@@ -70,6 +74,8 @@ public interface FootprintsSpaceTime {
     public Position getPositionInDefaultLevel(ParametersMovingUnique parametersMovingUniqueWithID, double time);
 
     public boolean equalsWithoutUniqueId(Object obj);
+
+    public int getIdForNewParametersMovingUnique();
 
 
 

@@ -11,6 +11,11 @@ public class GlobalVariable { //FIXME is good? (global variable in java is good?
     public static final double DOUBLE_COMPARISON_ACCURACY = 0.001; //mm
     public static final double LENGTH_DIAPASON_MAGNET = GlobalVariable.DOUBLE_COMPARISON_ACCURACY * 4;
 
+
+    final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
+
+    final public static double MIN_TIME_STANDING = Double.MIN_VALUE;
+
     private static int LENGTH_RAND_STRING_KEY = 16;
     public static double getAccuracyMoving() {
         return accuracyMoving;

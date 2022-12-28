@@ -23,7 +23,7 @@ class AStarSpaceTimePlanarGraphClassTest {
     private static final Logger LOG = LoggerFactory.getLogger(AStarSpaceTimePlanarGraphClassTest.class);
 
 
-    private ParametersMovingUnique squareParametersMovingUnique = createSquareParametersMoving();
+    private ParametersMovingUnique squareParametersMovingUnique = createSquareParametersMoving(1);
     private AlhorithmFastFindPath fastFinderPath = pathCreatedFastFingerPath();
     private IndexLayer defaultLayer = new IndexLayerClass(0);
 
@@ -41,9 +41,9 @@ class AStarSpaceTimePlanarGraphClassTest {
     }
 
 
-    private ParametersMovingUnique createSquareParametersMoving() {
+    private ParametersMovingUnique createSquareParametersMoving(int idCar) {
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20, idCar);
         return parametersMovingUnique;
     }
 
@@ -82,7 +82,7 @@ class AStarSpaceTimePlanarGraphClassTest {
             IndexLayer indexLayer = new IndexLayerClass(0);
 
 
-            ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
+            ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR, 124646);
 
 
             PointCCoA from = new PointCCoAClass(60, 0);
@@ -153,8 +153,8 @@ class AStarSpaceTimePlanarGraphClassTest {
     }
 
     private class BoyNextDoorTestClass implements BoyNextDoorTest {
-        private ParametersMovingUnique car1 = createSquareParametersMoving();
-        private ParametersMovingUnique car2 = createSquareParametersMoving();
+        private ParametersMovingUnique car1 = createSquareParametersMoving(2);
+        private ParametersMovingUnique car2 = createSquareParametersMoving(3);
 
 
         private PointCCoA from1 = new PointCCoAClass(0, 0);

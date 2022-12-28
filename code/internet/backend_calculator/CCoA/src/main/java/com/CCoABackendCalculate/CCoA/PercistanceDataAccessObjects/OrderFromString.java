@@ -66,8 +66,9 @@ public class OrderFromString implements Order {
     @Override
     public void mark(FootprintsSpaceTime footprintsSpaceTime) { //FIXME add tests result adding in FootprintSpaceTime
 
+        int numberParametersMovingUnique = footprintsSpaceTime.getIdForNewParametersMovingUnique();
         //FIXME type_in_level
-        ParametersMovingUnique parametersMovingUnique = determinationParametersMovingUnique();
+        ParametersMovingUnique parametersMovingUnique = determinationParametersMovingUnique(numberParametersMovingUnique);
 
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(GlobalVariable.getAccuracyMoving(), parametersMovingUnique);
 
@@ -83,24 +84,25 @@ public class OrderFromString implements Order {
         } else {
             PathCCoA actualPath = fastFinderPath.getPath(this.startCoordinate, this.endCoordinate, parametersMovingUnique, this.startTime); //FIXME set start and end layer
             try {
-                parametersMovingUnique.mark(footprintsSpaceTime, actualPath, this.startTime, this.startLayer);  //FIXME set start and end layer //FIXME end standing
+                parametersMovingUnique.markWithoutStandingUntilEndTime(footprintsSpaceTime, actualPath, this.startTime, this.startLayer);  //FIXME set start and end layer //FIXME end standing
             } catch (СrashIntoAnImpassableObjectException ex) {
             }
         }
     }
 
-    private ParametersMovingUnique determinationParametersMovingUnique() {
+    private ParametersMovingUnique determinationParametersMovingUnique(int numberParametersMovingUnique) {
         boolean isStandardParametersMovingObjects = this.typeMachinesBody != null;
         if (isStandardParametersMovingObjects) {
             FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-            ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(this.typeMachinesBody);
+            BuilderParametersMovingUnique builderCar = fabricParametersMovingUnique.getNewBuilderMoving(this.typeMachinesBody);
+            ParametersMovingUnique parametersMovingUnique = builderCar.getParametersMoving(numberParametersMovingUnique);
             return parametersMovingUnique;
         } else {
-            BuilderParametersMovingUnique builder = new BuilderParametersMovingUniqueClass();
-            builder.setSpeed(this.speed);
-            builder.setShape(this.form);
+            BuilderParametersMovingUnique builderCar = new BuilderParametersMovingUniqueClass();
+            builderCar.setSpeed(this.speed);
+            builderCar.setShape(this.form);
 
-            return builder.getParametersMoving();
+            return builderCar.getParametersMoving(numberParametersMovingUnique);
         }
     }
 

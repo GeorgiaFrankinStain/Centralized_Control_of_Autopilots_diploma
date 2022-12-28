@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface LayerFootprintSpaceTime {
 
+    public List<Footprint> getRenderingFootprintsWhen(double timeFind);
     public List<Footprint> getRenderingFootprintsFromWhen(PolygonCCoA areaFind, double time);
 
 

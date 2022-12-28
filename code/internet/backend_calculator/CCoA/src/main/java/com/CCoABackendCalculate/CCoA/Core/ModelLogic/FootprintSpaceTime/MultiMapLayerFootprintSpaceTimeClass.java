@@ -127,7 +127,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             Footprint footprint = entry.getValue();
             boolean isEndOfPath = GlobalVariable.equalsNumber(
                     footprint.getTimeToNextFootprint(),
-                    CreatorMarksOfPathClass.MAX_TIME_STANDING
+                    GlobalVariable.MAX_TIME_STANDING
             );
             if (!isEndOfPath) {
                 if (averageRes == null) {
@@ -154,7 +154,7 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
             Footprint footprint = entry.getValue();
             boolean isEndOfPath = GlobalVariable.equalsNumber(
                     footprint.getTimeToNextFootprint(),
-                    CreatorMarksOfPathClass.MAX_TIME_STANDING
+                    GlobalVariable.MAX_TIME_STANDING
             );
             if (!isEndOfPath) {
                 averageRes += footprint.getTimeToNextFootprint();
@@ -187,6 +187,31 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
     }
 
 
+    @Override
+    public List<Footprint> getRenderingFootprintsWhen(double timeFind) {
+        List<Footprint> resRendringFootpring = new ArrayList<Footprint>();
+        Iterator<PairCCoA<Double, Footprint>> iteratorEntryPair = storageAllFootprints.iteratorEntryPair();
+        while (iteratorEntryPair.hasNext()) {
+            PairCCoA<Double, Footprint> entry = iteratorEntryPair.next();
+
+            Footprint currentFootprint = entry.getValue(); //FIXME NOW add test timeFind diapason intersection
+            double timeStanding = currentFootprint.getTimeToNextFootprint();
+            double startStanding = entry.getKey();
+            double endStanding = startStanding + timeStanding;
+
+
+            boolean footprintIndcludeFindTimePoint = startStanding <= timeFind && timeFind < endStanding;
+            if (footprintIndcludeFindTimePoint) {
+                LOGGER.debug("getRenderingFootprintsFromWhen: startStanding: {}, timeFind: {}, endStanding: {}", startStanding, timeFind, endStanding);
+                Footprint approximationFootprint = currentFootprint.getApproximationWithNextFootprint(timeFind);
+                LOGGER.debug("approximationFootprint: {}", approximationFootprint);
+                resRendringFootpring.add(approximationFootprint);
+            }
+        }
+
+
+        return resRendringFootpring;
+    }
 
     //TODO: add more difficult determitaion the level (https://habr.com/ru/post/122919/)
     //TODO: return id of poligons returned getAreaFromWhen  используется выделителем юнитов, тут не требуется возвращать полигоны, можно просто айдишники вернуть
@@ -222,6 +247,8 @@ public class MultiMapLayerFootprintSpaceTimeClass implements LayerFootprintSpace
 
             boolean footprintIndcludeFindTimePoint = startStanding <= timeFind && timeFind < endStanding;
             if (footprintIndcludeFindTimePoint) {
+                //FIXME add areaVizibility
+
                 LOGGER.debug("getRenderingFootprintsFromWhen: startStanding: {}, timeFind: {}, endStanding: {}", startStanding, timeFind, endStanding);
                 Footprint approximationFootprint = currentFootprint.getApproximationWithNextFootprint(timeFind);
                 LOGGER.debug("approximationFootprint: {}", approximationFootprint);

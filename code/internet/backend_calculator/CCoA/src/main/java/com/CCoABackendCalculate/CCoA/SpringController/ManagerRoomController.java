@@ -64,8 +64,6 @@ public class ManagerRoomController {
     public @ResponseBody StatusResponseDTO toApplicationOrders(@RequestBody String orders) throws Exception {
         this.managerRoom.toApplicationOrders(orders);
 
-//        AdderMarks adderMarks = new StringAdderMarks(orders);
-
         return new StatusResponseDTO(true);
     }
 }

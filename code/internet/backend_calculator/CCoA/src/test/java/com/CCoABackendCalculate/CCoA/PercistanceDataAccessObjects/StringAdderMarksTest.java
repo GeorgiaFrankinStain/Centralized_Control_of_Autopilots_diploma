@@ -1312,7 +1312,7 @@ class StringAdderMarksTest {
         IndexLayer indexLayer = new IndexLayerClass(0);
         FootprintsSpaceTime onlyFootprintsSpaceTime = new FootprintsSpaceTimeClass();
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR);
+        ParametersMovingUnique wall = fabricParametersMovingUnique.getMoving(TypeMachinesBody.WALL_CAR, 13);
         PathCCoA wallPath = new PathCCoAClass();
         wallPath.addPoint(new PointCCoAClass(120, 160));
 
@@ -1438,7 +1438,10 @@ class StringAdderMarksTest {
         IndexLayer indexLayer = new IndexLayerClass(0);
 
         FabricParametersMovingUnique fabricParametersMovingUnique = new FabricParametersMovingUniqueClass();
-        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+        ParametersMovingUnique parametersMovingUnique = fabricParametersMovingUnique.getMoving(
+                TypeMachinesBody.TEST_SQUARE_20,
+                onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+        );
         double degree60 = 1.0472;
         FabricNetworkNodes fabricNetworkNodes = new FabricHexagonNodes(degree60 / 9, parametersMovingUnique);
         AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(fabricNetworkNodes, onlyFootprintsSpaceTime);
@@ -1452,12 +1455,15 @@ class StringAdderMarksTest {
             double timeAdding = 0.0;
             PathCCoA actualPath = fastFinderPath.getPath(from, to, parametersMovingUnique, timeAdding);
             try {
-                parametersMovingUnique.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
+                parametersMovingUnique.markWithoutStandingUntilEndTime(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer);
             } catch (СrashIntoAnImpassableObjectException ex) {
             }
         }
         {
-            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(TypeMachinesBody.TEST_SQUARE_20);
+            ParametersMovingUnique localNewCar = fabricParametersMovingUnique.getMoving(
+                    TypeMachinesBody.TEST_SQUARE_20,
+                    onlyFootprintsSpaceTime.getIdForNewParametersMovingUnique()
+            );
             PointCCoA from = new PointCCoAClass(30, 131);
             PointCCoA to = new PointCCoAClass(70, 300);
 
@@ -1465,7 +1471,7 @@ class StringAdderMarksTest {
             double timeAdding = 0.0;
             PathCCoA actualPath = fastFinderPath.getPath(from, to, localNewCar, timeAdding);
             try {
-                localNewCar.mark(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
+                localNewCar.markWithoutStandingUntilEndTime(onlyFootprintsSpaceTime, actualPath, timeAdding, indexLayer); //FIXME bag sequense time adding
             } catch (СrashIntoAnImpassableObjectException ex) {
             }
         }

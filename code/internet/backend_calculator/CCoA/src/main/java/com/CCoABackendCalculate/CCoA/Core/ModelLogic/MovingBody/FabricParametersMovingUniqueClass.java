@@ -7,17 +7,17 @@ import com.CCoABackendCalculate.CCoA.Core.ViewSettingRenderingTasks.TypeMachines
 
 public class FabricParametersMovingUniqueClass implements FabricParametersMovingUnique {
     @Override
-    public ParametersMovingUnique getMoving(TypeMachinesBody typeMachinesBody) {
+    public ParametersMovingUnique getMoving(TypeMachinesBody typeMachinesBody, int idParametersMovingUnique) {
 
-        BuilderParametersMovingUnique builder = this.getBuilderMoving(typeMachinesBody);
+        BuilderParametersMovingUnique builder = this.getNewBuilderMoving(typeMachinesBody);
 
-        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving();
+        ParametersMovingUnique parametersMovingUnique = builder.getParametersMoving(idParametersMovingUnique);
 
         return parametersMovingUnique;
     }
 
     @Override
-    public BuilderParametersMovingUnique getBuilderMoving(TypeMachinesBody typeMachinesBody) {
+    public BuilderParametersMovingUnique getNewBuilderMoving(TypeMachinesBody typeMachinesBody) {
 
         if (typeMachinesBody == TypeMachinesBody.TEST_SQUARE_20) {
             PolygonCCoA formMachine = new PolygonCCoAClass();

@@ -14,6 +14,8 @@ import org.apache.logging.log4j.Logger;
 public class ParametersMovingClass implements ParametersMoving {
     private static final Logger LOGGER = LogManager.getLogger(ParametersMovingClass.class);
 
+    private int lastIdParametersMovingUnique = 0;
+    private BuilderParametersMovingUnique generatorNewUniqueParametersMoving = new BuilderParametersMovingUniqueClass();
     private double speed;
     private PolygonCCoA polygonCCoA;
     private TypeMachinesBody typeMachinesBody;
@@ -111,10 +113,11 @@ public class ParametersMovingClass implements ParametersMoving {
     }
 
     private void updateUniqueParametersMoving() {
-        this.parametersMovingUnique = new ParametersMovingUniqueClass(
-                this.speed,
-                this.polygonCCoA.clone(),
-                this.typeMachinesBody
-        );
+        generatorNewUniqueParametersMoving.setSpeed(this.speed);
+        generatorNewUniqueParametersMoving.setShape(this.polygonCCoA.clone());
+        generatorNewUniqueParametersMoving.setTypeMachinesBody(this.typeMachinesBody);
+
+        this.parametersMovingUnique = generatorNewUniqueParametersMoving.getParametersMoving(lastIdParametersMovingUnique);
+        lastIdParametersMovingUnique++;
     }
 }

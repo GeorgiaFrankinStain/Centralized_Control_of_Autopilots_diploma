@@ -12,8 +12,6 @@ import org.apache.logging.log4j.Logger;
 public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     private static final Logger LOGGER = LogManager.getLogger(CreatorMarksOfPathClass.class);
 
-    final public static double MAX_TIME_STANDING = Double.MAX_VALUE * 0.95;
-    final public static double MIN_TIME_STANDING = Double.MIN_VALUE;
     private double timeStandingInLastPath;
     private LayerFootprintSpaceTime footprintsSpaceTime;
     private ParametersMovingUnique parametersMovingUnique;
@@ -36,9 +34,9 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         this.route = route;
 
         if (isStandingTimeEndPathIsUntilEndTime) {
-            this.timeStandingInLastPath = this.MAX_TIME_STANDING;
+            this.timeStandingInLastPath = GlobalVariable.MAX_TIME_STANDING;
         } else {
-            this.timeStandingInLastPath = this.MIN_TIME_STANDING;
+            this.timeStandingInLastPath = GlobalVariable.MIN_TIME_STANDING;
         }
 
 
@@ -49,7 +47,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
         speed = parametersMovingUnique.getSpeed();
         lengthStep = parametersMovingUnique.getLengthStep();
         if (Math.abs(speed) < GlobalVariable.DOUBLE_COMPARISON_ACCURACY) {
-            timeStanding = this.MAX_TIME_STANDING;
+            timeStanding = GlobalVariable.MAX_TIME_STANDING;
         } else {
             timeStanding = lengthStep / speed;
         }
@@ -74,7 +72,7 @@ public class CreatorMarksOfPathClass implements CreatorMarksOfPath {
     //==== <start> <Private_Methods> =======================================================================
     private void setTheStandingTimeUntilTheEndOfTimeInCaseOfAnAccident() {
         if (this.penultimateFootprintInPath != null) {
-            this.penultimateFootprintInPath.setTimeToNextFootprint(this.MAX_TIME_STANDING);
+            this.penultimateFootprintInPath.setTimeToNextFootprint(GlobalVariable.MAX_TIME_STANDING);
         }
     }
 

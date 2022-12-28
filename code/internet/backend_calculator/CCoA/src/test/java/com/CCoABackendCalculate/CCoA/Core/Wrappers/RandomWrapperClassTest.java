@@ -10,13 +10,13 @@ class RandomWrapperClassTest {
     @Test
     void nextString_1stString() {
         String generatedRandom = random.nextString(10);
-        assertEquals("IoSEGuZvAN", generatedRandom);
+        assertEquals("dTeT2omrOT", generatedRandom);
 //        String generatedRandom2 = random.nextString(10);
 //        assertEquals("VAsIOqbh7J", generatedRandom2);
     }
     @Test
     void nextString_2ndString() {
         String generatedRandom2 = random.nextString(10);
-//        assertEquals("VAsIOqbh7J", generatedRandom2); //FIXME i don't now w
+        assertEquals("dTeT2omrOT", generatedRandom2); //FIXME i don't now w
     }
 }

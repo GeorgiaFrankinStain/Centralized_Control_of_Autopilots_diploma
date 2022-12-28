@@ -15,12 +15,11 @@ public class RandomWrapperClass implements RandomWrapper {
 
     private boolean isNowDebugMode = true;
     private Random random;
-    private static Map<Integer, Integer> counters = new HashMap<Integer, Integer>();
 
 
     public RandomWrapperClass(int seedDebug) {
         if (this.isNowDebugMode) {
-            this.random = debug(seedDebug);
+            this.random = new Random(seedDebug);
         } else {
             this.random = realise();
         }
@@ -42,19 +41,6 @@ public class RandomWrapperClass implements RandomWrapper {
             generatedString = RandomStringUtils.randomAlphanumeric(length);
         }
         return generatedString;
-    }
-
-    private Random debug(int seedDebug) {
-        increment(seedDebug);
-        return new Random(this.counters.get(seedDebug));
-    }
-    private void increment(int seedDebug) {
-        int currentValue = 0;
-        if (this.counters.containsKey(seedDebug)) {
-            currentValue = this.counters.get(seedDebug);
-        }
-
-        this.counters.put(seedDebug, currentValue + 1);
     }
 
     private Random realise() {
