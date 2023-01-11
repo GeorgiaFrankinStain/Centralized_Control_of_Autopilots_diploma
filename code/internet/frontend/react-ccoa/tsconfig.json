@@ -2,18 +2,22 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
+      "es5", //for SetOrdersCanvas
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "sourceMap": true, //for SetOrdersCanvas
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+//    "noUnusedLocals": true, //for SetOrdersCanvas
     "module": "esnext",
+    //"module": "commonjs", //for SetOrdersCanvas
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,

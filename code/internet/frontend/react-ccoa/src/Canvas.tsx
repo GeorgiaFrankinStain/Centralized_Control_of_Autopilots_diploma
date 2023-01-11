@@ -1,6 +1,7 @@
 import React, {MutableRefObject, useEffect, useRef} from "react";
 import assert from "assert";
 import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA, PointCCoAClass} from "./Polygon";
+import CanvasSetOrders from "./SetOrdersCanvas";
 
 
 
@@ -126,8 +127,6 @@ class StorageElbowJsonDTOClass implements StorageElbowsJsonDTO {
     private elbowsJsonDTO: Array<ElbowMovingObject> = new Array<ElbowMovingObject>();
 
     setJsonString(stringJson: string): void {
-        console.log("++++++++ (+) (-)");
-        console.log(imitationDataFromGetElbowFootprint2);
         let setElbows: SetElbowsJson = JSON.parse(imitationDataFromGetElbowFootprint2) as SetElbowsJson;
         this.setJson(setElbows);
     }
@@ -518,8 +517,8 @@ const useAnimationFrame = ({
     }, [shouldAnimate]);
 };
 
-
-const coordinates_sprite_machines = [
+export const globalScale = 3;
+export const coordinates_sprite_machines = [
     {
         "frame": {
             "x": 1,
@@ -973,6 +972,7 @@ const coordinates_sprite_machines = [
 ];
 
 
+
 const Canvas = () => {
     const brickRef = React.useRef()  as MutableRefObject<HTMLDivElement>;
     const [shouldAnimate, setShouldAnimate] = React.useState(false);
@@ -987,7 +987,7 @@ const Canvas = () => {
     const nextAnimationFrameHandler = (nowTime: number) => {
 
         const brick = brickRef.current;
-        const canvas = document.getElementById('myChart') as HTMLCanvasElement;
+        const canvas = document.getElementById('viewResultMoving') as HTMLCanvasElement;
         const image = document.getElementById('set_cars') as HTMLImageElement;
 
         if (!canvas) {
@@ -1013,17 +1013,15 @@ const Canvas = () => {
             let movedPolygon: PolygonCCoA = dataForRenderingItem.polygonInPosition;
 
             let indexFrameMachine = getIndexForId(dataForRenderingItem.id_machine);
-            const scale = 3;
-
 
             if (movedPolygon) {
                 if (dataForRenderingItem.typeObject == "TEST_SQUARE_20") {
                     const sideSize = getSideSquare(movedPolygon);
 
-                    const halfScaleSideSquare = sideSize * scale / 2;
+                    const halfScaleSideSquare = sideSize * globalScale / 2;
 
-                    const x = dataForRenderingItem.position.point.x * scale - halfScaleSideSquare;
-                    const y = dataForRenderingItem.position.point.y * scale - halfScaleSideSquare;
+                    const x = dataForRenderingItem.position.point.x * globalScale - halfScaleSideSquare;
+                    const y = dataForRenderingItem.position.point.y * globalScale - halfScaleSideSquare;
                     const angle = dataForRenderingItem.position.angle;
 
                     context.save();
@@ -1044,8 +1042,8 @@ const Canvas = () => {
                         coordinates_sprite_machines[indexFrameMachine].frame.h,
                         x,
                         y,
-                        sideSize  * scale,
-                        sideSize  * scale
+                        sideSize  * globalScale,
+                        sideSize  * globalScale
                     );
 
                     context.restore();
@@ -1058,13 +1056,13 @@ const Canvas = () => {
 
                         if (index == 0) {
                             context.moveTo(Number(
-                                polygonCoordinate.x * scale),
-                                Number(polygonCoordinate.y * scale)
+                                polygonCoordinate.x * globalScale),
+                                Number(polygonCoordinate.y * globalScale)
                             );
                         } else {
                             context.lineTo(Number(
-                                polygonCoordinate.x  * scale),
-                                Number(polygonCoordinate.y  * scale)
+                                polygonCoordinate.x  * globalScale),
+                                Number(polygonCoordinate.y  * globalScale)
                             );
                         }
                     }
@@ -1117,7 +1115,8 @@ const Canvas = () => {
                 </div>
             </main>
 
-            <canvas  id="myChart"  />;
+            <canvas  id="viewResultMoving" />
+            <CanvasSetOrders />
             <img id="set_cars" className="display-none" src="set_cars.png" />
         </>
     );

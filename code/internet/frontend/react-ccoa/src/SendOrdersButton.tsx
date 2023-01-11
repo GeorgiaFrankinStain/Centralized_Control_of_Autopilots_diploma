@@ -1,5 +1,63 @@
 import {useState} from "react";
 import {setDataElbow, SetElbowsJson} from "./Canvas"
+import {PointCCoA} from "./Polygon";
+
+
+const sendJsonOrders = {
+    "version": 1,
+    "id_room": "dWP5WK1gVqjHCVh4NvjS", //option
+    "orders": [
+        {
+            "parameters_moving": {
+                "polygon_form": [
+                    {"x":"-10","y":"-10"},
+                    {"x":"-10","y":"10"},
+                    {"x":"10","y":"10"},
+                    {"x":"10","y":"-10"}
+                ],
+                "type": {
+                    "type_in_layer":"OBJECT",
+                    "type_landscape_body":"ASPHALT",
+                    "type_machines_body":"TEST_SQUARE_20"
+                },
+                "speed":10
+            },
+            "start": {
+                "coordinate": {
+                    "x": 10, "y": 10
+                },
+                "layer":0,
+                "angle":0.0,
+                "time":0.0
+            },
+            "end": {
+                "coordinate": {
+                    "x": 40, "y": 50
+                },
+                "layer":0,
+                "angle":0.0
+            },
+            "standing": "false",
+            "standing_after": "false"
+        }
+    ]
+}
+
+export function controllerDeleteABOrderMachine(id: string) {
+
+}
+
+export function controllerAddABOrderMachine(start: PointCCoA, end: PointCCoA) {
+
+}
+
+function changeViewDeleteOrder() {
+
+}
+
+function changeViewAddOrder() {
+
+}
 
 export function ButtonSendOrders() {
 
@@ -9,47 +67,7 @@ export function ButtonSendOrders() {
 
 
 
-    // const jsonData = {"id": "textid"};
-
-    const jsonData = {
-        "version": 1,
-        "id_room": "dWP5WK1gVqjHCVh4NvjS", //option
-        "orders": [
-            {
-                "parameters_moving": {
-                    "polygon_form": [
-                        {"x":"-10","y":"-10"},
-                        {"x":"-10","y":"10"},
-                        {"x":"10","y":"10"},
-                        {"x":"10","y":"-10"}
-                    ],
-                    "type": {
-                        "type_in_layer":"OBJECT",
-                        "type_landscape_body":"ASPHALT",
-                        "type_machines_body":"TEST_SQUARE_20"
-                    },
-                    "speed":10
-                },
-                "start": {
-                    "coordinate": {
-                        "x": 10, "y": 10
-                    },
-                    "layer":0,
-                    "angle":0.0,
-                    "time":0.0
-                },
-                "end": {
-                    "coordinate": {
-                        "x": 40, "y": 50
-                    },
-                    "layer":0,
-                    "angle":0.0
-                },
-                "standing": "false",
-                "standing_after": "false"
-            }
-        ]
-    }
+    // const sendJsonOrders = {"id": "textid"};
 
 
 
@@ -64,7 +82,7 @@ export function ButtonSendOrders() {
                 'Content-Type': 'application/json'
             },
             mode: 'cors',
-            body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
+            body: JSON.stringify(sendJsonOrders) // body data type must match "Content-Type" header
 
         })
             .then(response => response.json())
