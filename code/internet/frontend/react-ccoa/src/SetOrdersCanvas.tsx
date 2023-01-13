@@ -1,5 +1,6 @@
 import React, {MutableRefObject} from "react";
 import {coordinates_sprite_machines, globalScale} from "./Canvas";
+import DragList from "./DragList";
 
 
 
@@ -288,12 +289,24 @@ const CanvasSetOrders = () => {
     //======
 
 
+    function deleteOrder() {
+
+    }
+    function addOrder() {
+
+    }
 
 
 
 
 
+    function changeViewDeleteOrder() {
 
+    }
+
+    function changeViewAddOrder() {
+
+    }
 
 
 
@@ -319,6 +332,7 @@ const CanvasSetOrders = () => {
             {/*    onClick={() => classVar.clearEventHandler()}*/}
             {/*>clear</div>*/}
             <img id="set_cars" className="display-none" src="set_cars.png" />
+            <DragList />
         </>
     );
 };

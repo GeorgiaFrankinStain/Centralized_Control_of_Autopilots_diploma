@@ -1947,11 +1947,71 @@
 						<?> забить на это и пускай все машинки при постановке задач будут одинаковы (2022.12.22 00:08:02) ?
 					( ) сделать возмжность переключать момент времени в постановке задач
 				 	( ) сделать возможность устанавливать машинку на плоскости
-				 		( ) сделать отрисовку квадратика привязанного к мышке
-				 		( ) сделать отрисовку ранее установленных мышкой квадратиков
+				 		(+) сделать отрисовку квадратика привязанного к мышке
+				 		(+) сделать отрисовку ранее установленных мышкой квадратиков
 				 		( ) сделать кнопку отдельную позволяющую поворачивать квадратик по часовой и против часовой, и сброс
 
 				 	( ) сделать список машин установленных во времени
+				 		? где разместить Model (данные в переменных) (2023.01.11 13:59:59) ?
+				 			? там где отправляются данные на бэкэнд (2023.01.11 14:30:04) ?
+
+
+
+		 				
+
+				 		( ) сделать возможнжость менять пункты местами в виде drag and drop (React JS Typescript Drag and Drop (https://www.youtube.com/watch?v=dRLYO1-dhQU&ab_channel=DarwinTech))
+				 			{
+				 				https://github.com/NikValdez/drag-and-drop-tut
+				 				https://github.com/a tlassian/react-beautiful-dnd
+				 			}
+				 			: пришлось понизить версию, чтобы можно было пользоваться    (https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
+
+								вот эти строки поменять надо в 
+								    "react": "^18.0.0", // <===
+								    "react-dom": "^18.0.0", // <===
+								npm uninstall react react-dom
+								npm install react@17.0.2 react-dom@17.0.2
+
+
+
+								// react 18
+
+									import React from 'react';
+									import ReactDOM from 'react-dom/client';
+									import './index.css';
+									import App from './App';
+									import reportWebVitals from './reportWebVitals';
+
+									const root = ReactDOM.createRoot(document.getElementById('root'));
+									root.render(
+									  <React.StrictMode>
+									    <App />
+									  </React.StrictMode>
+									);
+
+									// If you want to start measuring performance in your app, pass a function
+									// to log results (for example: reportWebVitals(console.log))
+									// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+									reportWebVitals();
+
+
+
+								// react 17.0.2
+
+									import React from 'react';
+									import ReactDOM from 'react-dom';
+									import './index.css';
+									import App from './App';
+
+									ReactDOM.render(
+									  <React.StrictMode>
+									    <App/>
+									  </React.StrictMode>,
+									  document.getElementById('root')
+									);
+				 			}
+
+
 					( ) сделать возможность устанавливать гараж на плоскости
 						: гаражи должны выпускать машинки с интервалом 0.8 между собой (чтобы машинки впереди всегда могли спокойно поворачивать, никого не цепляя в цепочке)
 					( ) сделать список гаражей (диапазон времени) и машинок (вкрапинка-срез) снизу списком

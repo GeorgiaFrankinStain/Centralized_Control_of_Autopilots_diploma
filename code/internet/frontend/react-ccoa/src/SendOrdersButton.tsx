@@ -3,7 +3,7 @@ import {setDataElbow, SetElbowsJson} from "./Canvas"
 import {PointCCoA} from "./Polygon";
 
 
-const sendJsonOrders = {
+let sendJsonOrders = {
     "version": 1,
     "id_room": "dWP5WK1gVqjHCVh4NvjS", //option
     "orders": [
@@ -43,21 +43,56 @@ const sendJsonOrders = {
     ]
 }
 
-export function controllerDeleteABOrderMachine(id: string) {
+
+interface ABOrder {
+    start: PointCCoA;
+    end: PointCCoA;
+    angle: number;
 
 }
 
-export function controllerAddABOrderMachine(start: PointCCoA, end: PointCCoA) {
-
+export function controllerDeleteABOrderMachine(number: number) {
+    sendJsonOrders.orders.splice(number, 1);
 }
 
-function changeViewDeleteOrder() {
-
+export function controllerAddABOrderMachine(
+    start: PointCCoA,
+    angleStart: number,
+    end: PointCCoA,
+    angleEnd: number,
+    time: number,
+    positionInArray: number
+) {
+    let order = JSON.parse("{}");
+    order['parameters_moving'] = {
+        "polygon_form": [
+            {"x":"-10","y":"-10"},
+            {"x":"-10","y":"10"},
+            {"x":"10","y":"10"},
+            {"x":"10","y":"-10"}
+        ],
+        "type": {
+            "type_in_layer":"OBJECT",
+            "type_landscape_body":"ASPHALT",
+            "type_machines_body":"TEST_SQUARE_20"
+        },
+        "speed":10
+    };
+    order["start"] = {
+        "coordinate" : {"x": start.x, "y": start.y},
+        "layer": 0,
+        "angle": angleStart
+    };
+    order["end"] = {
+        "coordinate" : {"x": end.x, "y": end.y},
+        "layer": 0,
+        "angle": angleEnd
+    };
+    order["standing"] = false;
+    order["standing_after"] = false;
+    sendJsonOrders.orders.splice(positionInArray, 0, order);
 }
 
-function changeViewAddOrder() {
-
-}
 
 export function ButtonSendOrders() {
 

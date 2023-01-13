@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="de0ba67e-0a1c-486a-a632-fce6f787333d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +89,11 @@
       <workItem from="1672065708123" duration="598000" />
       <workItem from="1672233833132" duration="14255000" />
       <workItem from="1672307750868" duration="32104000" />
-      <workItem from="1673397094027" duration="5502000" />
+      <workItem from="1673397094027" duration="21758000" />
+      <workItem from="1673504479140" duration="1678000" />
+      <workItem from="1673510082112" duration="2426000" />
+      <workItem from="1673521542331" duration="519000" />
+      <workItem from="1673524457481" duration="1280000" />
     </task>
     <servers />
   </component>
