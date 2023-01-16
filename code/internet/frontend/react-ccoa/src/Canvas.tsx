@@ -1098,9 +1098,6 @@ const Canvas = () => {
         return h;
     }
 
-    function getSideSquare(square: PolygonCCoA) {
-        return Math.abs(square.getPoint(0).getDistanceTo(square.getPoint(1)));
-    }
 
     return (
         <>
@@ -1122,4 +1119,13 @@ const Canvas = () => {
     );
 };
 
+
+
+
 export default Canvas;
+
+
+
+export function getSideSquare(square: PolygonCCoA) {
+    return Math.abs(square.getPoint(0).getDistanceTo(square.getPoint(1)));
+}

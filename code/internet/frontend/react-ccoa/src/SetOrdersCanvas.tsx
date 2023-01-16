@@ -235,6 +235,7 @@ const CanvasSetOrders = () => {
 
             this.paint = true;
             this.addClick(mouseX, mouseY, angleUser, this.indexFrameMachine);
+            this.indexFrameMachine++;
             this.redraw();
         }
 

@@ -1957,12 +1957,13 @@
 
 
 
-		 				
+
 
 				 		( ) сделать возможнжость менять пункты местами в виде drag and drop (React JS Typescript Drag and Drop (https://www.youtube.com/watch?v=dRLYO1-dhQU&ab_channel=DarwinTech))
 				 			{
 				 				https://github.com/NikValdez/drag-and-drop-tut
 				 				https://github.com/a tlassian/react-beautiful-dnd
+				 					: оказалось что сочетание клавишь alt-enter in web storm может поменять все на свете
 				 			}
 				 			: пришлось понизить версию, чтобы можно было пользоваться    (https://dev.to/ifeanyichima/how-to-downgrade-from-react-18-to-1702-818)
 
@@ -2010,6 +2011,19 @@
 									  document.getElementById('root')
 									);
 				 			}
+
+				 			+ как добавить нужный мне надписи во внутрь списка (2023.01.14 11:57:53) ?
+				 				добавить внутрь див свойство, которое добавил в массив
+
+
+				 			+ содержимое блока (2023.01.14 12:25:17) ?
+				 				крестик, что удаляет блок
+				 				картинка, изображающая машинку
+				 				координаты
+				 					start
+				 						time
+				 						point(x, y)
+				 					end
 
 
 					( ) сделать возможность устанавливать гараж на плоскости

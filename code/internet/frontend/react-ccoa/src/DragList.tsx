@@ -2,25 +2,46 @@ import React, { useState, useRef } from 'react';
 
 import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd"
 import './App.css';
+import {coordinates_sprite_machines} from "./Canvas";
 
 
 
 const listItems = [
     {
         id: "1",
-        name: "Study Spanish"
+        startTime: "0",
+        startX: "1",
+        startY: "0",
+        endX: "40",
+        endY: "0",
+        skinNumber: 3
     },
     {
         id: "2",
-        name: "Workout"
+        startTime: "0",
+        startX: "1",
+        startY: "22",
+        endX: "40",
+        endY: "22",
+        skinNumber: 4
     },
     {
         id: "3",
-        name: "Film Youtube"
+        startTime: "0",
+        startX: "1",
+        startY: "44",
+        endX: "40",
+        endY: "44",
+        skinNumber: 5
     },
     {
         id: "4",
-        name: "Grocery Shop"
+        startTime: "0",
+        startX: "1",
+        startY: "66",
+        endX: "40",
+        endY: "66",
+        skinNumber: 6
     }
 ]
 
@@ -54,13 +75,17 @@ const DragList = () => {
     }
     return (
         <>
-            <div className="App">
+            <div className="App" style={{height: "1000px"}}>
                 <h1>Drag and Drop</h1>
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Droppable droppableId="todo">
                         {(provided) => (
                             <div className="todo" {...provided.droppableProps} ref={provided.innerRef}>
-                                {todo.map(({ id, name }, index) => {
+                                {todo.map(({ id, startTime, startX, startY, endX, endY, skinNumber }, index) => {
+                                    const x = coordinates_sprite_machines[skinNumber].frame.x;
+                                    const y = coordinates_sprite_machines[skinNumber].frame.y;
+                                    const w = coordinates_sprite_machines[skinNumber].frame.w;
+                                    const h = coordinates_sprite_machines[skinNumber].frame.h;
                                     return (
                                         <Draggable key={id} draggableId={id} index={index}>
                                             {(provided, snapshot) => (
@@ -70,7 +95,39 @@ const DragList = () => {
                                                     {...provided.dragHandleProps}
                                                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                                                 >
-                                                    {name}
+                                                    <table>
+                                                        <tr>
+                                                            <td rowSpan={3}>
+                                                                <div style={{
+                                                                    width: w + "px",
+                                                                    height: h + "px",
+                                                                    backgroundImage: "url(set_cars.png)",
+                                                                    backgroundPosition: -x + "px " + -y + "px"
+                                                                }}></div>
+                                                            </td>
+                                                            <td>
+                                                                <div>start_time: {startTime}</div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div>
+                                                                    start:
+                                                                    x: {startX}
+                                                                    y: {startY}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div>
+                                                                    end:
+                                                                    x: {endX}
+                                                                    y: {endY}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </div>
                                             )}
                                         </Draggable>
