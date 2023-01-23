@@ -1027,13 +1027,11 @@ const Canvas = () => {
 
                     const halfScaleSideSquare = sideSize * globalScale / 2;
 
-                    console.log("array_position: " + dataForRenderingItem.position.point.x);
 
                     const x = dataForRenderingItem.position.point.x * globalScale - halfScaleSideSquare;
                     const y = dataForRenderingItem.position.point.y * globalScale - halfScaleSideSquare;
                     const angle = dataForRenderingItem.position.angle;
 
-                    console.log(x);
 
                     context.save();
                     context.translate(
@@ -1096,7 +1094,8 @@ const Canvas = () => {
     });
 
     function getIndexForId(id: string) {
-        return hashCode(id) % coordinates_sprite_machines.length;
+        return +id % coordinates_sprite_machines.length;
+        // return hashCode(id) % coordinates_sprite_machines.length;
     }
 
     function hashCode (s: string): number {

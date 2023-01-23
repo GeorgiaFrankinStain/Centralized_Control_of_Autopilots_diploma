@@ -53,7 +53,7 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
 
 
         private clickCars: ClickCar[] = [];
-        private indexFrameMachine: number = 0;
+        private indexFrameMachine: number = 3; //because on the server the sequential numbering of the id starts with 3
 
         constructor(/*context: CanvasRenderingContext2D, canvas: HTMLCanvasElement*/) {
             let canvasTry = refCanvas.current as HTMLCanvasElement | null;
