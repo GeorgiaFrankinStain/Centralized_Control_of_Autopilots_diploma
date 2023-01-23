@@ -1,7 +1,8 @@
 import React, {MutableRefObject, useEffect, useRef} from "react";
 import assert from "assert";
 import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA, PointCCoAClass} from "./Polygon";
-import CanvasSetOrders from "./SetOrdersCanvas";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 
 
@@ -45,12 +46,15 @@ const imitationDataFromGetElbowFootprint = { //формируется PathMoving
 
 
 
-let imitationDataFromGetElbowFootprint2: string = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"TEST_SQUARE_20\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] } ] }";
+// let imitationDataFromGetElbowFootprint2: string = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"TEST_SQUARE_20\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"10\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"10\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"}, {\"t\": \"4\", \"layer\": \"0\", \"x\": \"100\", \"y\": \"100\", \"angle\": \"0\"} ] } ] }";
 // const imitationDataFromGetElbowFootprint2 = "{ \"elbow_moving_objects\": [ { \"id_moving_unique_object\": \"235662\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"10\", \"y\": \"10\"}, {\"x\": \"50\", \"y\": \"10\"}, {\"x\": \"50\", \"y\": \"50\"}, {\"x\": \"100\", \"y\": \"100\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"10\", \"y\": \"0\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"20\", \"y\": \"20\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"50\", \"y\": \"50\", \"angle\": \"0\"} ] }, { \"id_moving_unique_object\": \"34773\", \"appearanceType\": \"non-uniform\", \"appearancePolygonForm\": [ {\"x\": \"-13\", \"y\": \"-13\"}, {\"x\": \"-13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"13\"}, {\"x\": \"13\", \"y\": \"-13\"} ], \"timeSpaceCoordinates\": [ {\"t\": \"0\", \"layer\": \"0\", \"x\": \"55\", \"y\": \"0\", \"angle\": \"0\"}, {\"t\": \"1\", \"layer\": \"0\", \"x\": \"70\", \"y\": \"20\", \"angle\": \"3.141592653589793\"}, {\"t\": \"2\", \"layer\": \"0\", \"x\": \"90\", \"y\": \"50\", \"angle\": \"0\"} ] } ] }";
 
+let storageElbows: StorageElbowsJsonDTO | null = null;
 
 export function setDataElbow({jsonElbow}: { jsonElbow: string }) {
-    imitationDataFromGetElbowFootprint2 = jsonElbow;
+    storageElbows = new StorageElbowJsonDTOClass();
+    // imitationDataFromGetElbowFootprint2 = jsonElbow;
+    storageElbows.setJsonString(jsonElbow);
 }
 
 
@@ -127,13 +131,13 @@ class StorageElbowJsonDTOClass implements StorageElbowsJsonDTO {
     private elbowsJsonDTO: Array<ElbowMovingObject> = new Array<ElbowMovingObject>();
 
     setJsonString(stringJson: string): void {
-        let setElbows: SetElbowsJson = JSON.parse(imitationDataFromGetElbowFootprint2) as SetElbowsJson;
+        let setElbows: SetElbowsJson = JSON.parse(stringJson) as SetElbowsJson;
         this.setJson(setElbows);
     }
     setJson(setElbows: SetElbowsJson): void {
         for (let i = 0; i < setElbows.elbow_moving_objects.length; i++) {
             let newElbowMovingObject = new ElbowMovingObjectClass(setElbows.elbow_moving_objects[i]);
-            this.elbowsJsonDTO.push(newElbowMovingObject)
+            this.elbowsJsonDTO.push(newElbowMovingObject);
         }
     }
 
@@ -152,7 +156,6 @@ class StorageElbowJsonDTOClass implements StorageElbowsJsonDTO {
 
         return dataMultiFootprintsForRendering;
     }
-
 }
 
 
@@ -517,7 +520,7 @@ const useAnimationFrame = ({
     }, [shouldAnimate]);
 };
 
-export const globalScale = 3;
+export const globalScale = 1;
 export const coordinates_sprite_machines = [
     {
         "frame": {
@@ -977,8 +980,8 @@ const Canvas = () => {
     const brickRef = React.useRef()  as MutableRefObject<HTMLDivElement>;
     const [shouldAnimate, setShouldAnimate] = React.useState(false);
 
-    let storageElbows: StorageElbowsJsonDTO = new StorageElbowJsonDTOClass();
-    storageElbows.setJsonString(imitationDataFromGetElbowFootprint2);
+    // storageElbows = new StorageElbowJsonDTOClass();
+    // storageElbows.setJsonString(imitationDataFromGetElbowFootprint2);
 
     const reset = () => {
         brickRef.current.style.left = String(0);
@@ -1006,6 +1009,10 @@ const Canvas = () => {
 
         context.clearRect(0, 0, canvas.width, canvas.height);
 
+        if (storageElbows == null) {
+            throw new Error("null storageElbows");
+        }
+
         let dataForRendering = storageElbows.getDataMultiFootprintsForRendering(nowTime / 1000);
         for (let i = 0; i < dataForRendering.length; i++) {
 
@@ -1020,9 +1027,13 @@ const Canvas = () => {
 
                     const halfScaleSideSquare = sideSize * globalScale / 2;
 
+                    console.log("array_position: " + dataForRenderingItem.position.point.x);
+
                     const x = dataForRenderingItem.position.point.x * globalScale - halfScaleSideSquare;
                     const y = dataForRenderingItem.position.point.y * globalScale - halfScaleSideSquare;
                     const angle = dataForRenderingItem.position.angle;
+
+                    console.log(x);
 
                     context.save();
                     context.translate(
@@ -1113,7 +1124,6 @@ const Canvas = () => {
             </main>
 
             <canvas  id="viewResultMoving" />
-            <CanvasSetOrders />
             <img id="set_cars" className="display-none" src="set_cars.png" />
         </>
     );

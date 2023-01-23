@@ -20,6 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -36,7 +37,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/alfa/learning/_JAVA/reactTS/my-app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/alfa/AF/2019 - 11 - 03 - Centralized_Control_of_Autopilots__diploma/code/internet/frontend/react-ccoa&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -97,7 +98,14 @@
       <workItem from="1673623402889" duration="1571000" />
       <workItem from="1673670699458" duration="8646000" />
       <workItem from="1673771683029" duration="21633000" />
-      <workItem from="1673845352942" duration="1824000" />
+      <workItem from="1673845352942" duration="19464000" />
+      <workItem from="1673944105207" duration="19675000" />
+      <workItem from="1674030712232" duration="15492000" />
+      <workItem from="1674228590138" duration="16962000" />
+      <workItem from="1674306368837" duration="96000" />
+      <workItem from="1674313827272" duration="18697000" />
+      <workItem from="1674381458518" duration="17659000" />
+      <workItem from="1674468776681" duration="12468000" />
     </task>
     <servers />
   </component>

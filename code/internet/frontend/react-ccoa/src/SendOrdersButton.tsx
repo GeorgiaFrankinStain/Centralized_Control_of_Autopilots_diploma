@@ -51,8 +51,8 @@ interface ABOrder {
 
 }
 
-export function controllerDeleteABOrderMachine(number: number) {
-    sendJsonOrders.orders.splice(number, 1);
+export function controllerDeleteABOrderMachineAll() {
+    sendJsonOrders.orders = [];
 }
 
 export function controllerAddABOrderMachine(
@@ -60,8 +60,7 @@ export function controllerAddABOrderMachine(
     angleStart: number,
     end: PointCCoA,
     angleEnd: number,
-    time: number,
-    positionInArray: number
+    time: number
 ) {
     let order = JSON.parse("{}");
     order['parameters_moving'] = {
@@ -81,7 +80,8 @@ export function controllerAddABOrderMachine(
     order["start"] = {
         "coordinate" : {"x": start.x, "y": start.y},
         "layer": 0,
-        "angle": angleStart
+        "angle": angleStart,
+        "time": time
     };
     order["end"] = {
         "coordinate" : {"x": end.x, "y": end.y},
@@ -90,7 +90,8 @@ export function controllerAddABOrderMachine(
     };
     order["standing"] = false;
     order["standing_after"] = false;
-    sendJsonOrders.orders.splice(positionInArray, 0, order);
+    sendJsonOrders.orders.push(order);
+    // sendJsonOrders.orders.splice(positionInArray, 0, order);
 }
 
 
@@ -108,6 +109,7 @@ export function ButtonSendOrders() {
 
     function sendApplicationOrdersClick() {
         console.log("sendApplicationOrdersClick");
+        console.log(sendJsonOrders);
 
         // Send data to the backend via POST
         fetch('http://localhost:8080/to_application_orders', {  // Enter your IP address here

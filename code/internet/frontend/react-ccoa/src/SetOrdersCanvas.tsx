@@ -1,6 +1,7 @@
-import React, {MutableRefObject} from "react";
+import React, {MutableRefObject, useEffect, useRef, useState} from "react";
 import {coordinates_sprite_machines, globalScale} from "./Canvas";
-import DragList from "./DragList";
+import {PointCCoAClass} from "./Polygon";
+import {IDataForOrderWithoutId} from "./DragList";
 
 
 
@@ -34,37 +35,15 @@ interface ClickCar {
 
 
 
-const CanvasSetOrders = () => {
+
+interface ISetOrdersCanvasProps {
+    addABForOrderCallback: (newDataForOrder: IDataForOrderWithoutId) => void
+}
+
+
+const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback}) => {
     const brickRef = React.useRef()  as MutableRefObject<HTMLDivElement>;
-    const [shouldAnimate, setShouldAnimate] = React.useState(false);
-
-    // const canvas = document.getElementById('viewResultMoving') as HTMLCanvasElement;
-    // let context = canvas.getContext('2d') as CanvasRenderingContext2D;
-    const image = document.getElementById('set_cars') as HTMLImageElement;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //======
+    const refCanvas = React.useRef(null);
 
 
     class DrawingApp {
@@ -77,21 +56,14 @@ const CanvasSetOrders = () => {
         private indexFrameMachine: number = 0;
 
         constructor(/*context: CanvasRenderingContext2D, canvas: HTMLCanvasElement*/) {
+            let canvasTry = refCanvas.current as HTMLCanvasElement | null;
 
-            let canvas = document.getElementById('setOrdersCanvas') as HTMLCanvasElement;
-
-
-            if (!canvas) {
+            if (!canvasTry) {
                 return;
             }
-
+            let canvas = canvasTry as HTMLCanvasElement;
             let context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-
-            context.lineCap = 'round';
-            context.lineJoin = 'round';
-            context.strokeStyle = 'black';
-            context.lineWidth = 1;
 
             this.canvas = canvas;
             this.context = context;
@@ -130,7 +102,6 @@ const CanvasSetOrders = () => {
                 return;
             }
             for (let i = 0; i < this.clickCars.length; ++i) {
-                console.log(this.clickCars);
                 this.drawCar(
                     this.clickCars[i].x,
                     this.clickCars[i].y,
@@ -150,11 +121,13 @@ const CanvasSetOrders = () => {
 
             const halfScaleSideSquare = sideSize * globalScale / 2;
 
-            console.log("draw: " + x);
+            const image = document.getElementById('set_cars') as HTMLImageElement;
+
 
             if (!this.context) {
                 return;
             }
+
 
             this.context.save();
             this.context.translate(
@@ -183,8 +156,6 @@ const CanvasSetOrders = () => {
         }
 
         private addClick(x: number, y: number, angle: number, numberSkin: number) {
-
-            console.log("inside add click");
             this.clickCars.push({x, y, angle, numberSkin});
         }
 
@@ -212,6 +183,9 @@ const CanvasSetOrders = () => {
             this.paint = false;
         }
 
+        private isStartSet: boolean = false;
+        private previousStart = new PointCCoAClass(0, 0);
+
 
         private pressEventHandler = (e: MouseEvent | TouchEvent) => {
             let mouseX = (e as TouchEvent).changedTouches ?
@@ -232,10 +206,28 @@ const CanvasSetOrders = () => {
             mouseX -= this.canvas.offsetLeft;
             mouseY -= this.canvas.offsetTop;
 
+            let isNeedUpIndexFrameMachine = false;
+            if (this.isStartSet) {
+                addABForOrderCallback({
+                    startX: this.previousStart.x,
+                    startY: this.previousStart.y,
+                    endX: mouseX,
+                    endY: mouseY,
+                    skinNumber: this.indexFrameMachine
+                });
+                isNeedUpIndexFrameMachine = true;
+
+                this.isStartSet = false;
+            } else {
+                this.previousStart = new PointCCoAClass(mouseX, mouseY);
+                this.isStartSet = true;
+            }
 
             this.paint = true;
             this.addClick(mouseX, mouseY, angleUser, this.indexFrameMachine);
-            this.indexFrameMachine++;
+            if (isNeedUpIndexFrameMachine) {
+                this.indexFrameMachine++;
+            }
             this.redraw();
         }
 
@@ -264,11 +256,6 @@ const CanvasSetOrders = () => {
             this.drawCar(mouseX, mouseY, angleUser, this.indexFrameMachine);
 
             this.redraw();
-            // if (this.paint) {
-            //     console.log("addClick");
-            //     this.addClick(mouseX, mouseY, angleUser, this.indexFrameMachine);
-            //     this.redraw();
-            // }
 
             e.preventDefault();
         }
@@ -283,11 +270,6 @@ const CanvasSetOrders = () => {
             this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
     }
-
-
-
-
-    //======
 
 
     function deleteOrder() {
@@ -310,32 +292,29 @@ const CanvasSetOrders = () => {
     }
 
 
+    useEffect(() => {
+        let classVar = new DrawingApp(/*context, canvas*/);
+    }, []);
 
-
-
-
-
-
-    let classVar = new DrawingApp(/*context, canvas*/);
 
     const reset = () => {
         brickRef.current.style.left = String(0);
     }
 
+
     return (
         <>
             <p>text</p>
 
-            <canvas  id="setOrdersCanvas" width="490" height="490" />
-
+            <canvas  id="setOrdersCanvas" width="490" height="490" ref={refCanvas} />
+            <p>test text</p>
             {/*<div*/}
             {/*    id="clear"*/}
             {/*    onClick={() => classVar.clearEventHandler()}*/}
             {/*>clear</div>*/}
             <img id="set_cars" className="display-none" src="set_cars.png" />
-            <DragList />
         </>
     );
-};
+}
 
 export default CanvasSetOrders;
