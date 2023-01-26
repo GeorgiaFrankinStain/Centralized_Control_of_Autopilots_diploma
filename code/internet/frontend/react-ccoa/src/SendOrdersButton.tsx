@@ -43,6 +43,8 @@ let sendJsonOrders = {
     ]
 }
 
+controllerDeleteABOrderMachineAll(); //I'm too lazy to set a new interface, so I manually create an array, and then delete it
+
 
 interface ABOrder {
     start: PointCCoA;

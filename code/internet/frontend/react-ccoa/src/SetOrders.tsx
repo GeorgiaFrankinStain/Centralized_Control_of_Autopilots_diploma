@@ -1,6 +1,8 @@
 import React, {useRef, useState} from "react";
 import DragList, {IDataForOrder, IDataForOrderWithoutId} from "./DragList";
 import SetOrdersCanvas from "./SetOrdersCanvas";
+import {PointCCoAClass} from "./Polygon";
+import {controllerAddABOrderMachine} from "./SendOrdersButton";
 
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
@@ -18,9 +20,6 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
 const SetOrders: React.FC = () => {
 
     const [counterListABId, setCounterListABId] = useState<number>(0);
-    const [swing, setSwing] = useState<boolean>(true);
-    const swingRef = useRef(true);
-    swingRef.current = swing;
 
     const [listDataForOrders, setListDataForOrders] = useState<IDataForOrder[]>([]);
 
@@ -53,6 +52,12 @@ const SetOrders: React.FC = () => {
             0,
             newDataForOrderWithId
         );
+
+
+        const start = new PointCCoAClass(newDataForOrderWithId.startX, newDataForOrderWithId.startY);
+        const end = new PointCCoAClass(newDataForOrderWithId.endX, newDataForOrderWithId.endY);
+        controllerAddABOrderMachine(start, 0, end, 0, 0);
+
 
         setListDataForOrders(newState);
         listOrdersRef.current = newState;
