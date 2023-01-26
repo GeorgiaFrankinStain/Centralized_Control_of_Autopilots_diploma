@@ -3,6 +3,7 @@ import assert from "assert";
 import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA, PointCCoAClass} from "./Polygon";
 import {Simulate} from "react-dom/test-utils";
 import error = Simulate.error;
+import {IDataForOrder} from "./DragList";
 
 
 
@@ -483,22 +484,25 @@ interface NextAnimationFrameHandler {
 }
 
 type SetParameters = {
-
     nextAnimationFrameHandler: NextAnimationFrameHandler;
     // we still want to have "infinite" animations in some cases
     duration: number;
     shouldAnimate: boolean;
+    stateCount: number;
 }
 
 const useAnimationFrame = ({
                                nextAnimationFrameHandler,
                                // we still want to have "infinite" animations in some cases
                                duration = Number.POSITIVE_INFINITY,
+                               stateCount,
                                shouldAnimate = true
                            }: SetParameters) => {
     const frame = React.useRef(0);
     // keep track of when animation is started
     const firstFrameTime = React.useRef(performance.now());
+
+
     const start = Date.now();
 
     const animate = (now: number) => {
@@ -517,7 +521,7 @@ const useAnimationFrame = ({
         }
 
         return () => cancelAnimationFrame(frame.current);
-    }, [shouldAnimate]);
+    }, [shouldAnimate, stateCount]);
 };
 
 export const globalScale = 1;
@@ -974,11 +978,20 @@ export const coordinates_sprite_machines = [
     }
 ];
 
+interface ICanvasRendering {
+    stateForForceUpdateCanvasInCode: number
+}
+
+const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
+
+    console.log("input STATE NUMBER: " + stateForForceUpdateCanvasInCode);
 
 
-const Canvas = () => {
     const brickRef = React.useRef()  as MutableRefObject<HTMLDivElement>;
-    const [shouldAnimate, setShouldAnimate] = React.useState(false);
+    const [shouldAnimate, setShouldAnimate] = React.useState(true);
+    const [stateCount, setStateCount] = React.useState(0);
+
+    useEffect(() => setStateCount(stateForForceUpdateCanvasInCode), [stateForForceUpdateCanvasInCode]);
 
     // storageElbows = new StorageElbowJsonDTOClass();
     // storageElbows.setJsonString(imitationDataFromGetElbowFootprint2);
@@ -1014,6 +1027,8 @@ const Canvas = () => {
         }
 
         let dataForRendering = storageElbows.getDataMultiFootprintsForRendering(nowTime / 1000);
+
+
         for (let i = 0; i < dataForRendering.length; i++) {
 
             let dataForRenderingItem:DataFootprintForRendering = dataForRendering[i];
@@ -1081,14 +1096,13 @@ const Canvas = () => {
                     context.fill();
                 }
             }
-
-
         }
     };
 
 
     useAnimationFrame({
         nextAnimationFrameHandler,
+        stateCount,
         shouldAnimate,
         duration: 1000
     });
@@ -1111,15 +1125,16 @@ const Canvas = () => {
 
     return (
         <>
-            <button onClick={() => reset()}>Reset!</button>
+            <button onClick={() => setStateCount(stateCount + 1)}>Reset!</button>
+            {/*<button onClick={() => reset()}>Reset!</button>*/}
             <main className="path">
-                <div
-                    className="brick"
-                    ref={brickRef}
-                    onClick={() => setShouldAnimate(true)}
-                >
-                    Click me!
-                </div>
+                {/*<div*/}
+                {/*    className="brick"*/}
+                {/*    ref={brickRef}*/}
+                {/*    onClick={() => setShouldAnimate(true)}*/}
+                {/*>*/}
+                {/*    Click me!*/}
+                {/*</div>*/}
             </main>
 
             <canvas  id="viewResultMoving" />

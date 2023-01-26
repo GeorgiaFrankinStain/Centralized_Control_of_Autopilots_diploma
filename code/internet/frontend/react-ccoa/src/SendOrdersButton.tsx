@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {setDataElbow, SetElbowsJson} from "./Canvas"
 import {PointCCoA} from "./Polygon";
 
@@ -57,6 +57,8 @@ export function controllerDeleteABOrderMachineAll() {
     sendJsonOrders.orders = [];
 }
 
+const jsonData = {}
+
 export function controllerAddABOrderMachine(
     start: PointCCoA,
     angleStart: number,
@@ -97,7 +99,12 @@ export function controllerAddABOrderMachine(
 }
 
 
-export function ButtonSendOrders() {
+interface ISetOrdersProps {
+    updateStateCanvasRenderingResultCallback:  React.Dispatch<React.SetStateAction<number>>
+}
+
+
+export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISetOrdersProps) {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -113,28 +120,66 @@ export function ButtonSendOrders() {
         console.log("sendApplicationOrdersClick");
         console.log(sendJsonOrders);
 
+
         // Send data to the backend via POST
-        fetch('http://localhost:8080/to_application_orders', {  // Enter your IP address here
+        fetch('http://localhost:8080/create_room', {  // Enter your IP address here
             method: 'POST',
-
-            headers: {
-                'Content-Type': 'application/json'
-            },
             mode: 'cors',
-            body: JSON.stringify(sendJsonOrders) // body data type must match "Content-Type" header
-
+            body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
         })
             .then(response => response.json())
             .then((usefulData) => {
                 console.log(usefulData);
-                console.log("succeful send orders");
                 setLoading(false);
-                setData(usefulData);
-                getElbowFootprint();
+                // setData(usefulData);
+                sendJsonOrders.id_room = usefulData.id;
+
+
+
+
+
+
+
+
+
+
+                // Send data to the backend via POST
+                fetch('http://localhost:8080/to_application_orders', {  // Enter your IP address here
+                    method: 'POST',
+
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    mode: 'cors',
+                    body: JSON.stringify(sendJsonOrders) // body data type must match "Content-Type" header
+
+                })
+                    .then(response => response.json())
+                    .then((usefulData) => {
+                        console.log(usefulData);
+                        console.log("succeful send orders");
+                        setLoading(false);
+                        setData(usefulData);
+                        getElbowFootprint();
+                    })
+                    .catch((e) => {
+                        console.error(`An error occurred: ${e}`);
+                    });
+
+
+
+
+
             })
             .catch((e) => {
-                console.error(`An error occurred: ${e}`);
+                console.error(`An error occurred: ${e}`)
             });
+
+
+
+
+
+
 
     }
 
@@ -148,7 +193,8 @@ export function ButtonSendOrders() {
                 'Content-Type': 'application/json'
             },
             mode: 'cors',
-            body: "dWP5WK1gVqjHCVh4NvjS" // body data type must match "Content-Type" header
+            body: sendJsonOrders.id_room
+            // body: "dWP5WK1gVqjHCVh4NvjS" // body data type must match "Content-Type" header //FIXME why it work?
 
         })
             // .then(response => response.text())
@@ -164,6 +210,7 @@ export function ButtonSendOrders() {
                 setDataElbow({"jsonElbow": usefulData});
                 //switch to mode view
                 //run rendering
+                updateStateCanvasRenderingResultCallback(Math.random());
             })
             .catch((e) => {
                 console.error(`An error occurred: ${e}`);

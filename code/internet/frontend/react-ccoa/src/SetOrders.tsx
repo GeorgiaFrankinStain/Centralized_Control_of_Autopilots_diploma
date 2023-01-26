@@ -17,6 +17,8 @@ const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
     ...draggableStyle
 })
 
+
+
 const SetOrders: React.FC = () => {
 
     const [counterListABId, setCounterListABId] = useState<number>(0);
@@ -103,7 +105,6 @@ const SetOrders: React.FC = () => {
 
     return (
         <>
-            <button onClick={() => setCounterListABId(13)} >button {counterListABId}</button>
             <SetOrdersCanvas addABForOrderCallback={addABForOrderCallback} />
             <DragList listOrders={listDataForOrders} addABForOrderCallback={setListDataForOrders} />
         </>
