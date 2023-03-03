@@ -2100,16 +2100,393 @@
 
 			( ) сделать авторизацию и базу данных для каждого пользователя
 				? где у него програмный код добавления в базу данных пользователя (2023.01.29 01:36:40) ?
+
+				? мне добавлять базу данных как отдельный контейнер докера или установкой в linux (2023.01.29 21:05:00) ?
+					( ) поискать туториал, как лучше настраивать базу данных на сервере
+
+					по итогу сделаю все на локальном сервере, установлю postgres, запущу докеры, а потом так же сделаю на VDS сервере
+
+
+
+				( ) сделать базу данных
+					вот что выдало мне после установки postgresql
+						12  main    5432 down   postgres /var/lib/postgresql/12/main /var/log/postgresql/postgresql-12-main.log
+
 				( ) сделать автоматическую миграцию (автоматичсеское создание базы данных)
 				( ) сделать создание пользователя (но без формы)
 					( ) сделать oauth2
+						? сколько серверов мне делать (2023.02.08 03:31:32) ?
+							<?> как в видео 3 штуки (https://www.youtube.com/watch?v=EbzcnwS4q00) ?
+								? он клиентом гугл указывает (2023.02.08 18:56:03) ?
+
+						( ) сделать туториал с 0 //раз уж я не понимаю, что и как вообще там работает, то для практики полезной, чтобы в бошке осело. + когда буду встраивать в проект, будет с чем отличия искать
+
+							? почему не рабоает oauth2authorizationserverconfiguration (2023.02.10 01:04:16) ?
+
+								( ) склонировать репозиторий и попробовать запустить его. //надо было сразу так сделать, чтобы убедиться, что все збс
+									: магия блять. npm install сработал из idea, но в консоле ломается. Хз как это работает
+										все в порядке, в idea консоль тоже не справилась
+
+
+								( ) сначала попробовать запустить backend server (Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=TechTutor)) (https://github.com/The-Tech-Tutor/spring-react-login)
+									? как обратиться к ссылке на oauth без графического интрефейса (2023.02.11 03:01:17) ?
+										( ) найти в графическом интерфейсе ссылку на login
+											<?> /login ?
+
+									? у него в видосе указывается enviroments variable, а у меня в моей версии idea нету этого интерфейса (2023.02.11 03:20:21) ?
+										? что он там указывает (2023.02.11 03:20:28) ?
+
+										? где это достать (2023.02.11 03:20:41) ?
+
+										? это обязательно для запуска сервера, чисто чтобы проверить (2023.02.11 03:21:00) ?
+
+
+									? у него backend и фронтенд с авторизацией в одном докере лежит (2023.02.11 03:22:54) ?
+
+
+									( ) сделать даунгрейд бэкапа, чтобы он базой данной mongo не пользовался
+
+									( ) сделать аутентификацию oauth2 через yandex
+										? есть ли у яндекса нужные параметры, которые надо указать в настройках oauth на java spring (2023.02.11 21:17:13) ?
+											? список параметров выдаваемых яндексом (2023.02.11 21:20:49) ?
+												clientId
+												clientSecret
+
+											? список параметров выдаваемых гуглом в туориале (Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=TechTutor)) (2023.02.12 01:59:58) ?
+
+											? список параметров требуемых oauth2 (2023.02.11 21:21:05) ?
+												spring.security.oauth2.client.registration.google.client-sercret
+
+												в файле applicatoin.yml
+													spring.security.oauth2.client.registration.google.client-id
+
+
+											( ) попробовать в слепую yandex
+
+
+												получаю стек ошибок при запуске (при чем даже кода на java нету)
+													java code
+														package com.alamutra.testoauth;
+
+														import org.springframework.web.bind.annotation.RequestMapping;
+														import org.springframework.web.bind.annotation.RestController;
+
+
+														@RestController
+														@RequestMapping("/")
+														public class SampleController {
+														//    @GetMapping
+														//    public Map<String, Object> currentUser(OAuth2AuthenticationToken oAuth2AuthenticationToken) {
+														//        return oAuth2AuthenticationToken.getPrincipal().getAttributes();
+														//    }
+														}
+
+													: ЕСЛИ УДАЛИТЬ java code, то ошибка не меняется
+
+
+													stack errors filter and translate
+
+														2023-02-13T17:34:06.888+07:00 ПРЕДУПРЕЖДЕНИЕ 7337 --- [ main] ConfigServletWebServerApplicationContext : Исключение, возникшее во время инициализации контекста - отмена попытки обновления: org.springframework.beans.factory.Исключение UnsatisfiedDependencyException
+															: Ошибка при создании компонента с именем 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration': Неудовлетворенная зависимость, выраженная с помощью метода 'setConfigurers' параметр 0: 
+															Ошибка при создании компонента с именем 'org.springframework.security.config.annotation.web.configuration.OAuth2ClientConfiguration$OAuth2ClientWebMvcSecurityConfiguration': Неудовлетворенная зависимость, выраженная с помощью метода 'setClientRegistrationRepository' параметр 0: 
+															Ошибка при создании компонента с именем 'clientRegistrationRepository', определенным в пути к классу resource [org/springframework/boot/autoconfigure/security/oauth2/client/servlet/OAuth2ClientRegistrationRepositoryConfiguration.class] : Не удалось создать экземпляр [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Заводской метод 'clientRegistrationRepository' выдал исключение с сообщением: Идентификатор поставщика должен быть указан для регистрации клиента 'yandex'
+
+
+														повторно запустите свое приложение с включенной "отладкой".
+
+													stack errors
+														2023-02-13T17:34:03.759+07:00  INFO 7337 --- [           main] c.a.testoauth.TestoauthApplication       : Starting TestoauthApplication using Java 17.0.5 with PID 7337 (/mnt/alfa/learning/_JAVA/test_oauth/testoauth/target/classes started by gfs in /mnt/alfa/learning/_JAVA/test_oauth/testoauth)
+														2023-02-13T17:34:03.797+07:00  INFO 7337 --- [           main] c.a.testoauth.TestoauthApplication       : No active profile set, falling back to 1 default profile: "default"
+														2023-02-13T17:34:06.586+07:00  INFO 7337 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+														2023-02-13T17:34:06.596+07:00  INFO 7337 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+														2023-02-13T17:34:06.596+07:00  INFO 7337 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+														2023-02-13T17:34:06.766+07:00  INFO 7337 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+														2023-02-13T17:34:06.766+07:00  INFO 7337 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2746 ms
+														2023-02-13T17:34:06.888+07:00  WARN 7337 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.OAuth2ClientConfiguration$OAuth2ClientWebMvcSecurityConfiguration': Unsatisfied dependency expressed through method 'setClientRegistrationRepository' parameter 0: Error creating bean with name 'clientRegistrationRepository' defined in class path resource [org/springframework/boot/autoconfigure/security/oauth2/client/servlet/OAuth2ClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Factory method 'clientRegistrationRepository' threw exception with message: Provider ID must be specified for client registration 'yandex'
+														2023-02-13T17:34:06.891+07:00  INFO 7337 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+														2023-02-13T17:34:06.905+07:00  INFO 7337 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+														Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+														2023-02-13T17:34:06.941+07:00 ERROR 7337 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+														org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration': Unsatisfied dependency expressed through method 'setConfigurers' parameter 0: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.OAuth2ClientConfiguration$OAuth2ClientWebMvcSecurityConfiguration': Unsatisfied dependency expressed through method 'setClientRegistrationRepository' parameter 0: Error creating bean with name 'clientRegistrationRepository' defined in class path resource [org/springframework/boot/autoconfigure/security/oauth2/client/servlet/OAuth2ClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Factory method 'clientRegistrationRepository' threw exception with message: Provider ID must be specified for client registration 'yandex'
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:817) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:769) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1397) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:961) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:915) ~[spring-context-6.0.4.jar:6.0.4]
+															at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.4.jar:6.0.4]
+															at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+															at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+															at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+															at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+															at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+															at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+															at com.alamutra.testoauth.TestoauthApplication.main(TestoauthApplication.java:10) ~[classes/:na]
+														Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.OAuth2ClientConfiguration$OAuth2ClientWebMvcSecurityConfiguration': Unsatisfied dependency expressed through method 'setClientRegistrationRepository' parameter 0: Error creating bean with name 'clientRegistrationRepository' defined in class path resource [org/springframework/boot/autoconfigure/security/oauth2/client/servlet/OAuth2ClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Factory method 'clientRegistrationRepository' threw exception with message: Provider ID must be specified for client registration 'yandex'
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:817) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:769) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1397) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1621) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1585) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1476) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1363) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:809) ~[spring-beans-6.0.4.jar:6.0.4]
+															... 20 common frames omitted
+														Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clientRegistrationRepository' defined in class path resource [org/springframework/boot/autoconfigure/security/oauth2/client/servlet/OAuth2ClientRegistrationRepositoryConfiguration.class]: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Factory method 'clientRegistrationRepository' threw exception with message: Provider ID must be specified for client registration 'yandex'
+															at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1324) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1161) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1621) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1585) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1476) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1363) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:809) ~[spring-beans-6.0.4.jar:6.0.4]
+															... 37 common frames omitted
+														Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository]: Factory method 'clientRegistrationRepository' threw exception with message: Provider ID must be specified for client registration 'yandex'
+															at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.0.4.jar:6.0.4]
+															at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.0.4.jar:6.0.4]
+															... 53 common frames omitted
+														Caused by: java.lang.IllegalStateException: Provider ID must be specified for client registration 'yandex'
+															at org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesRegistrationAdapter.getBuilder(OAuth2ClientPropertiesRegistrationAdapter.java:95) ~[spring-boot-autoconfigure-3.0.2.jar:3.0.2]
+															at org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesRegistrationAdapter.getClientRegistration(OAuth2ClientPropertiesRegistrationAdapter.java:61) ~[spring-boot-autoconfigure-3.0.2.jar:3.0.2]
+															at org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesRegistrationAdapter.lambda$getClientRegistrations$0(OAuth2ClientPropertiesRegistrationAdapter.java:53) ~[spring-boot-autoconfigure-3.0.2.jar:3.0.2]
+															at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+															at org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientPropertiesRegistrationAdapter.getClientRegistrations(OAuth2ClientPropertiesRegistrationAdapter.java:52) ~[spring-boot-autoconfigure-3.0.2.jar:3.0.2]
+															at org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientRegistrationRepositoryConfiguration.clientRegistrationRepository(OAuth2ClientRegistrationRepositoryConfiguration.java:49) ~[spring-boot-autoconfigure-3.0.2.jar:3.0.2]
+															at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+															at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+															at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+															at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+															at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139) ~[spring-beans-6.0.4.jar:6.0.4]
+															... 54 common frames omitted
+
+
+														Process finished with exit code 1
+
+
+											(+) попробовать сделать авторизацию через github (2023.02.14 01:09:49)
+											( ) перенести обычную авторизацию на проект ccoa с экспериментального проекта
+												? перенести его как отдельный backend-database, который вроде как будет лежать в одном докере с frontend (2023.02.16 01:11:12) ?
+
+													? что будет если обратиться с браузера на порт 8080 (backend) когда запущен сервер frontend порт 3000 паралельно (2023.02.16 01:15:41) ?
+														? он будет ощущаться себя как один сайт (будут ли работать куки и запомнит ли он наличие аутентификации) (2023.02.16 01:16:09) ?
+
+														: в redirect (куда вроде как возвращают после авторизации) указан сайт 2 штуки в поле aouthorized redirect URIs
+															localhost:3000/ouath2/redirect 
+																? зачем ему вообще перенарпавлять сюда (2023.02.16 04:57:04) ?
+																	внутри этого обычного реакт компонента, привязанного к адресу - логическое услоие, что перенаправляет либо на страницу профиля, либо на страницу войти
+
+																	+ как фронтенд обрабатывает этот запрос (2023.02.16 04:57:14) ?
+																		подключает OAuth2RedirectHandler extends Component
+																	+ что за хранилище localStorage.setItem(ACCESS_TOKEN, token);  (2023.02.16 05:12:53) ?
+																		используется для запроса на бэкэнд в getCurrentUser
+
+																		? а его получают из cookie (2023.02.16 05:16:30) ?
+
+																	? что делает getUrlParameter (2023.02.16 05:19:58) ?
+																		? что делает var results = regex.exec(this.props.location.search); (2023.02.16 05:20:34) ?
+																		? обращение идет на метод на бэкэнде, что просто забирает значение из базы данных (2023.02.16 05:31:32) ?
+															localhost:8080/oauth2/callback/google
+
+															(Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=TechTutor))
+
+															? я правильно понял: на фронтентд перенаправляется пользователь, а на бэкэнд отправляется запрос на callback, который зарегистрирует пользователя на бэкэнде (2023.02.16 02:53:26) ?
+																? что делать с тем, что у гитхаба только 1 поле для заполнения адреса callback (2023.02.17 02:47:02) ?
+																	(+) загуглить "spring react github oauth2"
+
+																	: рядом с clientId, clietnSecret у него, в отличии от меня присутствует свойство redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" (https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/)
+
+																		: в файле spring-react-login/server/src/main/resources/application-local.yml в The-Tech-Tutor/spring-react-login есть свойство 
+																			app.authorizedRedirectUris:
+																			  - http://localhost:3000/oauth2/redirect
+
+																			? сервер бэкенда перенаправляет ответ с callback на фронтенд (2023.02.17 18:30:42) ?
+
+																			? что будет если ввести в поле Homepage URL не localhost:8080, а localhost:3000 (2023.02.18 00:22:52) ?
+
+																			: в SecurityConfig есть такая строчка .baseUri("/oauth2/authorize")
+																                .authorizationEndpoint()
+																                .baseUri("/oauth2/authorize")
+																                .authorizationRequestRepository(cookieAuthorizationRequestRepository())
+																                .and()
+																                .redirectionEndpoint()
+																                .baseUri("/oauth2/callback/*")
+
+																                ? какой параметр мне нужен именно подставляется в бэкэнд в redirectUri (2023.02.17 21:56:21) ?
+																                	? если   				.redirectionEndpoint() подставляется в redirectUri 
+																                	  то куда подставялется .authorizationEndpoint() (2023.02.17 21:58:46) ?
+																                	  	? важно ли это знать (2023.02.17 23:24:25) ?
+
+
+																                + почему redirectionEndpoint() указывается с /* в конце (2023.02.17 23:12:14) ?
+																                	скорее всего потому что в том проекте несколько способов авторизации: google, github
+															? откуда в файсле настроек yaml для google,facebook и прочих берется registrationId  /* redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" */ (2023.02.20 17:28:08) ?
+
+															: закончил осмотр проекта spring-react-login (2023.02.20 22:06:00)
+															: приступил к осмотру проекта /mnt/alfa/learning/_JAVA/oauth2-social/spring-boot-react-oauth2-social-login-demo 
+																( ) запустить social-login-demo
+																	( ) настроить необходимую базу данных
+																		( ) попробовать отдельный туториал, что научит меня подключать базу данных (это на случай если надо будет убедиться что проблема в совместимости)
+																		? в их туориале есть что-нибудь про создание базы данных по командам (2023.02.20 23:03:39) ?
+
+																( ) небходимо выделить минимальный функционал
+																( ) найти соответствие каждой функции из видео (GitHub Login With React (GitHub APIs, GitHub OAuth 2.0 Authentication) (https://www.youtube.com/watch?v=rRn2EisxPl4&ab_channel=CooperCodes))
+
+
+															        ? что выбирает это регулярное выражение ?
+															        	:code: var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+
+															        ? что вообще сюда приходит ?
+															        	:code: var results = regex.exec(this.props.location.search); 
+															        ?  почему именно 1 выбирается? <?> потому что 0 элементом идет стандартный ненужный результат regExp, ведь это для любого ?
+															        	:code: return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); элемента делается?
+
+
+
+															        <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>   ----   class OAuth2RedirectHandler extends Component {
+															        	>>>> соответствует >>>>
+
+
+
+															    (+) запустить пример
+															    	(+) базу данных создать из readme
+
+															    ( ) встроить его в проект без полного понимания каждой строчки, копи пастом по сути
+															    	? почему не работает hikary драйвер какой-то (2023.02.23 23:47:26) ?
+															    		не работал потому что в примере была база данных mysql, а у меня postgres. Надо было просто немножечко поменять зависимости (трактовщик какой-то), и в файле application.yml убрать настройки для mysql, заменив диалект на dialect: org.hibernate.dialect.PostgreSQLDialect; так же возможно ddl-auto: create надо было в первый раз поставить на create, а уже во второй раз на update, но я сразу на create поменял.
+															    			//все таки гуглить не ошибки, а как сделать правильно в текущей ситуации (я выдели мою разницу спримером) - это одна из самых успешных концепций
+																	        <dependency>
+																	            <groupId>org.postgresql</groupId>
+																	            <artifactId>postgresql</artifactId>
+																	        </dependency>
+
+															    		<?> потому что нужен другой пользователь, а не главный пользователь postgres ?
+															    		<?> сработает ли попробовать убрать регистрацию из бэкэнда, чтобы вооще не было обращения к базе данных ?
+
+															    : http://localhost:8080/oauth2/callback/github
+															    https://github.com/login/oauth/authorize ?response_type=code&client_id=d9055ea4500727d67fd8&scope=read:user&state=wFFHNJHcVC_PvQGOo1oXpiyKimRmLzEemg_n48xzCRU%3D&redirect_uri=http://localhost:8080/user
+
+															    : меня перенаправляет обратно на        
+															    : localhost:8080/oauth2/authorization/github       а потом снова на сайт авторизации на гитхаб
+															    	? где прописано обращение на этот адресс (2023.02.26 22:59:14) ?
+
+															    		: в SecurityConfig, но не в запускаемом сейчас проекте 
+															                .oauth2Login()
+															                    .authorizationEndpoint()
+															                        .baseUri("/oauth2/authorize")
+															                        .authorizationRequestRepository(cookieAuthorizationRequestRepository())
+
+															    ? авторизация происходит и на бэкэнде и на фронтенде (2023.02.27 04:45:10) ?
+															    	? через cookie (2023.02.27 04:45:23) ?
+															    	? через сессию (2023.02.27 04:45:32) ?
+
+
+															    GRANT ALL PRIVILEGES ON DATABASE spring_login TO spring_social_user
+
+															    	? может попробовать запустить (Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=JavaTechie))
+
+															    <?> попробовать перенести проекта с mongoDB на postgres (2023.03.03 10:27:41) ?
+															    <?> попробовать найти проект с regisgration from oauth2 и потом найти проект где oauth2 сделаана на js и попытаться встроить все это в один проект ?
+															    <?> сразу найти проект где есть все, хотя бы на js (2023.03.03 10:29:17) ?
+															    <?> попытаться запустить https://github.com/callicoder/spring-boot-react-oauth2-social-login-demo?ref=morioh.com&utm_source=morioh.com (2023.03.03 11:02:38) ?
+															    	<?> лучше из simple github oauth сделать spring-social-demo или наоборот, потихоньку делать даунгрейд (2023.03.03 11:03:23) ?
+															    	( ) удалить использование mail из проекта
+															    	(+) поставить заглушку на mail
+
+															    : http://localhost:8080/login/oauth2/code/github
+
+
+
+											( ) сделать кнопко логин
+												? каким образом фронтенд узнает о том, что пользователь залогинен (2023.02.16 21:20:54) ?
+													<?> cookie (2023.02.16 21:21:04) ?
+														? где у него здесь записываются cookie, ведь я нашел только их декодирование (2023.02.18 19:59:25) (https://www.youtube.com/watch?v=qUE4-kSlPIk&ab_channel=TomDoesTech) ?
+															GitHub-OAuth-Tutorial/server/src/app.ts/
+
+
+														? что мне делать с тем, что в его примере server написан на react, хоть и очень простой (2023.02.20 17:15:43) ?
+															? могу ли я добавлять cookie с java spring server (2023.02.20 17:16:07) ?
+															<?> мне придется писать еще один сервер-прослойку на react (2023.02.20 17:16:34) ?
+
+											( ) сделать запрос авторизации только для
+												( ) страницы войти
+												/*
+												 * модули пользователя на главной странице будут отображаться только для авторизированных пользователей
+												**/
+
+											( ) сделать регистрацию нового пользователя при аутентификации
+											 	( ) найти туториал старый, где это делалось. //надеюсь в этом плане он не устарел
+											( ) сделать обычную регистрацию пользователя без oauth2
+
+
+
+											? почему в видео с гуглом указывается в параметре Authorized redirect URIs 2 адреса
+												localhost:3000/oauth2/redirect
+													? это адреес фронтенда (2023.02.12 02:16:26) ?
+
+														содержимое файла dev.js
+															module.exports = {
+															  redirectUri: "http://localhost:3000/oauth2/redirect",
+															  apiBaseUrl: "http://localhost:8080"
+															};
+															  	
+															  	? где используется redirectUri (2023.02.12 02:58:11) ?
+															  		в файле application-local.yml
+															  			  app.authorizedRedirectUris:
+																		    - http://localhost:3000/oauth2/redirect
+
+
+												localhost:8080/oauth/callback/google
+													: файле application.yml есть параметр spring.security.oauth2.client.registration.google.redirectUri, который внешнее очень похож ({baseUrl}/oauth2/callback/{registrationId})
+
+														? что мен делать с тем, что название яндекс, а не гугл (2023.02.13 02:16:19) ?
+															<?> попробовать подставить просто yandex (2023.02.13 17:32:36) ?
+
+
 				( ) сделать возможность сохранять ПРИКАЗЫ ДЛЯ КОМНАТЫ ПОЛЬЗОВАТЕЛЕЙ
+					( ) сделать алгоритм автоматической установки и миграции базы данных на компьютере (чтобы на выделенном сервере в интернете можно было повторить)
+
 					( ) сделать возможность сохранять AB-приказы
+						( ) форма для вбивания названия карты (login only)
+						( ) кнопка сохранить (login only)
 					( ) сделать возможность подгружать из базы данных AB-приказы
+						( ) список карт в возможностью удаления оных
 					( ) задавать текущий список машинок из списка ПРИКАЗОВ ДЛЯ КОМНАТЫ ПОЛЬЗОВАТЕЛЯ
+
+
+
 
 			(+) убрать аппроксимацию поворта машинок. Пускай поворачивают резко
 			( ) сделать кнопку, чтобы вместо машинок можно было увидеть полигоны
+			( ) drag and drop сделать возможность удалять AB путь
 
 			( ) упаковать все это в докеры и кубернетис
 				? один докер на всех (2022.12.22 00:04:23) ?
