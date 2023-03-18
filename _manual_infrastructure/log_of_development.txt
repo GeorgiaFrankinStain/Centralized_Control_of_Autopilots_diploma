@@ -1,3 +1,59 @@
+                                                       ~GBY~                                        
+                                                       J@@@&5~                                      
+                                                       5@@@@@&5~                                    
+                                                        ~5&@@@@@P~                                  
+                               ^                          ^5&@@@@@G!                                
+                             !B&#J                          ^5&@@@@@G7                              
+      7?~                    ~&@@&7                           ~5@@@@@@G!                            
+     ^&@#7                    7@@@#^                            ~G@@@@@@5^                          
+     ?@@@@5                    J@@@G                              7B@@@@@&J                         
+     G@@@@?                     P@@@Y                               ?B@@@@@#J                       
+    ^&@@@#^                      B@@@J                                J#@@@@@BJ^                    
+    J@@@@P                       ~&@@@?                                 Y@@@@@@Y                    
+    B@@@@?                        Y@@@@##&&&&&&&&##BGPYJ7~^            ~Y&@@@@J                     
+   ~&@@@&~                   !?5G#&@@@@@@@@@&@@@@@@@@@@@@@&G?^      ~JG&@@@@G!                      
+   J@@@@G                 ^J#@@@@@@#&@@@&J~^^^^~~!7?YPB&@@@@J^   ~?G&@@@@BJ^                        
+   G@@@@Y                  ?PB&BY7~^7&@@@B7^            ~?7^  ^?P&@@@@#Y~                           
+  ^&@@@@!              75PY!  ^      J@@@@P!^              ^?P#@@@@#5!                              
+  7@@@@#              ?&@@@P~        ^P@@@&Y~           !JG&@@@@@@5                                 
+  Y@@@@P             !#@@@#!          !B@@@#?^      ^!YB&@@@@@@@@@&J                                
+  B@@@@J             G@@@#!           ^J@@@@&BPYJ7?YB&@@@@&BJ~?#@@@@5~                              
+ ~&@@@&^            7@@@@?          ^7P&@@@@@@@@@@@@@@@@BJ~    ~G@@@@J^                             
+ ?@@@@&Y?77!!~~^^^^^G@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@#5!         JB5?                               
+ P@@@@@@@@@@@@@@@@&&@@@@@&##&&&&&@@@@@@@@@G   Y@@@@@#7                                      !????7^ 
+~#@@@&J7?JYY5PGGB##&@@@@@@@@@@@@@@@@@@@@@@B   J&@@@@#7^          ~?5YJ!^                   5@@@@@B^ 
+?@@@@#             7@@@@5!~!!!!!!77?P@@@@@@@@&@@@@@@#7^         ~Y&@@@Y^                 ~B@@@@@P   
+5@@@@G             !&@@@5^           J&@@@@@@@@@@@@@@&BY!^     ^?&@@@#!                 7&@@@@@J    
+#@@@@5             ~#@@@B7^           7#@@@@@@@&BG&@@@@@&P?~   ?#@@@&7                 5@@@@@#!     
+@@@@@J              Y@@@#!^         ^~J&@@@&J7!^  ^?P#@@@@@BY?5&@@@@?                !#@@@@@B!      
+B@@&G^               J5?^           ^7G@@@&J^        ^7P&@@@@@@@@@#7                5@@@@@@P^       
+ !~                      ^~~~       ~5@@@@5^             ?G@@@@@@&7               ?#@@@@@&J         
+                       ^?#@@&BJ~    ?&@@@G!             !Y#@@@@@@@&G?^          ~G@@@@@@5~          
+                         Y&@@@@@BPJJB@@@B~          ^!YB&@@@@&5YB@@@@&P?^      Y&@@@@@#!            
+                           !YB&@@@@@@@@@BY?77777777?JG@@@@@BJ^   ~YB@@@@&P7^ ?#@@@@@&Y              
+                              ^7YG&@@@@@@@@@@@@@@@@@@@B##5!         !5#@@@@##@@@@@@P^               
+                                  G@@@#GB#&@@@@@&###BP^                !YB@@@@@@@B!                 
+                                 ?@@@&!    ^~~~~^                        5@@@@@#?                   
+              ~77~              ~#@@@Y                                 7#@@@@@G^                    
+            ^J&@@@B5!          ^G@@@G                                 5@@@@@&J                      
+             !#@@@@@@&GJ!^     Y@@@&!                               !B@@@@@#!                       
+               ~JG&@@@@@@&B5?!J&@@@J                               Y&@@@@@P^                        
+                   !JG#@@@@@@@@@@@5                              ^G@@@@@&J                          
+                       ~?5B&@@@&B?                              7&@@@@@B!                           
+                            ~J5^                              ^P@@@@@B?                             
+                                                             J&@@@@&J                               
+                                                           7B@@@@@G~                                
+                                                         ~G@@@@@B7                                  
+                                                         7&@@@#?                                    
+                                                          5@#J                                   
+
+CCoA - Centralized Control of Autopilots
+	<GeorgiaFrankinStain>
+
+
+
+
+
 2020.02.28 18:49:51 видимо проблема в том, что я не раделил физическое представление машин и просчитывание их маршрутов
 2020.05.30 03:30:20 сделал multimap
 
@@ -2292,183 +2348,379 @@
 														Process finished with exit code 1
 
 
-											(+) попробовать сделать авторизацию через github (2023.02.14 01:09:49)
-											( ) перенести обычную авторизацию на проект ccoa с экспериментального проекта
-												? перенести его как отдельный backend-database, который вроде как будет лежать в одном докере с frontend (2023.02.16 01:11:12) ?
-
-													? что будет если обратиться с браузера на порт 8080 (backend) когда запущен сервер frontend порт 3000 паралельно (2023.02.16 01:15:41) ?
-														? он будет ощущаться себя как один сайт (будут ли работать куки и запомнит ли он наличие аутентификации) (2023.02.16 01:16:09) ?
-
-														: в redirect (куда вроде как возвращают после авторизации) указан сайт 2 штуки в поле aouthorized redirect URIs
-															localhost:3000/ouath2/redirect 
-																? зачем ему вообще перенарпавлять сюда (2023.02.16 04:57:04) ?
-																	внутри этого обычного реакт компонента, привязанного к адресу - логическое услоие, что перенаправляет либо на страницу профиля, либо на страницу войти
-
-																	+ как фронтенд обрабатывает этот запрос (2023.02.16 04:57:14) ?
-																		подключает OAuth2RedirectHandler extends Component
-																	+ что за хранилище localStorage.setItem(ACCESS_TOKEN, token);  (2023.02.16 05:12:53) ?
-																		используется для запроса на бэкэнд в getCurrentUser
-
-																		? а его получают из cookie (2023.02.16 05:16:30) ?
-
-																	? что делает getUrlParameter (2023.02.16 05:19:58) ?
-																		? что делает var results = regex.exec(this.props.location.search); (2023.02.16 05:20:34) ?
-																		? обращение идет на метод на бэкэнде, что просто забирает значение из базы данных (2023.02.16 05:31:32) ?
-															localhost:8080/oauth2/callback/google
-
-															(Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=TechTutor))
-
-															? я правильно понял: на фронтентд перенаправляется пользователь, а на бэкэнд отправляется запрос на callback, который зарегистрирует пользователя на бэкэнде (2023.02.16 02:53:26) ?
-																? что делать с тем, что у гитхаба только 1 поле для заполнения адреса callback (2023.02.17 02:47:02) ?
-																	(+) загуглить "spring react github oauth2"
-
-																	: рядом с clientId, clietnSecret у него, в отличии от меня присутствует свойство redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" (https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/)
-
-																		: в файле spring-react-login/server/src/main/resources/application-local.yml в The-Tech-Tutor/spring-react-login есть свойство 
-																			app.authorizedRedirectUris:
-																			  - http://localhost:3000/oauth2/redirect
-
-																			? сервер бэкенда перенаправляет ответ с callback на фронтенд (2023.02.17 18:30:42) ?
-
-																			? что будет если ввести в поле Homepage URL не localhost:8080, а localhost:3000 (2023.02.18 00:22:52) ?
-
-																			: в SecurityConfig есть такая строчка .baseUri("/oauth2/authorize")
-																                .authorizationEndpoint()
-																                .baseUri("/oauth2/authorize")
-																                .authorizationRequestRepository(cookieAuthorizationRequestRepository())
-																                .and()
-																                .redirectionEndpoint()
-																                .baseUri("/oauth2/callback/*")
-
-																                ? какой параметр мне нужен именно подставляется в бэкэнд в redirectUri (2023.02.17 21:56:21) ?
-																                	? если   				.redirectionEndpoint() подставляется в redirectUri 
-																                	  то куда подставялется .authorizationEndpoint() (2023.02.17 21:58:46) ?
-																                	  	? важно ли это знать (2023.02.17 23:24:25) ?
+									(+) попробовать сделать авторизацию через github (2023.02.14 01:09:49)
 
 
-																                + почему redirectionEndpoint() указывается с /* в конце (2023.02.17 23:12:14) ?
-																                	скорее всего потому что в том проекте несколько способов авторизации: google, github
-															? откуда в файсле настроек yaml для google,facebook и прочих берется registrationId  /* redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" */ (2023.02.20 17:28:08) ?
+										? почему в видео с гуглом указывается в параметре Authorized redirect URIs 2 адреса
+											localhost:3000/oauth2/redirect
+												? это адреес фронтенда (2023.02.12 02:16:26) ?
 
-															: закончил осмотр проекта spring-react-login (2023.02.20 22:06:00)
-															: приступил к осмотру проекта /mnt/alfa/learning/_JAVA/oauth2-social/spring-boot-react-oauth2-social-login-demo 
-																( ) запустить social-login-demo
-																	( ) настроить необходимую базу данных
-																		( ) попробовать отдельный туториал, что научит меня подключать базу данных (это на случай если надо будет убедиться что проблема в совместимости)
-																		? в их туориале есть что-нибудь про создание базы данных по командам (2023.02.20 23:03:39) ?
-
-																( ) небходимо выделить минимальный функционал
-																( ) найти соответствие каждой функции из видео (GitHub Login With React (GitHub APIs, GitHub OAuth 2.0 Authentication) (https://www.youtube.com/watch?v=rRn2EisxPl4&ab_channel=CooperCodes))
-
-
-															        ? что выбирает это регулярное выражение ?
-															        	:code: var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-
-															        ? что вообще сюда приходит ?
-															        	:code: var results = regex.exec(this.props.location.search); 
-															        ?  почему именно 1 выбирается? <?> потому что 0 элементом идет стандартный ненужный результат regExp, ведь это для любого ?
-															        	:code: return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); элемента делается?
+													содержимое файла dev.js
+														module.exports = {
+														  redirectUri: "http://localhost:3000/oauth2/redirect",
+														  apiBaseUrl: "http://localhost:8080"
+														};
+														  	
+														  	? где используется redirectUri (2023.02.12 02:58:11) ?
+														  		в файле application-local.yml
+														  			  app.authorizedRedirectUris:
+																	    - http://localhost:3000/oauth2/redirect
 
 
+											localhost:8080/oauth/callback/google
+												: файле application.yml есть параметр spring.security.oauth2.client.registration.google.redirectUri, который внешнее очень похож ({baseUrl}/oauth2/callback/{registrationId})
 
-															        <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>   ----   class OAuth2RedirectHandler extends Component {
-															        	>>>> соответствует >>>>
+													? что мен делать с тем, что название яндекс, а не гугл (2023.02.13 02:16:19) ?
+														<?> попробовать подставить просто yandex (2023.02.13 17:32:36) ?
+
+						( ) перенести oauth2 авторизацию на проект ccoa с экспериментального проекта spring-social-demo (spring + react js)
+							? перенести его как отдельный backend-database, который вроде как будет лежать в одном докере с frontend (2023.02.16 01:11:12) ?
+
+								? что будет если обратиться с браузера на порт 8080 (backend) когда запущен сервер frontend порт 3000 паралельно (2023.02.16 01:15:41) ?
+									? он будет ощущаться себя как один сайт (будут ли работать куки и запомнит ли он наличие аутентификации) (2023.02.16 01:16:09) ?
+
+									: в redirect (куда вроде как возвращают после авторизации) указан сайт 2 штуки в поле aouthorized redirect URIs
+										localhost:3000/ouath2/redirect 
+											? зачем ему вообще перенарпавлять сюда (2023.02.16 04:57:04) ?
+												внутри этого обычного реакт компонента, привязанного к адресу - логическое услоие, что перенаправляет либо на страницу профиля, либо на страницу войти
+
+												+ как фронтенд обрабатывает этот запрос (2023.02.16 04:57:14) ?
+													подключает OAuth2RedirectHandler extends Component
+												+ что за хранилище localStorage.setItem(ACCESS_TOKEN, token);  (2023.02.16 05:12:53) ?
+													используется для запроса на бэкэнд в getCurrentUser
+
+													? а его получают из cookie (2023.02.16 05:16:30) ?
+
+												? что делает getUrlParameter (2023.02.16 05:19:58) ?
+													? что делает var results = regex.exec(this.props.location.search); (2023.02.16 05:20:34) ?
+													? обращение идет на метод на бэкэнде, что просто забирает значение из базы данных (2023.02.16 05:31:32) ?
+										localhost:8080/oauth2/callback/google
+
+										(Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=TechTutor))
+
+										? я правильно понял: на фронтентд перенаправляется пользователь, а на бэкэнд отправляется запрос на callback, который зарегистрирует пользователя на бэкэнде (2023.02.16 02:53:26) ?
+											? что делать с тем, что у гитхаба только 1 поле для заполнения адреса callback (2023.02.17 02:47:02) ?
+												(+) загуглить "spring react github oauth2"
+
+												: рядом с clientId, clietnSecret у него, в отличии от меня присутствует свойство redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" (https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/)
+
+													: в файле spring-react-login/server/src/main/resources/application-local.yml в The-Tech-Tutor/spring-react-login есть свойство 
+														app.authorizedRedirectUris:
+														  - http://localhost:3000/oauth2/redirect
+
+														? сервер бэкенда перенаправляет ответ с callback на фронтенд (2023.02.17 18:30:42) ?
+
+														? что будет если ввести в поле Homepage URL не localhost:8080, а localhost:3000 (2023.02.18 00:22:52) ?
+
+														: в SecurityConfig есть такая строчка .baseUri("/oauth2/authorize")
+											                .authorizationEndpoint()
+											                .baseUri("/oauth2/authorize")
+											                .authorizationRequestRepository(cookieAuthorizationRequestRepository())
+											                .and()
+											                .redirectionEndpoint()
+											                .baseUri("/oauth2/callback/*")
+
+											                ? какой параметр мне нужен именно подставляется в бэкэнд в redirectUri (2023.02.17 21:56:21) ?
+											                	? если   				.redirectionEndpoint() подставляется в redirectUri 
+											                	  то куда подставялется .authorizationEndpoint() (2023.02.17 21:58:46) ?
+											                	  	? важно ли это знать (2023.02.17 23:24:25) ?
 
 
+											                + почему redirectionEndpoint() указывается с /* в конце (2023.02.17 23:12:14) ?
+											                	скорее всего потому что в том проекте несколько способов авторизации: google, github
+										? откуда в файсле настроек yaml для google,facebook и прочих берется registrationId  /* redirectUri: "{baseUrl}/oauth2/callback/{registrationId}" */ (2023.02.20 17:28:08) ?
 
-															    (+) запустить пример
-															    	(+) базу данных создать из readme
+										: закончил осмотр проекта spring-react-login (2023.02.20 22:06:00)
+										: приступил к осмотру проекта /mnt/alfa/learning/_JAVA/oauth2-social/spring-boot-react-oauth2-social-login-demo 
+											( ) запустить social-login-demo
+												( ) настроить необходимую базу данных
+													( ) попробовать отдельный туториал, что научит меня подключать базу данных (это на случай если надо будет убедиться что проблема в совместимости)
+													? в их туориале есть что-нибудь про создание базы данных по командам (2023.02.20 23:03:39) ?
 
-															    ( ) встроить его в проект без полного понимания каждой строчки, копи пастом по сути
-															    	? почему не работает hikary драйвер какой-то (2023.02.23 23:47:26) ?
-															    		не работал потому что в примере была база данных mysql, а у меня postgres. Надо было просто немножечко поменять зависимости (трактовщик какой-то), и в файле application.yml убрать настройки для mysql, заменив диалект на dialect: org.hibernate.dialect.PostgreSQLDialect; так же возможно ddl-auto: create надо было в первый раз поставить на create, а уже во второй раз на update, но я сразу на create поменял.
-															    			//все таки гуглить не ошибки, а как сделать правильно в текущей ситуации (я выдели мою разницу спримером) - это одна из самых успешных концепций
-																	        <dependency>
-																	            <groupId>org.postgresql</groupId>
-																	            <artifactId>postgresql</artifactId>
-																	        </dependency>
-
-															    		<?> потому что нужен другой пользователь, а не главный пользователь postgres ?
-															    		<?> сработает ли попробовать убрать регистрацию из бэкэнда, чтобы вооще не было обращения к базе данных ?
-
-															    : http://localhost:8080/oauth2/callback/github
-															    https://github.com/login/oauth/authorize ?response_type=code&client_id=d9055ea4500727d67fd8&scope=read:user&state=wFFHNJHcVC_PvQGOo1oXpiyKimRmLzEemg_n48xzCRU%3D&redirect_uri=http://localhost:8080/user
-
-															    : меня перенаправляет обратно на        
-															    : localhost:8080/oauth2/authorization/github       а потом снова на сайт авторизации на гитхаб
-															    	? где прописано обращение на этот адресс (2023.02.26 22:59:14) ?
-
-															    		: в SecurityConfig, но не в запускаемом сейчас проекте 
-															                .oauth2Login()
-															                    .authorizationEndpoint()
-															                        .baseUri("/oauth2/authorize")
-															                        .authorizationRequestRepository(cookieAuthorizationRequestRepository())
-
-															    ? авторизация происходит и на бэкэнде и на фронтенде (2023.02.27 04:45:10) ?
-															    	? через cookie (2023.02.27 04:45:23) ?
-															    	? через сессию (2023.02.27 04:45:32) ?
+											( ) небходимо выделить минимальный функционал
+											( ) найти соответствие каждой функции из видео (GitHub Login With React (GitHub APIs, GitHub OAuth 2.0 Authentication) (https://www.youtube.com/watch?v=rRn2EisxPl4&ab_channel=CooperCodes))
 
 
-															    GRANT ALL PRIVILEGES ON DATABASE spring_login TO spring_social_user
+										        ? что выбирает это регулярное выражение ?
+										        	:code: var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
 
-															    	? может попробовать запустить (Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=JavaTechie))
-
-															    <?> попробовать перенести проекта с mongoDB на postgres (2023.03.03 10:27:41) ?
-															    <?> попробовать найти проект с regisgration from oauth2 и потом найти проект где oauth2 сделаана на js и попытаться встроить все это в один проект ?
-															    <?> сразу найти проект где есть все, хотя бы на js (2023.03.03 10:29:17) ?
-															    <?> попытаться запустить https://github.com/callicoder/spring-boot-react-oauth2-social-login-demo?ref=morioh.com&utm_source=morioh.com (2023.03.03 11:02:38) ?
-															    	<?> лучше из simple github oauth сделать spring-social-demo или наоборот, потихоньку делать даунгрейд (2023.03.03 11:03:23) ?
-															    	( ) удалить использование mail из проекта
-															    	(+) поставить заглушку на mail
-
-															    : http://localhost:8080/login/oauth2/code/github
+										        ? что вообще сюда приходит ?
+										        	:code: var results = regex.exec(this.props.location.search); 
+										        ?  почему именно 1 выбирается? <?> потому что 0 элементом идет стандартный ненужный результат regExp, ведь это для любого ?
+										        	:code: return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' ')); элемента делается?
 
 
 
-											( ) сделать кнопко логин
-												? каким образом фронтенд узнает о том, что пользователь залогинен (2023.02.16 21:20:54) ?
-													<?> cookie (2023.02.16 21:21:04) ?
-														? где у него здесь записываются cookie, ведь я нашел только их декодирование (2023.02.18 19:59:25) (https://www.youtube.com/watch?v=qUE4-kSlPIk&ab_channel=TomDoesTech) ?
-															GitHub-OAuth-Tutorial/server/src/app.ts/
+										        <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}></Route>   ----   class OAuth2RedirectHandler extends Component {
+										        	>>>> соответствует >>>>
 
 
-														? что мне делать с тем, что в его примере server написан на react, хоть и очень простой (2023.02.20 17:15:43) ?
-															? могу ли я добавлять cookie с java spring server (2023.02.20 17:16:07) ?
-															<?> мне придется писать еще один сервер-прослойку на react (2023.02.20 17:16:34) ?
 
-											( ) сделать запрос авторизации только для
-												( ) страницы войти
+										    (+) запустить пример
+										    	(+) базу данных создать из readme
+
+										    ( ) встроить его в проект без полного понимания каждой строчки, копи пастом по сути
+										    	? почему не работает hikary драйвер какой-то (2023.02.23 23:47:26) ?
+										    		не работал потому что в примере была база данных mysql, а у меня postgres. Надо было просто немножечко поменять зависимости (трактовщик какой-то), и в файле application.yml убрать настройки для mysql, заменив диалект на dialect: org.hibernate.dialect.PostgreSQLDialect; так же возможно ddl-auto: create надо было в первый раз поставить на create, а уже во второй раз на update, но я сразу на create поменял.
+										    			//все таки гуглить не ошибки, а как сделать правильно в текущей ситуации (я выдели мою разницу спримером) - это одна из самых успешных концепций
+												        <dependency>
+												            <groupId>org.postgresql</groupId>
+												            <artifactId>postgresql</artifactId>
+												        </dependency>
+
+										    		<?> потому что нужен другой пользователь, а не главный пользователь postgres ?
+										    		<?> сработает ли попробовать убрать регистрацию из бэкэнда, чтобы вооще не было обращения к базе данных ?
+
+										    : http://localhost:8080/oauth2/callback/github
+										    https://github.com/login/oauth/authorize ?response_type=code&client_id=d9055ea4500727d67fd8&scope=read:user&state=wFFHNJHcVC_PvQGOo1oXpiyKimRmLzEemg_n48xzCRU%3D&redirect_uri=http://localhost:8080/user
+
+										    : меня перенаправляет обратно на        
+										    : localhost:8080/oauth2/authorization/github       а потом снова на сайт авторизации на гитхаб
+										    	? где прописано обращение на этот адресс (2023.02.26 22:59:14) ?
+
+										    		: в SecurityConfig, но не в запускаемом сейчас проекте 
+										                .oauth2Login()
+										                    .authorizationEndpoint()
+										                        .baseUri("/oauth2/authorize")
+										                        .authorizationRequestRepository(cookieAuthorizationRequestRepository())
+
+										    ? авторизация происходит и на бэкэнде и на фронтенде (2023.02.27 04:45:10) ?
+										    	? через cookie (2023.02.27 04:45:23) ?
+										    	? через сессию (2023.02.27 04:45:32) ?
+
+
+										    GRANT ALL PRIVILEGES ON DATABASE spring_login TO spring_social_user
+
+										    	? может попробовать запустить (Google OAuth Login Application Using Java Spring Boot and ReactJS in Less Than 15 Minutes (https://www.youtube.com/watch?v=HV-9EIU9JVY&ab_channel=JavaTechie))
+
+										    <?> попробовать перенести проекта с mongoDB на postgres (2023.03.03 10:27:41) ?
+										    <?> попробовать найти проект с regisgration from oauth2 и потом найти проект где oauth2 сделаана на js и попытаться встроить все это в один проект ?
+										    <?> сразу найти проект где есть все, хотя бы на js (2023.03.03 10:29:17) ?
+										    <?> попытаться запустить https://github.com/callicoder/spring-boot-react-oauth2-social-login-demo?ref=morioh.com&utm_source=morioh.com (2023.03.03 11:02:38) ?
+										    	<?> лучше из simple github oauth сделать spring-social-demo или наоборот, потихоньку делать даунгрейд (2023.03.03 11:03:23) ?
+										    	( ) удалить использование mail из проекта
+										    	(+) поставить заглушку на mail
+
+										    : http://localhost:8080/login/oauth2/code/github
+
+
+
+
+
+
+
+
+							( ) внедрить в проект CCoA react часть oauth2
+								<?> переписать вручную аналогами, recreate (2023.03.06 19:40:46) ?
+
+
+									: проблемы:
+										? почему не получается установить аналоги (например alert оповещение) (2023.03.06 19:50:34) ?
+											<?> не получается потому что я слишком много составляющих меняю за раз (2023.03.06 19:47:39) ?
+												- меняю версию
+												- меняю js в ts
+
+												(+) ПОПРОБОВАТЬ #APPLY_VECTOR_TO_0 - сделать alert оповещение в чистом проекте с версией typescript (2023.03.06 20:08:10) ?
+													<?> топовой, как у меня в CCoA web frontend (2023.03.06 20:08:39) ?
+													<?> аналог spring-social-demo (2023.03.06 20:08:54) ?
+									(+) встроить alert in CCoA react ts
+										: npm install --save react-toastify
+
+									? с чего начать остальную встройку (2023.03.07 18:40:13) ?
+
+									? что делать с тем, что с бэкэнда с базы данных возвращается пользователь, а typescript потребует ему указать тип данных (2023.03.07 18:40:52) ?
+										<?> прописать интерфейс где требуются только лишь 2 свойства (email and login(name)) (2023.03.07 18:44:00) ?
+
+
+
+
+									<?> упрощать (2023.03.06 19:45:28) ?
+										[+] быстрее сделаю
+										[-] при собеседовании выясниться, что я не могу сделать нормальное красивое оповещение
+								<?> внедрить в виде js (2023.03.06 19:43:25) ?
+
+
+								( ) внедрить внешний вид всех элементов, поставив заглушку на получение авторизации в App.js
+
+									(+) PrivateRoute
+
+									? как вот этот участок кода переписать на React.FC (2023.03.08 10:19:33) ?
+										? стоит ли его в формат React.FC переписывать (2023.03.08 10:22:01) ?
+										/*
+										    componentDidMount() {
+										        // If the OAuth2 login encounters an error, the user is redirected to the /login page with an error.
+										        // Here we display the error and then remove the error query parameter from the location.
+										        if(this.props.location.state && this.props.location.state.error) {
+										            setTimeout(() => {
+										                Alert.error(this.props.location.state.error, {
+										                    timeout: 5000
+										                });
+										                this.props.history.replace({
+										                    pathname: this.props.location.pathname,
+										                    state: {}
+										                });
+										            }, 100);
+										        }
+										    }
+										*/
+
+											? что за this.props.history (2023.03.09 00:37:04) ?
+												? для каких целей это применяется (2023.03.09 00:37:17) ?
+													? этот объект может хранить пользовательские свойства (2023.03.09 00:37:28) ?
+
+
+											? что делает этот участок (2023.03.09 00:48:57) ?
 												/*
-												 * модули пользователя на главной странице будут отображаться только для авторизированных пользователей
-												**/
+									                Alert.error(this.props.location.state.error, {
+									                    timeout: 5000
+									                });
+								                */
 
-											( ) сделать регистрацию нового пользователя при аутентификации
-											 	( ) найти туториал старый, где это делалось. //надеюсь в этом плане он не устарел
-											( ) сделать обычную регистрацию пользователя без oauth2
+								                ? просто передает alert функцию, которая через 5 секунд запускает оповещение для пользователя с содержимым this.props.location.state.error (2023.03.09 00:52:27) ?
 
+							                	? откуда берется error ?
+							                		? где задается значение (2023.03.09 00:53:01) ?
+							                		? где ощищается значение (2023.03.09 00:53:11) ?
 
-
-											? почему в видео с гуглом указывается в параметре Authorized redirect URIs 2 адреса
-												localhost:3000/oauth2/redirect
-													? это адреес фронтенда (2023.02.12 02:16:26) ?
-
-														содержимое файла dev.js
-															module.exports = {
-															  redirectUri: "http://localhost:3000/oauth2/redirect",
-															  apiBaseUrl: "http://localhost:8080"
-															};
-															  	
-															  	? где используется redirectUri (2023.02.12 02:58:11) ?
-															  		в файле application-local.yml
-															  			  app.authorizedRedirectUris:
-																		    - http://localhost:3000/oauth2/redirect
+											? это перенаправление (2023.03.09 00:46:58) ?
+												/*
+									                this.props.history.replace({
+									                    pathname: this.props.location.pathname,
+									                    state: {}
+									                });
+								                */
 
 
-												localhost:8080/oauth/callback/google
-													: файле application.yml есть параметр spring.security.oauth2.client.registration.google.redirectUri, который внешнее очень похож ({baseUrl}/oauth2/callback/{registrationId})
+								            ? это способ которым идет перенаправление обратно после залогинивания по аналогии с <PrivateRoute>, только для скриптов (2023.03.09 04:26:10) ?
+												/*
+										            return <Redirect to={{
+										                pathname: "/login",
+										                state: { 
+										                    from: this.props.location,
+										                    error: error 
+										                }
+										            }}/>; 
+								                */
+								                	? где используется свойство from (2023.03.09 04:45:18) ?
 
-														? что мен делать с тем, что название яндекс, а не гугл (2023.02.13 02:16:19) ?
-															<?> попробовать подставить просто yandex (2023.02.13 17:32:36) ?
+								                	? если в реакте появился такой хук useHistory, то зачем вообще from, если все сразу можно достать из более старого аналога this.props.history.replace({ (2023.03.09 06:00:18) ?
+
+
+								                : видимо мне надо перестать пытаться скопировать код и начать копировать функционал. Слишком разные некоторые методики у разных версий языков и typescript with js (2023.03.09 06:13:36)
+								                	: надо пытаться понять, что здесь от кода требуется, а не что код требует
+
+								            ? этот кусок кода можно ли выкинуть безболезненно, ибо мы можем прожить без оповещения об ошибке (2023.03.09 20:19:04) ?
+												/*
+												    componentDidMount() {
+												        // If the OAuth2 login encounters an error, the user is redirected to the /login page with an error.
+												        // Here we display the error and then remove the error query parameter from the location.
+												        if(this.props.location.state && this.props.location.state.error) {
+												            setTimeout(() => {
+												                Alert.error(this.props.location.state.error, {
+												                    timeout: 5000
+												                });
+												                this.props.history.replace({
+												                    pathname: this.props.location.pathname,
+												                    state: {}
+												                });
+												            }, 100);
+												        }
+												    }
+												*/
+											: методика переписывания компонента
+									            - переписать текст компонентов сразу подсравляя необходимые переменные, заменяя this.props.x на x
+									            - подключить необходимые переменные в сигнатуту функуционального компонента
+									            - встроить функциональные компоненты в app.tsx
+									            	- написать состояния, котоырые будут передаваться в дочерние компоненты, чтобы можно использовать их для изменения x
+
+					            	(+) login
+					            	( ) registration
+								( ) внедрить протоколы общения с backend java spring
+								( ) внедрить registerServiceWorker.js
+
+									
+
+										/* OAuth2RedirectHandler.tsx
+
+								            localStorage.setItem(ACCESS_TOKEN, token);
+								            return <Redirect to={{
+								                pathname: "/profile",
+								                state: { from: this.props.location }
+								            }}/>; 
+
+										*/
+
+										? как мне реализовать передачу ошибки (2023.03.11 04:21:55) ?
+											<?> забить (2023.03.11 04:23:23) ?
+											<?> создать состояние в app.tsx ?
+
+
+								+ почему сломалось обращение к mysql bd с бэкэнда spring-social (2023.03.11 22:35:11) ?
+									: оно работало ведь...
+									: откат до установки mysql и переустановка оной не помогла
+										create database spring_social;
+										CREATE USER 'kamran'@'localhost' IDENTIFIED BY 'password';
+										GRANT ALL ON *.* TO 'user'@'localhost';
+
+
+							            в начале надо установить  в первый раз ddl-auto: create   а потом поменять на ddl-auto: update
+							            добавил allowPublicKeyRetrieval=true в url: jdbc:mysql://localhost:3306/spring_social?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+
+							    + почему при загрузке app.tsx консоль пишет запрос на бэкэнд 2 раза (2023.03.13 00:31:45) ?\
+							    	потому что в запросе меняется состояние и он перезагружается и снова делает запрос, пока состояние не станет таким же (не перестанет меняться)
+
+							    ? почему в useRef не сохраняется переменна authenticated: true (2023.03.13 00:33:44) ?
+							    	<?> стоит поискать в интернете как сделать проверку на авторизацию при загрузке страницы (2023.03.13 00:34:09) ?
+							    	<?> если записывать useRef из состояния, то все заработает (2023.03.13 00:44:21) ?
+
+
+							    	? не работает, после добавления checkAuthStatus() все начало бесконечно циклиться (2023.03.13 03:44:51) ?
+
+										160react-dom.development.js:86 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+										    at Navigate (http://localhost:3000/static/js/bundle.js:56812:5)
+										    at PrivateRoute (http://localhost:3000/static/js/bundle.js:2291:5)
+										    at RenderedRoute (http://localhost:3000/static/js/bundle.js:56466:5)
+										    at Routes (http://localhost:3000/static/js/bundle.js:56931:5)
+										    at div
+										    at App (http://localhost:3000/static/js/bundle.js:49:94)
+										    at Router (http://localhost:3000/static/js/bundle.js:56869:15)
+										    at BrowserRouter (http://localhost:3000/static/js/bundle.js:55066:5)
+												true private route
+
+
+										( ) getCurrentUser сделать так, чтобы useEffect не прекращал работу, пока не завершиться fetch
+										( ) посмотреть устройство в хабр туториале (https://habr.com/ru/post/443424/)
+
+										( ) сделать так, что после авторизации пользователя перебрасывает на страницу /
+
+
+
+
+
+
+							( ) сделать кнопко логин
+								? каким образом фронтенд узнает о том, что пользователь залогинен (2023.02.16 21:20:54) ?
+									<?> cookie (2023.02.16 21:21:04) ?
+										? где у него здесь записываются cookie, ведь я нашел только их декодирование (2023.02.18 19:59:25) (https://www.youtube.com/watch?v=qUE4-kSlPIk&ab_channel=TomDoesTech) ?
+											GitHub-OAuth-Tutorial/server/src/app.ts/
+
+
+										? что мне делать с тем, что в его примере server написан на react, хоть и очень простой (2023.02.20 17:15:43) ?
+											? могу ли я добавлять cookie с java spring server (2023.02.20 17:16:07) ?
+											<?> мне придется писать еще один сервер-прослойку на react (2023.02.20 17:16:34) ?
+
+							( ) сделать запрос авторизации только для
+								( ) страницы войти
+								/*
+								 * модули пользователя на главной странице будут отображаться только для авторизированных пользователей
+								**/
+
+							( ) сделать регистрацию нового пользователя при аутентификации
+							 	( ) найти туториал старый, где это делалось. //надеюсь в этом плане он не устарел
+							( ) сделать обычную регистрацию пользователя без oauth2
+
+
+
 
 
 				( ) сделать возможность сохранять ПРИКАЗЫ ДЛЯ КОМНАТЫ ПОЛЬЗОВАТЕЛЕЙ
@@ -2492,6 +2744,10 @@
 				? один докер на всех (2022.12.22 00:04:23) ?
 
 			( ) залить все это в интернет
+				( ) установить базу данных на сервере в интернете, желательно mysql
+				( ) отшлифовать внешний вид, пока откликаются на собеседования
+
+			( ) сделать аудиозапись на память чем я в основном занимался, впечатления
 
 			( ) починить баг: если машинки врезаются вдргу в друга, то машинка остается стоять там навсегда, плюс они еще друг через друга проходят
 			( ) над дизайном немного поработать

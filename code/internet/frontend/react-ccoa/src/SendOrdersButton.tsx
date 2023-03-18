@@ -117,8 +117,6 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
 
     function sendApplicationOrdersClick() {
-        console.log("sendApplicationOrdersClick");
-        console.log(sendJsonOrders);
 
 
         // Send data to the backend via POST
@@ -129,7 +127,6 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
         })
             .then(response => response.json())
             .then((usefulData) => {
-                console.log(usefulData);
                 setLoading(false);
                 // setData(usefulData);
                 sendJsonOrders.id_room = usefulData.id;
@@ -156,8 +153,6 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
                 })
                     .then(response => response.json())
                     .then((usefulData) => {
-                        console.log(usefulData);
-                        console.log("succeful send orders");
                         setLoading(false);
                         setData(usefulData);
                         getElbowFootprint();
@@ -201,8 +196,6 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
             // .then(response => response.json())
             .then(response => response.text())
             .then((usefulData) => {
-                console.log("userful_data");
-                console.log(usefulData);
                 setLoading(false);
                 // setData(usefulData);
 

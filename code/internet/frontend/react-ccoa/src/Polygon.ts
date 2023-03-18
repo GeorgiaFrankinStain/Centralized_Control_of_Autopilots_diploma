@@ -88,9 +88,6 @@ export class PolygonCCoAClass implements PolygonCCoA {
 
     rotateRelative00(angle: number): PolygonCCoA {
 
-        // if (angle == 3.141592653589793 * 1.5) {
-        //     console.log("is cool");
-        // }
 
 
         const origin: PointCCoA = new PointCCoAClass(0, 0);

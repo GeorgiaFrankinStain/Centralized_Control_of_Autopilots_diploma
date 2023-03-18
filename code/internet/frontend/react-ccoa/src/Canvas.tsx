@@ -1125,9 +1125,9 @@ const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
 
     return (
         <>
-            <button onClick={() => setStateCount(stateCount + 1)}>Reset!</button>
+            {/*<button onClick={() => setStateCount(stateCount + 1)}>Reset!</button>*/}
             {/*<button onClick={() => reset()}>Reset!</button>*/}
-            <main className="path">
+            {/*<main className="path">*/}
                 {/*<div*/}
                 {/*    className="brick"*/}
                 {/*    ref={brickRef}*/}
@@ -1135,7 +1135,7 @@ const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
                 {/*>*/}
                 {/*    Click me!*/}
                 {/*</div>*/}
-            </main>
+            {/*</main>*/}
 
             <canvas  id="viewResultMoving" />
             <img id="set_cars" className="display-none" src="set_cars.png" />

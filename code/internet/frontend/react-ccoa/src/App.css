@@ -41,3 +41,15 @@
 .display-none {
   display: none;
 }
+
+#viewResultMoving {
+  border: 5px solid black;
+}
+#setOrdersCanvas {
+  border: 5px solid black;
+}
+
+.header-menu {
+  text-align: left;
+  position: fixed;
+}
