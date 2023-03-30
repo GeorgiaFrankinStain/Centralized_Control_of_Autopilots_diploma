@@ -15,23 +15,15 @@
       <change afterPath="$PROJECT_DIR$/src/user/profile/profile.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/user/signup/Signup.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/user/signup/Signup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/APIUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../_manual_infrastructure/log_of_development.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringConfig/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringConfig/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringRepo/UserDetailsRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../backend_calculator/CCoA/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polygon.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polygon.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SendOrdersButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SendOrdersButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,8 +40,8 @@
       <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1199">
-              <caret line="142" column="17" lean-forward="true" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
+            <state relative-caret-position="2470">
+              <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -57,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetOrders.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SetOrders.tsx">
+      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1349">
-              <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+            <state relative-caret-position="418">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -105,7 +97,7 @@
       <file leaf-file-name="OAuth2RedirectHandler.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/user/oauth2/OAuth2RedirectHandler.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
+            <state relative-caret-position="665">
               <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -114,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Canvas.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Canvas.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Canvas.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="1130" column="25" lean-forward="true" selection-start-line="1130" selection-start-column="25" selection-end-line="1130" selection-end-column="25" />
+            <state relative-caret-position="21375">
+              <caret line="1130" column="25" selection-start-line="1130" selection-start-column="25" selection-end-line="1130" selection-end-column="25" />
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
               </folding>
@@ -129,8 +121,8 @@
       <file leaf-file-name="AppHeader.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/AppHeader.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="304">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -141,17 +133,17 @@
       <file leaf-file-name="SetOrdersCanvas.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SetOrdersCanvas.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1682">
+            <state relative-caret-position="5795">
               <caret line="308" column="40" selection-start-line="308" selection-start-column="25" selection-end-line="308" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="988">
+              <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -227,9 +219,9 @@
         <option value="$PROJECT_DIR$/src/user/login/Login.tsx" />
         <option value="$PROJECT_DIR$/src/user/oauth2/OAuth2RedirectHandler.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/common/AppHeader.tsx" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Canvas.tsx" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/common/AppHeader.tsx" />
       </list>
     </option>
   </component>
@@ -253,7 +245,6 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
     <option name="width" value="1889" />
     <option name="height" value="2160" />
   </component>
@@ -264,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,7 +330,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -458,36 +449,41 @@
       <workItem from="1678922551258" duration="8852000" />
       <workItem from="1678975741876" duration="436000" />
       <workItem from="1678978569702" duration="27652000" />
-      <workItem from="1679108786176" duration="3401000" />
+      <workItem from="1679108786176" duration="4012000" />
+      <workItem from="1679176845697" duration="837000" />
+      <workItem from="1679556590380" duration="2145000" />
+      <workItem from="1679792943806" duration="596000" />
+      <workItem from="1679831627002" duration="871000" />
+      <workItem from="1679878762722" duration="845000" />
+      <workItem from="1679882536317" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148821000" />
+    <option name="totallyTimeSpent" value="155324000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1889" height="2160" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1889" height="2160" extended-state="0" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24324325" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24748278" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TypeScript" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,16 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -741,9 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,7 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/user/oauth2/OAuth2RedirectHandler.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
+        <state relative-caret-position="665">
           <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -795,47 +778,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SetOrdersCanvas.tsx">
+    <entry file="file://$PROJECT_DIR$/src/Canvas.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1682">
-          <caret line="308" column="40" selection-start-line="308" selection-start-column="25" selection-end-line="308" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/AppHeader.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="21375">
+          <caret line="1130" column="25" selection-start-line="1130" selection-start-column="25" selection-end-line="1130" selection-end-column="25" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1199">
-          <caret line="142" column="17" lean-forward="true" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
+        <state relative-caret-position="2470">
+          <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
+    <entry file="file://$PROJECT_DIR$/src/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="418">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Canvas.tsx">
+    <entry file="file://$PROJECT_DIR$/src/SetOrdersCanvas.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="1130" column="25" lean-forward="true" selection-start-line="1130" selection-start-column="25" selection-end-line="1130" selection-end-column="25" />
+        <state relative-caret-position="5795">
+          <caret line="308" column="40" selection-start-line="308" selection-start-column="25" selection-end-line="308" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/AppHeader.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
-            <element signature="e#0#65#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
         </state>
       </provider>
     </entry>
