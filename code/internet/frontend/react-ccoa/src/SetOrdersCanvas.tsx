@@ -312,7 +312,7 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
             {/*    id="clear"*/}
             {/*    onClick={() => classVar.clearEventHandler()}*/}
             {/*>clear</div>*/}
-            <img id="set_cars" className="display-none" src="set_cars.png" />
+            <img id="set_cars" className="display-none" src="SetCars.png" />
         </>
     );
 }

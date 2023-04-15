@@ -147,7 +147,7 @@ export default React.memo(
                                                                     <div style={{
                                                                         width: w + "px",
                                                                         height: h + "px",
-                                                                        backgroundImage: "url(set_cars.png)",
+                                                                        backgroundImage: "url(SetCars.png)",
                                                                         backgroundPosition: -x + "px " + -y + "px"
                                                                     }}></div>
                                                                 </td>

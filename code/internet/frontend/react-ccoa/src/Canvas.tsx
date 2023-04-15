@@ -1138,7 +1138,7 @@ const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
             {/*</main>*/}
 
             <canvas  id="viewResultMoving" />
-            <img id="set_cars" className="display-none" src="set_cars.png" />
+            <img id="set_cars" className="display-none" src="SetCars.png" />
         </>
     );
 };
