@@ -2927,7 +2927,213 @@ CCoA - Centralized Control of Autopilots
                     : причина оказалось в том, что при npm build он не может обращаться в папку public за картинками.
                         поэтому я поместил sprite в папку src и сделал везде обращение через require("./SetCars.png")
                         
-                ( ) починить общение между докерами
+                (+) починить общение между докерами
+                    <+> загрузить на сервер и там сделать и создать docker-compose-up (2023.04.16 19:47:37) ?
+
+                        + что значит параметр -f в docker-compose (2023.04.16 20:43:41) ?
+                            это название файла, если мы пытаемтся запустить нестандартный файл
+
+                        + up -d параметр что означает ?
+                            он означает, что все запускается в фоновом режиме
+
+                    ? при маштабировании докеров к кому будет идти обращение по псевдониму (2023.04.16 21:09:54) ?
+
+                    : удалось удалено подклчюиться к базе данных
+                    : обращение к localhost (не докер)
+
+                    настройка общения между докерами
+                        Add extra_hosts to docker-compose file
+                            extra_hosts:
+                              - "host.docker.internal:host-gateway"
+                        Change URL to use host.docker.internal instead of localhost in src/
+                        Change service to serve on 0.0.0.0 instead of localhost
+                            in file /etc/mysql/mysql.conf.d/mysqld.cnf
+                            replace in file
+                                bind-address        = 0.0.0.0
+                                mysqlx-bind-address = 0.0.0.0  (без понятия, надо ли тут было менять этот параметр)
+
+                ( ) починить фронтенд
+                    : загруженная с компьютера из git версия поменяла поломку. Теперь сайт вместо "сайт не найден" говорит "500 внутренняя ошибка сервера" 
+                    
+                    ? как выявить проблему (2023.04.21 01:26:57) ?
+                        (+) запустить чистый пример из туториала в интернете, чтобы увидеть, что сайт вообще может снова работать
+                            успешно получилось, все работает, в интернете крутиться заначок реакта пустого проекта
+                        (+) запустить пустой чистый пример в docker-compose
+                            : на localhost без портов получилось запустить крутящийся значоек реакта через команду docker-compose
+                        (+) убедиться в том, что все нормально работает при npm start
+                            : на локальной машине на порту 3000 нормально запускается frontend ccoa
+                        : на localhost успешно без порта запустился проект, что должен был работать в интернете (georgiafrankinstain/ccoa-frontend-nginx-from-commit:0.0.5-SNAPSHOT)
+                        (x) заново упаковать CCoA frontend в докер
+                            (x) запустить на localhost без порта
+                        (x) сравнить с настройками из frontend
+                        : какой-то магией запустилось то, что недавно не работало
+                            ? причина в том, что я сопоставлял 2 порта 80 и 3000 ?
+                            ? причина в том, что паралельно запускались бэкэнды ?
+
+                        ? host.docker.internal неадекватно обращется к портам ?
+                        
+                        ? сборка через docker-compose up проходит неудачно из-за того, что не указан путь к докерфайлу ?
+
+                        : до добавления volumes in docker-compose.yml docker-compose up все равно нормально отрабатывал. Это по сути была скрытая ошибка
+
+                        ? проблема заключалась в том, что я указал context build сразу написав адрес папки в build, вместо того, чтобы создать подпукнт context ?
+
+                        ? обратное изменение host.docker.internal на localhost починит обращение к сайту в интернете ?
+                            нет, не решает
+
+
+                        : возникает внутренняя ошибка сервера 500, но контактировать с сервером получается
+                            ? где посмотреть более подробный отчет об ошибке на frontend ?
+
+
+                            ? ошибка возникшая на бэкэнде связана с тем, что фронтенд отвечает ошибкой 500 ?
+                                compose-ccoa-backend-database | 2023-04-21 12:16:42.022  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+                                compose-ccoa-backend-database | 2023-04-21 12:16:45.074  INFO 1 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50fb33a, org.springframework.security.web.context.SecurityContextPersistenceFilter@25d93198, org.springframework.security.web.header.HeaderWriterFilter@4110765e, org.springframework.web.filter.CorsFilter@2cae9b8, org.springframework.security.web.authentication.logout.LogoutFilter@64984b0f, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1dc3502b, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@6a1d3225, com.example.springsocial.security.TokenAuthenticationFilter@34acbc60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f951a7f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f038248, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1457fde, org.springframework.security.web.session.SessionManagementFilter@62e93c3a, org.springframework.security.web.access.ExceptionTranslationFilter@e9ef5b6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b948f3e]
+                                compose-ccoa-backend-database | 2023-04-21 12:16:45.780  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+                                compose-ccoa-backend-database | 2023-04-21 12:16:45.816  INFO 1 --- [           main] c.e.s.SpringSocialApplication            : Started SpringSocialApplication in 25.495 seconds (JVM running for 29.091)
+                                compose-ccoa-backend-calculator | 2023-04-21T12:21:03.720Z  INFO 1 --- [nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+                                compose-ccoa-backend-calculator |  Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+                                compose-ccoa-backend-calculator | 
+                                compose-ccoa-backend-calculator | java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x00{0x010x000x00w0x030x03mE]0xa00x830xe8{s"\0xc20xb20xb30xd70xadMe0x840xce0x9d0xbe0x7f0x860xd0Y0xc70xda0x85e0xc00x8cK0x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x0040x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x100x000x0e0x040x010x040x030x020x010x020x030x040x010x050x010x060x010xff0x010x000x010x00...]. HTTP method names must be tokens
+                                compose-ccoa-backend-calculator | 	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:272) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.1.jar!/:na]
+                                compose-ccoa-backend-calculator | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.1.jar!/:na]
+
+                        ? получится ли нормально запустить отдельно старый образ из коммита ?
+
+                        ( ) применить рабочий код и его настройки
+                            (+) удалить фронтенд, что не работает и с localhost, и с host.docker.internal
+                            (+) на его место загрузить фронтед из коммита
+                            (+) поменять localhost на host.docker.internal
+                                : пропала ошибка 500, теперь он как и раньше просто не может общаться с бэкэндами
+                            ( ) сделать сборку докера через docker-compose up , чтобы докеры могли общаться по сети
+                                + как сделать обращение именно в конкретную из 2х созданных сетей ?
+                                    написать имя докера или по static ip, тогда все будет ок (2023.04.26 19:26:40)
+
+                                + возникает ли ошибка 500, если я при запуске (непонятно зачем я это делал) напишу обращение к volumes ?
+                                    volumes нигде ни причем оказались
+
+                                ? не разрешает имя из-за @CrossOrigin адреса ?
+                                    ? при указывании адреса в @CrossOrigin его надо указывать с портом 80 ?
+                                        ? при неудачном обращении кого-попало что-нибудь должно писаться в консоль spring ?
+
+
+
+                                ? ошибка возникает из-за того, что фронтенд не может обратиться к бэкэнду или не может получить ответ ?
+                                    ? почему на localhost:8080 мог обращаться ?
+
+                                ( ) попробовать установить обратный proxy
+                                    ? неужели надо просто прописать настройки в одном файле ?
+
+                                    + обратный прокси только для клиента работает, или прост одля обращения кого угодно к nginx, даже других бэкэндов ?
+                                        для всех, кто обратился из глобального интернета (2023.04.26 18:54:35)
+
+                                    ? обязательно ли мне иметь отдельный полноценный docker-proxy, чтобы создать обратный proxy ?
+                                        
+                                        [DEPRECATED] нет, не обязательно, ибо у меня обращение к докеру будет идти только с фронтенда
+                                            + а с какого именно фронтенда, с ip пользователя, что страницу загрузил, или с ip докера, что крутиться на моем VPS ?
+                                                видимо с ip пользовательского компьютера (сука, этот ответ про "почему не работает fetch" был от грамотных людей для грамотных людей. Под этим ответом подразумевалось понимания этого вопроса и зачем нужен обратный прокси)
+
+                                    : location / (его подраздел с свойствами)
+                                        : proxy_pass    - указывает на ip адресс локального сервера с сайтом, куда проксируем соединине
+                                            ? у меня это своство указано ?
+                                                ? а если указывать, то на бэкэнд (calculate or database) или на frontend ?
+
+                                            ? почему у идет проксирование на адрес в локальной сети http://192.168.13.31 ?
+
+                                    + каким образом отдельный обратный-proxy docker поможет мне, если у меня прост обращение к другому докеру не работает (2023.04.24 00:06:25) ?
+                                        обращение к портам сайта невозможно. (2023.04.26 18:35:42)
+                                        Действующие предполагаемые агенты в локальном интернете:
+                                            Пользователь    - отдельная машина, стоящая в квартире у человека, имеющая свой ip, отличный от id сервера. (я до конца не понимаю как это работает, вроде бы так)
+                                            Сервер          - VPS выделенный сервер
+                                                Frontend    - Докер, что какой-то магией dns сервера reg.ru может торчать в интернет портом 80.
+                                                backend     - Совокупность Backend calculator and backend database, ибо функционально они находятся в одном положении с точки зрения обратного proxy
+
+                                        По сути когда все это работало на localhost, то все обращались  общедоступным ресурсам "локального" интернета. Пользователь запускал приложение фронтенда у себя в браузере и обращался к бэкэндам, что были общедоступны в "localhost" интернете. Не было проблем 
+                                            ни с доступом (в глобальном интернете запрещается обращаться к докерам в локальномй сети VPS),
+                                            ни с адресацией (LINK_QvoWDm в глобальнйо сети я не могу обратиться к сайту по порту, почему-то. ВОТ ДЛЯ ЭТОГО И ПРИДЕТСЯ ДЕЛАТЬ ОБРАТНЫЙ ПРОКСИ, ЧТОБЫ ОН ПЕРЕАДРИСОВЫВАЛ ОБРАЩЕНИЯ alamutra.online/backend_calculator/create_room В ЛОКАЛЬНУЮ СЕТЬ localhost:8080/create_room)
+
+                                    + каким образом настройка обратного-proxy внутри frontend (по сути своей обычные перенаправления на другие адреса) помогут мне с fetch, что не может по post запросу обратиться к соседнему докеру в сети (2023.04.24 00:11:47) ?
+                                        настройка не будет производиться внутри froentend. Обращение по post идет от компьютера пользователя к общедоступному backend. Frontend на сервере только выдает программный код react приложения.
+
+                                    + работает ли обращение GET запроса с фронтенда к бэкэнд докеру череез curl (2023.04.24 00:12:38) ?
+                                        : на backend_calculator вообще нету GET запросов
+                                            + не работает именно POST запрос или вообще все ?
+                                                как выяснилось - не работает обращение с ip компьютера пользователя к backend (2023.04.26 18:49:02)
+
+                                            (+) посмотреть во фронтенде наличие GET запросов
+                                    + работает ли обращение POST запроса с фронтенда к бэкэнд докеру череез curl (2023.04.24 00:12:38) ?
+                                        POST запрос не сработал, пишет 404, мол нету create_room
+
+                                    + работает ли обращение к frontend/ curl обращение из docker-backend-calculator (2023.04.24 17:15:24) ?
+                                        работает, очень странно, что обращение работает в одну сторону
+
+                                        + дело в том, что spring не умеет принимать запросы или в обращении фронтенда к бэкэнду ?
+                                            нет, смотри ниже, с командой curl получилось получить id созданной комнаты
+
+                                    + работает ли обращение к docker-database из docker-calculator (2023.04.24 17:53:08) ?
+                                        все обращения между докерами работают
+                                    
+                                : поменял неуданые замены портов в API_BASE_URL = 'http://compose-ccoa-backend-calculator:8080:8081:8081' при помощи find . -type f -print0 | xargs -0 sed -i 's/:8080:8081:8081/:8080/g' (2023.04.24 18:51:38)
+                                    
+                                + обращение к backend-calculator не работает из-за отсуствия данных ?
+                                    нет, ибо там не требуются данные (в create_room)
+
+                                (+) заменить API_BASE_URL на backend-database
+                                + работает ли обращение на backend-database (2023.04.24 20:51:38) ?
+                                    no
+                                    ? какие вообще запросы фронтенд делает на backend-database ?
+                                    
+                                    : curl compose-ccoa-backend-database:8081/user/me  выдал ошибку 401 - несанкционированный доступ (без авторизации), что по сути нормально.
+                                    : /login выдал то же самое
+                                    : рандомный адрес (случайный набор английский букв) выдал ту же ошибку 401
+
+                                + какие ошибки выдает обращение на backend-calculator ?
+                                    : успешно отработала команда curl -X POST compose-ccoa-backend-calculator:8080/create_room {"id":"dWP5WK1gVqjHCVh4NvjS"}
+                                        + все было из-за того, что в начале стояло http//: ?
+                                            нет, ибо команда отработала тоже нормально curl -X POST http://compose-ccoa-backend-calculator:8080/create_room  {"id":"dWP5WK1gVqjHCVh4NvjS"}
+
+                                (x) попытаться починить обращение к бэкэндам в ccoa, сравнив с чистым проектом
+                                    (+) скачать hello-world проект на спринг
+                                        https://github.com/spring-guides/gs-rest-service
+                                    (+) убедиться, что при запуске без докера все работает нормально
+                                    (+) упаковать в docker-compose 
+                                    ( ) сделать ручной curl запрос из одного докера в другой запрос к портам spring 
+                                        : обращение из браузера alamutra.online:8084/greeting работает, выдает json массив (пришлось заливать на VPS потому что опять не хватило скорости интернета для сборки докера)
+                                        ? каким образом это может сочетаться с тем, что я не мог обратиться на бэкэнд, при том, что бэкэнды точно так же торчат портами LINK_QvoWDm (2023.04.26 19:59:07) ?
+                                            <?> дело в том, что backend-calculator не был подключен к host.docker.internal сети, а backend-spring-simple был подключен ?
+                                                ? при отсутсвии обратного proxy нам не нужна внутренняя сеть между докерами, ибо они не общаются между собой, а со всеми общается пользователь (2023.04.26 20:15:24) ?
+                                    ( ) сделать fetch запрос
+                                    ? работает ?
+
+
+                                    <?> а что если причина в том, что fetch всегда пытается обратиться в глобальный интернет и поэтому 
+                                        1) раньше все работало, потому что можно было обратиться к бэкэндам через localhsot:8080
+                                        2) сейчас все не работает, потому что к бэкэндам можно обратиться только через внутреннюю сеть, а fetch пытается найти сайты с названием внутрененей сети
+                                        3) именно по этому советовали настроить обратный proxy, чтобы торчали бэкэнды в интернет
+                                        ?
+                                        : по сути ведь очень логично, каким образом fetch может отличить текстовый адрес http//backend:8080/user/me от адреса в интернете
+                                            ? по отсутствию .com сможет отличить ?
+
+                                        ? можно ли настроить обращение fetch к внутренней сети (к alias из hosts) (2023.04.25 19:22:21) ?
+
+                                (+) попробовать настроить docker-compose.yml статическими ip
+                                    : теперь вот такая ошибка POST http://172.16.238.12:8080/create_room net::ERR_CONNECTION_TIMED_OUT
+
+
+                            (+) убдиться в том, что GET работает. 
+                                не работает, json ответ вернулся с кодом 404. поправка более новая (2023.04.24 00:21:25)
+                                GET запрос работает, если обращаться к compose-ccoa-backend-calculator:8080 с frontend
+                                    => следовательно причина в том, что именно nginx не рабоатет с fetch
+                                (x) встроить отдельный докер в docker-compose для тестирования GET запроса
+
+
+
                     
 
             ( ) попытаться прогнать туториал заново, с чистого листа, не подключая к проекту

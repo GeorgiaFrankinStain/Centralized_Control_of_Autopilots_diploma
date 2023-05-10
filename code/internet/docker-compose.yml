@@ -1,18 +1,17 @@
 version: '3.3'
 services:
   ccoa-backend-database:
-    network_mode: "bridge"
     build: 
       context: ./backend_database/spring-social/
       args:
         - DATABASE_HOST=127.0.0.1:3306 
-    container_name: georgiafrankinstain/ccoa-backend-database:0.0.1-SNAPSHOT
+    container_name: georgiafrankinstain/compose-ccoa-backend-database:0.0.1-SNAPSHOT
     ports:
       - '8081:8081'
+
   frontend:
-    network_mode: "bridge"
     build: ./frontend/react-ccoa/
-    container_name: georgiafrankinstain/ccoa-frontend:0.0.1-SNAPSHOT
+    container_name: georgiafrankinstain/compose-ccoa-frontend:0.0.1-SNAPSHOT
     ports:
       - '3000:3000'
     volumes:
@@ -20,3 +19,12 @@ services:
       - ./app/node_modules
     stdin_open: true
     tty: true
+
+  ccoa-backend-calculate
+
+
+networks:
+  first-network:
+    driver: bridge
+  second-network:
+    driver: bridge
