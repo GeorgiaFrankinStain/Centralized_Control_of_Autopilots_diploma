@@ -3,28 +3,48 @@ services:
   ccoa-backend-database:
     build: 
       context: ./backend_database/spring-social/
-      args:
-        - DATABASE_HOST=127.0.0.1:3306 
-    container_name: georgiafrankinstain/compose-ccoa-backend-database:0.0.1-SNAPSHOT
+    environment:
+      - DATABASE_HOST=host.docker.internal:3306 
+    container_name: compose-ccoa-backend-database
     ports:
       - '8081:8081'
+    networks:
+      frontend-to-backends:
+        ipv4_address: 172.16.238.10
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   frontend:
-    build: ./frontend/react-ccoa/
-    container_name: georgiafrankinstain/compose-ccoa-frontend:0.0.1-SNAPSHOT
+    build: 
+      context: ./frontend/react-ccoa/
+    container_name: compose-ccoa-frontend
     ports:
-      - '3000:3000'
-    volumes:
-      - ./frontend/react-ccoa/:/app
-      - ./app/node_modules
+#      - '3000:3000'
+      - '80:80'
     stdin_open: true
     tty: true
+#    volumes:
+#      - /root/project_files_for_build/frontend/react-ccoa:/var/www/localhost/htdocs
+    networks:
+      frontend-to-backends:
+        ipv4_address: 172.16.238.11
 
-  ccoa-backend-calculate
+  ccoa-backend-calculate:
+    build: 
+      context: ./backend_calculator/CCoA/
+    container_name: compose-ccoa-backend-calculator
+    ports:
+      - '8080:8080'
+    networks:
+      frontend-to-backends:
+        ipv4_address: 172.16.238.12
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
-
+#without reverse proxy no need
 networks:
-  first-network:
+  frontend-to-backends:
     driver: bridge
-  second-network:
-    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24
