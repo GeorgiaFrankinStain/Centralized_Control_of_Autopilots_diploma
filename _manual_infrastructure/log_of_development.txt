@@ -3188,6 +3188,9 @@ CCoA - Centralized Control of Autopilots
                     }
                 }
 
+      : баг, не видит изменений (git status) был починен при помощи
+         git rm --cached directory
+         git add directory
 
 			( ) сделать аудиозапись на память чем я в основном занимался, впечатления
 
