@@ -19,8 +19,8 @@ services:
       context: ./frontend/react-ccoa/
     container_name: compose-ccoa-frontend
     ports:
-#      - '3000:3000'
-      - '80:80'
+      - '3000:3000'
+      #- '80:80'  # for internat-server ubuntu with text address
     stdin_open: true
     tty: true
 #    volumes:
