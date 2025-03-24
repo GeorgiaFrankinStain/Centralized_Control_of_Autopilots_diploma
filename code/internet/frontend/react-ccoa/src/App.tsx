@@ -9,7 +9,7 @@ import Login, {checkAuthStatus} from "./user/login/Login";
 import SignUp from "./user/signup/Signup";
 import OAuth2RedirectHandler from "./user/oauth2/OAuth2RedirectHandler";
 import {Authenticated, UserDataFromUserMeType} from "./common/Authenticated";
-import {ACCESS_TOKEN, API_BASE_URL} from "./index";
+import {ACCESS_TOKEN, API_BASE_URL_BACKEND_DATABASE} from "./index";
 import {AppHeader} from "./common/AppHeader";
 
 
@@ -67,7 +67,7 @@ function App() {
         }
 
         let options = {
-            url: API_BASE_URL + "/user/me",
+            url: API_BASE_URL_BACKEND_DATABASE + "/user/me",
             method: 'GET'
         };
 
@@ -89,7 +89,7 @@ function App() {
 
         const data: UserDataFromUserMeType = await (
             await fetch(
-                API_BASE_URL + "/user/me", options
+                API_BASE_URL_BACKEND_DATABASE + "/user/me", options
             )
         ).json();
 

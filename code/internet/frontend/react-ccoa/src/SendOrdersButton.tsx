@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {setDataElbow, SetElbowsJson} from "./Canvas"
 import {PointCCoA} from "./Polygon";
+import {API_BASE_URL} from "./index";
 
 
 let sendJsonOrders = {
@@ -120,7 +121,7 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
 
         // Send data to the backend via POST
-        fetch('http://alamutra.online:8080/create_room', {  // Enter your IP address here
+        fetch(API_BASE_URL + ':8080/create_room', {  // Enter your IP address here
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
@@ -141,7 +142,7 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
 
                 // Send data to the backend via POST
-                fetch('http://alamutra.online:8080/to_application_orders', {  // Enter your IP address here
+                fetch(API_BASE_URL + ':8080/to_application_orders', {  // Enter your IP address here
                     method: 'POST',
 
                     headers: {
@@ -180,7 +181,7 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
     function getElbowFootprint() {
         // Send data to the backend via POST
-        fetch('http://alamutra.online:8080/get_elbow_footprint', {  // Enter your IP address here
+        fetch(API_BASE_URL + ':8080/get_elbow_footprint', {  // Enter your IP address here
 
             method: 'POST',
             headers: {

@@ -1,4 +1,4 @@
-import {ACCESS_TOKEN, API_BASE_URL} from "../index";
+import {ACCESS_TOKEN, API_BASE_URL_BACKEND_DATABASE} from "../index";
 import {reject} from "q";
 
 const request = (options: any): any => {
@@ -30,14 +30,14 @@ export function getCurrentUser() {
     }
 
     return request({
-        url: API_BASE_URL + "/user/me",
+        url: API_BASE_URL_BACKEND_DATABASE + "/user/me",
         method: 'GET'
     });
 }
 
 export function login(loginRequest: any) {
     return request({
-        url: API_BASE_URL + "/auth/login",
+        url: API_BASE_URL_BACKEND_DATABASE + "/auth/login",
         method: 'POST',
         body: JSON.stringify(loginRequest)
     });
@@ -45,7 +45,7 @@ export function login(loginRequest: any) {
 
 export function signup(signupRequest: any) {
     return request({
-        url: API_BASE_URL + "/auth/signup",
+        url: API_BASE_URL_BACKEND_DATABASE + "/auth/signup",
         method: 'POST',
         body: JSON.stringify(signupRequest)
     });
