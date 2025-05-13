@@ -1,0 +1,130 @@
+
+
+.background-menu {
+    background: var(--backgroud);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.menu {
+    position: fixed;
+    display: flex;
+    text-align: left;
+    top: 10px;
+    left: 87px;
+    height: fit-content;
+    font-weight: bold;
+    font-family: "arial", sans-serif;
+    font-size: 20px;
+    width: calc(100vw - 390px);
+}
+
+.menu-line {
+    position: fixed;
+    height: 2px;
+
+    background: black;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+.last-menu-item {
+    display: inline;
+    height: 2px;
+    position: relative;
+    /*width: calc(100vw - 610px);*/
+    margin-left: 30px;
+    flex-grow: 1;
+    margin-top: 37.5px;
+}
+.first-menu-item {
+    top: 48px;
+    border-radius: 0px;
+    width: 37px;
+    left: 35px;
+}
+/*---------*/
+
+
+#activeTabMenu .con-moment {
+    background: var(--backgroud);
+    border-color: black;
+    border-bottom: 2px solid var(--backgroud);
+    z-index: 16;
+}
+#activeTabMenu .con-before {
+    background: var(--backgroud);
+    border-color: black;
+    border-bottom: 2px solid var(--backgroud);
+    z-index: 15;
+}
+#activeTabMenu .con-after {
+    background: var(--backgroud);
+    border-color: black;
+    border-bottom: 2px solid var(--backgroud);
+    z-index: 15;
+}
+.con {
+    display: inline;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    height: 30px;
+    user-select: none;
+    background: var(--backgroud);
+}
+.con:hover {
+    cursor: pointer;
+}
+.con:hover span {
+    text-decoration: underline;
+}
+
+.non-first-con {
+    margin-left: 35px;
+}
+
+.con-moment {
+    display: inline-block;
+    background: var(--menu-tabs-border);
+    padding-top: 5px;
+    margin-left: -5px;
+    height: 40px;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid black;
+    position: relative;
+}
+.con-before {
+    display: inline;
+    background: var(--menu-tabs-border);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left: -25px;
+
+    transform: skew(-30deg);
+    border-top-left-radius: 8px;
+    border: 2px solid gray;
+    border-bottom-color: black;
+}
+.con-after {
+    display: inline;
+    position: absolute;
+    margin-left: -40px;
+    background: var(--menu-tabs-border);
+    width: 60px;
+    height: 40px;
+    transform: skew(30deg);
+    border-top-right-radius: 8px;
+    border: 2px solid gray;
+    border-bottom-color: black;
+}
+
+
+/*---------*/
+
+

@@ -1,6 +1,6 @@
 import React, {MutableRefObject, useEffect, useRef, useState} from "react";
-import {coordinates_sprite_machines, globalScale} from "./Canvas";
-import {PointCCoAClass} from "./Polygon";
+import {coordinates_sprite_machines, globalScale} from "./DrawingMotionPath";
+import {PointCCoAClass} from "../../../Polygon";
 import {IDataForOrderWithoutId} from "./DragList";
 
 
@@ -304,15 +304,14 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
 
     return (
         <>
-            <p>text</p>
-
-            <canvas  id="setOrdersCanvas" width="490" height="490" ref={refCanvas} />
-            <p>test text</p>
+            <div>
+                <canvas  id="setOrdersCanvas" width={"625px"} height={"625px"} ref={refCanvas} />
+            </div>
             {/*<div*/}
             {/*    id="clear"*/}
             {/*    onClick={() => classVar.clearEventHandler()}*/}
             {/*>clear</div>*/}
-            <img id="set_cars" className="display-none" src={require("./SetCars.png")} />
+            <img id="set_cars" className="display-none" src={require("../../../SetCars.png")} />
         </>
     );
 }

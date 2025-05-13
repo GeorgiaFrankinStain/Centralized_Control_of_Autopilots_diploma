@@ -5,7 +5,7 @@ import {Link, useNavigate} from "react-router-dom";
 import githubLogo from '../../img/github-logo.png';
 import { Navigate } from 'react-router';
 
-import {IDataForOrderWithoutId} from "../../DragList";
+import {IDataForOrderWithoutId} from "../../pages/parts/game/DragList";
 import {toast} from "react-toastify";
 import {signup} from "../../util/APIUtils";
 

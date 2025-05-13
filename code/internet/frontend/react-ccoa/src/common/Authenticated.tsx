@@ -3,11 +3,6 @@ import {checkAuthStatus} from "../user/login/Login";
 import { Navigate } from 'react-router';
 
 
-export type UserDataFromUserMeType = {
-    name: string;
-    email: string;
-    imageUrl: string;
-}
 
 
 type IAuthenticatedProps = {

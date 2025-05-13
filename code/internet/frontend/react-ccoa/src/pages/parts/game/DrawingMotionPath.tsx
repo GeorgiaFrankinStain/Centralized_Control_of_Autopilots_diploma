@@ -1,6 +1,6 @@
 import React, {MutableRefObject, useEffect, useRef} from "react";
 import assert from "assert";
-import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA, PointCCoAClass} from "./Polygon";
+import {PolygonCCoA, PolygonCCoAClass, PointCCoA, PositionCCoA, PointCCoAClass} from "../../../Polygon";
 import {Simulate} from "react-dom/test-utils";
 import error = Simulate.error;
 import {IDataForOrder} from "./DragList";
@@ -524,7 +524,7 @@ const useAnimationFrame = ({
     }, [shouldAnimate, stateCount]);
 };
 
-export const globalScale = 1;
+export const globalScale = 2;
 export const coordinates_sprite_machines = [
     {
         "frame": {
@@ -982,7 +982,7 @@ interface ICanvasRendering {
     stateForForceUpdateCanvasInCode: number
 }
 
-const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
+const DrawingMotionPath = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
 
     console.log("input STATE NUMBER: " + stateForForceUpdateCanvasInCode);
 
@@ -1137,8 +1137,8 @@ const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
                 {/*</div>*/}
             {/*</main>*/}
 
-            <canvas  id="viewResultMoving" />
-            <img id="set_cars" className="display-none" src={require("./SetCars.png")} />
+            <canvas  id="viewResultMoving" width="490px" height="490px"/>
+            <img id="set_cars" className="display-none" src={require("../../../SetCars.png")} />
         </>
     );
 };
@@ -1146,7 +1146,7 @@ const Canvas = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) => {
 
 
 
-export default Canvas;
+export default DrawingMotionPath;
 
 
 

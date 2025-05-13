@@ -2,350 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93bee3ce-6b2b-4c74-b7ff-92ba2e4fdfc9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../_manual_infrastructure/log_of_development.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../_manual_infrastructure/log_of_development.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringController/ManagerRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringController/ManagerRoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/script_to_docker.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/CCoAWebApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/ConsoleManagement/ConsoleManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/ControllerSpring/ManagerRoomController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Controller/ManagerRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Controller/ManagerRoomClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Controller/StorageFootprintSpaceTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Controller/StorageFootprintSpaceTimes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/AreasBenchmarkPaths/AreasBenchmarkPaths.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/AreasBenchmarkPaths/StraightLineEstimatedClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStar/AStarSpaceTimePlanarGraphClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStar/AStartPathSearchEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStar/AStartPathSearchEngineClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStar/HeuristicStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStar/HeuristicStorageClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AlhorithmFastFindPath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/ControllerMachines.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/ControllerMachinesClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/FabricNetworkNodes/FabricHexagonNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/FabricNetworkNodes/FabricNetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/FabricNetworkNodes/FabricSquareNetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantAddressHexagon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantAddressHexagonClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantIsMultiple.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantIsMultipleClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantNeighborsManualNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantNeighborsNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantNeighborsNodesClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/HexagonTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/HexagonVectorsToNeighborsHexagonTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/StorageManualNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/MagnetCoordinateStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/MagnetCoordinateStorageVacuumDoubleHashMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/NetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/NodeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/SquareNetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Corridor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/CreatorMarksOfPath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/CreatorMarksOfPathClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Exception/СrashIntoAnImpassableObjectException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Footprint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/GeneratorFlowCars/GeneratorCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/GeneratorFlowCars/GeneratorCarsClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/GeneratorFlowCars/RunnerSynchronizationGeneratorsCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/GeneratorFlowCars/RunnerSynchronizationGeneratorsCarsClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/GeneratorFlowCars/StandardGeneratorCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/GeneratorFlowCars/StandardRunnerGeneratorsCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/HexagonClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/HexagonVectors.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/LayerFootprintSpaceTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/LineCut.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/LineCutClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/NextFootprintAndTimes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/NextFootprintAndTimesClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/PointCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/PointCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/PolygonCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/PolygonCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Round.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RoundClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RoundsCorridorClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/Route.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RouteClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/GameTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/GameTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/GlobalVariable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/IndexLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/IndexLayerClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Landscape/Landscape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Landscape/LandscapeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Landscape/ZonaLandscape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Landscape/ZonaLandscapeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/BuilderParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/BuilderParametersMovingUniqueClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/FabricParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/FabricParametersMovingUniqueClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/ParametersMoving.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/ParametersMovingClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/ParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/ParametersMovingUniqueClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/PathCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/PathCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/Square20ParametersMoving.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/Square20ParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/StandardPathX0Y100ToX100Y100.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/PathsMachines/PositionClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/Position.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ModelLogic/TypesInLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/ConverterTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/ConvertersTime/DemonstartionAlhorith.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/ConvertersTime/MarginTimeForLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/ConvertersTime/MarginTimeForLevelClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/DataFootprintForRendering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/HistoryChanges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/PathMovingUniqueJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/PoolDataFootprintForRendering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/PoolDataFootprintForRenderingClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/SkinsCapacitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/SubWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/TypeLandscapeBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/TypeMachinesBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Wrappers/MultiMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Wrappers/MultiMapTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Wrappers/PairCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Wrappers/PairCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Wrappers/RandomWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Core/Wrappers/RandomWrapperClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Log.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/Model/RoomApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/PercistanceDataAccessObjects/AdderMarks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/PercistanceDataAccessObjects/Exception/NotEnoughDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/PercistanceDataAccessObjects/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/PercistanceDataAccessObjects/OrderFromString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/java/com/alamutra/CCoAWeb/PercistanceDataAccessObjects/StringAdderMarks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/main/resources/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/CCoAWebApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/Controller/StorageFootprintSpaceTimeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStar/HeuristicStorageClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantAddressHexagonClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/DeterminantIsMultipleClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/Hexagon/HexagonTileTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/MagnetCoordinateStorageVacuumDoubleHashMapTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/ControllerMachines/NodeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/HexagonClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/LineCutClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/PointCCoAClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/PolygonCCoAClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RoundClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/FootprintSpaceTime/RoundsCorridorClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/GlobalVariableTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/IndexLayerClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/BuilderParametersMovingUniqueUniqueClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/FabricParametersMovingUniqueUniqueClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/ParametersMovingUniqueClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/MovingBody/PathCCoAClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ModelLogic/PathsMachines/PositionClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/ViewSettingRenderingTasks/SkinsCapacitorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/Wrappers/MultiMapTreeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/Core/Wrappers/RandomWrapperClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoAWeb/src/test/java/com/alamutra/CCoAWeb/PercistanceDataAccessObjects/StringAdderMarksTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_database/spring-social/src/main/java/com/example/springsocial/security/oauth2/OAuth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_database/spring-social/src/main/java/com/example/springsocial/security/oauth2/OAuth2AuthenticationSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend_database/spring-social/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_database/spring-social/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/common/LogIn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/common/menu/Menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/common/menu/MenuTab.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/Home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/ButtonClearAll.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SetOrders.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/App.test.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/CreateRoomButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/CreateRoomButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SendOrdersButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/SendOrdersButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/util/APIUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/util/APIUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/test.txx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/DrawingMotionPath.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/CreateRoomButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/CreateRoomButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/DragList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/DragList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SendOrdersButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SendOrdersButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SetOrders.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SetOrdersCanvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SetOrdersCanvas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/common/AppHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/common/LogIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/common/Authenticated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/common/Authenticated.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/home/Home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/home/Home.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/user/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/user/profile/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/user/signup/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/user/signup/Signup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/badlogic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/machine9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/assets/phallus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/resources/log4j2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ConsoleManagement/ConsoleManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/AreasBenchmarkPaths/AreasBenchmarkPaths.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/AreasBenchmarkPaths/StraightLineEstimatedClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStar/AStarSpaceTimePlanarGraphClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStar/AStartPathSearchEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStar/AStartPathSearchEngineClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStar/HeuristicStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStar/HeuristicStorageClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/AlhorithmFastFindPath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/ControllerMachines.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/ControllerMachinesClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/FabricNetworkNodes/FabricHexagonNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/FabricNetworkNodes/FabricNetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/FabricNetworkNodes/FabricSquareNetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantAddressHexagon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantAddressHexagonClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantIsMultiple.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantIsMultipleClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantNeighborsManualNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantNeighborsNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantNeighborsNodesClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/HexagonTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/HexagonVectorsToNeighborsHexagonTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/StorageManualNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/MagnetCoordinateStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/MagnetCoordinateStorageVacuumDoubleHashMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/NetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/NodeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/ControllerMachines/SquareNetworkNodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/Corridor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/CreatorMarksOfPath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/CreatorMarksOfPathClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/Exception/СrashIntoAnImpassableObjectException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/Footprint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/FootprintClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/FootprintsSpaceTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/FootprintsSpaceTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/GeneratorFlowCars/GeneratorCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/GeneratorFlowCars/GeneratorCarsClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/GeneratorFlowCars/RunnerSynchronizationGeneratorsCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/GeneratorFlowCars/RunnerSynchronizationGeneratorsCarsClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/GeneratorFlowCars/StandardGeneratorCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/GeneratorFlowCars/StandardRunnerGeneratorsCars.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/HexagonClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/HexagonVectors.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/LayerFootprintSpaceTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/LineCut.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/LineCutClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/NextFootprintAndTimes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/NextFootprintAndTimesClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/PointCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/PointCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/PolygonCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/PolygonCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/Round.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/RoundClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/RoundsCorridorClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/Route.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/RouteClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/GameTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/GameTimeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/GlobalVariable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/IndexLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/IndexLayerClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/Landscape/Landscape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/Landscape/LandscapeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/Landscape/ZonaLandscape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/Landscape/ZonaLandscapeClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/BuilderParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/BuilderParametersMovingUniqueClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/FabricParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/FabricParametersMovingUniqueClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/ParametersMoving.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/ParametersMovingClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/ParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/ParametersMovingUniqueClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/PathCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/PathCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/Square20ParametersMoving.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/Square20ParametersMovingUnique.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/MovingBody/StandardPathX0Y100ToX100Y100.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/PathsMachines/PositionClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/Position.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Logic/TypesInLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/ConverterTime.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/ConvertersTime/DemonstartionAlhorith.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/ConvertersTime/MarginTimeForLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/ConvertersTime/MarginTimeForLevelClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/DataFootprintForRendering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/PoolDataFootprintForRendering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/PoolDataFootprintForRenderingClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/SkinsCapacitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/SubWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/TypeLandscapeBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/SettingRenderingTasks/TypeMachinesBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Wrappers/MultiMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Wrappers/MultiMapTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Wrappers/PairCCoA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Wrappers/PairCCoAClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Wrappers/RandomWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Core/Wrappers/RandomWrapperClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ExecutionRenderingTasksLibgdxView/FabricRenderingFootprintClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ExecutionRenderingTasksLibgdxView/FabricSprite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ExecutionRenderingTasksLibgdxView/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ExecutionRenderingTasksLibgdxView/RenderingFootprints/Machine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ExecutionRenderingTasksLibgdxView/RenderingFootprints/WallRectangleCar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/ExecutionRenderingTasksLibgdxView/SpriteWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Log.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/PercistanceDataAccessObjects/AdderMarks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/PercistanceDataAccessObjects/Exception/NotEnoughDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/PercistanceDataAccessObjects/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/PercistanceDataAccessObjects/OrderFromString.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/com/alamutra/ccoa/PercistanceDataAccessObjects/StringAdderMarks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/src/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStar/HeuristicStorageClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/AStarSpaceTimePlanarGraphClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantAddressHexagonClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/DeterminantIsMultipleClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/Hexagon/HexagonTileTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/MagnetCoordinateStorageVacuumDoubleHashMapTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/ControllerMachines/NodeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/FootprintClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/FootprintsSpaceTimeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/HexagonClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/LineCutClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/MultiMapLayerFootprintSpaceTimeClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/PointCCoAClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/PolygonCCoAClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/RoundClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/FootprintSpaceTime/RoundsCorridorClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/GlobalVariableTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/IndexLayerClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/MovingBody/BuilderParametersMovingUniqueUniqueClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/MovingBody/FabricParametersMovingUniqueUniqueClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/MovingBody/ParametersMovingUniqueClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/MovingBody/PathCCoAClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Logic/PathsMachines/PositionClassTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/SettingRenderingTasks/SkinsCapacitorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/Core/Wrappers/MultiMapTreeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/core/test/com/alamutra/ccoa/PercistanceDataAccessObjects/StringAdderMarksTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/desktop/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/desktop/src/com/alamutra/ccoa/desktop/DesktopLauncher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../libGDX/settings.gradle" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -439,15 +120,29 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/gfs/projects/Centralized_Control_of_Autopilots__diploma/code/internet/frontend",
+    "last_opened_file_path": "/home/gfs/projects/kubernetis_education/spring-boot-hello-world",
     "nodejs_package_manager_path": "yarn",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "ts.external.directory.path": "/home/gfs/projects/Centralized_Control_of_Autopilots__diploma/code/internet/frontend/react-ccoa/node_modules/typescript/lib"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts" />
+      <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts/game" />
+      <recent name="$PROJECT_DIR$/react-ccoa/src/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/react-ccoa/src/common/menu" />
+      <recent name="$PROJECT_DIR$/react-ccoa/src/common" />
+      <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts" />
+      <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts/game" />
+      <recent name="$PROJECT_DIR$/react-ccoa/src/pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -469,6 +164,21 @@
       <workItem from="1735490973675" duration="3277000" />
       <workItem from="1735646830534" duration="58000" />
       <workItem from="1742680660807" duration="3149000" />
+      <workItem from="1742822622173" duration="3457000" />
+      <workItem from="1742875680560" duration="26765000" />
+      <workItem from="1743002360746" duration="6597000" />
+      <workItem from="1743048284968" duration="10437000" />
+      <workItem from="1743071148461" duration="1881000" />
+      <workItem from="1743127269824" duration="8642000" />
+      <workItem from="1744298305837" duration="7754000" />
+      <workItem from="1744362485540" duration="7125000" />
+      <workItem from="1744474712573" duration="1487000" />
+      <workItem from="1744619354008" duration="15750000" />
+      <workItem from="1744647235482" duration="4320000" />
+      <workItem from="1745219785051" duration="4010000" />
+      <workItem from="1745223814277" duration="7511000" />
+      <workItem from="1745234761628" duration="7110000" />
+      <workItem from="1746862090648" duration="90000" />
     </task>
     <servers />
   </component>

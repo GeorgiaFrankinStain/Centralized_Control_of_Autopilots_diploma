@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {API_BASE_URL} from "./index";
+import {API_BASE_URL} from "../../../index";
 
 export function ButtonCreateRoom() {
 

@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 
 import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd"
-import './App.css';
-import {coordinates_sprite_machines} from "./Canvas";
+import '../../../App.css';
+import {coordinates_sprite_machines} from "./DrawingMotionPath";
 import {controllerAddABOrderMachine, controllerDeleteABOrderMachineAll} from "./SendOrdersButton";
-import {PointCCoAClass} from "./Polygon";
-import SpriteCars from './SetCars.png';
+import {PointCCoAClass} from "../../../Polygon";
+import SpriteCars from '../../../SetCars.png';
 
 
 
@@ -54,11 +54,11 @@ const listABForOrder = [
 
 const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
     padding: 10,
-    margin: `0 50px 15px 50px`,
+    margin: `10px 10px 10px 10px`,
     background: isDragging ? "#4a2975" : "white",
     color: isDragging ? "white" : "black",
     border: `1px solid black`,
-    fontSize: `20px`,
+    fontSize: `13px`,
     borderRadius: `5px`,
 
     ...draggableStyle
@@ -81,19 +81,20 @@ export interface IDataForOrderWithoutId {
     skinNumber: number
 }
 
-interface IDragListProps {
-    addABForOrderCallback:  React.Dispatch<React.SetStateAction<IDataForOrder[]>>,
-    listOrders: IDataForOrder[]
+
+export interface IOrderMachinesGetState {
+    setOrderMachines:  React.Dispatch<React.SetStateAction<IDataForOrder[]>>,
+    orderMachines: IDataForOrder[]
 }
 
 
 
 export default React.memo(
-    function ({addABForOrderCallback, listOrders}: IDragListProps) {
+    function ({setOrderMachines, orderMachines}: IOrderMachinesGetState) {
 
         const todoRef = useRef<IDataForOrder[]>([]);
 
-        todoRef.current = listOrders;
+        todoRef.current = orderMachines;
 
         const onDragEnd = (result: DropResult) => {
 
@@ -106,12 +107,12 @@ export default React.memo(
                 return;
             }
 
-            const items = Array.from(listOrders)
+            const items = Array.from(orderMachines)
             const [ newOrder ] = items.splice(source.index, 1);
             items.splice(destination.index, 0, newOrder);
 
 
-            addABForOrderCallback(items);
+            setOrderMachines(items);
             controllerDeleteABOrderMachineAll();
             todoRef.current.map(({startX, startY, endX, endY, skinNumber, startTime}) => {
                 const start = new PointCCoAClass(startX, startY);
@@ -122,8 +123,14 @@ export default React.memo(
         }
         return (
             <>
-                <div className="App" style={{height: "1000px"}}>
-                    <h1>Drag and Drop</h1>
+                <div style={{
+                    width: "240px",
+                    borderRadius: `5px`,
+                    border: "1px solid black",
+                    height: "fit-content",
+                    minHeight: "500px",
+                    marginLeft: "15px"
+                }}>
                     <DragDropContext onDragEnd={onDragEnd}>
                         <Droppable droppableId="todo">
                             {(provided) => (
@@ -133,6 +140,8 @@ export default React.memo(
                                         const y = coordinates_sprite_machines[skinNumber].frame.y;
                                         const w = coordinates_sprite_machines[skinNumber].frame.w;
                                         const h = coordinates_sprite_machines[skinNumber].frame.h;
+                                        const scale = 0.25;
+
                                         return (
                                             <Draggable key={id} draggableId={id} index={index}>
                                                 {(provided, snapshot) => (
@@ -144,35 +153,19 @@ export default React.memo(
                                                     >
                                                         <table>
                                                             <tr>
-                                                                <td rowSpan={3}>
+                                                                <td rowSpan={3} style={{width: "50px"}}>
                                                                     <div style={{
-                                                                        width: w + "px",
-                                                                        height: h + "px",
+                                                                        width: (w * scale) + "px",
+                                                                        height: (h * scale) + "px",
                                                                         backgroundImage: `url(${SpriteCars})`,
-                                                                        backgroundPosition: -x + "px " + -y + "px"
+                                                                        backgroundSize: (1074 * scale) + "px " + (1010 * scale) + "px",
+                                                                        backgroundPosition: -(x * scale) + "px " + -(y * scale) + "px"
                                                                     }}></div>
                                                                 </td>
                                                                 <td>
-                                                                    <div>start_time: {startTime}</div>
+                                                                    <div>{startTime} | ({startX}; {startY}) | ({endX}; {endY})</div>
                                                                 </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div>
-                                                                        start:
-                                                                        x: {startX}
-                                                                        y: {startY}
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div>
-                                                                        end:
-                                                                        x: {endX}
-                                                                        y: {endY}
-                                                                    </div>
-                                                                </td>
+
                                                             </tr>
                                                         </table>
                                                     </div>

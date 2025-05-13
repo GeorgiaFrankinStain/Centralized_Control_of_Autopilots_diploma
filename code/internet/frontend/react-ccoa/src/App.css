@@ -1,5 +1,15 @@
+
+:root {
+  --menu-tabs-border: #CCCCCC;
+  --backgroud: #f9f9f9;
+}
+
+html {
+}
+
 .App {
   text-align: center;
+  background: var(--backgroud);
 }
 
 .App-logo {
@@ -37,18 +47,48 @@
   }
 }
 
+.button {
+  display:block;
+  overflow: auto;
+  height: fit-content;
+  user-select: none;
+  color:#444;
+  border:1px solid #CCC;
+  background:#DDD;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+  cursor:pointer;
+  max-width: 100px;
+  padding: 5px;
+  text-align: center;
+}
+.button:active {
+  text-decoration: underline;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
 
 .display-none {
   display: none;
 }
 
 #viewResultMoving {
+  width: 625px;
+  height: 625px;
   border: 5px solid black;
 }
 #setOrdersCanvas {
+  width: 625px;
+  height: 625px;
   border: 5px solid black;
 }
 
-.header-menu {
-  text-align: left;
+
+
+.line-break-container {
+  flex-flow: row wrap;
+  display: flex;
+}
+
+
+.container-text {
+  font-size: 19px;
 }

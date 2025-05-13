@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {setDataElbow, SetElbowsJson} from "./Canvas"
-import {PointCCoA} from "./Polygon";
-import {API_BASE_URL} from "./index";
+import {setDataElbow, SetElbowsJson} from "./DrawingMotionPath"
+import {PointCCoA} from "../../../Polygon";
+import {API_BASE_URL} from "../../../index";
 
 
 let sendJsonOrders = {
@@ -113,9 +113,6 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
 
 
-    // const sendJsonOrders = {"id": "textid"};
-
-
 
     function sendApplicationOrdersClick() {
 
@@ -212,16 +209,15 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
     }
 
     return (
-        <div onClick={sendApplicationOrdersClick} style={{
+        <div className={'button'} onClick={sendApplicationOrdersClick} style={{
             textAlign: 'center',
-            width: '100px',
+            width: '125px',
+            marginBottom: "5px",
             border: '1px solid gray',
-            borderRadius: '5px'
+            borderRadius: '25px'
         }}>
-            Send orders to backend calculated
+            Расчитать траектории движения
         </div>
     );
 
 }
-
-// export { ButtonCreateRoom };
