@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {API_BASE_URL} from "../../../index";
+import {API_BACKEND_CALCULATOR} from "../../../index";
 
 export function ButtonCreateRoom() {
 
@@ -27,8 +27,8 @@ export function ButtonCreateRoom() {
     function handleClick() {
 
         // Send data to the backend via POST
-        fetch(API_BASE_URL + ':8080/create_room', {  // Enter your IP address here
-
+        // fetch('localhost:8080/create_room', {  // Enter your IP address here
+        fetch(API_BACKEND_CALCULATOR + '/create_room', {  // Enter your IP address here
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify(jsonData) // body data type must match "Content-Type" header

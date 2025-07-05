@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-calculator-service
+  labels:
+    app: backend-calculator
+spec:
+  selector:
+    app: backend-calculator
+  ports:
+  - port: 8080            # The port this service is available on
+    targetPort: 8080    # Points to your named containerPort
+    protocol: TCP
+    name: service-http
+  - port: 443           # HTTPS port
+    targetPort: 443   # Points to your named https containerPort
+    protocol: TCP
+    name: https
+  type: ClusterIP    # Exposes the service externally
+  sessionAffinity: None

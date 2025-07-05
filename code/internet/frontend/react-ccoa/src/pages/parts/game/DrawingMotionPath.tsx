@@ -1010,8 +1010,8 @@ const DrawingMotionPath = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) 
             return;
         }
 
-        canvas.width = 400;
-        canvas.height = 400;
+        canvas.width = 625;
+        canvas.height = 625;
         const context = canvas.getContext('2d');
 
 
@@ -1039,14 +1039,16 @@ const DrawingMotionPath = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) 
             if (movedPolygon) {
                 if (dataForRenderingItem.typeObject == "TEST_SQUARE_20") {
                     const sideSize = getSideSquare(movedPolygon);
+                    console.log("sideSize: " + sideSize);
 
                     const halfScaleSideSquare = sideSize * globalScale / 2;
 
 
-                    const x = dataForRenderingItem.position.point.x * globalScale - halfScaleSideSquare;
-                    const y = dataForRenderingItem.position.point.y * globalScale - halfScaleSideSquare;
+                    const x = dataForRenderingItem.position.point.x - halfScaleSideSquare;
+                    const y = dataForRenderingItem.position.point.y - halfScaleSideSquare;
                     const angle = dataForRenderingItem.position.angle;
 
+                    console.log(x + " " + y + " --- xy draw");
 
                     context.save();
                     context.translate(
@@ -1137,7 +1139,8 @@ const DrawingMotionPath = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) 
                 {/*</div>*/}
             {/*</main>*/}
 
-            <canvas  id="viewResultMoving" width="490px" height="490px"/>
+            <canvas  id="viewResultMoving" />
+            {/*<canvas  id="viewResultMoving" width="490px" height="490px"/>*/}
             <img id="set_cars" className="display-none" src={require("../../../SetCars.png")} />
         </>
     );

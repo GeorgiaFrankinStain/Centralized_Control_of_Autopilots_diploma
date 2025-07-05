@@ -64,9 +64,14 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
             let canvas = canvasTry as HTMLCanvasElement;
             let context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
+            canvas.width = 625;
+            canvas.height = 625;
 
             this.canvas = canvas;
             this.context = context;
+
+
+                console.log(canvas.height + " ----- ooooo");
 
             this.redraw();
             this.createUserEvents();
@@ -128,6 +133,7 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
                 return;
             }
 
+            console.log(x + " " + y + "  -xy setOrders");
 
             this.context.save();
             this.context.translate(

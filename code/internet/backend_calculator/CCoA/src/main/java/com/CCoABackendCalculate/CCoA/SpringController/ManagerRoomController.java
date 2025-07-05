@@ -25,8 +25,7 @@ public class ManagerRoomController {
     private static final Logger LOG = LoggerFactory.getLogger(ManagerRoomController.class);
     private ManagerRoom managerRoom = new ManagerRoomClass();
 
-    //@CrossOrigin(origins = "http://alamutra.online")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"${settings.cors_origin}"})
     @PostMapping(value = "/create_room", produces = "application/json")
     public RoomDTO createRoom(Model model) {
 
@@ -40,8 +39,7 @@ public class ManagerRoomController {
 
 
 
-//    @CrossOrigin(origins = "http://alamutra.online")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"${settings.cors_origin}"})
     @PostMapping(value = "/get_elbow_footprint", produces = "application/json")
     public @ResponseBody String getElbowFootprint(@RequestBody String idRoom) {
 
@@ -63,8 +61,7 @@ public class ManagerRoomController {
 
 
 
-    //@CrossOrigin(origins = "http://alamutra.online")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"${settings.cors_origin}"})
     @PostMapping(path = "/to_application_orders", produces = "application/json")
     public @ResponseBody StatusResponseDTO toApplicationOrders(@RequestBody String orders) throws Exception {
         this.managerRoom.toApplicationOrders(orders);

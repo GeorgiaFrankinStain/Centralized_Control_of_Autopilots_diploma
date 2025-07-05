@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend-container
+          image: docker.io/georgiafrankinstain/frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          env:
+            - name: "REACT_APP_BASE_URL"
+              value: "http://alamutra.online"
+            - name: "REACT_APP_BACKEND_CALCULATOR_URL"
+              value: "http://alamutra.online/calculator"
+  selector:
+    matchLabels:
+      app: frontend

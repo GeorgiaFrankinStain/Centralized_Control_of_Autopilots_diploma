@@ -2,31 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93bee3ce-6b2b-4c74-b7ff-92ba2e4fdfc9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/common/LogIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/common/menu/Menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/common/menu/MenuTab.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/ButtonClearAll.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SetOrders.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/config-overrides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/public/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-ccoa/src/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoA/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_calculator/CCoA/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringController/ManagerRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/java/com/CCoABackendCalculate/CCoA/SpringController/ManagerRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend_calculator/CCoA/src/main/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/DrawingMotionPath.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/CreateRoomButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/CreateRoomButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/DragList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/DragList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SendOrdersButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SendOrdersButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SetOrders.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/SetOrdersCanvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SetOrdersCanvas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/common/AppHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/common/LogIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/common/Authenticated.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/common/Authenticated.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/home/Home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/home/Home.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/user/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/user/profile/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-ccoa/src/user/signup/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/user/signup/Signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/CreateRoomButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/CreateRoomButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SendOrdersButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/src/pages/parts/game/SendOrdersButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-ccoa/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/react-ccoa/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../k8s/internet_frontend_k8s.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,32 +109,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/gfs/projects/kubernetis_education/spring-boot-hello-world",
-    "nodejs_package_manager_path": "yarn",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "ts.external.directory.path": "/home/gfs/projects/Centralized_Control_of_Autopilots__diploma/code/internet/frontend/react-ccoa/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/gfs/projects/Centralized_Control_of_Autopilots__diploma/code/internet/frontend/react-ccoa/src&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/gfs/projects/Centralized_Control_of_Autopilots__diploma/code/internet/frontend/react-ccoa/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/react-ccoa/src" />
       <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts" />
       <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts/game" />
       <recent name="$PROJECT_DIR$/react-ccoa/src/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/react-ccoa/src" />
+      <recent name="$PROJECT_DIR$/react-ccoa" />
       <recent name="$PROJECT_DIR$/react-ccoa/src/common/menu" />
       <recent name="$PROJECT_DIR$/react-ccoa/src/common" />
       <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts" />
-      <recent name="$PROJECT_DIR$/react-ccoa/src/pages/parts/game" />
-      <recent name="$PROJECT_DIR$/react-ccoa/src/pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -179,6 +174,18 @@
       <workItem from="1745223814277" duration="7511000" />
       <workItem from="1745234761628" duration="7110000" />
       <workItem from="1746862090648" duration="90000" />
+      <workItem from="1747208136270" duration="14047000" />
+      <workItem from="1747302433592" duration="3743000" />
+      <workItem from="1747558007461" duration="12051000" />
+      <workItem from="1747841447215" duration="5944000" />
+      <workItem from="1747919579551" duration="3165000" />
+      <workItem from="1747982243457" duration="9186000" />
+      <workItem from="1748071762746" duration="6741000" />
+      <workItem from="1748154708884" duration="637000" />
+      <workItem from="1748335004917" duration="5032000" />
+      <workItem from="1748433582675" duration="116000" />
+      <workItem from="1748913816386" duration="2732000" />
+      <workItem from="1749099820889" duration="625000" />
     </task>
     <servers />
   </component>

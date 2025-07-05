@@ -1,0 +1,60 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: alamutra-ingress-root
+  annotations:
+    nginx.ingress.kubernetes.io/enable-cors: "false"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://alamutra.online"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/cors-max-age: "1728000"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: alamutra.online
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: alamutra-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    #nginx.ingress.kubernetes.io/enable-cors: "true"
+    #nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+    ##nginx.ingress.kubernetes.io/cors-allow-origin: "http://localhost:3000"
+    ##nginx.ingress.kubernetes.io/cors-allow-origin: "http://alamutra.online"
+    #nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
+    #nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+    #nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    #nginx.ingress.kubernetes.io/cors-max-age: "1727998"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, PUT, POST, DELETE, PATCH, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: alamutra.online
+  #- host: localhost
+    http:
+      paths:
+      - path: /calculator/(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: backend-calculator-service
+            port:
+              number: 8080

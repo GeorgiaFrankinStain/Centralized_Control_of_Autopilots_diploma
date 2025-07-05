@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-calculator-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend-calculator
+    spec:
+      containers:
+        - name: backend-calculator-container
+          image: docker.io/georgiafrankinstain/backend-calculator:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: "CROSS_ORIGIN"
+              value: "*"
+              #value: "http://localhost:3000"
+              #value: "http://alamutra.online"
+  selector:
+    matchLabels:
+      app: backend-calculator

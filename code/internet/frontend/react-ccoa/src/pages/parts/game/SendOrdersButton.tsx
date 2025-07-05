@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {setDataElbow, SetElbowsJson} from "./DrawingMotionPath"
 import {PointCCoA} from "../../../Polygon";
-import {API_BASE_URL} from "../../../index";
+import {API_BACKEND_CALCULATOR} from "../../../index";
 
 
 let sendJsonOrders = {
@@ -116,9 +116,10 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
     function sendApplicationOrdersClick() {
 
-
+        console.log("before use create_room variable");
+        console.log(API_BACKEND_CALCULATOR);
         // Send data to the backend via POST
-        fetch(API_BASE_URL + ':8080/create_room', {  // Enter your IP address here
+        fetch(API_BACKEND_CALCULATOR + '/create_room', {  // Enter your IP address here
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify(jsonData) // body data type must match "Content-Type" header
@@ -139,7 +140,7 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
 
                 // Send data to the backend via POST
-                fetch(API_BASE_URL + ':8080/to_application_orders', {  // Enter your IP address here
+                fetch(API_BACKEND_CALCULATOR + '/to_application_orders', {  // Enter your IP address here
                     method: 'POST',
 
                     headers: {
@@ -178,7 +179,7 @@ export function ButtonSendOrders({updateStateCanvasRenderingResultCallback}: ISe
 
     function getElbowFootprint() {
         // Send data to the backend via POST
-        fetch(API_BASE_URL + ':8080/get_elbow_footprint', {  // Enter your IP address here
+        fetch(API_BACKEND_CALCULATOR + '/get_elbow_footprint', {  // Enter your IP address here
 
             method: 'POST',
             headers: {

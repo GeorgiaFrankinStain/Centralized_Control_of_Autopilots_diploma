@@ -13,6 +13,8 @@ const Home: React.FC = () => {
     const [kostilForRerender, setKostilForRerender] = useState<number>(0);
 
     const [orderMachines, setOrderMachines] = useState<IDataForOrder[]>([]);
+
+
     return (
         <div className={"line-break-container"}>
 
