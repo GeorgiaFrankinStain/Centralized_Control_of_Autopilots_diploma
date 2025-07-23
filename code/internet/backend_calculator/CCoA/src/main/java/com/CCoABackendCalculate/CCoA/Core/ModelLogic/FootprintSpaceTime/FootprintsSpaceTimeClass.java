@@ -140,8 +140,8 @@ public class FootprintsSpaceTimeClass implements FootprintsSpaceTime, HistoryCha
     @Override
     public boolean getIsSeatTakenSpaceTime(PolygonCCoA place, double fromTime, double toTime, IndexLayer indexLayer) {
         return this.isSeatTaken(place, fromTime, indexLayer) //FIXME
-                && this.isSeatTaken(place, toTime, indexLayer)
-                && this.isSeatTaken(place, (fromTime + toTime) / 2, indexLayer);
+                || this.isSeatTaken(place, toTime, indexLayer)
+                || this.isSeatTaken(place, (fromTime + toTime) / 2, indexLayer);
     }
 
     @Override

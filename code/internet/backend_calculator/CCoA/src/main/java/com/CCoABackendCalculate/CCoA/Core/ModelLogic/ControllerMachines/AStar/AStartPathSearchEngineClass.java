@@ -154,8 +154,10 @@ public class AStartPathSearchEngineClass implements AStartPathSearchEngine {
         }
 
         private boolean isNeighborNodeIsAccess() {
-            double timeAdding = parametersMovingUnique.getTimeTravel(realDistanceFromStartToCurrentNode);
-            double timeStanding = parametersMovingUnique.getTimeTravel(realDistanceToNeighborFromStartTroughCurrentNode);
+            double timeTravelFromStartToCurrent = parametersMovingUnique.getTimeTravel(realDistanceFromStartToCurrentNode);
+            double timeAdding = timeTravelFromStartToCurrent ;
+            double timeTravelToNeighborFromStartTroughCurrentNode = parametersMovingUnique.getTimeTravel(realDistanceToNeighborFromStartTroughCurrentNode);
+            double timeStanding = timeTravelToNeighborFromStartTroughCurrentNode - timeTravelFromStartToCurrent;
 
             PolygonCCoA occupiedPlace = spaceOccupiedDuringTheProcess();
 
