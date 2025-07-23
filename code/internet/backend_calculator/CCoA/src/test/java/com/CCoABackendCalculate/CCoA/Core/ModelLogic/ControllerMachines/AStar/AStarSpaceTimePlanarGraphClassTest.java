@@ -253,4 +253,17 @@ class AStarSpaceTimePlanarGraphClassTest {
             return corridor2;
         }
     }
+
+
+
+
+    private ParametersMovingUnique car = new Square20ParametersMovingUnique(13);
+    private AlhorithmFastFindPath tempManualResearch() {
+        FootprintsSpaceTime footprintsSpaceTime = new FootprintsSpaceTimeClass();
+        FabricNetworkNodes squareFabricNetworkNodes = new FabricSquareNetworkNodes(squareParametersMovingUnique);
+        AlhorithmFastFindPath fastFinderPath = new AStarSpaceTimePlanarGraphClass(squareFabricNetworkNodes, footprintsSpaceTime);
+
+        return fastFinderPath;
+    }
+
 }
