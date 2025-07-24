@@ -780,8 +780,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         HistoryChanges historyChanges = (HistoryChanges) onlyFootprintsSpaceTime;
 
 
-        JsonObject expected = JsonParser.parseString("{\"elbow_moving_objects\":[{\"id_moving_unique_object\":3,\"appearanceType\":\"TEST_SQUARE_20\",\"appearancePolygonForm\":[{\"x\":-10.0,\"y\":-10.0},{\"x\":10.0,\"y\":-10.0},{\"x\":10.0,\"y\":10.0},{\"x\":-10.0,\"y\":10.0}],\"timeSpaceCoordinates\":[{\"t\":0.0,\"layer\":0,\"x\":10.0,\"y\":0.0},{\"t\":2.0,\"layer\":0,\"x\":10.000000000000002,\"y\":0.0},{\"t\":4.0,\"layer\":0,\"x\":10.0,\"y\":0.0}]}]}").getAsJsonObject();
-
+        JsonObject expected = JsonParser.parseString("{\"elbow_moving_objects\":[{\"id_moving_unique_object\":3,\"appearanceType\":\"TEST_SQUARE_20\",\"appearancePolygonForm\":[{\"x\":-10.0,\"y\":-10.0},{\"x\":10.0,\"y\":-10.0},{\"x\":10.0,\"y\":10.0},{\"x\":-10.0,\"y\":10.0}],\"timeSpaceCoordinates\":[{\"t\":0.0,\"layer\":0,\"x\":10.0,\"y\":11.0,\"angle\":0.0},{\"t\":2.0,\"layer\":0,\"x\":10.000000000000002,\"y\":30.0,\"angle\":0.0},{\"t\":4.0,\"layer\":0,\"x\":10.0,\"y\":50.0,\"angle\":0.0}]}]}").getAsJsonObject();
         JsonObject actual = historyChanges.getElbowDTOToEndCalculateExistJSONFrom(anyTime);
 
         assertEquals(expected, actual);
@@ -800,7 +799,7 @@ class FootprintsSpaceTimeClassTest { //FIXME add test add path of moving object 
         double anyTime = 0.1;
         HistoryChanges historyChanges = (HistoryChanges) onlyFootprintsSpaceTime;
 
-        JsonObject expected = JsonParser.parseString("{\"elbow_moving_objects\":[{\"id_moving_unique_object\":3,\"appearanceType\":\"non-uniform\",\"appearancePolygonForm\":[{\"x\":-250.0,\"y\":-25.0},{\"x\":250.0,\"y\":-25.0},{\"x\":250.0,\"y\":25.0},{\"x\":-250.0,\"y\":25.0}],\"timeSpaceCoordinates\":[{\"t\":0.0,\"layer\":0,\"x\":60.0,\"y\":0.0},{\"t\":1.7078084781191998E308,\"layer\":0,\"x\":60.0,\"y\":0.0}]}]}\n").getAsJsonObject();
+        JsonObject expected = JsonParser.parseString("{\"elbow_moving_objects\":[{\"id_moving_unique_object\":3,\"appearanceType\":\"non-uniform\",\"appearancePolygonForm\":[{\"x\":-250.0,\"y\":-25.0},{\"x\":250.0,\"y\":-25.0},{\"x\":250.0,\"y\":25.0},{\"x\":-250.0,\"y\":25.0}],\"timeSpaceCoordinates\":[{\"t\":0.0,\"layer\":0,\"x\":60.0,\"y\":60.0,\"angle\":0.0},{\"t\":1.7078084781191998E308,\"layer\":0,\"x\":60.0,\"y\":60.0,\"angle\":0.0}]}]}\n").getAsJsonObject();
 
         JsonObject actual = historyChanges.getElbowDTOToEndCalculateExistJSONFrom(anyTime);
         assertEquals(expected, actual);
