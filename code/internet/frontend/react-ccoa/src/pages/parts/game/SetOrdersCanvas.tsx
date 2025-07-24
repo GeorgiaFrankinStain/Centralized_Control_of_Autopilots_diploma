@@ -108,8 +108,8 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
             }
             for (let i = 0; i < this.clickCars.length; ++i) {
                 this.drawCar(
-                    this.clickCars[i].x,
-                    this.clickCars[i].y,
+                    this.clickCars[i].x * globalScale, //LINK_c78zDp
+                    this.clickCars[i].y * globalScale,
                     this.clickCars[i].angle,
                     this.clickCars[i].numberSkin
                 );
@@ -211,6 +211,9 @@ const CanvasSetOrders: React.FC<ISetOrdersCanvasProps> = ({addABForOrderCallback
 
             mouseX -= this.canvas.offsetLeft;
             mouseY -= this.canvas.offsetTop;
+
+            mouseX /= globalScale; //LINK_c78zDp
+            mouseY /= globalScale;
 
             let isNeedUpIndexFrameMachine = false;
             if (this.isStartSet) {

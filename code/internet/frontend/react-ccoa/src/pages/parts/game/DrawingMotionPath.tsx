@@ -1044,8 +1044,8 @@ const DrawingMotionPath = ({stateForForceUpdateCanvasInCode}: ICanvasRendering) 
                     const halfScaleSideSquare = sideSize * globalScale / 2;
 
 
-                    const x = dataForRenderingItem.position.point.x - halfScaleSideSquare;
-                    const y = dataForRenderingItem.position.point.y - halfScaleSideSquare;
+                    const x = dataForRenderingItem.position.point.x * globalScale - halfScaleSideSquare; //LINK_c78zDp
+                    const y = dataForRenderingItem.position.point.y * globalScale - halfScaleSideSquare;
                     const angle = dataForRenderingItem.position.angle;
 
                     console.log(x + " " + y + " --- xy draw");
