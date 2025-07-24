@@ -25,7 +25,7 @@ public class Square20ParametersMovingUnique implements ParametersMovingUnique {
 
     @Override
     public void markWithoutStandingUntilEndTime(FootprintsSpaceTime footprintsSpaceTime, PathCCoA pathCCoA, double timeAdding, IndexLayer indexLayer) throws СrashIntoAnImpassableObjectException {
-        this.markWithoutStandingUntilEndTime(footprintsSpaceTime, pathCCoA, timeAdding, indexLayer);
+        this.car20.markWithoutStandingUntilEndTime(footprintsSpaceTime, pathCCoA, timeAdding, indexLayer);
     }
 
     @Override
